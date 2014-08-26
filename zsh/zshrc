@@ -81,3 +81,4 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/loca
 
 # Source my settings.
 source ~/bin/dotfiles/zsh/env
+source ~/bin/dotfiles/zsh/alias

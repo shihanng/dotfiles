@@ -1,4 +1,10 @@
 # My environment for Z-Shell.
+
 # LSCOLORS.
 export CLICOLOR=1
 export LSCOLORS=exdxgxgxbxagaghbhbhehe
+
+# Language environment.   
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8

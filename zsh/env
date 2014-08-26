@@ -8,3 +8,19 @@ export LSCOLORS=exdxgxgxbxagaghbhbhehe
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Grep.
+export GREP_COLOR='0;32'
+
+# Less.
+export LESS='-XRMsIg'
+
+# History.
+export HISTSIZE=100000
+export SAVEHIST=100000 
+export HISTFILE=~/.zhistory
+export HISTFILESIZE=1000000
+export HISTTIMEFORMAT='%b %d %I:%M %p '
+export HISTCONTROL=ignoreboth
+export HISTIGNORE="exit:history"
+shopt -s histappend

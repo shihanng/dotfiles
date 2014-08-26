@@ -1,0 +1,4 @@
+# My environment for Z-Shell.
+# LSCOLORS.
+export CLICOLOR=1
+export LSCOLORS=exdxgxgxbxagaghbhbhehe

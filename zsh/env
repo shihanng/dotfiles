@@ -28,5 +28,6 @@ setopt inc_append_history       # add commands as they are typed, don't wait unt
 setopt share_history            # share hist between sessions
 setopt bang_hist                # !keyword
 
-
+# Enable zsh-completions.
+fpath=(/usr/local/share/zsh-completions $fpath)
 

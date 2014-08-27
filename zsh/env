@@ -1,6 +1,6 @@
 # My environment for Z-Shell.
 # Path.
-export PATH='/usr/local/bin:~/bin:$PATH'
+export PATH=/usr/local/bin:~/bin:$PATH
 
 # LSCOLORS.
 export CLICOLOR=1

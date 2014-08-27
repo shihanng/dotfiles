@@ -1,0 +1,4 @@
+" Enable powerline fonts for vim.
+" Install and use the font as Non-ASCII Font in iTerm
+" from https://github.com/Lokaltog/powerline-fonts
+let g:airline_powerline_fonts=1

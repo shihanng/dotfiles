@@ -1,0 +1,5 @@
+" Using Solarized dark theme.
+let g:solarized_termcolors=16
+color solarized
+
+

@@ -10,15 +10,13 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif"
 
-
 " Set highlight of search result.
-hi Search cterm=NONE ctermfg=darkmagenta ctermbg=magenta
-
+hi Search cterm=NONE ctermfg=darkmagenta ctermbg=023
 
 " LaTeX
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
-"
+
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
 set shellslash
@@ -37,3 +35,13 @@ filetype indent on
 let g:tex_flavor='latex'
 " Suppress Vim from displaying math symbols in equations.
 let g:tex_conceal = ""
+
+" Column highlighting which follows the convention of
+" PEP 8 -- Style Guide for Python Code.
+highlight ColorColumn ctermbg=237
+let &colorcolumn="72,".join(range(81,999),",")
+
+" Comment with NEARCommenter.
+let NERDSpaceDelims=1    " Place spaces after comment chars.
+let NERDDefaultNesting=0 " Don't recomment commented lines.
+

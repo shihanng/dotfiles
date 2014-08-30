@@ -38,8 +38,10 @@ let g:tex_conceal = ""
 
 " Column highlighting which follows the convention of
 " PEP 8 -- Style Guide for Python Code.
+set textwidth=79
+set colorcolumn=-6,+1,+2,+3,+4
+" let g:colorcolumn="-6,".join(map(range(1,6),'"+".v:val'),',') sad asd sad sdasd 
 highlight ColorColumn ctermbg=237
-let &colorcolumn="72,".join(range(81,999),",")
 
 " Comment with NEARCommenter.
 let NERDSpaceDelims=1    " Place spaces after comment chars.

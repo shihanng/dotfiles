@@ -47,3 +47,5 @@ highlight ColorColumn ctermbg=237
 let NERDSpaceDelims=1    " Place spaces after comment chars.
 let NERDDefaultNesting=0 " Don't recomment commented lines.
 
+" Access system clipboard
+set clipboard=unnamedplus

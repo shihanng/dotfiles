@@ -26,8 +26,8 @@ brew 'caskroom/cask/brew-cask'
 brew 'peco'
 brew 'mackup'
 
-tap 'homebrew/x11'
-brew 'scantailor'
+# tap 'homebrew/x11'
+# brew 'scantailor'
 
 tap 'caskroom/cask'
 cask 'box-sync'
@@ -50,6 +50,7 @@ cask 'magicprefs'
 cask 'atom'
 cask 'timemachineeditor'
 cask 'inkscape'
+cask 'googleappengine'
 
 tap 'caskroom/homebrew-versions'
 cask 'sublime-text3'

@@ -89,8 +89,6 @@ then
     source ~/bin/dotfiles/zsh/proxy
 fi
 
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
 # Search shell history with peco: https://github.com/peco/peco
 # Adapted from: https://github.com/mooz/percol#zsh-history-search
 if which peco &> /dev/null; then

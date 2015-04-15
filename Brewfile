@@ -51,6 +51,7 @@ cask 'atom'
 cask 'timemachineeditor'
 cask 'inkscape'
 cask 'googleappengine'
+cask 'skype'
 
 tap 'caskroom/homebrew-versions'
 cask 'sublime-text3'

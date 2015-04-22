@@ -25,6 +25,7 @@ brew 'pstoedit'
 brew 'caskroom/cask/brew-cask'
 brew 'peco'
 brew 'mackup'
+brew 'redis'
 
 # tap 'homebrew/x11'
 # brew 'scantailor'

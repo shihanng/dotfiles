@@ -26,6 +26,7 @@ brew 'caskroom/cask/brew-cask'
 brew 'peco'
 brew 'mackup'
 brew 'redis'
+brew 'adobe-reader'
 
 # tap 'homebrew/x11'
 # brew 'scantailor'

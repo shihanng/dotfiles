@@ -54,6 +54,7 @@ cask 'inkscape'
 cask 'googleappengine'
 cask 'skype'
 cask 'adobe-reader'
+cask 'alfred'
 
 tap 'caskroom/homebrew-versions'
 cask 'sublime-text3'

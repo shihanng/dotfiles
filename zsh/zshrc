@@ -45,7 +45,7 @@ ZSH_THEME="gallois"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man)
+plugins=(git colored-man brew zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,3 +110,5 @@ if which peco &> /dev/null; then
   zle -N peco_select_history
   bindkey '^R' peco_select_history
 fi
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)

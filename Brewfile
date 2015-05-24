@@ -27,8 +27,10 @@ brew 'peco'
 brew 'mackup'
 brew 'redis'
 
- tap 'homebrew/x11'
+tap 'homebrew/x11'
 # brew 'scantailor'
+tap 'homebrew/dupes'
+brew 'grep'
 
 tap 'caskroom/cask'
 cask 'box-sync'

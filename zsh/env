@@ -33,3 +33,4 @@ setopt bang_hist                # !keyword
 # Enable zsh-completions.
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+export POWERLINE_CONFIG_COMMAND="/usr/local/bin/powerline-config"

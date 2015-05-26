@@ -1,6 +1,7 @@
 # My environment for Z-Shell.
 # Path.
 export PATH=/usr/local/go_appengine:/usr/local/go/bin:/usr/local/bin:~/bin:$PATH
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 # LSCOLORS.
 export CLICOLOR=1

@@ -58,6 +58,7 @@ cask 'skype'
 cask 'adobe-reader'
 cask 'alfred'
 cask 'github'
+cask 'gitifier'
 
 tap 'caskroom/homebrew-versions'
 cask 'sublime-text3'

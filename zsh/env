@@ -35,3 +35,8 @@ setopt bang_hist                # !keyword
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 export POWERLINE_CONFIG_COMMAND="/usr/local/bin/powerline-config"
+
+# For go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"

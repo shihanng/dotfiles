@@ -1,1 +1,2 @@
-Bundle 'gerw/vim-latex-suite'
+Plugin 'gerw/vim-latex-suite'
+Plugin 'fatih/vim-go'

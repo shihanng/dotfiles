@@ -51,3 +51,7 @@ let NERDDefaultNesting=0 " Don't recomment commented lines.
 if $TMUX == ''
     set clipboard+=unnamed
 endif
+
+" neocomplete
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()

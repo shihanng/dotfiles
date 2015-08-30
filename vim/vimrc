@@ -1,0 +1,75 @@
+scriptencoding utf-8
+set nocompatible " Be iMproved, required by vundle.
+filetype off     " Required by vundle.
+
+" VUNDLE
+" ======
+" Set the runtime path to include Vundle and initialize.
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required by vundle.
+Plugin 'VundleVim/Vundle.vim'
+
+" Color scheme.
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'sickill/vim-monokai'
+Plugin 'altercation/vim-colors-solarized'
+
+" All plugins must be added before the following line.
+call vundle#end()         " Required by vundle.
+filetype plugin indent on " Required by vundle.
+
+" COLOR SCHEME
+" ============
+syntax enable
+set background=dark
+" Solarized.
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
+
+" SHORTCUTS
+" =========
+let mapleader = ","
+
+" SEARCH
+" ======
+set ignorecase
+set hlsearch
+set incsearch
+set smartcase
+set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
+
+" WINDOWS
+" =======
+set winwidth=84    " ⎤
+set winheight=5    " ⎟ Auto resize windows.
+set winminheight=5 " ⎟
+set winheight=999  " ⎦
+
+" EDITING
+" =======
+" Indentations.
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" Encodings.
+set fileencoding=utf-8 " When file is saved.
+set encoding=utf-8 " For displaying.
+
+" Brackets.
+set showmatch
+
+" Visual.
+set list
+set listchars=tab:‣\ 
+set number
+set cursorline
+set cc=80
+
+" Others.
+set backspace=indent,eol,start

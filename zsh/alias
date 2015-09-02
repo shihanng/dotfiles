@@ -1,0 +1,8 @@
+# Alias
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias mi="open -a mi.app"
+alias skim="open -a skim.app"
+alias xfig="xfig -spec -bg white -fg black -latexfonts"
+

@@ -1,0 +1,45 @@
+# Make sure xterm-256color is used.
+export TERM=xterm-256color
+
+# My environment for Z-Shell.
+# Path.
+export PATH=/usr/local/go_appengine:/usr/local/go/bin:/usr/local/bin:~/bin:$PATH
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+# LSCOLORS.
+export CLICOLOR=1
+export LSCOLORS=exdxgxgxbxagaghbhbhehe
+
+# Language environment.   
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Grep.
+export GREP_COLOR='0;32'
+
+# Less.
+export LESS='-XRMsIg'
+
+# History.
+export HISTSIZE=100000
+export SAVEHIST=100000 
+export HISTFILE=~/.zhistory
+setopt append_history           # append
+setopt hist_ignore_all_dups     # no duplicate
+setopt hist_ignore_space        # ignore space prefixed commands
+setopt hist_reduce_blanks       # trim blanks
+setopt hist_verify              # show before executing history commands
+setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
+setopt share_history            # share hist between sessions
+setopt bang_hist                # !keyword
+
+# Enable zsh-completions.
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+export POWERLINE_CONFIG_COMMAND="/usr/local/bin/powerline-config"
+
+# For go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"

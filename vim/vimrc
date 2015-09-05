@@ -7,7 +7,7 @@ filetype off     " Required by vundle.
 " Set the runtime path to include Vundle and initialize.
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
+    
 " Let Vundle manage Vundle, required by vundle.
 Plugin 'VundleVim/Vundle.vim'
 
@@ -15,19 +15,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'sickill/vim-monokai'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'fatih/vim-go'
 
 " All plugins must be added before the following line.
 call vundle#end()         " Required by vundle.
 filetype plugin indent on " Required by vundle.
-
-" COLOR SCHEME
-" ============
-syntax enable
-set background=dark
-" Solarized.
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
 
 " SHORTCUTS
 " =========
@@ -66,10 +58,24 @@ set showmatch
 
 " Visual.
 set list
-set listchars=tab:‣\ 
+set listchars=tab:‣\ ,trail:·
+
+" Prevent tab and trail listchars to have highlight in Solarized scheme.
+autocmd ColorScheme solarized :hi! link SpecialKey NonText
+
 set number
 set cursorline
 set cc=80
 
 " Others.
 set backspace=indent,eol,start
+
+" COLOR SCHEME
+" ============
+syntax enable
+set background=dark
+" Solarized.
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
+

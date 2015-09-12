@@ -73,6 +73,7 @@ set cc=80
 
 " Others.
 set backspace=indent,eol,start
+set whichwrap=b,s,<,>,[,]   " Backspace and cursor keys wrap too
 
 " COLOR SCHEME
 " ============

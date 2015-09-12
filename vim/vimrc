@@ -18,6 +18,8 @@ Plugin 'sickill/vim-monokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " All plugins must be added before the following line.
 call vundle#end()         " Required by vundle.
@@ -37,10 +39,10 @@ set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
 
 " WINDOWS
 " =======
-set winwidth=84    " ⎤
-set winheight=5    " ⎟ Auto resize windows.
-set winminheight=5 " ⎟
-set winheight=999  " ⎦
+"set winwidth=84    " ⎤
+"set winheight=5    " ⎟ Auto resize windows.
+"set winminheight=5 " ⎟
+"set winheight=999  " ⎦
 
 " EDITING
 " =======
@@ -92,3 +94,16 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_mode_map = { 'mode': 'passive',
     \ 'active_filetypes': ['go'] }
 let g:syntastic_go_checkers = ['go', 'golint']
+
+" NERDTREE
+" ========
+" Open NERDTree when vim starts with no file was specified.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Open NERDTree with C-n.
+map <C-n> :NERDTreeToggle<CR>
+
+" Close vim if only window left open is NERDTree.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+

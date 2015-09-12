@@ -22,6 +22,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-repeat'
 
 " All plugins must be added before the following line.
 call vundle#end()         " Required by vundle.

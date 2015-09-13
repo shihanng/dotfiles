@@ -114,3 +114,9 @@ let NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 " Close vim if only window left open is NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" SPELLCHECK
+" Toggle spell checking on and off with `,s`
+nmap <silent> <leader>s :set spell!<CR>
+
+" Set region to British English
+set spelllang=en

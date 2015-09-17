@@ -3,4 +3,4 @@
 *  Split pane:
    -  Horizontally: `PRE |`.
    -  Vertically: `PRE -`.
-   -  `PRE o` cycles to next pane.
+   -  `PRE PRE` cycles to next pane.

@@ -107,6 +107,7 @@ let g:syntastic_go_checkers = ['go', 'golint']
 " Open NERDTree when vim starts with no file was specified.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd BufEnter * lcd %:p:h " Set working directory to current file's directory.
 
 " Open NERDTree with C-n.
 map <C-n> :NERDTreeToggle<CR>

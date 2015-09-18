@@ -1,5 +1,6 @@
 ## Tmux
-*  Prefix is binded to `C-q`.
-*  Split window:
-   -  Horizontally: `C-q, |`.
-   -  Vertically: `C-q, -`.
+*  Prefix (`PRE`) is binded to `C-q`.
+*  Split pane:
+   -  Horizontally: `PRE |`.
+   -  Vertically: `PRE -`.
+   -  `PRE PRE` cycles to next pane.

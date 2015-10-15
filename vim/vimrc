@@ -13,7 +13,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Color scheme.
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'sickill/vim-monokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/vim-go'
@@ -26,6 +25,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'Shougo/neocomplete'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All plugins must be added before the following line.
 call vundle#end()         " Required by vundle.
@@ -190,3 +190,11 @@ set directory=~/.vim/.swp//
 " MOUSE
 " =====
 set mouse=a
+
+" CTRLP
+" =====
+" See: chriskempson/vim-tomorrow-them://github.com/ctrlpvim/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+

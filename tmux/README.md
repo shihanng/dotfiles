@@ -4,6 +4,7 @@
    -  Horizontally: `PRE |`.
    -  Vertically: `PRE -`.
    -  `PRE PRE` cycles to next pane.
+*  `PRE a` to toogle panes synchronization.
 *  List all available colours:
 
     ```sh

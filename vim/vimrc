@@ -31,67 +31,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 call vundle#end()         " Required by vundle.
 filetype plugin indent on " Required by vundle.
 
-" SHORTCUTS
-" =========
-let mapleader = ","
-
-" SEARCH
-" ======
-set ignorecase
-set hlsearch
-set incsearch
-set smartcase
-set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
-nmap <silent> <leader>h :nohl<CR>
-
-" WINDOWS
-" =======
-"set winwidth=84    " ⎤
-"set winheight=5    " ⎟ Auto resize windows.
-"set winminheight=5 " ⎟
-"set winheight=999  " ⎦
-
-" EDITING
-" =======
-" Indentations.
-set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set clipboard+=unnamed
-
-" Encodings.
-set fileencoding=utf-8 " When file is saved.
-set encoding=utf-8 " For displaying.
-
-" Brackets.
-set showmatch
-
-" Visual.
-set list
-set listchars=tab:‣\ ,trail:·
-
-" Prevent tab and trail listchars to have highlight in Solarized scheme.
-autocmd ColorScheme solarized :hi! link SpecialKey NonText
-
-set number
-set cursorline
-set cc=80
-
-" Others.
-set backspace=indent,eol,start
-set whichwrap=b,s,<,>,[,]   " Backspace and cursor keys wrap too
-
-" COLOR SCHEME
-" ============
-syntax enable
-set background=dark
-" Solarized.
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
-
 " GOLANG (See: https://github.com/fatih/vim-go)
 " =============================================
 let g:go_highlight_functions = 1         " ⎤
@@ -103,27 +42,6 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_mode_map = { 'mode': 'passive',
     \ 'active_filetypes': ['go'] }
 let g:syntastic_go_checkers = ['go', 'golint']
-
-" NERDTREE
-" ========
-" Open NERDTree when vim starts with no file was specified.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd BufEnter * lcd %:p:h " Set working directory to current file's directory.
-
-" Open NERDTree with C-n.
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
-
-" Close vim if only window left open is NERDTree.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" SPELLCHECK
-" Toggle spell checking on and off with `,s`
-nmap <silent> <leader>s :set spell!<CR>
-
-" Set region to British English
-set spelllang=en
 
 " NEOCOMPLETE
 " Disable AutoComplPop.
@@ -181,20 +99,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-" SWAP FILES
-" ==========
-set undodir=~/.vim/.undo//
-set backupdir=~/.vim/.backup//
-set directory=~/.vim/.swp//
-
-" MOUSE
-" =====
-set mouse=a
-
-" CTRLP
-" =====
-" See: chriskempson/vim-tomorrow-them://github.com/ctrlpvim/ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPBuffer'
-let g:ctrlp_working_path_mode = 'ra'
-
+" Source other settings.
+for f in split(glob('~/bin/dotfiles/nvim/vimfiles/*.vim'), '\n')
+    exe 'source' f
+endfor

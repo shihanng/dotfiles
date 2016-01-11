@@ -55,3 +55,8 @@ if !has('nvim')
       let g:neocomplete#sources#omni#input_patterns = {}
     endif
 endif
+
+if has('nvim')
+    let g:ycm_key_list_select_completion=[]
+    let g:ycm_key_list_previous_completion=[]
+endif

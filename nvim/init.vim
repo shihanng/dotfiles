@@ -20,8 +20,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " Coding.
 Plug 'scrooloose/syntastic'
-" Plugin 'Shougo/neocomplete'
 Plug 'tpope/vim-commentary'
+Plug 'majutsushi/tagbar'
+" Plugin 'Shougo/neocomplete'
 
 " Golang.
 Plug 'fatih/vim-go'

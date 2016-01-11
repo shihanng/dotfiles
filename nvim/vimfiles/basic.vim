@@ -84,3 +84,5 @@ set directory=~/.vim/.swp//
 " MOUSE
 " =====
 set mouse=a
+
+nmap <F8> :TagbarToggle<CR>

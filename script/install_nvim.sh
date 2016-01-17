@@ -33,9 +33,9 @@ if [ ! -d ${NVIM_PLUG_DIR} ]; then
         mkdir -p ${NVIM_PLUG_DIR}
 fi
 pushd ${NVIM_PLUG_DIR}
-#git clone https://github.com/Valloric/YouCompleteMe.git
+git clone https://github.com/Valloric/YouCompleteMe.git
 pushd ${YCM_DIR}
-#git submodule update --init --recursive
+git submodule update --init --recursive
 popd
 popd
 

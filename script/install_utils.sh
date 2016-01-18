@@ -41,4 +41,11 @@ make install
 popd
 rm -rf direnv
 
+su $USER <<EOF 
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+
+go get -u github.com/odeke-em/drive/cmd/drive
+EOF
+
 exit 0

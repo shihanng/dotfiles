@@ -112,3 +112,9 @@ if which peco &> /dev/null; then
 fi
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+# direnv
+eval "$(direnv hook zsh)"
+
+alias tmux='direnv exec / tmux'
+

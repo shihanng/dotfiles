@@ -2,4 +2,8 @@
     path = ~/.gitconfig.local
 
 [core]
-    editor = vim
+    editor = nvim
+    excludesfile = ~/bin/dotfiles/gitignore_global
+
+[push]
+    default = simple

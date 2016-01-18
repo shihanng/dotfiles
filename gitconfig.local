@@ -2,3 +2,5 @@
     name =
     email =
 
+[credential]
+    helper =

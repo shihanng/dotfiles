@@ -34,4 +34,6 @@ popd
 rm -rf ${GIT_TAR}
 rm -rf "git-${GIT_VERSION}"
 
+apt-get install -y gitg
+
 exit 0

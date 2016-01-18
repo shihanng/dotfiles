@@ -2,6 +2,7 @@
 
 set -e
 set -u
+set -x
 
 USER=$(who -m | awk '{print $1;}')
 UBUNTU_VERSION="$(lsb_release -cs)"
@@ -18,12 +19,12 @@ apt-get install -y docker-engine
 
 DOCKER_SERVICE="docker"
 if (( $(ps -ef | grep -v grep | grep $DOCKER_SERVICE | wc -l) > 0 )); then
-	service $DOCKER_SERVICE stop
+	sudo service $DOCKER_SERVICE stop
 fi
 
-service $DOCKER_SERVICE start
+sudo service $DOCKER_SERVICE start
 usermod -aG docker ${USER}
-restart $DOCKER_SERVICE
+sudo restart $DOCKER_SERVICE
 
 su $USER <<EOF 
 export PATH=$PATH:/usr/local/go/bin

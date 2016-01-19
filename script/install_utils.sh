@@ -17,6 +17,9 @@ apt-get purge -y lxc-docker
 apt-get install -y linux-image-extra-$(uname -r)
 apt-get install -y docker-engine
 
+curl -L https://github.com/docker/compose/releases/download/1.4.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
 DOCKER_SERVICE="docker"
 if (( $(ps -ef | grep -v grep | grep $DOCKER_SERVICE | wc -l) > 0 )); then
 	sudo service $DOCKER_SERVICE stop

@@ -31,6 +31,7 @@ Plug 'fatih/vim-go'
 
 " Others.
 Plug 'tpope/vim-repeat'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Add plugins to &runtimepath.
 call plug#end()

@@ -85,4 +85,4 @@ set directory=~/.vim/.swp//
 " =====
 set mouse=a
 
-nmap <F8> :TagbarToggle<CR>
+nmap <F8> :TagbarOpenAutoClose<CR>

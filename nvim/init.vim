@@ -38,6 +38,9 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim' " Autoindent
 Plug 'nvie/vim-flake8'
 
+" Status.
+Plug 'itchyny/lightline.vim'
+
 " Add plugins to &runtimepath.
 call plug#end()
 

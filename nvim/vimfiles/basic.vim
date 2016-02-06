@@ -27,6 +27,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set clipboard+=unnamedplus " Copy/paste
+set textwidth=79
+set fileformat=unix
 
 " Encodings.
 set fileencoding=utf-8 " When file is saved.

@@ -37,14 +37,14 @@ au BufNewFile,BufRead *.go
 
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+    \ softtabstop=2
+    \ shiftwidth=2
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set expandtab
+    \ shiftwidth=4
+    \ expandtab
+    \ softtabstop=4
 
 " Encodings.
 set fileencoding=utf-8 " When file is saved.

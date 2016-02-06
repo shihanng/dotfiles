@@ -35,6 +35,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim' " Autoindent
 
 " Add plugins to &runtimepath.
 call plug#end()

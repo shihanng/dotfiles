@@ -22,4 +22,11 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " numbertogle
 " ===========
-let g:NumberToggleTrigger="<c-l>"
+let g:NumberToggleTrigger="<c-m>"
+
+" Navigate splits
+" ===============
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>

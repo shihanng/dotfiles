@@ -33,6 +33,9 @@ Plug 'fatih/vim-go'
 Plug 'tpope/vim-repeat'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
+" Python.
+Plug 'tmhedberg/SimpylFold'
+
 " Add plugins to &runtimepath.
 call plug#end()
 

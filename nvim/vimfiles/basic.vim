@@ -30,6 +30,17 @@ set clipboard+=unnamedplus " Copy/paste
 set textwidth=79
 set fileformat=unix
 
+au BufNewFile,BufRead *.go
+    \ set noexpandtab
+    \ tabstop=4
+    \ shiftwidth=4
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+
 " Encodings.
 set fileencoding=utf-8 " When file is saved.
 set encoding=utf-8 " For displaying.

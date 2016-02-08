@@ -22,4 +22,6 @@ popd
 rm -rf ${TMUX_DIR}
 rm -rf ${TMUX_TAR}
 
+gem install tmuxinator
+
 exit 0

@@ -68,13 +68,10 @@ set whichwrap=b,s,<,>,[,]   " Backspace and cursor keys wrap too
 " COLOR SCHEME
 " ============
 " Prevent tab and trail listchars to have highlight in Solarized scheme.
-autocmd ColorScheme solarized :hi! link SpecialKey NonText
+autocmd ColorScheme gruvbox :hi! link SpecialKey NonText
 syntax enable
 set background=dark
-" Solarized.
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
+colorscheme gruvbox
 
 " SPELLCHECK
 " ==========

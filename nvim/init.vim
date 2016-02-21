@@ -7,7 +7,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
 " Themes.
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 
 " Version control.
 Plug 'tpope/vim-fugitive'

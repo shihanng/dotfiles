@@ -38,6 +38,9 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim' " Autoindent
 Plug 'nvie/vim-flake8'
 
+" Markdown.
+Plug 'JamshedVesuna/vim-markdown-preview'
+
 " Status.
 Plug 'itchyny/lightline.vim'
 
@@ -45,7 +48,7 @@ Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " Python supports.
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/local/bin/python'
 
 " Source other settings.
 for f in split(glob('~/bin/dotfiles/nvim/vimfiles/*.vim'), '\n')

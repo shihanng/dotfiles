@@ -173,7 +173,7 @@ bar {
 
 bindsym $mod+shift+x exec i3lock
 
-exec_always feh --bg-scale /home/shihanng/Pictures/wallpaper.jpg
+exec_always feh --bg-fill ~/Pictures/wallpaper.jpg --bg-fill ~/Pictures/v_wallpaper.jpg
 
 
 bindsym $mod+Shift+bracketleft move workspace to output left

@@ -25,7 +25,8 @@ font pango:System San Francisco Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+# bindsym $mod+Return exec terminator
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -192,17 +193,19 @@ bar {
 
 bindsym $mod+shift+x exec i3lock
 
-exec_always feh --bg-fill ~/Pictures/wallpaper.jpg --bg-fill ~/Pictures/v_wallpaper.jpg
-exec vmplayer
-exec compton -f
-exec_always xrandr --output DP-0 --auto --output DP-2 --auto --scale 1.6x1.6 --rotate left --pos 3840x-300
-# https://github.com/Airblader/i3
-gaps inner 8
-gaps outer 8
-
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
 
 bindsym $mod+Shift+F11 exec --no-startup-id pulseaudio-ctl down
 bindsym $mod+Shift+F12 exec --no-startup-id pulseaudio-ctl up
 bindsym $mod+Shift+F10 exec --no-startup-id pulseaudio-ctl mute
+
+exec_always $HOME/bin/dotfiles/setscreen.sh
+exec vmplayer
+exec compton -f
+exec caffeine-indicator
+exec_always feh --bg-fill ~/Pictures/h_wallpaper.jpg --bg-fill ~/Pictures/v_wallpaper.jpg
+
+exec sleep 1; xset s off -dpms
+exec dropbox start
+exec /opt/Enpass/bin/runenpass.sh

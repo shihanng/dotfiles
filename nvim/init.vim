@@ -32,6 +32,7 @@ Plug 'fatih/vim-go'
 " Others.
 Plug 'tpope/vim-repeat'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'godlygeek/tabular'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'

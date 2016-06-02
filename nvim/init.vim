@@ -33,6 +33,7 @@ Plug 'fatih/vim-go'
 Plug 'tpope/vim-repeat'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'godlygeek/tabular'
+Plug 'triglav/vim-visual-increment'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'

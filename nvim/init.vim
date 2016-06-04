@@ -34,6 +34,7 @@ Plug 'tpope/vim-repeat'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'godlygeek/tabular'
 Plug 'triglav/vim-visual-increment'
+Plug 'lervag/vimtex'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'

@@ -104,3 +104,5 @@ set directory=~/.vim/.swp//
 set mouse=a
 
 nmap <F8> :TagbarOpenAutoClose<CR>
+
+nnoremap <leader>r :source $MYVIMRC<CR>

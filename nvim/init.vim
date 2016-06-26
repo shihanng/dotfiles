@@ -28,6 +28,7 @@ Plug 'Valloric/YouCompleteMe'
 
 " Golang.
 Plug 'fatih/vim-go'
+Plug 'godoctor/godoctor.vim'
 
 " Others.
 Plug 'tpope/vim-repeat'

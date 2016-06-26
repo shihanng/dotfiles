@@ -58,3 +58,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 for f in split(glob('~/bin/dotfiles/nvim/vimfiles/*.vim'), '\n')
     exe 'source' f
 endfor
+
+for f in split(glob('~/bin/dotfiles/nvim/plugins/*.vim'), '\n')
+    exe 'source' f
+endfor

@@ -48,7 +48,9 @@ au BufNewFile,BufRead *.py
 
 " Encodings.
 set fileencoding=utf-8 " When file is saved.
-set encoding=utf-8 " For displaying.
+if !has('nvim')
+    set encoding=utf-8 " For displaying.
+endif
 
 " Brackets.
 set showmatch

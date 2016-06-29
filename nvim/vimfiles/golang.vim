@@ -7,6 +7,8 @@ let g:go_highlight_operators = 1         " ⎟
 let g:go_highlight_build_constraints = 1 " ⎦
 let g:go_fmt_command = "goimports"
 
+let g:go_autodetect_gopath = 0
+
 " Syntastic.
 let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }

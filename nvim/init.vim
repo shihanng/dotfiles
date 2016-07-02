@@ -36,6 +36,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'godlygeek/tabular'
 Plug 'triglav/vim-visual-increment'
 Plug 'lervag/vimtex'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'

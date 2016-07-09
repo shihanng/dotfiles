@@ -17,6 +17,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " File explorer.
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-eunuch'
 
 " Coding.
 Plug 'scrooloose/syntastic'

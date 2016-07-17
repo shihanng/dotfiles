@@ -1,7 +1,10 @@
 scriptencoding utf-8
 
-call plug#begin()
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
 
+call plug#begin()
 " Brackets, etc.
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -23,12 +26,16 @@ Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'majutsushi/tagbar'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'tpope/vim-dispatch' " Used by vim-go.
+Plug 'AndrewRadev/splitjoin.vim' " Used by vim-go.
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets' " Snippets collections.
+Plug 'honza/vim-snippets' " Snippets collections.
 
 " Golang.
 Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'godoctor/godoctor.vim'
 
 " Others.

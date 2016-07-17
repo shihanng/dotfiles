@@ -31,7 +31,7 @@ set textwidth=79
 set fileformat=unix
 
 au BufNewFile,BufRead *.go
-    \ set noexpandtab
+    \ setlocal noexpandtab
     \ tabstop=4
     \ shiftwidth=4
 
@@ -107,4 +107,6 @@ set mouse=a
 
 nmap <F8> :TagbarOpenAutoClose<CR>
 
-nnoremap <leader>r :source $MYVIMRC<CR>
+nnoremap <leader>% :source $MYVIMRC<CR>
+
+set autowrite

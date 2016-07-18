@@ -11,11 +11,6 @@ let g:go_highlight_extra_types = 1
 
 let g:go_fmt_command = "goimports"
 
-let g:go_list_type = "quickfix"
-map <leader>n :cn<CR>
-map <leader>p :cp<CR>
-nnoremap <leader>a :cclose<CR>
-
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
@@ -32,10 +27,15 @@ endfunction
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " Syntastic.
-let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['go']
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }
 
+" Go Metalinter.
+let g:go_list_type = "quickfix"
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
 let g:go_snippet_engine = "neosnippet"
 
 let g:go_autodetect_gopath = 0
-

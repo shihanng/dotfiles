@@ -105,8 +105,18 @@ set directory=~/.vim/.swp//
 " =====
 set mouse=a
 
+" QUICKFIX LIST (used by vim-go)
+" ==============================
+map <leader>qn :cn<CR>
+map <leader>qp :cp<CR>
+nnoremap <leader>qc :cclose<CR>
+
+" LOCATION LIST (used by syntastic)
+" =================================
+nnoremap <leader>lc :lclose<CR>
+
+" OTHERS
+" ======
 nmap <F8> :TagbarOpenAutoClose<CR>
-
 nnoremap <leader>% :source $MYVIMRC<CR>
-
 set autowrite

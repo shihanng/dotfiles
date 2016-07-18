@@ -45,6 +45,7 @@ Plug 'godlygeek/tabular'
 Plug 'triglav/vim-visual-increment'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'yssl/QFEnter'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'

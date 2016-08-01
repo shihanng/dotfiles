@@ -31,7 +31,7 @@ set textwidth=79
 set fileformat=unix
 
 au BufNewFile,BufRead *.go
-    \ set noexpandtab
+    \ setlocal noexpandtab
     \ tabstop=4
     \ shiftwidth=4
 
@@ -48,7 +48,9 @@ au BufNewFile,BufRead *.py
 
 " Encodings.
 set fileencoding=utf-8 " When file is saved.
-set encoding=utf-8 " For displaying.
+if !has('nvim')
+    set encoding=utf-8 " For displaying.
+endif
 
 " Brackets.
 set showmatch
@@ -103,4 +105,18 @@ set directory=~/.vim/.swp//
 " =====
 set mouse=a
 
+" QUICKFIX LIST (used by vim-go)
+" ==============================
+map <leader>qn :cn<CR>
+map <leader>qp :cp<CR>
+nnoremap <leader>qc :cclose<CR>
+
+" LOCATION LIST (used by syntastic)
+" =================================
+nnoremap <leader>lc :lclose<CR>
+
+" OTHERS
+" ======
 nmap <F8> :TagbarOpenAutoClose<CR>
+nnoremap <leader>% :source $MYVIMRC<CR>
+set autowrite

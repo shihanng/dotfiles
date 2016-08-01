@@ -20,13 +20,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_working_path_mode = 'ra'
 
-" numbertogle
-" ===========
+" NumberToggle
+" ============
 let g:NumberToggleTrigger="<c-m>"
-
-" Navigate splits
-" ===============
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>

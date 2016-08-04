@@ -4,19 +4,30 @@ source "${HOME}/.zgen/zgen.zsh"
 # if the init scipt doesn't exist
 if ! zgen saved; then
 
-  # specify plugins here
-  zgen prezto
-  zgen prezto 'git'
+  zgen load zlsun/solarized-man
+  zgen load zsh-users/zsh-syntax-highlighting
 
-  # Config
+  # Prezto's plugins.
+  zgen prezto
+  zgen prezto 'git' # TODO(shihanng): Have a look at git-extra.
+  zgen prezto 'editor'
+  zgen prezto 'prompt' # This should be the last.
+
+  # Prezto's config.
+  zgen prezto '*:*' case-sensitive 'yes'
+  zgen prezto '*:*' color 'yes'
+  zgen prezto 'editor' key-bindings 'vi'
+  zgen prezto 'editor' dot-expansion 'yes'
+  zgen prezto 'editor:info:completing' format '...'
   zgen prezto 'prompt' theme 'sorin'
 
   # Generate the init script from plugins above
   zgen save
 fi
 
-# (git git-extra colored-man brew zsh-syntax-highlighting go golang docker vagrant vi-mode tmux tmuxinator gitfast)
--
+# These was in omz.
+# (brew go golang docker vagrant tmux tmuxinator gitfast)
+
 # Source my settings.
 source ~/bin/dotfiles/zsh/env
 source ~/bin/dotfiles/zsh/alias
@@ -49,10 +60,9 @@ if which peco &> /dev/null; then
   bindkey '^R' peco_select_history
 fi
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+# See zsh-users/zsh-syntax-highlighting.
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
-# direnv
+# For direnv.
 eval "$(direnv hook zsh)"
-
 alias tmux='direnv exec / tmux'
-

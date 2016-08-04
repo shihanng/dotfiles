@@ -14,7 +14,6 @@ if ! zgen saved; then
   zgen prezto 'prompt' # This should be the last.
 
   # Prezto's config.
-  zgen prezto '*:*' case-sensitive 'yes'
   zgen prezto '*:*' color 'yes'
   zgen prezto 'editor' key-bindings 'vi'
   zgen prezto 'editor' dot-expansion 'yes'

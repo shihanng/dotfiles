@@ -1,14 +1,34 @@
+SELF="${(%):-%N}"
+BASEDIR=$(dirname ${SELF:A})
+
+source "${BASEDIR}"/"path.zsh"
+
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
 # if the init scipt doesn't exist
 if ! zgen saved; then
-
+  zgen load chrissicool/zsh-256color
+  zgen load willghatch/zsh-cdr
+  zgen load unixorn/autoupdate-zgen
+  zgen load djui/alias-tips
   zgen load zlsun/solarized-man
   zgen load zsh-users/zsh-syntax-highlighting
+  zgen load unixorn/tumult.plugin.zsh
+  zgen load peterhurford/git-it-on.zsh
+  zgen load supercrabtree/k
+  zgen load RobSis/zsh-completion-generator
+  zgen load joel-porquet/zsh-dircolors-solarized
+  zgen load felixr/docker-zsh-completion
+  zgen load mollifier/anyframe
 
   # Prezto's plugins.
   zgen prezto
+  zgen prezto 'gnu-utility'
+  zgen prezto 'utility'
+  zgen prezto 'history'
+  zgen prezto 'completion'
+  zgen prezto 'spectrum'
   zgen prezto 'git' # TODO(shihanng): Have a look at git-extra.
   zgen prezto 'editor'
   zgen prezto 'prompt' # This should be the last.
@@ -24,44 +44,19 @@ if ! zgen saved; then
   zgen save
 fi
 
-# These was in omz.
-# (brew go golang docker vagrant tmux tmuxinator gitfast)
-
-# Source my settings.
-source ~/bin/dotfiles/zsh/env
-source ~/bin/dotfiles/zsh/alias
-
-# Source proxy.
-if [ -f ~/bin/dotfiles/zsh/proxy ];
-then
-    source ~/bin/dotfiles/zsh/proxy
-fi
-
-# Search shell history with peco: https://github.com/peco/peco
-# Adapted from: https://github.com/mooz/percol#zsh-history-search
-if which peco &> /dev/null; then
-  function peco_select_history() {
-    local tac
-    if which gtac &> /dev/null; then
-        tac="gtac"
-    elif which tac &> /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(fc -l -n 1 | eval $tac | \
-                peco --layout=bottom-up --query "$LBUFFER")
-    CURSOR=$#BUFFER # move cursor
-    zle -R -c       # refresh
-  }
-
-  zle -N peco_select_history
-  bindkey '^R' peco_select_history
-fi
-
 # See zsh-users/zsh-syntax-highlighting.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
 # For direnv.
 eval "$(direnv hook zsh)"
 alias tmux='direnv exec / tmux'
+
+for f in "env.zsh" \
+  "alias.zsh" \
+  "peco.zsh" \
+  "proxy.zsh"
+do
+  if [ -r "${BASEDIR}"/${f} ]; then
+    source "${BASEDIR}"/${f}
+  fi
+done

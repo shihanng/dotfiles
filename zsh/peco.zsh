@@ -1,6 +1,6 @@
 zstyle ":anyframe:selector:" use peco
 zstyle ":anyframe:selector:peco:" command 'peco --layout=bottom-up'
-bindkey '^r' anyframe-widget-execute-history
+bindkey '^r' anyframe-widget-put-history
 bindkey '^o' anyframe-widget-cdr
 bindkey '^b' anyframe-widget-checkout-git-branch
 

@@ -3,6 +3,8 @@ BASEDIR=$(dirname ${SELF:A})
 
 source "${BASEDIR}"/"path.zsh"
 
+alias dircolors='/usr/local/bin/gdircolors' # TODO(shihanng): Fix this.
+
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 

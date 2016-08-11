@@ -3,7 +3,12 @@ BASEDIR=$(dirname ${SELF:A})
 
 source "${BASEDIR}"/"path.zsh"
 
-alias dircolors='/usr/local/bin/gdircolors' # TODO(shihanng): Fix this.
+if (( $+commands[gdircolors] )); then
+  function dircolors {
+    local gdc="$(which gdircolors)"
+    "${gdc}" "$@"
+  }
+fi
 
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"

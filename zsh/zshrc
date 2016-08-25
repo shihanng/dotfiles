@@ -46,6 +46,7 @@ if ! zgen saved; then
   zgen prezto 'editor' dot-expansion 'yes'
   zgen prezto 'editor:info:completing' format '...'
   zgen prezto 'prompt' theme 'sorin'
+  zgen prezto 'git:log:oneline' format '%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 
   # Generate the init script from plugins above
   zgen save

@@ -46,6 +46,10 @@ au BufNewFile,BufRead *.py
     \ expandtab
     \ softtabstop=4
 
+au BufNewFile,BufRead *.md
+    \ set tw=0
+    \ set wrapmargin=0
+
 " Encodings.
 set fileencoding=utf-8 " When file is saved.
 if !has('nvim')

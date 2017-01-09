@@ -2,7 +2,7 @@
 
 all: dotfiles
 
-targets := git zsh peco
+targets := git zsh config
 
 dotfiles:
 	stow $(targets)

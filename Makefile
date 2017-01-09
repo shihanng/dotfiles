@@ -3,7 +3,7 @@
 all: dotfiles
 
 dotfiles:
-	stow git
+	stow git zsh
 
 clean:
-	stow -D git
+	stow -D git zsh

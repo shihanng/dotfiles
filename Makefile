@@ -2,8 +2,10 @@
 
 all: dotfiles
 
+targets := git zsh peco
+
 dotfiles:
-	stow git zsh
+	stow $(targets)
 
 clean:
-	stow -D git zsh
+	stow -D $(targets)

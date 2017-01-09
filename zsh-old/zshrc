@@ -27,7 +27,6 @@ if ! zgen saved; then
   zgen load RobSis/zsh-completion-generator
   zgen load joel-porquet/zsh-dircolors-solarized
   zgen load felixr/docker-zsh-completion
-  zgen load mollifier/anyframe
 
   # Prezto's plugins.
   zgen prezto

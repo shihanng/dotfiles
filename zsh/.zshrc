@@ -12,6 +12,7 @@ must_source "${HOME}/.zgen/zgen.zsh"
 # if the init scipt doesn't exist
 if ! zgen saved; then
   zgen load git/contrib/completion/git-completion.zsh
+  zgen load mollifier/anyframe
 
   # Generate the init script from plugins above
   zgen save
@@ -43,3 +44,28 @@ do
     export MANPATH=${manpath_candidate}:${MANPATH}
   fi
 done
+
+zstyle ":anyframe:selector:" use peco
+zstyle ":anyframe:selector:peco:" command 'peco --layout=bottom-up'
+bindkey '^r' anyframe-widget-put-history
+bindkey '^o' anyframe-widget-cdr
+bindkey '^b' anyframe-widget-checkout-git-branch
+
+if which peco &> /dev/null; then
+  function peco-snippets() {
+    local tac
+    if which gtac &> /dev/null; then
+        tac="gtac"
+    elif which tac &> /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(grep -v "^#" $HOME/.snippets | eval $tac | \
+                peco --layout=bottom-up --query "$LBUFFER")
+    CURSOR=$#BUFFER # move cursor
+    zle -R -c       # refresh
+  }
+  zle -N peco-snippets
+  bindkey '^s' peco-snippets
+fi

@@ -5,3 +5,4 @@
 2. git
 3. stow
 4. xclip
+5. peco in bin

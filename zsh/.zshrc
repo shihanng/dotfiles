@@ -12,7 +12,9 @@ must_source "${HOME}/.zgen/zgen.zsh"
 # if the init scipt doesn't exist
 if ! zgen saved; then
   zgen load mollifier/anyframe
-  zgen load tevren/gitfast-zsh-plugin
+
+  zgen oh-my-zsh
+  zgen oh-my-zsh plugins/gitfast
 
   # Generate the init script from plugins above
   zgen save

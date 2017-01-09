@@ -3,7 +3,7 @@
 
 [core]
     editor = nvim
-    excludesfile = ~/bin/dotfiles/gitignore_global
+    excludesfile = ~/.gitignore_global
 
 [push]
     default = simple

@@ -22,3 +22,5 @@
     done
     ```
 *  C-I: install plugins, C-U: update.
+
+Install pyenv

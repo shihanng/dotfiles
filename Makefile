@@ -2,7 +2,7 @@
 
 all: dotfiles
 
-targets := git zsh config
+targets := git zsh config nvim
 
 dotfiles:
 	stow $(targets)

@@ -24,3 +24,28 @@
 *  C-I: install plugins, C-U: update.
 
 Install pyenv
+
+FOR NEOVIM
+pyenv install 2.7.11
+pyenv install 3.4.4
+
+pyenv virtualenv 2.7.11 neovim2
+pyenv virtualenv 3.4.4 neovim3
+
+pyenv activate neovim2
+pip install neovim
+pyenv which python  # Note the path
+
+pyenv activate neovim3
+pip install neovim
+pyenv which python  # Note the path
+
+# The following is optional, and the neovim3 env is still active
+# This allows flake8 to be available to linter plugins regardless
+# of what env is currently active.  Repeat this pattern for other
+# packages that provide cli programs that are used in Neovim.
+pip install flake8
+ln -s `pyenv which flake8` ~/bin/flake8  # Assumes that $HOME/bin is in $PATH
+
+let g:python_host_prog = '/full/path/to/neovim2/bin/python'
+let g:python3_host_prog = '/full/path/to/neovim3/bin/python'

@@ -10,7 +10,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
 " Themes.
-Plug 'altercation/vim-colors-solarized'
+Plug 'mhartington/oceanic-next'
 
 " Version control.
 Plug 'tpope/vim-fugitive'

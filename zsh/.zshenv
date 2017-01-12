@@ -1,4 +1,5 @@
 export GOPATH=$HOME/go
+export TERM="xterm-256color"
 
 for path_candidate in \
   $HOME/bin \

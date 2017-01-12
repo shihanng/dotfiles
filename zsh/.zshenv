@@ -1,3 +1,5 @@
+export GOPATH=$HOME/go
+
 for path_candidate in \
   $HOME/bin \
   $GOPATH/bin \

@@ -90,18 +90,9 @@ set spelllang=en
 
 " SWAP FILES
 " ==========
-set undodir=~/.vim/.undo//
-set backupdir=~/.vim/.backup//
-set directory=~/.vim/.swp//
-
-" MOUSE
-" =====
-set mouse=a
-" SWAP FILES
-" ==========
-set undodir=~/.vim/.undo//
-set backupdir=~/.vim/.backup//
-set directory=~/.vim/.swp//
+set undodir=~/.local/share/nvim/undo//
+set backupdir=~/.local/share/nvim/backup//
+set directory=~/.local/share/nvim/swap//
 
 " MOUSE
 " =====

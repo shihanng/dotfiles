@@ -2,7 +2,6 @@
     path = ~/.gitconfig.local
 
 [core]
-    editor = $EDITOR
     excludesfile = ~/.gitignore_global
 
 [push]

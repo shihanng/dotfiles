@@ -54,10 +54,6 @@ fi
 # See zsh-users/zsh-syntax-highlighting.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
-# For direnv.
-eval "$(direnv hook zsh)"
-alias tmux='direnv exec / tmux'
-
 for f in "env.zsh" \
   "alias.zsh" \
   "peco.zsh" \
@@ -67,5 +63,3 @@ do
     source "${BASEDIR}"/${f}
   fi
 done
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

@@ -58,3 +58,8 @@ export PATH
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+eval "$(direnv hook zsh)"
+alias tmux='direnv exec / tmux'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

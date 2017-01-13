@@ -51,6 +51,7 @@ gotest () {
 }
 
 path=(/usr/local/git/bin $path)
+path=(/usr/local/go/bin $path)
 path=($GOPATH/bin $path)
 path=($HOME/bin $path)
 path=($HOME/.pyenv/bin $path)

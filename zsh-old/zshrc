@@ -53,13 +53,3 @@ fi
 
 # See zsh-users/zsh-syntax-highlighting.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
-
-for f in "env.zsh" \
-  "alias.zsh" \
-  "peco.zsh" \
-  "proxy.zsh"
-do
-  if [ -r "${BASEDIR}"/${f} ]; then
-    source "${BASEDIR}"/${f}
-  fi
-done

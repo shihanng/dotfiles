@@ -49,3 +49,7 @@ ln -s `pyenv which flake8` ~/bin/flake8  # Assumes that $HOME/bin is in $PATH
 
 let g:python_host_prog = '/full/path/to/neovim2/bin/python'
 let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
+
+For setting gnome-terminal color theme
+https://github.com/Mayccoll/Gogh
+http://askubuntu.com/questions/631481/gnome-terminal-profiles-are-not-being-loaded

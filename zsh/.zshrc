@@ -74,7 +74,9 @@ alias tmux='direnv exec / tmux'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Spaceship
+SPACESHIP_PROMPT_SYMBOL=""
 SPACESHIP_PYENV_SHOW=false
-SPACESHIP_PYENV_SYMBOL=""
+SPACESHIP_PREFIX_VENV="  :"
+SPACESHIP_PREFIX_GIT="  :"
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false

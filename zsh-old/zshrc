@@ -35,7 +35,6 @@ if ! zgen saved; then
 
   # Prezto's config.
   zgen prezto '*:*' color 'yes'
-  zgen prezto 'editor' key-bindings 'vi'
   zgen prezto 'editor' dot-expansion 'yes'
   zgen prezto 'editor:info:completing' format '...'
   zgen prezto 'prompt' theme 'sorin'

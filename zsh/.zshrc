@@ -20,6 +20,7 @@ if ! zgen saved; then
 
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/gitfast
+  zgen oh-my-zsh plugins/vi-mode
 
   zgen load denysdovhan/spaceship-zsh-theme spaceship
 
@@ -74,9 +75,13 @@ alias tmux='direnv exec / tmux'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Spaceship
+export RPS1="%{$reset_color%}"
+SPACESHIP_PROMPT_TRUNC=1
 SPACESHIP_PROMPT_SYMBOL=""
 SPACESHIP_PYENV_SHOW=false
 SPACESHIP_PREFIX_VENV="  :"
 SPACESHIP_PREFIX_GIT="  :"
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_VI_MODE_INSERT=" "
+SPACESHIP_VI_MODE_NORMAL=" "

@@ -11,6 +11,7 @@ Plug 'tpope/vim-surround'
 
 " Themes.
 Plug 'mhartington/oceanic-next'
+Plug 'ryanoasis/vim-devicons'
 
 " Version control.
 Plug 'tpope/vim-fugitive'

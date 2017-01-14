@@ -1,11 +1,11 @@
 ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
 
 function must_source() {
-	if [ -f $1 ]; then
-	    source $1
-	else
-	    (>&2 echo "must_source: ${1} not found")
-	fi
+  if [ -f $1 ]; then
+      source $1
+  else
+      (>&2 echo "must_source: ${1} not found")
+  fi
 }
 
 # load zgen
@@ -15,13 +15,23 @@ must_source "${HOME}/.zgen/zgen.zsh"
 if ! zgen saved; then
   echo "Creating a zgen save"
 
+  zgen load unixorn/autoupdate-zgen
+
+  zgen load supercrabtree/k
+
   zgen load willghatch/zsh-cdr
   zgen load mollifier/anyframe
+
+  zgen load zsh-users/zsh-completions
+  zgen load felixr/docker-zsh-completion
 
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/gitfast
   zgen oh-my-zsh plugins/vi-mode
+  zgen oh-my-zsh plugins/colored-man-pages
 
+  zgen load chrissicool/zsh-256color
+  zgen load zsh-users/zsh-syntax-highlighting
   zgen load denysdovhan/spaceship-zsh-theme spaceship
 
   # Generate the init script from plugins above
@@ -85,3 +95,6 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_VI_MODE_INSERT=" "
 SPACESHIP_VI_MODE_NORMAL=" "
+
+# See zsh-users/zsh-syntax-highlighting.
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)

@@ -11,6 +11,7 @@ must_source "${HOME}/.zgen/zgen.zsh"
 
 # if the init scipt doesn't exist
 if ! zgen saved; then
+  zgen load willghatch/zsh-cdr
   zgen load mollifier/anyframe
 
   zgen oh-my-zsh
@@ -20,6 +21,7 @@ if ! zgen saved; then
   zgen save
 fi
 
+# willghatch/zsh-cdr and mollifier/anyframe
 zstyle ":anyframe:selector:" use peco
 zstyle ":anyframe:selector:peco:" command 'peco --layout=bottom-up'
 bindkey '^r' anyframe-widget-put-history

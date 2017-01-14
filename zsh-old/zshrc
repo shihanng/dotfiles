@@ -11,7 +11,6 @@ source "${HOME}/.zgen/zgen.zsh"
 # if the init scipt doesn't exist
 if ! zgen saved; then
   zgen load chrissicool/zsh-256color
-  zgen load willghatch/zsh-cdr
   zgen load unixorn/autoupdate-zgen
   zgen load djui/alias-tips
   zgen load zlsun/solarized-man

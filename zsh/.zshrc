@@ -21,6 +21,8 @@ if ! zgen saved; then
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/gitfast
 
+  zgen load denysdovhan/spaceship-zsh-theme spaceship
+
   # Generate the init script from plugins above
   zgen save
 fi
@@ -70,3 +72,9 @@ eval "$(direnv hook zsh)"
 alias tmux='direnv exec / tmux'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Spaceship
+SPACESHIP_PYENV_SHOW=false
+SPACESHIP_PYENV_SYMBOL=""
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=false

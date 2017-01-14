@@ -1,3 +1,5 @@
+ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
+
 function must_source() {
 	if [ -f $1 ]; then
 	    source $1
@@ -11,6 +13,8 @@ must_source "${HOME}/.zgen/zgen.zsh"
 
 # if the init scipt doesn't exist
 if ! zgen saved; then
+  echo "Creating a zgen save"
+
   zgen load willghatch/zsh-cdr
   zgen load mollifier/anyframe
 

@@ -10,7 +10,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
 " Themes.
-Plug 'mhartington/oceanic-next'
+Plug 'fatih/molokai'
 Plug 'ryanoasis/vim-devicons'
 
 " Version control.

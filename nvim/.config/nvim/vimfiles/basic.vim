@@ -48,7 +48,7 @@ au BufNewFile,BufRead *.py
 
 au BufNewFile,BufRead *.md
     \ set tw=0
-    \ set wrapmargin=0
+    \ wrapmargin=0
 
 " Encodings.
 set fileencoding=utf-8 " When file is saved.

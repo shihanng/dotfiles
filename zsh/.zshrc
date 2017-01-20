@@ -78,6 +78,7 @@ export PATH
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+eval "$(rbenv init -)"
 
 eval "$(direnv hook zsh)"
 alias tmux='direnv exec / tmux'

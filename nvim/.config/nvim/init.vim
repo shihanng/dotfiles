@@ -27,7 +27,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'majutsushi/tagbar'
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-dispatch' " Used by vim-go.
 Plug 'AndrewRadev/splitjoin.vim' " Used by vim-go.
 Plug 'Shougo/neosnippet'

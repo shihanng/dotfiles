@@ -74,6 +74,7 @@ path=(/usr/local/go/bin $path)
 path=($GOPATH/bin $path)
 path=($HOME/bin $path)
 path=($HOME/.pyenv/bin $path)
+path=($HOME/.rbenv/bin $path)
 export PATH
 
 eval "$(pyenv init -)"

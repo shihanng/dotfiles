@@ -59,6 +59,9 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim' " Autoindent
 Plug 'nvie/vim-flake8'
 
+" Ruby.
+Plug 'fishbullet/deoplete-ruby'
+
 " Markdown.
 Plug 'JamshedVesuna/vim-markdown-preview'
 

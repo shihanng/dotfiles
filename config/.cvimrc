@@ -1,0 +1,15 @@
+unmap d
+unmap u
+map <C-d> scrollPageDown
+map <C-u> scrollPageUp
+map <C-o> goBack
+map <C-i> goForward
+" this will enable the config block below on the domain 'github.com'
+site '*://*.github.com/*' {
+    unmap y
+}
+let blacklists = ["http://www.inoreader.com/*","https://digg.com/*"]
+
+let homedirectory = '/Users/shihanng'
+let configpath = '~/.cvimrc'
+set localconfig

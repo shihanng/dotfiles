@@ -10,6 +10,7 @@ function must_source() {
 
 # load zgen
 must_source "${HOME}/.zgen/zgen.zsh"
+must_source "${HOME}/.zshrc.local"
 
 # if the init scipt doesn't exist
 if ! zgen saved; then
@@ -70,7 +71,7 @@ gotest () {
 }
 
 path=(/usr/local/git/bin $path)
-path=(/usr/local/go/bin $path)
+path=($GOROOT/bin $path)
 path=($GOPATH/bin $path)
 path=($HOME/bin $path)
 path=($HOME/.pyenv/bin $path)

@@ -1,0 +1,35 @@
+khd kwm on
+
+# Focus on window
+alt - h : kwmc window -f west
+alt - l : kwmc window -f east
+alt - j : kwmc window -f south
+alt - k : kwmc window -f north
+alt - p            :   kwmc window -f prev
+alt - n            :   kwmc window -f next
+
+# Move focus window
+alt + shift - h : kwmc window -s west
+alt + shift - j : kwmc window -s south
+alt + shift - k : kwmc window -s north
+alt + shift - l : kwmc window -s east
+
+# Focus to space 1, 2, 3, 4, 5
+alt - 1 : kwmc space -fExperimental 1
+alt - 2 : kwmc space -fExperimental 2
+alt - 3 : kwmc space -fExperimental 3
+alt - 4 : kwmc space -fExperimental 4
+alt - 5 : kwmc space -fExperimental 5
+
+# Move focused window to space 1, 2, 3, 4, 5
+alt + shift - 1 : kwmc window -m space 1
+alt + shift - 2 : kwmc window -m space 2
+alt + shift - 3 : kwmc window -m space 3
+alt + shift - 4 : kwmc window -m space 4
+alt + shift - 5 : kwmc window -m space 5
+
+alt + shift - space : kwmc window -t focused
+
+alt - f : kwmc window -z fullscreen
+
+alt - r : kwmc space -r focused

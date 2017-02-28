@@ -31,5 +31,11 @@ alt + shift - 5 : kwmc window -m space 5
 alt + shift - space : kwmc window -t focused
 
 alt - f : kwmc window -z fullscreen
+alt - p : kwmc window -z fullscreen
 
 alt - r : kwmc space -r focused
+
+# Split-mode
+alt + shift - 0x2A : kwmc display -c vertical
+alt + shift - 0x1B : kwmc display -c horizontal
+alt         - 0x2A : kwmc window -c split-mode toggle

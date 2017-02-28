@@ -35,6 +35,9 @@ alt - p : kwmc window -z fullscreen
 
 alt - r : kwmc space -r focused
 
+alt - e : kwmc space -t bsp
+alt - s : kwmc space -t monocle
+
 # Split-mode
 alt + shift - 0x2A : kwmc display -c vertical
 alt + shift - 0x1B : kwmc display -c horizontal

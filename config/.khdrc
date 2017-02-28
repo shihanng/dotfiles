@@ -33,8 +33,6 @@ alt + shift - space : kwmc window -t focused
 alt - f : kwmc window -z fullscreen
 alt - p : kwmc window -z fullscreen
 
-alt - r : kwmc space -r focused
-
 alt - e : kwmc space -t bsp
 alt - s : kwmc space -t monocle
 
@@ -42,3 +40,17 @@ alt - s : kwmc space -t monocle
 alt + shift - 0x2A : kwmc display -c vertical
 alt + shift - 0x1B : kwmc display -c horizontal
 alt         - 0x2A : kwmc window -c split-mode toggle
+
+khd mode default color 0xFFBDD322
+khd mode resize  color 0xddd75f5f
+
+alt - r              : khd -e "mode activate resize"
+resize + ctrl - 0x21 : khd -e "mode activate default"
+resize - h           : kwmc window -c expand 0.05 west
+resize - j           : kwmc window -c expand 0.05 south
+resize - k           : kwmc window -c expand 0.05 north
+resize - l           : kwmc window -c expand 0.05 east
+resize + shift - h   : kwmc window -c reduce 0.05 west
+resize + shift - j   : kwmc window -c reduce 0.05 south
+resize + shift - k   : kwmc window -c reduce 0.05 north
+resize + shift - l   : kwmc window -c reduce 0.05 east

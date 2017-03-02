@@ -24,7 +24,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-eunuch'
 
 " Coding.
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

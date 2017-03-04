@@ -1,5 +1,3 @@
-khd kwm on
-
 # Focus on window
 alt - h : kwmc window -f west
 alt - l : kwmc window -f east
@@ -41,7 +39,8 @@ alt + shift - 0x2A : kwmc display -c vertical
 alt + shift - 0x1B : kwmc display -c horizontal
 alt         - 0x2A : kwmc window -c split-mode toggle
 
-khd mode default color 0xFFBDD322
+khd kwm on
+khd mode default color 0x00000000
 khd mode resize  color 0xddd75f5f
 
 alt - r              : khd -e "mode activate resize"

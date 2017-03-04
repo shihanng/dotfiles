@@ -13,5 +13,5 @@ kwmc config mouse-follows-focus on
 
 kwmc config border focused on
 kwmc config border focused size 2
-kwmc config border focused color 0xFFBDD322
+kwmc config border focused color 0x00000000
 kwmc config border focused radius 6

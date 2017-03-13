@@ -54,6 +54,7 @@ For setting gnome-terminal color theme
 https://github.com/Mayccoll/Gogh
 http://askubuntu.com/questions/631481/gnome-terminal-profiles-are-not-being-loaded
 
+install pet
 
 # Default
 *  `C-w,+`(`-`) increases (decreases) number of lines horizontally by one.

@@ -18,6 +18,11 @@ alt - 2 : kwmc space -fExperimental 2
 alt - 3 : kwmc space -fExperimental 3
 alt - 4 : kwmc space -fExperimental 4
 alt - 5 : kwmc space -fExperimental 5
+alt - 6 : kwmc space -fExperimental 6
+alt - 7 : kwmc space -fExperimental 7
+alt - 8 : kwmc space -fExperimental 8
+alt - 9 : kwmc space -fExperimental 9
+alt - 0 : kwmc display -f next
 
 # Move focused window to space 1, 2, 3, 4, 5
 alt + shift - 1 : kwmc window -m space 1
@@ -25,6 +30,11 @@ alt + shift - 2 : kwmc window -m space 2
 alt + shift - 3 : kwmc window -m space 3
 alt + shift - 4 : kwmc window -m space 4
 alt + shift - 5 : kwmc window -m space 5
+alt + shift - 6 : kwmc window -m space 6
+alt + shift - 7 : kwmc window -m space 7
+alt + shift - 8 : kwmc window -m space 8
+alt + shift - 9 : kwmc window -m space 9
+alt + shift - 0 : kwmc window -m display next
 
 alt + shift - space : kwmc window -t focused
 

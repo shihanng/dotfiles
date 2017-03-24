@@ -68,6 +68,9 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 " Status.
 Plug 'itchyny/lightline.vim'
 
+" JSON.
+Plug 'elzr/vim-json'
+
 " Add plugins to &runtimepath.
 call plug#end()
 

@@ -1,3 +1,5 @@
+1. ansible-playbook -K -i inventory git.yml
+
 1. apt-get install zsh
 2. chsh -s /bin/zsh
 

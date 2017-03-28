@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Install build-essential and module-assistant
+    apt: name={{item}} state=installed update_cache=yes
+    with_items:
+      - build-essential
+      - module-assistant
+  - name: Configure system for building kernel modules
+    shell: m-a prepare
+  - name: Mount Guest Additions CD
+    mount:
+      name: /media/cdrom
+      src: /dev/sr0
+      opts: ro
+      fstype: iso9660
+      state: mounted
+  - name: Run install script
+    script: /media/cdrom/VBoxLinuxAdditions.run

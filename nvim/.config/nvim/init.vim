@@ -44,6 +44,7 @@ Plug 'wookiehangover/jshint.vim'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'godoctor/godoctor.vim'
+Plug 'jodosha/vim-godebug'
 
 " Others.
 Plug 'tpope/vim-repeat'

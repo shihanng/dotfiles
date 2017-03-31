@@ -100,6 +100,7 @@ SPACESHIP_VI_MODE_INSERT=" "
 SPACESHIP_VI_MODE_NORMAL=" "
 SPACESHIP_RUBY_SYMBOL=""
 SPACESHIP_GOLANG_SYMBOL=""
+SPACESHIP_DOCKER_SHOW=false
 
 # See zsh-users/zsh-syntax-highlighting.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)

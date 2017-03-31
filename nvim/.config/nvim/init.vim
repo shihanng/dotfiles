@@ -62,8 +62,9 @@ Plug 'nvie/vim-flake8'
 " Ruby.
 Plug 'fishbullet/deoplete-ruby'
 
-" Markdown.
+" Markdown / Note.
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'jceb/vim-orgmode'
 
 " Status.
 Plug 'itchyny/lightline.vim'

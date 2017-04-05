@@ -11,10 +11,16 @@
     shell: m-a prepare
   - name: Mount Guest Additions CD
     mount:
-      name: /media/cdrom
+      name: /tmp/vbox
       src: /dev/sr0
-      opts: ro
+      opts: loop
       fstype: iso9660
       state: mounted
   - name: Run install script
-    script: /media/cdrom/VBoxLinuxAdditions.run
+    script: /tmp/vbox/VBoxLinuxAdditions.run
+  - name: Unmount Guest Additions CD
+    mount:
+      name: /tmp/vbox
+      src: /dev/sr0
+      fstype: iso9660
+      state: absent

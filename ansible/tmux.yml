@@ -4,7 +4,6 @@
 
   vars:
     version: 2.3
-    user: shihanng
 
   tasks:
   - name: Install necessary dependency
@@ -37,9 +36,3 @@
     make:
       chdir: /tmp/tmux-{{ version }}
       target: install 
-
-  - name: Install TPM
-    git:
-      repo: https://github.com/tmux-plugins/tpm
-      dest: /home/{{ user }}/.tmux/plugins/tpm
-

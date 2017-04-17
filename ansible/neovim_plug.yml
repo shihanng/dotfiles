@@ -11,9 +11,9 @@
       mode: 0755
     with_items:
       - .local/share/nvim/site/autoload
-      - .vim/.backup
-      - .vim/.swp
-      - .vim/.undo
+      - .local/share/nvim/backup
+      - .local/share/nvim/swp
+      - .local/share/nvim/undo
 
   - name: Install vim-plug
     get_url:

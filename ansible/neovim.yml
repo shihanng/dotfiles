@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Add latest neovim
+    apt_repository:
+      repo: "ppa:neovim-ppa/stable"
+      state: present
+
+  - name: Install neovim
+    apt:
+      name: neovim
+      update_cache: yes

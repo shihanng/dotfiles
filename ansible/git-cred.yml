@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Install Keyring
+    apt:
+      name: libgnome-keyring-dev
+      update_cache: yes
+
+  - name: Compile Gnome Keyring devel
+    make: 
+      chdir: /usr/share/doc/git/contrib/credential/gnome-keyring
+
+  - name: Ask Git to use Keyring
+    git_config:
+      name: credential.helper
+      scope: global
+      value: /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring

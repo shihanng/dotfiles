@@ -1,0 +1,49 @@
+---
+- hosts: localhost
+  become: true
+
+  vars:
+    version: 5.3.1
+    user: shihanng
+
+  tasks:
+  - name: Install necessary dependency
+    apt: name={{item}} state=installed update_cache=yes
+    with_items:
+      - build-essential
+      - libncursesw5-dev
+
+  - name: Download source
+    get_url:
+      url: http://www.zsh.org/pub/zsh-{{ version }}.tar.xz
+      dest: /tmp/zsh.tar.xz
+
+  - name: Unzip
+    unarchive:
+      src: /tmp/zsh.tar.xz
+      dest: /tmp
+
+  - name: Configure
+    command: ./configure --prefix=/usr/local
+    args:
+      chdir: /tmp/zsh-{{ version }}
+
+  - name: Make
+    make:
+      chdir: /tmp/zsh-{{ version }}
+
+  - name: Make install
+    make:
+      chdir: /tmp/zsh-{{ version }}
+      target: install 
+
+  - name: Add zsh to /etc/shells
+    lineinfile:
+      dest: /etc/shells
+      line: '/usr/local/bin/zsh'
+
+  - name: Set zsh as default shell
+    user: name={{ user }} shell=/usr/local/bin/zsh
+
+  - name: Change default shell to zsh
+    command: chsh -s '/usr/local/bin/zsh' {{ user }}

@@ -1,0 +1,4 @@
+- `ansible-playbook -K -i inventory <yml-file>`
+- For setting gnome-terminal color theme
+  - https://github.com/Mayccoll/Gogh
+  - http://askubuntu.com/questions/631481/gnome-terminal-profiles-are-not-being-loaded

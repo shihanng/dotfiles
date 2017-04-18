@@ -1,0 +1,38 @@
+---
+- hosts: localhost
+  become: true
+
+  vars:
+    version: 2.3
+
+  tasks:
+  - name: Install necessary dependency
+    apt: name={{item}} state=installed update_cache=yes
+    with_items:
+      - libevent-dev
+      - libncursesw5-dev
+      - libncurses5-dev
+
+  - name: Download source
+    get_url:
+      url: https://github.com/tmux/tmux/releases/download/{{ version }}/tmux-{{version }}.tar.gz
+      dest: /tmp/tmux.tar.gz
+
+  - name: Unzip
+    unarchive:
+      src: /tmp/tmux.tar.gz
+      dest: /tmp
+
+  - name: Configure
+    command: ./configure --prefix=/usr/local
+    args:
+      chdir: /tmp/tmux-{{ version }}
+
+  - name: Make
+    make:
+      chdir: /tmp/tmux-{{ version }}
+
+  - name: Make install
+    make:
+      chdir: /tmp/tmux-{{ version }}
+      target: install 

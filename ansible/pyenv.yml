@@ -1,0 +1,35 @@
+---
+- hosts: localhost
+  become: yes
+  vars:
+    user: shihanng
+
+  tasks:
+  - name: Install dependencies
+    apt: name={{item}} state=installed update_cache=yes
+    with_items:
+      - build-essential
+      - module-assistant
+      - make
+      - libssl-dev
+      - zlib1g-dev
+      - libbz2-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - wget
+      - curl
+      - llvm
+      - libncurses5-dev
+      - libncursesw5-dev
+      - xz-utils
+      - tk-dev
+
+  - name: Install pyenv
+    become: no
+    shell: wget -O - https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+
+  - name: Install rbenv
+    become: no
+    git:
+      repo: https://github.com/rbenv/rbenv.git
+      dest: /home/{{ user }}/.rbenv

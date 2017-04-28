@@ -89,6 +89,15 @@ nmap <silent> <leader>s :set spell!<CR>
 " Set region to British English
 set spelllang=en
 
+" Use persistent undo: Undo will be available when file is reopen.
+if has('persistent_undo')
+    " Save a lot of back-history...
+    set undolevels=5000
+
+    " Actually switch on persistent undo
+    set undofile
+endif
+
 " SWAP FILES
 " ==========
 set undodir=~/.local/share/nvim/undo//

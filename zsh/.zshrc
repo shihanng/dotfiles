@@ -1,4 +1,7 @@
-ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
+# Source zim
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+fi
 
 function must_source() {
   if [ -f $1 ]; then
@@ -8,36 +11,7 @@ function must_source() {
   fi
 }
 
-# load zgen
-must_source "${HOME}/.zgen/zgen.zsh"
 must_source "${HOME}/.zshrc.local"
-
-# if the init scipt doesn't exist
-if ! zgen saved; then
-  echo "Creating a zgen save"
-
-  zgen load unixorn/autoupdate-zgen
-
-  zgen load supercrabtree/k
-
-  zgen load willghatch/zsh-cdr
-  zgen load mollifier/anyframe
-
-  zgen load zsh-users/zsh-completions
-  zgen load felixr/docker-zsh-completion
-
-  zgen oh-my-zsh
-  zgen oh-my-zsh plugins/gitfast
-  zgen oh-my-zsh plugins/vi-mode
-  zgen oh-my-zsh plugins/colored-man-pages
-
-  zgen load chrissicool/zsh-256color
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load denysdovhan/spaceship-zsh-theme spaceship
-
-  # Generate the init script from plugins above
-  zgen save
-fi
 
 # willghatch/zsh-cdr and mollifier/anyframe
 zstyle ":anyframe:selector:" use peco

@@ -61,9 +61,6 @@ alias tmux='direnv exec / tmux'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# See zsh-users/zsh-syntax-highlighting.
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
-
 # For pet.
 function prev() {
   PREV=$(fc -lrn | head -n 1)

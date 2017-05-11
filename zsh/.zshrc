@@ -45,11 +45,6 @@ if which peco &> /dev/null; then
   bindkey '^s' peco-snippets
 fi
 
-# Custom go test
-gotest () {
-    go test "${@}" | sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/''
-}
-
 path=(/usr/local/git/bin $path)
 path=($GOROOT/bin $path)
 path=($GOPATH/bin $path)

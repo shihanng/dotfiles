@@ -26,17 +26,7 @@ bindkey '^r' anyframe-widget-put-history
 bindkey '^o' anyframe-widget-cdr
 bindkey '^b' anyframe-widget-checkout-git-branch
 
-path=(/usr/local/git/bin $path)
-path=($GOROOT/bin $path)
-path=($GOPATH/bin $path)
-path=($HOME/bin $path)
-path=($HOME/.pyenv/bin $path)
-path=($HOME/.rbenv/bin $path)
-export PATH
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(rbenv init -)"
+source $(pyenv root)/completions/pyenv.zsh
 
 eval "$(direnv hook zsh)"
 alias tmux='direnv exec / tmux'

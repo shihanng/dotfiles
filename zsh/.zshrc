@@ -13,7 +13,13 @@ function must_source() {
 
 must_source "${HOME}/.zshrc.local"
 
-# willghatch/zsh-cdr and mollifier/anyframe
+# mollifier/anyframe
+fpath=($HOME/src/anyframe(N-/) $fpath)
+autoload -Uz anyframe-init
+anyframe-init
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
 zstyle ":anyframe:selector:" use peco
 zstyle ":anyframe:selector:peco:" command 'peco --layout=bottom-up'
 bindkey '^r' anyframe-widget-put-history

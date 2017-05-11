@@ -54,3 +54,16 @@ function pet-select() {
 }
 zle -N pet-select
 bindkey '^s' pet-select
+
+# Simple vi-mode.
+zle -N zle-keymap-select
+zle -N edit-command-line
+
+bindkey -v
+
+# 'v' to edit the command line
+autoload -Uz edit-command-line
+bindkey -M vicmd 'v' edit-command-line
+bindkey '^P' up-history
+bindkey '^N' down-history
+export KEYTIMEOUT=1

@@ -43,6 +43,7 @@ function pet-select() {
   zle redisplay
 }
 zle -N pet-select
+stty -ixon
 bindkey '^s' pet-select
 
 # Simple vi-mode.

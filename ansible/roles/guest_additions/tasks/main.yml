@@ -1,7 +1,4 @@
 ---
-- hosts: localhost
-  become: true
-  tasks:
   - name: Install build-essential and module-assistant
     apt: name={{item}} state=installed update_cache=yes
     with_items:

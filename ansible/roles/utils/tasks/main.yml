@@ -1,9 +1,10 @@
 ---
-- hosts: localhost
-  vars:
-    user: shihanng
+  - name: Install necessary tools from Ubuntu
+    apt: name={{item}} state=installed update_cache=yes
+    with_items:
+      - stow
+      - xclip
 
-  tasks:
   - name: Make user bin directory
     file:
       path: /home/{{ user }}/bin
@@ -58,17 +59,18 @@
       dest: /home/{{ user }}/bin/peco
       mode: "a+x"
 
+  - name: Install zim
+    git:
+      repo: https://github.com/Eriner/zim.git
+      recursive: yes
+      dest: /home/{{ user }}/.zim
+
+  - name: Install anyframe
+    git:
+      repo: https://github.com/mollifier/anyframe
+      dest: /home/{{ user }}/bin/anyframe
+
   - name: Install dotfiles
     make:
       chdir: /home/{{ user }}/dotfiles
       target: all
-
-  - name: Install zgen
-    git:
-      repo: https://github.com/tarjoilija/zgen.git
-      dest: /home/{{ user }}/.zgen
-
-  - name: Install spaceship themes
-    shell: wget -O - https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/install.sh | zsh
-    args:
-      chdir: /home/{{ user }}/

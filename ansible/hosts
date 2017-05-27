@@ -1,0 +1,5 @@
+[ubuntu-mate-17.04]
+localhost
+
+[ubuntu-mate-17.04:vars]
+ansible_connection=local

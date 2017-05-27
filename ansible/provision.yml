@@ -1,0 +1,9 @@
+---
+- hosts: ubuntu-mate-17.04
+  become: true
+  roles:
+    - shell
+    - tmux
+    - git
+    - coding
+    - utils

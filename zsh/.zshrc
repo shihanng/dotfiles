@@ -14,7 +14,7 @@ function must_source() {
 must_source "${HOME}/.zshrc.local"
 
 # mollifier/anyframe
-fpath=($HOME/src/anyframe(N-/) $fpath)
+fpath=($HOME/bin/anyframe(N-/) $fpath)
 autoload -Uz anyframe-init
 anyframe-init
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook

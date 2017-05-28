@@ -34,3 +34,4 @@
     git:
       repo: https://github.com/tmux-plugins/tpm
       dest: /home/{{ user }}/.tmux/plugins/tpm
+    become_user: "{{ user }}"

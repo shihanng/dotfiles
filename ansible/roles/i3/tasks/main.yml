@@ -25,6 +25,9 @@
       - dconf-editor
       - rofi
       - i3blocks
+      - xcompmgr
+      - compton
+      - feh
 
   - name: Download source
     get_url:

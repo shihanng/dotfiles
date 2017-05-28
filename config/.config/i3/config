@@ -134,7 +134,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit && gnome-session-quit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -181,7 +181,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 bar {
     font pango: System San Francisco Display, FontAwesome 11
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    position bottom
+    position top
         colors {
             background $bg-color
                 separator #757575
@@ -200,14 +200,16 @@ bindsym $mod+Shift+F11 exec --no-startup-id pulseaudio-ctl down
 bindsym $mod+Shift+F12 exec --no-startup-id pulseaudio-ctl up
 bindsym $mod+Shift+F10 exec --no-startup-id pulseaudio-ctl mute
 
+exec compton -f
+exec xcompmgr -c -f -n
 exec_always $HOME/bin/dotfiles/setscreen.sh
 exec vmplayer
-exec compton -f
 exec caffeine-indicator
-exec_always feh --bg-fill ~/Pictures/h_wallpaper.jpg --bg-fill ~/Pictures/v_wallpaper.jpg
+exec_always feh --bg-fill ~/Pictures/wallpaper.jpg --bg-fill ~/Pictures/v_wallpaper.jpg
 
 exec sleep 1; xset s off -dpms
 exec dropbox start
 exec /opt/Enpass/bin/runenpass.sh
 
+for_window [class="^.*"] border pixel 0
 gaps inner 15

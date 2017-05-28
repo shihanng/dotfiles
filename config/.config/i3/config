@@ -180,7 +180,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # finds out, if available)
 bar {
     font pango: System San Francisco Display, FontAwesome 11
-    status_command i3blocks -c ~/bin/dotfiles/i3/i3blocks.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
     position bottom
         colors {
             background $bg-color
@@ -209,3 +209,5 @@ exec_always feh --bg-fill ~/Pictures/h_wallpaper.jpg --bg-fill ~/Pictures/v_wall
 exec sleep 1; xset s off -dpms
 exec dropbox start
 exec /opt/Enpass/bin/runenpass.sh
+
+gaps inner 15

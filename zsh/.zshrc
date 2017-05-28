@@ -3,16 +3,6 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
 
-function must_source() {
-  if [ -f $1 ]; then
-      source $1
-  else
-      (>&2 echo "must_source: ${1} not found")
-  fi
-}
-
-must_source "${HOME}/.zshrc.local"
-
 # mollifier/anyframe
 fpath=($HOME/bin/anyframe(N-/) $fpath)
 autoload -Uz anyframe-init

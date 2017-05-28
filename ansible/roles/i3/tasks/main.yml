@@ -64,15 +64,3 @@
     make:
       chdir: /tmp/i3-{{ i3_version }}/build
       target: install 
-
-  - name: Replace macro with i3
-    command: gsettings set org.mate.session.required-components windowmanager 'i3'
-    become_user: "{{ user }}"
-
-  - name: Remove filemanager
-    command: gsettings set org.mate.session.required-components filemanager ''
-    become_user: "{{ user }}"
-
-  - name: Remove panel
-    command: gsettings set org.mate.session.required-components panel ''
-    become_user: "{{ user }}"

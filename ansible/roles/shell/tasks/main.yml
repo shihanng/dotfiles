@@ -1,12 +1,4 @@
 ---
-- hosts: localhost
-  become: true
-
-  vars:
-    version: 5.3.1
-    user: shihanng
-
-  tasks:
   - name: Install necessary dependency
     apt: name={{item}} state=installed update_cache=yes
     with_items:
@@ -15,7 +7,7 @@
 
   - name: Download source
     get_url:
-      url: http://www.zsh.org/pub/zsh-{{ version }}.tar.xz
+      url: http://www.zsh.org/pub/zsh-{{ zsh_version }}.tar.xz
       dest: /tmp/zsh.tar.xz
 
   - name: Unzip
@@ -26,15 +18,15 @@
   - name: Configure
     command: ./configure --prefix=/usr/local
     args:
-      chdir: /tmp/zsh-{{ version }}
+      chdir: /tmp/zsh-{{ zsh_version }}
 
   - name: Make
     make:
-      chdir: /tmp/zsh-{{ version }}
+      chdir: /tmp/zsh-{{ zsh_version }}
 
   - name: Make install
     make:
-      chdir: /tmp/zsh-{{ version }}
+      chdir: /tmp/zsh-{{ zsh_version }}
       target: install 
 
   - name: Add zsh to /etc/shells

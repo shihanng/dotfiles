@@ -1,20 +1,25 @@
 ---
-- hosts: localhost
-  vars:
-    user: shihanng
+  - name: Install necessary tools from Ubuntu
+    apt: name={{item}} state=installed update_cache=yes
+    with_items:
+      - stow
+      - xclip
 
-  tasks:
   - name: Make user bin directory
     file:
       path: /home/{{ user }}/bin
       state: directory
       mode: 0755
+      owner: "{{ user }}"
+      group: "{{ user }}"
 
   - name: Download direnv binary
     get_url:
       url: https://github.com/direnv/direnv/releases/download/v2.11.3/direnv.linux-amd64 
       dest: /home/{{ user }}/bin/direnv
       mode: "a+x"
+      owner: "{{ user }}"
+      group: "{{ user }}"
 
   - name: Download pt binary
     get_url:
@@ -31,6 +36,8 @@
       src: /tmp/pt_linux_amd64/pt
       dest: /home/{{ user }}/bin/pt
       mode: "a+x"
+      owner: "{{ user }}"
+      group: "{{ user }}"
 
   - name: Download pet binary
     get_url:
@@ -41,6 +48,8 @@
     unarchive:
       src: /tmp/pet.zip
       dest: /home/{{ user }}/bin
+      owner: "{{ user }}"
+      group: "{{ user }}"
 
   - name: Download peco binary
     get_url:
@@ -57,18 +66,24 @@
       src: /tmp/peco_linux_amd64/peco
       dest: /home/{{ user }}/bin/peco
       mode: "a+x"
+      owner: "{{ user }}"
+      group: "{{ user }}"
+
+  - name: Install zim
+    git:
+      repo: https://github.com/Eriner/zim.git
+      recursive: yes
+      dest: /home/{{ user }}/.zim
+    become_user: "{{ user }}"
+
+  - name: Install anyframe
+    git:
+      repo: https://github.com/mollifier/anyframe
+      dest: /home/{{ user }}/bin/anyframe
+    become_user: "{{ user }}"
 
   - name: Install dotfiles
     make:
       chdir: /home/{{ user }}/dotfiles
       target: all
-
-  - name: Install zgen
-    git:
-      repo: https://github.com/tarjoilija/zgen.git
-      dest: /home/{{ user }}/.zgen
-
-  - name: Install spaceship themes
-    shell: wget -O - https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/install.sh | zsh
-    args:
-      chdir: /home/{{ user }}/
+    become_user: "{{ user }}"

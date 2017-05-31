@@ -1,11 +1,4 @@
 ---
-- hosts: localhost
-  become: true
-
-  vars:
-    version: 2.3
-
-  tasks:
   - name: Install necessary dependency
     apt: name={{item}} state=installed update_cache=yes
     with_items:
@@ -15,7 +8,7 @@
 
   - name: Download source
     get_url:
-      url: https://github.com/tmux/tmux/releases/download/{{ version }}/tmux-{{version }}.tar.gz
+      url: https://github.com/tmux/tmux/releases/download/{{ tmux_version }}/tmux-{{ tmux_version }}.tar.gz
       dest: /tmp/tmux.tar.gz
 
   - name: Unzip
@@ -26,13 +19,19 @@
   - name: Configure
     command: ./configure --prefix=/usr/local
     args:
-      chdir: /tmp/tmux-{{ version }}
+      chdir: /tmp/tmux-{{ tmux_version }}
 
   - name: Make
     make:
-      chdir: /tmp/tmux-{{ version }}
+      chdir: /tmp/tmux-{{ tmux_version }}
 
   - name: Make install
     make:
-      chdir: /tmp/tmux-{{ version }}
+      chdir: /tmp/tmux-{{ tmux_version }}
       target: install 
+
+  - name: Install TPM
+    git:
+      repo: https://github.com/tmux-plugins/tpm
+      dest: /home/{{ user }}/.tmux/plugins/tpm
+    become_user: "{{ user }}"

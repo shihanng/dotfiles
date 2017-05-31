@@ -1,7 +1,4 @@
 ---
-- hosts: localhost
-  become: true
-  tasks:
   - name: Add latest git
     apt_repository:
       repo: "ppa:git-core/ppa"

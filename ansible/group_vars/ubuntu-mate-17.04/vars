@@ -1,0 +1,6 @@
+---
+user: 'shihanng'
+zsh_version: '5.3.1'
+tmux_version: '2.3'
+go_version: '1.8.3'
+i3_version: '4.13'

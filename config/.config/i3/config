@@ -213,3 +213,5 @@ exec /opt/Enpass/bin/runenpass.sh
 
 for_window [class="^.*"] border pixel 0
 gaps inner 15
+
+exec /usr/bin/VBoxClient-all

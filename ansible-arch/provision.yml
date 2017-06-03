@@ -1,0 +1,11 @@
+---
+- hosts: arch
+  become: true
+  roles:
+    - shell
+    - tmux
+    - git
+    - coding
+    - utils
+#    - tilix
+#    - mate

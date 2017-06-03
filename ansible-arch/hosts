@@ -1,0 +1,6 @@
+[arch]
+localhost
+
+[arch:vars]
+ansible_connection=local
+ansible_python_interpreter=/usr/bin/python2

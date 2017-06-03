@@ -1,0 +1,6 @@
+---
+  - name: Install git
+    pacman:
+      name: git
+      state: latest
+      update_cache: yes

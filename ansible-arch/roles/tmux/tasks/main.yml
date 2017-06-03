@@ -1,0 +1,12 @@
+---
+  - name: Install tmux
+    pacman:
+      name: tmux
+      state: latest
+      update_cache: yes
+
+  - name: Install TPM
+    git:
+      repo: https://github.com/tmux-plugins/tpm
+      dest: /home/{{ user }}/.tmux/plugins/tpm
+    become_user: "{{ user }}"

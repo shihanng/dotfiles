@@ -1,0 +1,12 @@
+---
+  - name: Install zsh
+    pacman:
+      name: zsh
+      state: latest
+      update_cache: yes
+
+  - name: Set zsh as default shell
+    user: name={{ user }} shell=/usr/local/bin/zsh
+
+  - name: Change default shell to zsh
+    command: chsh -s '/usr/bin/zsh' {{ user }}

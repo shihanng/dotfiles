@@ -1,0 +1,13 @@
+---
+  - name: Install necessary tools
+    pacman:
+      name: "{{ item }}"
+      state: latest
+      update_cache: yes
+    with_items:
+      - rofi
+      - i3blocks
+      - i3lock
+      - xcompmgr
+      - compton
+      - feh

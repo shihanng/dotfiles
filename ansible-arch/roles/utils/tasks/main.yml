@@ -4,6 +4,7 @@
     with_items:
       - stow
       - xclip
+      - unzip
 
   - name: Make user bin directory
     file:

@@ -15,6 +15,7 @@
       - base-devel
       - openssl
       - zlib
+      - wget
 
   - name: Install pyenv
     become: no

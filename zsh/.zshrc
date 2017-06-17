@@ -54,5 +54,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(rbenv init -)"
 
+export TMPDIR="/tmp"
 alias qq="$(echo "$GOPATH" | cut -d : -f 1)/src/github.com/y0ssar1an/q/q.sh"
 alias rmqq="rm $TMPDIR/q"

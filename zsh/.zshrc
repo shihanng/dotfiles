@@ -53,3 +53,6 @@ export KEYTIMEOUT=1
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(rbenv init -)"
+
+alias qq="$(echo "$GOPATH" | cut -d : -f 1)/src/github.com/y0ssar1an/q/q.sh"
+alias rmqq="rm $TMPDIR/q"

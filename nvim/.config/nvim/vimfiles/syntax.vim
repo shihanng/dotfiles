@@ -18,3 +18,4 @@ autocmd Syntax go,python normal zR
 " Enable folding with the spacebar
 nnoremap <space> za
 let g:SimpylFold_docstring_preview=1 " For Python.
+let g:syntastic_shell = "/bin/sh" " To work with direnv

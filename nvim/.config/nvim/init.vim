@@ -73,6 +73,8 @@ Plug 'itchyny/lightline.vim'
 " JSON.
 Plug 'elzr/vim-json'
 
+Plug 'direnv/direnv.vim'
+
 " Add plugins to &runtimepath.
 call plug#end()
 

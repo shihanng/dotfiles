@@ -9,7 +9,7 @@ set hlsearch
 set incsearch
 set smartcase
 set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
-nmap <silent> <leader>h :nohl<CR>
+nnoremap <silent> <BS> :nohl<CR>
 
 " WINDOWS
 " =======

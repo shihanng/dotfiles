@@ -54,6 +54,7 @@ Plug 'triglav/vim-visual-increment'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'yssl/QFEnter'
+Plug 'triglav/vim-visual-increment'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'

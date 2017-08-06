@@ -207,3 +207,4 @@ exec compton -f -c
 exec dropbox
 exec /opt/Enpass/bin/runenpass.sh
 exec /usr/bin/VBoxClient-all
+exec fcitx

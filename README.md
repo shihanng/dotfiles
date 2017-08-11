@@ -1,4 +1,4 @@
-- `ansible-playbook provision.yml --ask-become-pass`
+- `ansible-playbook -l "arch" provision.yml --ask-become-pass`
 - For setting gnome-terminal color theme
   - https://github.com/Mayccoll/Gogh
   - http://askubuntu.com/questions/631481/gnome-terminal-profiles-are-not-being-loaded

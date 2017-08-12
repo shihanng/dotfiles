@@ -1,6 +1,6 @@
 ---
-  - name: Install git
+  - name: Install neovim
     pacman:
-      name: git
+      name: neovim
       state: latest
       update_cache: yes

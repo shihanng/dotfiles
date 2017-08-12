@@ -1,0 +1,56 @@
+---
+  - include: arch.yml
+    when: ansible_os_family == "Archlinux"
+
+  - include: ubuntu.yml
+    when: ansible_os_family == "Debian"
+
+  - name: Get pyenv version
+    shell: |
+      export PYENV_ROOT=~/.pyenv
+      export PATH="$PYENV_ROOT/bin:$PATH"
+      eval "$(pyenv init -)"
+      pyenv --version | rev | cut -d " " -f1 | rev
+      exit 0
+    args:
+      executable: /bin/bash
+    register: got_pyenv_version
+    changed_when: False
+    ignore_errors: True
+    become_user: "{{ user }}"
+
+  - name: Download pyenv-installer
+    get_url:
+      url: "https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer"
+      dest: /tmp/pyenv-installer
+      mode: "a+x"
+    when: got_pyenv_version.stdout == ""
+    become_user: "{{ user }}"
+
+  - name: Install pyenv
+    shell: 'bash /tmp/pyenv-installer'
+    become_user: "{{ user }}"
+    when: got_pyenv_version.stdout == ""
+
+  - name: Install neovim2 and neovim3
+    shell: |
+      export PYENV_ROOT=~/.pyenv
+      export PATH="$PYENV_ROOT/bin:$PATH"
+      eval "$(pyenv init -)"
+
+      pyenv install {{ python2_version}}
+      pyenv install {{ python3_version}}
+      pyenv virtualenv {{ python2_version }} neovim2
+      pyenv virtualenv {{ python3_version }} neovim3
+
+      pyenv activate neovim2
+      pip install neovim
+      pyenv activate neovim3
+      pip install neovim flake8
+      ln -fs `pyenv which flake8` ~/bin/flake8
+
+      exit 0
+    args:
+      executable: /bin/bash
+    become_user: "{{ user }}"
+    when: got_pyenv_version.stdout == ""

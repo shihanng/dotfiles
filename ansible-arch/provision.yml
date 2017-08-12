@@ -2,9 +2,14 @@
 - hosts: arch
   become: true
   roles:
-    - shell
-    - tmux
-    - git
-    - coding
-    - utils
+    - deps
+    - pyenv
+    - neovim
     - i3
+
+- hosts: ubuntu
+  become: true
+  roles:
+    - deps
+    - pyenv
+    - neovim

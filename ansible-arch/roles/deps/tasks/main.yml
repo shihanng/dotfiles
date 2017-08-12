@@ -1,0 +1,133 @@
+---
+  - name: Install dependencies
+    pacman:
+      name: "{{item}}"
+      state: latest
+      update_cache: yes
+    with_items:
+      - zsh
+      - tmux
+      - git
+      - stow
+      - xclip
+      - unzip
+    when: ansible_os_family == "Archlinux"
+
+  - include: ubuntu.yml
+    when: ansible_os_family == "Debian"
+
+  - name: Install dotfiles
+    make:
+      chdir: ~/dotfiles
+      target: all
+    become_user: "{{ user }}"
+
+  - name: Install TPM
+    git:
+      repo: https://github.com/tmux-plugins/tpm
+      dest: ~/.tmux/plugins/tpm
+    become_user: "{{ user }}"
+
+  - name: Install go
+    unarchive:
+      src: "https://storage.googleapis.com/golang/go{{ go_version }}.linux-amd64.tar.gz"
+      dest: /usr/local
+      remote_src: yes
+
+  - name: Install zim
+    git:
+      repo: https://github.com/Eriner/zim.git
+      recursive: yes
+      dest: ~/.zim
+    become_user: "{{ user }}"
+
+  - name: Create bin directory
+    file:
+      path: ~/bin
+      state: directory
+    become_user: "{{ user }}"
+
+  # The below lives in ~/bin
+  - name: Get direnv version
+    command: ~/bin/direnv version
+    register: got_direnv_version
+    changed_when: False
+    ignore_errors: True
+    become_user: "{{ user }}"
+
+  - name: Install direnv
+    get_url:
+      url: "https://github.com/direnv/direnv/releases/download/v{{ direnv_version }}/direnv.linux-amd64"
+      dest: ~/bin/direnv
+      mode: "a+x"
+      force: yes
+    become_user: "{{ user }}"
+    when: got_direnv_version | failed or got_direnv_version.stdout != direnv_version
+
+  - name: Install anyframe
+    git:
+      repo: https://github.com/mollifier/anyframe
+      dest: ~/bin/anyframe
+    become_user: "{{ user }}"
+
+  - name: Install rbenv
+    git:
+      repo: https://github.com/rbenv/rbenv.git
+      dest: ~/.rbenv
+    become_user: "{{ user }}"
+
+  - name: Get pt version
+    shell: '~/bin/pt --version | rev | cut -d " " -f1 | rev'
+    register: got_pt_version
+    changed_when: False
+    ignore_errors: True
+    become_user: "{{ user }}"
+
+  - name: Install pt
+    unarchive:
+      src: "https://github.com/monochromegane/the_platinum_searcher/releases/download/v{{ pt_version }}/pt_linux_amd64.tar.gz"
+      dest: ~/bin
+      extra_opts: '--strip-components=1'
+      mode: "a+x"
+      remote_src: yes
+      exclude: README.md
+    become_user: "{{ user }}"
+    when: got_pt_version | failed or got_pt_version.stdout != pt_version
+
+  - name: Get pet version
+    shell: '~/bin/pet version | rev | cut -d " " -f1 | rev'
+    register: got_pet_version
+    changed_when: False
+    ignore_errors: True
+    become_user: "{{ user }}"
+
+  - name: Install pet
+    unarchive:
+      src: "https://github.com/knqyf263/pet/releases/download/v{{ pet_version }}/pet_{{ pet_version }}_linux_amd64.zip"
+      dest: ~/bin
+      mode: 0755
+      remote_src: yes
+      exclude:
+        - misc
+    become_user: "{{ user }}"
+    when: got_pet_version | failed or got_pet_version.stdout != pet_version
+
+  - name: Get peco version
+    shell: '~/bin/peco --version | rev | cut -d " " -f1 | rev'
+    register: got_peco_version
+    changed_when: False
+    ignore_errors: True
+    become_user: "{{ user }}"
+
+  - name: Install peco
+    unarchive:
+      src: "https://github.com/peco/peco/releases/download/{{ peco_version }}/peco_linux_amd64.tar.gz"
+      dest: ~/bin
+      extra_opts: '--strip-components=1'
+      mode: 0755
+      remote_src: yes
+      exclude:
+        - README.md
+        - Changes
+    become_user: "{{ user }}"
+    when: got_peco_version | failed or got_peco_version.stdout != peco_version

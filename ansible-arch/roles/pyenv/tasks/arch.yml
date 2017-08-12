@@ -1,0 +1,10 @@
+---
+  - name: Install dependencies
+    pacman:
+      name: "{{item}}"
+      state: latest
+      update_cache: yes
+    with_items:
+      - base-devel
+      - openssl
+      - zlib

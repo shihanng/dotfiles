@@ -1,0 +1,8 @@
+---
+direnv_version: '2.12.2'
+go_version: '1.8.3'
+peco_version: 'v0.5.1'
+pet_version: '0.2.3'
+pt_version: '2.1.5'
+python2_version: '2.7.13'
+python3_version: '3.6.2'

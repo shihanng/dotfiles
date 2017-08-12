@@ -1,6 +1,13 @@
 [arch]
-localhost
+arch-local
 
 [arch:vars]
 ansible_connection=local
 ansible_python_interpreter=/usr/bin/python2
+
+[ubuntu]
+ubuntu-local
+
+[ubuntu:vars]
+ansible_connection=local
+ansible_python_interpreter=/usr/bin/python3

@@ -1,0 +1,14 @@
+---
+  - name: Install dependencies
+    apt:
+      name: "{{item}}"
+      state: installed
+      update_cache: yes
+    with_items:
+      - tmux
+      - git
+      - stow
+      - xclip
+      - unzip
+      - make
+    when: ansible_os_family == "Debian"

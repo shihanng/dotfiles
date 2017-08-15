@@ -14,4 +14,10 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 let g:neosnippet#snippets_directory = [
             \'~/.config/nvim/plugged/neosnippet-snippets',
             \'~/.config/nvim/plugged/vim-snippets',
+            \'~/.config/nvim/snippets',
             \]
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif

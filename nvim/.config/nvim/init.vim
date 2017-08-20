@@ -76,6 +76,8 @@ Plug 'elzr/vim-json'
 
 Plug 'direnv/direnv.vim'
 
+Plug 'hashivim/vim-hashicorp-tools'
+
 " Add plugins to &runtimepath.
 call plug#end()
 

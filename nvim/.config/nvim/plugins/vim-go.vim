@@ -27,7 +27,7 @@ endfunction
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " Syntastic.
-let g:syntastic_go_checkers = ['go']
+let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }
 
 " Go Metalinter.

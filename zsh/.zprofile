@@ -6,6 +6,7 @@ path=($GOPATH/bin $path[@])
 path=($HOME/.rbenv/bin $path[@])
 path=($PYENV_ROOT/bin $path[@])
 path=($HOME/bin $path[@])
+path=($HOME/.cargo/bin $path[@])
 
 platform="$(uname -m)-$(tr '[A-Z]' '[a-z]' <<< `uname -s`)"
 path=($HOME/texbin/2017/bin/$platform $path[@])

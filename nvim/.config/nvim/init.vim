@@ -78,6 +78,7 @@ Plug 'direnv/direnv.vim'
 
 Plug 'hashivim/vim-hashicorp-tools'
 
+Plug 'tpope/vim-obsession'
 " Add plugins to &runtimepath.
 call plug#end()
 

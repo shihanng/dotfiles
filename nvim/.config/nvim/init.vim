@@ -15,6 +15,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " Version control.
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 

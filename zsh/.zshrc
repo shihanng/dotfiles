@@ -62,6 +62,18 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+function insert_files() {
+    vifm -f < /dev/tty > /dev/tty
+
+    while read l; do
+        LBUFFER+="${(qqq)l} "
+    done < ~/.config/vifm/vimfiles
+
+    zle reset-prompt
+}
+zle -N insert_files
+bindkey '^t' insert_files
+
 # For hub
 fpath=(~/.zsh/completions $fpath) 
 autoload -U compinit && compinit

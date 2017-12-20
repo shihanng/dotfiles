@@ -27,7 +27,7 @@ alt - e : chunkc tiling::desktop --layout bsp
 alt - s : chunkc tiling::desktop --layout monocle
 
 # move focused container to workspace
-shift + alt - l : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
+shift + alt - m : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
 shift + alt - p : chunkc tiling::window --send-to-desktop prev
 shift + alt - n : chunkc tiling::window --send-to-desktop next
 shift + alt - 1 : chunkc tiling::window --send-to-desktop 1

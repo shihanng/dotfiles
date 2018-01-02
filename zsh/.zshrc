@@ -66,3 +66,8 @@ export NVM_DIR="$HOME/.nvm"
 fpath=(~/.zsh/completions $fpath) 
 autoload -U compinit && compinit
 eval "$(hub alias -s)"
+
+# For kubectl
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi

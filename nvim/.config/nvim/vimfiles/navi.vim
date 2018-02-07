@@ -11,14 +11,21 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 
 " Close vim if only window left open is NERDTree.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" CTRLP
-" =====
-" See: chriskempson/vim-tomorrow-them://github.com/ctrlpvim/ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPBuffer'
-let g:ctrlp_working_path_mode = 'ra'
+nmap <leader>f :Files<CR>
+nmap <leader>b :Buffers<CR>
+nmap <leader>p :Pt<space>
+nnoremap K :Pt<space>"\b"<c-r><c-w>"\b"<CR>
+
+" :Pt something /path
+command! -bang -nargs=* Pt
+  \ call fzf#vim#grep(
+  \   'pt --color --column -e '
+  \ . <q-args>, 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
 " NumberToggle
 " ============

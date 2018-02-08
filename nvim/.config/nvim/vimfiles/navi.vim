@@ -13,10 +13,10 @@ let NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 " Close vim if only window left open is NERDTree.
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-nmap <leader>f :Files<CR>
-nmap <leader>b :Buffers<CR>
+nmap <C-p> :Files<CR>
+nmap <C-b> :Buffers<CR>
 nmap <leader>p :Pt<space>
-nnoremap K :Pt<space>"\b"<c-r><c-w>"\b"<CR>
+nnoremap <leader>k :Pt<space>"\b"<c-r><c-w>"\b"<CR>
 
 " :Pt something /path
 command! -bang -nargs=* Pt

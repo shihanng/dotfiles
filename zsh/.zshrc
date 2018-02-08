@@ -3,6 +3,30 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='..'
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='+c -x'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
 # mollifier/anyframe
 fpath=($HOME/bin/anyframe(N-/) $fpath)
 autoload -Uz anyframe-init
@@ -10,8 +34,8 @@ anyframe-init
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
-zstyle ":anyframe:selector:" use peco
-zstyle ":anyframe:selector:peco:" command 'peco --layout=bottom-up'
+zstyle ":anyframe:selector:" use fzf
+zstyle ":anyframe:selector:fzf:" command 'fzf --extended'
 bindkey '^r' anyframe-widget-put-history
 bindkey '^o' anyframe-widget-cdr
 bindkey '^b' anyframe-widget-checkout-git-branch

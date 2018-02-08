@@ -20,6 +20,7 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 path=($HOME/bin $path[@])
+path=($HOME/go/bin $path[@])
 for manpath_candidate in \
   /usr/local/man \
   /usr/local/opt/coreutils/libexec/gnuman

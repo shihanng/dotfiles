@@ -127,8 +127,8 @@ bindkey '^s' pet-select
 export PYENV_ROOT="$HOME/.pyenv"
 path=($PYENV_ROOT/bin $path[@])
 source $(pyenv root)/completions/pyenv.zsh
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 
 #

@@ -24,7 +24,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-eunuch'
 
 " Coding.
-Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -33,6 +32,7 @@ Plug 'AndrewRadev/splitjoin.vim' " Used by vim-go.
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets' " Snippets collections.
 Plug 'honza/vim-snippets' " Snippets collections.
+Plug 'w0rp/ale'
 
 " JavaScript.
 Plug 'jelera/vim-javascript-syntax'
@@ -69,7 +69,8 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'jceb/vim-orgmode'
 
 " Status.
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " JSON.
 Plug 'elzr/vim-json'

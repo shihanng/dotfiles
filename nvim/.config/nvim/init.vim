@@ -79,8 +79,10 @@ Plug 'direnv/direnv.vim'
 
 Plug 'hashivim/vim-hashicorp-tools'
 
+" ##################################### fzf ####################################
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
 " Add plugins to &runtimepath.
 call plug#end()
 

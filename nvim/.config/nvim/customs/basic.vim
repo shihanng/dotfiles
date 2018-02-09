@@ -123,3 +123,6 @@ nnoremap <leader>lc :lclose<CR>
 nmap <F8> :TagbarOpenAutoClose<CR>
 nnoremap <leader>% :source $MYVIMRC<CR>
 set autowrite
+
+" ============================= create this with ,ch ===========================
+noremap <leader>ch :center 80<cr>hhv0r=A<space><esc>40A=<esc>:Commentary<cr><esc>81<bar>D

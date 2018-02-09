@@ -79,7 +79,7 @@ Plug 'direnv/direnv.vim'
 
 Plug 'hashivim/vim-hashicorp-tools'
 
-" ##################################### fzf ####################################
+" ===================================== fzf ====================================
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 

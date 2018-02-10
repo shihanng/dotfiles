@@ -27,15 +27,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
-" Coding.
-Plug 'w0rp/ale'
-Plug 'majutsushi/tagbar'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets' " Snippets collections.
-Plug 'honza/vim-snippets' " Snippets collections.
-
 " Golang.
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
@@ -71,6 +62,16 @@ Plug 'elzr/vim-json'
 Plug 'direnv/direnv.vim'
 
 Plug 'hashivim/vim-hashicorp-tools'
+
+" Coding.
+Plug 'w0rp/ale'
+Plug 'majutsushi/tagbar'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets' " Snippets collections.
+Plug 'honza/vim-snippets' " Snippets collections.
+
 
 " ===================================== fzf ====================================
 Plug '/usr/local/opt/fzf'

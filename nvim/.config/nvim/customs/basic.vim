@@ -3,6 +3,9 @@ set fileencoding=utf-8
 
 scriptencoding utf-8
 
+filetype plugin on
+filetype plugin indent on
+
 " SHORTCUTS
 " =========
 let g:mapleader = ','
@@ -35,11 +38,6 @@ set clipboard+=unnamedplus " Copy/paste
 set textwidth=79
 set fileformat=unix
 
-au BufNewFile,BufRead *.go
-    \ setlocal noexpandtab
-    \ tabstop=4
-    \ shiftwidth=4
-
 au BufNewFile,BufRead *.html, *.css
     \ set tabstop=2
     \ softtabstop=2
@@ -68,7 +66,7 @@ set whichwrap=b,s,<,>,[,]   " Backspace and cursor keys wrap too
 
 " COLOR SCHEME
 " ============
-if (has('termguicolors'))
+if has('termguicolors')
  set termguicolors
 endif
 
@@ -102,24 +100,13 @@ set directory=~/.local/share/nvim/swap//
 " =====
 set mouse=a
 
-" QUICKFIX LIST (used by vim-go)
-" ==============================
-map <leader>qn :cn<CR>
-map <leader>qp :cp<CR>
-nnoremap <leader>qc :cclose<CR>
-
-" LOCATION LIST (used by syntastic)
-" =================================
-nnoremap <leader>lc :lclose<CR>
-
-" OTHERS
-" ======
-nmap <F8> :TagbarOpenAutoClose<CR>
-nnoremap <leader>% :source $MYVIMRC<CR>
-set autowrite
-
 " ============================= create this with ,ch ===========================
 noremap <leader>ch :center 80<cr>hhv0r=A<space><esc>40A=<esc>:Commentary<cr><esc>81<bar>D
 
 noremap <leader>jq :%!jq '.'<cr>
 noremap <leader>cm :verbose map 
+
+noremap <F8> :TagbarOpenAutoClose<CR>
+
+nnoremap <leader>% :source $MYVIMRC<CR>
+set autowrite

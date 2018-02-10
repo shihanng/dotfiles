@@ -56,9 +56,6 @@ au BufNewFile,BufRead *.md
 " Encodings.
 set fileencoding=utf-8 " When file is saved.
 
-" ryanoasis/vim-devicons
-set guifont="nconsolataForPowerline Nerd Font 12"
-
 " Brackets.
 set showmatch
 

@@ -6,13 +6,15 @@ endfunction
 
 call plug#begin()
 
-" ==================================== Themes ==================================
-Plug 'dracula/vim'
-Plug 'ryanoasis/vim-devicons'
-
 " ================================ File explorer ===============================
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-eunuch'
+
+" ==================================== Themes ==================================
+Plug 'dracula/vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 
 " ===================================== Git ====================================
 Plug 'tpope/vim-fugitive'
@@ -65,10 +67,6 @@ Plug 'fishbullet/deoplete-ruby'
 " Markdown / Note.
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'jceb/vim-orgmode'
-
-" Status.
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " JSON.
 Plug 'elzr/vim-json'

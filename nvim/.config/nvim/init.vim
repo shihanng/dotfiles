@@ -91,6 +91,6 @@ let g:python_host_prog = expand($HOME) . '/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = expand($HOME) . '/.pyenv/versions/neovim3/bin/python'
 
 " Source other settings.
-for f in split(glob('$HOME/.config/nvim/customs/*.vim'), '\n')
-    exe 'source' f
+for s:f in split(glob('$HOME/.config/nvim/customs/*.vim'), '\n')
+    exe 'source' s:f
 endfor

@@ -58,8 +58,8 @@ Plug 'triglav/vim-visual-increment'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'
-Plug 'vim-scripts/indentpython.vim' " Autoindent
-Plug 'nvie/vim-flake8'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'hdima/python-syntax'
 
 " Ruby.
 Plug 'fishbullet/deoplete-ruby'

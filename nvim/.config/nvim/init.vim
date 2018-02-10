@@ -36,15 +36,12 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets' " Snippets collections.
 Plug 'honza/vim-snippets' " Snippets collections.
 
-" JavaScript.
-Plug 'jelera/vim-javascript-syntax'
-Plug 'pangloss/vim-javascript'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'wookiehangover/jshint.vim'
-
 " Golang.
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+" JavaScript.
+Plug 'pangloss/vim-javascript'
 
 " Others.
 Plug 'tpope/vim-repeat'

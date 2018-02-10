@@ -40,7 +40,7 @@ au BufNewFile,BufRead *.go
     \ tabstop=4
     \ shiftwidth=4
 
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.html, *.css
     \ set tabstop=2
     \ softtabstop=2
     \ shiftwidth=2

@@ -1,4 +1,6 @@
 set encoding=utf-8
+set fileencoding=utf-8
+
 scriptencoding utf-8
 
 " SHORTCUTS
@@ -43,18 +45,11 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ softtabstop=2
     \ shiftwidth=2
 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ shiftwidth=4
-    \ expandtab
-    \ softtabstop=4
-
 au BufNewFile,BufRead *.md
     \ set tw=0
     \ wrapmargin=0
 
 " Encodings.
-set fileencoding=utf-8 " When file is saved.
 
 " Brackets.
 set showmatch

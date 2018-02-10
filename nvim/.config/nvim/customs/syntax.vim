@@ -3,11 +3,9 @@
 set foldmethod=syntax
 set foldlevelstart=20
 autocmd Syntax go setlocal foldmethod=syntax
-autocmd Syntax python setlocal foldmethod=indent
-autocmd Syntax go,python normal zR
+autocmd Syntax go normal zR
 " Enable folding with the spacebar
 nnoremap <space> za
-let g:SimpylFold_docstring_preview=1 " For Python.
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:airline#extensions#ale#enabled = 1

@@ -25,8 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tpope/vim-dispatch' " Used by vim-go.
-Plug 'AndrewRadev/splitjoin.vim' " Used by vim-go.
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets' " Snippets collections.
 Plug 'honza/vim-snippets' " Snippets collections.

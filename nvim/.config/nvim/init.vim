@@ -5,10 +5,6 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
-" Brackets, etc.
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-
 " ==================================== Themes ==================================
 Plug 'dracula/vim'
 Plug 'ryanoasis/vim-devicons'
@@ -24,6 +20,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-eunuch'
 
 " Coding.
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

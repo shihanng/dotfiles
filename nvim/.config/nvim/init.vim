@@ -5,31 +5,34 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
+
 " ==================================== Themes ==================================
 Plug 'dracula/vim'
 Plug 'ryanoasis/vim-devicons'
 
-" Version control.
+" ================================ File explorer ===============================
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-eunuch'
+
+" ===================================== Git ====================================
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" File explorer.
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-eunuch'
-
-" Coding.
+" ============================== Text manipulation =============================
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+
+" Coding.
+Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets' " Snippets collections.
 Plug 'honza/vim-snippets' " Snippets collections.
-Plug 'w0rp/ale'
 
 " JavaScript.
 Plug 'jelera/vim-javascript-syntax'

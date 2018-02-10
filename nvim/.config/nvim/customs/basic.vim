@@ -79,7 +79,7 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-colorscheme molokai
+colorscheme dracula
 
 " SPELLCHECK
 " ==========

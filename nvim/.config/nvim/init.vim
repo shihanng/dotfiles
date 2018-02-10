@@ -9,8 +9,8 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
-" Themes.
-Plug 'fatih/molokai'
+" ==================================== Themes ==================================
+Plug 'dracula/vim'
 Plug 'ryanoasis/vim-devicons'
 
 " Version control.

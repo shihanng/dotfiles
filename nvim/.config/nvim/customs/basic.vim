@@ -128,3 +128,6 @@ set autowrite
 
 " ============================= create this with ,ch ===========================
 noremap <leader>ch :center 80<cr>hhv0r=A<space><esc>40A=<esc>:Commentary<cr><esc>81<bar>D
+
+noremap <leader>jq :%!jq '.'<cr>
+noremap <leader>cm :verbose map 

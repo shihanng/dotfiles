@@ -43,12 +43,6 @@ au BufNewFile,BufRead *.html, *.css
     \ softtabstop=2
     \ shiftwidth=2
 
-au BufNewFile,BufRead *.md
-    \ set tw=0
-    \ wrapmargin=0
-
-" Encodings.
-
 " Brackets.
 set showmatch
 
@@ -64,14 +58,6 @@ set colorcolumn=80
 set backspace=indent,eol,start
 set whichwrap=b,s,<,>,[,]   " Backspace and cursor keys wrap too
 
-" COLOR SCHEME
-" ============
-if has('termguicolors')
- set termguicolors
-endif
-
-syntax enable
-colorscheme dracula
 
 " SPELLCHECK
 " ==========

@@ -32,7 +32,7 @@ let g:go_snippet_engine = 'neosnippet'
 let g:go_fmt_fail_silently = 1
 let g:go_list_type = 'quickfix'
 let g:go_statusline_duration = 10000
-let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_deadline = '5s'
 let g:go_metalinter_enabled = [
       \ 'deadcode', 'errcheck', 'gas', 'goconst', 'golint', 'gosimple',
       \ 'gotype', 'ineffassign', 'interfacer', 'staticcheck', 'structcheck',

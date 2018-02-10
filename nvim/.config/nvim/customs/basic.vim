@@ -1,6 +1,9 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 " SHORTCUTS
 " =========
-let mapleader = ","
+let g:mapleader = ','
 
 " SEARCH
 " ======
@@ -55,7 +58,6 @@ set fileencoding=utf-8 " When file is saved.
 
 " ryanoasis/vim-devicons
 set guifont="nconsolataForPowerline Nerd Font 12"
-set encoding=utf-8
 
 " Brackets.
 set showmatch
@@ -66,7 +68,7 @@ set listchars=tab:‣\ ,trail:·
 
 set number
 set cursorline
-set cc=80
+set colorcolumn=80
 
 " Others.
 set backspace=indent,eol,start
@@ -74,7 +76,7 @@ set whichwrap=b,s,<,>,[,]   " Backspace and cursor keys wrap too
 
 " COLOR SCHEME
 " ============
-if (has("termguicolors"))
+if (has('termguicolors'))
  set termguicolors
 endif
 

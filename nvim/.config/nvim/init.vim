@@ -9,12 +9,17 @@ call plug#begin()
 " ================================ File explorer ===============================
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-eunuch'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'direnv/direnv.vim'
 
 " ==================================== Themes ==================================
 Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " ===================================== Git ====================================
 Plug 'tpope/vim-fugitive'
@@ -26,6 +31,18 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'godlygeek/tabular'
+Plug 'triglav/vim-visual-increment'
+
+" ==================================== Coding ==================================
+Plug 'w0rp/ale'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'majutsushi/tagbar'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets' " Snippets collections.
+Plug 'honza/vim-snippets' " Snippets collections.
 
 " Golang.
 Plug 'fatih/vim-go'
@@ -33,16 +50,6 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " JavaScript.
 Plug 'pangloss/vim-javascript'
-
-" Others.
-Plug 'tpope/vim-repeat'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'godlygeek/tabular'
-Plug 'triglav/vim-visual-increment'
-Plug 'lervag/vimtex'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'yssl/QFEnter'
-Plug 'triglav/vim-visual-increment'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'
@@ -53,29 +60,17 @@ Plug 'hdima/python-syntax'
 Plug 'fishbullet/deoplete-ruby'
 
 " Markdown / Note.
+Plug 'tpope/vim-markdown'
 Plug 'JamshedVesuna/vim-markdown-preview'
-Plug 'jceb/vim-orgmode'
 
 " JSON.
 Plug 'elzr/vim-json'
 
-Plug 'direnv/direnv.vim'
+" TeX.
+Plug 'lervag/vimtex'
 
+" Terraform, etc.
 Plug 'hashivim/vim-hashicorp-tools'
-
-" Coding.
-Plug 'w0rp/ale'
-Plug 'majutsushi/tagbar'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets' " Snippets collections.
-Plug 'honza/vim-snippets' " Snippets collections.
-
-
-" ===================================== fzf ====================================
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
 
 " Add plugins to &runtimepath.
 call plug#end()

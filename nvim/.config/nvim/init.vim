@@ -34,6 +34,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'godlygeek/tabular'
 Plug 'triglav/vim-visual-increment'
+Plug 'terryma/vim-multiple-cursors'
 
 " ==================================== Coding ==================================
 Plug 'w0rp/ale'

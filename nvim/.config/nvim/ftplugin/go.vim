@@ -51,6 +51,7 @@ let g:ale_linters = {'go': ['gometalinter']}
 let g:ale_go_gometalinter_options = '
    \ --aggregate
    \ --disable=gas
+   \ --disable=gotype
    \ --enable=test
    \ --enable=golint
    \ --enable=errcheck

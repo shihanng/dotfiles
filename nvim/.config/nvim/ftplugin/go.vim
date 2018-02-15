@@ -47,7 +47,7 @@ nmap <leader>gm <Plug>(go-metalinter)
 
 
 " ===================================== ale ====================================
-let g:ale_linters = {'go': ['gometalinter']}
+let g:ale_linters = {'go': ['gometalinter', 'go build']}
 let g:ale_go_gometalinter_options = '
    \ --aggregate
    \ --disable=gas

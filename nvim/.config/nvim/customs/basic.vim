@@ -38,10 +38,8 @@ set clipboard+=unnamedplus " Copy/paste
 set textwidth=79
 set fileformat=unix
 
-au BufNewFile,BufRead *.html, *.css
-    \ set tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
+au FileType html,css
+    \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " Brackets.
 set showmatch

@@ -50,6 +50,7 @@ Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " JavaScript.
+Plug 'jaxbot/browserlink.vim'
 Plug 'pangloss/vim-javascript'
 
 " Python.

@@ -92,7 +92,7 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
 zstyle ":anyframe:selector:" use fzf
-zstyle ":anyframe:selector:fzf:" command 'fzf --extended'
+zstyle ":anyframe:selector:fzf:" command 'fzf --extended --tiebreak=index'
 bindkey '^r' anyframe-widget-put-history
 bindkey '^o' anyframe-widget-cdr
 bindkey '^b' anyframe-widget-checkout-git-branch

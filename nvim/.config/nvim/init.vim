@@ -15,7 +15,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'direnv/direnv.vim'
 
 " ==================================== Themes ==================================
-Plug 'dracula/vim'
+Plug 'fatih/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'

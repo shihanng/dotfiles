@@ -8,3 +8,4 @@
   file_name = "pet-snippet.toml"
   access_token = ""
   gist_id = ""
+  auto_sync = true

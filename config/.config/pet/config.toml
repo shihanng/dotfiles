@@ -2,7 +2,7 @@
   snippetfile = "/Users/shihanng/.config/pet/snippet.toml"
   editor = "nvim"
   column = 40
-  selectcmd = "peco"
+  selectcmd = "fzf --ansi"
 
 [Gist]
   file_name = "pet-snippet.toml"

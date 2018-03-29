@@ -175,7 +175,7 @@ set $urgent-bg-color     #E53935
 # finds out, if available)
 bar {
   font pango:Bitstream Vera Sans Mono Bold Oblique Nerd Font Complete Mono 10
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command /home/shihanng/go/bin/goblocks
     position top
   colors {
     separator #dc322f

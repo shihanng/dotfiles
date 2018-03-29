@@ -207,6 +207,7 @@ exec compton -f -c
 exec dropbox start
 exec /opt/Enpass/bin/runenpass.sh
 exec blueman-applet
+exec --no-startup-id volumeicon
 
 exec /usr/bin/VBoxClient-all
 exec fcitx

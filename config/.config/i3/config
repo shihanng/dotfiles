@@ -208,5 +208,7 @@ exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec compton -f -c
 exec dropbox start
 exec /opt/Enpass/bin/runenpass.sh
+exec blueman-applet
+
 exec /usr/bin/VBoxClient-all
 exec fcitx

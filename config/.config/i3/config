@@ -211,6 +211,7 @@ exec --no-startup-id volumeicon
 
 exec /usr/bin/VBoxClient-all
 exec fcitx
+exec_always feh --bg-fill ~/wall.jpg
 
 client.focused #859900 #859900 #fdf6e3 #6c71c4
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4

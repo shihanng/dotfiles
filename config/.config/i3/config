@@ -210,7 +210,7 @@ exec blueman-applet
 exec --no-startup-id volumeicon
 
 exec /usr/bin/VBoxClient-all
-exec fcitx
+exec ibus-daemon -drx
 exec_always feh --bg-fill ~/wall.jpg
 
 client.focused #859900 #859900 #fdf6e3 #6c71c4

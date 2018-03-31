@@ -116,7 +116,7 @@ function prev() {
 }
 
 function pet-select() {
-  BUFFER=$(pet search --query "$LBUFFER")
+  BUFFER=" $(pet search --query "$LBUFFER")"
   CURSOR=$#BUFFER
   zle redisplay
 }

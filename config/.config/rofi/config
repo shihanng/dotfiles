@@ -1,0 +1,4 @@
+rofi.font: Sauce Code Pro ExtraLight Nerd Font Complete Mono 20
+rofi.theme: Paper
+rofi.opacity: 80
+rofi.modi: combi,run,window

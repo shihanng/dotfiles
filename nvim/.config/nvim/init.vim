@@ -80,6 +80,7 @@ call plug#end()
 " Python supports.
 let g:python_host_prog = expand($HOME) . '/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = expand($HOME) . '/.pyenv/versions/neovim3/bin/python'
+let g:ruby_host_prog = '~/.rbenv/versions/2.4.3/bin/neovim-ruby-host'
 
 " Source other settings.
 for s:f in split(glob('$HOME/.config/nvim/customs/*.vim'), '\n')

@@ -9,7 +9,7 @@ call plug#begin()
 " ================================ File explorer ===============================
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-eunuch'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'direnv/direnv.vim'
@@ -37,10 +37,16 @@ Plug 'triglav/vim-visual-increment'
 Plug 'terryma/vim-multiple-cursors'
 
 " ==================================== Coding ==================================
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'w0rp/ale'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets' " Snippets collections.
 Plug 'honza/vim-snippets' " Snippets collections.

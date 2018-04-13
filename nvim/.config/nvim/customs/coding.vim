@@ -57,3 +57,15 @@ nnoremap <leader>qc :cclose<CR> ""
 
 " Close location
 nnoremap <leader>lc :lclose<CR>
+
+" =========================== " LanguageClient-neovim ==========================
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['go-langserver'],
+    \ }
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>

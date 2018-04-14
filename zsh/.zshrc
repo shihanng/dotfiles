@@ -1,13 +1,30 @@
+source ~/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle vi-mode
+antigen bundle pyenv
+antigen bundle rbenv
+antigen bundle mollifier/anyframe
+
+export NVM_LAZY_LOAD=true
+antigen bundle lukechilds/zsh-nvm
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme robbyrussell
+
+# Tell Antigen that you're done.
+antigen apply
+
 #
 # User configuration sourced by interactive shells
 #
-
-# Change default zim location
-export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-
-# Start zim
-[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
-
 
 typeset -U path
 
@@ -29,22 +46,6 @@ do
     export MANPATH=${manpath_candidate}:${MANPATH}
   fi
 done
-
-
-#
-# vi-mode.
-#
-zle -N zle-keymap-select
-zle -N edit-command-line
-
-bindkey -v
-
-# 'v' to edit the command line
-autoload -Uz edit-command-line
-bindkey -M vicmd 'v' edit-command-line
-bindkey '^P' up-history
-bindkey '^N' down-history
-export KEYTIMEOUT=1
 
 
 #
@@ -87,9 +88,6 @@ _fzf_compgen_dir() {
 #
 # mollifier/anyframe
 #
-fpath=($HOME/bin/anyframe(N-/) $fpath)
-autoload -Uz anyframe-init
-anyframe-init
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
@@ -124,38 +122,6 @@ zle -N pet-select
 stty -ixon
 bindkey '^s' pet-select
 
-
-#
-# pyenv
-#
-export PYENV_ROOT="$HOME/.pyenv"
-path=($PYENV_ROOT/bin $path[@])
-source $(pyenv root)/completions/pyenv.zsh
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-
-
-#
-# rbenv
-#
-path=($HOME/.rbenv/bin $path[@])
-eval "$(rbenv init -)"
-
-
-#
-# qq
-#
-export TMPDIR="/tmp"
-alias qq="$(echo "$GOPATH" | cut -d : -f 1)/src/github.com/y0ssar1an/q/q.sh"
-alias rmqq="rm $TMPDIR/q"
-
-
-#
-# nvm
-#
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #
 # hub

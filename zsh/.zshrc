@@ -1,3 +1,6 @@
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+
 # load zgen
 source "${HOME}/.zplug/init.zsh"
 

@@ -104,7 +104,7 @@ bindkey '^b' anyframe-widget-checkout-git-branch
 # direnv
 #
 eval "$(direnv hook zsh)"
-alias tmux='direnv exec / tmux'
+alias tmux='TERM=screen-256color-bce direnv exec / tmux'
 
 
 #

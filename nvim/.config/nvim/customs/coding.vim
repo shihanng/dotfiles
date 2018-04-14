@@ -62,6 +62,7 @@ nnoremap <leader>lc :lclose<CR>
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
+let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
     \ 'go': ['go-langserver'],
     \ }

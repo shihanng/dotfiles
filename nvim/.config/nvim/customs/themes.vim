@@ -5,7 +5,7 @@ if has('termguicolors')
 endif
 
 syntax enable
-colorscheme molokai
+colorscheme dracula
 
 let g:airline_powerline_fonts=1
-let g:airline_theme='deus'
+let g:airline_theme='dracula'

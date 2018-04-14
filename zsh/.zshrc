@@ -1,20 +1,28 @@
 # load zgen
-source "${HOME}/.zgen/zgen.zsh"
+source "${HOME}/.zplug/init.zsh"
 
-# if the init scipt doesn't exist
-if ! zgen saved; then
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "plugins/history", from:oh-my-zsh
+zplug "lib/theme-and-appearance", from:oh-my-zsh
+zplug "dracula/zsh", as:theme
+zplug "mollifier/anyframe"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions"
 
-  # specify plugins here
-  zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/vi-mode
-  zgen oh-my-zsh themes/simple
-  zgen load mollifier/anyframe
-  zgen load zsh-users/zsh-syntax-highlighting
-
-  # generate the init script from plugins above
-  zgen save
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
 
 # ================================= My settings ================================
 

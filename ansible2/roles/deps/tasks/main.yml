@@ -1,0 +1,13 @@
+---
+  - name: Install dependencies
+    apt:
+      name: "{{item}}"
+      state: present
+      update_cache: yes
+    with_items:
+      - git
+      - stow
+      - xclip
+      - unzip
+      - make
+      - tmux

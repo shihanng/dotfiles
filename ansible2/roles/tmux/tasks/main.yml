@@ -1,0 +1,50 @@
+---
+  - name: Set name of temp directory
+    set_fact:
+      temp_dir: "/tmp/tmux"
+
+  - name: Set version of tmux
+    set_fact:
+      ver: "2.7"
+
+  - name: Create temp directory
+    file:
+      path: "{{ temp_dir }}"
+      state: directory
+
+  - name: Install dependencies
+    apt:
+      name: "{{ item }}"
+      state: present
+      update_cache: yes
+    with_items:
+      - git
+      - automake
+      - build-essential
+      - pkg-config
+      - libevent-dev
+      - libncurses5-dev
+
+  - name: Download tmux release
+    get_url:
+      url: "https://github.com/tmux/tmux/releases/download/{{ ver }}/tmux-{{ ver }}.tar.gz"
+      dest: "{{ temp_dir }}"
+
+  - name: Extract archive
+    unarchive: 
+      src: "{{ temp_dir }}/tmux-{{ ver }}.tar.gz"
+      dest: "{{ temp_dir }}"
+      copy: no
+
+  - name: configure
+    shell: ./configure
+    args:
+      chdir: "{{ temp_dir }}/tmux-{{ ver }}"
+      creates: "/usr/local/bin/tmux"
+    register: configured
+
+  - name: make install
+    make:
+      target: install
+      chdir: "{{ temp_dir }}/tmux-{{ ver }}"
+    when: configured.changed

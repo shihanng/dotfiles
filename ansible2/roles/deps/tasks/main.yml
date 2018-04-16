@@ -10,3 +10,9 @@
       - xclip
       - unzip
       - make
+
+  - name: Install zplug
+    git:
+      repo: https://github.com/zplug/zplug
+      dest: ~/.zplug
+    become: no

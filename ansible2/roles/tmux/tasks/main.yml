@@ -1,10 +1,7 @@
 ---
-  - name: Set name of temp directory
+  - name: About tmux
     set_fact:
       temp_dir: "/tmp/tmux"
-
-  - name: Set version of tmux
-    set_fact:
       ver: "2.7"
 
   - name: Create temp directory
@@ -48,3 +45,9 @@
       target: install
       chdir: "{{ temp_dir }}/tmux-{{ ver }}"
     when: configured.changed
+
+  - name: Install TPM
+    git:
+      repo: https://github.com/tmux-plugins/tpm
+      dest: ~/.tmux/plugins/tpm
+    become: no

@@ -13,4 +13,4 @@
       src: "https://storage.googleapis.com/golang/go{{ ver }}.linux-amd64.tar.gz"
       dest: /usr/local
       remote_src: yes
-    when: go_version | failed or ver | string not in go_version.stdout
+    when: go_version is failed or ver | string not in go_version.stdout

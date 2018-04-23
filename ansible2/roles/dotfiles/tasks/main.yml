@@ -1,0 +1,13 @@
+---
+  - name: Download dotfiles
+    git:
+      repo: https://github.com/shihanng/dotfiles
+      dest: ~/dotfiles
+      force: yes
+    become: no
+
+  - name: Install dotfiles
+    make:
+      chdir: ~/dotfiles
+      target: all
+    become: no

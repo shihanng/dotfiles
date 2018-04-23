@@ -1,0 +1,37 @@
+---
+  - name: Make directories for neovim
+    file:
+      path: ~/{{ item }}
+      state: directory
+      mode: 0755
+    with_items:
+      - .local/share/nvim/site/autoload
+      - .local/share/nvim/backup
+      - .local/share/nvim/swp
+      - .local/share/nvim/undo
+    become: no
+
+  - name: Install dependencies
+    apt:
+      name: "{{item}}"
+      state: installed
+      update_cache: yes
+    with_items:
+      - software-properties-common
+
+  - name: Add neovim PPA
+    apt_repository:
+      repo: 'ppa:neovim-ppa/stable'
+      state: present
+
+  - name: Install neovim
+    apt:
+      name: neovim
+      state: installed
+      update_cache: yes
+
+  - name: Install vim-plug
+    get_url:
+      url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      dest: ~/.local/share/nvim/site/autoload/
+    become: no

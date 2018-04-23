@@ -10,9 +10,86 @@
       - xclip
       - unzip
       - make
+      - xclip
+      - xdg-utils
 
   - name: Install zplug
     git:
       repo: https://github.com/zplug/zplug
       dest: ~/.zplug
+    become: no
+
+  - name: Create bin directory
+    file:
+      path: ~/bin
+      state: directory
+    become: no
+
+  - name: Install direnv
+    get_url:
+      url: "https://github.com/direnv/direnv/releases/download/v2.15.2/direnv.linux-amd64"
+      dest: ~/bin/direnv
+      mode: "a+x"
+      force: yes
+    become: no
+
+  - name: Install anyframe
+    git:
+      repo: https://github.com/mollifier/anyframe
+      dest: ~/bin/anyframe
+    become: no
+
+  - name: Install rbenv
+    git:
+      repo: https://github.com/rbenv/rbenv.git
+      dest: ~/.rbenv
+    become: no
+
+  - name: Install pt
+    unarchive:
+      src: "https://github.com/monochromegane/the_platinum_searcher/releases/download/v2.1.5/pt_linux_amd64.tar.gz"
+      dest: ~/bin
+      extra_opts: '--strip-components=1'
+      mode: "a+x"
+      remote_src: yes
+      exclude: README.md
+    become: no
+
+  - name: Install pet
+    unarchive:
+      src: "https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linux_amd64.tar.gz"
+      dest: ~/bin
+      mode: 0755
+      remote_src: yes
+      exclude:
+        - misc
+        - README.md
+        - LICENSE
+    become: no
+
+  - name: Install peco
+    unarchive:
+      src: "https://github.com/peco/peco/releases/download/v0.5.3/peco_linux_arm64.tar.gz"
+      dest: ~/bin
+      extra_opts: '--strip-components=1'
+      mode: 0755
+      remote_src: yes
+      exclude:
+        - README.md
+        - Changes
+    become: no
+
+  - name: Install fd
+    unarchive:
+      src: "https://github.com/sharkdp/fd/releases/download/v7.0.0/fd-v7.0.0-x86_64-unknown-linux-gnu.tar.gz"
+      dest: ~/bin
+      extra_opts: '--strip-components=1'
+      mode: 0755
+      remote_src: yes
+      exclude:
+        - autocomplete
+        - fd.1
+        - LICENSE-APACHE
+        - LICENSE-MIT
+        - README.md
     become: no

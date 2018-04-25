@@ -3,7 +3,6 @@ scriptencoding utf-8
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
-
 call plug#begin()
 
 " ================================ File explorer ===============================
@@ -63,6 +62,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'tmhedberg/SimpylFold'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'hdima/python-syntax'
+
+" HTML
+Plug 'mattn/emmet-vim'
 
 " Ruby.
 Plug 'fishbullet/deoplete-ruby'

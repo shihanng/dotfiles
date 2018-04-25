@@ -70,3 +70,7 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>
+
+" ==================================== Emmet ===================================
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall

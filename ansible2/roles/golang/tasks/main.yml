@@ -1,0 +1,16 @@
+---
+  - name: About Go
+    set_fact:
+      ver: "1.10.1"
+
+  - name: Get version
+    command: /usr/local/go/bin/go version
+    register: go_version
+    ignore_errors: True
+
+  - name: Install go
+    unarchive:
+      src: "https://storage.googleapis.com/golang/go{{ ver }}.linux-amd64.tar.gz"
+      dest: /usr/local
+      remote_src: yes
+    when: go_version | failed or ver | string not in go_version.stdout

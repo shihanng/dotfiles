@@ -1,0 +1,21 @@
+snippet     testSuite
+options     head
+  type ${1:TARGET}Suite struct {
+  	suite.Suite
+  }
+  
+  func (s *$1Suite) SetupSuite() {
+  }
+  
+  func (s *$1Suite) TearDownSuite() {
+  }
+  
+  func (s *$1Suite) SetupTest() {
+  }
+  
+  func (s *$1Suite) TearDownTest() {
+  }
+
+  func Test$1(t *testing.T) {
+  	suite.Run(t, new($1Suite))
+  }

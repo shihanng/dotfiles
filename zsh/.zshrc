@@ -31,8 +31,7 @@ zplug load
 
 typeset -U path
 
-# export TERM="xterm-256color"
-export TERM=screen-256color-bce 
+export TERM="xterm-256color"
 export EDITOR='nvim'
 export VISUAL='nvim'
 export LESS='-XRMsIg'

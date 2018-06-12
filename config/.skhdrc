@@ -38,3 +38,4 @@ shift + alt - 5 : chunkc tiling::window --send-to-desktop 5
 shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
 
 alt - r : chunkc tiling::desktop --rotate 90
+alt - q : chunkc tiling::desktop --equalize

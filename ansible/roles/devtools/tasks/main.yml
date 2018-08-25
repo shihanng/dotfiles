@@ -1,0 +1,33 @@
+---
+- name: Install development tools (Darwin)
+  homebrew:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - direnv
+    - ripgrep
+    - fzf
+    - knqyf263/pet/pet
+  when: ansible_os_family == "Darwin"
+
+- name: Install development tools (Archlinux)
+  pacman:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - fzf
+    - ripgrep
+  when: ansible_os_family == "Archlinux"
+  become: yes
+
+- name: Install development tools (AUR)
+  aur:
+    name: "{{item}}"
+    use: yay
+    skip_installed: yes
+  with_items:
+    - direnv
+    - pet-bin
+  when: ansible_os_family == "Archlinux"
+  become: yes
+  become_user: aur_builder

@@ -7,13 +7,3 @@
   pacman:
     name: zsh
     state: present
-
-- name: Install zplug
-  aur:
-    name: "{{item}}"
-    use: yay
-    skip_installed: yes
-  with_items:
-    - zplug
-  become_user: aur_builder
-  become: yes

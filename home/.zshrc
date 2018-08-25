@@ -26,4 +26,3 @@ fi
 zplug load
 
 eval "$(pyenv init -)"
-source $(pyenv root)/completions/pyenv.zsh

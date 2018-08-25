@@ -1,0 +1,19 @@
+---
+- name: Install pyenv (Darwin)
+  homebrew:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - pyenv
+  when: ansible_os_family == "Darwin"
+
+- name: Install pyenv (AUR)
+  aur:
+    name: "{{item}}"
+    use: yay
+    skip_installed: yes
+  with_items:
+    - pyenv
+  when: ansible_os_family == "Archlinux"
+  become: yes
+  become_user: aur_builder

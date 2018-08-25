@@ -8,8 +8,9 @@ fi
 # Essential
 source ~/.zplug/init.zsh
 
-# Make sure to use double quotes to prevent shell expansion
 zplug "zsh-users/zsh-syntax-highlighting"
+
+zplug "lukechilds/zsh-better-npm-completion", defer:2
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
@@ -27,3 +28,5 @@ zplug load
 
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

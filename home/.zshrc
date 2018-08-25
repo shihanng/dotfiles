@@ -26,3 +26,4 @@ fi
 zplug load
 
 eval "$(pyenv init -)"
+eval "$(rbenv init -)"

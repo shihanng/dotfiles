@@ -10,9 +10,9 @@ source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
-
 zplug "lukechilds/zsh-better-npm-completion", defer:2
-
+zplug "mollifier/anyframe"
+zplug "willghatch/zsh-cdr"
 zplug "knqyf263/pet", use:misc/completions/zsh
 zplug "~/zsh-plugins", as:plugin, use:"*.zsh", from:local, defer:1
 

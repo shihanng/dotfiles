@@ -8,7 +8,8 @@ fi
 # Essential
 source ~/.zplug/init.zsh
 
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-completions"
 
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 

@@ -33,6 +33,17 @@ fi
 
 zplug load
 
+typeset -U path
+
+export TERM="xterm-256color"
+export EDITOR='vim'
+export VISUAL='vim'
+export LESS='-XRMsIg'
+export LANG=C
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+path=($HOME/go/bin $path[@])
 path=($HOME/.fzf/bin $path[@])
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

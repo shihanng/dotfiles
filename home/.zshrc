@@ -9,6 +9,7 @@ fi
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "plugins/git", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "mollifier/anyframe"

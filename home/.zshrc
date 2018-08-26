@@ -30,6 +30,8 @@ fi
 
 zplug load
 
+path=($HOME/.fzf/bin $path[@])
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"

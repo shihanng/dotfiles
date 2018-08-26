@@ -12,6 +12,9 @@ zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 
+zplug "knqyf263/pet", use:misc/completions/zsh
+zplug "~/zsh-plugins", as:plugin, use:"*.zsh", from:local, defer:1
+
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Install packages that have not been installed yet

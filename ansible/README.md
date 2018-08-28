@@ -13,5 +13,6 @@ git clone https://github.com/kewlfft/ansible-aur.git ~/.ansible/plugins/modules/
 Run
 
 ```
-ansible-playbook --diff -vv provision.yml -i '<ip>,' --user=<user> --private-key=<path-to-private-key> -K
+ansible-vault create passwd.yml # Need - sudo_pass: xxxx
+ansible-playbook --diff -vv provision.yml -i hosts --limit <ip-address> --private-key=~/.ssh/id_rsa --ask-vault-pass --extra-vars '@passwd.yml'
 ```

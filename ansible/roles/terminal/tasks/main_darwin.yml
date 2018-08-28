@@ -1,0 +1,28 @@
+---
+- name: Create ansible bin dir in home
+  file:
+    path: ~/.ansible_tmp/
+    state: directory
+  become_user: "{{ ansible_user_id }}"
+
+- name: Copy sudo ask pass script
+  template:
+    src:    sudo_askpass.tmp.sh.j2
+    dest:   ~/.ansible_tmp/sudo_askpass.tmp.sh
+    mode:   0700
+    backup: no
+  become_user: "{{ ansible_user_id }}"
+
+- name: Install iterm2
+  homebrew_cask:
+    name: iterm2
+    state: present
+  environment:
+    SUDO_ASKPASS: "/Users/{{ ansible_user_id }}/.ansible_tmp/sudo_askpass.tmp.sh"
+  become_user: "{{ ansible_user_id }}"
+
+- name: Delete sudo ask pass script
+  file:
+    path: ~/.ansible_tmp/
+    state: absent
+  become_user: "{{ ansible_user_id }}"

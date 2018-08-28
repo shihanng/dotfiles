@@ -1,0 +1,6 @@
+---
+- name: Install terminator
+  pacman:
+    name: terminator
+    state: present
+  become: yes

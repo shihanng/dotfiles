@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#
+# sudo_askpass.tmp.sh
+#
+
+# NOTES:
+# o This script provides a sudo password to programs that need it, when
+#   referenced via the environment variable 'SUDO_ASKPASS'.
+# o To make use of this script, set the SUDO_ASKPASS env var to point to it:
+#   export SUDO_ASKPASS="${HOME}/.ansible/bin/sudo_askpass.tmp.sh"
+
+echo '{{ sudo_pass }}'

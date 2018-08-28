@@ -3,6 +3,7 @@
   roles:
     - yay
     - zsh
+    - terminal
     - tmux
     - git
     - utils

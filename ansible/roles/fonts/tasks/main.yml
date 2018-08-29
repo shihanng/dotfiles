@@ -1,0 +1,25 @@
+---
+- name: Install nerd-fonts repo
+  git:
+    repo: https://github.com/ryanoasis/nerd-fonts.git
+    depth: 1
+    dest: $HOME/nerd-fonts
+
+- name: Decide on font
+  set_fact:
+    font_name: "FantasqueSansMono"
+
+- name: Font path (Archlinux)
+  set_fact:
+    font_path: "$HOME/.local/share/fonts/NerdFonts/Fantasque*"
+  when: ansible_os_family == "Archlinux"
+
+- name: Font path (Darwin)
+  set_fact:
+    font_path: "$HOME/Library/Fonts/NerdFonts/Fantasque*"
+  when: ansible_os_family == "Darwin"
+
+- name: Install font
+  shell: "$HOME/nerd-fonts/install.sh {{ font_name }}"
+  args:
+    creates: "{{ font_path }}"

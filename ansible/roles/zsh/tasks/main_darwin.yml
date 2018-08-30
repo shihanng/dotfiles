@@ -10,3 +10,4 @@
   with_items:
     - zsh
     - reattach-to-user-namespace
+    - coreutils

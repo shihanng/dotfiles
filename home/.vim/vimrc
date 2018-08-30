@@ -60,6 +60,16 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'juliosueiras/vim-terraform-completion'
 
+" Markdown / Note.
+Plug 'tpope/vim-markdown'
+Plug 'JamshedVesuna/vim-markdown-preview'
+
+" JSON.
+Plug 'elzr/vim-json'
+
+" TeX.
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 

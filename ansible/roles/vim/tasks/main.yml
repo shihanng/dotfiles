@@ -1,0 +1,11 @@
+---
+  - name: Make directories for vim
+    file:
+      path: "$HOME/{{ item }}"
+      state: directory
+      mode: 0755
+    with_items:
+      - .local/share/vim/site/autoload
+      - .local/share/vim/backup
+      - .local/share/vim/swp
+      - .local/share/vim/undo

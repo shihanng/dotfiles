@@ -16,7 +16,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'direnv/direnv.vim'
 
 " ==================================== Themes ==================================
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'

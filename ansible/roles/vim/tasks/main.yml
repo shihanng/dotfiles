@@ -30,3 +30,8 @@
       install_options: "--with-python3"
       state: present
     when: ansible_os_family == "Darwin"
+
+  - name: Install go-langserver
+    shell: go get -u github.com/sourcegraph/go-langserver
+    args:
+      creates: $HOME/go/bin/go-langserver

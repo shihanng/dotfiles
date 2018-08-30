@@ -70,6 +70,22 @@ Plug 'elzr/vim-json'
 " TeX.
 Plug 'lervag/vimtex'
 
+" JavaScript.
+Plug 'jaxbot/browserlink.vim'
+Plug 'pangloss/vim-javascript'
+
+" Python.
+Plug 'tmhedberg/SimpylFold'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'hdima/python-syntax'
+Plug 'zchee/deoplete-jedi'
+
+" HTML
+Plug 'mattn/emmet-vim'
+
+" Ruby.
+Plug 'fishbullet/deoplete-ruby'
+
 call plug#end()
 
 

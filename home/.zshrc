@@ -19,6 +19,7 @@ zplug "willghatch/zsh-cdr"
 zplug "knqyf263/pet", use:misc/completions/zsh
 zplug "~/zsh-plugins", as:plugin, use:"*.zsh", from:local, defer:1
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "unixorn/warhol.plugin.zsh"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 

@@ -35,3 +35,21 @@
     shell: go get -u github.com/sourcegraph/go-langserver
     args:
       creates: $HOME/go/bin/go-langserver
+
+  - name: Install grip (Darwin)
+    homebrew:
+      name: "{{item}}"
+      state: present
+    with_items:
+      - grip
+    when: ansible_os_family == "Darwin"
+
+  - name: Install xdotool (Archlinux)
+    pacman:
+      name: "{{item}}"
+      state: present
+    with_items:
+      - grip
+      - xdotool
+    become: yes
+    when: ansible_os_family == "Archlinux"

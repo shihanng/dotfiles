@@ -78,7 +78,7 @@ endif
 " ==========
 set undodir=~/.local/share/vim/undo//
 set backupdir=~/.local/share/vim/backup//
-set directory=~/.local/share/vim/swap//
+set directory=~/.local/share/vim/swp//
 
 " MOUSE
 " =====

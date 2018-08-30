@@ -9,3 +9,24 @@
       - .local/share/vim/backup
       - .local/share/vim/swp
       - .local/share/vim/undo
+
+  - name: Install neovim (Archlinux)
+    pacman:
+      name: python-neovim
+      state: present
+    when: ansible_os_family == "Archlinux"
+    become: yes
+
+  - name: install neovim via pip
+    pip:
+      executable: "/usr/local/bin/pip3"
+      name: neovim
+      extra_args: --user
+    when: ansible_os_family == "Darwin"
+
+  - name: Install vim (Darwin)
+    homebrew:
+      name: vim
+      install_options: "--with-python3"
+      state: present
+    when: ansible_os_family == "Darwin"

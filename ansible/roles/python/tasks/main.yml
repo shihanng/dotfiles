@@ -18,3 +18,10 @@
   when: ansible_os_family == "Archlinux"
   become: yes
   become_user: aur_builder
+
+- name: Install pip
+  pacman:
+    name: python-pip
+    state: present
+  when: ansible_os_family == "Archlinux"
+  become: yes

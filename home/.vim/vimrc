@@ -56,6 +56,9 @@ Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
+" Terraform, etc.
+Plug 'hashivim/vim-hashicorp-tools'
+
 call plug#end()
 
 

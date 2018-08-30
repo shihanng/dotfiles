@@ -41,6 +41,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
+    \ 'do': 'go get -u github.com/sourcegraph/go-langserver',
     \ }
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

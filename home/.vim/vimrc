@@ -8,9 +8,22 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " ================================ File explorer ===============================
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-eunuch'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'direnv/direnv.vim'
+
+" ==================================== Themes ==================================
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
 call plug#end()
+
 
 " set Vim-specific sequences for RGB colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

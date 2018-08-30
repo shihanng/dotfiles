@@ -1,9 +1,10 @@
 ---
-- name: Install pyenv (Darwin)
+- name: Install pyenv and python 3 (Darwin)
   homebrew:
     name: "{{item}}"
     state: present
   with_items:
+    - python
     - pyenv
   when: ansible_os_family == "Darwin"
 

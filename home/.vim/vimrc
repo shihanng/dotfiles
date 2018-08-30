@@ -37,6 +37,19 @@ Plug 'godlygeek/tabular'
 Plug 'triglav/vim-visual-increment'
 Plug 'terryma/vim-multiple-cursors'
 
+" ==================================== Coding ==================================
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets' " Snippets collections.
+Plug 'honza/vim-snippets'         " Snippets collections.
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'majutsushi/tagbar'
+
 call plug#end()
 
 

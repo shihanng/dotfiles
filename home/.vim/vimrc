@@ -52,6 +52,10 @@ Plug 'honza/vim-snippets'         " Snippets collections.
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'majutsushi/tagbar'
 
+" Golang.
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+
 call plug#end()
 
 

@@ -20,11 +20,13 @@ nmap <silent> <leader>[ <Plug>(ale_next_wrap)
 
 
 " =================================== deoplete =================================
+let g:deoplete#omni_patterns = {}
 let g:deoplete#enable_at_startup = 1
 set completeopt+=noselect
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
+call deoplete#initialize()
 
 
 " ================================== neosnippet ================================

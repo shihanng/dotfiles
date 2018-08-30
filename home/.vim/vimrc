@@ -58,6 +58,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " Terraform, etc.
 Plug 'hashivim/vim-hashicorp-tools'
+Plug 'juliosueiras/vim-terraform-completion'
 
 call plug#end()
 

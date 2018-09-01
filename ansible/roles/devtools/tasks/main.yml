@@ -8,6 +8,7 @@
     - ripgrep
     - knqyf263/pet/pet
     - fd
+    - moreutils
   when: ansible_os_family == "Darwin"
 
 - name: Install development tools (Archlinux)
@@ -17,6 +18,7 @@
   with_items:
     - ripgrep
     - fd
+    - moreutils
   when: ansible_os_family == "Archlinux"
   become: yes
 

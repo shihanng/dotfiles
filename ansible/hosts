@@ -3,6 +3,7 @@ localhost ansible_connection=local
 192.168.0.[2:10]
 
 [all:vars]
-ansible_user='{{ user_name }}'
 ansible_become_pass='{{ sudo_pass }}'
+ansible_user='{{ user_name }}'
 user_email='{{ user_email }}'
+user_fullname='{{ user_fullname }}'

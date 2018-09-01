@@ -32,6 +32,12 @@
   become: yes
   become_user: aur_builder
 
+- name: Create pet config dir
+  file:
+    path: "$HOME/.config/pet"
+    state: directory
+    mode: 0755
+
 - name: .config/pet/config.toml
   template:
     src:    pet_config.j2

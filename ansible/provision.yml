@@ -16,3 +16,5 @@
     - fonts
     - vim
     - terraform
+    - role: wm
+      when: ansible_os_family == "Archlinux"

@@ -1,0 +1,4 @@
+rofi.font: FantasqueSansMono Nerd Font Regular 14
+rofi.theme: Paper
+rofi.opacity: 80
+rofi.modi: combi,run,window

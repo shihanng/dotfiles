@@ -17,3 +17,10 @@
     - hub
   when: ansible_os_family == "Archlinux"
   become: yes
+
+- name: .gitconfig.local
+  template:
+    src:    gitconfig.local.j2
+    dest:   ~/.gitconfig.local
+    backup: no
+  become_user: "{{ ansible_user_id }}"

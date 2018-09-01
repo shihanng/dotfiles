@@ -20,6 +20,7 @@ ansible-playbook --diff -vv provision.yml -i hosts --limit <ip-address> --privat
 The content of the vault:
 
 ```
+user_fullname:
 user_name:
 user_email:
 sudo_pass:

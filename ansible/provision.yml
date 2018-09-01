@@ -1,9 +1,9 @@
 ---
 - hosts: all
   roles:
-    - yay
-    - role: zsh
+    - role: yay
       tags: runme
+    - role: zsh
     - terminal
     - tmux
     - git

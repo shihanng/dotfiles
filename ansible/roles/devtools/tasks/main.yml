@@ -31,3 +31,11 @@
   when: ansible_os_family == "Archlinux"
   become: yes
   become_user: aur_builder
+
+- name: .config/pet/config.toml
+  template:
+    src:    pet_config.j2
+    dest:   ~/.config/pet/config.toml
+    backup: no
+    mode:   0600
+  become_user: "{{ ansible_user_id }}"

@@ -1,0 +1,13 @@
+[General]
+  column = 40
+  editor = "vim"
+  selectcmd = "fzf --ansi"
+  snippetfile = "~/snippet.toml"
+  backend = "gitlab"
+
+[GitLab]
+  access_token = "{{ pet_gitlab_access_token }}"
+  auto_sync = true
+  file_name = "snippet.toml"
+  id = "{{ pet_gitlab_id }}"
+  visibility = "private"

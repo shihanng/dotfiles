@@ -5,5 +5,7 @@ localhost ansible_connection=local
 [all:vars]
 ansible_become_pass='{{ sudo_pass }}'
 ansible_user='{{ user_name }}'
+pet_gitlab_access_token='{{ pet_gitlab_access_token }}'
+pet_gitlab_id='{{ pet_gitlab_id }}'
 user_email='{{ user_email }}'
 user_fullname='{{ user_fullname }}'

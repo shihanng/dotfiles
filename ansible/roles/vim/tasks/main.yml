@@ -44,12 +44,22 @@
       - grip
     when: ansible_os_family == "Darwin"
 
-  - name: Install xdotool (Archlinux)
+  - name: Uninstall vim (Archlinux)
+    pacman:
+      name: vim
+      state: absent
+    become: yes
+    ignore_errors: yes
+    when: ansible_os_family == "Archlinux"
+
+  - name: Install gvim, xdotool (Archlinux)
     pacman:
       name: "{{item}}"
       state: present
     with_items:
+      - gvim
       - xdotool
+      - xorg-server
     become: yes
     when: ansible_os_family == "Archlinux"
 

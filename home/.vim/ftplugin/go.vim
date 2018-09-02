@@ -49,20 +49,3 @@ let g:deoplete#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 let g:deoplete#sources#go#gocode_binary = '$HOME/go/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 1
-
-" ===================================== ale ====================================
-let g:ale_linters = {'go': ['gometalinter', 'go build']}
-let g:ale_go_gometalinter_options = '
-   \ --aggregate
-   \ --disable=gas
-   \ --disable=gotype
-   \ --enable=test
-   \ --enable=golint
-   \ --enable=errcheck
-   \ --enable=vet
-   \ --enable=goimports
-   \ --sort=line
-   \ --fast
-   \ --tests
-   \ --vendor
-   \ '

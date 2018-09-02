@@ -73,6 +73,7 @@ Plug 'lervag/vimtex'
 " JavaScript.
 Plug 'jaxbot/browserlink.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'

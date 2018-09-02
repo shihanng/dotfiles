@@ -18,6 +18,26 @@ let g:ale_keep_list_window_open = 0
 nmap <silent> <leader>] <Plug>(ale_previous_wrap)
 nmap <silent> <leader>[ <Plug>(ale_next_wrap)
 
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
+let g:ale_linters = {'go': ['gometalinter', 'go build']}
+let g:ale_go_gometalinter_options = '
+   \ --aggregate
+   \ --disable=gas
+   \ --disable=gotype
+   \ --enable=test
+   \ --enable=golint
+   \ --enable=errcheck
+   \ --enable=vet
+   \ --enable=goimports
+   \ --sort=line
+   \ --fast
+   \ --tests
+   \ --vendor
+   \ '
+let g:ale_fix_on_save = 1
 
 " =================================== deoplete =================================
 let g:deoplete#omni_patterns = {}
@@ -71,4 +91,6 @@ nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>
 
 let g:LanguageClient_serverCommands = {
     \ 'go': ['go-langserver'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ }

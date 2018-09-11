@@ -9,6 +9,8 @@
     - knqyf263/pet/pet
     - fd
     - moreutils
+    - awscli
+    - tig
   when: ansible_os_family == "Darwin"
 
 - name: Install development tools (Archlinux)

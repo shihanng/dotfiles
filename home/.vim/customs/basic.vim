@@ -34,7 +34,13 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set clipboard=unnamedplus " Copy/paste
+
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed
+else
+  set clipboard=unnamedplus
+endif
+
 set textwidth=79
 set fileformat=unix
 
@@ -88,7 +94,7 @@ set mouse=a
 noremap <leader>ch :center 80<cr>hhv0r=A<space><esc>40A=<esc>:Commentary<cr><esc>81<bar>D
 
 noremap <leader>jq :%!jq '.'<cr>
-noremap <leader>cm :verbose map 
+noremap <leader>cm :verbose map
 
 noremap <F8> :TagbarOpenAutoClose<CR>
 

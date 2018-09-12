@@ -5,6 +5,7 @@
     state: present
   with_items:
     - stow
+    - xclip
     - unzip
   when: ansible_os_family == "Darwin"
 

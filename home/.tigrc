@@ -1,0 +1,7 @@
+set diff-highlight = true
+set mouse          = true
+bind generic !      @sh -c "echo '%(commit)' | pbcopy || xclip -selection c"
+bind stage   !      @sh -c "echo '%(file)' | pbcopy || xclip -selection c"
+bind status  !      @sh -c "echo '%(file)' | pbcopy || xclip -selection c"
+bind tree    !      @sh -c "echo '%(file)' | pbcopy || xclip -selection c"
+bind blob    !      @sh -c "echo '%(file)' | pbcopy || xclip -selection c"

@@ -20,7 +20,7 @@ nmap <silent> <leader>[ <Plug>(ale_next_wrap)
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
+\   'javascript': ['eslint', 'flow'],
 \}
 let g:ale_linters = {'go': ['gometalinter', 'go build']}
 let g:ale_go_gometalinter_options = '

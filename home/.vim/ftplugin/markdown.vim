@@ -7,4 +7,7 @@ if has('unix')
 endif
 
 noremap <leader>m :call Vim_Markdown_Preview_Local()<CR>
-setl conceallevel=0
+setlocal conceallevel=0
+setlocal formatoptions-=tc
+setlocal textwidth=0
+setlocal wrapmargin=0

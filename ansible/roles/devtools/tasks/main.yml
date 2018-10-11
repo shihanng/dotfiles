@@ -1,4 +1,8 @@
 ---
+- name: Add tap for chunkwm
+  homebrew_tap:
+    name: crisidev/homebrew-chunkwm
+
 - name: Install development tools (Darwin)
   homebrew:
     name: "{{item}}"
@@ -11,6 +15,8 @@
     - moreutils
     - awscli
     - tig
+    - chunkwm
+    - koekeishiya/formulae/skhd
   when: ansible_os_family == "Darwin"
 
 - name: Install development tools (Archlinux)

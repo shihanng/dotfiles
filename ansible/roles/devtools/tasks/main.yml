@@ -27,6 +27,7 @@
     - ripgrep
     - fd
     - moreutils
+    - tig
   when: ansible_os_family == "Archlinux"
   become: yes
 

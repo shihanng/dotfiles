@@ -14,6 +14,7 @@
     skip_installed: yes
   with_items:
     - rbenv
+    - ruby-build
   when: ansible_os_family == "Archlinux"
   become: yes
   become_user: aur_builder

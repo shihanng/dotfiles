@@ -39,16 +39,6 @@ let g:ale_go_gometalinter_options = '
    \ '
 let g:ale_fix_on_save = 1
 
-" =================================== deoplete =================================
-let g:deoplete#omni_patterns = {}
-let g:deoplete#enable_at_startup = 1
-set completeopt+=noselect
-if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-endif
-call deoplete#initialize()
-
-
 " ================================== neosnippet ================================
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -80,17 +70,24 @@ nnoremap <leader>qc :cclose<CR> ""
 " Close location
 nnoremap <leader>lc :lclose<CR>
 
-" =========================== " LanguageClient-neovim ==========================
+" =================================== vim-lsp ==================================
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>
+nnoremap <silent> K :LspHover<CR>
+nnoremap <silent> gd :LspDefinition<CR>
+nnoremap <silent> <F2> :GoRename<CR>
+nnoremap <leader>lf :LspDocumentSymbol<CR>
 
-let g:LanguageClient_serverCommands = {
-    \ 'go': ['go-langserver'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ }
+if executable('go-langserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'go-langserver',
+        \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+        \ 'whitelist': ['go'],
+        \ })
+endif
+
+" ===================== prabirshrestha/asyncomplete-lsp.vim ====================
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"

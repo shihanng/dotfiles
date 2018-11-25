@@ -20,6 +20,11 @@ let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_extra_types = 1
 
+" Disable this to use vim-lsp
+let g:go_def_mapping_enabled = 0
+let g:go_gocode_propose_builtins = 0
+let g:go_gocode_propose_source = 0
+
 let g:go_auto_type_info = 1
 
 let g:go_addtags_transform = 'snakecase'
@@ -27,6 +32,8 @@ let g:go_addtags_transform = 'snakecase'
 let g:go_fmt_command = 'goimports'
 
 let g:go_snippet_engine = 'neosnippet'
+
+let g:go_info_mode = 'guru'
 
 let g:go_fmt_fail_silently = 1
 let g:go_list_type = 'quickfix'
@@ -43,9 +50,3 @@ nmap <leader>r <Plug>(go-run)
 nmap <leader>t <Plug>(go-test)
 nmap <Leader>c <Plug>(go-coverage-toggle)
 nmap <leader>gm <Plug>(go-metalinter)
-
-" =================================== deoplete =================================
-let g:deoplete#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
-let g:deoplete#sources#go#gocode_binary = '$HOME/go/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-let g:deoplete#sources#go#use_cache = 1

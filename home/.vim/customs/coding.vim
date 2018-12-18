@@ -20,7 +20,7 @@ nmap <silent> <leader>[ <Plug>(ale_next_wrap)
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
+\   'javascript': ['prettier', 'eslint'],
 \}
 let g:ale_linters = {
 \   'go': ['gometalinter', 'go build'],
@@ -41,6 +41,7 @@ let g:ale_go_gometalinter_options = '
    \ --vendor
    \ '
 let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 
 " ================================== neosnippet ================================
 imap <C-k> <Plug>(neosnippet_expand_or_jump)

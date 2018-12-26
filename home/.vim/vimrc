@@ -58,7 +58,8 @@ Plug 'juliosueiras/vim-terraform-completion'
 
 " Markdown / Note.
 Plug 'tpope/vim-markdown'
-Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
 
 " JSON.
 Plug 'elzr/vim-json'

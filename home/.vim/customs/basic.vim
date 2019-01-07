@@ -100,3 +100,7 @@ noremap <F8> :TagbarOpenAutoClose<CR>
 
 nnoremap <leader>% :source $MYVIMRC<CR>
 set autowrite
+
+" If doing a diff. Upon writing changes to file, automatically update the
+" differences
+autocmd BufWritePost * if &diff == 1 | diffupdate | endif

@@ -83,10 +83,10 @@ nnoremap <silent> gd :LspDefinition<CR>
 nnoremap <silent> <F2> :GoRename<CR>
 nnoremap <leader>lf :LspDocumentSymbol<CR>
 
-if executable('bingo')
+if executable('go-langserver')
     au User lsp_setup call lsp#register_server({
-        \ 'name': 'bingo',
-        \ 'cmd': {server_info->['bingo', '--mode', 'stdio', '--logfile', '/tmp/lspserver.log','--trace', '--pprof', ':6060']},
+        \ 'name': 'go-langserver',
+        \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
         \ 'whitelist': ['go'],
         \ })
 endif

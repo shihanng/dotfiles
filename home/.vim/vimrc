@@ -72,7 +72,6 @@ Plug 'jaxbot/browserlink.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
-Plug 'ryanolsonx/vim-lsp-typescript'
 
 " Python.
 Plug 'tmhedberg/SimpylFold'

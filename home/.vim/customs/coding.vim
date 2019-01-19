@@ -80,7 +80,7 @@ set hidden
 
 nnoremap <silent> K :LspHover<CR>
 nnoremap <silent> gd :LspDefinition<CR>
-nnoremap <silent> <F2> :GoRename<CR>
+nnoremap <silent> <F2> :LspRename<CR>
 nnoremap <leader>lf :LspDocumentSymbol<CR>
 
 if executable('go-langserver')

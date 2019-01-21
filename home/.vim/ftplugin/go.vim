@@ -25,7 +25,7 @@ let g:go_def_mapping_enabled = 0
 let g:go_gocode_propose_builtins = 0
 let g:go_gocode_propose_source = 0
 
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 
 let g:go_addtags_transform = 'snakecase'
 

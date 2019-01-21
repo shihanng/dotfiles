@@ -80,7 +80,7 @@ set hidden
 
 nnoremap <silent> K :LspHover<CR>
 nnoremap <silent> gd :LspDefinition<CR>
-nnoremap <silent> <F2> :GoRename<CR>
+nnoremap <silent> <F2> :LspRename<CR>
 nnoremap <leader>lf :LspDocumentSymbol<CR>
 
 if executable('bingo')
@@ -89,6 +89,15 @@ if executable('bingo')
         \ 'cmd': {server_info->['bingo', '--mode', 'stdio', '--logfile', '/tmp/lspserver.log','--trace', '--pprof', ':6060']},
         \ 'whitelist': ['go'],
         \ })
+endif
+
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+      \ 'name': 'javascript support using typescript-language-server',
+      \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+      \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
+      \ 'whitelist': ['javascript', 'javascript.jsx']
+      \ })
 endif
 
 " ===================== prabirshrestha/asyncomplete-lsp.vim ====================

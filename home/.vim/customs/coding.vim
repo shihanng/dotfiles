@@ -43,6 +43,14 @@ let g:ale_go_gometalinter_options = '
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
+" Turn off for vim-lsp
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_filetype_changed = 0
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_text_changed = 'never'
+
+
 " ================================== neosnippet ================================
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -77,6 +85,10 @@ nnoremap <leader>lc :lclose<CR>
 " =================================== vim-lsp ==================================
 " Required for operations modifying multiple buffers like rename.
 set hidden
+
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
 
 nnoremap <silent> K :LspHover<CR>
 nnoremap <silent> gd :LspDefinition<CR>

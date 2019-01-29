@@ -124,6 +124,26 @@ else
         echom "pip install --user pyls-black"
 endif
 
+augroup filetypedetect
+    au BufRead,BufNewFile *.mylsp set filetype=mylsp
+augroup END
+if executable('/home/shihanng/dev/mylsp/mylsp')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'mylsp',
+        \ 'cmd': {server_info->['/home/shihanng/dev/mylsp/mylsp']},
+        \ 'whitelist': ['mylsp'],
+        \ })
+else
+        echom "pip install --user 'python-language-server[all]'"
+        echom "pip install --user pyls-black"
+endif
+
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+
+" for asyncomplete.vim log
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+
 " ===================== prabirshrestha/asyncomplete-lsp.vim ====================
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

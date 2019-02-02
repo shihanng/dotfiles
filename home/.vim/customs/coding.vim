@@ -124,9 +124,20 @@ else
         echom "pip install --user pyls-black"
 endif
 
+if executable('docker-langserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'docker-langserver',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
+        \ 'whitelist': ['dockerfile'],
+        \ })
+else
+        echom "npm install -g dockerfile-language-server-nodejs"
+endif
+
 augroup filetypedetect
     au BufRead,BufNewFile *.mylsp set filetype=mylsp
 augroup END
+
 if executable('/home/shihanng/dev/mylsp/mylsp')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'mylsp',

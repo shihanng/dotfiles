@@ -1,0 +1,6 @@
+languages:
+  make:
+    lint-command: checkmake
+    lint-stdin: true
+    lint-formats:
+      - '%f: %l: %m'

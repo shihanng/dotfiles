@@ -134,6 +134,15 @@ else
         echom "npm install -g dockerfile-language-server-nodejs"
 endif
 
+augroup LspEFM
+  au!
+  autocmd User lsp_setup call lsp#register_server({
+      \ 'name': 'efm-langserver-erb',
+      \ 'cmd': {server_info->['efm-langserver', '-c=$HOME/.config/efm-langserver/config.yaml']},
+      \ 'whitelist': ['eruby', 'markdown'],
+      \ })
+augroup END
+
 " ===================== prabirshrestha/asyncomplete-lsp.vim ====================
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

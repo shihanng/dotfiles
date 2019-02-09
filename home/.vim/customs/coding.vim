@@ -138,6 +138,15 @@ augroup filetypedetect
     au BufRead,BufNewFile *.mylsp set filetype=mylsp
 augroup END
 
+augroup LspEFM
+  au!
+  autocmd User lsp_setup call lsp#register_server({
+      \ 'name': 'efm-langserver-erb',
+      \ 'cmd': {server_info->['efm-langserver', '-c=$HOME/.config/efm-langserver/config.yaml']},
+      \ 'whitelist': ['eruby', 'markdown'],
+      \ })
+augroup END
+
 if executable('/home/shihanng/dev/mylsp/mylsp')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'mylsp',

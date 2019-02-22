@@ -66,3 +66,5 @@ export NVM_DIR="$HOME/.nvm"
 [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
 eval "$(direnv hook zsh)"
 source <(kubectl completion zsh)
+
+function gi() { curl -sLw "\n" https://www.gitignore.io/api/$@ ;}

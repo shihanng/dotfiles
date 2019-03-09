@@ -42,8 +42,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'w0rp/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets' " Snippets collections.
 Plug 'honza/vim-snippets'         " Snippets collections.

@@ -5,6 +5,21 @@
       "args": ["--diagnostics-style=instant"],
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
+    },
+    "docker": {
+      "command": "docker-langserver",
+      "args": ["--stdio"],
+      "filetypes": ["dockerfile"]
+    },
+    "efm": {
+      "command": "efm-langserver",
+      "args": ["-c", "$HOME/.config/efm-langserver/config.yaml"],
+      "filetypes": ["eruby", "markdown"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"]
     }
   }
 }

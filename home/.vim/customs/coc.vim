@@ -118,6 +118,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 let s:coc_extensions = [
       \  'coc-pyls',
       \  'coc-tsserver',
+      \  'coc-vetur',
       \ ]
 
 call coc#add_extension(join(get(s:, 'coc_extensions', [])))

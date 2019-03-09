@@ -116,6 +116,9 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 let s:coc_extensions = [
+      \  'coc-emmet',
+      \  'coc-json',
+      \  'coc-prettier',
       \  'coc-pyls',
       \  'coc-tsserver',
       \  'coc-vetur',

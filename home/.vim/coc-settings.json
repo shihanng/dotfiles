@@ -1,5 +1,6 @@
 {
-  "languageserver": {
+    "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "html", "js"],
+    "languageserver": {
     "golang": {
       "command": "bingo",
       "args": ["--diagnostics-style=instant"],

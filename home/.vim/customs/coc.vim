@@ -114,14 +114,3 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-let s:coc_extensions = [
-      \  'coc-emmet',
-      \  'coc-json',
-      \  'coc-prettier',
-      \  'coc-pyls',
-      \  'coc-tsserver',
-      \  'coc-vetur',
-      \ ]
-
-call coc#add_extension(join(get(s:, 'coc_extensions', [])))

@@ -1,5 +1,5 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "html", "js"],
+    "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "html", "js", "javascript"],
     "languageserver": {
     "golang": {
       "command": "bingo",

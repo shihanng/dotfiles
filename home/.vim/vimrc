@@ -60,8 +60,6 @@ Plug 'terryma/vim-multiple-cursors'
 
 " ==================================== Coding ==================================
 Plug 'w0rp/ale'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/async.vim'
 Plug 'neoclide/coc.nvim', {'do': function('PlugCoc')}
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets' " Snippets collections.

@@ -1,3 +1,4 @@
 --smart-case
 --no-ignore
 --hidden
+--glob=!node_modules

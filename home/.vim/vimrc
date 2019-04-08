@@ -69,7 +69,6 @@ Plug 'elzr/vim-json'
 Plug 'lervag/vimtex'
 
 " JavaScript.
-Plug 'jaxbot/browserlink.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'

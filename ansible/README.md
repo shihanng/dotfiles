@@ -15,6 +15,7 @@ Run
 ```
 ansible-vault create passwd.yml
 ansible-playbook --diff -vv provision.yml -i hosts --limit <ip-address> --private-key=~/.ssh/id_rsa --ask-vault-pass --extra-vars '@passwd.yml'
+ansible-playbook --diff --check -vv provision.yml -i hosts --limit localhost --ask-vault-pass --extra-vars '@passwd.yml'
 ```
 
 The content of the vault:

@@ -15,7 +15,7 @@
     "efm": {
       "command": "efm-langserver",
       "args": ["-c", "$HOME/.config/efm-langserver/config.yaml"],
-      "filetypes": ["eruby", "markdown"]
+      "filetypes": ["eruby"]
     },
     "bash": {
       "command": "bash-language-server",

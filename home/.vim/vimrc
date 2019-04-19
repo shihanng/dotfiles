@@ -24,6 +24,7 @@ let s:coc_extensions = [
             \  'coc-pyls',
             \  'coc-tsserver',
             \  'coc-vetur',
+            \  'coc-yaml',
             \ ]
 
 call plug#begin('~/.vim/plugged')

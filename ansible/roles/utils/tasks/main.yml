@@ -1,21 +1,13 @@
 ---
 - name: Install other utilities (Darwin)
   homebrew:
-    name: "{{item}}"
+    name: ["stow", "xclip", "unzip"]
     state: present
-  with_items:
-    - stow
-    - xclip
-    - unzip
   when: ansible_os_family == "Darwin"
 
 - name: Install other utilities (Archlinux)
   pacman:
-    name: "{{item}}"
+    name: ["stow", "xclip", "unzip"]
     state: present
-  with_items:
-    - stow
-    - xclip
-    - unzip
   when: ansible_os_family == "Archlinux"
   become: yes

@@ -1,20 +1,14 @@
 ---
 - name: Install git, etc. (Darwin)
   homebrew:
-    name: "{{item}}"
+    name: ["git", "hub"]
     state: present
-  with_items:
-    - git
-    - hub
   when: ansible_os_family == "Darwin"
 
 - name: Install git (Archlinux)
   pacman:
-    name: "{{item}}"
+    name: ["git", "hub"]
     state: present
-  with_items:
-    - git
-    - hub
   when: ansible_os_family == "Archlinux"
   become: yes
 

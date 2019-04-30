@@ -38,10 +38,8 @@
 
   - name: Install grip (Darwin)
     homebrew:
-      name: "{{item}}"
+      name: ["grip"]
       state: present
-    with_items:
-      - grip
     when: ansible_os_family == "Darwin"
 
   - name: Uninstall vim (Archlinux)
@@ -54,22 +52,16 @@
 
   - name: Install gvim, xdotool (Archlinux)
     pacman:
-      name: "{{item}}"
+      name: ["gvim", "xdotool", "xorg-server"]
       state: present
-    with_items:
-      - gvim
-      - xdotool
-      - xorg-server
     become: yes
     when: ansible_os_family == "Archlinux"
 
   - name: Install grip (AUR)
     aur:
-      name: "{{item}}"
+      name: "python-grip"
       use: yay
       skip_installed: yes
-    with_items:
-      - python-grip
     when: ansible_os_family == "Archlinux"
     become: yes
     become_user: aur_builder

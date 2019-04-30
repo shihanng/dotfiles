@@ -4,17 +4,17 @@
     - role: yay
       tags: runme
     - role: zsh
-    - terminal
-    - tmux
-    - git
-    - utils
-    - golang
-    - devtools
-    - python
-    - ruby
-    - node
-    - fonts
-    - vim
-    - terraform
+    - role: terminal
+    - role: tmux
+    - role: git
+    - role: utils
+    - role: golang
+    - role: devtools
+    - role: python
+    - role: ruby
+    - role: node
+    - role: fonts
+    - role: vim
+    - role: terraform
     - role: wm
       when: ansible_os_family == "Archlinux"

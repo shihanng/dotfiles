@@ -1,10 +1,8 @@
 ---
 - name: Install development tools
   pacman:
-    name: "{{item}}"
+    name: ["rofi"]
     state: present
-  with_items:
-    - rofi
   when: ansible_os_family == "Archlinux"
   become: yes
 

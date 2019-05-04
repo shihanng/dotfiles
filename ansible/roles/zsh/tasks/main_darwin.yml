@@ -5,9 +5,5 @@
 
 - name: Install zsh
   homebrew:
-    name: "{{item}}"
+    name: ["zsh", "reattach-to-user-namespace", "coreutils"]
     state: present
-  with_items:
-    - zsh
-    - reattach-to-user-namespace
-    - coreutils

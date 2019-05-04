@@ -1,17 +1,13 @@
 ---
 - name: Install go (Darwin)
   homebrew:
-    name: "{{item}}"
+    name: ["go"]
     state: present
-  with_items:
-    - go
   when: ansible_os_family == "Darwin"
 
 - name: Install go (Archlinux)
   pacman:
-    name: "{{item}}"
+    name: ["go"]
     state: present
-  with_items:
-    - go
   when: ansible_os_family == "Archlinux"
   become: yes

@@ -2,9 +2,8 @@
     "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "html", "js", "javascript"],
     "languageserver": {
     "golang": {
-      "command": "bingo",
-      "args": ["--diagnostics-style=instant"],
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".git/", ".hg/"],
       "filetypes": ["go"]
     },
     "docker": {

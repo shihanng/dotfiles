@@ -72,3 +72,11 @@ function gi() { curl -sLw "\n" https://www.gitignore.io/api/$@ ;}
 function vinfo() {
     vim -c "Vinfo $1" -c 'silent only'
 }
+
+function open() {
+    if [[ `uname` == Linux ]]; then
+        xdg-open "$@"
+    elif [[ `uname` == Darwin* ]]; then
+        open "$@"
+    fi
+}

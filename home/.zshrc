@@ -80,3 +80,5 @@ function open() {
         open "$@"
     fi
 }
+
+export GPG_TTY=$(tty)

@@ -27,7 +27,6 @@
   - name: Install vim (Darwin)
     homebrew:
       name: vim
-      install_options: "--with-python3"
       state: present
     when: ansible_os_family == "Darwin"
 

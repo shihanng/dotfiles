@@ -5,13 +5,13 @@
 
 - name: Install development tools (Darwin)
   homebrew:
-    name: ["direnv", "ripgrep", "knqyf263/pet/pet", "fd", "moreutils", "awscli", "tig", "chunkwm", "koekeishiya/formulae/skhd"]
+    name: ["direnv", "ripgrep", "knqyf263/pet/pet", "fd", "moreutils", "awscli", "tig", "chunkwm", "koekeishiya/formulae/skhd", "jq"]
     state: present
   when: ansible_os_family == "Darwin"
 
 - name: Install development tools (Archlinux)
   pacman:
-    name: ["ripgrep", "fd", "moreutils", "tig"]
+    name: ["ripgrep", "fd", "moreutils", "tig", "jq"]
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes

@@ -1,10 +1,12 @@
 {
     "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "html", "js", "javascript", "go"],
     "languageserver": {
-    "golang": {
-      "command": "gopls",
+    "go-langserver": {
+      "command": "go-langserver",
+      "args": ["-gocodecompletion", "-func-snippet-enabled"],
       "rootPatterns": ["go.mod", ".git/", ".hg/"],
-      "filetypes": ["go"]
+      "filetypes": ["go"],
+      "enable": true
     },
     "docker": {
       "command": "docker-langserver",

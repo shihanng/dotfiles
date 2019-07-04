@@ -57,6 +57,8 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 path=($HOME/go/bin $path[@])
 path=($HOME/.fzf/bin $path[@])
 path=($HOME/.local/bin $path[@])
+path=($HOME/.yarn/bin $path[@])
+path=($HOME/.config/yarn/global/node_modules/.bin $path[@])
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(pyenv init -)"

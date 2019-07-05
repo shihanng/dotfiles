@@ -18,6 +18,7 @@ endfunction
 
 " :PlugUpdate! coc.nvim
 let s:coc_extensions = [
+            \  'coc-solargraph',
             \  'coc-emmet',
             \  'coc-json',
             \  'coc-prettier',

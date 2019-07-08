@@ -76,10 +76,10 @@ function vinfo() {
 }
 
 function open() {
-    if [[ `uname` == Linux ]]; then
+    if [[ `uname` == "Linux" ]]; then
         xdg-open "$@"
-    elif [[ `uname` == Darwin* ]]; then
-        open "$@"
+    elif [[ `uname` == "Darwin" ]]; then
+        /usr/bin/open "$@"
     fi
 }
 

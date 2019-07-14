@@ -6,28 +6,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-function! PlugCoc(info) abort
-    if a:info.status ==? 'installed' || a:info.force
-        !yarn install
-        call coc#add_extension(join(get(s:, 'coc_extensions', [])))
-    elseif a:info.status ==? 'updated'
-        !yarn install
-        call coc#util#update()
-    endif
-endfunction
-
-" :PlugUpdate! coc.nvim
-let s:coc_extensions = [
-            \  'coc-solargraph',
-            \  'coc-emmet',
-            \  'coc-json',
-            \  'coc-prettier',
-            \  'coc-pyls',
-            \  'coc-tsserver',
-            \  'coc-vetur',
-            \  'coc-yaml',
-            \ ]
-
 call plug#begin('~/.vim/plugged')
 " ================================ File explorer ===============================
 Plug 'scrooloose/nerdtree'
@@ -62,7 +40,17 @@ Plug 'terryma/vim-multiple-cursors'
 
 " ==================================== Coding ==================================
 Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'do': function('PlugCoc')}
+
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets' " Snippets collections.
 Plug 'honza/vim-snippets'         " Snippets collections.

@@ -6,6 +6,11 @@
       "args": ["-gocodecompletion", "-func-snippet-enabled"],
       "rootPatterns": ["go.mod", ".git/", ".hg/", "Gopkg.toml"],
       "filetypes": ["go"],
+      "initializationOptions": {
+        "gocodeCompletionEnabled": true,
+        "diagnosticsEnabled": true,
+        "lintTool": "golint"
+      },
       "enable": true
     },
     "docker": {

@@ -4,7 +4,7 @@
     "go-langserver": {
       "command": "go-langserver",
       "args": ["-gocodecompletion", "-func-snippet-enabled"],
-      "rootPatterns": ["go.mod", ".git/", ".hg/"],
+      "rootPatterns": ["go.mod", ".git/", ".hg/", "Gopkg.toml"],
       "filetypes": ["go"],
       "enable": true
     },

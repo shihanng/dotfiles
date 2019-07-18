@@ -84,3 +84,5 @@ function open() {
 }
 
 export GPG_TTY=$(tty)
+
+[ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh

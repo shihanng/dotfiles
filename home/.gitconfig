@@ -30,4 +30,4 @@
 
 # https://stackoverflow.com/a/50042202/6549460
 [difftool "vimdiff"]
-	cmd = vimdiff "$LOCAL" "$REMOTE"
+	cmd = vim -f -d -c 'wincmd l' -c 'cd "$GIT_PREFIX"' "$LOCAL" "$REMOTE"

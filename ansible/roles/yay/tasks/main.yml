@@ -1,23 +1,26 @@
 ---
 # See https://github.com/kewlfft/ansible-aur#create-the-aur_builder-user
-- user:
+- name: New user for AUR management
+  user:
     name: aur_builder
     group: wheel
-  when: ansible_os_family == "Archlinux"
+    comment: "AUR builder"
+    shell: /bin/nologin
+    home: /var/lib/aur_builder
+    system: yes
   become: yes
 
-- lineinfile:
+- name: Add permission to aur_builder
+  lineinfile:
     path: /etc/sudoers.d/11-install-aur_builder
     line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
     create: yes
     validate: 'visudo -cf %s'
-  when: ansible_os_family == "Archlinux"
   become: yes
 
 - name: Install yay
   aur:
     name: yay
     skip_installed: yes
-  when: ansible_os_family == "Archlinux"
   become: yes
   become_user: aur_builder

@@ -4,6 +4,7 @@
     - role: terminal
       tags: runme
     - role: yay
+      when: ansible_os_family == "Archlinux"
     - role: zsh
     - role: tmux
     - role: git

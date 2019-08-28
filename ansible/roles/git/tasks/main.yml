@@ -1,13 +1,13 @@
 ---
 - name: Install git, etc. (Darwin)
   homebrew:
-    name: ["git", "hub"]
+    name: ["git", "hub", "gnupg"]
     state: present
   when: ansible_os_family == "Darwin"
 
 - name: Install git (Archlinux)
   pacman:
-    name: ["git", "hub"]
+    name: ["git", "hub", "gnupg"]
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes
@@ -17,4 +17,5 @@
     src:    gitconfig.local.j2
     dest:   ~/.gitconfig.local
     backup: no
+    force: no
   become_user: "{{ ansible_user_id }}"

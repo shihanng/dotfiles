@@ -26,4 +26,5 @@ pet_gitlab_id:
 user_email:
 user_fullname:
 user_name:
+user_pass:
 ```

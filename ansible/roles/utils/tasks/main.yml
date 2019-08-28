@@ -1,4 +1,11 @@
 ---
+- name: Install xquartz
+  homebrew_cask:
+    name: xquartz
+    state: present
+    sudo_password: "{{ ansible_become_pass }}"
+  when: ansible_os_family == "Darwin"
+
 - name: Install other utilities (Darwin)
   homebrew:
     name: ["stow", "xclip", "unzip"]

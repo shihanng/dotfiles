@@ -23,7 +23,6 @@ The content of the vault:
 ```
 pet_gitlab_access_token:
 pet_gitlab_id:
-sudo_pass:
 user_email:
 user_fullname:
 user_name:

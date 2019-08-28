@@ -1,10 +1,10 @@
 ---
 - hosts: all
   roles:
-    - role: yay
-      tags: runme
-    - role: zsh
     - role: terminal
+      tags: runme
+    - role: yay
+    - role: zsh
     - role: tmux
     - role: git
     - role: utils

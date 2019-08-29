@@ -1,0 +1,10 @@
+---
+- name: Tap homebrew/cask-fonts
+  homebrew_tap:
+    name: homebrew/cask-fonts
+
+# https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
+- name: Install font
+  homebrew_cask:
+    name: font-fantasquesansmono-nerd-font-mono
+    state: present

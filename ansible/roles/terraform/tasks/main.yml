@@ -1,17 +1,6 @@
 ---
-- name: Install tfenv (Darwin)
-  homebrew:
-    name: "tfenv"
-    state: present
+- include: main_darwin.yml
   when: ansible_os_family == "Darwin"
 
-- name: Install tfenv (AUR)
-  aur:
-    name: "{{item}}"
-    use: yay
-    skip_installed: yes
-  with_items:
-    - tfenv
+- include: main_archlinux.yml
   when: ansible_os_family == "Archlinux"
-  become: yes
-  become_user: aur_builder

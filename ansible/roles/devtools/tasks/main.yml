@@ -1,39 +1,52 @@
 ---
 - name: Install development tools (Darwin)
   homebrew:
-    name: ["direnv", "ripgrep", "knqyf263/pet/pet", "fd", "moreutils", "awscli", "tig", "jq"]
+    name:
+      - awscli
+      - direnv
+      - fd
+      - jq
+      - knqyf263/pet/pet
+      - moreutils
+      - ripgrep
+      - tig
     state: present
   when: ansible_os_family == "Darwin"
 
 - name: Install development tools (Archlinux)
   pacman:
-    name: ["ripgrep", "fd", "moreutils", "tig", "jq"]
+    name:
+      - aws-cli
+      - fd
+      - jq
+      - moreutils
+      - ripgrep
+      - tig
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes
 
 - name: Install development tools (AUR)
   aur:
-    name: "{{item}}"
+    name:
+      - direnv
+      - pet-bin
     use: yay
     skip_installed: yes
-  with_items:
-    - direnv
-    - pet-bin
   when: ansible_os_family == "Archlinux"
   become: yes
-  become_user: aur_builder
+  become_user: "{{ aur_user }}"
 
 - name: Create pet config dir
   file:
-    path: "$HOME/.config/pet"
+    path: "{{ ansible_env.HOME }}/.config/pet"
     state: directory
     mode: 0755
 
 - name: .config/pet/config.toml
   template:
     src:    pet_config.j2
-    dest:   ~/.config/pet/config.toml
+    dest:   "{{ ansible_env.HOME }}/.config/pet/config.toml"
     backup: no
     mode:   0600
-  become_user: "{{ ansible_user_id }}"
+    force: no

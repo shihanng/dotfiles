@@ -1,24 +1,15 @@
 ---
 - name: Install pyenv and python 3 (Darwin)
   homebrew:
-    name: ["python", "pyenv"]
+    name: pyenv
     state: present
   when: ansible_os_family == "Darwin"
 
 - name: Install pyenv (AUR)
   aur:
-    name: "{{item}}"
+    name: pyenv
     use: yay
     skip_installed: yes
-  with_items:
-    - pyenv
   when: ansible_os_family == "Archlinux"
   become: yes
   become_user: aur_builder
-
-- name: Install pip
-  pacman:
-    name: python-pip
-    state: present
-  when: ansible_os_family == "Archlinux"
-  become: yes

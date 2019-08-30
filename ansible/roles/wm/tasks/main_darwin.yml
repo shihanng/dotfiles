@@ -1,0 +1,22 @@
+---
+- name: Tap koekeishiya/formulae
+  homebrew_tap:
+    name: koekeishiya/formulae
+
+- name: Install yabai, etc.
+  homebrew:
+    name:
+      - yabai
+      - skhd
+    state: present
+
+- name: Install scripting-addition
+  command: "yabai --install-sa"
+  args:
+    creates: "/Library/ScriptingAdditions/yabai.osax"
+  become: yes
+
+- name: Install alfred
+  homebrew_cask:
+    name: alfred
+    state: present

@@ -1,8 +1,6 @@
 ---
-- name: Install development tools
-  pacman:
-    name: ["rofi"]
-    state: present
-  when: ansible_os_family == "Archlinux"
-  become: yes
+- include: main_darwin.yml
+  when: ansible_os_family == "Darwin"
 
+- include: main_archlinux.yml
+  when: ansible_os_family == "Archlinux"

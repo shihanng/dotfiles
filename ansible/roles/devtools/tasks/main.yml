@@ -1,11 +1,7 @@
 ---
-- name: Add tap for chunkwm
-  homebrew_tap:
-    name: crisidev/homebrew-chunkwm
-
 - name: Install development tools (Darwin)
   homebrew:
-    name: ["direnv", "ripgrep", "knqyf263/pet/pet", "fd", "moreutils", "awscli", "tig", "chunkwm", "koekeishiya/formulae/skhd", "jq"]
+    name: ["direnv", "ripgrep", "knqyf263/pet/pet", "fd", "moreutils", "awscli", "tig", "jq"]
     state: present
   when: ansible_os_family == "Darwin"
 

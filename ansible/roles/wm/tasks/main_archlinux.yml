@@ -1,0 +1,6 @@
+---
+- name: Install the tools
+  pacman:
+    name: ["i3-gaps", "rofi"]
+    state: present
+  become: yes

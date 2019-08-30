@@ -1,66 +1,17 @@
 ---
-  - name: Make directories for vim
-    file:
-      path: "$HOME/{{ item }}"
-      state: directory
-      mode: 0755
-    with_items:
-      - .local/share/vim/site/autoload
-      - .local/share/vim/backup
-      - .local/share/vim/swp
-      - .local/share/vim/undo
+- include: main_darwin.yml
+  when: ansible_os_family == "Darwin"
 
-  - name: Install neovim (Archlinux)
-    pacman:
-      name: python-neovim
-      state: present
-    when: ansible_os_family == "Archlinux"
-    become: yes
+- include: main_archlinux.yml
+  when: ansible_os_family == "Archlinux"
 
-  - name: install neovim via pip
-    pip:
-      executable: "/usr/local/bin/pip3"
-      name: neovim
-      extra_args: --user
-    when: ansible_os_family == "Darwin"
-
-  - name: Install vim (Darwin)
-    homebrew:
-      name: vim
-      state: present
-    when: ansible_os_family == "Darwin"
-
-  - name: Install go-langserver
-    shell: go get -u github.com/sourcegraph/go-langserver
-    args:
-      creates: $HOME/go/bin/go-langserver
-
-  - name: Install grip (Darwin)
-    homebrew:
-      name: ["grip"]
-      state: present
-    when: ansible_os_family == "Darwin"
-
-  - name: Uninstall vim (Archlinux)
-    pacman:
-      name: vim
-      state: absent
-    become: yes
-    ignore_errors: yes
-    when: ansible_os_family == "Archlinux"
-
-  - name: Install gvim, xdotool (Archlinux)
-    pacman:
-      name: ["gvim", "xdotool", "xorg-server"]
-      state: present
-    become: yes
-    when: ansible_os_family == "Archlinux"
-
-  - name: Install grip (AUR)
-    aur:
-      name: "python-grip"
-      use: yay
-      skip_installed: yes
-    when: ansible_os_family == "Archlinux"
-    become: yes
-    become_user: aur_builder
+- name: Make directories for vim
+  file:
+    path: "{{ ansible_env.HOME }}/.local/share/vim/{{ item }}"
+    state: directory
+    mode: 0755
+  with_items:
+    - site/autoload
+    - backup
+    - swp
+    - undo

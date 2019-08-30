@@ -1,0 +1,7 @@
+---
+- name: Install vim, etc
+  homebrew:
+    name:
+      - vim
+      - grip
+    state: present

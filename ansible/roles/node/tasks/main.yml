@@ -6,16 +6,17 @@
   become_user: "{{ ansible_user_id }}"
 
 - name: Install nvm
-  shell: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+  shell: >
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
   args:
-    creates: $HOME/.nvm/nvm.sh
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
 - name: Install node and set version
   shell: /bin/bash -c "source ~/.nvm/nvm.sh && nvm install v10.16.0 && nvm alias default v10.16.0"
-  # args:
-  #   creates: $HOME/.nvm/alias
+  args:
+    creates: $HOME/.nvm/alias
 
 - name: Install yarn
-  shell: curl -o- -L https://yarnpkg.com/install.sh | bash
+  shell: source ~/.nvm/nvm.sh && curl -o- -L https://yarnpkg.com/install.sh | bash
   args:
-    creates: $HOME/yarn-install.sh
+    creates: $HOME/.yarn

@@ -2,7 +2,6 @@
 - hosts: all
   roles:
     - role: terminal
-      tags: runme
     - role: yay
       when: ansible_os_family == "Archlinux"
     - role: zsh
@@ -10,12 +9,12 @@
     - role: git
     - role: utils
     - role: golang
-    - role: devtools
     - role: python
-    - role: ruby
     - role: node
+    - role: ruby
+    - role: devtools
     - role: fonts
-    - role: vim
     - role: terraform
     - role: wm
-      when: ansible_os_family == "Archlinux"
+    - role: vim
+      tags: runme

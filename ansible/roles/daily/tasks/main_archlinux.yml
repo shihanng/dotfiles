@@ -1,0 +1,8 @@
+---
+- name: Install stuffs
+  aur:
+    name: "google-chrome"
+    use: yay
+    skip_installed: yes
+  become: yes
+  become_user: "{{ aur_user }}"

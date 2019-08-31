@@ -17,4 +17,5 @@
     - role: terraform
     - role: wm
     - role: vim
+    - role: daily
       tags: runme

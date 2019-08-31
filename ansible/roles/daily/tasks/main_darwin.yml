@@ -1,0 +1,6 @@
+---
+- name: Install stuffs
+  homebrew_cask:
+    name:
+      - google-chrome
+    state: present

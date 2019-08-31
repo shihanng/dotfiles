@@ -1,7 +1,9 @@
 ---
 - name: Install stuffs
   aur:
-    name: "google-chrome"
+    name:
+      - "google-chrome"
+      - "pavucontrol"
     use: yay
     skip_installed: yes
   become: yes

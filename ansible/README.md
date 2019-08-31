@@ -3,6 +3,8 @@
 ssh-copy-id -i <path-to-public-key> <user>@<ip>
 ```
 
+For macOS, install [Homebrew](https://brew.sh/).
+
 Depending on
 
 ```
@@ -33,3 +35,7 @@ Run
 ansible-playbook --diff -vv provision.yml -i hosts --limit <ip-address> --private-key=~/.ssh/id_rsa --ask-vault-pass
 ansible-playbook --diff --check -vv provision.yml -i hosts --limit localhost --ask-vault-pass
 ```
+
+Adding passphrase to [ssh key](https://help.github.com/en/articles/working-with-ssh-key-passphrases#adding-or-changing-a-passphrase).
+
+Manage your GPG key in `$HOME/gitconfig.local`.

@@ -10,6 +10,7 @@
       - moreutils
       - ripgrep
       - tig
+      - kubernetes-cli
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -22,6 +23,7 @@
       - moreutils
       - ripgrep
       - tig
+      - kubectl
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes

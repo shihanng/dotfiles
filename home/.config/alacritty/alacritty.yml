@@ -542,8 +542,6 @@ key_bindings:
   #- { key: W,      mods: Command,         action: Quit             }
   #- { key: F,      mods: Command|Control, action: ToggleFullscreen }
 
-  - { key: Q,        mods: Control, chars: "\x11"                        }
-  - { key: /,        mods: Control, chars: "\x2f"                        }
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
   - { key: L,        mods: Control, action: ClearLogNotice                   }

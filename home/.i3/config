@@ -62,8 +62,6 @@ bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -269,10 +267,15 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
+exec_always --no-startup-id flashfocus
+bindsym $mod+n exec --no-startup-id flash_window
+exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id compton -b
+bindsym $mod+9 exec --no-startup-id blurlock
 
 # https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#Unmute_with_amixer
 exec --no-startup-id amixer sset Master unmute
@@ -280,23 +283,15 @@ exec --no-startup-id mixer sset Speaker unmute
 exec --no-startup-id mixer sset Headphone unmute
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-exec --no-startup-id solaar
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
 exec dropbox start
-exec_always --no-startup-id flashfocus
-bindsym $mod+n exec --no-startup-id flash_window
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:

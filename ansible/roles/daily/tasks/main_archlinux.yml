@@ -7,10 +7,22 @@
       - bitwarden-bin
       - spotify
       - keybase-bin
+      - nordic-polar-theme-git
+      - xcursor-lliurex
+      - newaita-icons-git
     use: yay
     skip_installed: yes
   become: yes
   become_user: "{{ aur_user }}"
+
+- name: Install stuffs (pacman)
+  pacman:
+    name:
+      - lxappearance
+      - gtk-chtheme
+      - pcmanfm-gtk3
+    state: present
+  become: yes
 
 - name: Install steam
   pacman:

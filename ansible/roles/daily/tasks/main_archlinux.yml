@@ -10,6 +10,7 @@
       - nordic-polar-theme-git
       - xcursor-lliurex
       - newaita-icons-git
+      - flashfocus-git
     use: yay
     skip_installed: yes
   become: yes
@@ -21,6 +22,8 @@
       - lxappearance
       - gtk-chtheme
       - pcmanfm-gtk3
+      - nitrogen
+      - compton
     state: present
   become: yes
 

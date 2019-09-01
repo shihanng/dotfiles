@@ -6,4 +6,5 @@
       - bitwarden
       - spotify
       - keybase
+      - docker
     state: present

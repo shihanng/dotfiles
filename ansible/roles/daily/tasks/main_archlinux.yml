@@ -24,6 +24,7 @@
       - pcmanfm-gtk3
       - nitrogen
       - compton
+      - docker
     state: present
   become: yes
 
@@ -34,4 +35,19 @@
       - lib32-libgpg-error
       - lib32-nvidia-utils
     state: present
+  become: yes
+
+- name: Start docker
+  service:
+    name: docker
+    enabled: true
+    state: started
+  become: yes
+
+- name: Add user to docker group
+  user:
+    name: "{{ ansible_ssh_user }}"
+    append: yes
+    groups:
+      - docker
   become: yes

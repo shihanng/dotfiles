@@ -25,6 +25,7 @@
       - nitrogen
       - compton
       - docker
+      - docker-compose
     state: present
   become: yes
 

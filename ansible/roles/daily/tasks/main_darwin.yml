@@ -8,3 +8,9 @@
       - keybase
       - docker
     state: present
+
+- name: Install stuffs (brew)
+  homebrew:
+    name:
+      - docker-compose
+    state: present

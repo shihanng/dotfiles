@@ -3,4 +3,5 @@
   homebrew_cask:
     name:
       - google-chrome
+      - bitwarden
     state: present

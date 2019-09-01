@@ -4,6 +4,7 @@
     name:
       - "google-chrome"
       - "pavucontrol"
+      - bitwarden-bin
     use: yay
     skip_installed: yes
   become: yes

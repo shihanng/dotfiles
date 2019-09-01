@@ -11,6 +11,7 @@
       - xcursor-lliurex
       - newaita-icons-git
       - flashfocus-git
+      - polybar
     use: yay
     skip_installed: yes
   become: yes

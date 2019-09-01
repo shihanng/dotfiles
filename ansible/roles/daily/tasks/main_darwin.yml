@@ -4,4 +4,6 @@
     name:
       - google-chrome
       - bitwarden
+      - spotify
+      - keybase
     state: present

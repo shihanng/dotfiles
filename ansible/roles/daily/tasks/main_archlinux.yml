@@ -5,6 +5,8 @@
       - "google-chrome"
       - "pavucontrol"
       - bitwarden-bin
+      - spotify
+      - keybase-bin
     use: yay
     skip_installed: yes
   become: yes

@@ -37,5 +37,8 @@ ansible-playbook --diff --check -vv provision.yml -i hosts --limit localhost --a
 ```
 
 Adding passphrase to [ssh key](https://help.github.com/en/articles/working-with-ssh-key-passphrases#adding-or-changing-a-passphrase).
+Then add the [SSH key in to GitHub](https://help.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent).
 
-Manage your GPG key in `$HOME/gitconfig.local`.
+Run `run_keybase` on Linux machine.
+
+Import the GPG key using [this guide](https://github.com/pstadler/keybase-gpg-github) and the key in `$HOME/gitconfig.local`.

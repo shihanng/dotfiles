@@ -11,3 +11,12 @@
     skip_installed: yes
   become: yes
   become_user: "{{ aur_user }}"
+
+- name: Install steam
+  pacman:
+    name:
+      - steam
+      - lib32-libgpg-error
+      - lib32-nvidia-utils
+    state: present
+  become: yes

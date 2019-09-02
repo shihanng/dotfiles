@@ -11,6 +11,7 @@
       - docker-compose
       - ibus
       - ibus-rime
+      - gvfs
     state: present
   become: yes
 

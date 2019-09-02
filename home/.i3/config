@@ -263,6 +263,7 @@ bindsym $mod+n exec --no-startup-id flash_window
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id compton -b
 bindsym $mod+9 exec --no-startup-id blurlock
+exec --no-startup-id ibus-daemon --xim -d -r
 
 # https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#Unmute_with_amixer
 exec --no-startup-id amixer sset Master unmute

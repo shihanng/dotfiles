@@ -1,4 +1,19 @@
 ---
+- name: Install stuffs (pacman)
+  pacman:
+    name:
+      - lxappearance
+      - gtk-chtheme
+      - pcmanfm-gtk3
+      - nitrogen
+      - compton
+      - docker
+      - docker-compose
+      - ibus
+      - ibus-rime
+    state: present
+  become: yes
+
 - name: Install stuffs
   aur:
     name:
@@ -12,23 +27,11 @@
       - newaita-icons-git
       - flashfocus-git
       - polybar
+      - ibus-mozc
     use: yay
     skip_installed: yes
   become: yes
   become_user: "{{ aur_user }}"
-
-- name: Install stuffs (pacman)
-  pacman:
-    name:
-      - lxappearance
-      - gtk-chtheme
-      - pcmanfm-gtk3
-      - nitrogen
-      - compton
-      - docker
-      - docker-compose
-    state: present
-  become: yes
 
 - name: Install steam
   pacman:

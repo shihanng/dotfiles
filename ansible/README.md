@@ -42,3 +42,5 @@ Then add the [SSH key in to GitHub](https://help.github.com/en/enterprise/2.15/u
 Run `run_keybase` on Linux machine.
 
 Import the GPG key using [this guide](https://github.com/pstadler/keybase-gpg-github) and the key in `$HOME/gitconfig.local`.
+
+Run `ibus-setup` on Linux machine.

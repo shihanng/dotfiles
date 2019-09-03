@@ -542,6 +542,8 @@ key_bindings:
   #- { key: W,      mods: Command,         action: Quit             }
   #- { key: F,      mods: Command|Control, action: ToggleFullscreen }
 
+  # https://arslan.io/2018/02/05/gpu-accelerated-terminal-alacritty/
+  - { key: Q,        mods: Control, chars: "\x11"                            }
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
   - { key: L,        mods: Control, action: ClearLogNotice                   }

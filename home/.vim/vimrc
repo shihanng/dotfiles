@@ -15,6 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'direnv/direnv.vim'
 Plug 'alx741/vinfo'
+Plug 'airblade/vim-rooter'
 
 " ==================================== Themes ==================================
 Plug 'arcticicestudio/nord-vim'

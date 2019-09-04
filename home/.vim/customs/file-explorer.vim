@@ -13,12 +13,17 @@ augroup END
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 
+let g:rooter_manual_only = 1
 
 " ===================================== fzf ====================================
 nmap <C-p> :Files<CR>
+nmap <C-g> :GFiles<CR>
 nmap <C-b> :Buffers<CR>
-nmap <leader>p :Pt<space>
-nnoremap <leader>k :Pt<space>"\b"<c-r><c-w>"\b"<CR>
+nmap <leader>p :Rg<space>
+nmap <leader>o :exec 'Rooter' <bar> :Rg<space>
+nnoremap <leader>j :exec "Rooter" <bar> :Rg<space><c-r><c-w><CR>
+nnoremap <leader>k :Rg<space>"\b"<c-r><c-w>"\b"<CR>
+nnoremap <leader>cd :Rooter"<CR>
 
 " :Pt something /path
 command! -bang -nargs=* Pt

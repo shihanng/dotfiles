@@ -262,7 +262,7 @@ exec_always --no-startup-id flashfocus
 bindsym $mod+n exec --no-startup-id flash_window
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id compton -b
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec --no-startup-id i3lock-fancy -p -f Fantasque-Sans-Mono-Regular-Nerd-Font-Complete
 exec --no-startup-id ibus-daemon --xim -d -r
 exec --no-startup-id pcmanfm -d
 
@@ -279,7 +279,9 @@ exec --no-startup-id pamac-tray
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+
+exec --no-startup-id xautolock -time 10 -locker i3lock-fancy -p -f Fantasque-Sans-Mono-Regular-Nerd-Font-Complete -detectsleep
+
 exec dropbox start
 
 # Color palette used for the terminal ( ~/.Xresources file )

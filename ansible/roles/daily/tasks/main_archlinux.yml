@@ -12,6 +12,7 @@
       - ibus
       - ibus-rime
       - gvfs
+      - xautolock
     state: present
   become: yes
 
@@ -29,6 +30,7 @@
       - flashfocus-git
       - polybar
       - ibus-mozc
+      - i3lock-fancy-git
     use: yay
     skip_installed: yes
   become: yes

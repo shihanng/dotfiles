@@ -13,6 +13,7 @@
       - ibus-rime
       - gvfs
       - xautolock
+      - conky
     state: present
   become: yes
 

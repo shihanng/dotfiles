@@ -1,0 +1,114 @@
+# Minimalis Conky 1.2.2 -- tested on Fedora 16 (Gnome Shell Desktop)
+# Author : deny26
+# Release date : March, 20 2012
+# Email : deny.krishna108@gmail.com
+# Site : http://ubuntu-indonesia.com
+# Feel free to modity this script ;)
+
+background yes
+font Droid Sans:size=8
+xftfont Droid Sans:size=8
+use_xft yes
+xftalpha 0.5
+update_interval 1.0
+total_run_times 0
+
+# for gnome 2.x user uncomment the following line
+#own_window yes
+#own_window_type override
+#own_window_transparent yes
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# for gnome 3.x user uncomment the following line
+own_window_class Conky
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# for kde user
+#own_window yes
+#own_window_transparent yes
+##own_window_argb_visual yes
+#own_window_type normal
+#own_window_class conky-semi
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+double_buffer yes
+draw_shades yes
+draw_outline yes
+draw_borders no
+draw_graph_borders no
+minimum_size 250
+maximum_width 220
+default_color ffffff
+default_shade_color 000000
+draw_outline no
+alignment top_right
+gap_x 10
+gap_y 35
+no_buffers yes
+cpu_avg_samples 2
+override_utf8_locale yes
+uppercase no
+use_spacer none
+
+TEXT
+${font ConkySymbols:size=20}A${font} ${voffset -10}GNU/Linux»
+${goto 35}Distro: Fedora
+${goto 35}Kernel: $kernel
+${goto 35}Uptime: $uptime_short
+
+${font ConkySymbols:size=16}f${font} ${voffset -10} System»
+${goto 35}${font Droid Sans:size=7.5}CPU1: ${cpu cpu0}% ${goto 95}CPU2: ${cpu cpu1}%${font}
+${goto 35}${cpubar cpu0 3,45}${goto 95}${cpubar cpu1 3,45}
+${goto 35}${font Droid Sans:size=7.5}CPU3: ${cpu cpu2}% ${goto 95}CPU4: ${cpu cpu3}%${font}
+${goto 35}${cpubar cpu2 3,45}${goto 95}${cpubar cpu3 3,45}
+${goto 35}${font Droid Sans:size=7.5}CPU5: ${cpu cpu4}% ${goto 95}CPU6: ${cpu cpu5}%${font}
+${goto 35}${cpubar cpu4 3,45}${goto 95}${cpubar cpu5 3,45}
+${goto 35}${font Droid Sans:size=7.5}CPU7: ${cpu cpu6}% ${goto 95}CPU8: ${cpu cpu7}%${font}
+${goto 35}${cpubar cpu6 3,45}${goto 95}${cpubar cpu7 3,45}
+${goto 35}${font Droid Sans:size=7.5}RAM: ${memperc}% ${goto 95}SWAP: ${swapperc}%${font}
+${goto 35}${membar 3,45}${goto 95}${swapbar 3,45}
+
+${voffset 8}${font ConkySymbols:size=14}N${font}  ${voffset -10} Processes $alignc ${goto 135} ${alignr}MEM   ${alignr}CPU
+${goto 35}${top name 1} ${goto 125}$alignr${top mem 1} $alignr${top cpu 1}
+${goto 35}${top name 2} ${goto 125}$alignr${top mem 2} $alignr${top cpu 2}
+${goto 35}${top name 3} ${goto 125}$alignr${top mem 3} $alignr${top cpu 3}
+${goto 35}${top name 4} ${goto 125}$alignr${top mem 4} $alignr${top cpu 4}
+${goto 35}${top name 5} ${goto 125}$alignr${top mem 5} $alignr${top cpu 5}
+${goto 35}${top name 6} ${goto 125}$alignr${top mem 6} $alignr${top cpu 6}
+${goto 35}${top name 7} ${goto 125}$alignr${top mem 7} $alignr${top cpu 7}
+${goto 35}$stippled_hr
+${goto 35}${top_mem name 1} ${goto 125}$alignr${top_mem cpu 1} $alignr${top_mem mem 1}
+${goto 35}${top_mem name 2} ${goto 125}$alignr${top_mem cpu 2} $alignr${top_mem mem 2}
+${goto 35}${top_mem name 3} ${goto 125}$alignr${top_mem cpu 3} $alignr${top_mem mem 3}
+${goto 35}${top_mem name 4} ${goto 125}$alignr${top_mem cpu 4} $alignr${top_mem mem 4}
+${goto 35}${top_mem name 5} ${goto 125}$alignr${top_mem cpu 5} $alignr${top_mem mem 5}
+${goto 35}${top_mem name 6} ${goto 125}$alignr${top_mem cpu 6} $alignr${top_mem mem 6}
+${goto 35}${top_mem name 7} ${goto 125}$alignr${top_mem cpu 7} $alignr${top_mem mem 7}
+
+${goto 35}Processes: $processes
+${goto 35}Running: $running_processes
+
+${font ConkySymbols:size=16}K${font} ${voffset -10} Harddisk»
+${goto 35}${font Droid Sans:size=7.5}Root: ${fs_free /} ${goto 120}Data: ${fs_free /media/data}${font}
+${goto 35}${fs_bar 3,45 /}${goto 120}${fs_bar 3,45 /media/data}
+${goto 35}${font Droid Sans:size=7.5}${fs_size /} ${goto 120}${fs_size /media/data}${font}
+
+${font ConkySymbols:size=16}I${font} ${voffset -10} Network»
+${goto 35}Download: ${downspeed p32p1}
+${goto 35}Upload: ${upspeed p32p1}
+${goto 35}Total Download: ${totaldown p32p1} 
+
+${font ConkySymbols:size=16}B${font} ${voffset -10} Wireless»
+${goto 35}ESSID: ${wireless_essid wlan0}
+${goto 35}Mode: ${wireless_mode wlan0}
+${goto 35}Signal: ${wireless_link_qual_perc wlan0}
+${goto 35}Download: ${downspeed wlan0}
+${goto 35}Upload: ${upspeed wlan0}
+${goto 35}Total Download: ${totaldown wlan0}
+
+# comment this code if you not using kde
+#${texeci 1000 feh --bg-scale ~/.kde4/share/wallpapers/ArchLinux.jpg}
+

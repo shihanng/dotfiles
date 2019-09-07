@@ -277,7 +277,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
+exec_always --no-startup-id conky -c ~/.Conky/conkyx/conkyrc
 # exec --no-startup-id start_conky_green
 
 exec --no-startup-id xautolock -time 10 -locker i3lock-fancy -p -f Fantasque-Sans-Mono-Regular-Nerd-Font-Complete -detectsleep

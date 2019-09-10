@@ -19,3 +19,7 @@ prompt_order = [
     "battery",
     "character",
 ]
+
+[character]
+symbol = ""
+vicmd_symbol = " "

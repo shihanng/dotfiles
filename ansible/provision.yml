@@ -12,6 +12,7 @@
     - role: python
     - role: node
     - role: ruby
+    - role: elm
     - role: devtools
     - role: fonts
     - role: terraform

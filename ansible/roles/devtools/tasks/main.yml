@@ -11,6 +11,7 @@
       - ripgrep
       - tig
       - kubernetes-cli
+      - starship
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -33,6 +34,7 @@
     name:
       - direnv
       - pet-bin
+      - starship
     use: yay
     skip_installed: yes
   when: ansible_os_family == "Archlinux"

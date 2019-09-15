@@ -93,6 +93,9 @@ Plug 'mattn/emmet-vim'
 " Ruby.
 Plug 'fishbullet/deoplete-ruby'
 
+" Elm
+Plug 'andys8/vim-elm-syntax'
+
 call plug#end()
 
 

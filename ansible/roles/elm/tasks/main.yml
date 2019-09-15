@@ -1,0 +1,12 @@
+---
+- name: Install elm
+  homebrew:
+    name: ["elm"]
+    state: present
+  when: ansible_os_family == "Darwin"
+
+- name: Install elm
+  npm:
+    name: elm
+    global: yes
+  when: ansible_os_family == "Archlinux"

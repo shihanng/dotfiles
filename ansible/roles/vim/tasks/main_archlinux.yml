@@ -12,6 +12,7 @@
       - gvim
       - xdotool
       - xorg-server
+      - neovim
     state: present
   become: yes
 

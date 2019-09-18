@@ -23,5 +23,5 @@
 
 - name: Install elm-format
   npm:
-    name: "elm-test"
+    name: "elm-format"
     global: yes

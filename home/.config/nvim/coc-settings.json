@@ -1,6 +1,7 @@
 {
 	"coc.preferences.formatOnSaveFiletypes": [
-		"elm"
+		"elm",
+		"go"
 	],
 	"languageserver": {
 		"elmLS": {
@@ -14,6 +15,17 @@
 			"initializationOptions": {
 				"elmAnalyseTrigger": "change"
 			}
+		},
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": [
+				"go.mod",
+				".git/",
+				".hg/"
+			],
+			"filetypes": [
+				"go"
+			]
 		}
 	},
 	"codeLens.enable": true

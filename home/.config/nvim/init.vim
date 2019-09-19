@@ -13,3 +13,6 @@ Plug 'andys8/vim-elm-syntax'
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
+
+" ===================================== Coc ====================================
+command! -nargs=0 Format :call CocAction('format')

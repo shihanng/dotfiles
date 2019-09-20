@@ -17,3 +17,4 @@ call plug#end()
 
 " ===================================== Coc ====================================
 command! -nargs=0 Format :call CocAction('format')
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport') " For Go

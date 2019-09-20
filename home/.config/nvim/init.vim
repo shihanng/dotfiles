@@ -5,6 +5,7 @@ Plug 'arcticicestudio/nord-vim'
 
 " ==================================== coding ==================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-commentary'
 
 " elm
 Plug 'andys8/vim-elm-syntax'

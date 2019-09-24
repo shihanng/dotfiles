@@ -40,3 +40,16 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+
+
+" ===================================== Undo ===================================
+if has('persistent_undo')
+    set undolevels=5000 " Save a lot of back-history
+    set undofile " Actually switch on persistent undo
+endif
+
+
+" ================================== Swap files ================================
+set undodir=~/.local/share/vim/undo//
+set backupdir=~/.local/share/vim/backup//
+set directory=~/.local/share/vim/swp//

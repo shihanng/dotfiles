@@ -5,6 +5,7 @@ Plug 'arcticicestudio/nord-vim'
 
 " ============================== Text manipulation =============================
 Plug 'tpope/vim-surround'
+Plug 'haya14busa/is.vim'
 
 " ==================================== coding ==================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

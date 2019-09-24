@@ -3,6 +3,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " ==================================== Themes ==================================
 Plug 'arcticicestudio/nord-vim'
 
+" ============================== Text manipulation =============================
+Plug 'tpope/vim-surround'
+
 " ==================================== coding ==================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'

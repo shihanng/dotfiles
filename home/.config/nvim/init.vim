@@ -19,6 +19,7 @@ Plug 'nelstrom/vim-visual-star-search'
 " ==================================== coding ==================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 
 " elm
 Plug 'andys8/vim-elm-syntax'

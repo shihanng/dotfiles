@@ -30,6 +30,17 @@ command! -nargs=0 Format :call CocAction('format')
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport') " For Go
 
 
+" =================================== Beautify =================================
+set encoding=utf8
+
+if has('termguicolors')
+ set termguicolors
+endif
+
+syntax enable
+colorscheme nord
+
+
 " ============================= Basic Configuration ============================
 let g:mapleader = ','
 set clipboard+=unnamedplus " Allow copy-paste from system clipboard

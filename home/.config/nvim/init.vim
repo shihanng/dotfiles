@@ -6,6 +6,7 @@ Plug 'arcticicestudio/nord-vim'
 " ============================== Text manipulation =============================
 Plug 'tpope/vim-surround'
 Plug 'haya14busa/is.vim'
+Plug 'nelstrom/vim-visual-star-search'
 
 " ==================================== coding ==================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -54,3 +55,10 @@ endif
 set undodir=~/.local/share/vim/undo//
 set backupdir=~/.local/share/vim/backup//
 set directory=~/.local/share/vim/swp//
+
+
+" ===================== Find and replace (by Nick Janetakis) ===================
+nnoremap <Leader>r :%s///g<Left><Left>
+nnoremap <Leader>rc :%s///gc<Left><Left><Left>
+xnoremap <Leader>r :s///g<Left><Left>
+xnoremap <Leader>rc :s///gc<Left><Left><Left>

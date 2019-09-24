@@ -3,6 +3,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 " ==================================== Themes ==================================
 Plug 'arcticicestudio/nord-vim'
 
+" =============================== File navigation ==============================
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 " ============================== Text manipulation =============================
 Plug 'tpope/vim-surround'
 Plug 'haya14busa/is.vim'
@@ -62,3 +66,17 @@ nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <Leader>rc :%s///gc<Left><Left><Left>
 xnoremap <Leader>r :s///g<Left><Left>
 xnoremap <Leader>rc :s///gc<Left><Left><Left>
+
+
+" ================================= FZF settings ===============================
+nmap <C-p> :Files<CR>
+nmap <C-b> :Buffers<CR>
+
+let g:fzf_layout = { 'down': '~40%' }
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.<q-args>, 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)

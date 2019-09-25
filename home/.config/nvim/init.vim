@@ -16,6 +16,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'haya14busa/is.vim'
 Plug 'nelstrom/vim-visual-star-search'
+Plug 'jiangmiao/auto-pairs'
 
 " ==================================== coding ==================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

@@ -29,6 +29,9 @@ Plug 'andys8/vim-elm-syntax'
 " coc.nvim
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 
+" go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
 
@@ -110,3 +113,23 @@ let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 
 " ================================= Coc settings ===============================
 nmap <silent> gd <Plug>(coc-definition)
+
+
+" =============================== vim-go settings ==============================
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_extra_types = 1
+
+" Disable the following in favor of Coc
+let g:go_def_mapping_enabled = 0
+let g:go_code_completion_enabled = 0
+let g:go_fmt_autosave = 0
+
+nmap <leader>r <Plug>(go-run)
+nmap <leader>t <Plug>(go-test)
+nmap <Leader>c <Plug>(go-coverage-toggle)

@@ -11,6 +11,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " ============================== Text manipulation =============================
 Plug 'tpope/vim-surround'
@@ -55,6 +56,7 @@ colorscheme nord
 let g:mapleader = ','
 set clipboard+=unnamedplus " Allow copy-paste from system clipboard
 nnoremap <leader>% :source $MYVIMRC<CR> " Reload
+set number relativenumber
 
 
 " ============================= create this with ,ch ===========================

@@ -106,3 +106,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 autocmd BufEnter * lcd %:p:h " Set working directory to current file's directory.
 let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
+
+
+" ================================= Coc settings ===============================
+nmap <silent> gd <Plug>(coc-definition)

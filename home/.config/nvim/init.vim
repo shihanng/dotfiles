@@ -115,6 +115,7 @@ let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 
 " ================================= Coc settings ===============================
 nmap <silent> gd <Plug>(coc-definition)
+nmap <leader>rn <Plug>(coc-rename)
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort

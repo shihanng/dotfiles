@@ -33,6 +33,9 @@ Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 " go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
 call plug#end()
 
 

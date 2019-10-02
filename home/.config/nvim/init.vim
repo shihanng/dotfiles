@@ -58,8 +58,10 @@ colorscheme nord
 " ============================= Basic Configuration ============================
 let g:mapleader = ','
 set clipboard+=unnamedplus " Allow copy-paste from system clipboard
-nnoremap <leader>% :source $MYVIMRC<CR> " Reload
 set number relativenumber
+nnoremap <leader>% :source $MYVIMRC<CR> " Reload
+noremap <leader>jq :%!jq '.'<cr>
+noremap <leader>pg :%!pg_format -b - <cr>
 
 
 " ============================= create this with ,ch ===========================

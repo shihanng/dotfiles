@@ -89,11 +89,19 @@ set backupdir=~/.local/share/vim/backup//
 set directory=~/.local/share/vim/swp//
 
 
-" ===================== Find and replace (by Nick Janetakis) ===================
+" ==================================== Search ==================================
+" Find and replace (by Nick Janetakis)
 nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <Leader>rc :%s///gc<Left><Left><Left>
 xnoremap <Leader>r :s///g<Left><Left>
 xnoremap <Leader>rc :s///gc<Left><Left><Left>
+
+" SEARCH
+set ignorecase
+set hlsearch
+set incsearch
+set smartcase
+set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
 
 
 " ================================= FZF settings ===============================

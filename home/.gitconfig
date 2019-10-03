@@ -13,6 +13,10 @@
 [tag]
 	forceSignAnnotated = true
 
+[url "git@github.com:JapanTaxi"]
+	insteadOf = git://github.com/JapanTaxi
+	insteadOf = https://github.com/JapanTaxi
+
 [url "git@github.com:"]
 	pushInsteadOf = git://github.com/
 	pushInsteadOf = https://github.com/

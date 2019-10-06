@@ -14,6 +14,7 @@
       - gvfs
       - xautolock
       - conky
+      - yubikey-manager
     state: present
   become: yes
 
@@ -49,6 +50,13 @@
 - name: Start docker
   service:
     name: docker
+    enabled: true
+    state: started
+  become: yes
+
+- name: Start pcscd for Yubikey
+  service:
+    name: pcscd
     enabled: true
     state: started
   become: yes

@@ -1,4 +1,8 @@
 ---
+- homebrew_tap:
+    name: homebrew/cask-drivers
+    state: present
+
 - name: Install stuffs
   homebrew_cask:
     name:
@@ -7,6 +11,7 @@
       - spotify
       - keybase
       - docker
+      - yubico-yubikey-manager
     state: present
 
 - name: Install stuffs (brew)

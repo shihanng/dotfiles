@@ -18,4 +18,5 @@
   homebrew:
     name:
       - docker-compose
+      - ykman
     state: present

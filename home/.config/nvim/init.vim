@@ -29,6 +29,7 @@ Plug 'andys8/vim-elm-syntax'
 
 " coc.nvim
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 
 " go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -163,3 +164,8 @@ let g:go_fmt_autosave = 0
 
 nmap <leader>t <Plug>(go-test)
 nmap <Leader>c <Plug>(go-coverage-toggle)
+
+
+" ===================================== yaml ===================================
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

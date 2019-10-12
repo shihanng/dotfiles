@@ -1,8 +1,10 @@
 {
     "coc.preferences.formatOnSaveFiletypes": [
         "elm",
-        "go"
+        "go",
+        "yaml"
     ],
+    "yaml.format.enable": true,
     "languageserver": {
         "elmLS": {
             "command": "elm-language-server",

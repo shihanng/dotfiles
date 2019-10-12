@@ -54,3 +54,8 @@
     backup: no
     mode:   0600
     force: no
+
+- name: Install docker language server
+  npm:
+    name: "dockerfile-language-server-nodejs"
+    global: yes

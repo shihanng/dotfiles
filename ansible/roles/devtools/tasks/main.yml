@@ -59,3 +59,8 @@
   npm:
     name: "dockerfile-language-server-nodejs"
     global: yes
+
+- name: Install yaml language server
+  npm:
+    name: "yaml-language-server"
+    global: yes

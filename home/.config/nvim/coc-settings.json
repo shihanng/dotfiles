@@ -1,44 +1,53 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": [
-		"elm",
-		"go"
-	],
-	"languageserver": {
-		"elmLS": {
-			"command": "elm-language-server",
-			"filetypes": [
-				"elm"
-			],
-			"rootPatterns": [
-				"elm.json"
-			],
-			"initializationOptions": {
-				"elmAnalyseTrigger": "change"
-			}
-		},
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": [
-				"go.mod",
-				".git/",
-				".hg/"
-			],
-			"filetypes": [
-				"go"
-			]
-		},
-		"bash": {
-			"command": "bash-language-server",
-			"args": [
-				"start"
-			],
-			"filetypes": [
-				"sh"
-			],
-			"ignoredRootPaths": [
-				"~"
-			]
-		}
-	},
-	"codeLens.enable": true
+    "coc.preferences.formatOnSaveFiletypes": [
+        "elm",
+        "go"
+    ],
+    "languageserver": {
+        "elmLS": {
+            "command": "elm-language-server",
+            "filetypes": [
+                "elm"
+            ],
+            "rootPatterns": [
+                "elm.json"
+            ],
+            "initializationOptions": {
+                "elmAnalyseTrigger": "change"
+            }
+        },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": [
+                "go.mod",
+                ".git/",
+                ".hg/"
+            ],
+            "filetypes": [
+                "go"
+            ]
+        },
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": [
+                "dockerfile"
+            ],
+            "args": [
+                "--stdio"
+            ]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": [
+                "start"
+            ],
+            "filetypes": [
+                "sh"
+            ],
+            "ignoredRootPaths": [
+                "~"
+            ]
+        }
+    },
+    "codeLens.enable": true
 }

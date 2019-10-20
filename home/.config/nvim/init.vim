@@ -33,6 +33,7 @@ Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 
 " go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'buoto/gotests-vim'
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -156,6 +157,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_extra_types = 1
+let g:gotests_template_dir = ""
 
 " Disable the following in favor of Coc
 let g:go_def_mapping_enabled = 0

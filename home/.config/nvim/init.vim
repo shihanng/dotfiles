@@ -38,6 +38,9 @@ Plug 'buoto/gotests-vim'
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
+" Terraform
+Plug 'hashivim/vim-hashicorp-tools'
+
 call plug#end()
 
 
@@ -171,3 +174,11 @@ nmap <Leader>c <Plug>(go-coverage-toggle)
 " ===================================== yaml ===================================
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+
+" ================================== Terraform =================================
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
+let g:terraform_fold_sections=0
+let g:terraform_remap_spacebar=1
+let g:terraform_commentstring='//%s'

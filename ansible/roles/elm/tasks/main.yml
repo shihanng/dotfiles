@@ -6,10 +6,20 @@
   when: ansible_os_family == "Darwin"
 
 - name: Install elm
-  npm:
-    name: elm
-    global: yes
+  shell: >
+    curl -L https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz | gunzip -c > /usr/local/bin/elm
+    warn: no
+  args:
+    creates: "/usr/local/bin/elm"
   when: ansible_os_family == "Archlinux"
+  become: yes
+
+- name: Make elm executable
+  file:
+    path: /usr/local/bin/elm
+    mode: "+x"
+  when: ansible_os_family == "Archlinux"
+  become: yes
 
 - name: Install elm-language-server
   npm:

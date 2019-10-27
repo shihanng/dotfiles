@@ -134,6 +134,15 @@ let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 " ================================= Coc settings ===============================
 nmap <silent> gd <Plug>(coc-definition)
 nmap <leader>rn <Plug>(coc-rename)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort

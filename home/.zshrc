@@ -58,6 +58,7 @@ path=($HOME/.fzf/bin $path[@])
 path=($HOME/.local/bin $path[@])
 path=($HOME/.yarn/bin $path[@])
 path=($HOME/.config/yarn/global/node_modules/.bin $path[@])
+path=(/usr/share/git/diff-highlight $path[@])
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(pyenv init -)"

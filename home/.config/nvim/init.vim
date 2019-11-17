@@ -67,6 +67,7 @@ set number relativenumber
 nnoremap <leader>% :source $MYVIMRC<CR> " Reload
 noremap <leader>jq :%!jq '.'<cr>
 noremap <leader>pg :%!pg_format -b - <cr>
+nmap <silent> <leader>s :set spell!<CR> " Toggle spell checking on and off with `,s`
 
 
 " ============================= create this with ,ch ===========================

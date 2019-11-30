@@ -69,8 +69,6 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(direnv hook zsh)"
 source <(kubectl completion zsh)
 
-function gi() { curl -sLw "\n" https://www.gitignore.io/api/$@ ;}
-
 function vinfo() {
     vim -c "Vinfo $1" -c 'silent only'
 }

@@ -70,6 +70,10 @@ noremap <leader>jq :%!jq '.'<cr>
 noremap <leader>pg :%!pg_format -b - <cr>
 nmap <silent> <leader>s :set spell!<CR> " Toggle spell checking on and off with `,s`
 
+" Show tab and space
+set list
+set listchars=tab:‣\ ,trail:·
+
 
 " ============================= create this with ,ch ===========================
 noremap <leader>ch :center 80<cr>hhv0r=A<space><esc>40A=<esc>:Commentary<cr><esc>81<bar>D

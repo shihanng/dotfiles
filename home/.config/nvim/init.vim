@@ -23,6 +23,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " elm
 Plug 'andys8/vim-elm-syntax'

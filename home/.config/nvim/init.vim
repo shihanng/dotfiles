@@ -11,6 +11,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " ============================== Text manipulation =============================
@@ -35,7 +36,6 @@ Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 " go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'buoto/gotests-vim'
-Plug 'sebdah/vim-delve'
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -198,3 +198,9 @@ let g:terraform_align=1
 let g:terraform_fold_sections=0
 let g:terraform_remap_spacebar=1
 let g:terraform_commentstring='//%s'
+
+
+" ========================= christoomey/vim-tmux-runner' =======================
+let g:VtrUseVtrMaps = 1
+let g:VtrStripLeadingWhitespace = 1
+let g:VtrClearEmptyLines = 1

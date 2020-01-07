@@ -43,6 +43,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " Terraform
 Plug 'hashivim/vim-hashicorp-tools'
 
+" Too far
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+
 call plug#end()
 
 
@@ -204,3 +207,20 @@ let g:terraform_commentstring='//%s'
 let g:VtrUseVtrMaps = 1
 let g:VtrStripLeadingWhitespace = 1
 let g:VtrClearEmptyLines = 1
+
+" =================================== Firenvim =================================
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'always',
+        \ },
+    \ }
+\ }
+let fc = g:firenvim_config['localSettings']
+let fc['.*'] = { 'selector': 'textarea' }

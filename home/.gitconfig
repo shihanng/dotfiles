@@ -13,14 +13,6 @@
 [tag]
 	forceSignAnnotated = true
 
-[url "git@github.com:JapanTaxi"]
-	insteadOf = git://github.com/JapanTaxi
-	insteadOf = https://github.com/JapanTaxi
-
-[url "git@github.com:"]
-	pushInsteadOf = git://github.com/
-	pushInsteadOf = https://github.com/
-
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
 
@@ -36,3 +28,9 @@
 # https://stackoverflow.com/a/50042202/6549460
 [difftool "vimdiff"]
 	cmd = vim -f -d -c 'wincmd l' -c 'cd "$GIT_PREFIX"' "$LOCAL" "$REMOTE"
+
+[url "https://github.com"]
+	insteadOf = git://github.com
+
+[credential]
+	helper = store

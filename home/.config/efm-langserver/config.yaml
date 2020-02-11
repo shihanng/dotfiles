@@ -4,3 +4,9 @@ languages:
     lint-stdin: true
     lint-formats:
       - '%f: %l: %m'
+
+  markdown:
+    lint-command: 'markdownlint -s'
+    lint-stdin: true
+    lint-formats:
+      - '%f:%l %m'

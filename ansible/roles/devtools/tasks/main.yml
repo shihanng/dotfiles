@@ -64,3 +64,13 @@
   npm:
     name: "yaml-language-server"
     global: yes
+
+- name: Install markdownlint-cli
+  npm:
+    name: "markdownlint-cli"
+    global: yes
+
+- name: Install efm-langserver
+  shell: GO111MODULE=on go get -u github.com/mattn/efm-langserver@latest
+  args:
+    creates: ~/go/bin/efm-langserver

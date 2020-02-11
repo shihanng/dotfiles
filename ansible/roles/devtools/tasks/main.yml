@@ -49,10 +49,10 @@
 
 - name: .config/pet/config.toml
   template:
-    src:    pet_config.j2
-    dest:   "{{ ansible_env.HOME }}/.config/pet/config.toml"
+    src: pet_config.j2
+    dest: "{{ ansible_env.HOME }}/.config/pet/config.toml"
     backup: no
-    mode:   0600
+    mode: 0600
     force: no
 
 - name: Install docker language server

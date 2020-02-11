@@ -49,6 +49,13 @@
             "ignoredRootPaths": [
                 "~"
             ]
+        },
+        "efm": {
+            "command": "efm-langserver",
+            "args": [],
+            "filetypes": [
+                "markdown"
+            ]
         }
     },
     "codeLens.enable": true

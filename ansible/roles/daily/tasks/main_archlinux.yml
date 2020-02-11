@@ -6,7 +6,6 @@
       - gtk-chtheme
       - pcmanfm-gtk3
       - nitrogen
-      - compton
       - docker
       - docker-compose
       - ibus
@@ -15,6 +14,7 @@
       - xautolock
       - conky
       - yubikey-manager
+      - picom
     state: present
   become: yes
 

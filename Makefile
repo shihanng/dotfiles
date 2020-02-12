@@ -9,3 +9,6 @@ dotfiles:
 
 clean:
 	stow -D $(targets)
+
+ansible-local:
+	$(MAKE) -C ansible local

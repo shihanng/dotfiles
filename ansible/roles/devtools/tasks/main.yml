@@ -13,6 +13,7 @@
       - kubernetes-cli
       - starship
       - shellcheck
+      - github/gh/gh
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -37,6 +38,7 @@
       - direnv
       - pet-bin
       - starship
+      - gh
     use: yay
     skip_installed: yes
   when: ansible_os_family == "Archlinux"

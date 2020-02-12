@@ -10,3 +10,6 @@ languages:
     lint-stdin: true
     lint-formats:
       - '%f:%l %m'
+  sh:
+    lint-command: 'shellcheck -f tty -'
+    lint-stdin: true

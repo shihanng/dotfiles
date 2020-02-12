@@ -12,6 +12,7 @@
       - tig
       - kubernetes-cli
       - starship
+      - shellcheck
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -25,6 +26,7 @@
       - ripgrep
       - tig
       - kubectl
+      - shellcheck
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes

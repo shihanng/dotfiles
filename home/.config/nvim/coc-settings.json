@@ -54,7 +54,8 @@
             "command": "efm-langserver",
             "args": [],
             "filetypes": [
-                "markdown"
+                "markdown",
+                "sh"
             ]
         }
     },

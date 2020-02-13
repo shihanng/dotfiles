@@ -17,6 +17,5 @@
 - name: Install stuffs (brew)
   homebrew:
     name:
-      - docker-compose
       - ykman
     state: present

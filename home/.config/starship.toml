@@ -1,20 +1,14 @@
 add_newline = false
 
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "git_state",
-    "package",
-    "nodejs",
-    "ruby",
-    "rust",
-    "python",
-    "golang",
-    "character",
-]
-
 [character]
-symbol = ""
-vicmd_symbol = " "
+symbol = "❯"
+vicmd_symbol = "❮"
+
+[golang]
+symbol = " "
+
+[line_break]
+disabled = true
+
+[nodejs]
+symbol = " "

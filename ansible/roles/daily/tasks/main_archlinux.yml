@@ -15,6 +15,7 @@
       - conky
       - yubikey-manager
       - picom
+      - kitty
     state: present
   become: yes
 

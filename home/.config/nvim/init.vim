@@ -22,6 +22,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " ==================================== coding ==================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -179,7 +180,6 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_extra_types = 1
-let g:gotests_template_dir = ""
 
 " Disable the following in favor of Coc
 let g:go_def_mapping_enabled = 0
@@ -224,3 +224,15 @@ let g:firenvim_config = {
 \ }
 let fc = g:firenvim_config['localSettings']
 let fc['.*'] = { 'selector': 'textarea' }
+
+" ================================== syntastic =================================
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_go_checkers = ['golangci_lint']

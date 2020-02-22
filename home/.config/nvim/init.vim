@@ -44,6 +44,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " Terraform
 Plug 'hashivim/vim-hashicorp-tools'
 
+" HTML
+Plug 'mattn/emmet-vim'
+
 " Too far
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
@@ -236,3 +239,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_go_checkers = ['golangci_lint']
+
+" ==================================== emmet ===================================
+let g:user_emmet_install_global = 1
+let g:user_emmet_mode='a'

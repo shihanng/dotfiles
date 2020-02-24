@@ -13,6 +13,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " ============================== Text manipulation =============================
 Plug 'tpope/vim-surround'
@@ -247,3 +249,6 @@ let g:syntastic_go_checkers = ['golangci_lint']
 " ==================================== emmet ===================================
 let g:user_emmet_install_global = 1
 let g:user_emmet_mode='a'
+
+" =================================== airline ==================================
+let g:airline_powerline_fonts = 1

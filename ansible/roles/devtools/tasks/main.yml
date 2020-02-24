@@ -83,3 +83,8 @@
   npm:
     name: "vue-language-server"
     global: yes
+
+- name: Install prettier
+  npm:
+    name: "prettier"
+    global: yes

@@ -78,3 +78,8 @@
   shell: GO111MODULE=on go get -u github.com/mattn/efm-langserver@latest
   args:
     creates: ~/go/bin/efm-langserver
+
+- name: Install vue language server
+  npm:
+    name: "vue-language-server"
+    global: yes

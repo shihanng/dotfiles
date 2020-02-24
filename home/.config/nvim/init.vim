@@ -33,6 +33,7 @@ Plug 'andys8/vim-elm-syntax'
 " coc.nvim
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
 
 " go
 Plug 'fatih/vim-go'
@@ -46,6 +47,9 @@ Plug 'hashivim/vim-hashicorp-tools'
 
 " HTML
 Plug 'mattn/emmet-vim'
+
+" Vue
+Plug 'posva/vim-vue'
 
 " Too far
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }

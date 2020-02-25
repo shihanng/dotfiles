@@ -3,7 +3,8 @@
         "elm",
         "go",
         "yaml",
-        "vue"
+        "vue",
+        "javascript"
     ],
     "yaml.format.enable": true,
     "languageserver": {

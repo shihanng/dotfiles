@@ -4,6 +4,7 @@
         "go",
         "yaml",
         "vue",
+        "python",
         "javascript"
     ],
     "yaml.format.enable": true,
@@ -61,5 +62,6 @@
             ]
         }
     },
-    "codeLens.enable": true
+    "codeLens.enable": true,
+    "python.jediEnabled": false
 }

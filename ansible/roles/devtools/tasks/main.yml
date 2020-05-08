@@ -66,6 +66,11 @@
     name: "dockerfile-language-server-nodejs"
     global: yes
 
+- name: Install bash language server
+  npm:
+    name: "bash-language-server"
+    global: yes
+
 - name: Install yaml language server
   npm:
     name: "yaml-language-server"

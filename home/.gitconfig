@@ -34,3 +34,6 @@
 
 [credential]
 	helper = store
+
+[http]
+	cookiefile = $HOME/.gitcookies

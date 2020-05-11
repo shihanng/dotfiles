@@ -21,6 +21,7 @@ Plug 'tpope/vim-surround'
 Plug 'haya14busa/is.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'jiangmiao/auto-pairs'
+Plug 'unblevable/quick-scope'
 
 " ==================================== coding ==================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -268,3 +269,11 @@ let g:user_emmet_mode='a'
 
 " =================================== airline ==================================
 let g:airline_powerline_fonts = 1
+
+" ================================= quick-scope ================================
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+augroup qs_colors
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+augroup END

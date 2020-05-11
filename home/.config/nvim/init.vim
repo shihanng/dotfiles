@@ -69,6 +69,14 @@ command! -nargs=0 Format :call CocAction('format')
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport') " For Go
 
 
+" ================================= quick-scope ================================
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+augroup qs_colors
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+augroup END
+
 " =================================== Beautify =================================
 set encoding=utf8
 
@@ -270,14 +278,6 @@ let g:user_emmet_mode='a'
 
 " =================================== airline ==================================
 let g:airline_powerline_fonts = 1
-
-" ================================= quick-scope ================================
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-augroup qs_colors
-  autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
-augroup END
 
 " ================================== vim-sneak =================================
 let g:sneak#label = 1

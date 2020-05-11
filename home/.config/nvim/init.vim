@@ -22,6 +22,7 @@ Plug 'haya14busa/is.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'jiangmiao/auto-pairs'
 Plug 'unblevable/quick-scope'
+Plug 'justinmk/vim-sneak'
 
 " ==================================== coding ==================================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -277,3 +278,7 @@ augroup qs_colors
   autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 augroup END
+
+" ================================== vim-sneak =================================
+let g:sneak#label = 1
+let g:sneak#s_next = 1

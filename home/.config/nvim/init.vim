@@ -61,6 +61,9 @@ Plug 'posva/vim-vue'
 " Too far
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
+" Nix
+Plug 'LnL7/vim-nix'
+
 call plug#end()
 
 

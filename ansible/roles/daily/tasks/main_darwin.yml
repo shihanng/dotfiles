@@ -12,6 +12,7 @@
       - keybase
       - docker
       - yubico-yubikey-manager
+      - notion
     state: present
 
 - name: Install stuffs (brew)

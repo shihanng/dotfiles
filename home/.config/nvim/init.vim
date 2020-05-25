@@ -55,8 +55,10 @@ Plug 'hashivim/vim-hashicorp-tools'
 " HTML
 Plug 'mattn/emmet-vim'
 
-" Vue
+" Vue/TypeScript/React
 Plug 'posva/vim-vue'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Too far
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }

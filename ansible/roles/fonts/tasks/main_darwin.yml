@@ -6,5 +6,5 @@
 # https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
 - name: Install font
   homebrew_cask:
-    name: font-fantasquesansmono-nerd-font
+    name: font-firacode-nerd-font
     state: present

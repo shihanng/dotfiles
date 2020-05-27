@@ -6,6 +6,8 @@
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
 
+  programs.zsh.oh-my-zsh.enable = true;
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -16,7 +18,10 @@
   # changes in each release.
   home.stateVersion = "20.09";
 
-  home.packages = with pkgs; [
+  home.packages =  with pkgs; [
     htop
+    starship
   ];
+
+  programs.starship.enable = true;
 }

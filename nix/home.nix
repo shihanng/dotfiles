@@ -5,8 +5,10 @@
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
+  programs.zsh.enableCompletion = true;
 
   programs.zsh.oh-my-zsh.enable = true;
+  programs.zsh.oh-my-zsh.plugins = [ "git" "zsh-interactive-cd" ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -24,4 +26,7 @@
   ];
 
   programs.starship.enable = true;
+
+  programs.fzf.enable = true;
+  programs.fzf.enableZshIntegration = true;
 }

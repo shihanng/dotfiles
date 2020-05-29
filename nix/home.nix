@@ -29,4 +29,21 @@
 
   programs.fzf.enable = true;
   programs.fzf.enableZshIntegration = true;
+  programs.zsh.plugins = [
+    {
+      name = "select_cdr";
+      src = ~/dotfiles/nix/zsh_plugins;
+      file = "select_cdr.zsh";
+    }
+    {
+      name = "zsh-cdr";
+      file = "cdr.plugin.zsh";
+      src = pkgs.fetchFromGitHub {
+        owner = "willghatch";
+        repo = "zsh-cdr";
+        rev = "253c8e7ea2d386e95a4f06a78c660b3deee84bb7";
+        sha256 = "197rrfzphv4nj943hhnbrigaz4vq49h7zddrdm06cdpq3m98xz0a";
+      };
+  }
+  ];
 }

@@ -36,6 +36,11 @@
       file = "select_cdr.zsh";
     }
     {
+      name = "select_git_checkout";
+      src = ~/dotfiles/nix/zsh_plugins;
+      file = "select_git_checkout.zsh";
+    }
+    {
       name = "zsh-cdr";
       file = "cdr.plugin.zsh";
       src = pkgs.fetchFromGitHub {

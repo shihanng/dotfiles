@@ -8,6 +8,8 @@
   programs.zsh.enableCompletion = true;
 
   programs.zsh.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
     FZF_COMPLETION_TRIGGER = "''";
   };
 

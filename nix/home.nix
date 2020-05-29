@@ -29,6 +29,7 @@
   home.packages =  with pkgs; [
     htop
     starship
+    tree
   ];
 
   programs.dircolors.enable = true;

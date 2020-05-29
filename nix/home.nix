@@ -31,6 +31,9 @@
     starship
   ];
 
+  programs.dircolors.enable = true;
+  programs.dircolors.enableZshIntegration = true;
+
   programs.starship.enable = true;
 
   programs.fzf.enable = true;

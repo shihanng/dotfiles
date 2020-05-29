@@ -7,6 +7,10 @@
   programs.zsh.enable = true;
   programs.zsh.enableCompletion = true;
 
+  programs.zsh.sessionVariables = {
+    FZF_COMPLETION_TRIGGER = "''";
+  };
+
   programs.zsh.oh-my-zsh.enable = true;
   programs.zsh.oh-my-zsh.plugins = [ "git" "zsh-interactive-cd" ];
 
@@ -29,6 +33,9 @@
 
   programs.fzf.enable = true;
   programs.fzf.enableZshIntegration = true;
+  programs.fzf.defaultCommand = "fd --type f --hidden --follow --exclude .git";
+  programs.fzf.defaultOptions = ["--sort 20000"];
+
   programs.zsh.plugins = [
     {
       name = "select_cdr";
@@ -39,6 +46,11 @@
       name = "select_git_checkout";
       src = ~/dotfiles/nix/zsh_plugins;
       file = "select_git_checkout.zsh";
+    }
+    {
+      name = "fzf";
+      src = ~/dotfiles/nix/zsh_plugins;
+      file = "fzf.zsh";
     }
     {
       name = "zsh-cdr";

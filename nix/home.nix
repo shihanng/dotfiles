@@ -14,7 +14,7 @@
   };
 
   programs.zsh.oh-my-zsh.enable = true;
-  programs.zsh.oh-my-zsh.plugins = [ "git" "zsh-interactive-cd" ];
+  programs.zsh.oh-my-zsh.plugins = [ "vi-mode" "git" "zsh-interactive-cd" ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

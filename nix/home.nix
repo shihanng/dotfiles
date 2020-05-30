@@ -42,6 +42,8 @@
   programs.fzf.defaultCommand = "fd --type f --hidden --follow --exclude .git";
   programs.fzf.defaultOptions = ["--sort 20000"];
 
+  programs.gpg.enable = true;
+
   programs.zsh.plugins = [
     {
       name = "select_cdr";

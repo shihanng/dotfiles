@@ -26,14 +26,29 @@
   # changes in each release.
   home.stateVersion = "20.09";
 
+  nixpkgs.overlays = [
+    (self: super: {
+      gotests = super.callPackage ./test.nix {};
+    })];
+
   home.packages =  with pkgs; [
     htop
     starship
     tree
+    gotests
   ];
+
+  home.file = {
+    coc-settings = {
+      recursive = true;
+      source = ./coc-settings.json;
+      target = ".config/nvim/coc-settings.json";
+    };
+  };
 
   programs.dircolors.enable = true;
   programs.dircolors.enableZshIntegration = true;
+
 
   programs.starship.enable = true;
 
@@ -71,4 +86,35 @@
       };
   }
   ];
+
+  programs.neovim.enable = true;
+  programs.neovim.viAlias = true;
+  programs.neovim.vimAlias = true;
+  programs.neovim.vimdiffAlias = true;
+  programs.neovim.configure = {
+    customRC = ''
+    ${builtins.readFile ./vim.vim}
+    '';
+    # https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/generated.nix
+    # https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/overrides.nix
+    plug.plugins = with pkgs.vimPlugins; [
+      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).fzf
+      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-devicons
+      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-nerdtree-syntax-highlight
+      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).coc-go
+      coc-nvim
+      fzf-vim
+      nerdtree
+      nerdtree-git-plugin
+      nord-vim
+      vim-airline
+      vim-airline-themes
+      vim-commentary
+      vim-fugitive
+      vim-polyglot
+      vim-tmux-navigator
+      vim-go
+      vim-gitgutter
+    ];
+  };
 }

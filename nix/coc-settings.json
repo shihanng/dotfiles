@@ -1,0 +1,60 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "elm",
+        "go",
+        "yaml",
+        "vue",
+        "python",
+        "javascript"
+    ],
+    "yaml.format.enable": true,
+    "languageserver": {
+        "elmLS": {
+            "command": "elm-language-server",
+            "filetypes": [
+                "elm"
+            ],
+            "rootPatterns": [
+                "elm.json"
+            ],
+            "initializationOptions": {
+                "elmAnalyseTrigger": "change"
+            }
+        },
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": [
+                "dockerfile"
+            ],
+            "args": [
+                "--stdio"
+            ]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": [
+                "start"
+            ],
+            "filetypes": [
+                "sh"
+            ],
+            "ignoredRootPaths": [
+                "~"
+            ]
+        },
+        "efm": {
+            "command": "efm-langserver",
+            "args": [],
+            "filetypes": [
+                "markdown",
+                "sh"
+            ]
+        }
+    },
+    "codeLens.enable": true,
+    "go.enable": true,
+    "go.tests": {
+        "generateFlags": ["-template testify"]
+    },
+    "python.jediEnabled": false
+}

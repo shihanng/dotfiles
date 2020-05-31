@@ -42,6 +42,17 @@
                 "~"
             ]
         },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": [
+                "go.mod",
+                ".git/",
+                ".hg/"
+            ],
+            "filetypes": [
+                "go"
+            ]
+        },
         "efm": {
             "command": "efm-langserver",
             "args": [],

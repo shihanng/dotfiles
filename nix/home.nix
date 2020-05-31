@@ -101,7 +101,6 @@
       (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).fzf
       (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-devicons
       (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-nerdtree-syntax-highlight
-      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).coc-go
       coc-nvim
       fzf-vim
       nerdtree

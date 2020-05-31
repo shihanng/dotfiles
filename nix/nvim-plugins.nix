@@ -36,11 +36,5 @@ in {
     };
     dependencies = [];
   };
-
-  "coc-go" = buildVimPlugin {
-    pname = "coc-go";
-    version = pkgs.nodePackages.coc-go.version;
-    src = "${pkgs.nodePackages.coc-go}/lib/node_modules/coc-go";
-  };
   # more?
 }

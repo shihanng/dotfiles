@@ -114,6 +114,7 @@
       vim-tmux-navigator
       vim-go
       vim-gitgutter
+      coc-fzf
     ];
   };
 }

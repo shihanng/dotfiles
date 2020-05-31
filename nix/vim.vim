@@ -75,6 +75,10 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 
 
+" =================================== coc-fzf ==================================
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+
 " =================================== airline ==================================
 let g:airline_powerline_fonts = 1
 

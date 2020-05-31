@@ -36,5 +36,16 @@ in {
     };
     dependencies = [];
   };
+
+  "gotests-vim" = buildVimPlugin {
+    pname = "gotests-vim";
+    version = "2020-05-30";
+    src = fetchgit {
+      url = "https://github.com/buoto/gotests-vim";
+      rev = "e0ad687be26875153ecd43d16db3b93a637394e4";
+      sha256 = "01w981v7rya9fnxwdhlka4vfzlnw87pxmfcqmvxh3p96lmi71xjm";
+    };
+    dependencies = [];
+  };
   # more?
 }

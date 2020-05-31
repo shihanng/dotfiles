@@ -131,3 +131,8 @@ let g:go_fmt_autosave = 0
 
 nmap <leader>t <Plug>(go-test)
 nmap <Leader>c <Plug>(go-coverage-toggle)
+
+
+" ==================================== emmet ===================================
+let g:user_emmet_install_global = 1
+let g:user_emmet_mode='a'

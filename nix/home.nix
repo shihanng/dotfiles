@@ -110,7 +110,11 @@
       (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).fzf
       (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-devicons
       (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-nerdtree-syntax-highlight
+      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).gotests-vim
+      auto-pairs
+      coc-fzf
       coc-nvim
+      emmet-vim
       fzf-vim
       nerdtree
       nerdtree-git-plugin
@@ -119,11 +123,11 @@
       vim-airline-themes
       vim-commentary
       vim-fugitive
-      vim-polyglot
-      vim-tmux-navigator
-      vim-go
       vim-gitgutter
-      coc-fzf
+      vim-go
+      vim-polyglot
+      vim-surround
+      vim-tmux-navigator
     ];
   };
 }

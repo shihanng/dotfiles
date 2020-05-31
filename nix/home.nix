@@ -46,6 +46,15 @@
     };
   };
 
+  programs.man.enable = false;
+  home.extraOutputsToInstall = [ "man" ];
+  home.sessionVariables = {
+    LANG = "en_US.UTF-8";
+  };
+
+  programs.direnv.enable = true;
+  programs.direnv.enableZshIntegration = true;
+
   programs.dircolors.enable = true;
   programs.dircolors.enableZshIntegration = true;
 

@@ -85,6 +85,16 @@
       file = "fzf.zsh";
     }
     {
+      name = "pet";
+      src = ~/dotfiles/nix/zsh_plugins;
+      file = "pet.zsh";
+    }
+    {
+      name = "nvm";
+      src = ~/dotfiles/nix/zsh_plugins;
+      file = "nvm.zsh";
+    }
+    {
       name = "zsh-cdr";
       file = "cdr.plugin.zsh";
       src = pkgs.fetchFromGitHub {

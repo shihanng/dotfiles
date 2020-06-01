@@ -32,10 +32,12 @@
     })];
 
   home.packages =  with pkgs; [
+    gotests
     htop
+    pipenv
+    pythonPackages.autopep8
     starship
     tree
-    gotests
   ];
 
   home.file = {
@@ -118,17 +120,23 @@
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/overrides.nix
     plug.plugins = with pkgs.vimPlugins; [
       (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).fzf
+      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).gotests-vim
       (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-devicons
       (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-nerdtree-syntax-highlight
-      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).gotests-vim
       auto-pairs
-      coc-fzf
       coc-nvim
+      coc-eslint
+      coc-fzf
+      coc-json
+      coc-prettier
+      coc-python
+      coc-tsserver
       emmet-vim
       fzf-vim
       nerdtree
       nerdtree-git-plugin
       nord-vim
+      syntastic
       vim-airline
       vim-airline-themes
       vim-commentary

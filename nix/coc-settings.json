@@ -67,9 +67,5 @@
         }
     },
     "codeLens.enable": true,
-    "go.enable": true,
-    "go.tests": {
-        "generateFlags": ["-template testify"]
-    },
     "python.jediEnabled": false
 }

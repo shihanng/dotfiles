@@ -38,6 +38,7 @@
     pythonPackages.autopep8
     starship
     tree
+    rnix-lsp
   ];
 
   home.file = {

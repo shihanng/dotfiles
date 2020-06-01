@@ -53,6 +53,10 @@
                 "go"
             ]
         },
+        "nix": {
+            "command": "rnix-lsp",
+            "filetypes": ["nix"]
+        },
         "efm": {
             "command": "efm-langserver",
             "args": [],

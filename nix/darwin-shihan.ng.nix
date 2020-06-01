@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  inherit (pkgs) lorri;
+
+in
 {
   imports = [ <home-manager/nix-darwin> ];
 
@@ -14,8 +18,27 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
     [
-      pkgs.vim
+      lorri
     ];
+
+  # https://github.com/target/lorri/blob/3d5eb131a73d72963cb3ee0eee7ac0eca5321254/contrib/daemon.md#run-lorri-daemon-on-macOS-with-nix
+  # https://github.com/target/lorri/issues/96#issuecomment-579931485
+  launchd.user.agents = {
+    "lorri" = {
+      serviceConfig = {
+        WorkingDirectory = (builtins.getEnv "HOME");
+        EnvironmentVariables = {};
+        KeepAlive = true;
+        RunAtLoad = true;
+        StandardOutPath = "/var/tmp/lorri.log";
+        StandardErrorPath = "/var/tmp/lorri.log";
+      };
+      script = ''
+        source ${config.system.build.setEnvironment}
+        exec ${lorri}/bin/lorri daemon
+      '';
+    };
+  };
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/dotfiles/nix/darwin-shihan.ng.nix

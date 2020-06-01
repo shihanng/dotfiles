@@ -67,8 +67,6 @@
     LANG = "en_US.UTF-8";
   };
 
-  services.lorri.enable = true;
-
   programs.direnv.enable = true;
   programs.direnv.enableZshIntegration = true;
 

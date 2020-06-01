@@ -46,6 +46,11 @@
       source = ./coc-settings.json;
       target = ".config/nvim/coc-settings.json";
     };
+    snippets = {
+      recursive = true;
+      source = ./ultisnips;
+      target = ".config/coc/ultisnips";
+    };
   };
 
   programs.man.enable = false;
@@ -130,6 +135,7 @@
       coc-json
       coc-prettier
       coc-python
+      coc-snippets
       coc-tsserver
       emmet-vim
       fzf-vim
@@ -144,6 +150,7 @@
       vim-gitgutter
       vim-go
       vim-polyglot
+      vim-snippets
       vim-surround
       vim-tmux-navigator
     ];

@@ -14,7 +14,11 @@
   };
 
   programs.zsh.oh-my-zsh.enable = true;
-  programs.zsh.oh-my-zsh.plugins = [ "vi-mode" "git" "zsh-interactive-cd" ];
+  programs.zsh.oh-my-zsh.plugins = [
+    "vi-mode"
+    "git"
+    "zsh-interactive-cd"
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -27,11 +31,14 @@
   home.stateVersion = "20.09";
 
   nixpkgs.overlays = [
-    (self: super: {
-      gotests = super.callPackage ./test.nix {};
-    })];
+    (
+      self: super: {
+        gotests = super.callPackage ./test.nix {};
+      }
+    )
+  ];
 
-  home.packages =  with pkgs; [
+  home.packages = with pkgs; [
     gotests
     htop
     pipenv
@@ -74,7 +81,7 @@
   programs.fzf.enable = true;
   programs.fzf.enableZshIntegration = true;
   programs.fzf.defaultCommand = "fd --type f --hidden --follow --exclude .git";
-  programs.fzf.defaultOptions = ["--sort 20000"];
+  programs.fzf.defaultOptions = [ "--sort 20000" ];
 
   programs.gpg.enable = true;
 
@@ -113,7 +120,7 @@
         rev = "253c8e7ea2d386e95a4f06a78c660b3deee84bb7";
         sha256 = "197rrfzphv4nj943hhnbrigaz4vq49h7zddrdm06cdpq3m98xz0a";
       };
-  }
+    }
   ];
 
   programs.neovim.enable = true;
@@ -122,15 +129,15 @@
   programs.neovim.vimdiffAlias = true;
   programs.neovim.configure = {
     customRC = ''
-    ${builtins.readFile ./vim.vim}
+      ${builtins.readFile ./vim.vim}
     '';
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/generated.nix
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/overrides.nix
     plug.plugins = with pkgs.vimPlugins; [
-      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).fzf
-      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).gotests-vim
-      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-devicons
-      (import ./nvim-plugins.nix {pkgs = pkgs; fetchgit=pkgs.fetchgit;}).vim-nerdtree-syntax-highlight
+      (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).fzf
+      (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).gotests-vim
+      (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).vim-devicons
+      (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).vim-nerdtree-syntax-highlight
       auto-pairs
       coc-nvim
       coc-eslint

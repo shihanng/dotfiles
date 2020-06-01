@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  imports = [<home-manager/nix-darwin>];
+  imports = [ <home-manager/nix-darwin> ];
 
   home-manager.useUserPackages = true;
   home-manager.users."shihan.ng" = { pkgs, ... }: {
-    imports = [./home.nix];
+    imports = [ ./home.nix ];
   };
 
   programs.zsh.enable = true;
@@ -13,7 +13,8 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
-    [ pkgs.vim
+    [
+      pkgs.vim
     ];
 
   # Use a custom configuration.nix location.

@@ -1,71 +1,50 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": [
-        "elm",
-        "go",
-        "yaml",
-        "vue",
-        "python",
-        "javascript"
-    ],
-    "yaml.format.enable": true,
-    "languageserver": {
-        "elmLS": {
-            "command": "elm-language-server",
-            "filetypes": [
-                "elm"
-            ],
-            "rootPatterns": [
-                "elm.json"
-            ],
-            "initializationOptions": {
-                "elmAnalyseTrigger": "change"
-            }
-        },
-        "dockerfile": {
-            "command": "docker-langserver",
-            "filetypes": [
-                "dockerfile"
-            ],
-            "args": [
-                "--stdio"
-            ]
-        },
-        "bash": {
-            "command": "bash-language-server",
-            "args": [
-                "start"
-            ],
-            "filetypes": [
-                "sh"
-            ],
-            "ignoredRootPaths": [
-                "~"
-            ]
-        },
-        "golang": {
-            "command": "gopls",
-            "rootPatterns": [
-                "go.mod",
-                ".git/",
-                ".hg/"
-            ],
-            "filetypes": [
-                "go"
-            ]
-        },
-        "nix": {
-            "command": "rnix-lsp",
-            "filetypes": ["nix"]
-        },
-        "efm": {
-            "command": "efm-langserver",
-            "args": [],
-            "filetypes": [
-                "markdown",
-                "sh"
-            ]
-        }
+  "coc.preferences.formatOnSaveFiletypes": [
+    "elm",
+    "go",
+    "yaml",
+    "vue",
+    "python",
+    "javascript",
+    "nix",
+    "json"
+  ],
+  "yaml.format.enable": true,
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmAnalyseTrigger": "change"
+      }
     },
-    "codeLens.enable": true,
-    "python.jediEnabled": false
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": ["nix"]
+    },
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": ["markdown", "sh"]
+    }
+  },
+  "codeLens.enable": true,
+  "python.jediEnabled": false
 }

@@ -2,7 +2,8 @@
 
 let
   buildVimPlugin = pkgs.vimUtils.buildVimPluginFrom2Nix;
-in {
+in
+{
 
   "vim-nerdtree-syntax-highlight" = buildVimPlugin {
     pname = "vim-nerdtree-syntax-highlight";

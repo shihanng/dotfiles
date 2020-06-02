@@ -25,7 +25,6 @@
       - jq
       - moreutils
       - ripgrep
-      - tig
       - kubectl
       - shellcheck
       - git-crypt

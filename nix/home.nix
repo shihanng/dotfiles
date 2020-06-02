@@ -41,12 +41,13 @@
   home.packages = with pkgs; [
     gotests
     htop
+    nodejs
     pipenv
     pythonPackages.autopep8
-    starship
-    tree
     rnix-lsp
-    nodejs
+    starship
+    tig
+    tree
   ];
 
   home.file = {

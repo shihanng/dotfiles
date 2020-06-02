@@ -46,6 +46,7 @@
     starship
     tree
     rnix-lsp
+    nodejs
   ];
 
   home.file = {

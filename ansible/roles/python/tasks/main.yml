@@ -1,10 +1,4 @@
 ---
-- name: Install pyenv and python 3 (Darwin)
-  homebrew:
-    name: pyenv
-    state: present
-  when: ansible_os_family == "Darwin"
-
 - name: Install pyenv (AUR)
   aur:
     name: pyenv

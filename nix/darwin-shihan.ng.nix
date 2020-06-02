@@ -13,6 +13,7 @@ in
   };
 
   programs.zsh.enable = true;
+  programs.gnupg.agent.enable = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget

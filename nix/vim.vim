@@ -168,6 +168,11 @@ endfunction
 
 
 " ================================ " coc-snippets ==============================
+let g:coc_global_extensions = [
+\ 'coc-actions',
+\ 'coc-spell-checker'
+\ ]
+
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 

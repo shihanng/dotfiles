@@ -146,6 +146,7 @@
       coc-prettier
       coc-python
       coc-snippets
+      coc-tslint-plugin
       coc-tsserver
       emmet-vim
       fzf-vim

@@ -163,6 +163,7 @@
       vim-snippets
       vim-surround
       vim-tmux-navigator
+      vim-rhubarb
     ];
   };
 }

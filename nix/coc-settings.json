@@ -2,12 +2,13 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "elm",
     "go",
-    "yaml",
-    "vue",
-    "python",
     "javascript",
+    "json",
     "nix",
-    "json"
+    "python",
+    "typescriptreact",
+    "vue",
+    "yaml"
   ],
   "yaml.format.enable": true,
   "languageserver": {
@@ -46,5 +47,6 @@
     }
   },
   "codeLens.enable": true,
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "eslint.quiet": true
 }

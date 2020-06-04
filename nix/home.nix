@@ -134,7 +134,6 @@
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/generated.nix
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/overrides.nix
     plug.plugins = with pkgs.vimPlugins; [
-      (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).fzf
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).gotests-vim
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).vim-devicons
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).vim-nerdtree-syntax-highlight
@@ -149,6 +148,7 @@
       coc-tslint-plugin
       coc-tsserver
       emmet-vim
+      fzfWrapper
       fzf-vim
       nerdtree
       nerdtree-git-plugin

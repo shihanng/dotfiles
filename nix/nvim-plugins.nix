@@ -27,17 +27,6 @@ in
     dependencies = [];
   };
 
-  "fzf" = buildVimPlugin {
-    pname = "fzf";
-    version = "2020-05-30";
-    src = fetchgit {
-      url = "https://github.com/junegunn/fzf";
-      rev = "f81feb1e69e5cb75797d50817752ddfe4933cd68";
-      sha256 = "1ssv9sh0f1s8ad5jny4ps9pd8fsb29dfpcmwxmxviz1lnx5i6hni";
-    };
-    dependencies = [];
-  };
-
   "gotests-vim" = buildVimPlugin {
     pname = "gotests-vim";
     version = "2020-05-30";

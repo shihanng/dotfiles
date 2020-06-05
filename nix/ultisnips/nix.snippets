@@ -36,3 +36,42 @@ pkgs.mkShell {
 }
 endsnippet
 
+# https://www.breakds.org/post/nix-shell-for-nodejs/
+snippet node "create node shell" b
+let
+  pkgs = import <nixpkgs> {};
+
+  frameworks = pkgs.darwin.apple_sdk.frameworks;
+
+  buildNodejs = pkgs.callPackage <nixpkgs/pkgs/development/web/nodejs/nodejs.nix> {};
+
+  nodejs-12 = buildNodejs {
+    enableNpm = true;
+    version = "12.13.0";
+    sha256 = "1xmy73q3qjmy68glqxmfrk6baqk655py0cic22h1h0v7rx0iaax8";
+  };
+
+  nodejs-10 = buildNodejs {
+    enableNpm = true;
+    version = "10.19.0";
+    sha256 = "0sginvcsf7lrlzsnpahj4bj1f673wfvby8kaxgvzlrbb7sy229v2";
+  };
+
+  nodejs-8 = buildNodejs {
+    enableNpm = true;
+    version = "8.17.0";
+    sha256 = "1zzn7s9wpz1cr4vzrr8n6l1mvg6gdvcfm6f24h1ky9rb93drc3av";
+  };
+
+  nodejs-current = nodejs-${1};
+in
+pkgs.mkShell {
+  buildInputs = [
+    nodejs-current
+    frameworks.CoreFoundation
+    frameworks.CoreServices
+  ];
+
+  NIX_LDFLAGS = "-F${frameworks.CoreFoundation}/Library/Frameworks -framework CoreFoundation";
+}
+endsnippet

@@ -48,6 +48,7 @@
     starship
     tig
     tree
+    yarn
   ];
 
   home.file = {

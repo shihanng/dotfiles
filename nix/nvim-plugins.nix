@@ -37,5 +37,16 @@ in
     };
     dependencies = [];
   };
+
+  "vim-visual-star-search" = buildVimPlugin {
+    pname = "vim-visual-star-search";
+    version = "2020-05-30";
+    src = fetchgit {
+      url = "https://github.com/nelstrom/vim-visual-star-search";
+      rev = "37259722f45996733fd309add61385a4ad88bdb9";
+      sha256 = "11lp24mr7pymylqg2gz2zhqsam3jd9z6aifkcyj7pldpzklxvj4z";
+    };
+    dependencies = [];
+  };
   # more?
 }

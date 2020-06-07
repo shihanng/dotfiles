@@ -9,7 +9,6 @@
       - knqyf263/pet/pet
       - moreutils
       - ripgrep
-      - tig
       - kubernetes-cli
       - shellcheck
       - github/gh/gh

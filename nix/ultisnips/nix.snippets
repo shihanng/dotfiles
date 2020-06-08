@@ -45,6 +45,8 @@ let
 
   buildNodejs = pkgs.callPackage <nixpkgs/pkgs/development/web/nodejs/nodejs.nix> {};
 
+  nodejs-14 = pkgs.callPackage <nixpkgs/pkgs/development/web/nodejs/v14.nix> {};
+
   nodejs-12 = buildNodejs {
     enableNpm = true;
     version = "12.13.0";

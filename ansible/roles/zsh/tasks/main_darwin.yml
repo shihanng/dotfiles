@@ -1,9 +1,0 @@
----
-- name: OS dependent variables
-  set_fact:
-    zsh_path: "/usr/local/bin/zsh"
-
-- name: Install zsh
-  homebrew:
-    name: ["zsh", "reattach-to-user-namespace", "coreutils"]
-    state: present

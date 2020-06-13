@@ -44,6 +44,7 @@
     nodejs
     pipenv
     pythonPackages.autopep8
+    ripgrep
     rnix-lsp
     starship
     tig
@@ -167,6 +168,7 @@
       vim-surround
       vim-tmux-navigator
       vim-rhubarb
+      vim-rooter
     ];
   };
 }

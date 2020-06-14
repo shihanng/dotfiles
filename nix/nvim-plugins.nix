@@ -48,5 +48,16 @@ in
     };
     dependencies = [];
   };
+
+  "night-owl" = buildVimPlugin {
+    pname = "night-owl";
+    version = "2020-05-30";
+    src = fetchgit {
+      url = "https://github.com/haishanh/night-owl.vim";
+      rev = "dcfa87b678d56b526d0cca659f17543cfc632bb6";
+      sha256 = "1nxhkbqmb4y7370jjak9cjnlr10rd3053axnxaxjsns5jspcivyw";
+    };
+    dependencies = [];
+  };
   # more?
 }

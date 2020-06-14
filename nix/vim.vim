@@ -20,8 +20,9 @@ if has('termguicolors')
 endif
 
 syntax enable
-colorscheme nord
+colorscheme night-owl
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
 " ============================= create this with ,ch ===========================

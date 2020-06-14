@@ -139,6 +139,7 @@
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).gotests-vim
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).vim-devicons
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).vim-visual-star-search
+      (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).night-owl
       auto-pairs
       coc-nvim
       coc-eslint
@@ -152,7 +153,6 @@
       emmet-vim
       fzfWrapper
       fzf-vim
-      nord-vim
       syntastic
       vim-airline
       vim-airline-themes

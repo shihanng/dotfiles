@@ -243,6 +243,7 @@ let g:go_highlight_extra_types = 1
 " Disable the following in favor of Coc
 let g:go_def_mapping_enabled = 0
 let g:go_code_completion_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
 let g:go_fmt_autosave = 0
 
 nmap <leader>t <Plug>(go-test)

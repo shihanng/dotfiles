@@ -138,7 +138,6 @@
     plug.plugins = with pkgs.vimPlugins; [
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).gotests-vim
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).vim-devicons
-      (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).vim-visual-star-search
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).night-owl
       auto-pairs
       coc-nvim
@@ -166,6 +165,8 @@
       vim-tmux-navigator
       vim-rhubarb
       vim-rooter
+      is-vim
+      vim-asterisk
     ];
   };
 }

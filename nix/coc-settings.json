@@ -10,6 +10,9 @@
     "vue",
     "yaml"
   ],
+  "coc.preferences.hoverTarget": "float",
+  "signature.enable": true,
+  "suggest.floatEnable": true,
   "yaml.format.enable": true,
   "languageserver": {
     "elmLS": {

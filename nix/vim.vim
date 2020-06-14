@@ -336,6 +336,10 @@ set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
 :nmap <C-n> :CocCommand explorer<CR>
 
 
+" ================================== vim-rooter ================================
+let g:rooter_silent_chdir = 1
+
+
 " ============================ vim-asterisk / is-vim ===========================
 let g:asterisk#keeppos = 1
 map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)

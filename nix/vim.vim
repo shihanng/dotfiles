@@ -23,24 +23,6 @@ syntax enable
 colorscheme nord
 
 
-" ============================== NERDTree settings =============================
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
-autocmd BufEnter * lcd %:p:h " Set working directory to current file's directory.
-let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
-
-
-" ======================== vim-nerdtree-syntax-highlight =======================
-" https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues
-let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = 1
-let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = 1
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
-
 
 " ============================= create this with ,ch ===========================
 noremap <leader>ch :center 80<cr>hhv0r=A<space><esc>40A=<esc>:Commentary<cr><esc>81<bar>D
@@ -179,7 +161,8 @@ endfunction
 " ================================ " coc-snippets ==============================
 let g:coc_global_extensions = [
 \ 'coc-actions',
-\ 'coc-spell-checker'
+\ 'coc-spell-checker',
+\ 'coc-explorer'
 \ ]
 
 " Use <C-l> for trigger snippet expand.
@@ -224,3 +207,7 @@ set hlsearch
 set incsearch
 set smartcase
 set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
+
+
+" ================================= coc-explorer ===============================
+:nmap <C-n> :CocCommand explorer<CR>

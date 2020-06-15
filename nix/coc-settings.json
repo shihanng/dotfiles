@@ -55,5 +55,12 @@
   "explorer.icon.enableVimDevicons": true,
   "explorer.quitOnOpen": true,
   "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "d": false,
+    "D": false,
+    "o": "open",
+    "s": "open:vsplit",
+    "i": "open:split"
+  }
 }

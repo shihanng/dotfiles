@@ -45,6 +45,8 @@ endif
 
 
 " ================================= FZF settings ===============================
+command! -bang ProjectFiles call fzf#vim#files(FindRootDirectory(), <bang>0) " With vim-rooter
+
 nmap <C-p> :Files<CR>
 nmap <C-b> :Buffers<CR>
 nmap <C-f> :RG<CR>
@@ -338,6 +340,7 @@ set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
 
 " ================================== vim-rooter ================================
 let g:rooter_silent_chdir = 1
+let g:rooter_manual_only = 1
 
 
 " ============================ vim-asterisk / is-vim ===========================

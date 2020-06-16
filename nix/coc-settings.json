@@ -62,6 +62,7 @@
     "D": false,
     "o": "open",
     "s": "open:vsplit",
-    "i": "open:split"
+    "i": "open:split",
+    "u": "gotoParent"
   }
 }

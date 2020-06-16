@@ -47,9 +47,9 @@ endif
 " ================================= FZF settings ===============================
 command! -bang ProjectFiles call fzf#vim#files(FindRootDirectory(), <bang>0) " With vim-rooter
 
-nmap <C-p> :Files<CR>
+nmap <C-p> :ProjectFiles<CR>
 nmap <C-b> :Buffers<CR>
-nmap <C-f> :RG<CR>
+nmap <C-f> :PRG<CR>
 
 let g:fzf_layout = { 'down': '~40%' }
 
@@ -62,11 +62,11 @@ function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  let spec = {'dir': FindRootDirectory(), 'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+command! -nargs=* -bang PRG call RipgrepFzf(<q-args>, <bang>0)
 
 
 " =================================== coc-fzf ==================================
@@ -341,7 +341,8 @@ set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
 " ================================== vim-rooter ================================
 let g:rooter_silent_chdir = 1
 let g:rooter_manual_only = 1
-
+" https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 
 " ============================ vim-asterisk / is-vim ===========================
 let g:asterisk#keeppos = 1

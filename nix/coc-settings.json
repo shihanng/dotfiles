@@ -56,6 +56,7 @@
   "explorer.quitOnOpen": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
+  "explorer.openAction.strategy": "previousBuffer",
   "explorer.keyMappings": {
     "d": false,
     "D": false,

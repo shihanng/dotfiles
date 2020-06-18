@@ -169,4 +169,41 @@
       vim-asterisk
     ];
   };
+
+  programs.tmux.enable = true;
+  programs.tmux.baseIndex = 1;
+  programs.tmux.keyMode = "vi";
+  programs.tmux.terminal = "tmux-256color";
+  programs.tmux.shortcut = "q";
+  programs.tmux.plugins = with pkgs ; [
+    tmuxPlugins.sensible
+    tmuxPlugins.vim-tmux-navigator
+    tmuxPlugins.open
+    tmuxPlugins.yank
+    tmuxPlugins.pain-control
+    tmuxPlugins.copycat
+    {
+      plugin = tmuxPlugins.prefix-highlight;
+      extraConfig = ''
+        set-option -g @prefix_highlight_show_copy_mode 'on'
+      '';
+    }
+  ];
+  programs.tmux.extraConfig = ''
+    # Use audible bell (faster response)
+    set-option -g bell-action any
+    set-option -g visual-bell off
+
+    # Turn on mouse support
+    set -g mouse on
+
+    # direnv, see https://github.com/direnv/direnv/wiki/Tmux#alternatively
+    set-option -g update-environment "DIRENV_DIFF DIRENV_DIR DIRENV_WATCHES"
+    set-environment -gu DIRENV_DIFF
+    set-environment -gu DIRENV_DIR
+    set-environment -gu DIRENV_WATCHES
+    set-environment -gu DIRENV_LAYOUT
+
+    set-option -g status-position top
+  '';
 }

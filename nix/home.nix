@@ -171,6 +171,7 @@
   };
 
   programs.tmux.enable = true;
+  programs.tmux.secureSocket = false;
   programs.tmux.baseIndex = 1;
   programs.tmux.keyMode = "vi";
   programs.tmux.terminal = "tmux-256color";

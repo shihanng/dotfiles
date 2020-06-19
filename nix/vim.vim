@@ -286,7 +286,6 @@ endfunction
 " ================================ " coc-snippets ==============================
 let g:coc_global_extensions = [
 \ 'coc-actions',
-\ 'coc-spell-checker',
 \ 'coc-explorer'
 \ ]
 

@@ -195,6 +195,8 @@
     set-option -g bell-action any
     set-option -g visual-bell off
 
+    bind-key -T copy-mode-vi v send-keys -X begin-selection
+
     # Turn on mouse support
     set -g mouse on
 

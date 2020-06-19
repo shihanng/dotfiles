@@ -174,7 +174,7 @@
   programs.tmux.secureSocket = false;
   programs.tmux.baseIndex = 1;
   programs.tmux.keyMode = "vi";
-  programs.tmux.terminal = "tmux-256color";
+  programs.tmux.terminal = "xterm-256color";
   programs.tmux.shortcut = "q";
   programs.tmux.plugins = with pkgs ; [
     tmuxPlugins.sensible

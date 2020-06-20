@@ -11,14 +11,33 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
     FZF_COMPLETION_TRIGGER = "''";
+    RPS1 = "$(vi_mode_prompt_info)";
   };
 
-  programs.zsh.oh-my-zsh.enable = true;
-  programs.zsh.oh-my-zsh.plugins = [
-    "vi-mode"
-    "git"
-    "zsh-interactive-cd"
+  programs.zsh.zplug.enable = true;
+  programs.zsh.zplug.plugins = [
+    {
+      name = "zsh-users/zsh-syntax-highlighting";
+      tags = [ "defer:2" ];
+    }
+    {
+      name = "plugins/vi-mode";
+      tags = [ "from:oh-my-zsh" ];
+    }
+    {
+      name = "plugins/git";
+      tags = [ "from:oh-my-zsh" ];
+    }
+    {
+      name = "plugins/zsh-interactive-cd";
+      tags = [ "from:oh-my-zsh" ];
+    }
+    {
+      name = "zsh-users/zsh-completions";
+      tags = [ "defer:2" ];
+    }
   ];
+
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

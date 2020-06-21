@@ -14,6 +14,10 @@
     RPS1 = "$(vi_mode_prompt_info)";
   };
 
+  programs.zsh.shellAliases = {
+    ls = "ls --color='auto'";
+  };
+
   programs.zsh.zplug.enable = true;
   programs.zsh.zplug.plugins = [
     {

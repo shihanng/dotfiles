@@ -69,7 +69,6 @@
     pythonPackages.autopep8
     ripgrep
     rnix-lsp
-    starship
     tig
     tree
     yarn
@@ -102,6 +101,13 @@
 
 
   programs.starship.enable = true;
+  programs.starship.settings = {
+    add_newline = false;
+    character.symbol = "❯";
+    character.vicmd_symbol = "";
+    line_break.disabled = true;
+    nix_shell.symbol = " ";
+  };
 
   programs.fzf.enable = true;
   programs.fzf.enableZshIntegration = true;

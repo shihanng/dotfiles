@@ -220,6 +220,10 @@
     }
   ];
   programs.tmux.extraConfig = ''
+    set-option -ga terminal-overrides ",xterm-256color:Tc,rxvt-unicode-256color:Tc"
+    set -g default-command $SHELL
+    set -g default-shell $SHELL
+
     # Use audible bell (faster response)
     set-option -g bell-action any
     set-option -g visual-bell off

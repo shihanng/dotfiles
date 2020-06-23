@@ -106,6 +106,7 @@
     character.vicmd_symbol = "";
     line_break.disabled = true;
     nix_shell.symbol = " ";
+    aws.symbol = " ";
   };
 
   programs.fzf.enable = true;

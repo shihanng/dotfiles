@@ -12,11 +12,10 @@
     VISUAL = "nvim";
     FZF_COMPLETION_TRIGGER = "''";
     RPS1 = "$(vi_mode_prompt_info)";
+    CLICOLOR = 1;
   };
 
-  programs.zsh.shellAliases = {
-    ls = "ls --color='auto'";
-  };
+  programs.zsh.shellAliases = {};
 
   programs.zsh.zplug.enable = true;
   programs.zsh.zplug.plugins = [

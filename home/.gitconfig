@@ -37,3 +37,6 @@
 
 [http]
 	cookiefile = $HOME/.gitcookies
+
+[ghq]
+    root = ~/dev/

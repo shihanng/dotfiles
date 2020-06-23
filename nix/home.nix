@@ -61,6 +61,7 @@
   ];
 
   home.packages = with pkgs; [
+    ghq
     gotests
     htop
     nodejs

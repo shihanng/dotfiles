@@ -65,7 +65,6 @@
     htop
     nodejs
     pipenv
-    pythonPackages.autopep8
     ripgrep
     rnix-lsp
     tig

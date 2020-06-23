@@ -47,6 +47,13 @@
       "command": "efm-langserver",
       "args": [],
       "filetypes": ["markdown", "sh"]
+    },
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
     }
   },
   "codeLens.enable": true,

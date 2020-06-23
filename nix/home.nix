@@ -71,6 +71,7 @@
     tig
     tree
     yarn
+    terraform-ls
   ];
 
   home.file = {

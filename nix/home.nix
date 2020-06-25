@@ -166,7 +166,6 @@
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/generated.nix
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/overrides.nix
     plug.plugins = with pkgs.vimPlugins; [
-      (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).gotests-vim
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).vim-devicons
       (import ./nvim-plugins.nix { pkgs = pkgs; fetchgit = pkgs.fetchgit; }).night-owl
       auto-pairs
@@ -197,6 +196,7 @@
       vim-rooter
       is-vim
       vim-asterisk
+      gotests-vim
     ];
   };
 

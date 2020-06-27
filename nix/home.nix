@@ -144,6 +144,11 @@
       file = "nvm.zsh";
     }
     {
+      name = "ghq";
+      src = ~/dotfiles/nix/zsh_plugins;
+      file = "ghq.zsh";
+    }
+    {
       name = "zsh-cdr";
       file = "cdr.plugin.zsh";
       src = pkgs.fetchFromGitHub {

@@ -11,35 +11,13 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
     FZF_COMPLETION_TRIGGER = "''";
-    RPS1 = "$(vi_mode_prompt_info)";
     CLICOLOR = 1;
   };
 
   programs.zsh.shellAliases = {};
 
-  programs.zsh.zplug.enable = true;
-  programs.zsh.zplug.plugins = [
-    {
-      name = "zsh-users/zsh-syntax-highlighting";
-      tags = [ "defer:2" ];
-    }
-    {
-      name = "plugins/vi-mode";
-      tags = [ "from:oh-my-zsh" ];
-    }
-    {
-      name = "plugins/git";
-      tags = [ "from:oh-my-zsh" ];
-    }
-    {
-      name = "plugins/zsh-interactive-cd";
-      tags = [ "from:oh-my-zsh" ];
-    }
-    {
-      name = "zsh-users/zsh-completions";
-      tags = [ "defer:2" ];
-    }
-  ];
+  programs.zsh.oh-my-zsh.enable = true;
+  programs.zsh.oh-my-zsh.plugins = [ "vi-mode" "git" "zsh-interactive-cd" ];
 
 
   # This value determines the Home Manager release that your
@@ -156,6 +134,24 @@
         repo = "zsh-cdr";
         rev = "253c8e7ea2d386e95a4f06a78c660b3deee84bb7";
         sha256 = "197rrfzphv4nj943hhnbrigaz4vq49h7zddrdm06cdpq3m98xz0a";
+      };
+    }
+    {
+      name = "zsh-completions";
+      src = pkgs.fetchFromGitHub {
+        owner = "zsh-users";
+        repo = "zsh-completions";
+        rev = "0.31.0";
+        sha256 = "0rw23m8cqxhcb4yjhbzb9lir60zn1xjy7hn3zv1fzz700f0i6fyk";
+      };
+    }
+    {
+      name = "fast-syntax-highlighting";
+      src = pkgs.fetchFromGitHub {
+        owner = "zdharma";
+        repo = "fast-syntax-highlighting";
+        rev = "v1.55";
+        sha256 = "0h7f27gz586xxw7cc0wyiv3bx0x3qih2wwh05ad85bh2h834ar8d";
       };
     }
   ];

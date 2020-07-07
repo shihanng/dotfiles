@@ -179,6 +179,7 @@
       coc-snippets
       coc-tslint-plugin
       coc-tsserver
+      direnv-vim
       emmet-vim
       fzfWrapper
       fzf-vim

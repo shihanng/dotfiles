@@ -2,6 +2,7 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "elm",
     "go",
+    "html",
     "javascript",
     "json",
     "nix",

@@ -26,13 +26,18 @@
 snippet python "create python shell" b
 let
   pkgs = import <nixpkgs> {};
-  python3Env = pkgs.python${1}.withPackages (ps: with ps; [
+  python3Env = pkgs.python3.withPackages (
+    ps: with ps; [
+      poetry
+    ]
   ]);
 in
 pkgs.mkShell {
   buildInputs = [
     python3Env
   ];
+
+  LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
 }
 endsnippet
 

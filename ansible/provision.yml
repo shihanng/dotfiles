@@ -1,7 +1,6 @@
 ---
 - hosts: all
   roles:
-    - fubarhouse.golang
     - kewlfft.aur
     - role: terminal
     - role: yay

@@ -8,7 +8,6 @@ For macOS, install [Homebrew](https://brew.sh/).
 Depending on
 
 ```
-ansible-galaxy install fubarhouse.golang
 ansible-galaxy install kewlfft.aur
 ```
 

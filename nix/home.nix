@@ -15,7 +15,8 @@
   };
 
   programs.zsh.initExtra = ''
-path=($HOME/go/bin $path[@])
+    path=($HOME/go/bin $path[@])
+    path=($HOME/bin $path[@])
   '';
 
   programs.zsh.shellAliases = {};

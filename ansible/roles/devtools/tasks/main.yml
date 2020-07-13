@@ -42,7 +42,6 @@
       - gh
       - ghq-bin
     use: yay
-    skip_installed: yes
   when: ansible_os_family == "Archlinux"
   become: yes
   become_user: "{{ aur_user }}"

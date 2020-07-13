@@ -36,7 +36,6 @@
       - i3lock-fancy-git
       - nerd-fonts-fira-code
     use: yay
-    skip_installed: yes
   become: yes
   become_user: "{{ aur_user }}"
 

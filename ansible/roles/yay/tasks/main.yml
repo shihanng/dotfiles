@@ -13,14 +13,13 @@
 - name: Add permission to aur_builder
   lineinfile:
     path: /etc/sudoers.d/11-install-aur_builder
-    line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    line: "aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
     create: yes
-    validate: 'visudo -cf %s'
+    validate: "visudo -cf %s"
   become: yes
 
 - name: Install yay
   aur:
     name: yay
-    skip_installed: yes
   become: yes
   become_user: aur_builder

@@ -8,7 +8,7 @@ For macOS, install [Homebrew](https://brew.sh/).
 Depending on
 
 ```
-git clone https://github.com/kewlfft/ansible-aur.git ~/.ansible/plugins/modules/aur
+ansible-galaxy install kewlfft.aur
 ```
 
 We also need a `vault` file 

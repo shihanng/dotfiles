@@ -8,7 +8,7 @@
 
 - name: Install gvim, xdotool (Archlinux)
   pacman:
-    name: 
+    name:
       - gvim
       - xdotool
       - xorg-server
@@ -20,6 +20,5 @@
   aur:
     name: "python-grip"
     use: yay
-    skip_installed: yes
   become: yes
   become_user: "{{ aur_user }}"

@@ -39,10 +39,8 @@
   ];
 
   home.packages = with pkgs; [
-    ghq
     gotests
     htop
-    nodejs
     pipenv
     ripgrep
     rnix-lsp

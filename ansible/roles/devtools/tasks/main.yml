@@ -13,6 +13,8 @@
       - shellcheck
       - github/gh/gh
       - git-crypt
+      - ghq
+      - node
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -27,6 +29,7 @@
       - kubectl
       - shellcheck
       - git-crypt
+      - nodejs
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes
@@ -37,6 +40,7 @@
       - direnv
       - pet-bin
       - gh
+      - ghq-bin
     use: yay
     skip_installed: yes
   when: ansible_os_family == "Archlinux"

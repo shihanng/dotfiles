@@ -349,3 +349,7 @@ map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
 map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
 map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
 map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
+
+" ============================ hashivim/vim-terraform ==========================
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1

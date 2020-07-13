@@ -183,6 +183,7 @@
       emmet-vim
       fzfWrapper
       fzf-vim
+      vim-terraform
       syntastic
       vim-airline
       vim-airline-themes

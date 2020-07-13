@@ -9,7 +9,9 @@
     "python",
     "typescriptreact",
     "vue",
-    "yaml"
+    "yaml",
+    "hcl",
+    "terraform"
   ],
   "coc.preferences.hoverTarget": "float",
   "signature.enable": true,
@@ -52,7 +54,7 @@
     "terraform": {
       "command": "terraform-ls",
       "args": ["serve"],
-      "filetypes": ["terraform", "tf"],
+      "filetypes": ["terraform", "tf", "hcl"],
       "initializationOptions": {},
       "settings": {}
     }

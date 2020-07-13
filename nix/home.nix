@@ -14,6 +14,10 @@
     CLICOLOR = 1;
   };
 
+  programs.zsh.initExtra = ''
+path=($HOME/go/bin $path[@])
+  '';
+
   programs.zsh.shellAliases = {};
 
   programs.zsh.oh-my-zsh.enable = true;

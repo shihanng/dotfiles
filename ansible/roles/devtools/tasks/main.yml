@@ -81,9 +81,9 @@
 #     global: yes
 
 - name: Install efm-langserver
-  shell: GO111MODULE=on go get -u github.com/mattn/efm-langserver@latest
+  shell: curl -sf https://gobinaries.com/mattn/efm-langserver | PREFIX=~/bin sh
   args:
-    creates: ~/go/bin/efm-langserver
+    creates: ~/bin/efm-langserver
 # - name: Install vue language server
 #   npm:
 #     name: "vue-language-server"

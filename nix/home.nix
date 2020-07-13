@@ -45,13 +45,7 @@
 
   home.packages = with pkgs; [
     gotests
-    htop
-    pipenv
-    ripgrep
     rnix-lsp
-    tig
-    tree
-    yarn
     terraform-ls
   ];
 

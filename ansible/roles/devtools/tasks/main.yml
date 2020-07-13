@@ -15,6 +15,11 @@
       - git-crypt
       - ghq
       - node
+      - pipenv
+      - htop
+      - tig
+      - tree
+      - yarn
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -30,6 +35,11 @@
       - shellcheck
       - git-crypt
       - nodejs
+      - python-pipenv
+      - htop
+      - tig
+      - tree
+      - yarn
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes

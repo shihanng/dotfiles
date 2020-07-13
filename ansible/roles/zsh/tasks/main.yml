@@ -1,4 +1,10 @@
 ---
+- include: main_darwin.yml
+  when: ansible_os_family == "Darwin"
+
+- include: main_archlinux.yml
+  when: ansible_os_family == "Archlinux"
+
 - name: User should use zsh
   user:
     name: "{{ ansible_ssh_user }}"

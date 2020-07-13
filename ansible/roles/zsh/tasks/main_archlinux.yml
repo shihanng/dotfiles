@@ -1,0 +1,10 @@
+---
+- name: OS dependent variables
+  set_fact:
+    zsh_path: "/usr/bin/zsh"
+
+- name: Install zsh
+  pacman:
+    name: zsh
+    state: present
+  become: yes

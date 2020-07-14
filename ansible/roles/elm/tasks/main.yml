@@ -20,17 +20,18 @@
     mode: "+x"
   when: ansible_os_family == "Archlinux"
   become: yes
-# - name: Install elm-language-server
-#   npm:
-#     name: "@elm-tooling/elm-language-server"
-#     global: yes
 
-# - name: Install elm-test
-#   npm:
-#     name: "elm-test"
-#     global: yes
+- name: Install elm-language-server
+  npm:
+    name: "@elm-tooling/elm-language-server"
+    global: yes
 
-# - name: Install elm-format
-#   npm:
-#     name: "elm-format"
-#     global: yes
+- name: Install elm-test
+  npm:
+    name: "elm-test"
+    global: yes
+
+- name: Install elm-format
+  npm:
+    name: "elm-format"
+    global: yes

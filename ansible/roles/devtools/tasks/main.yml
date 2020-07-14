@@ -72,36 +72,37 @@
     mode: 0600
     force: no
 
-# - name: Install docker language server
-#   npm:
-#     name: "dockerfile-language-server-nodejs"
-#     global: yes
+- name: Install docker language server
+  npm:
+    name: "dockerfile-language-server-nodejs"
+    global: yes
 
-# - name: Install bash language server
-#   npm:
-#     name: "bash-language-server"
-#     global: yes
+- name: Install bash language server
+  npm:
+    name: "bash-language-server"
+    global: yes
 
-# - name: Install yaml language server
-#   npm:
-#     name: "yaml-language-server"
-#     global: yes
+- name: Install yaml language server
+  npm:
+    name: "yaml-language-server"
+    global: yes
 
-# - name: Install markdownlint-cli
-#   npm:
-#     name: "markdownlint-cli"
-#     global: yes
+- name: Install markdownlint-cli
+  npm:
+    name: "markdownlint-cli"
+    global: yes
 
 - name: Install efm-langserver
   shell: curl -sf https://gobinaries.com/mattn/efm-langserver | PREFIX=~/bin sh
   args:
     creates: ~/bin/efm-langserver
-# - name: Install vue language server
-#   npm:
-#     name: "vue-language-server"
-#     global: yes
 
-# - name: Install prettier
-#   npm:
-#     name: "prettier"
-#     global: yes
+- name: Install vue language server
+  npm:
+    name: "vue-language-server"
+    global: yes
+
+- name: Install prettier
+  npm:
+    name: "prettier"
+    global: yes

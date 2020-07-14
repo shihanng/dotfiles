@@ -1,35 +1,45 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " ==================================== Themes ==================================
-Plug 'arcticicestudio/nord-vim'
+Plug 'haishanh/night-owl.vim'
 
 " =============================== File navigation ==============================
+" Ordering matters
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'antoinemadec/coc-fzf'
+
+
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-rooter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " ============================== Text manipulation =============================
-Plug 'tpope/vim-surround'
 Plug 'haya14busa/is.vim'
-Plug 'nelstrom/vim-visual-star-search'
+Plug 'haya14busa/vim-asterisk'
 Plug 'jiangmiao/auto-pairs'
-Plug 'unblevable/quick-scope'
 Plug 'justinmk/vim-sneak'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'tpope/vim-surround'
+Plug 'unblevable/quick-scope'
 
 " ==================================== coding ==================================
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-syntastic/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'direnv/direnv.vim'
+Plug 'honza/vim-snippets'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-rhubarb'
+Plug 'vim-syntastic/syntastic'
 
 " elm
 Plug 'andys8/vim-elm-syntax'
@@ -42,6 +52,8 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
 
 " go
 Plug 'fatih/vim-go'
@@ -91,7 +103,9 @@ if has('termguicolors')
 endif
 
 syntax enable
-colorscheme nord
+colorscheme night-owl
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
 " ============================= Basic Configuration ============================
@@ -149,30 +163,99 @@ set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
 
 
 " ================================= FZF settings ===============================
-nmap <C-p> :Files<CR>
+command! -bang ProjectFiles call fzf#vim#files(FindRootDirectory(), <bang>0) " With vim-rooter
+
+nmap <C-p> :ProjectFiles<CR>
 nmap <C-b> :Buffers<CR>
+nmap <C-f> :PRG<CR>
 
 let g:fzf_layout = { 'down': '~40%' }
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.<q-args>, 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'dir': FindRootDirectory(), 'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang PRG call RipgrepFzf(<q-args>, <bang>0)
 
 
-" ============================== NERDTree settings =============================
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
-autocmd BufEnter * lcd %:p:h " Set working directory to current file's directory.
-let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
+" =================================== coc-fzf ==================================
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 
 " ================================= Coc settings ===============================
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
-nmap <leader>rn <Plug>(coc-rename)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -183,20 +266,84 @@ function! s:show_documentation()
   endif
 endfunction
 
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Use CTRL-S for selections ranges.
+" Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" For Go
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 
 " =============================== vim-go settings ==============================
@@ -212,6 +359,7 @@ let g:go_highlight_extra_types = 1
 " Disable the following in favor of Coc
 let g:go_def_mapping_enabled = 0
 let g:go_code_completion_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
 let g:go_fmt_autosave = 0
 
 nmap <leader>t <Plug>(go-test)
@@ -288,3 +436,75 @@ let g:airline_powerline_fonts = 1
 " ================================== vim-sneak =================================
 let g:sneak#label = 1
 let g:sneak#s_next = 1
+
+
+" ================================ " coc-snippets ==============================
+let g:coc_global_extensions = [
+\ 'coc-actions',
+\ 'coc-explorer'
+\ ]
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+
+" ==================================== Search ==================================
+" Find and replace (by Nick Janetakis)
+nnoremap <Leader>rr :%s///g<Left><Left>
+nnoremap <Leader>rc :%s///gc<Left><Left><Left>
+xnoremap <Leader>rr :s///g<Left><Left>
+xnoremap <Leader>rc :s///gc<Left><Left><Left>
+
+" SEARCH
+set ignorecase
+set hlsearch
+set incsearch
+set smartcase
+set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
+
+
+" ================================= coc-explorer ===============================
+:nmap <C-n> :CocCommand explorer<CR>
+
+
+" ================================== vim-rooter ================================
+let g:rooter_silent_chdir = 1
+let g:rooter_manual_only = 1
+" https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+
+" ============================ vim-asterisk / is-vim ===========================
+let g:asterisk#keeppos = 1
+map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
+map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
+map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
+map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
+
+" ============================ hashivim/vim-terraform ==========================
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1

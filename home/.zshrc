@@ -36,6 +36,7 @@ zinit snippet OMZP::vi-mode
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
 path=($HOME/.fzf/bin $path[@])
+path=($HOME/.node_modules/bin $path[@])
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -47,6 +48,7 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 export GPG_TTY=$(tty)
+export npm_config_prefix=~/.node_modules
 
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
 setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.

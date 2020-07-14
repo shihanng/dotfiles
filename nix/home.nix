@@ -3,28 +3,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # Create /etc/bashrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;
-  programs.zsh.enableCompletion = true;
-
-  programs.zsh.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-    FZF_COMPLETION_TRIGGER = "''";
-    CLICOLOR = 1;
-  };
-
-  programs.zsh.initExtra = ''
-    path=($HOME/go/bin $path[@])
-    path=($HOME/bin $path[@])
-  '';
-
-  programs.zsh.shellAliases = {};
-
-  programs.zsh.oh-my-zsh.enable = true;
-  programs.zsh.oh-my-zsh.plugins = [ "vi-mode" "git" "zsh-interactive-cd" ];
-
-
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -62,15 +40,6 @@
     };
   };
 
-  programs.man.enable = false;
-  home.extraOutputsToInstall = [ "man" ];
-  home.sessionVariables = {
-    LANG = "en_US.UTF-8";
-  };
-
-  programs.direnv.enable = true;
-  programs.direnv.enableZshIntegration = true;
-
   programs.dircolors.enable = true;
   programs.dircolors.enableZshIntegration = true;
 
@@ -85,73 +54,7 @@
     aws.symbol = " ";
   };
 
-  programs.fzf.enable = true;
-  programs.fzf.enableZshIntegration = true;
-  programs.fzf.defaultCommand = "fd --type f --hidden --follow --exclude .git";
-  programs.fzf.defaultOptions = [ "--sort 20000" ];
-
   programs.gpg.enable = true;
-
-  programs.zsh.plugins = [
-    {
-      name = "select_cdr";
-      src = ~/dotfiles/nix/zsh_plugins;
-      file = "select_cdr.zsh";
-    }
-    {
-      name = "select_git_checkout";
-      src = ~/dotfiles/nix/zsh_plugins;
-      file = "select_git_checkout.zsh";
-    }
-    {
-      name = "fzf";
-      src = ~/dotfiles/nix/zsh_plugins;
-      file = "fzf.zsh";
-    }
-    {
-      name = "pet";
-      src = ~/dotfiles/nix/zsh_plugins;
-      file = "pet.zsh";
-    }
-    {
-      name = "nvm";
-      src = ~/dotfiles/nix/zsh_plugins;
-      file = "nvm.zsh";
-    }
-    {
-      name = "ghq";
-      src = ~/dotfiles/nix/zsh_plugins;
-      file = "ghq.zsh";
-    }
-    {
-      name = "zsh-cdr";
-      file = "cdr.plugin.zsh";
-      src = pkgs.fetchFromGitHub {
-        owner = "willghatch";
-        repo = "zsh-cdr";
-        rev = "253c8e7ea2d386e95a4f06a78c660b3deee84bb7";
-        sha256 = "197rrfzphv4nj943hhnbrigaz4vq49h7zddrdm06cdpq3m98xz0a";
-      };
-    }
-    {
-      name = "zsh-completions";
-      src = pkgs.fetchFromGitHub {
-        owner = "zsh-users";
-        repo = "zsh-completions";
-        rev = "0.31.0";
-        sha256 = "0rw23m8cqxhcb4yjhbzb9lir60zn1xjy7hn3zv1fzz700f0i6fyk";
-      };
-    }
-    {
-      name = "fast-syntax-highlighting";
-      src = pkgs.fetchFromGitHub {
-        owner = "zdharma";
-        repo = "fast-syntax-highlighting";
-        rev = "v1.55";
-        sha256 = "0h7f27gz586xxw7cc0wyiv3bx0x3qih2wwh05ad85bh2h834ar8d";
-      };
-    }
-  ];
 
   programs.neovim.enable = true;
   programs.neovim.viAlias = true;

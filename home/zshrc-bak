@@ -1,0 +1,84 @@
+# https://github.com/zplug/zplug/wiki/Configurations#examples
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update
+fi
+
+# Essential
+source ~/.zplug/init.zsh
+
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "zsh-users/zsh-completions"
+zplug "lukechilds/zsh-better-npm-completion", defer:2
+zplug "mollifier/anyframe"
+zplug "willghatch/zsh-cdr"
+zplug "knqyf263/pet", use:misc/completions/zsh
+zplug "~/zsh-plugins", as:plugin, use:"*.zsh", from:local, defer:1
+zplug "lib/theme-and-appearance", from:oh-my-zsh
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+# Install packages that have not been installed yet
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  else
+    echo
+  fi
+fi
+
+zplug load
+
+typeset -U path
+
+export TERM="xterm-256color"
+export EDITOR='nvim'
+export VISUAL='nvim'
+export LESS='-XRMsIg'
+export LANG=C
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+
+path=($HOME/go/bin $path[@])
+path=($HOME/.fzf/bin $path[@])
+path=($HOME/.local/bin $path[@])
+path=($HOME/.yarn/bin $path[@])
+path=($HOME/.config/yarn/global/node_modules/.bin $path[@])
+path=(/usr/share/git/diff-highlight $path[@])
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(pyenv init -)"
+eval "$(rbenv init -)"
+
+load-nvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+}
+
+eval "$(direnv hook zsh)"
+source <(kubectl completion zsh)
+
+function vinfo() {
+    vim -c "Vinfo $1" -c 'silent only'
+}
+
+function open() {
+    if [[ `uname` == "Linux" ]]; then
+        xdg-open "$@"
+    elif [[ `uname` == "Darwin" ]]; then
+        /usr/bin/open "$@"
+    fi
+}
+
+export GPG_TTY=$(tty)
+
+[ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
+
+eval "$(starship init zsh)"

@@ -20,6 +20,7 @@
       - tig
       - tree
       - yarn
+      - starship
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -51,6 +52,7 @@
       - pet-bin
       - gh
       - ghq-bin
+      - starship
     use: yay
   when: ansible_os_family == "Archlinux"
   become: yes

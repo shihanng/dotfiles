@@ -40,20 +40,6 @@
     };
   };
 
-  programs.dircolors.enable = true;
-  programs.dircolors.enableZshIntegration = true;
-
-
-  programs.starship.enable = true;
-  programs.starship.settings = {
-    add_newline = false;
-    character.symbol = "❯";
-    character.vicmd_symbol = "";
-    line_break.disabled = true;
-    nix_shell.symbol = " ";
-    aws.symbol = " ";
-  };
-
   programs.gpg.enable = true;
 
   programs.neovim.enable = true;

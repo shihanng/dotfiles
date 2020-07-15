@@ -508,3 +508,11 @@ map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
 " ============================ hashivim/vim-terraform ==========================
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+
+let s:uname = system("echo -n \"$(uname)\"")
+if !v:shell_error && s:uname == "Darwin"
+    let g:python_host_prog  = '/usr/bin/python2'
+    let g:python3_host_prog = '/usr/local/bin/python3'
+endif
+let g:node_host_prog = '$HOME/.node_modules/lib/node_modules/neovim'

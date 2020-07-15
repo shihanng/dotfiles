@@ -32,6 +32,8 @@ zinit snippet OMZL::history.zsh
 zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::vi-mode
+zinit snippet OMZP::docker/_docker
+zinit snippet OMZP::docker-compose
 
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])

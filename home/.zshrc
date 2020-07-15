@@ -32,8 +32,13 @@ zinit snippet OMZL::history.zsh
 zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::vi-mode
+
+zinit ice as"completion"
 zinit snippet OMZP::docker/_docker
 zinit snippet OMZP::docker-compose
+
+autoload -Uz compinit
+compinit
 
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])

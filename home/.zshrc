@@ -20,30 +20,33 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node
 ### End of Zinit's installer chunk
 
-
-zinit wait lucid for \
-      OMZL::git.zsh \
-      OMZL::history.zsh \
-      OMZP::git \
-      OMZP::vi-mode \
-  atinit"zicompinit; zicdreplay"  \
-        zdharma/fast-syntax-highlighting \
-      OMZP::colored-man-pages \
-  as"completion" \
-        OMZP::docker/_docker \
-  as"completion" \
-        OMZP::docker-compose
-
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
+zinit light zdharma/fast-syntax-highlighting
 zinit light changyuheng/zsh-interactive-cd
 zinit light willghatch/zsh-cdr
+
+# Load OMZ Git library
+zinit snippet OMZL::git.zsh
+zinit snippet OMZL::history.zsh
+zinit snippet OMZL::theme-and-appearance.zsh
+zinit snippet OMZP::git
+zinit snippet OMZP::vi-mode
+
+zinit ice as"completion"
+zinit snippet OMZP::docker/_docker
+zinit snippet OMZP::docker-compose
 
 zinit ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" nocompile'!'
 zinit light trapd00r/LS_COLORS
 
 zplugin pack for pyenv
 zplugin ice wait'!0'; zplugin light "lukechilds/zsh-nvm"
+
+zplugin ice wait"!0" atinit"zpcompinit; zpcdreplay"
+
+autoload -Uz compinit
+compinit
 
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])

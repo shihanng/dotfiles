@@ -1,3 +1,12 @@
 snippet path "Add PATH_add" b
 PATH_add ${1:./}
 endsnippet
+
+snippet python-venv "Use Python venv" b
+export VIRTUAL_ENV=.venv
+layout python-venv python3.6
+endsnippet
+
+snippet python-pipenv "Use Python pipenv" b
+layout pipenv
+endsnippet

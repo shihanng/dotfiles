@@ -43,8 +43,7 @@ zinit light trapd00r/LS_COLORS
 zplugin pack for pyenv
 zplugin ice wait'!0'; zplugin light "lukechilds/zsh-nvm"
 
-autoload -Uz compinit
-compinit
+zplugin ice wait"!0" atinit"zpcompinit; zpcdreplay"
 
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])

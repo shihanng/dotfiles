@@ -45,6 +45,9 @@ zplugin ice wait'!0'; zplugin light "lukechilds/zsh-nvm"
 
 zplugin ice wait"!0" atinit"zpcompinit; zpcdreplay"
 
+autoload -Uz compinit
+compinit
+
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
 path=($HOME/.fzf/bin $path[@])

@@ -15,7 +15,6 @@
       - git-crypt
       - ghq
       - node
-      - pipenv
       - htop
       - tig
       - tree
@@ -36,7 +35,6 @@
       - shellcheck
       - git-crypt
       - nodejs
-      - python-pipenv
       - htop
       - tig
       - tree

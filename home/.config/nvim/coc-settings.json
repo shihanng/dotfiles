@@ -5,6 +5,7 @@
     "html",
     "javascript",
     "json",
+    "jsonc",
     "nix",
     "python",
     "typescriptreact",
@@ -74,5 +75,9 @@
     "s": "open:vsplit",
     "i": "open:split",
     "u": "gotoParent"
-  }
+  },
+  "snippets.extends": {
+    "javascript_react": ["javascript"]
+  },
+  "json.format.enable": true
 }

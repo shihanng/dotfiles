@@ -1,6 +1,9 @@
 [include]
 	path = ~/.gitconfig.local
 
+[pull]
+	rebase = false
+
 [core]
 	excludesfile = ~/.gitignore_global
 

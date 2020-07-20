@@ -2,17 +2,18 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "elm",
     "go",
+    "hcl",
     "html",
     "javascript",
     "json",
     "jsonc",
+    "markdown",
     "nix",
     "python",
+    "terraform",
     "typescriptreact",
     "vue",
-    "yaml",
-    "hcl",
-    "terraform"
+    "yaml"
   ],
   "coc.preferences.hoverTarget": "float",
   "signature.enable": true,

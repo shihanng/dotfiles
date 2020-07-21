@@ -51,6 +51,7 @@ compinit
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
 path=($HOME/.fzf/bin $path[@])
+path=($HOME/.poetry/bin $path[@])
 
 export EDITOR="nvim"
 export VISUAL="nvim"

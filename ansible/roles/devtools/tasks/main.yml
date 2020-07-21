@@ -49,7 +49,7 @@
     name:
       - direnv
       - pet-bin
-      - gh
+      - github-cli-bin
       - ghq-bin
       - starship
       - git-delta-bin

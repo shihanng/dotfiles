@@ -20,6 +20,7 @@
       - tree
       - yarn
       - starship
+      - git-delta
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -51,6 +52,7 @@
       - gh
       - ghq-bin
       - starship
+      - git-delta-bin
     use: yay
   when: ansible_os_family == "Archlinux"
   become: yes

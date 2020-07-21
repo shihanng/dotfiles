@@ -21,6 +21,7 @@
       - yarn
       - starship
       - git-delta
+      - bat
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -40,6 +41,7 @@
       - tig
       - tree
       - yarn
+      - bat
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes

@@ -40,6 +40,8 @@ zinit snippet OMZP::docker-compose
 zinit ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" nocompile'!'
 zinit light trapd00r/LS_COLORS
 
+zinit load 'wfxr/forgit'
+
 zplugin pack for pyenv
 zplugin ice wait'!0'; zplugin light "lukechilds/zsh-nvm"
 

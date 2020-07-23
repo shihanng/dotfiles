@@ -66,10 +66,13 @@ export LC_ALL=en_US.UTF-8
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 export GPG_TTY=$(tty)
 
+setopt EXTENDED_HISTORY
+setopt HIST_BEEP
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
-setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
-setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 
 alias vim='nvim'

@@ -63,6 +63,7 @@
   },
   "codeLens.enable": true,
   "python.jediEnabled": false,
+  "python.formatting.provider": "black",
   "eslint.quiet": true,
   "explorer.icon.enableVimDevicons": true,
   "explorer.quitOnOpen": true,

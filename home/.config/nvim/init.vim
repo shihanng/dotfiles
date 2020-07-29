@@ -1,7 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " ==================================== Themes ==================================
-Plug 'haishanh/night-owl.vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 " =============================== File navigation ==============================
 " Ordering matters
@@ -103,7 +103,7 @@ if has('termguicolors')
 endif
 
 syntax enable
-colorscheme night-owl
+colorscheme onehalfdark
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
@@ -432,6 +432,7 @@ let g:user_emmet_mode='a'
 
 " =================================== airline ==================================
 let g:airline_powerline_fonts = 1
+let g:airline_theme='onehalfdark'
 
 " ================================== vim-sneak =================================
 let g:sneak#label = 1

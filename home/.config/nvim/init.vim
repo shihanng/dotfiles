@@ -517,3 +517,5 @@ if !v:shell_error && s:uname == "Darwin"
     let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 let g:node_host_prog = '$HOME/.node_modules/lib/node_modules/neovim'
+
+autocmd FileType direnv setlocal commentstring=#\ %s

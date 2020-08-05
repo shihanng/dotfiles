@@ -12,3 +12,7 @@ disabled = true
 
 [nodejs]
 symbol = " "
+
+[aws]
+style = "bold blue"
+symbol = "🅰 "

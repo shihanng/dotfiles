@@ -64,6 +64,7 @@
   "codeLens.enable": true,
   "python.jediEnabled": false,
   "python.formatting.provider": "black",
+  "python.sortImports.path": "isort",
   "eslint.quiet": true,
   "explorer.icon.enableVimDevicons": true,
   "explorer.quitOnOpen": true,

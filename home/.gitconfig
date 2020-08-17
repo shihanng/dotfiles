@@ -18,9 +18,6 @@
 [tag]
 	forceSignAnnotated = true
 
-[url "git@gitlab.com:"]
-	insteadOf = https://gitlab.com/
-
 [diff]
 	tool = vimdiff
 
@@ -36,6 +33,9 @@
 
 [url "https://github.com"]
 	insteadOf = git://github.com
+
+[url "https://gitlab.com/"]
+	insteadOf = git@gitlab.com:
 
 [credential]
 	helper = store

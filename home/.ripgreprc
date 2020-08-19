@@ -1,7 +1,2 @@
 --smart-case
---no-ignore
 --hidden
-
---glob=!node_modules/*
---glob=!vendor/*
---glob=!.git/*

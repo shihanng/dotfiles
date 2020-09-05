@@ -50,7 +50,7 @@
 	plus-color = "#012800"
 	minus-color = "#340001"
 	line-numbers = true
-    whitespace-error-style = 22 reverse
+	whitespace-error-style = 22 reverse
 
 [interactive]
 	diffFilter = delta --color-only

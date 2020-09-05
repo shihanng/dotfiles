@@ -33,6 +33,8 @@ zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::vi-mode
 
+zinit snippet OMZL::functions.zsh
+
 zinit ice as"completion"
 zinit snippet OMZP::docker/_docker
 zinit snippet OMZP::docker-compose
@@ -77,7 +79,8 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 
 alias vim='nvim'
 alias vi='nvim'
-alias vimdiff='nvim -d '
+alias vimdiff='nvim -d'
+alias open='open_command'
 
 # ===================================== cdr ====================================
 # Ref: https://petitviolet.hatenablog.com/entry/20190708/1562544000

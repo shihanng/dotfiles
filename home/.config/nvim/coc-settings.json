@@ -10,6 +10,7 @@
     "markdown",
     "nix",
     "python",
+    "tex",
     "terraform",
     "typescriptreact",
     "vue",
@@ -85,5 +86,6 @@
   "snippets.extends": {
     "javascript_react": ["javascript"]
   },
-  "json.format.enable": true
+  "json.format.enable": true,
+  "diagnostic.checkCurrentLine": true
 }

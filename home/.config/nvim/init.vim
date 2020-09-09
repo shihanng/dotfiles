@@ -520,3 +520,13 @@ endif
 let g:node_host_prog = '$HOME/.node_modules/lib/node_modules/neovim'
 
 autocmd FileType direnv setlocal commentstring=#\ %s
+
+" ==================================== Paste ===================================
+" https://superuser.com/a/321726/424675
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP

@@ -23,5 +23,9 @@ layout poetry
 endsnippet
 
 snippet node-nvm "Use Node nvm" b
+export NODE_VERSIONS=$HOME/.nvm/versions/node/
+export NODE_VERSION_PREFIX=v
+set -e
 use nvm 10.20.1
+layout node
 endsnippet

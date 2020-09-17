@@ -10,8 +10,9 @@
     "markdown",
     "nix",
     "python",
-    "tex",
     "terraform",
+    "tex",
+    "typescript",
     "typescriptreact",
     "vue",
     "yaml"

@@ -1,5 +1,6 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
+    "css",
     "elm",
     "go",
     "hcl",

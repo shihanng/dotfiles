@@ -39,6 +39,9 @@ zinit ice as"completion"
 zinit snippet OMZP::docker/_docker
 zinit snippet OMZP::docker-compose
 
+zinit ice as"completion"
+zinit snippet "https://raw.githubusercontent.com/exercism/cli/master/shell/exercism_completion.zsh"
+
 zinit ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" nocompile'!'
 zinit light trapd00r/LS_COLORS
 

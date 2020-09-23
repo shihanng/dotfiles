@@ -89,5 +89,6 @@
     "javascript_react": ["javascript"]
   },
   "json.format.enable": true,
-  "diagnostic.checkCurrentLine": true
+  "diagnostic.checkCurrentLine": true,
+  "tailwindCSS.emmetCompletions": true
 }

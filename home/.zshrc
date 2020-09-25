@@ -37,7 +37,7 @@ zinit snippet OMZL::functions.zsh
 
 zinit ice as"completion"
 zinit snippet OMZP::docker/_docker
-zinit snippet OMZP::docker-compose
+zinit snippet OMZP::docker-compose/_docker-compose
 
 zinit ice as"completion"
 zinit snippet "https://raw.githubusercontent.com/exercism/cli/master/shell/exercism_completion.zsh"

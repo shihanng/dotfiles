@@ -11,7 +11,7 @@
       - ripgrep
       - kubernetes-cli
       - shellcheck
-      - github/gh/gh
+      - gh
       - git-crypt
       - ghq
       - node
@@ -43,6 +43,7 @@
       - tree
       - yarn
       - bat
+      - github-cli
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes
@@ -52,7 +53,6 @@
     name:
       - direnv
       - pet-bin
-      - github-cli-bin
       - ghq-bin
       - starship
       - git-delta-bin

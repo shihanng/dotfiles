@@ -23,6 +23,7 @@
       - git-delta
       - bat
       - pre-commit
+      - glow
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -44,6 +45,7 @@
       - yarn
       - bat
       - github-cli
+      - glow
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes

@@ -46,6 +46,7 @@ zinit ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" n
 zinit light trapd00r/LS_COLORS
 
 zinit load 'wfxr/forgit'
+zinit load 'asdf-vm/asdf'
 
 zplugin pack for pyenv
 zplugin ice wait'!0'; zplugin light "lukechilds/zsh-nvm"
@@ -54,11 +55,11 @@ zplugin ice wait"!0" atinit"zpcompinit; zpcdreplay"
 
 autoload -Uz compinit
 compinit
+zinit cdreplay -q # <- execute compdefs provided by rest of plugins
 
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
 path=($HOME/.fzf/bin $path[@])
-path=($HOME/.poetry/bin $path[@])
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -187,5 +188,6 @@ zle -N fzf-src
 bindkey '^]' fzf-src
 
 
-eval "$(direnv hook zsh)"
+eval "$(asdf exec direnv hook zsh)"
+direnv() { asdf exec direnv "$@"; }
 eval "$(starship init zsh)"

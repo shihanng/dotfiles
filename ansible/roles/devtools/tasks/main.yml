@@ -3,7 +3,6 @@
   homebrew:
     name:
       - awscli
-      - direnv
       - fd
       - jq
       - knqyf263/pet/pet
@@ -53,7 +52,6 @@
 - name: Install development tools (AUR)
   aur:
     name:
-      - direnv
       - pet-bin
       - ghq-bin
       - starship

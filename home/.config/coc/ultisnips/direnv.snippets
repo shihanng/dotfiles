@@ -3,19 +3,23 @@ PATH_add ${1:./}
 endsnippet
 
 snippet python-venv "Use Python venv" b
+use asdf
 export VIRTUAL_ENV=.venv
 layout python-venv
 endsnippet
 
 snippet python-pipenv "Use Python pipenv" b
+use asdf
 layout pipenv
 endsnippet
 
 snippet python-pyenv "Use Python pyenv" b
+use asdf
 layout pyenv 3.6.7 # Remove if using adsf
 endsnippet
 
 snippet python-poetry "Use Python poetry" b
+use asdf
 layout pyenv 3.6.7 # Remove if using adsf
 export VIRTUAL_ENV=.venv
 layout python-venv

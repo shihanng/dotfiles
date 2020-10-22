@@ -48,9 +48,6 @@ zinit light trapd00r/LS_COLORS
 zinit load 'wfxr/forgit'
 zinit load 'asdf-vm/asdf'
 
-zplugin pack for pyenv
-zplugin ice wait'!0'; zplugin light "lukechilds/zsh-nvm"
-
 zplugin ice wait"!0" atinit"zpcompinit; zpcdreplay"
 
 autoload -Uz compinit

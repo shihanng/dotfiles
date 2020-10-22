@@ -396,12 +396,12 @@ let g:firenvim_config = {
             \ 'cmdline': 'neovim',
             \ 'priority': 0,
             \ 'selector': 'textarea',
-            \ 'takeover': 'always',
+            \ 'takeover': 'never',
         \ },
     \ }
 \ }
 let fc = g:firenvim_config['localSettings']
-let fc['.*'] = { 'selector': 'textarea' }
+let fc['.*'] = { 'selector': 'textarea', 'takeover': 'never' }
 
 " ================================== syntastic =================================
 set statusline+=%#warningmsg#

@@ -77,7 +77,7 @@
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.openAction.strategy": "previousBuffer",
-  "explorer.keyMappings": {
+  "explorer.keyMappings.global": {
     "d": false,
     "D": false,
     "o": "open",

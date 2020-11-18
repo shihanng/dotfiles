@@ -44,7 +44,6 @@
       - yarn
       - bat
       - github-cli
-      - glow
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes
@@ -56,6 +55,7 @@
       - ghq-bin
       - starship
       - git-delta-bin
+      - glow
     use: yay
   when: ansible_os_family == "Archlinux"
   become: yes

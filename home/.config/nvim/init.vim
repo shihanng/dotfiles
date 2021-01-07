@@ -50,7 +50,7 @@ Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
@@ -415,6 +415,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_go_checkers = ['golangci_lint']
+let g:syntastic_python_checkers = []
 
 map <F8> <ESC>:call SyntasticToggle()<CR>
 
@@ -515,10 +516,8 @@ let g:terraform_fmt_on_save=1
 
 
 let s:uname = system("echo -n \"$(uname)\"")
-if !v:shell_error && s:uname == "Darwin"
-    let g:python_host_prog  = '/usr/bin/python2'
-    let g:python3_host_prog = '/usr/local/bin/python3'
-endif
+let g:python_host_prog = $HOME . '/.asdf/installs/python/2.7.18/bin/python'
+let g:python3_host_prog = $HOME . '/.asdf/installs/python/3.9.0/bin/python'
 let g:node_host_prog = '$HOME/.node_modules/lib/node_modules/neovim'
 
 autocmd FileType direnv setlocal commentstring=#\ %s

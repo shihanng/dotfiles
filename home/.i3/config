@@ -317,6 +317,8 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
+exec --no-startup-id deadd-notification-center
+
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Theme colors

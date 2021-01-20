@@ -27,7 +27,7 @@ Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
-Plug 'nelstrom/vim-visual-star-search'
+Plug 'bronson/vim-visual-star-search'
 Plug 'tpope/vim-surround'
 Plug 'unblevable/quick-scope'
 

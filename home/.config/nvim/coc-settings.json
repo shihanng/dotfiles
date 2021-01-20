@@ -65,12 +65,10 @@
     }
   },
   "codeLens.enable": true,
-  "python.jediEnabled": false,
   "python.formatting.provider": "black",
-  "python.sortImports.path": "isort",
   "python.linting.mypyEnabled": true,
   "python.linting.flake8Enabled": true,
-  "python.linting.pylintEnabled": true,
+  "python.linting.pylintEnabled": false,
   "eslint.quiet": true,
   "explorer.icon.enableVimDevicons": true,
   "explorer.quitOnOpen": true,
@@ -88,6 +86,7 @@
   "snippets.extends": {
     "javascript_react": ["javascript"]
   },
+  "snippets.ultisnips.usePythonx": false,
   "json.format.enable": true,
   "diagnostic.checkCurrentLine": true,
   "tailwindCSS.emmetCompletions": true

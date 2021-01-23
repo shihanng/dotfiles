@@ -57,6 +57,7 @@ Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-texlab', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'suy/vim-context-commentstring'
+Plug 'fannheyward/coc-styled-components',  {'do': 'yarn install --frozen-lockfile'}
 
 " go
 Plug 'fatih/vim-go'

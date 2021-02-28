@@ -1,5 +1,5 @@
 if has('nvim-0.5')
-    luafile ~/.config/nvim/nvim05.lua
+    lua require('plugins')
 else
     source ~/.config/nvim/nvim04.vim
 endif

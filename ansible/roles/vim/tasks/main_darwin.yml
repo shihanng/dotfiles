@@ -4,5 +4,4 @@
     name:
       - vim
       - grip
-      - neovim
     state: present

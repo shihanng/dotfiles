@@ -3,6 +3,7 @@ local paq = require "paq-nvim".paq -- Import module and bind `paq` function
 paq {"savq/paq-nvim", opt = true} -- Let Paq manage itself
 paq {"neovim/nvim-lspconfig"}
 paq {"dense-analysis/ale"}
+paq {"tpope/vim-surround"}
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)

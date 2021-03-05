@@ -8,6 +8,7 @@ paq {"tjdevries/nlua.nvim"}
 paq {"kyazdani42/nvim-web-devicons"}
 paq {"kyazdani42/nvim-tree.lua"}
 paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+paq {"sainnhe/sonokai"}
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
@@ -151,3 +152,7 @@ require "nvim-treesitter.configs".setup {
         enable = true
     }
 }
+
+-- sainnhe/sonokai
+vim.api.nvim_set_var("sonokai_style", "maia")
+vim.api.nvim_command("colorscheme sonokai")

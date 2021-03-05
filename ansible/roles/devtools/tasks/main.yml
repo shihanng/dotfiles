@@ -23,6 +23,7 @@
       - bat
       - pre-commit
       - glow
+      - ninja
     state: present
   when: ansible_os_family == "Darwin"
 
@@ -44,6 +45,7 @@
       - yarn
       - bat
       - github-cli
+      - ninja
     state: present
   when: ansible_os_family == "Archlinux"
   become: yes

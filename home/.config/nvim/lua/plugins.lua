@@ -11,6 +11,10 @@ paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 paq {"sainnhe/sonokai"}
 paq {"nvim-lua/completion-nvim"}
 
+paq {"junegunn/fzf", hook = vim.fn["fzf#install"]}
+paq {"junegunn/fzf.vim"}
+paq {"ojroques/nvim-lspfuzzy"}
+
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
     require "completion".on_attach(client)
@@ -159,3 +163,6 @@ require "nvim-treesitter.configs".setup {
 -- sainnhe/sonokai
 vim.api.nvim_set_var("sonokai_style", "maia")
 vim.api.nvim_command("colorscheme sonokai")
+
+-- nvim-lspfuzzy
+require("lspfuzzy").setup {}

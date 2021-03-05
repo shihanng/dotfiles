@@ -166,3 +166,9 @@ vim.api.nvim_command("colorscheme sonokai")
 
 -- nvim-lspfuzzy
 require("lspfuzzy").setup {}
+
+-- completion-nvim
+vim.api.nvim_command("set completeopt=menuone,noinsert,noselect")
+vim.api.nvim_command("set shortmess+=c")
+vim.api.nvim_set_var("completion_matching_strategy_list", {"exact", "substring", "fuzzy", "all"})
+vim.api.nvim_set_var("completion_matching_smart_case", 1)

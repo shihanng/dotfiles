@@ -67,7 +67,7 @@ for _, lsp in ipairs(servers) do
 end
 
 nvim_lsp.tsserver.setup {
-    cmd = {"typescript-language-server", "--stdio"},
+    cmd = {vim.fn.expand("~/dotfiles/lsp/node_modules/.bin/typescript-language-server"), "--stdio"},
     on_attach = on_attach
 }
 

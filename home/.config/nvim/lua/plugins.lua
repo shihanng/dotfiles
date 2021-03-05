@@ -5,6 +5,8 @@ paq {"neovim/nvim-lspconfig"}
 paq {"dense-analysis/ale"}
 paq {"tpope/vim-surround"}
 paq {"tjdevries/nlua.nvim"}
+paq {"kyazdani42/nvim-web-devicons"}
+paq {"kyazdani42/nvim-tree.lua"}
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
@@ -135,3 +137,8 @@ require("nlua.lsp.nvim").setup(
         }
     }
 )
+
+-- kyazdani42/nvim-tree.lua
+vim.api.nvim_command("set termguicolors")
+vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", {noremap = true})
+vim.api.nvim_command("highlight NvimTreeFolderIcon guibg=blue")

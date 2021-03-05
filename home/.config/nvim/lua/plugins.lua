@@ -4,6 +4,7 @@ paq {"savq/paq-nvim", opt = true} -- Let Paq manage itself
 paq {"neovim/nvim-lspconfig"}
 paq {"dense-analysis/ale"}
 paq {"tpope/vim-surround"}
+paq {"tjdevries/nlua.nvim"}
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
@@ -117,3 +118,20 @@ vim.api.nvim_set_var("ale_lua_luafmt_executable", vim.fn.expand("~/dotfiles/lsp/
 
 -- Allow copy-paste from system clipboard
 vim.api.nvim_command("set clipboard+=unnamedplus")
+
+require("nlua.lsp.nvim").setup(
+    nvim_lsp,
+    {
+        cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+        on_attach = on_attach,
+        -- Include globals you want to tell the LSP are real :)
+        globals = {
+            -- Colorbuddy
+            "Color",
+            "c",
+            "Group",
+            "g",
+            "s"
+        }
+    }
+)

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lua-fmt": "^2.6.0",
     "typescript-language-server": "^0.5.1"
   }
 }

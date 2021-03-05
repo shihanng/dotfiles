@@ -113,6 +113,7 @@ nvim_lsp.sumneko_lua.setup {
 
 vim.api.nvim_set_var("ale_fixers", {lua = {"luafmt"}})
 vim.api.nvim_set_var("ale_fix_on_save", 1)
+vim.api.nvim_set_var("ale_lua_luafmt_executable", vim.fn.expand("~/dotfiles/lsp/node_modules/.bin/luafmt"))
 
 -- Allow copy-paste from system clipboard
 vim.api.nvim_command("set clipboard+=unnamedplus")

@@ -7,6 +7,7 @@ paq {"tpope/vim-surround"}
 paq {"tjdevries/nlua.nvim"}
 paq {"kyazdani42/nvim-web-devicons"}
 paq {"kyazdani42/nvim-tree.lua"}
+paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
@@ -142,3 +143,11 @@ require("nlua.lsp.nvim").setup(
 vim.api.nvim_command("set termguicolors")
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", {noremap = true})
 vim.api.nvim_command("highlight NvimTreeFolderIcon guibg=blue")
+
+-- nvim-treesitter/nvim-treesitter
+require "nvim-treesitter.configs".setup {
+    ensure_installed = "maintained",
+    highlight = {
+        enable = true
+    }
+}

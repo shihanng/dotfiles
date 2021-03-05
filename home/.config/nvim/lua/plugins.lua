@@ -9,9 +9,12 @@ paq {"kyazdani42/nvim-web-devicons"}
 paq {"kyazdani42/nvim-tree.lua"}
 paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 paq {"sainnhe/sonokai"}
+paq {"nvim-lua/completion-nvim"}
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
+    require "completion".on_attach(client)
+
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end

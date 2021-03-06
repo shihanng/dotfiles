@@ -16,6 +16,8 @@ paq {"junegunn/fzf", hook = vim.fn["fzf#install"]}
 paq {"junegunn/fzf.vim"}
 paq {"ojroques/nvim-lspfuzzy"}
 
+paq {"kosayoda/nvim-lightbulb"}
+
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
     require "completion".on_attach(client)
@@ -46,6 +48,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
     buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
     buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+    buf_set_keymap("n", "ga", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
@@ -173,3 +176,5 @@ vim.api.nvim_command("set completeopt=menuone,noinsert,noselect")
 vim.api.nvim_command("set shortmess+=c")
 vim.api.nvim_set_var("completion_matching_strategy_list", {"exact", "substring", "fuzzy", "all"})
 vim.api.nvim_set_var("completion_matching_smart_case", 1)
+
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]

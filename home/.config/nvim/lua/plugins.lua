@@ -18,6 +18,10 @@ paq {"ojroques/nvim-lspfuzzy"}
 
 paq {"kosayoda/nvim-lightbulb"}
 
+paq {"nvim-lua/popup.nvim"}
+paq {"nvim-lua/plenary.nvim"}
+paq {"nvim-telescope/telescope.nvim"}
+
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
     require "completion".on_attach(client)
@@ -178,3 +182,8 @@ vim.api.nvim_set_var("completion_matching_strategy_list", {"exact", "substring",
 vim.api.nvim_set_var("completion_matching_smart_case", 1)
 
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+
+-- telescope
+vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').git_files()<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-b>", ":lua require('telescope.builtin').buffers()<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})

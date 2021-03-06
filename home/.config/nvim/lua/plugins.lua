@@ -11,6 +11,7 @@ paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 paq {"sainnhe/sonokai"}
 paq {"nvim-lua/completion-nvim"}
 paq {"b3nj5m1n/kommentary"}
+paq {"jiangmiao/auto-pairs"}
 
 paq {"junegunn/fzf", hook = vim.fn["fzf#install"]}
 paq {"junegunn/fzf.vim"}
@@ -23,6 +24,9 @@ paq {"nvim-lua/plenary.nvim"}
 paq {"nvim-telescope/telescope.nvim"}
 
 paq {"christoomey/vim-tmux-navigator"}
+
+paq {"nathunsmitty/nvim-ale-diagnostic"}
+paq {"jeffkreeftmeijer/vim-numbertoggle"}
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
@@ -189,3 +193,25 @@ vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_li
 vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').git_files()<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-b>", ":lua require('telescope.builtin').buffers()<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
+
+-- nvim-ale-diagnostic
+require("nvim-ale-diagnostic")
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+    vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+        underline = false,
+        virtual_text = false,
+        signs = true,
+        update_in_insert = false
+    }
+)
+
+-- Sensible undo
+vim.api.nvim_command("set undolevels=5000")
+vim.api.nvim_command("set undofile ")
+vim.api.nvim_command("set undodir=~/.local/share/vim/undo//")
+vim.api.nvim_command("set backupdir=~/.local/share/vim/backup//")
+vim.api.nvim_command("set directory=~/.local/share/vim/swp//")
+
+vim.api.nvim_command("set number relativenumber")

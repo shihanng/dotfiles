@@ -10,6 +10,7 @@ paq {"kyazdani42/nvim-tree.lua"}
 paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 paq {"sainnhe/sonokai"}
 paq {"nvim-lua/completion-nvim"}
+paq {"b3nj5m1n/kommentary"}
 
 paq {"junegunn/fzf", hook = vim.fn["fzf#install"]}
 paq {"junegunn/fzf.vim"}

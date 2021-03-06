@@ -22,6 +22,8 @@ paq {"nvim-lua/popup.nvim"}
 paq {"nvim-lua/plenary.nvim"}
 paq {"nvim-telescope/telescope.nvim"}
 
+paq {"christoomey/vim-tmux-navigator"}
+
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
     require "completion".on_attach(client)

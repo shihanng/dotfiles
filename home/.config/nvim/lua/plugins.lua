@@ -93,7 +93,7 @@ for _, lsp in ipairs(servers) do
 end
 
 nvim_lsp.tsserver.setup {
-    cmd = {vim.fn.expand("~/dotfiles/lsp/node_modules/.bin/typescript-language-server"), "--stdio"},
+    cmd = {"typescript-language-server", "--stdio"},
     on_attach = on_attach
 }
 
@@ -139,7 +139,7 @@ nvim_lsp.sumneko_lua.setup {
 
 vim.api.nvim_set_var("ale_fixers", {lua = {"luafmt"}})
 vim.api.nvim_set_var("ale_fix_on_save", 1)
-vim.api.nvim_set_var("ale_lua_luafmt_executable", vim.fn.expand("~/dotfiles/lsp/node_modules/.bin/luafmt"))
+vim.api.nvim_set_var("ale_lua_luafmt_executable", "luafmt")
 
 -- Allow copy-paste from system clipboard
 vim.api.nvim_command("set clipboard+=unnamedplus")

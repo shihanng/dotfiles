@@ -57,6 +57,7 @@ zinit cdreplay -q # <- execute compdefs provided by rest of plugins
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
 path=($HOME/.fzf/bin $path[@])
+path=($HOME/dotfiles/lsp/node_modules/.bin $path[@])
 
 export EDITOR="nvim"
 export VISUAL="nvim"

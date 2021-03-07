@@ -215,3 +215,12 @@ vim.api.nvim_command("set backupdir=~/.local/share/vim/backup//")
 vim.api.nvim_command("set directory=~/.local/share/vim/swp//")
 
 vim.api.nvim_command("set number relativenumber")
+
+-- indentation
+vim.api.nvim_exec([[
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+]], false)

@@ -214,6 +214,7 @@ vim.api.nvim_command("set undodir=~/.local/share/vim/undo//")
 vim.api.nvim_command("set backupdir=~/.local/share/vim/backup//")
 vim.api.nvim_command("set directory=~/.local/share/vim/swp//")
 
+-- vim-numbertoggle
 vim.api.nvim_command("set number relativenumber")
 
 -- indentation

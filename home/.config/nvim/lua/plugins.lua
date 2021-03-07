@@ -137,7 +137,7 @@ nvim_lsp.sumneko_lua.setup {
     }
 }
 
-vim.api.nvim_set_var("ale_fixers", {lua = {"luafmt"}})
+vim.api.nvim_set_var("ale_fixers", {lua = {"luafmt"}, javascript = {"prettier"}})
 vim.api.nvim_set_var("ale_fix_on_save", 1)
 vim.api.nvim_set_var("ale_lua_luafmt_executable", "luafmt")
 

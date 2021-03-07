@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "lua-fmt": "^2.6.0",
+    "prettier": "^2.2.1",
     "typescript": "^4.2.3",
     "typescript-language-server": "^0.5.1"
   }

@@ -201,6 +201,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
 
 -- nvim-ale-diagnostic
+-- Routes Neovim LSP diagnostics to ALE for display.
 require("nvim-ale-diagnostic")
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(

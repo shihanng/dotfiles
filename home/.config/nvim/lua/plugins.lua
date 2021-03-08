@@ -165,6 +165,7 @@ require("nlua.lsp.nvim").setup(
 vim.api.nvim_command("set termguicolors")
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", {noremap = true})
 vim.api.nvim_command("highlight NvimTreeFolderIcon guibg=blue")
+vim.api.nvim_set_var("nvim_tree_quit_on_open", 1)
 
 -- nvim-treesitter/nvim-treesitter
 require "nvim-treesitter.configs".setup {

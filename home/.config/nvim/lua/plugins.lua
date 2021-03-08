@@ -55,8 +55,6 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", opts)
-    buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-    buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
     buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
     buf_set_keymap("n", "ga", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
@@ -137,9 +135,24 @@ nvim_lsp.sumneko_lua.setup {
     }
 }
 
+-- ALE
+vim.api.nvim_set_var("ale_linters_explicit", 1)
+vim.api.nvim_set_var("ale_disable_lsp", 1)
+vim.api.nvim_set_var("ale_sign_column_always", 1)
 vim.api.nvim_set_var("ale_fixers", {lua = {"luafmt"}, javascript = {"prettier"}})
 vim.api.nvim_set_var("ale_fix_on_save", 1)
 vim.api.nvim_set_var("ale_lua_luafmt_executable", "luafmt")
+vim.api.nvim_exec(
+    [[
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+let g:ale_keep_list_window_open = 1
+nmap <silent> [e <Plug>(ale_previous_wrap)
+nmap <silent> ]e <Plug>(ale_next_wrap)
+]],
+    false
+)
 
 -- Allow copy-paste from system clipboard
 vim.api.nvim_command("set clipboard+=unnamedplus")

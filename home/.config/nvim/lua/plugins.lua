@@ -191,7 +191,12 @@ vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_li
 
 -- telescope
 vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').git_files()<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-b>", ":lua require('telescope.builtin').buffers()<cr>", {noremap = true})
+vim.api.nvim_set_keymap(
+    "n",
+    "<C-b>",
+    ":lua require('telescope.builtin').buffers({show_all_buffers=true})<cr>",
+    {noremap = true}
+)
 vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
 
 -- nvim-ale-diagnostic

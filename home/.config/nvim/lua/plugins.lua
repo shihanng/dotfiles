@@ -12,6 +12,7 @@ paq {"sainnhe/sonokai"}
 paq {"nvim-lua/completion-nvim"}
 paq {"b3nj5m1n/kommentary"}
 paq {"jiangmiao/auto-pairs"}
+paq {"phaazon/hop.nvim"}
 
 paq {"junegunn/fzf", hook = vim.fn["fzf#install"]}
 paq {"junegunn/fzf.vim"}
@@ -242,3 +243,6 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 ]], false)
+
+-- hop
+vim.api.nvim_set_keymap("n", "gf", "<cmd>lua require'hop'.hint_char1()<cr>", {})

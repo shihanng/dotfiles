@@ -191,7 +191,7 @@ nvim_lsp.sumneko_lua.setup {
 vim.api.nvim_set_var("ale_linters_explicit", 1)
 vim.api.nvim_set_var("ale_disable_lsp", 1)
 vim.api.nvim_set_var("ale_sign_column_always", 1)
-vim.api.nvim_set_var("ale_fixers", {lua = {"luafmt"}, javascript = {"prettier"}})
+vim.api.nvim_set_var("ale_fixers", {lua = {"luafmt"}, javascript = {"prettier"}, json = {"prettier"}})
 vim.api.nvim_set_var("ale_fix_on_save", 1)
 vim.api.nvim_set_var("ale_lua_luafmt_executable", "luafmt")
 vim.api.nvim_exec(

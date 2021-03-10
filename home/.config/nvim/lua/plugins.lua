@@ -29,6 +29,8 @@ paq {"christoomey/vim-tmux-navigator"}
 paq {"nathunsmitty/nvim-ale-diagnostic"}
 paq {"jeffkreeftmeijer/vim-numbertoggle"}
 
+paq {"jparise/vim-graphql"}
+
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
     require "completion".on_attach(client)
@@ -83,7 +85,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = {}
+local servers = {"graphql"}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {on_attach = on_attach}
 end

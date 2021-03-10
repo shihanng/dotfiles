@@ -10,6 +10,8 @@ paq {"kyazdani42/nvim-tree.lua"}
 paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 paq {"sainnhe/sonokai"}
 paq {"nvim-lua/completion-nvim"}
+paq {"steelsojka/completion-buffers"}
+
 paq {"b3nj5m1n/kommentary"}
 paq {"jiangmiao/auto-pairs"}
 paq {"phaazon/hop.nvim"}
@@ -252,6 +254,14 @@ vim.api.nvim_command("set completeopt=menuone,noinsert,noselect")
 vim.api.nvim_command("set shortmess+=c")
 vim.api.nvim_set_var("completion_matching_strategy_list", {"exact", "substring", "fuzzy", "all"})
 vim.api.nvim_set_var("completion_matching_smart_case", 1)
+vim.g.completion_chain_complete_list = {
+    default = {
+        {complete_items = {"lsp"}},
+        {complete_items = {"buffers"}},
+        {mode = {"<c-p>"}},
+        {mode = {"<c-n>"}}
+    }
+}
 
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 

@@ -143,7 +143,11 @@ nvim_lsp.gopls.setup {
             staticcheck = true
         }
     },
-    on_attach = on_attach
+    on_attach = function(client)
+        -- Because we are using GOIMPORTS
+        client.resolved_capabilities.document_formatting = false
+        on_attach(client)
+    end
 }
 
 function GOIMPORTS(timeoutms)

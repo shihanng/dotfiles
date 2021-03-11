@@ -108,9 +108,28 @@ for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {on_attach = on_attach}
 end
 
+local function organize_imports()
+    local params = {
+        command = "_typescript.organizeImports",
+        arguments = {vim.api.nvim_buf_get_name(0)},
+        title = ""
+    }
+    vim.lsp.buf.execute_command(params)
+end
+
 nvim_lsp.tsserver.setup {
     cmd = {"typescript-language-server", "--stdio"},
-    on_attach = on_attach
+    on_attach = function(client)
+        -- Because we are using prettier via ALE
+        client.resolved_capabilities.document_formatting = false
+        on_attach(client)
+    end,
+    commands = {
+        OrganizeImports = {
+            organize_imports,
+            description = "Organize Imports"
+        }
+    }
 }
 
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim

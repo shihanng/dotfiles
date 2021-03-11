@@ -321,3 +321,20 @@ set expandtab
 
 -- hop
 vim.api.nvim_set_keymap("n", "gf", "<cmd>lua require'hop'.hint_char1()<cr>", {})
+
+-- https://vim.fandom.com/wiki/Automatically_quit_Vim_if_quickfix_window_is_the_last
+vim.api.nvim_exec(
+    [[
+au BufEnter * call MyLastWindow()
+function! MyLastWindow()
+  " if the window is quickfix go on
+  if &buftype=="quickfix"
+    " if this window is last on screen quit without warning
+    if winnr('$') < 2
+      quit
+    endif
+  endif
+endfunction
+]],
+    false
+)

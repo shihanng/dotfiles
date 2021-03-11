@@ -35,8 +35,6 @@ paq {"jparise/vim-graphql"}
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
-    require "completion".on_attach(client)
-
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
@@ -252,16 +250,28 @@ require("lspfuzzy").setup {}
 -- completion-nvim
 vim.api.nvim_command("set completeopt=menuone,noinsert,noselect")
 vim.api.nvim_command("set shortmess+=c")
-vim.api.nvim_set_var("completion_matching_strategy_list", {"exact", "substring", "fuzzy", "all"})
-vim.api.nvim_set_var("completion_matching_smart_case", 1)
+vim.api.nvim_set_var("completion_matching_strategy_list", {"exact", "substring", "fuzzy"})
+vim.api.nvim_exec([[
+g:completion_matching_ignore_case = 1
+g:completion_matching_smart_case = 1
+]], false)
+
+-- https://github.com/nvim-lua/completion-nvim/wiki/chain-complete-support
 vim.g.completion_chain_complete_list = {
     default = {
-        {complete_items = {"lsp"}},
+        {complete_items = {"lsp", "snippet"}},
         {complete_items = {"buffers"}},
         {mode = {"<c-p>"}},
         {mode = {"<c-n>"}}
     }
 }
+vim.api.nvim_exec(
+    [[
+autocmd BufEnter * lua require'completion'.on_attach()
+let g:completion_auto_change_source = 1
+]],
+    false
+)
 
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 

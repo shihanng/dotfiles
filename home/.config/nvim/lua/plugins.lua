@@ -73,6 +73,15 @@ local on_attach = function(client, bufnr)
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
         buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+        vim.api.nvim_exec(
+            [[
+         augroup LspAutocommands
+             autocmd! * <buffer>
+             autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+         augroup END
+         ]],
+            true
+        )
     elseif client.resolved_capabilities.document_range_formatting then
         buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
     end

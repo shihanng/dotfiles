@@ -33,6 +33,7 @@ paq {"nathunsmitty/nvim-ale-diagnostic"}
 paq {"jeffkreeftmeijer/vim-numbertoggle"}
 
 paq {"jparise/vim-graphql"}
+paq {"onsails/lspkind-nvim"}
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
@@ -42,6 +43,8 @@ local on_attach = function(client, bufnr)
     local function buf_set_option(...)
         vim.api.nvim_buf_set_option(bufnr, ...)
     end
+
+    require("lspkind").init({})
 
     buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 

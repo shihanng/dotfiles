@@ -11,6 +11,7 @@ paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 paq {"sainnhe/sonokai"}
 paq {"nvim-lua/completion-nvim"}
 paq {"steelsojka/completion-buffers"}
+paq {"nvim-treesitter/completion-treesitter"}
 
 paq {"b3nj5m1n/kommentary"}
 paq {"jiangmiao/auto-pairs"}

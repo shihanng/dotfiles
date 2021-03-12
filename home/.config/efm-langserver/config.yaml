@@ -1,12 +1,19 @@
 version: 2
-log_file : /home/shihanng/efm.log
-log_level : 1
+log_file: /home/shihanng/efm.log
+log_level: 1
 root-markers:
   - .git/
 tools:
   lua-luafmt: &lua-luafmt
-    format-command: 'luafmt --stdin -w stdout'
+    format-command: "luafmt --stdin -w stdout"
     format-stdin: true
+
+  prettier: &prettier
+    format-command: "prettier"
 languages:
   lua:
     - <<: *lua-luafmt
+  javascript:
+    - <<: *prettier
+  yaml:
+    - <<: *prettier

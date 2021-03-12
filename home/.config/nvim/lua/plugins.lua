@@ -165,7 +165,7 @@ nvim_lsp.tsserver.setup {
 
 nvim_lsp.efm.setup {
     init_options = {documentFormatting = true, CodeAction = true},
-    filetypes = {"lua"},
+    filetypes = {"javascript", "lua", "yaml"},
     on_attach = on_attach
 }
 

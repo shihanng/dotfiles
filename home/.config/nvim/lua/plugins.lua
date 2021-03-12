@@ -181,13 +181,13 @@ nvim_lsp.gopls.setup {
         }
     },
     on_attach = function(client)
-        -- Because we are using GOIMPORTS
+        -- Because we are using _G.goimports
         client.resolved_capabilities.document_formatting = false
         on_attach(client)
     end
 }
 
-function GOIMPORTS(timeoutms)
+_G.goimports = function(timeoutms)
     local context = {source = {organizeImports = true}}
     vim.validate {context = {context, "t", true}}
 
@@ -222,7 +222,7 @@ function GOIMPORTS(timeoutms)
 end
 
 vim.api.nvim_exec([[
-autocmd BufWritePre *.go lua GOIMPORTS(1000)
+autocmd BufWritePre *.go lua goimports(1000)
 ]], false)
 
 local system_name

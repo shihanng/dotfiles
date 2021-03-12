@@ -3,6 +3,7 @@ local paq = require "paq-nvim".paq -- Import module and bind `paq` function
 paq {"savq/paq-nvim", opt = true} -- Let Paq manage itself
 paq {"neovim/nvim-lspconfig"}
 paq {"tpope/vim-surround"}
+paq {"hoob3rt/lualine.nvim"}
 paq {"tjdevries/nlua.nvim"}
 paq {"kyazdani42/nvim-web-devicons"}
 paq {"kyazdani42/nvim-tree.lua"}
@@ -425,3 +426,8 @@ set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
 ]],
     false
 )
+
+-- lualine
+local lualine = require("lualine")
+lualine.status()
+lualine.options.theme = "auto"

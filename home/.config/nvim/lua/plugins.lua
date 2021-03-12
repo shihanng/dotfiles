@@ -409,3 +409,15 @@ xmap        S   <Plug>(vsnip-cut-text)
 ]],
     false
 )
+
+-- search
+vim.api.nvim_exec(
+    [[
+set ignorecase
+set hlsearch
+set incsearch
+set smartcase
+set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
+]],
+    false
+)

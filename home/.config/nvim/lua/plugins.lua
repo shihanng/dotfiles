@@ -39,8 +39,25 @@ paq {"hrsh7th/vim-vsnip"}
 paq {"hrsh7th/vim-vsnip-integ"}
 
 paq {"direnv/direnv.vim"}
+paq {"airblade/vim-gitgutter"}
+paq {"tpope/vim-fugitive"}
+paq {"haya14busa/is.vim"}
+paq {"haya14busa/vim-asterisk"}
+paq {"bronson/vim-visual-star-search"}
 
 vim.g.mapleader = ","
+
+vim.api.nvim_exec(
+    [[
+set encoding=utf8
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Show tab and space
+set list
+set listchars=tab:‣\ ,trail:·
+]],
+    false
+)
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
@@ -423,6 +440,19 @@ set hlsearch
 set incsearch
 set smartcase
 set gdefault " s/<find>/<replace>/g -- g is auto-inserted.
+
+" Find and replace (by Nick Janetakis)
+nnoremap <Leader>rr :%s///g<Left><Left>
+nnoremap <Leader>rc :%s///gc<Left><Left><Left>
+xnoremap <Leader>rr :s///g<Left><Left>
+xnoremap <Leader>rc :s///gc<Left><Left><Left>
+
+" vim-asterisk / is-vim
+let g:asterisk#keeppos = 1
+map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
+map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
+map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
+map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
 ]],
     false
 )

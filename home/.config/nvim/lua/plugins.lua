@@ -11,6 +11,7 @@ paq {"sainnhe/sonokai"}
 paq {"nvim-lua/completion-nvim"}
 paq {"steelsojka/completion-buffers"}
 paq {"nvim-treesitter/completion-treesitter"}
+paq {"romainl/vim-qf"}
 
 paq {"b3nj5m1n/kommentary"}
 paq {"jiangmiao/auto-pairs"}
@@ -37,6 +38,8 @@ paq {"hrsh7th/vim-vsnip"}
 paq {"hrsh7th/vim-vsnip-integ"}
 
 paq {"direnv/direnv.vim"}
+
+vim.g.mapleader = ","
 
 local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
@@ -98,6 +101,36 @@ local on_attach = function(client, bufnr)
         )
     end
 end
+
+-- put LSP diagnostics into quickfix
+--https://github.com/neovim/nvim-lspconfig/issues/69#issuecomment-789541466
+do
+    local pub_method = "textDocument/publishDiagnostics"
+    local default_handler = vim.lsp.handlers[pub_method]
+    vim.lsp.handlers[pub_method] = function(err, method, result, client_id, bufnr, config)
+        default_handler(err, method, result, client_id, bufnr, config)
+        local diagnostics = vim.lsp.diagnostic.get_all()
+        local qflist = {}
+        for nbufnr, diagnostic in pairs(diagnostics) do
+            for _, d in ipairs(diagnostic) do
+                d.bufnr = nbufnr
+                d.lnum = d.range.start.line + 1
+                d.col = d.range.start.character + 1
+                d.text = d.message
+                table.insert(qflist, d)
+            end
+        end
+        vim.lsp.util.set_qflist(qflist)
+    end
+end
+vim.api.nvim_exec(
+    [[
+nmap <leader>qq	<Plug>(qf_qf_toggle)
+nmap gn		<Plug>(qf_qf_next)
+nmap gp		<Plug>(qf_qf_previous)
+]],
+    false
+)
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches

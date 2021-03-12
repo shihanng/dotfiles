@@ -1,15 +1,12 @@
+version: 2
+log_file : /home/shihanng/efm.log
+log_level : 1
+root-markers:
+  - .git/
+tools:
+  lua-luafmt: &lua-luafmt
+    format-command: 'luafmt --stdin -w stdout'
+    format-stdin: true
 languages:
-  make:
-    lint-command: checkmake
-    lint-stdin: true
-    lint-formats:
-      - '%f: %l: %m'
-
-  markdown:
-    lint-command: 'markdownlint -s'
-    lint-stdin: true
-    lint-formats:
-      - '%f:%l %m'
-  sh:
-    lint-command: 'shellcheck -f tty -'
-    lint-stdin: true
+  lua:
+    - <<: *lua-luafmt

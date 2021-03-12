@@ -2,7 +2,6 @@ vim.cmd "packadd paq-nvim" -- Load package
 local paq = require "paq-nvim".paq -- Import module and bind `paq` function
 paq {"savq/paq-nvim", opt = true} -- Let Paq manage itself
 paq {"neovim/nvim-lspconfig"}
-paq {"dense-analysis/ale"}
 paq {"tpope/vim-surround"}
 paq {"tjdevries/nlua.nvim"}
 paq {"kyazdani42/nvim-web-devicons"}
@@ -29,7 +28,6 @@ paq {"nvim-telescope/telescope.nvim"}
 
 paq {"christoomey/vim-tmux-navigator"}
 
-paq {"nathunsmitty/nvim-ale-diagnostic"}
 paq {"jeffkreeftmeijer/vim-numbertoggle"}
 
 paq {"jparise/vim-graphql"}
@@ -132,6 +130,12 @@ nvim_lsp.tsserver.setup {
     }
 }
 
+nvim_lsp.efm.setup {
+    init_options = {documentFormatting = true, CodeAction = true},
+    filetypes = {"lua"},
+    on_attach = on_attach
+}
+
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim
 nvim_lsp.gopls.setup {
     cmd = {"gopls", "serve"},
@@ -228,25 +232,6 @@ nvim_lsp.sumneko_lua.setup {
     }
 }
 
--- ALE
-vim.api.nvim_set_var("ale_linters_explicit", 1)
-vim.api.nvim_set_var("ale_disable_lsp", 1)
-vim.api.nvim_set_var("ale_sign_column_always", 1)
-vim.api.nvim_set_var("ale_fixers", {lua = {"luafmt"}, javascript = {"prettier"}, json = {"prettier"}})
-vim.api.nvim_set_var("ale_fix_on_save", 1)
-vim.api.nvim_set_var("ale_lua_luafmt_executable", "luafmt")
-vim.api.nvim_exec(
-    [[
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_open_list = 1
-let g:ale_keep_list_window_open = 1
-nmap <silent> [e <Plug>(ale_previous_wrap)
-nmap <silent> ]e <Plug>(ale_next_wrap)
-]],
-    false
-)
-
 -- Allow copy-paste from system clipboard
 vim.api.nvim_command("set clipboard+=unnamedplus")
 
@@ -329,20 +314,6 @@ vim.api.nvim_set_keymap(
     {noremap = true}
 )
 vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
-
--- nvim-ale-diagnostic
--- Routes Neovim LSP diagnostics to ALE for display.
-require("nvim-ale-diagnostic")
-vim.lsp.handlers["textDocument/publishDiagnostics"] =
-    vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics,
-    {
-        underline = false,
-        virtual_text = false,
-        signs = true,
-        update_in_insert = false
-    }
-)
 
 -- Sensible undo
 vim.api.nvim_command("set undolevels=5000")

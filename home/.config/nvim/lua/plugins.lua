@@ -152,7 +152,7 @@ nmap gp		<Plug>(qf_qf_previous)
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = {"graphql"}
+local servers = {}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {on_attach = on_attach}
 end
@@ -179,6 +179,10 @@ nvim_lsp.tsserver.setup {
             description = "Organize Imports"
         }
     }
+}
+
+nvim_lsp.graphql.setup {
+    filetypes = {"graphql", "javascript"}
 }
 
 nvim_lsp.efm.setup {

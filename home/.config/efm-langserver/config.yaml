@@ -9,7 +9,9 @@ tools:
     format-stdin: true
 
   prettier: &prettier
-    format-command: "prettier"
+    format-command: "prettier --stdin-filepath ${INPUT}"
+    format-stdin: true
+
 languages:
   lua:
     - <<: *lua-luafmt

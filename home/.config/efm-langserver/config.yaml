@@ -17,5 +17,7 @@ languages:
     - <<: *lua-luafmt
   javascript:
     - <<: *prettier
+  json:
+    - <<: *prettier
   yaml:
     - <<: *prettier

@@ -187,7 +187,7 @@ nvim_lsp.graphql.setup {
 
 nvim_lsp.efm.setup {
     init_options = {documentFormatting = true, CodeAction = true},
-    filetypes = {"javascript", "lua", "yaml"},
+    filetypes = {"javascript", "lua", "yaml", "json"},
     on_attach = on_attach
 }
 

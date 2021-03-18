@@ -12,11 +12,17 @@ tools:
     format-command: "prettier --stdin-filepath ${INPUT}"
     format-stdin: true
 
+  eslint: &eslint
+    lint-command: "eslint -f unix --stdin"
+    lint-ignore-exit-code: true
+    lint-stdin: true
+    format-command: "prettier-eslint"
+
 languages:
   lua:
     - <<: *lua-luafmt
   javascript:
-    - <<: *prettier
+    - <<: *eslint
   json:
     - <<: *prettier
   yaml:

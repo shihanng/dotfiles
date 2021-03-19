@@ -455,5 +455,6 @@ map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
 
 -- lualine
 local lualine = require("lualine")
-lualine.status()
-lualine.options.theme = "auto"
+lualine.setup {
+    options = {theme = "auto"}
+}

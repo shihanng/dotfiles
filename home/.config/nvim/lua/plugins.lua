@@ -205,6 +205,18 @@ nvim_lsp.gopls.setup {
     on_attach = on_attach
 }
 
+nvim_lsp.yamlls.setup {
+    settings = {
+        yaml = {
+            schemaStore = {enable = true},
+            validate = {enable = true},
+            hover = {enable = true},
+            completion = {enable = true}
+        }
+    },
+    on_attach = on_attach
+}
+
 _G.goimports = function(timeoutms)
     local context = {source = {organizeImports = true}}
     vim.validate {context = {context, "t", true}}

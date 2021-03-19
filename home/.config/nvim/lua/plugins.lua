@@ -44,6 +44,7 @@ paq {"tpope/vim-fugitive"}
 paq {"haya14busa/is.vim"}
 paq {"haya14busa/vim-asterisk"}
 paq {"bronson/vim-visual-star-search"}
+paq {"tpope/vim-repeat"}
 
 vim.g.mapleader = ","
 

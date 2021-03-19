@@ -28,3 +28,5 @@ languages:
     - <<: *prettier
   yaml:
     - <<: *prettier
+  markdown:
+    - <<: *prettier

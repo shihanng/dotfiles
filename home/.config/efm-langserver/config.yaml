@@ -16,7 +16,8 @@ tools:
     lint-command: "eslint -f unix --stdin"
     lint-ignore-exit-code: true
     lint-stdin: true
-    format-command: "prettier-eslint"
+    format-command: "prettier-eslint --stdin"
+    format-stdin: true
 
 languages:
   lua:

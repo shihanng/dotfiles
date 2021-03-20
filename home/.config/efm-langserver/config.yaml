@@ -16,7 +16,7 @@ tools:
     lint-command: "eslint -f unix --stdin"
     lint-ignore-exit-code: true
     lint-stdin: true
-    format-command: "prettier-eslint --stdin"
+    format-command: "prettier-eslint --stdin --stdin-filepath ${INPUT}"
     format-stdin: true
 
 languages:

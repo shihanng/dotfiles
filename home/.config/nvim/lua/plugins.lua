@@ -464,3 +464,12 @@ local lualine = require("lualine")
 lualine.setup {
     options = {theme = "auto"}
 }
+
+-- spell check
+vim.api.nvim_exec(
+    [[
+set spelllang=en,cjk
+nmap <silent> <leader>s :set spell!<CR> " Toggle spell checking on and off with `,s`
+]],
+    false
+)

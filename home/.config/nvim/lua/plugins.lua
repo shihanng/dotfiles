@@ -236,6 +236,10 @@ nvim_lsp.sqls.setup {
     end
 }
 
+nvim_lsp.jsonls.setup {
+    on_attach = on_attach
+}
+
 _G.goimports = function(timeoutms)
     local context = {source = {organizeImports = true}}
     vim.validate {context = {context, "t", true}}

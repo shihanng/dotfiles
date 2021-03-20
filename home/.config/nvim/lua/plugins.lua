@@ -46,6 +46,11 @@ paq {"haya14busa/vim-asterisk"}
 paq {"bronson/vim-visual-star-search"}
 paq {"tpope/vim-repeat"}
 
+-- The "run" command might not work. Manual install can be done
+-- by running "yarn install" in
+-- $HOME/.local/share/nvim/site/pack/paqs/start/markdown-preview.nvim/app
+paq {"iamcco/markdown-preview.nvim", run = "cd app & yarn install"}
+
 vim.g.mapleader = ","
 
 vim.api.nvim_exec(

@@ -46,6 +46,8 @@ paq {"haya14busa/vim-asterisk"}
 paq {"bronson/vim-visual-star-search"}
 paq {"tpope/vim-repeat"}
 
+paq {"nanotee/sqls.nvim"}
+
 -- The "run" command might not work. Manual install can be done
 -- by running "yarn install" in
 -- $HOME/.local/share/nvim/site/pack/paqs/start/markdown-preview.nvim/app
@@ -221,6 +223,16 @@ nvim_lsp.yamlls.setup {
         }
     },
     on_attach = on_attach
+}
+
+nvim_lsp.sqls.setup {
+    cmd = {"sqls", "-config", "~/sqls_config.yml"},
+    on_attach = function(client)
+        client.resolved_capabilities.execute_command = true
+        require "sqls".setup {
+            picker = "telescope"
+        }
+    end
 }
 
 _G.goimports = function(timeoutms)

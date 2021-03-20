@@ -95,7 +95,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", opts)
     buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-    buf_set_keymap("n", "ga", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+    buf_set_keymap("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
@@ -229,6 +229,7 @@ nvim_lsp.sqls.setup {
     cmd = {"sqls", "-config", "~/sqls_config.yml"},
     on_attach = function(client)
         client.resolved_capabilities.execute_command = true
+        on_attach(client)
         require "sqls".setup {
             picker = "telescope"
         }

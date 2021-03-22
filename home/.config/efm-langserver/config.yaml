@@ -19,6 +19,10 @@ tools:
     format-command: "prettier-eslint --stdin --stdin-filepath ${INPUT}"
     format-stdin: true
 
+  pg_format: &pg_format
+    format-command: "pg_format -L -"
+    format-stdin: true
+
 languages:
   lua:
     - <<: *lua-luafmt
@@ -30,3 +34,5 @@ languages:
     - <<: *prettier
   markdown:
     - <<: *prettier
+  sql:
+    - <<: *pg_format

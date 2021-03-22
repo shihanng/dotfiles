@@ -195,7 +195,7 @@ nvim_lsp.graphql.setup {
 
 nvim_lsp.efm.setup {
     init_options = {documentFormatting = true, CodeAction = true},
-    filetypes = {"markdown", "javascript", "lua", "yaml", "json"},
+    filetypes = {"markdown", "javascript", "lua", "yaml", "json", "sql"},
     on_attach = on_attach
 }
 
@@ -229,6 +229,7 @@ nvim_lsp.sqls.setup {
     cmd = {"sqls", "-config", "~/sqls_config.yml"},
     on_attach = function(client)
         client.resolved_capabilities.execute_command = true
+        client.resolved_capabilities.document_formatting = false
         on_attach(client)
         require "sqls".setup {
             picker = "telescope"
@@ -490,3 +491,7 @@ nmap <silent> <leader>s :set spell!<CR> " Toggle spell checking on and off with 
 ]],
     false
 )
+
+vim.api.nvim_exec([[
+noremap <leader>pg :%!pg_format -L - <cr>
+]], false)

@@ -238,6 +238,10 @@ nvim_lsp.sqls.setup {
     end
 }
 
+nvim_lsp.pyright.setup {
+    on_attach = on_attach
+}
+
 nvim_lsp.jsonls.setup {
     on_attach = on_attach
 }

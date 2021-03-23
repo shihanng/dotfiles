@@ -14,6 +14,7 @@
     "lua-fmt": "^2.6.0",
     "prettier": "^2.2.1",
     "prettier-eslint-cli": "^5.0.1",
+    "pyright": "^1.1.123",
     "typescript": "^4.2.3",
     "typescript-language-server": "^0.5.1",
     "vscode-json-languageserver": "^1.3.4",

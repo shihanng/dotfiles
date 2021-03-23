@@ -196,7 +196,8 @@ nvim_lsp.graphql.setup {
 nvim_lsp.efm.setup {
     init_options = {documentFormatting = true, CodeAction = true},
     filetypes = {"markdown", "javascript", "lua", "yaml", "json", "sql"},
-    on_attach = on_attach
+    on_attach = on_attach,
+    root_dir = nvim_lsp.util.root_pattern(".git", vim.fn.getcwd())
 }
 
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim

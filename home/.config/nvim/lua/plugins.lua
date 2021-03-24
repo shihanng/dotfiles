@@ -39,7 +39,6 @@ paq {"hrsh7th/vim-vsnip"}
 paq {"hrsh7th/vim-vsnip-integ"}
 
 paq {"direnv/direnv.vim"}
-paq {"airblade/vim-gitgutter"}
 paq {"tpope/vim-fugitive"}
 paq {"haya14busa/is.vim"}
 paq {"haya14busa/vim-asterisk"}
@@ -47,6 +46,8 @@ paq {"bronson/vim-visual-star-search"}
 paq {"tpope/vim-repeat"}
 
 paq {"nanotee/sqls.nvim"}
+paq {"lukas-reineke/indent-blankline.nvim"}
+paq {"lewis6991/gitsigns.nvim"}
 
 -- The "run" command might not work. Manual install can be done
 -- by running "yarn install" in
@@ -500,3 +501,6 @@ nmap <silent> <leader>s :set spell!<CR> " Toggle spell checking on and off with 
 vim.api.nvim_exec([[
 noremap <leader>pg :%!pg_format -L - <cr>
 ]], false)
+
+-- gitsigns
+require("gitsigns").setup()

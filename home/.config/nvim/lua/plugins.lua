@@ -194,13 +194,6 @@ nvim_lsp.graphql.setup {
     filetypes = {"graphql", "javascript"}
 }
 
-nvim_lsp.efm.setup {
-    init_options = {documentFormatting = true, CodeAction = true},
-    filetypes = {"markdown", "javascript", "lua", "yaml", "json", "sql"},
-    on_attach = on_attach,
-    root_dir = nvim_lsp.util.root_pattern(".git", vim.fn.getcwd())
-}
-
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim
 nvim_lsp.gopls.setup {
     cmd = {"gopls", "serve"},
@@ -257,12 +250,18 @@ _G.goimports = function(timeoutms)
     if not result then
         return
     end
-    result = result[1].result
-    if not result then
-        return
+
+    for id, res in ipairs(result) do
+        local client = vim.lsp.get_client_by_id(id)
+        if client.name == "gopls" then
+            local res_result = res.result
+            if res_result then
+                local edit = res_result[1].edit
+                print(edit)
+                vim.lsp.util.apply_workspace_edit(edit)
+            end
+        end
     end
-    local edit = result[1].edit
-    vim.lsp.util.apply_workspace_edit(edit)
 end
 
 vim.api.nvim_exec([[
@@ -307,6 +306,13 @@ nvim_lsp.sumneko_lua.setup {
             }
         }
     }
+}
+
+nvim_lsp.efm.setup {
+    init_options = {documentFormatting = true, CodeAction = true},
+    filetypes = {"go", "markdown", "javascript", "lua", "yaml", "json", "sql"},
+    on_attach = on_attach,
+    root_dir = nvim_lsp.util.root_pattern(".git", vim.fn.getcwd())
 }
 
 -- Allow copy-paste from system clipboard

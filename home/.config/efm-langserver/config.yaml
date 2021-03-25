@@ -23,6 +23,12 @@ tools:
     format-command: "pg_format -L -"
     format-stdin: true
 
+  golangci-lint: &golangci-lint
+    lint-command: "golangci-lint run --out-format line-number --print-issued-lines=false ${INPUT}"
+    lint-ignore-exit-code: true
+    lint-stdin: false
+    lint-formats:
+      - "%f:%l:%c: %m"
 languages:
   lua:
     - <<: *lua-luafmt
@@ -36,3 +42,5 @@ languages:
     - <<: *prettier
   sql:
     - <<: *pg_format
+  go:
+    - <<: *golangci-lint

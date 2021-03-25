@@ -26,5 +26,9 @@
   "node": {
     "prefix": ["js", "node", "nodejs"],
     "body": ["layout node"]
+  },
+  "gotests": {
+    "prefix": ["gotests", "testify"],
+    "body": ["export GOTESTS_TEMPLATE=testify"]
   }
 }

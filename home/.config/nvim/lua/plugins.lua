@@ -48,6 +48,7 @@ paq {"tpope/vim-repeat"}
 paq {"nanotee/sqls.nvim"}
 paq {"lukas-reineke/indent-blankline.nvim"}
 paq {"lewis6991/gitsigns.nvim"}
+paq {"buoto/gotests-vim"}
 
 -- The "run" command might not work. Manual install can be done
 -- by running "yarn install" in

@@ -1,6 +1,0 @@
----
-- name: Install tfenv
-  homebrew:
-    name: "tfenv"
-    state: present
-  when: ansible_os_family == "Darwin"

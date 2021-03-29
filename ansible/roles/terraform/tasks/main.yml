@@ -1,6 +1,0 @@
----
-- include: main_darwin.yml
-  when: ansible_os_family == "Darwin"
-
-- include: main_archlinux.yml
-  when: ansible_os_family == "Archlinux"

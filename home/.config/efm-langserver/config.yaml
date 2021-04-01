@@ -23,6 +23,13 @@ tools:
     format-command: "pg_format -L -"
     format-stdin: true
 
+  rubocop: &rubocop
+    lint-command: "rubocop --format emacs"
+    lint-ignore-exit-code: true
+    lint-stdin: false
+    lint-formats:
+      - "%f:%l:%c: %m"
+    format-command: "rubocop -a --stderr -x ${INPUT}"
   golangci-lint: &golangci-lint
     lint-command: "golangci-lint run --out-format line-number --print-issued-lines=false"
     lint-ignore-exit-code: true
@@ -41,7 +48,7 @@ languages:
   markdown:
     - <<: *prettier
   ruby:
-    - <<: *prettier
+    - <<: *rubocop
   sql:
     - <<: *pg_format
   go:

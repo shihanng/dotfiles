@@ -106,7 +106,7 @@ local on_attach = function(client, bufnr)
             [[
          augroup LspAutocommands
              autocmd! * <buffer>
-             autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil,1000)
+             autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil,10000)
          augroup END
          ]],
             true
@@ -318,7 +318,7 @@ nvim_lsp.solargraph.setup {
 
 nvim_lsp.efm.setup {
     init_options = {documentFormatting = true, CodeAction = true},
-    filetypes = {"go", "markdown", "javascript", "lua", "yaml", "json", "sql"},
+    filetypes = {"ruby", "go", "markdown", "javascript", "lua", "yaml", "json", "sql"},
     on_attach = on_attach,
     root_dir = nvim_lsp.util.root_pattern(".git", vim.fn.getcwd())
 }

@@ -40,7 +40,11 @@ languages:
     - <<: *prettier
   markdown:
     - <<: *prettier
+  ruby:
+    - <<: *prettier
   sql:
     - <<: *pg_format
   go:
     - <<: *golangci-lint
+  terraform:
+    - <<: *tflint

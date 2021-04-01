@@ -58,6 +58,7 @@ path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
 path=($HOME/.fzf/bin $path[@])
 path=($HOME/dotfiles/lsp/node_modules/.bin $path[@])
+path=($HOME/dotfiles/lsp/bin $path[@])
 
 export EDITOR="nvim"
 export VISUAL="nvim"

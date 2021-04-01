@@ -309,6 +309,13 @@ nvim_lsp.sumneko_lua.setup {
     }
 }
 
+-- bundle install --binstubs
+local solargraph_path = "solargraph"
+nvim_lsp.solargraph.setup {
+    cmd = {solargraph_path, "stdio"},
+    on_attach = on_attach
+}
+
 nvim_lsp.efm.setup {
     init_options = {documentFormatting = true, CodeAction = true},
     filetypes = {"go", "markdown", "javascript", "lua", "yaml", "json", "sql"},

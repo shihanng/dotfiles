@@ -16,12 +16,15 @@ require (
 	github.com/klauspost/cpuid v1.2.0 // indirect
 	github.com/lighttiger2505/sqls v0.2.17 // indirect
 	github.com/mattn/efm-langserver v0.0.26 // indirect
+	github.com/reviewdog/errorformat v0.0.0-20210223072252-e024dee5faea // indirect
 	github.com/shirou/gopsutil v0.0.0-20180427012116-c95755e4bcd7 // indirect
 	github.com/shirou/w32 v0.0.0-20160930032740-bb4de0191aa4 // indirect
+	github.com/sourcegraph/jsonrpc2 v0.0.0-20210201082850-366fbb520750 // indirect
 	golang.org/x/mod v0.4.2 // indirect
 	golang.org/x/sys v0.0.0-20210324051608-47abb6519492 // indirect
 	golang.org/x/tools/gopls v0.6.6 // indirect
 	gopkg.in/airbrake/gobrake.v2 v2.0.9 // indirect
 	gopkg.in/gemnasium/logrus-airbrake-hook.v2 v2.1.2 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	sourcegraph.com/sqs/pbtypes v0.0.0-20180604144634-d3ebe8f20ae4 // indirect
 )

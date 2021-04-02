@@ -53,5 +53,3 @@ languages:
     - <<: *pg_format
   go:
     - <<: *golangci-lint
-  terraform:
-    - <<: *tflint

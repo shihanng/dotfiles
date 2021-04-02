@@ -323,6 +323,21 @@ nvim_lsp.efm.setup {
     root_dir = nvim_lsp.util.root_pattern(".git", vim.fn.getcwd())
 }
 
+local nvim_lsp_configs = require "lspconfig/configs"
+if not nvim_lsp.tflint then
+    nvim_lsp_configs.tflint = {
+        default_config = {
+            cmd = {"tflint", "--langserver"},
+            filetypes = {"terraform"},
+            root_dir = nvim_lsp.util.root_pattern(".terraform", ".git", ".tflint.hcl"),
+            settings = {}
+        }
+    }
+end
+nvim_lsp.tflint.setup {
+    on_attach = on_attach
+}
+
 -- Allow copy-paste from system clipboard
 vim.api.nvim_command("set clipboard+=unnamedplus")
 

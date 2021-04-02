@@ -190,3 +190,4 @@ bindkey '^]' fzf-src
 eval "$(asdf exec direnv hook zsh)"
 direnv() { asdf exec direnv "$@"; }
 eval "$(starship init zsh)"
+eval "$(luarocks path --bin)"

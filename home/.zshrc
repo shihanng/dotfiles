@@ -69,7 +69,6 @@ export LANG=C
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
-export GPG_TTY=$(tty)
 
 setopt EXTENDED_HISTORY
 setopt HIST_BEEP
@@ -191,3 +190,9 @@ eval "$(asdf exec direnv hook zsh)"
 direnv() { asdf exec direnv "$@"; }
 eval "$(starship init zsh)"
 eval "$(luarocks path --bin)"
+
+# Using GPG for SSH
+SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK
+gpgconf --launch gpg-agent

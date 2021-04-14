@@ -193,7 +193,8 @@ nvim_lsp.tsserver.setup {
 }
 
 nvim_lsp.graphql.setup {
-    filetypes = {"graphql", "javascript"}
+    filetypes = {"graphql"},
+    on_attach = on_attach
 }
 
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim

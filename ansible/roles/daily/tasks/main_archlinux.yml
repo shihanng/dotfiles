@@ -35,6 +35,7 @@
       - ibus-mozc
       - i3lock-fancy-git
       - nerd-fonts-fira-code
+      - obsidian
       - deadd-notification-center-bin
     use: yay
   become: yes

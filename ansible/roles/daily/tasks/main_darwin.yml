@@ -13,6 +13,7 @@
       - docker
       - yubico-yubikey-manager
       - notion
+      - obsidian
     state: present
 
 - name: Install stuffs (brew)

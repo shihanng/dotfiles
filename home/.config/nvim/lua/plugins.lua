@@ -7,8 +7,8 @@ paq {"hoob3rt/lualine.nvim"}
 paq {"tjdevries/nlua.nvim"}
 paq {"kyazdani42/nvim-web-devicons"}
 paq {"kyazdani42/nvim-tree.lua"}
+paq {"christianchiarulli/nvcode-color-schemes.vim"}
 paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-paq {"sainnhe/sonokai"}
 paq {"nvim-lua/completion-nvim"}
 paq {"steelsojka/completion-buffers"}
 paq {"nvim-treesitter/completion-treesitter"}
@@ -354,7 +354,6 @@ require("nlua.lsp.nvim").setup(
 )
 
 -- kyazdani42/nvim-tree.lua
-vim.api.nvim_command("set termguicolors")
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", {noremap = true})
 vim.api.nvim_command("highlight NvimTreeFolderIcon guibg=blue")
 vim.api.nvim_set_var("nvim_tree_quit_on_open", 1)
@@ -367,9 +366,17 @@ require "nvim-treesitter.configs".setup {
     }
 }
 
--- sainnhe/sonokai
-vim.api.nvim_set_var("sonokai_style", "maia")
-vim.api.nvim_command("colorscheme sonokai")
+-- ChristianChiarulli/nvcode-color-schemes
+vim.api.nvim_exec([[
+let g:nvcode_termcolors=256
+syntax on
+colorscheme nord 
+
+if (has("termguicolors"))
+    set termguicolors
+    hi LineNr ctermbg=NONE guibg=NONE
+endif
+]], false)
 
 -- nvim-lspfuzzy
 require("lspfuzzy").setup {}

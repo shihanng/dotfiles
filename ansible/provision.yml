@@ -13,7 +13,6 @@
     - role: ruby
     - role: devtools
     - role: fonts
-    - role: terraform
     - role: wm
     - role: vim
     - role: daily

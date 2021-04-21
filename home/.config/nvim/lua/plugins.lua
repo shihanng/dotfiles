@@ -46,7 +46,6 @@ paq {"bronson/vim-visual-star-search"}
 paq {"tpope/vim-repeat"}
 
 paq {"nanotee/sqls.nvim"}
-paq {"lukas-reineke/indent-blankline.nvim"}
 paq {"lewis6991/gitsigns.nvim"}
 paq {"buoto/gotests-vim"}
 paq {"hashivim/vim-terraform"}

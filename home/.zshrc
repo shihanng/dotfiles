@@ -45,6 +45,8 @@ zinit snippet "https://raw.githubusercontent.com/exercism/cli/master/shell/exerc
 zinit ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" nocompile'!'
 zinit light trapd00r/LS_COLORS
 
+export forgit_checkout_commit=forgitgco
+
 zinit load 'wfxr/forgit'
 zinit load 'asdf-vm/asdf'
 

@@ -50,6 +50,8 @@ paq {"lewis6991/gitsigns.nvim"}
 paq {"buoto/gotests-vim"}
 paq {"hashivim/vim-terraform"}
 
+paq {"mattn/vim-goimports"}
+
 -- The "run" command might not work. Manual install can be done
 -- by running "yarn install" in
 -- $HOME/.local/share/nvim/site/pack/paqs/start/markdown-preview.nvim/app
@@ -207,7 +209,11 @@ nvim_lsp.gopls.setup {
             staticcheck = true
         }
     },
-    on_attach = on_attach
+    on_attach = function(client)
+        -- Because we are using prettier via ALE
+        client.resolved_capabilities.document_formatting = false
+        on_attach(client)
+    end
 }
 
 nvim_lsp.yamlls.setup {
@@ -241,34 +247,6 @@ nvim_lsp.pyright.setup {
 nvim_lsp.jsonls.setup {
     on_attach = on_attach
 }
-
-_G.goimports = function(timeoutms)
-    local context = {source = {organizeImports = true}}
-    vim.validate {context = {context, "t", true}}
-    local params = vim.lsp.util.make_range_params()
-    params.context = context
-
-    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeoutms)
-    if not result then
-        return
-    end
-
-    for id, res in ipairs(result) do
-        local client = vim.lsp.get_client_by_id(id)
-        if client.name == "gopls" then
-            local res_result = res.result
-            if res_result then
-                local edit = res_result[1].edit
-                print(edit)
-                vim.lsp.util.apply_workspace_edit(edit)
-            end
-        end
-    end
-end
-
-vim.api.nvim_exec([[
-autocmd BufWritePre *.go lua goimports(1000)
-]], false)
 
 local system_name
 if vim.fn.has("mac") == 1 then

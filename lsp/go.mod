@@ -14,6 +14,7 @@ require (
 	golang.org/x/mod v0.4.2 // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/sys v0.0.0-20210426230700-d19ff857e887 // indirect
+	golang.org/x/tools v0.1.1-0.20210408155258-593413344da1
 	golang.org/x/tools/gopls v0.6.10
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )

@@ -350,7 +350,8 @@ require "nvim-treesitter.configs".setup {
 }
 
 -- ChristianChiarulli/nvcode-color-schemes
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+    [[
 let g:nvcode_termcolors=256
 syntax on
 colorscheme nord 
@@ -359,7 +360,9 @@ if (has("termguicolors"))
     set termguicolors
     hi LineNr ctermbg=NONE guibg=NONE
 endif
-]], false)
+]],
+    false
+)
 
 -- nvim-lspfuzzy
 require("lspfuzzy").setup {}

@@ -517,6 +517,7 @@ nmap <silent> <leader>s :set spell!<CR> " Toggle spell checking on and off with 
 
 vim.api.nvim_exec([[
 noremap <leader>pg :%!pg_format -L - <cr>
+noremap <leader>jq :%!jq '.'<cr>
 ]], false)
 
 -- gitsigns

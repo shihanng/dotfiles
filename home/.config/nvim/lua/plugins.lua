@@ -29,6 +29,7 @@ paq {"nvim-lua/plenary.nvim"}
 paq {"nvim-telescope/telescope.nvim"}
 
 paq {"christoomey/vim-tmux-navigator"}
+paq {"christoomey/vim-tmux-runner"}
 
 paq {"jeffkreeftmeijer/vim-numbertoggle"}
 
@@ -527,4 +528,9 @@ require("gitsigns").setup()
 vim.api.nvim_exec([[
 let g:terraform_fmt_on_save=0
 let g:terraform_align=0
+]], false)
+
+-- christoomey/vim-tmux-runner
+vim.api.nvim_exec([[
+let g:VtrUseVtrMaps = 1
 ]], false)

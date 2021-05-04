@@ -25,6 +25,10 @@ vim.api.nvim_set_keymap(
     {noremap = true}
 )
 vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-n>", ":lua require('explore').open_tree()<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", {noremap = true})
+
+vim.g.nvim_tree_quit_on_open = 1
 
 -- Fallback to find_files if not in git directory.
 -- This does not work as expected because pcall return true.
@@ -36,6 +40,14 @@ M.project_files = function()
     local ok = pcall(require "telescope.builtin".git_files, opts)
     if not ok then
         require "telescope.builtin".find_files(opts)
+    end
+end
+
+M.open_tree = function()
+    local nt = require "nvim-tree"
+    local ok = pcall(nt.find_file, true)
+    if not ok then
+        nt.open()
     end
 end
 

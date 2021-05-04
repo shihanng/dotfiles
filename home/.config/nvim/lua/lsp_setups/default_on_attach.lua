@@ -9,12 +9,21 @@ local function default_on_attach(client, bufnr)
     buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
     buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
-  if client.resolved_capabilities.document_formatting then
-    buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-  end
-  if client.resolved_capabilities.document_range_formatting then
-    buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-  end
+    if client.resolved_capabilities.document_formatting then
+        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+        vim.api.nvim_exec(
+            [[
+augroup lsp_format
+  autocmd! * <buffer>
+  autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil,1000)
+augroup END
+            ]],
+            true
+        )
+    end
+    if client.resolved_capabilities.document_range_formatting then
+        buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+    end
 
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec([[

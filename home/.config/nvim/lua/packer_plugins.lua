@@ -9,5 +9,8 @@ end
 return require("packer").startup(
     function()
     use 'wbthomason/packer.nvim'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'christianchiarulli/nvcode-color-schemes.vim', opt =true, requires = 'nvim-treesitter'}
+    use { 'neovim/nvim-lspconfig'}
     end
 )

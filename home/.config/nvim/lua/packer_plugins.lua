@@ -12,5 +12,6 @@ return require("packer").startup(
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true, requires = "nvim-treesitter"}
         use {"neovim/nvim-lspconfig"}
+        use "tpope/vim-surround"
     end
 )

@@ -7,10 +7,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require("packer").startup(
-    function()
-    use 'wbthomason/packer.nvim'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use { 'christianchiarulli/nvcode-color-schemes.vim', opt =true, requires = 'nvim-treesitter'}
-    use { 'neovim/nvim-lspconfig'}
+    function(use)
+        use "wbthomason/packer.nvim"
+        use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+        use {"christianchiarulli/nvcode-color-schemes.vim", opt = true, requires = "nvim-treesitter"}
+        use {"neovim/nvim-lspconfig"}
     end
 )

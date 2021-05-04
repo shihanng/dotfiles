@@ -20,5 +20,12 @@ return require("packer").startup(
 
         -- Motions
         use "tpope/vim-surround"
+
+        -- Explore
+        use {
+            "nvim-telescope/telescope.nvim",
+            requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
+        }
+        use "nvim-telescope/telescope-fzy-native.nvim"
     end
 )

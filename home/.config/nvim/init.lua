@@ -1,5 +1,5 @@
 require "basic"
 require "packer_plugins"
 
-require "colors"
+require "aesthetic"
 require "lsp"

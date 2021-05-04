@@ -13,6 +13,7 @@ return require("packer").startup(
 
         -- Aesthetic
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true, requires = "nvim-treesitter"}
+        use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
 
         -- Code analysis
         use {"neovim/nvim-lspconfig"}

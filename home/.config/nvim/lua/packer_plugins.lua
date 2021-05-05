@@ -17,6 +17,9 @@ return require("packer").startup(
 
         -- Code analysis
         use {"neovim/nvim-lspconfig"}
+        use {"hrsh7th/nvim-compe"}
+        use {"hrsh7th/vim-vsnip", requires = "hrsh7th/nvim-compe"}
+        use {"hrsh7th/vim-vsnip-integ", requires = "hrsh7th/vim-vsnip"}
 
         -- Motions
         use "tpope/vim-surround"

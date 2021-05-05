@@ -30,6 +30,7 @@ return require("packer").startup(
         use {"christoomey/vim-tmux-navigator"}
         use {"christoomey/vim-tmux-runner"}
         use {"jeffkreeftmeijer/vim-numbertoggle"}
+        use {"tpope/vim-repeat"}
 
         -- Explore
         use {
@@ -40,5 +41,11 @@ return require("packer").startup(
         use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons"}
         use {"haya14busa/is.vim"}
         use {"haya14busa/vim-asterisk"}
+
+        -- Git
+        use {"tpope/vim-fugitive"}
+
+        -- Direnv
+        use {"direnv/direnv.vim"}
     end
 )

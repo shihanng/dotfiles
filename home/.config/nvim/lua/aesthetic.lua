@@ -19,3 +19,6 @@ end
 require "lualine".setup {
     options = {theme = "nord"}
 }
+
+require("lspkind").init({})
+require("gitsigns").setup()

@@ -14,6 +14,8 @@ return require("packer").startup(
         -- Aesthetic
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true, requires = "nvim-treesitter"}
         use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
+        use {"onsails/lspkind-nvim"}
+        use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
 
         -- Coding
         use {"neovim/nvim-lspconfig"}
@@ -23,8 +25,11 @@ return require("packer").startup(
         use {"b3nj5m1n/kommentary"}
         use {"cohama/lexima.vim"}
 
-        -- Motions
+        -- Motion
         use "tpope/vim-surround"
+        use {"christoomey/vim-tmux-navigator"}
+        use {"christoomey/vim-tmux-runner"}
+        use {"jeffkreeftmeijer/vim-numbertoggle"}
 
         -- Explore
         use {

@@ -12,6 +12,4 @@
     mode: 0755
   with_items:
     - site/autoload
-    - backup
-    - swp
     - undo

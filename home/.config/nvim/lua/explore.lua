@@ -1,11 +1,15 @@
 local actions = require("telescope.actions")
+local trouble = require("trouble.providers.telescope")
+
 require("telescope").setup {
     defaults = {
         file_sorter = require("telescope.sorters").get_fzy_sorter,
         mappings = {
             i = {
-                ["<esc>"] = actions.close
-            }
+                ["<esc>"] = actions.close,
+                ["<c-t>"] = trouble.open_with_trouble
+            },
+            n = {["<c-t>"] = trouble.open_with_trouble}
         }
     },
     extensions = {
@@ -43,6 +47,23 @@ vim.api.nvim_set_keymap("", "*", [[<Plug>(asterisk-z*)<Plug>(is-nohl-1)]], {})
 vim.api.nvim_set_keymap("", "g*", [[<Plug>(asterisk-gz*)<Plug>(is-nohl-1)]], {})
 vim.api.nvim_set_keymap("", "#", [[<Plug>(asterisk-z#)<Plug>(is-nohl-1)]], {})
 vim.api.nvim_set_keymap("", "g#", [[<Plug>(asterisk-gz#)<Plug>(is-nohl-1)]], {})
+
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>LspTroubleToggle<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>xw",
+    "<cmd>LspTroubleToggle lsp_workspace_diagnostics<cr>",
+    {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>xd",
+    "<cmd>LspTroubleToggle lsp_document_diagnostics<cr>",
+    {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>LspTroubleToggle loclist<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>LspTroubleToggle quickfix<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "gR", "<cmd>LspTrouble lsp_references<cr>", {silent = true, noremap = true})
 
 -- Fallback to find_files if not in git directory.
 -- This does not work as expected because pcall return true.

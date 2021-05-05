@@ -30,6 +30,20 @@ vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", {noremap = tru
 
 vim.g.nvim_tree_quit_on_open = 1
 
+vim.g["asterisk#keeppos"] = 1
+
+-- Find and replace (by Nick Janetakis)
+vim.api.nvim_set_keymap("n", "<Leader>rr", [[:%s///g<Left><Left>]], {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>rc", [[:%s///gc<Left><Left><Left>]], {noremap = true})
+vim.api.nvim_set_keymap("x", "<Leader>rr", [[:s///g<Left><Left>]], {noremap = true})
+vim.api.nvim_set_keymap("x", "<Leader>rc", [[:s///gc<Left><Left><Left>]], {noremap = true})
+
+vim.api.nvim_set_keymap("n", "*", [[<Plug>(asterisk-z*)<Plug>(is-nohl-1)]], {})
+vim.api.nvim_set_keymap("", "*", [[<Plug>(asterisk-z*)<Plug>(is-nohl-1)]], {})
+vim.api.nvim_set_keymap("", "g*", [[<Plug>(asterisk-gz*)<Plug>(is-nohl-1)]], {})
+vim.api.nvim_set_keymap("", "#", [[<Plug>(asterisk-z#)<Plug>(is-nohl-1)]], {})
+vim.api.nvim_set_keymap("", "g#", [[<Plug>(asterisk-gz#)<Plug>(is-nohl-1)]], {})
+
 -- Fallback to find_files if not in git directory.
 -- This does not work as expected because pcall return true.
 -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#falling-back-to-find_files-if-git_files-cant-find-a-git-directory

@@ -28,6 +28,7 @@ return require("packer").startup(
             "folke/lsp-trouble.nvim",
             requires = "kyazdani42/nvim-web-devicons"
         }
+        use {"mbbill/undotree"}
 
         -- Motion
         use "tpope/vim-surround"

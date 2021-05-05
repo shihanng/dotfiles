@@ -1,6 +1,5 @@
 require "basic"
 require "packer_plugins"
-
 require "motion"
 require "aesthetic"
 require "lsp"
@@ -9,3 +8,4 @@ require "comment"
 require "explore"
 require "format"
 require "spell"
+require "firenvim"

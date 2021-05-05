@@ -55,5 +55,14 @@ return require("packer").startup(
 
         -- Markdown
         use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install"}
+
+        -- Browser
+        use {
+            "glacambre/firenvim",
+            tag = "v0.2.5",
+            run = function()
+                vim.fn["firenvim#install"](0)
+            end
+        }
     end
 )

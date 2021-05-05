@@ -52,5 +52,8 @@ return require("packer").startup(
 
         -- Direnv
         use {"direnv/direnv.vim"}
+
+        -- Markdown
+        use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install"}
     end
 )

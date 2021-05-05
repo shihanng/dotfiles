@@ -30,17 +30,29 @@ tools:
     lint-formats:
       - "%f:%l:%c: %m"
     format-command: "rubocop -a --stderr -x ${INPUT}"
+
   golangci-lint: &golangci-lint
     lint-command: "golangci-lint run --out-format line-number --print-issued-lines=false"
     lint-ignore-exit-code: true
     lint-stdin: false
     lint-formats:
       - "%f:%l:%c: %m"
+
+  goimports: &goimports
+    format-command: "goimports"
+
 languages:
   lua:
     - <<: *lua-luafmt
   javascript:
     - <<: *eslint
+    - <<: *prettier
+  typescriptreact:
+    - <<: *eslint
+    - <<: *prettier
+  typescript:
+    - <<: *eslint
+    - <<: *prettier
   json:
     - <<: *prettier
   yaml:
@@ -53,3 +65,4 @@ languages:
     - <<: *pg_format
   go:
     - <<: *golangci-lint
+    - <<: *goimports

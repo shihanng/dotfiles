@@ -15,12 +15,13 @@ return require("packer").startup(
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true, requires = "nvim-treesitter"}
         use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
 
-        -- Code analysis
+        -- Coding
         use {"neovim/nvim-lspconfig"}
         use {"hrsh7th/nvim-compe"}
         use {"hrsh7th/vim-vsnip", requires = "hrsh7th/nvim-compe"}
         use {"hrsh7th/vim-vsnip-integ", requires = "hrsh7th/vim-vsnip"}
         use {"b3nj5m1n/kommentary"}
+        use {"cohama/lexima.vim"}
 
         -- Motions
         use "tpope/vim-surround"

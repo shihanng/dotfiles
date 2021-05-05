@@ -25,5 +25,12 @@ require "compe".setup {
     }
 }
 
+vim.g.lexima_no_default_rules = true
+vim.api.nvim_exec([[call lexima#set_default_rules()]], true)
 vim.api.nvim_set_keymap("i", "<C-n>", "compe#complete()", {noremap = true, silent = true, expr = true})
-vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm('<CR>')", {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap(
+    "i",
+    "<CR>",
+    [[compe#confirm(lexima#expand('<LT>CR>', 'i'))]],
+    {noremap = true, silent = true, expr = true}
+)

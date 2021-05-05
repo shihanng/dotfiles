@@ -35,8 +35,4 @@ vim.o.undofile = true
 vim.bo.undofile = true
 vim.o.undodir = vim.fn.expand("~/.local/share/vim/undo//")
 
-if vim.o.clipboard and #vim.o.clipboard ~= 0 then
-    vim.o.clipboard = (vim.o.clipboard .. ',unnamedplus')
-else
-    vim.o.clipboard = 'unnamedplus'
-end
+require("utils").append_o("clipboard", "unnamedplus", ",")

@@ -4,7 +4,7 @@ install-nodejs:
 	npm ci
 
 install-ruby:
-	bundle install --binstubs=bin
+	bundle install
 
 install-go: export GOBIN = $(shell pwd)/bin
 install-go:

@@ -14,7 +14,7 @@ local M = {
     on_attach = function(client, bufnr)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":OrganizeImports<CR>", {noremap = true, silent = true})
         client.resolved_capabilities.document_formatting = false
-        on_attach(client)
+        on_attach(client, bufnr)
     end,
     commands = {
         OrganizeImports = {

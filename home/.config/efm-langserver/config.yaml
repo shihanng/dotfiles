@@ -1,6 +1,4 @@
 version: 2
-log-file: /home/shihanng/efm.log
-log-level: 1
 root-markers:
   - .git/
 tools:

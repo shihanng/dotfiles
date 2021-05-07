@@ -15,7 +15,7 @@ local function default_on_attach(client, bufnr)
             [[
 augroup lsp_format
   autocmd! * <buffer>
-  autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()
+  autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync({}, 10000)
 augroup END
             ]],
             true

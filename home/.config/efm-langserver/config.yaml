@@ -29,7 +29,7 @@ tools:
     lint-stdin: false
     lint-formats:
       - "%f:%l:%c: %m"
-    format-command: "rubocop -a --stderr -x ${INPUT}"
+    format-command: "rubocop -a"
 
   golangci-lint: &golangci-lint
     lint-command: "golangci-lint run --out-format line-number --print-issued-lines=false"

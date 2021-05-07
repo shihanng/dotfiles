@@ -29,7 +29,8 @@ tools:
     lint-stdin: false
     lint-formats:
       - "%f:%l:%c: %m"
-    format-command: "rubocop -a"
+    format-command: "rubocop  --stdin FILE -a -f q -o /dev/null | sed '1 d'"
+    format-stdin: true
 
   golangci-lint: &golangci-lint
     lint-command: "golangci-lint run --out-format line-number --print-issued-lines=false"

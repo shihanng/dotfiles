@@ -65,3 +65,5 @@ languages:
   go:
     - <<: *golangci-lint
     - <<: *goimports
+  html:
+    - <<: *prettier

@@ -1,7 +1,19 @@
 local on_attach = require("lsp_setups/default_on_attach")
 
 local M = {
-    filetypes = {"ruby", "go", "markdown", "typescriptreact", "typescript", "javascript", "lua", "yaml", "json", "sql"},
+    filetypes = {
+        "go",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "ruby",
+        "sql",
+        "typescript",
+        "typescriptreact",
+        "yaml"
+    },
     init_options = {
         documentFormatting = true,
         hover = true,

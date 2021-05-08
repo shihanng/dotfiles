@@ -67,3 +67,5 @@ languages:
     - <<: *goimports
   html:
     - <<: *prettier
+  css:
+    - <<: *prettier

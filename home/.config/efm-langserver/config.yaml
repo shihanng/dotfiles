@@ -7,7 +7,7 @@ tools:
     format-stdin: true
 
   prettier: &prettier
-    format-command: "prettier --stdin-filepath ${INPUT}"
+    format-command: "prettierd ${INPUT}"
     format-stdin: true
 
   eslint: &eslint

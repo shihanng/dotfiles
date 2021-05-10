@@ -38,5 +38,9 @@ vim.o.undodir = vim.fn.expand("~/.local/share/vim/undo//")
 
 vim.o.foldlevel = 99
 vim.wo.foldlevel = 99
+vim.o.foldmethod = "expr"
+vim.wo.foldmethod = "expr"
+vim.o.foldexpr = [[nvim_treesitter#foldexpr()]]
+vim.wo.foldexpr = [[nvim_treesitter#foldexpr()]]
 
 require("utils").append_o("clipboard", "unnamedplus", ",")

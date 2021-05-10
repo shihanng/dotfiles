@@ -42,6 +42,8 @@ augroup END
             false
         )
     end
+
+    require("folding").on_attach()
 end
 
 return default_on_attach

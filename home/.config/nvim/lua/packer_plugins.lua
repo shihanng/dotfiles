@@ -29,6 +29,7 @@ return require("packer").startup(
             requires = "kyazdani42/nvim-web-devicons"
         }
         use {"mbbill/undotree"}
+        use {"pierreglaser/folding-nvim"}
 
         -- Motion
         use "tpope/vim-surround"

@@ -36,4 +36,7 @@ vim.o.undofile = true
 vim.bo.undofile = true
 vim.o.undodir = vim.fn.expand("~/.local/share/vim/undo//")
 
+vim.o.foldlevel = 99
+vim.wo.foldlevel = 99
+
 require("utils").append_o("clipboard", "unnamedplus", ",")

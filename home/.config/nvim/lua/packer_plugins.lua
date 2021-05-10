@@ -30,6 +30,7 @@ return require("packer").startup(
         }
         use {"mbbill/undotree"}
         use {"pierreglaser/folding-nvim"}
+        use {"vim-test/vim-test"}
 
         -- Motion
         use "tpope/vim-surround"

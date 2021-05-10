@@ -48,6 +48,8 @@ return require("packer").startup(
         use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons"}
         use {"haya14busa/is.vim"}
         use {"haya14busa/vim-asterisk"}
+        use {"romainl/vim-qf"}
+        use {"yssl/QFEnter"}
 
         -- Git
         use {"tpope/vim-fugitive"}

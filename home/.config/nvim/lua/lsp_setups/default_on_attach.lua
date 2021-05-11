@@ -1,3 +1,19 @@
+local format_async = function(err, _, result, _, bufnr)
+    if err ~= nil or result == nil then
+        return
+    end
+    if not vim.api.nvim_buf_get_option(bufnr, "modified") then
+        local view = vim.fn.winsaveview()
+        vim.lsp.util.apply_text_edits(result, bufnr)
+        vim.fn.winrestview(view)
+        if bufnr == vim.api.nvim_get_current_buf() then
+            vim.api.nvim_command("noautocmd :update")
+        end
+    end
+end
+
+vim.lsp.handlers["textDocument/formatting"] = format_async
+
 local function default_on_attach(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -18,7 +34,7 @@ local function default_on_attach(client, bufnr)
             [[
 augroup lsp_format
   autocmd! * <buffer>
-  autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync({}, 10000)
+  autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync({}, 10000)
 augroup END
             ]],
             true

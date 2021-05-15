@@ -63,7 +63,6 @@ return require("packer").startup(
         -- Browser
         use {
             "glacambre/firenvim",
-            tag = "v0.2.5",
             run = function()
                 vim.fn["firenvim#install"](0)
             end

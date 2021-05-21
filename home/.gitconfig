@@ -23,6 +23,7 @@
 
 [merge]
 	tool = vimdiff
+	ff = false
 
 [difftool]
 	prompt = false

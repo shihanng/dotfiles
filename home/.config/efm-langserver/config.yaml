@@ -10,6 +10,18 @@ tools:
     format-command: "prettierd ${INPUT}"
     format-stdin: true
 
+  sh-shellcheck: &sh-shellcheck
+    lint-command: 'shellcheck -f gcc -x'
+    lint-source: 'shellcheck'
+    lint-formats:
+      - '%f:%l:%c: %trror: %m'
+      - '%f:%l:%c: %tarning: %m'
+      - '%f:%l:%c: %tote: %m'
+
+  sh-shfmt: &sh-shfmt
+    format-command: 'shfmt -ci -s -bn'
+    format-stdin: true
+
   eslint: &eslint
     lint-command: "eslint -f unix --stdin"
     lint-ignore-exit-code: true
@@ -69,3 +81,6 @@ languages:
     - <<: *prettier
   css:
     - <<: *prettier
+  sh:
+    - <<: *sh-shellcheck
+    - <<: *sh-shfmt

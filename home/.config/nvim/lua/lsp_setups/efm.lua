@@ -10,6 +10,7 @@ local M = {
         "lua",
         "markdown",
         "ruby",
+        "sh",
         "sql",
         "typescript",
         "typescriptreact",

@@ -70,5 +70,8 @@ return require("packer").startup(
 
         -- HTML
         use {"mattn/emmet-vim"}
+
+        -- Terraform
+        use {"hashivim/vim-terraform"}
     end
 )

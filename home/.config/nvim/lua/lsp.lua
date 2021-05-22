@@ -2,6 +2,8 @@ local lsp = require("lspconfig")
 
 local default_setup = require("lsp_setups/default_setup")
 
+lsp.bashls.setup(default_setup)
+lsp.cssls.setup(require("lsp_setups/cssls"))
 lsp.efm.setup(require("lsp_setups/efm"))
 lsp.gopls.setup(require("lsp_setups/gopls"))
 lsp.graphql.setup(default_setup)
@@ -13,4 +15,3 @@ lsp.sumneko_lua.setup(require("lsp_setups/sumneko_lua"))
 lsp.terraformls.setup(default_setup)
 lsp.tflint.setup(default_setup)
 lsp.tsserver.setup(require("lsp_setups/tsserver"))
-lsp.cssls.setup(require("lsp_setups/cssls"))

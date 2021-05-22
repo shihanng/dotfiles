@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@fsouza/prettierd": "^0.11.1",
+    "bash-language-server": "^1.17.0",
     "graphql": "^15.5.0",
     "graphql-language-service-cli": "^3.1.12",
     "lua-fmt": "^2.6.0",

@@ -2,6 +2,13 @@ version: 2
 root-markers:
   - .git/
 tools:
+  eruby-erb: &eruby-erb
+    lint-command: "erb -x -T - | ruby -c"
+    lint-stdin: true
+    lint-offset: 1
+    format-command: htmlbeautifier
+    format-stdin: true
+
   lua-luafmt: &lua-luafmt
     format-command: "luafmt --stdin -w stdout"
     format-stdin: true
@@ -84,3 +91,5 @@ languages:
   sh:
     - <<: *sh-shellcheck
     - <<: *sh-shfmt
+  eruby:
+    - <<: *eruby-erb

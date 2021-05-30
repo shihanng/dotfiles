@@ -11,13 +11,12 @@ require "nvim-treesitter.configs".setup {
 
 vim.g.nvcode_termcolors = 256
 
-vim.o.syntax = "on"
-vim.bo.syntax = "on"
+vim.opt.syntax = "on"
 
 vim.cmd([[colorscheme nord]])
 
 if vim.fn.has("termguicolors") == 1 then
-    vim.o.termguicolors = true
+    vim.opt.termguicolors = true
 end
 
 require "lualine".setup {

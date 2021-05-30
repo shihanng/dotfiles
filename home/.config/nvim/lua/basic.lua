@@ -1,46 +1,31 @@
 vim.g.mapleader = ","
-vim.o.exrc = true
-vim.o.hidden = true
+vim.opt.exrc = true
+vim.opt.hidden = true
 
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.o.shiftwidth = 4
-vim.bo.shiftwidth = 4
-vim.o.softtabstop = 4
-vim.bo.softtabstop = 4
-vim.o.expandtab = true
-vim.bo.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
 
-vim.o.wrap = false
-vim.wo.wrap = false
+vim.opt.wrap = false
 
-vim.o.scrolloff = 10
-vim.wo.scrolloff = 10
+vim.opt.scrolloff = 10
 
-vim.o.relativenumber = true
-vim.wo.relativenumber = true
-vim.o.number = true
-vim.wo.number = true
-vim.o.signcolumn = "yes"
-vim.wo.signcolumn = "yes"
-vim.o.colorcolumn = "80"
-vim.wo.colorcolumn = "80"
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.signcolumn = "yes"
+vim.opt.colorcolumn = "80"
 
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
-vim.o.swapfile = false
-vim.bo.swapfile = false
-vim.o.backup = false
-vim.o.undofile = true
-vim.bo.undofile = true
-vim.o.undodir = vim.fn.expand("~/.local/share/vim/undo//")
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.local/share/vim/undo//")
 
-vim.o.foldlevel = 99
-vim.wo.foldlevel = 99
-vim.o.foldmethod = "expr"
-vim.wo.foldmethod = "expr"
-vim.o.foldexpr = [[nvim_treesitter#foldexpr()]]
-vim.wo.foldexpr = [[nvim_treesitter#foldexpr()]]
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = [[nvim_treesitter#foldexpr()]]
 
-require("utils").append_o("clipboard", "unnamedplus", ",")
+vim.opt.clipboard = "unnamedplus"

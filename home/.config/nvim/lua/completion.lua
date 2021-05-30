@@ -1,6 +1,6 @@
-vim.o.completeopt = "menuone,noselect"
+vim.opt.completeopt = {"menuone", "noselect"}
 
-require("utils").append_o("shortmess", "c")
+vim.opt.shortmess:append {c = true}
 
 require "compe".setup {
     enabled = true,

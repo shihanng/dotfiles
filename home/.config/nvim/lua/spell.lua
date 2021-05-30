@@ -1,5 +1,4 @@
-vim.o.spelllang = "en,cjk"
-vim.bo.spelllang = "en,cjk"
+vim.opt.spelllang = {"en", "cjk"}
 
 -- Toggle spell checking on and off.
 vim.api.nvim_set_keymap("n", "<Leader>s", [[:set spell!<CR>]], {silent = true})

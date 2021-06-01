@@ -73,5 +73,8 @@ return require("packer").startup(
 
         -- Terraform
         use {"hashivim/vim-terraform"}
+
+        -- Go
+        use {"buoto/gotests-vim"}
     end
 )

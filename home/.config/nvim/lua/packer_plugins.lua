@@ -76,5 +76,8 @@ return require("packer").startup(
 
         -- Go
         use {"buoto/gotests-vim"}
+
+        -- Cue
+        use { 'jjo/vim-cue'}
     end
 )

@@ -29,7 +29,7 @@ return require("packer").startup(
             requires = "kyazdani42/nvim-web-devicons"
         }
         use {"mbbill/undotree"}
-        use {"shihanng/folding-nvim" , branch= "result-nil"}
+        use {"shihanng/folding-nvim", branch = "result-nil"}
         use {"vim-test/vim-test"}
 
         -- Motion
@@ -78,7 +78,7 @@ return require("packer").startup(
         use {"buoto/gotests-vim"}
 
         -- Cue
-        use { 'jjo/vim-cue'}
+        use {"jjo/vim-cue"}
 
         -- SQL
         use {"nanotee/sqls.nvim"}

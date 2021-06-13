@@ -79,5 +79,8 @@ return require("packer").startup(
 
         -- Cue
         use { 'jjo/vim-cue'}
+
+        -- SQL
+        use {"nanotee/sqls.nvim"}
     end
 )

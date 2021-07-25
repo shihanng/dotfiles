@@ -29,12 +29,12 @@ local function default_on_attach(client, bufnr)
     buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
     if client.resolved_capabilities.document_formatting then
-        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>", opts)
         vim.api.nvim_exec(
             [[
 augroup lsp_format
   autocmd! * <buffer>
-  autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync({}, 10000)
+  autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync({}, 10000)
 augroup END
             ]],
             true

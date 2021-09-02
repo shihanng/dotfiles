@@ -10,7 +10,6 @@
     - role: git
     - role: utils
     - role: golang
-    - role: ruby
     - role: devtools
     - role: fonts
     - role: wm

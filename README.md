@@ -1,0 +1,5 @@
+## macOS
+
+- Homebrew
+
+## Linux (Ubuntu)

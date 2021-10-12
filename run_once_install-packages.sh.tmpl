@@ -1,0 +1,16 @@
+#!/bin/bash
+
+{{ if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") -}}
+sudo apt install git
+{{ else if eq .chezmoi.os "darwin" -}}
+brew install git
+{{ end -}}
+
+if ! command -v starship &> /dev/null
+then
+{{ if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") -}}
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+{{ else if eq .chezmoi.os "darwin" -}}
+brew install starship
+{{ end -}}
+fi

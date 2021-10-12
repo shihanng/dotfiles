@@ -29,7 +29,7 @@ return require("packer").startup(
             requires = "kyazdani42/nvim-web-devicons"
         }
         use {"mbbill/undotree"}
-        use {"shihanng/folding-nvim", branch = "result-nil"}
+        use {"pierreglaser/folding-nvim"}
         use {"vim-test/vim-test"}
 
         -- Motion

@@ -1,39 +1,34 @@
 #!/bin/bash
 
-if ! command -v git &> /dev/null
-then
-{{ if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") -}}
-sudo apt install git 
-{{ else if eq .chezmoi.os "darwin" -}}
-brew install git
-{{ end -}}
+if ! command -v git &> /dev/null; then
+  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt install git 
+  {{- else if eq .chezmoi.os "darwin" }}
+  brew install git
+  {{- end }}
 fi
 
-if ! command -v starship &> /dev/null
-then
-{{ if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") -}}
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-{{ else if eq .chezmoi.os "darwin" -}}
-brew install starship
-{{ end -}}
+if ! command -v starship &> /dev/null; then
+  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+  {{- else if eq .chezmoi.os "darwin" }}
+  brew install starship
+  {{- end }}
 fi
 
-if ! command -v direnv &> /dev/null
-then
-{{ if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") -}}
-sudo apt install direnv 
-{{ else if eq .chezmoi.os "darwin" -}}
-brew install direnv
-{{ end -}}
+if ! command -v direnv &> /dev/null; then
+  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt install direnv 
+  {{- else if eq .chezmoi.os "darwin" }}
+  brew install direnv
+  {{- end }}
 fi
 
-if ! command -v asdf &> /dev/null
-then
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+if ! command -v asdf &> /dev/null; then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
 fi
 
-if ! command -v nvim &> /dev/null
-then
-asdf plugin add neovim
-asdf install neovim 0.5.1
+if ! command -v nvim &> /dev/null; then
+  asdf plugin add neovim
+  asdf install neovim 0.5.1
 fi

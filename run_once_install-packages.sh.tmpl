@@ -45,3 +45,8 @@ if ! command -v lua &> /dev/null; then
   asdf plugin add lua
   asdf install lua 5.3.5
 fi
+
+if ! command -v ghq &> /dev/null; then
+  asdf plugin add ghq
+  asdf install ghq 1.2.1
+fi

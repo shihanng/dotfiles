@@ -32,3 +32,8 @@ if ! command -v nvim &> /dev/null; then
   asdf plugin add neovim
   asdf install neovim 0.5.1
 fi
+
+if ! command -v lua &> /dev/null; then
+  asdf plugin add lua
+  asdf install lua 5.3.5
+fi

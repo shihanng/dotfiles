@@ -31,3 +31,9 @@ if ! command -v asdf &> /dev/null
 then
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
 fi
+
+if ! command -v nvim &> /dev/null
+then
+asdf plugin add neovim
+asdf install neovim 0.5.1
+fi

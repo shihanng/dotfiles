@@ -17,3 +17,12 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 brew install starship
 {{ end -}}
 fi
+
+if ! command -v direnv &> /dev/null
+then
+{{ if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") -}}
+sudo apt install direnv 
+{{ else if eq .chezmoi.os "darwin" -}}
+brew install direnv
+{{ end -}}
+fi

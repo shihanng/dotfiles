@@ -34,6 +34,11 @@ if ! command -v nvim &> /dev/null; then
 fi
 
 if ! command -v lua &> /dev/null; then
+  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt-get install linux-headers-$(uname -r) build-essential
+  {{- else if eq .chezmoi.os "darwin" }}
+  xcode-select --install
+  {{- end }}
   asdf plugin add lua
   asdf install lua 5.3.5
 fi

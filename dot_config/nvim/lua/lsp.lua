@@ -1,0 +1,18 @@
+local lsp = require("lspconfig")
+
+local default_setup = require("lsp_setups/default_setup")
+
+lsp.bashls.setup(default_setup)
+lsp.cssls.setup(require("lsp_setups/cssls"))
+lsp.efm.setup(require("lsp_setups/efm"))
+lsp.elixirls.setup(require("lsp_setups/elixirls"))
+lsp.gopls.setup(require("lsp_setups/gopls"))
+lsp.graphql.setup(default_setup)
+lsp.jsonls.setup(default_setup)
+lsp.pyright.setup(default_setup)
+lsp.solargraph.setup(require("lsp_setups/solargraph"))
+lsp.sqls.setup(require("lsp_setups/sqls"))
+lsp.sumneko_lua.setup(require("lsp_setups/sumneko_lua"))
+lsp.terraformls.setup(require("lsp_setups/terraformls"))
+lsp.tflint.setup(default_setup)
+lsp.tsserver.setup(require("lsp_setups/tsserver"))

@@ -195,8 +195,7 @@ zle -N fzf-src
 bindkey '^]' fzf-src
 
 
-eval "$(asdf exec direnv hook zsh)"
-direnv() { asdf exec direnv "$@"; }
+eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 eval "$(luarocks path --bin)"
 

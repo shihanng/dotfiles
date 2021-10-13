@@ -107,3 +107,8 @@ if ! [ -x "$(command -v rg)" ]; then
   brew install ripgrep
   {{- end }}
 fi
+
+if ! [ -x "$(command -v tflint)" ]; then
+  asdf plugin add tflint || true
+  asdf install tflint 0.32.0
+fi

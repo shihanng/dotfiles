@@ -99,3 +99,11 @@ fi
 if ! [ -x "$(command -v efm-langserver)" ]; then
   go install github.com/mattn/efm-langserver@latest
 fi
+
+if ! [ -x "$(command -v rg)" ]; then
+  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt-get install ripgrep
+  {{- else if eq .chezmoi.os "darwin" }}
+  brew install ripgrep
+  {{- end }}
+fi

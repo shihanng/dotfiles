@@ -1,87 +1,10 @@
 #!/bin/bash
 set -e
 
-if ! command -v git &> /dev/null; then
+if ! command -v bw &> /dev/null; then
   {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt install git 
+  npm install -g @bitwarden/cli
   {{- else if eq .chezmoi.os "darwin" }}
-  brew install git
-  {{- end }}
-fi
-
-if ! command -v starship &> /dev/null; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-  {{- else if eq .chezmoi.os "darwin" }}
-  brew install starship
-  {{- end }}
-fi
-
-if ! command -v direnv &> /dev/null; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt install direnv 
-  {{- else if eq .chezmoi.os "darwin" }}
-  brew install direnv
-  {{- end }}
-fi
-
-if ! command -v asdf &> /dev/null; then
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
-fi
-
-if ! command -v nvim &> /dev/null; then
-  asdf plugin add neovim || true
-  asdf install neovim 0.5.1
-fi
-
-if ! command -v lua &> /dev/null; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt-get install \
-    linux-headers-$(uname -r) \
-    build-essential \
-    libreadline-dev 
-  {{- else if eq .chezmoi.os "darwin" }}
-  xcode-select --install
-  {{- end }}
-  asdf plugin add lua || true
-  asdf install lua 5.3.5
-fi
-
-if ! command -v ghq &> /dev/null; then
-  asdf plugin add ghq || true
-  asdf install ghq 1.2.1
-fi
-
-if ! command -v lua-language-server &> /dev/null; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt install ninja-build
-  {{- else if eq .chezmoi.os "darwin" }}
-  brew install ninja
-  {{- end }}
-  ghq get sumneko/lua-language-server
-  cd "$(ghq root)/github.com/sumneko/lua-language-server"
-  git submodule update --init --recursive
-  cd 3rd/luamake
-  ./compile/install.sh
-  cd ../..
-  ./3rd/luamake/luamake rebuild
-fi
-
-if ! command -v node &> /dev/null; then
-  asdf plugin add nodejs || true
-  asdf install nodejs lts
-fi
-
-if ! command -v luafmt &> /dev/null; then
-  npm install -g lua-fmt
-fi
-
-if ! command -v keybase &> /dev/null; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
-  sudo apt install ./keybase_amd64.deb
-  run_keybase
-  {{- else if eq .chezmoi.os "darwin" }}
-  echo "Visit https://keybase.io/docs/the_app/install_macos to install Keybase"
+  brew install bitwarden-cli
   {{- end }}
 fi

@@ -1,0 +1,115 @@
+version: 2
+root-markers:
+  - .git/
+tools:
+  eruby-erb: &eruby-erb
+    lint-command: "erb -x -T - | ruby -c"
+    lint-stdin: true
+    lint-offset: 1
+    format-command: htmlbeautifier
+    format-stdin: true
+
+  lua-luafmt: &lua-luafmt
+    format-command: "luafmt --stdin -w stdout"
+    format-stdin: true
+
+  prettier: &prettier
+    format-command: "prettierd ${INPUT}"
+    format-stdin: true
+
+  sh-shellcheck: &sh-shellcheck
+    lint-command: "shellcheck -f gcc -x"
+    lint-source: "shellcheck"
+    lint-formats:
+      - "%f:%l:%c: %trror: %m"
+      - "%f:%l:%c: %tarning: %m"
+      - "%f:%l:%c: %tote: %m"
+
+  sh-shfmt: &sh-shfmt
+    format-command: "shfmt -ci -s -bn"
+    format-stdin: true
+
+  eslint: &eslint
+    lint-command: "eslint -f unix --stdin"
+    lint-ignore-exit-code: true
+    lint-stdin: true
+    format-command: "prettier-eslint --stdin --stdin-filepath ${INPUT}"
+    format-stdin: true
+
+  pg_format: &pg_format
+    format-command: "pg_format -L -"
+    format-stdin: true
+
+  rubocop: &rubocop
+    lint-command: "rubocop --format emacs"
+    lint-ignore-exit-code: true
+    lint-stdin: false
+    lint-formats:
+      - "%f:%l:%c: %m"
+    format-command: "rubocop  --stdin FILE -a -f q -o /dev/null | sed '1 d'"
+    format-stdin: true
+
+  golangci-lint: &golangci-lint
+    lint-command: "golangci-lint run --out-format line-number --print-issued-lines=false"
+    lint-ignore-exit-code: true
+    lint-stdin: false
+    lint-formats:
+      - "%f:%l:%c: %m"
+    root-markers:
+      - go.mod
+      - go.sum
+
+  goimports: &goimports
+    format-command: "goimports"
+
+  mix_credo: &mix_credo
+    lint-command: "MIX_ENV=test mix credo suggest --format=flycheck --read-from-stdin ${INPUT}"
+    lint-stdin: true
+    lint-formats:
+      - "%f:%l:%c: %t: %m"
+      - "%f:%l: %t: %m"
+    lint-category-map:
+      R: N
+      D: I
+      F: E
+      W: W
+    root-markers:
+      - mix.lock
+      - mix.exs
+
+languages:
+  lua:
+    - <<: *lua-luafmt
+  javascript:
+    - <<: *eslint
+    - <<: *prettier
+  typescriptreact:
+    - <<: *eslint
+    - <<: *prettier
+  typescript:
+    - <<: *eslint
+    - <<: *prettier
+  json:
+    - <<: *prettier
+  yaml:
+    - <<: *prettier
+  markdown:
+    - <<: *prettier
+  ruby:
+    - <<: *rubocop
+  sql:
+    - <<: *pg_format
+  go:
+    - <<: *golangci-lint
+    - <<: *goimports
+  html:
+    - <<: *prettier
+  css:
+    - <<: *prettier
+  sh:
+    - <<: *sh-shellcheck
+    - <<: *sh-shfmt
+  eruby:
+    - <<: *eruby-erb
+  elixir:
+    - <<: *mix_credo

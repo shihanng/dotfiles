@@ -95,3 +95,7 @@ if ! command -v fzf &> /dev/null; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf
   ${HOME}/.fzf/install
 fi
+
+if ! command -v efm-langserver &> /dev/null; then
+  go install github.com/mattn/efm-langserver@latest
+fi

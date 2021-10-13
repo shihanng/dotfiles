@@ -7,5 +7,5 @@
 ## New machine
 
 ```console
-chezmoi init --apply shihanng --branch chezmoi
+sh -c "$(curl -fsLS git.io/chezmoi)" --init --apply shihanng --branch chezmoi
 ```

@@ -82,3 +82,8 @@ if ! command -v keybase &> /dev/null; then
   echo "Visit https://keybase.io/docs/the_app/install_macos to install Keybase"
   {{- end }}
 fi
+
+if ! command -v fzf &> /dev/null; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf
+  ${HOME}/.fzf/install
+fi

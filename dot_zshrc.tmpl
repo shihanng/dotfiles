@@ -61,7 +61,6 @@ zinit cdreplay -q # <- execute compdefs provided by rest of plugins
 path=(/usr/local/go/bin $path[@])
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
-path=($HOME/.fzf/bin $path[@])
 path=($HOME/dotfiles/lsp/node_modules/.bin $path[@])
 path=($HOME/dotfiles/lsp/bin $path[@])
 
@@ -145,12 +144,7 @@ bindkey "^b" select_git_checkout
 
 
 # ===================================== fzf ====================================
-{{ if eq .chezmoi.os "linux" }}
-[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
-[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
-{{ else }}
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-{{ end }}
 
 export FZF_COMPLETION_TRIGGER='..'
 export FZF_COMPLETION_OPTS='+c -x'

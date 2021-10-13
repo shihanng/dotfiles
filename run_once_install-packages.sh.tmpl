@@ -9,6 +9,14 @@ if ! command -v git &> /dev/null; then
   {{- end }}
 fi
 
+if ! command -v go &> /dev/null; then
+  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo rm -rf /usr/local/go && curl -LSs https://golang.org/dl/go1.17.2.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf-
+  {{- else if eq .chezmoi.os "darwin" }}
+  sudo rm -rf /usr/local/go && curl -LSs https://golang.org/dl/go1.17.2.darwin-arm64.tar.gz | sudo tar -C /usr/local -xzf-
+  {{- end }}
+fi
+
 if ! command -v starship &> /dev/null; then
   {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
   sh -c "$(curl -fsSL https://starship.rs/install.sh)"

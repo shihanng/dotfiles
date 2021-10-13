@@ -25,3 +25,10 @@ require "lualine".setup {
 
 require("lspkind").init({})
 require("gitsigns").setup()
+
+vim.api.nvim_set_keymap(
+    "n",
+    "<Leader>ch",
+    [[:center 80<cr>hhv0r=A<space><esc>40A=<esc>:Commentary<cr><esc>81<bar>D]],
+    {silent = true}
+)

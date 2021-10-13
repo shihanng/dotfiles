@@ -11,7 +11,7 @@ else
     print("Unsupported system for sumneko")
 end
 
-local sumneko_root_path = vim.fn.expand("~/dotfiles/lsp/lua-language-server")
+local sumneko_root_path = vim.fn.expand("~/dev/github.com/sumneko/lua-language-server")
 local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
 
 local M = {

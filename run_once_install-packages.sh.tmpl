@@ -51,3 +51,18 @@ if ! command -v ghq &> /dev/null; then
   asdf plugin add ghq
   asdf install ghq 1.2.1
 fi
+
+if ! command -v lua-language-server &> /dev/null; then
+  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt install ninja-build
+  {{- else if eq .chezmoi.os "darwin" }}
+  brew install ninja
+  {{- end }}
+  ghq get sumneko/lua-language-server
+  cd "$(ghq root)/github.com/sumneko/lua-language-server"
+  git submodule update --init --recursive
+  cd 3rd/luamake
+  ./compile/install.sh
+  cd ../..
+  ./3rd/luamake/luamake rebuild
+fi

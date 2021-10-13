@@ -25,13 +25,13 @@ if ! command -v direnv &> /dev/null; then
   {{- end }}
 fi
 
-if ! command -v ${HOME}/.asdf/bin/asdf &> /dev/null; then
+if ! command -v asdf &> /dev/null; then
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
 fi
 
 if ! command -v nvim &> /dev/null; then
-  ${HOME}/.asdf/bin/asdf plugin add neovim
-  ${HOME}/.asdf/bin/asdf install neovim 0.5.1
+  asdf plugin add neovim
+  asdf install neovim 0.5.1
 fi
 
 if ! command -v lua &> /dev/null; then
@@ -43,13 +43,13 @@ if ! command -v lua &> /dev/null; then
   {{- else if eq .chezmoi.os "darwin" }}
   xcode-select --install
   {{- end }}
-  ${HOME}/.asdf/bin/asdf plugin add lua
-  ${HOME}/.asdf/bin/asdf install lua 5.3.5
+  asdf plugin add lua
+  asdf install lua 5.3.5
 fi
 
 if ! command -v ghq &> /dev/null; then
-  ${HOME}/.asdf/bin/asdf plugin add ghq
-  ${HOME}/.asdf/bin/asdf install ghq 1.2.1
+  asdf plugin add ghq
+  asdf install ghq 1.2.1
 fi
 
 if ! command -v lua-language-server &> /dev/null; then
@@ -68,8 +68,8 @@ if ! command -v lua-language-server &> /dev/null; then
 fi
 
 if ! command -v node &> /dev/null; then
-  ${HOME}/.asdf/bin/asdf plugin add nodejs
-  ${HOME}/.asdf/bin/asdf install nodejs lts
+  asdf plugin add nodejs
+  asdf install nodejs lts
 fi
 
 if ! command -v luafmt &> /dev/null; then

@@ -66,3 +66,12 @@ if ! command -v lua-language-server &> /dev/null; then
   cd ../..
   ./3rd/luamake/luamake rebuild
 fi
+
+if ! command -v node &> /dev/null; then
+  asdf plugin add nodejs
+  asdf install nodejs lts
+fi
+
+if ! command -v lua-fmt &> /dev/null; then
+  npm install -g lua-fmt
+fi

@@ -1,0 +1,21 @@
+add_newline = false
+
+[character]
+format = "$symbol "
+vicmd_symbol = "❮"
+
+[golang]
+symbol = " "
+
+[line_break]
+disabled = true
+
+[nodejs]
+symbol = " "
+
+[aws]
+style = "bold blue"
+symbol = "🅰 "
+
+[gcloud]
+disabled = true

@@ -1,0 +1,64 @@
+[pull]
+	rebase = false
+
+[user]
+	name = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").name.value }}
+	email = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").email.value }}
+	signingkey = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").signingkey.value }}
+
+[gpg]
+	program = gpg
+
+[core]
+	excludesfile = ~/.gitignore
+	pager = delta
+	editor = nvim
+
+[color]
+	ui = auto
+
+[commit]
+	gpgsign = true
+
+[tag]
+	forceSignAnnotated = true
+
+[diff]
+	tool = vimdiff
+
+[merge]
+	tool = vimdiff
+
+[difftool]
+	prompt = false
+
+# https://stackoverflow.com/a/50042202/6549460
+[difftool "vimdiff"]
+	cmd = vim -f -d -c 'wincmd l' -c 'cd "$GIT_PREFIX"' "$LOCAL" "$REMOTE"
+
+[url "https://github.com"]
+	insteadOf = git://github.com
+
+[url "https://gitlab.com/"]
+	insteadOf = git@gitlab.com:
+
+[credential]
+	helper = store
+
+[http]
+	cookiefile = $HOME/.gitcookies
+
+[ghq]
+	root = ~/dev/
+
+[delta]
+	plus-color = "#012800"
+	minus-color = "#340001"
+	line-numbers = true
+	whitespace-error-style = 22 reverse
+
+[interactive]
+	diffFilter = delta --color-only
+
+[init]
+	defaultBranch = main

@@ -75,3 +75,13 @@ fi
 if ! command -v luafmt &> /dev/null; then
   npm install -g lua-fmt
 fi
+
+if ! command -v keybase &> /dev/null; then
+  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+  sudo apt install ./keybase_amd64.deb
+  run_keybase
+  {{- else if eq .chezmoi.os "darwin" }}
+  echo "Visit https://keybase.io/docs/the_app/install_macos to install Keybase"
+  {{- end }}
+fi

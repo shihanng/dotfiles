@@ -17,16 +17,13 @@ if ! command -v starship &> /dev/null; then
   {{- end }}
 fi
 
-if ! command -v direnv &> /dev/null; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt install direnv 
-  {{- else if eq .chezmoi.os "darwin" }}
-  brew install direnv
-  {{- end }}
-fi
-
 if ! command -v asdf &> /dev/null; then
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+fi
+
+if ! command -v direnv &> /dev/null; then
+  asdf plugin add direnv || true
+  asdf install direnv 2.28.0
 fi
 
 if ! command -v nvim &> /dev/null; then

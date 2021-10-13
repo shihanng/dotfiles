@@ -1,0 +1,34 @@
+{
+  "PATH_add": {
+    "prefix": ["path", "add"],
+    "body": "PATH_add ${1:\\$(pwd)}"
+  },
+  "use asdf": {
+    "prefix": "asdf",
+    "body": "use asdf"
+  },
+  "venv": {
+    "prefix": ["python", "venv"],
+    "body": ["export VIRTUAL_ENV=${1:.venv}", "layout python-venv"]
+  },
+  "pipenv": {
+    "prefix": ["python", "env", "pipenv"],
+    "body": "layout pipenv"
+  },
+  "poetry": {
+    "prefix": ["python", "poetry"],
+    "body": [
+      "export VIRTUAL_ENV=${1:.venv}",
+      "layout python-venv",
+      "layout poetry"
+    ]
+  },
+  "node": {
+    "prefix": ["js", "node", "nodejs"],
+    "body": ["layout node"]
+  },
+  "gotests": {
+    "prefix": ["gotests", "testify"],
+    "body": ["export GOTESTS_TEMPLATE=testify"]
+  }
+}

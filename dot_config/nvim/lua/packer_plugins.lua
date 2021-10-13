@@ -45,7 +45,13 @@ return require("packer").startup(
             requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
         }
         use "nvim-telescope/telescope-fzy-native.nvim"
-        use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons"}
+        use {
+            "kyazdani42/nvim-tree.lua",
+            requires = "kyazdani42/nvim-web-devicons",
+            config = function()
+                require "nvim-tree".setup {}
+            end
+        }
         use {"haya14busa/is.vim"}
         use {"haya14busa/vim-asterisk"}
         use {"romainl/vim-qf"}

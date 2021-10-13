@@ -112,3 +112,15 @@ if ! [ -x "$(command -v tflint)" ]; then
   asdf plugin add tflint || true
   asdf install tflint 0.32.0
 fi
+
+if ! [ -x "$(command -v tmux)" ]; then
+  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt-get install tmux
+  {{- else if eq .chezmoi.os "darwin" }}
+  brew install tmux
+  {{- end }}
+fi
+
+if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi

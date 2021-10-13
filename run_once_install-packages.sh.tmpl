@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if ! command -v git &> /dev/null; then
   {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}

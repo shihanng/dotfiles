@@ -132,3 +132,7 @@ fi
 if ! [ -x "$(command -v prettierd)" ]; then
   npm install -g @fsouza/prettierd
 fi
+
+if ! [ -x "$(command -v prettier-eslint)" ]; then
+  npm install -g prettier-eslint-cli
+fi

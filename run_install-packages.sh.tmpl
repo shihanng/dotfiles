@@ -128,3 +128,7 @@ fi
 if ! [ -x "$(command -v yarn)" ]; then
   npm install -g yarn
 fi
+
+if ! [ -x "$(command -v prettierd)" ]; then
+  npm install -g @fsouza/prettierd
+fi

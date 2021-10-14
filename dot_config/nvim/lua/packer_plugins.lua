@@ -24,6 +24,7 @@ return require("packer").startup(
         use {"hrsh7th/vim-vsnip-integ", requires = "hrsh7th/vim-vsnip"}
         use {"b3nj5m1n/kommentary"}
         use {"cohama/lexima.vim"}
+        use {"JoosepAlviste/nvim-ts-context-commentstring"}
         use {
             "folke/lsp-trouble.nvim",
             requires = "kyazdani42/nvim-web-devicons"

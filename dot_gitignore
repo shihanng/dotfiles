@@ -1,1 +1,3 @@
 .envrc
+.direnv/
+.tool-versions

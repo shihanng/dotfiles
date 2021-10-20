@@ -136,3 +136,56 @@ fi
 if ! [ -x "$(command -v prettier-eslint)" ]; then
   npm install -g prettier-eslint-cli
 fi
+
+if ! [ -x "$(command -v gh)" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  brew install gh
+  {{- end }}
+fi
+
+if ! [ -x "$(command -v jq)" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  brew install jq
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt-get install jq
+  {{- end }}
+fi
+
+if ! [ -x "$(command -v gpgconf)" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  brew install gnupg2
+  {{- end }}
+fi
+
+if ! [ -x "$(command -v pet)" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  brew install knqyf263/pet/pet
+  {{- end }}
+fi
+
+if ! [ -x "$(command -v aws)" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  asdf plugin add awscli || true
+  asdf install awscli 2.1.29
+  {{- end }}
+fi
+
+if ! [ -x "$(command -v fd)" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  brew install fd
+  {{- end }}
+fi
+
+if ! [ -x "$(command -v delta)" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  brew install git-delta
+  {{- end }}
+fi
+
+if [ "$(python --version)" != "Python 3.9.7" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  asdf plugin add python || true
+  asdf install python 3.9.7
+  {{- end }}
+fi
+

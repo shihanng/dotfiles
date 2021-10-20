@@ -2,9 +2,9 @@
 set -e
 
 if ! command -v bw &> /dev/null; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  npm install -g @bitwarden/cli
-  {{- else if eq .chezmoi.os "darwin" }}
+  {{- if eq .chezmoi.os "darwin" }}
   brew install bitwarden-cli
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  npm install -g @bitwarden/cli
   {{- end }}
 fi

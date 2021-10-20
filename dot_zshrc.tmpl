@@ -64,10 +64,10 @@ path=($HOME/bin $path[@])
 path=($HOME/dotfiles/lsp/node_modules/.bin $path[@])
 path=($HOME/dotfiles/lsp/bin $path[@])
 
-{{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-path=($(ghq root)/github.com/sumneko/lua-language-server/bin/Linux $path[@])
-{{- else if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
 path=($(ghq root)/github.com/sumneko/lua-language-server/bin/macOS $path[@])
+{{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+path=($(ghq root)/github.com/sumneko/lua-language-server/bin/Linux $path[@])
 {{- end }}
 
 export EDITOR="nvim"

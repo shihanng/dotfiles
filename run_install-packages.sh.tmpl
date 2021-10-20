@@ -2,26 +2,26 @@
 set -e
 
 if ! [ -x "$(command -v git)" ]; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt install git 
-  {{- else if eq .chezmoi.os "darwin" }}
+  {{- if eq .chezmoi.os "darwin" }}
   brew install git
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt install git 
   {{- end }}
 fi
 
 if ! [ -x "$(command -v go)" ]; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  {{- if eq .chezmoi.os "darwin" }}
+  sudo rm -rf /usr/local/go && curl -LSs https://golang.org/dl/go1.17.2.darwin-amd64.tar.gz | sudo tar -C /usr/local -xzf-
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
   sudo rm -rf /usr/local/go && curl -LSs https://golang.org/dl/go1.17.2.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf-
-  {{- else if eq .chezmoi.os "darwin" }}
-  sudo rm -rf /usr/local/go && curl -LSs https://golang.org/dl/go1.17.2.darwin-arm64.tar.gz | sudo tar -C /usr/local -xzf-
   {{- end }}
 fi
 
 if ! [ -x "$(command -v starship)" ]; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-  {{- else if eq .chezmoi.os "darwin" }}
+  {{- if eq .chezmoi.os "darwin" }}
   brew install starship
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
   {{- end }}
 fi
 
@@ -40,13 +40,13 @@ if ! [ -x "$(command -v nvim)" ]; then
 fi
 
 if ! [ -x "$(command -v lua)" ]; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  {{- if eq .chezmoi.os "darwin" }}
+  xcode-select --install
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
   sudo apt-get install \
     linux-headers-$(uname -r) \
     build-essential \
     libreadline-dev 
-  {{- else if eq .chezmoi.os "darwin" }}
-  xcode-select --install
   {{- end }}
   asdf plugin add lua || true
   asdf install lua 5.3.5
@@ -58,10 +58,10 @@ if ! [ -x "$(command -v ghq)" ]; then
 fi
 
 if ! [ -x "$(command -v lua-language-server)" ]; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt install ninja-build
-  {{- else if eq .chezmoi.os "darwin" }}
+  {{- if eq .chezmoi.os "darwin" }}
   brew install ninja
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt install ninja-build
   {{- end }}
   ghq get sumneko/lua-language-server
   cd "$(ghq root)/github.com/sumneko/lua-language-server"
@@ -82,12 +82,12 @@ if ! [ -x "$(command -v luafmt)" ]; then
 fi
 
 if ! [ -x "$(command -v keybase)" ]; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  {{- if eq .chezmoi.os "darwin" }}
+  echo "Visit https://keybase.io/docs/the_app/install_macos to install Keybase"
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
   curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
   sudo apt install ./keybase_amd64.deb
   run_keybase
-  {{- else if eq .chezmoi.os "darwin" }}
-  echo "Visit https://keybase.io/docs/the_app/install_macos to install Keybase"
   {{- end }}
 fi
 
@@ -101,10 +101,10 @@ if ! [ -x "$(command -v efm-langserver)" ]; then
 fi
 
 if ! [ -x "$(command -v rg)" ]; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt-get install ripgrep
-  {{- else if eq .chezmoi.os "darwin" }}
+  {{- if eq .chezmoi.os "darwin" }}
   brew install ripgrep
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt-get install ripgrep
   {{- end }}
 fi
 
@@ -114,10 +114,10 @@ if ! [ -x "$(command -v tflint)" ]; then
 fi
 
 if ! [ -x "$(command -v tmux)" ]; then
-  {{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt-get install tmux
-  {{- else if eq .chezmoi.os "darwin" }}
+  {{- if eq .chezmoi.os "darwin" }}
   brew install tmux
+  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+  sudo apt-get install tmux
   {{- end }}
 fi
 

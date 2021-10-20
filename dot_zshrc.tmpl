@@ -80,6 +80,9 @@ export LANG=C
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+{{- if eq .chezmoi.hostname "YA21060024" }}
+export AWS_OKTA_USER={{ (bitwarden "item" "7a870925-f61d-4567-955c-adc700706e62").login.username }}
+{{- end }}
 
 setopt EXTENDED_HISTORY
 setopt HIST_BEEP

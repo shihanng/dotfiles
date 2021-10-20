@@ -140,6 +140,8 @@ fi
 if ! [ -x "$(command -v gh)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   brew install gh
+  {{- else }}
+  echo "python in ubuntu not supported"
   {{- end }}
 fi
 
@@ -154,12 +156,16 @@ fi
 if ! [ -x "$(command -v gpgconf)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   brew install gnupg2
+  {{- else }}
+  echo "python in ubuntu not supported"
   {{- end }}
 fi
 
 if ! [ -x "$(command -v pet)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   brew install knqyf263/pet/pet
+  {{- else }}
+  echo "python in ubuntu not supported"
   {{- end }}
 fi
 
@@ -167,25 +173,28 @@ if ! [ -x "$(command -v aws)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   asdf plugin add awscli || true
   asdf install awscli 2.1.29
+  {{- else }}
+  echo "python in ubuntu not supported"
   {{- end }}
 fi
 
 if ! [ -x "$(command -v fd)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   brew install fd
+  {{- else }}
+  echo "python in ubuntu not supported"
   {{- end }}
 fi
 
 if ! [ -x "$(command -v delta)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   brew install git-delta
+  {{- else }}
+  echo "python in ubuntu not supported"
   {{- end }}
 fi
 
 if [ "$(python --version)" != "Python 3.9.7" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
   asdf plugin add python || true
   asdf install python 3.9.7
-  {{- end }}
 fi
-

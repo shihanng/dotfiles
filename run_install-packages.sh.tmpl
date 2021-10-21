@@ -202,3 +202,11 @@ fi
 if ! [ -x "$(command -v gopls)" ]; then
   go install golang.org/x/tools/gopls@latest
 fi
+
+if ! [ -x "$(command -v golangci-lint)" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  brew install golangci-lint
+  {{- else }}
+  echo "non-darwin not supported"
+  {{- end }}
+fi

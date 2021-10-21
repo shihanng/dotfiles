@@ -198,3 +198,7 @@ if [ "$(python --version)" != "Python 3.9.7" ]; then
   asdf plugin add python || true
   asdf install python 3.9.7
 fi
+
+if ! [ -x "$(command -v gopls)" ]; then
+  go install golang.org/x/tools/gopls@latest
+fi

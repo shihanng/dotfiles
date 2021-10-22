@@ -19,9 +19,14 @@ return require("packer").startup(
 
         -- Coding
         use {"neovim/nvim-lspconfig"}
-        use {"hrsh7th/nvim-compe"}
-        use {"hrsh7th/vim-vsnip", requires = "hrsh7th/nvim-compe"}
-        use {"hrsh7th/vim-vsnip-integ", requires = "hrsh7th/vim-vsnip"}
+        use {"hrsh7th/cmp-nvim-lsp"}
+        use {"hrsh7th/cmp-buffer"}
+        use {"hrsh7th/cmp-path"}
+        use {"hrsh7th/nvim-cmp"}
+        use {"hrsh7th/cmp-vsnip"}
+        use {"hrsh7th/vim-vsnip"}
+        use {"hrsh7th/cmp-nvim-lua"}
+
         use {"b3nj5m1n/kommentary"}
         use {"cohama/lexima.vim"}
         use {"JoosepAlviste/nvim-ts-context-commentstring"}
@@ -89,7 +94,7 @@ return require("packer").startup(
 
         -- SQL
         use {"nanotee/sqls.nvim"}
-        
+
         -- chezmoi
         use {"alker0/chezmoi.vim"}
     end

@@ -89,5 +89,8 @@ return require("packer").startup(
 
         -- SQL
         use {"nanotee/sqls.nvim"}
+        
+        -- chezmoi
+        use {"alker0/chezmoi.vim"}
     end
 )

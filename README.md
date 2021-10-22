@@ -1,17 +1,21 @@
-## macOS
+## Prerequisites
 
-- Homebrew
-
-## Linux (Ubuntu)
-
-## New machine
+### Common
 
 Make sure user is using ZSH
 
 ```console
-sudo usermod --shell /bin/bash <username>
+sudo usermod --shell /bin/zsh <username>
 ```
 
 ```console
-sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply shihanng --branch chezmoi
+sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply shihanng
 ```
+
+### macOS
+
+Install [Homebrew](https://brew.sh/).
+
+### Linux (Ubuntu, Elementary OS)
+
+Nothing to do.

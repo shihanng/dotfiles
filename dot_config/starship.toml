@@ -15,7 +15,7 @@ symbol = " "
 
 [aws]
 style = "bold blue"
-symbol = "🅰 "
+symbol = " "
 
 [gcloud]
 disabled = true

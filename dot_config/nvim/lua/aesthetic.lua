@@ -24,7 +24,11 @@ if vim.fn.has("termguicolors") == 1 then
 end
 
 require "lualine".setup {
-    options = {theme = "nord"}
+    options = {
+        theme = "nord",
+        section_separators = {left = "", right = ""},
+        component_separators = {left = "", right = ""}
+    },
 }
 
 require("lspkind").init({})

@@ -62,6 +62,12 @@ return require("packer").startup(
         use {"haya14busa/vim-asterisk"}
         use {"romainl/vim-qf"}
         use {"yssl/QFEnter"}
+        use {
+            "luukvbaal/stabilize.nvim",
+            config = function()
+                require("stabilize").setup()
+            end
+        }
 
         -- Git
         use {"tpope/vim-fugitive"}

@@ -210,3 +210,8 @@ if ! [ -x "$(command -v golangci-lint)" ]; then
   echo "non-darwin not supported"
   {{- end }}
 fi
+
+if [[ "$(ruby --version)" != *"3.0.2"* ]]; then
+  asdf plugin add ruby || true
+  asdf install ruby 3.0.2
+fi

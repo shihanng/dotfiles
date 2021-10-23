@@ -215,3 +215,8 @@ if [[ "$(ruby --version)" != *"3.0.2"* ]]; then
   asdf plugin add ruby || true
   asdf install ruby 3.0.2
 fi
+
+if ! [ -x "$(command -v terraform-ls)" ]; then
+  asdf plugin add terraform-ls || true
+  asdf install terraform-ls 0.23.0
+fi

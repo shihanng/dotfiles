@@ -29,7 +29,7 @@ vim.api.nvim_set_keymap(
     {noremap = true}
 )
 vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-n>", ":lua require('explore').find_toggle()<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-[>", ":lua require('explore').find_toggle()<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", {noremap = true})
 
 vim.g.nvim_tree_quit_on_open = 1

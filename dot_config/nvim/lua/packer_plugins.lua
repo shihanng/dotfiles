@@ -44,6 +44,7 @@ return require("packer").startup(
         use {"christoomey/vim-tmux-runner"}
         use {"jeffkreeftmeijer/vim-numbertoggle"}
         use {"tpope/vim-repeat"}
+        use {"mg979/vim-visual-multi"}
 
         -- Explore
         use {

@@ -29,10 +29,11 @@ vim.api.nvim_set_keymap(
     {noremap = true}
 )
 vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-n>", ":lua require('explore').open_tree()<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-n>", ":lua require('explore').find_toggle()<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", {noremap = true})
 
 vim.g.nvim_tree_quit_on_open = 1
+vim.g.nvim_tree_highlight_opened_files = 1
 
 vim.g["asterisk#keeppos"] = 1
 
@@ -67,6 +68,14 @@ vim.api.nvim_set_keymap("n", "gR", "<cmd>LspTrouble lsp_references<cr>", {silent
 
 vim.api.nvim_set_keymap("n", "<F5>", [[:UndotreeToggle<CR>]], {noremap = true})
 
+require "nvim-tree".setup {
+    hijack_cursor = true,
+    update_focused_file = {
+        enable = true,
+        ignore_list = {}
+    }
+}
+
 -- Fallback to find_files if not in git directory.
 -- This does not work as expected because pcall return true.
 -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#falling-back-to-find_files-if-git_files-cant-find-a-git-directory
@@ -80,11 +89,16 @@ M.project_files = function()
     end
 end
 
-M.open_tree = function()
-    local nt = require "nvim-tree"
-    local ok = pcall(nt.find_file, true)
-    if not ok then
-        nt.open()
+M.find_toggle = function()
+    local view = require "nvim-tree.view"
+    if view.win_open() then
+        view.close()
+    else
+        vim.cmd("NvimTreeFindFile")
+
+        if not view.win_open() then
+            view.open()
+        end
     end
 end
 

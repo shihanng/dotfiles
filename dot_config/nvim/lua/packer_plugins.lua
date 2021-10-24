@@ -10,6 +10,7 @@ return require("packer").startup(
     function(use)
         use "wbthomason/packer.nvim"
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+        use {"p00f/nvim-ts-rainbow"}
 
         -- Aesthetic
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true, requires = "nvim-treesitter"}

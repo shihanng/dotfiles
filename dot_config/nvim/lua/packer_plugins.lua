@@ -16,6 +16,7 @@ return require("packer").startup(
         use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
         use {"onsails/lspkind-nvim"}
         use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
+        use {"tversteeg/registers.nvim"}
 
         -- Coding
         use {"neovim/nvim-lspconfig"}

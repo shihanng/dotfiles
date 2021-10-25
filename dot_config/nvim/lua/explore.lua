@@ -68,6 +68,8 @@ vim.api.nvim_set_keymap("n", "gR", "<cmd>LspTrouble lsp_references<cr>", {silent
 
 vim.api.nvim_set_keymap("n", "<F5>", [[:UndotreeToggle<CR>]], {noremap = true})
 
+vim.api.nvim_set_var("nvim_tree_disable_window_picker", 0)
+
 require "nvim-tree".setup {
     hijack_cursor = true,
     update_focused_file = {
@@ -75,8 +77,6 @@ require "nvim-tree".setup {
         ignore_list = {}
     }
 }
-
-vim.api.nvim_set_var("nvim_tree_disable_window_picker", 1)
 
 -- Fallback to find_files if not in git directory.
 -- This does not work as expected because pcall return true.

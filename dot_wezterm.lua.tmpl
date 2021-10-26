@@ -8,6 +8,10 @@ return {
     use_ime = true,
 {{- end }}
     font = wezterm.font("FiraCode Nerd Font Mono"),
+{{- if eq .chezmoi.hostname "desktop" }}
+    font_size = 12,
+{{- else }}
     font_size = 17,
+{{- end }}
     hide_tab_bar_if_only_one_tab = true
 }

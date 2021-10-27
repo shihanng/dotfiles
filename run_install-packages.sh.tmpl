@@ -155,7 +155,7 @@ fi
 
 if ! [ -x "$(command -v gpgconf)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
-  brew install gnupg2
+  brew install gnupg
   {{- else }}
   echo "python in ubuntu not supported"
   {{- end }}

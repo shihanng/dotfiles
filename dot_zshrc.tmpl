@@ -208,10 +208,6 @@ eval "$(starship init zsh)"
 eval "$(luarocks path --bin)"
 
 # Using GPG for SSH
-if [[ "$(uname 2> /dev/null)" == "Darwin" ]]; then
-    path=("/usr/local/opt/gnupg@2.2/bin" $path[@])
-fi
-
 SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK

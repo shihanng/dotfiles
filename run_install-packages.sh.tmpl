@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -eux
 
 if ! [ -x "$(command -v git)" ]; then
   {{- if eq .chezmoi.os "darwin" }}

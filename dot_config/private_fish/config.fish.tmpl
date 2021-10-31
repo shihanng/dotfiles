@@ -1,0 +1,60 @@
+set fish_greeting "🐟"
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+function fish_user_key_bindings
+  bind -M insert \cs 'pet-select'
+end
+
+source ~/.asdf/asdf.fish
+
+asdf exec direnv hook fish | source
+function direnv
+  asdf exec direnv $argv
+end
+
+starship init fish | source
+
+luarocks path --bin | source
+
+fzf_configure_bindings --directory=\cf
+
+fish_vi_key_bindings
+set -g fish_escape_delay_ms 30
+
+fish_add_path /usr/local/go/bin
+fish_add_path $HOME/go/bin
+fish_add_path $HOME/bin
+fish_add_path $HOME/.local/bin
+
+{{- if eq .chezmoi.os "darwin" }}
+fish_add_path eval (ghq root)/github.com/sumneko/lua-language-server/bin/macOS
+{{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+fish_add_path (ghq root)/github.com/sumneko/lua-language-server/bin/Linux
+{{- end }}
+fish_add_path $HOME/.serverless/bin
+
+set -x EDITOR nvim
+set -x VISUAL nvim
+set -x CLICOLOR 1
+set -x TERM xterm-256color
+set -x LESS -XRMsIg
+set -x LANG C
+set -x LC_CTYPE en_US.UTF-8
+set -x LC_ALL en_US.UTF-8
+set -x RIPGREP_CONFIG_PATH $HOME/.ripgreprc
+{{- if eq .chezmoi.hostname "YA21060024" }}
+set -x AWS_OKTA_USER {{ (bitwarden "item" "7a870925-f61d-4567-955c-adc700706e62").login.username }}
+{{- end }}
+set -x GPG_TTY (tty)
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+
+alias vim="nvim"
+alias vi="nvim"
+alias vimdiff="nvim -d"
+alias gst="git status"
+alias gc="git commit -v"
+
+gpgconf --launch gpg-agent

@@ -2,10 +2,11 @@
 
 ### Common
 
-Make sure user is using ZSH
+Make sure user is using Fish.
+And install [Fisher](https://github.com/jorgebucaran/fisher)
 
 ```console
-sudo usermod --shell /bin/zsh <username>
+sudo usermod --shell /usr/bin/fish <username>
 ```
 
 ```console

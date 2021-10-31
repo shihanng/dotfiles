@@ -5,3 +5,12 @@ end
 function fish_user_key_bindings
   bind \cs 'pet-select'
 end
+
+asdf exec direnv hook fish | source
+function direnv
+  asdf exec direnv $argv
+end
+
+starship init fish | source
+
+luarocks path --bin | source

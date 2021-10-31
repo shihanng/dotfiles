@@ -6,6 +6,8 @@ function fish_user_key_bindings
   bind \cs 'pet-select'
 end
 
+source ~/.asdf/asdf.fish
+
 asdf exec direnv hook fish | source
 function direnv
   asdf exec direnv $argv

@@ -1,3 +1,5 @@
+vim.opt.shell = "/bin/bash"    
+
 require "basic"
 require "packer_plugins"
 require "motion"

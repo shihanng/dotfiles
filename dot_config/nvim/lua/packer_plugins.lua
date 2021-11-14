@@ -71,6 +71,7 @@ return require("packer").startup(
 
         -- Git
         use {"tpope/vim-fugitive"}
+        use {"tpope/vim-rhubarb"}
 
         -- Direnv
         use {"direnv/direnv.vim"}

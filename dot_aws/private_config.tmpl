@@ -3,4 +3,4 @@ region=ap-northeast-1
 output=json
 
 [profile {{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").aws_profile_ths.value }}]
-mfa_serial = {{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").aws_profile_ths_mfas.value }}
+mfa_serial={{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").aws_profile_ths_mfas.value }}

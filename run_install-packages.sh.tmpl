@@ -73,7 +73,7 @@ if ! [ -x "$(command -v lua-language-server)" ]; then
   ./3rd/luamake/luamake rebuild
 fi
 
-if ! [ -x "$(command -v node)" ]; then
+if [ "$(node --version)" != "v16.13.0" ]; then
   asdf plugin add nodejs || true
   asdf install nodejs lts
 fi

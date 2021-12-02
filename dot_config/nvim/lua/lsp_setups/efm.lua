@@ -5,7 +5,6 @@ local M = {
         "css",
         "elixir",
         "eruby",
-        "go",
         "html",
         "javascript",
         "json",

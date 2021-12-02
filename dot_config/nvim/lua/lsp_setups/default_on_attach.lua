@@ -1,7 +1,9 @@
-local format_async = function(err, _, result, _, bufnr)
+local format_async = function(err, result, ctx)
     if err ~= nil or result == nil then
         return
     end
+
+    local bufnr = ctx.bufnr
     if not vim.api.nvim_buf_get_option(bufnr, "modified") then
         local view = vim.fn.winsaveview()
         vim.lsp.util.apply_text_edits(result, bufnr)
@@ -30,15 +32,7 @@ local function default_on_attach(client, bufnr)
 
     if client.resolved_capabilities.document_formatting then
         buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>", opts)
-        vim.api.nvim_exec(
-            [[
-augroup lsp_format
-  autocmd! * <buffer>
-  autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync({}, 10000)
-augroup END
-            ]],
-            true
-        )
+        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
     if client.resolved_capabilities.document_range_formatting then
         buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)

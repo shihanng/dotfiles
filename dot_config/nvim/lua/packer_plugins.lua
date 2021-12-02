@@ -28,6 +28,18 @@ return require("packer").startup(
         use {"hrsh7th/cmp-vsnip"}
         use {"hrsh7th/vim-vsnip"}
         use {"hrsh7th/cmp-nvim-lua"}
+        use(
+            {
+                "jose-elias-alvarez/null-ls.nvim",
+                config = function()
+                    require("null-ls").config(
+                        require("lsp_setups/nullls")
+                    )
+                    require("lspconfig")["null-ls"].setup(require("lsp_setups/default_setup"))
+                end,
+                requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
+            }
+        )
 
         use {"b3nj5m1n/kommentary"}
         use {"cohama/lexima.vim"}

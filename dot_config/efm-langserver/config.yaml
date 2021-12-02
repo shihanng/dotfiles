@@ -49,19 +49,6 @@ tools:
     format-command: "rubocop  --stdin FILE -a -f q -o /dev/null | sed '1 d'"
     format-stdin: true
 
-  golangci-lint: &golangci-lint
-    lint-command: "golangci-lint run --out-format line-number --print-issued-lines=false ."
-    lint-ignore-exit-code: true
-    lint-stdin: false
-    lint-formats:
-      - "%f:%l:%c: %m"
-    root-markers:
-      - go.mod
-      - go.sum
-
-  goimports: &goimports
-    format-command: "goimports"
-
   mix_credo: &mix_credo
     lint-command: "MIX_ENV=test mix credo suggest --format=flycheck --read-from-stdin ${INPUT}"
     lint-stdin: true
@@ -99,9 +86,6 @@ languages:
     - <<: *rubocop
   sql:
     - <<: *pg_format
-  go:
-    - <<: *golangci-lint
-    - <<: *goimports
   html:
     - <<: *prettier
   css:

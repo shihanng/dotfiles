@@ -2,20 +2,12 @@ local on_attach = require("lsp_setups/default_on_attach")
 
 local M = {
     filetypes = {
-        "css",
         "elixir",
         "eruby",
-        "html",
-        "javascript",
-        "json",
         "lua",
-        "markdown",
         "ruby",
         "sh",
-        "sql",
-        "typescript",
-        "typescriptreact",
-        "yaml"
+        "sql"
     },
     init_options = {
         documentFormatting = true,

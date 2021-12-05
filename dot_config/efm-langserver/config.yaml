@@ -13,10 +13,6 @@ tools:
     format-command: "luafmt --stdin -w stdout"
     format-stdin: true
 
-  prettier: &prettier
-    format-command: "prettierd ${INPUT}"
-    format-stdin: true
-
   sh-shellcheck: &sh-shellcheck
     lint-command: "shellcheck -f gcc -x"
     lint-source: "shellcheck"
@@ -27,13 +23,6 @@ tools:
 
   sh-shfmt: &sh-shfmt
     format-command: "shfmt -ci -s -bn"
-    format-stdin: true
-
-  eslint: &eslint
-    lint-command: "eslint -f unix --stdin"
-    lint-ignore-exit-code: true
-    lint-stdin: true
-    format-command: "prettier-eslint --stdin --stdin-filepath ${INPUT}"
     format-stdin: true
 
   pg_format: &pg_format
@@ -67,29 +56,10 @@ tools:
 languages:
   lua:
     - <<: *lua-luafmt
-  javascript:
-    - <<: *eslint
-    - <<: *prettier
-  typescriptreact:
-    - <<: *eslint
-    - <<: *prettier
-  typescript:
-    - <<: *eslint
-    - <<: *prettier
-  json:
-    - <<: *prettier
-  yaml:
-    - <<: *prettier
-  markdown:
-    - <<: *prettier
   ruby:
     - <<: *rubocop
   sql:
     - <<: *pg_format
-  html:
-    - <<: *prettier
-  css:
-    - <<: *prettier
   sh:
     - <<: *sh-shellcheck
     - <<: *sh-shfmt

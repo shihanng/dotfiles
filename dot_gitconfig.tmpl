@@ -6,6 +6,9 @@
 	email = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").email.value }}
 	signingkey = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").signingkey.value }}
 
+[includeIf "gitdir:dev/{{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").work_github_host.value }}/"]
+    path = ~/.gitconfig.work
+
 [gpg]
 	program = gpg
 

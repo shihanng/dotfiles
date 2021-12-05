@@ -239,3 +239,11 @@ CHEZMOI_COMPLETIONS="${HOME}/.config/fish/completions/chezmoi.fish"
 if [ ! -f "${CHEZMOI_COMPLETIONS}" ]; then
   chezmoi completion fish --output="${CHEZMOI_COMPLETIONS}"
 fi
+
+if ! [ -x "$(command -v tmuxinator)" ]; then
+  {{- if eq .chezmoi.os "darwin" }}
+  brew install tmuxinator
+  {{- else }}
+  echo "tmuxinator in non-darwin not supported"
+  {{- end }}
+fi

@@ -234,3 +234,8 @@ if ! [ -x "$(command -v pgcli)" ]; then
   echo "non-darwin not supported"
   {{- end }}
 fi
+
+CHEZMOI_COMPLETIONS="${HOME}/.config/fish/completions/chezmoi.fish"
+if [ ! -f "${CHEZMOI_COMPLETIONS}" ]; then
+  chezmoi completion fish --output="${CHEZMOI_COMPLETIONS}"
+fi

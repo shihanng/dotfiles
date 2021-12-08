@@ -1,5 +1,7 @@
 source $HOME/.zplug/init.zsh
 source $HOME/.asdf/asdf.sh
+source $HOME/.local/share/lscolors.sh
+
 eval "$(asdf exec direnv hook zsh)"
 direnv() { asdf exec direnv "$@"; }
 eval "$(starship init zsh)"
@@ -31,6 +33,8 @@ export AWS_OKTA_USER={{ (bitwarden "item" "7a870925-f61d-4567-955c-adc700706e62"
 {{- end }}
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+alias ls='ls --color=auto'
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 

@@ -35,6 +35,9 @@ export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 alias ls='ls --color=auto'
+alias vim="nvim"
+alias vi="nvim"
+alias vimdiff="nvim -d"
 
 zplug "wfxr/forgit"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2

@@ -31,6 +31,7 @@ fish_add_path $HOME/.local/bin
 
 {{- if eq .chezmoi.os "darwin" }}
 fish_add_path eval (ghq root)/github.com/sumneko/lua-language-server/bin/macOS
+fish_add_path /usr/local/opt/coreutils/libexec/gnubin
 {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
 fish_add_path (ghq root)/github.com/sumneko/lua-language-server/bin/Linux
 {{- end }}

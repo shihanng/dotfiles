@@ -1,7 +1,6 @@
 source $HOME/.zplug/init.zsh
 source $HOME/.asdf/asdf.sh
 source $HOME/.local/share/lscolors.sh
-source $HOME/.fzf.zsh
 
 eval "$(asdf exec direnv hook zsh)"
 direnv() { asdf exec direnv "$@"; }
@@ -44,7 +43,7 @@ alias vimdiff="nvim -d"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-zplug "Aloxaf/fzf-tab"
+zplug "Aloxaf/fzf-tab", defer:2
 zplug "b4b4r07/enhancd"
 zplug "jeffreytse/zsh-vi-mode"
 zplug "lib/functions", from:oh-my-zsh
@@ -55,12 +54,17 @@ zplug "wfxr/forgit"
 zplug "zsh-users/zaw"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
 
 zplug "~/.zsh", from:local
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+# https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
+function zvm_after_init() {
+  source $HOME/.fzf.zsh
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+  bindkey "^b" select_git_checkout
+}
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

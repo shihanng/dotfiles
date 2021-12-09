@@ -68,7 +68,7 @@ vim.api.nvim_set_keymap("n", "gR", "<cmd>LspTrouble lsp_references<cr>", {silent
 
 vim.api.nvim_set_keymap("n", "<F5>", [[:UndotreeToggle<CR>]], {noremap = true})
 
-vim.api.nvim_set_var("nvim_tree_disable_window_picker", 0)
+vim.api.nvim_set_var("nvim_tree_disable_window_picker", 1)
 
 require "nvim-tree".setup {
     hijack_cursor = true,

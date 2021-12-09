@@ -65,11 +65,11 @@
 
 [credential "https://github.com"]
     helper =
-    helper = !/usr/local/bin/gh auth git-credential
+    helper = !gh auth git-credential
 
 [credential "https://{{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").work_github_host.value }}"]
     helper =
-    helper = !/usr/local/bin/gh auth git-credential
+    helper = !gh auth git-credential
 
 [credential]
     helper = store

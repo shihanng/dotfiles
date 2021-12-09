@@ -41,6 +41,8 @@ alias vi="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
 zplug "Aloxaf/fzf-tab"
 zplug "b4b4r07/enhancd"
 zplug "jeffreytse/zsh-vi-mode"
@@ -70,4 +72,4 @@ fi
 gpgconf --launch gpg-agent
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load

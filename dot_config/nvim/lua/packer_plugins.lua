@@ -31,12 +31,6 @@ return require("packer").startup(
         use(
             {
                 "jose-elias-alvarez/null-ls.nvim",
-                config = function()
-                    require("null-ls").config(
-                        require("lsp_setups/nullls")
-                    )
-                    require("lspconfig")["null-ls"].setup(require("lsp_setups/default_setup"))
-                end,
                 requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
             }
         )

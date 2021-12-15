@@ -1,6 +1,7 @@
 local lsp = require("lspconfig")
 
 local default_setup = require("lsp_setups/default_setup")
+local null_ls = require("null-ls")
 
 lsp.bashls.setup(default_setup)
 lsp.cssls.setup(require("lsp_setups/cssls"))
@@ -16,3 +17,4 @@ lsp.sumneko_lua.setup(require("lsp_setups/sumneko_lua"))
 lsp.terraformls.setup(require("lsp_setups/terraformls"))
 lsp.tflint.setup(default_setup)
 lsp.tsserver.setup(require("lsp_setups/tsserver"))
+null_ls.setup(require("lsp_setups/nullls"))

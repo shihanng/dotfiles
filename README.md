@@ -2,11 +2,11 @@
 
 ### Common
 
-Make sure user is using Fish.
-And install [Fisher](https://github.com/jorgebucaran/fisher)
+Make sure user is using Zsh.
+And install [zplug](https://github.com/zplug/zplug)
 
 ```console
-sudo usermod --shell /usr/bin/fish <username>
+sudo usermod --shell /usr/bin/zsh <username>
 ```
 
 ```console

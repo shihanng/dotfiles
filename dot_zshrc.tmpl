@@ -1,0 +1,82 @@
+source $HOME/.zplug/init.zsh
+source $HOME/.asdf/asdf.sh
+source $HOME/.local/share/lscolors.sh
+
+eval "$(asdf exec direnv hook zsh)"
+direnv() { asdf exec direnv "$@"; }
+eval "$(starship init zsh)"
+eval "$(luarocks path --bin)"  
+
+path=(/usr/local/go/bin $path[@])
+path=($HOME/go/bin $path[@])
+path=($HOME/bin $path[@])
+path=($HOME/.local/bin $path[@])
+{{- if eq .chezmoi.os "darwin" }}
+path=($(ghq root)/github.com/sumneko/lua-language-server/bin/macOS $path[@])
+path=(/usr/local/opt/coreutils/libexec/gnubin $path[@])
+{{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+path=($(ghq root)/github.com/sumneko/lua-language-server/bin/Linux $path[@])
+{{- end }}
+
+fpath=(${ASDF_DIR}/completions $fpath)
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+export CLICOLOR=1
+export TERM="xterm-256color"
+export LESS='-XRMsIg'
+export LANG=C
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+{{- if eq .chezmoi.hostname "YA21060024" }}
+export AWS_OKTA_USER={{ (bitwarden "item" "7a870925-f61d-4567-955c-adc700706e62").login.username }}
+{{- end }}
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+alias ls='ls --color=auto'
+alias open='open_command'
+alias tmux='direnv exec / tmux' # https://github.com/direnv/direnv/wiki/Tmux
+alias vi="nvim"
+alias vim="nvim"
+alias vimdiff="nvim -d"
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+zplug "Aloxaf/fzf-tab", defer:2
+zplug "b4b4r07/enhancd"
+zplug "jeffreytse/zsh-vi-mode"
+zplug "lib/functions", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "mollifier/cd-gitroot"
+zplug "plugins/git", from:oh-my-zsh
+zplug "wfxr/forgit", defer:2 # Using defer:2 so that glo works for forgit instead of plugins/git
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
+
+zplug "~/.zsh", from:local
+
+# https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
+function zvm_after_init() {
+  source $HOME/.fzf.zsh
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+  bindkey "^b" select_git_checkout
+  bindkey '^s' pet-select
+  bindkey '^]' fzf-src
+}
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+gpgconf --launch gpg-agent
+
+# Then, source plugins and add commands to $PATH
+zplug load

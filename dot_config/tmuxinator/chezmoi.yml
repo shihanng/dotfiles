@@ -47,4 +47,4 @@ windows:
   - apply:
       root: ~/
       panes:
-        - eval "set -x BW_SESSION (bw unlock --raw)"
+        - eval "export BW_SESSION=$(bw unlock --raw)"

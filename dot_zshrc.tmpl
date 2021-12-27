@@ -68,6 +68,9 @@ function zvm_after_init() {
   bindkey '^]' fzf-src
 }
 
+# enhancd
+export ENHANCD_DOT_ARG="..."
+
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "

@@ -78,10 +78,6 @@ if [ "$(node --version)" != "v16.13.0" ]; then
   asdf install nodejs lts
 fi
 
-if ! [ -x "$(command -v luafmt)" ]; then
-  npm install -g lua-fmt
-fi
-
 if ! [ -x "$(command -v keybase)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   echo "Visit https://keybase.io/docs/the_app/install_macos to install Keybase"

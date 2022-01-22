@@ -9,10 +9,6 @@ tools:
     format-command: htmlbeautifier
     format-stdin: true
 
-  lua-luafmt: &lua-luafmt
-    format-command: "luafmt --stdin -w stdout"
-    format-stdin: true
-
   sh-shellcheck: &sh-shellcheck
     lint-command: "shellcheck -f gcc -x"
     lint-source: "shellcheck"
@@ -54,8 +50,6 @@ tools:
       - mix.exs
 
 languages:
-  lua:
-    - <<: *lua-luafmt
   ruby:
     - <<: *rubocop
   sql:

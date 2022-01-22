@@ -110,5 +110,9 @@ return require("packer").startup(
 
         -- chezmoi
         use {"alker0/chezmoi.vim"}
+
+        -- vim-autosource
+        -- Need this plugin to setup local settings per project.
+        use "jenterkin/vim-autosource"
     end
 )

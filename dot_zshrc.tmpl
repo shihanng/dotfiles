@@ -1,11 +1,6 @@
 source $HOME/.zplug/init.zsh
 source $HOME/.asdf/asdf.sh
 
-eval "$(asdf exec direnv hook zsh)"
-direnv() { asdf exec direnv "$@"; }
-eval "$(starship init zsh)"
-eval "$(luarocks path --bin)"  
-
 path=(/usr/local/go/bin $path[@])
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
@@ -18,6 +13,11 @@ path=($(ghq root)/github.com/sumneko/lua-language-server/bin/Linux $path[@])
 {{- end }}
 
 fpath=(${ASDF_DIR}/completions $fpath)
+
+eval "$(asdf exec direnv hook zsh)"
+direnv() { asdf exec direnv "$@"; }
+eval "$(starship init zsh)"
+eval "$(luarocks path --bin)"  
 
 export EDITOR="nvim"
 export VISUAL="nvim"

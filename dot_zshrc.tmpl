@@ -5,9 +5,10 @@ path=(/usr/local/go/bin $path[@])
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
 path=($HOME/.local/bin $path[@])
+path=(/opt/homebrew/bin $path[@])
 {{- if eq .chezmoi.os "darwin" }}
 path=($(ghq root)/github.com/sumneko/lua-language-server/bin/macOS $path[@])
-path=(/usr/local/opt/coreutils/libexec/gnubin $path[@])
+path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
 {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
 path=($(ghq root)/github.com/sumneko/lua-language-server/bin/Linux $path[@])
 {{- end }}

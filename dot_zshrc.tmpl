@@ -1,6 +1,5 @@
 source $HOME/.zplug/init.zsh
 source $HOME/.asdf/asdf.sh
-source $HOME/.local/share/lscolors.sh
 
 eval "$(asdf exec direnv hook zsh)"
 direnv() { asdf exec direnv "$@"; }
@@ -55,6 +54,7 @@ zplug "wfxr/forgit", defer:2 # Using defer:2 so that glo works for forgit instea
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:3
+zplug "trapd00r/LS_COLORS", use:lscolors.sh
 
 zplug "~/.zsh", from:local
 

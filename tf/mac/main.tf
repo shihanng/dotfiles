@@ -1,5 +1,12 @@
 locals {
-  apps = ["git", "starship", "ripgrep", "tmux", "jq"]
+  apps = [
+    "git",
+    "git-crypt",
+    "jq",
+    "ripgrep",
+    "starship",
+    "tmux",
+  ]
 }
 
 resource "installer_brew" "this" {

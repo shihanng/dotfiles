@@ -1,27 +1,11 @@
 #!/bin/bash
 set -eux
 
-if ! [ -x "$(command -v git)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  brew install git
-  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt install git 
-  {{- end }}
-fi
-
 if ! [ -x "$(command -v go)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   sudo rm -rf /usr/local/go && curl -LSs https://golang.org/dl/go1.17.2.darwin-amd64.tar.gz | sudo tar -C /usr/local -xzf-
   {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
   sudo rm -rf /usr/local/go && curl -LSs https://golang.org/dl/go1.17.2.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf-
-  {{- end }}
-fi
-
-if ! [ -x "$(command -v starship)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  brew install starship
-  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
   {{- end }}
 fi
 
@@ -97,25 +81,9 @@ if ! [ -x "$(command -v efm-langserver)" ]; then
   go install github.com/mattn/efm-langserver@latest
 fi
 
-if ! [ -x "$(command -v rg)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  brew install ripgrep
-  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt-get install ripgrep
-  {{- end }}
-fi
-
 if ! [ -x "$(command -v tflint)" ]; then
   asdf plugin add tflint || true
   asdf install tflint 0.32.0
-fi
-
-if ! [ -x "$(command -v tmux)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  brew install tmux
-  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt-get install tmux
-  {{- end }}
 fi
 
 if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then
@@ -139,14 +107,6 @@ if ! [ -x "$(command -v gh)" ]; then
   brew install gh
   {{- else }}
   echo "python in ubuntu not supported"
-  {{- end }}
-fi
-
-if ! [ -x "$(command -v jq)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  brew install jq
-  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt-get install jq
   {{- end }}
 fi
 

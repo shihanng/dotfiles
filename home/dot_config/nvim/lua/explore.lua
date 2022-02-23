@@ -29,7 +29,7 @@ vim.api.nvim_set_keymap(
     {noremap = true}
 )
 vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-n>", ":lua require('explore').find_toggle()<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", {noremap = true})
 
 vim.g.nvim_tree_quit_on_open = 1
@@ -88,19 +88,6 @@ M.project_files = function()
     local ok = pcall(require "telescope.builtin".git_files, opts)
     if not ok then
         require "telescope.builtin".find_files(opts)
-    end
-end
-
-M.find_toggle = function()
-    local view = require "nvim-tree.view"
-    if view.win_open() then
-        view.close()
-    else
-        vim.cmd("NvimTreeFindFile")
-
-        if not view.win_open() then
-            view.open()
-        end
     end
 end
 

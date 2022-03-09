@@ -1,6 +1,7 @@
 vim.api.nvim_set_keymap("n", "<leader>gs", [[:G<CR>]], {})
 vim.api.nvim_set_keymap("n", "<leader>g]", [[:diffget //3<CR>]], {})
 vim.api.nvim_set_keymap("n", "<leader>g[", [[:diffget //2<CR>]], {})
+vim.api.nvim_set_keymap("n", "<leader>gd", [[:Gvdiff!<CR>]], {})
 
 vim.api.nvim_set_var("github_enterprise_urls", {"{{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").github_enterprise_urls.value }}"})
 vim.cmd([[ command! -nargs=1 Browse silent exec '!open "<args>"' ]])

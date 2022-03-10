@@ -56,6 +56,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:3
 zplug "trapd00r/LS_COLORS", use:lscolors.sh
+zplug "marlonrichert/zsh-hist"
 
 zplug "~/.zsh", from:local
 
@@ -68,6 +69,10 @@ function zvm_after_init() {
   bindkey '^s' pet-select
   bindkey '^]' fzf-src
 }
+
+# Setting for zsh-hist formatting
+# See https://github.com/marlonrichert/zsh-hist#uniform-code-formatting
+unsetopt HIST_REDUCE_BLANKS
 
 # enhancd
 export ENHANCD_DOT_ARG="..."

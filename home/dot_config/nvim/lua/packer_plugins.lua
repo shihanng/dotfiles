@@ -20,7 +20,6 @@ return require("packer").startup(function(use)
 	use({ "onsails/lspkind-nvim" })
 	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "tversteeg/registers.nvim" })
-	use({ "windwp/nvim-ts-autotag" })
 
 	-- Coding
 	use({ "neovim/nvim-lspconfig" })
@@ -36,7 +35,8 @@ return require("packer").startup(function(use)
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	})
 	use({ "jose-elias-alvarez/nvim-lsp-ts-utils" })
-
+	use({ "RRethy/nvim-treesitter-textsubjects" })
+	use({ "windwp/nvim-ts-autotag" })
 	use({ "b3nj5m1n/kommentary" })
 	use({ "cohama/lexima.vim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })

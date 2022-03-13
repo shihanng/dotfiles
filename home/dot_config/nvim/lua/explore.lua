@@ -1,44 +1,44 @@
 local actions = require("telescope.actions")
 local trouble = require("trouble.providers.telescope")
 
-require("telescope").setup {
-    defaults = {
-        file_sorter = require("telescope.sorters").get_fzy_sorter,
-        mappings = {
-            i = {
-                ["<esc>"] = actions.close,
-                ["<c-t>"] = trouble.open_with_trouble
-            },
-            n = {["<c-t>"] = trouble.open_with_trouble}
-        }
-    },
-    extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true
-        }
-    }
-}
+require("telescope").setup({
+	defaults = {
+		file_sorter = require("telescope.sorters").get_fzy_sorter,
+		mappings = {
+			i = {
+				["<esc>"] = actions.close,
+				["<c-t>"] = trouble.open_with_trouble,
+			},
+			n = { ["<c-t>"] = trouble.open_with_trouble },
+		},
+	},
+	extensions = {
+		fzy_native = {
+			override_generic_sorter = false,
+			override_file_sorter = true,
+		},
+	},
+})
 require("telescope").load_extension("fzy_native")
 
-vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('explore').project_files()<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('explore').project_files()<cr>", { noremap = true })
 vim.api.nvim_set_keymap(
-    "n",
-    "<C-b>",
-    ":lua require('telescope.builtin').buffers({show_all_buffers=true})<cr>",
-    {noremap = true}
+	"n",
+	"<C-b>",
+	":lua require('telescope.builtin').buffers({show_all_buffers=true})<cr>",
+	{ noremap = true }
 )
-vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", { noremap = true })
 
 vim.g["asterisk#keeppos"] = 1
 
 -- Find and replace (by Nick Janetakis)
-vim.api.nvim_set_keymap("n", "<Leader>rr", [[:%s///g<Left><Left>]], {noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>rc", [[:%s///gc<Left><Left><Left>]], {noremap = true})
-vim.api.nvim_set_keymap("x", "<Leader>rr", [[:s///g<Left><Left>]], {noremap = true})
-vim.api.nvim_set_keymap("x", "<Leader>rc", [[:s///gc<Left><Left><Left>]], {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>rr", [[:%s///g<Left><Left>]], { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>rc", [[:%s///gc<Left><Left><Left>]], { noremap = true })
+vim.api.nvim_set_keymap("x", "<Leader>rr", [[:s///g<Left><Left>]], { noremap = true })
+vim.api.nvim_set_keymap("x", "<Leader>rc", [[:s///gc<Left><Left><Left>]], { noremap = true })
 
 vim.api.nvim_set_keymap("n", "*", [[<Plug>(asterisk-z*)<Plug>(is-nohl-1)]], {})
 vim.api.nvim_set_keymap("", "*", [[<Plug>(asterisk-z*)<Plug>(is-nohl-1)]], {})
@@ -46,40 +46,40 @@ vim.api.nvim_set_keymap("", "g*", [[<Plug>(asterisk-gz*)<Plug>(is-nohl-1)]], {})
 vim.api.nvim_set_keymap("", "#", [[<Plug>(asterisk-z#)<Plug>(is-nohl-1)]], {})
 vim.api.nvim_set_keymap("", "g#", [[<Plug>(asterisk-gz#)<Plug>(is-nohl-1)]], {})
 
-vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap(
-    "n",
-    "<leader>xw",
-    "<cmd>TroubleToggle workspace_diagnostics<cr>",
-    {silent = true, noremap = true}
+	"n",
+	"<leader>xw",
+	"<cmd>TroubleToggle workspace_diagnostics<cr>",
+	{ silent = true, noremap = true }
 )
 vim.api.nvim_set_keymap(
-    "n",
-    "<leader>xd",
-    "<cmd>TroubleToggle document_diagnostics<cr>",
-    {silent = true, noremap = true}
+	"n",
+	"<leader>xd",
+	"<cmd>TroubleToggle document_diagnostics<cr>",
+	{ silent = true, noremap = true }
 )
-vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", {silent = true, noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", {silent = true, noremap = true})
-vim.api.nvim_set_keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
 
-vim.api.nvim_set_keymap("n", "<F5>", [[:UndotreeToggle<CR>]], {noremap = true})
+vim.api.nvim_set_keymap("n", "<F5>", [[:UndotreeToggle<CR>]], { noremap = true })
 
-require "nvim-tree".setup {
-    hijack_cursor = true,
-    update_focused_file = {
-        enable = true,
-        ignore_list = {}
-    },
-    actions = {
-       open_file = {
-         quit_on_open = true,
-         window_picker = {
-           enable = false,
-         }
-       }
-    },
-}
+require("nvim-tree").setup({
+	hijack_cursor = true,
+	update_focused_file = {
+		enable = true,
+		ignore_list = {},
+	},
+	actions = {
+		open_file = {
+			quit_on_open = true,
+			window_picker = {
+				enable = false,
+			},
+		},
+	},
+})
 
 -- Fallback to find_files if not in git directory.
 -- This does not work as expected because pcall return true.
@@ -87,11 +87,11 @@ require "nvim-tree".setup {
 local M = {}
 
 M.project_files = function()
-    local opts = {} -- define here if you want to define something
-    local ok = pcall(require "telescope.builtin".git_files, opts)
-    if not ok then
-        require "telescope.builtin".find_files(opts)
-    end
+	local opts = {} -- define here if you want to define something
+	local ok = pcall(require("telescope.builtin").git_files, opts)
+	if not ok then
+		require("telescope.builtin").find_files(opts)
+	end
 end
 
 return M

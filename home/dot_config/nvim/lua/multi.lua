@@ -1,9 +1,6 @@
 vim.api.nvim_set_var("VM_default_mappings", 1)
 
-vim.api.nvim_set_var(
-    "VM_maps",
-    {
-        ["Find Under"] = "<C-m>",
-        ["Find Subword Under"] = "<C-m>"
-    }
-)
+vim.api.nvim_set_var("VM_maps", {
+	["Find Under"] = "<C-m>",
+	["Find Subword Under"] = "<C-m>",
+})

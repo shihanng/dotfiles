@@ -16,6 +16,9 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		enable_autocmd = false,
 	},
+	autotag = {
+		enable = true,
+	},
 })
 
 vim.g.nvcode_termcolors = 256

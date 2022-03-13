@@ -20,6 +20,7 @@ return require("packer").startup(function(use)
 	use({ "onsails/lspkind-nvim" })
 	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "tversteeg/registers.nvim" })
+	use({ "windwp/nvim-ts-autotag" })
 
 	-- Coding
 	use({ "neovim/nvim-lspconfig" })

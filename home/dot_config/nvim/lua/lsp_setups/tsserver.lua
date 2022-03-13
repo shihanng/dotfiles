@@ -1,27 +1,20 @@
 local on_attach = require("lsp_setups/default_on_attach")
-
-local function organize_imports()
-    local params = {
-        command = "_typescript.organizeImports",
-        arguments = {vim.api.nvim_buf_get_name(0)},
-        title = ""
-    }
-    vim.lsp.buf.execute_command(params)
-end
+local ts_utils = require("nvim-lsp-ts-utils")
 
 local M = {
     cmd = {"typescript-language-server", "--stdio"},
+    init_options = ts_utils.init_options,
     on_attach = function(client, bufnr)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":OrganizeImports<CR>", {noremap = true, silent = true})
+        -- See https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils#setup
+        ts_utils.setup({})
+        ts_utils.setup_client(client)
+        local opts = { noremap = true, silent = true }
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
         client.resolved_capabilities.document_formatting = false
         on_attach(client, bufnr)
     end,
-    commands = {
-        OrganizeImports = {
-            organize_imports,
-            description = "Organize Imports"
-        }
-    }
 }
 
 return M

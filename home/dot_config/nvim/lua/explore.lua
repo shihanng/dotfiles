@@ -32,9 +32,6 @@ vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_gr
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", {noremap = true})
 
-vim.g.nvim_tree_quit_on_open = 1
-vim.g.nvim_tree_highlight_opened_files = 1
-
 vim.g["asterisk#keeppos"] = 1
 
 -- Find and replace (by Nick Janetakis)
@@ -68,14 +65,20 @@ vim.api.nvim_set_keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", {sil
 
 vim.api.nvim_set_keymap("n", "<F5>", [[:UndotreeToggle<CR>]], {noremap = true})
 
-vim.api.nvim_set_var("nvim_tree_disable_window_picker", 1)
-
 require "nvim-tree".setup {
     hijack_cursor = true,
     update_focused_file = {
         enable = true,
         ignore_list = {}
-    }
+    },
+    actions = {
+       open_file = {
+         quit_on_open = true,
+         window_picker = {
+           enable = false,
+         }
+       }
+    },
 }
 
 -- Fallback to find_files if not in git directory.

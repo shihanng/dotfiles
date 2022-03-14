@@ -4,6 +4,7 @@ source $HOME/.asdf/asdf.sh
 path=(/usr/local/go/bin $path[@])
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
+path=($HOME/.poetry/bin $path[@])
 path=($HOME/.local/bin $path[@])
 path=(/opt/homebrew/bin $path[@])
 {{- if eq .chezmoi.os "darwin" }}

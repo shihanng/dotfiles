@@ -36,6 +36,8 @@ local M = {
 		null_ls.builtins.code_actions.eslint_d,
 		null_ls.builtins.diagnostics.golangci_lint,
 		null_ls.builtins.diagnostics.luacheck,
+		null_ls.builtins.diagnostics.mypy,
+		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.clang_format.with({
 			filetypes = { "c", "cpp", "cs", "java", "proto" },
 		}),

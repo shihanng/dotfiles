@@ -28,7 +28,6 @@ local checkmake = {
 }
 
 local M = {
-	debug = true,
 	on_attach = on_attach,
 	sources = {
 		checkmake,

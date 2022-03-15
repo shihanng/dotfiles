@@ -17,11 +17,7 @@
   },
   "poetry": {
     "prefix": ["python", "poetry"],
-    "body": [
-      "export VIRTUAL_ENV=${1:.venv}",
-      "layout python-venv",
-      "layout poetry"
-    ]
+    "body": ["layout poetry"]
   },
   "node": {
     "prefix": ["js", "node", "nodejs"],

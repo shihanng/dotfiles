@@ -19,11 +19,6 @@ if ! [ -x "$(command -v direnv)" ]; then
   asdf install direnv 2.28.0
 fi
 
-if ! [ -x "$(command -v nvim)" ]; then
-  asdf plugin add neovim || true
-  asdf install neovim 0.6.0
-fi
-
 if ! [ -x "$(command -v lua)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   xcode-select --install

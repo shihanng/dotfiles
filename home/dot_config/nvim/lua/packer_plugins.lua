@@ -48,6 +48,11 @@ return require("packer").startup(function(use)
 	use({ "pierreglaser/folding-nvim" })
 	use({ "vim-test/vim-test" })
 
+	-- Debugger
+	use({ "mfussenegger/nvim-dap" })
+	use({ "rcarriga/nvim-dap-ui" })
+	use({ "leoluz/nvim-dap-go" })
+
 	-- Motion
 	use("tpope/vim-surround")
 	use({ "christoomey/vim-tmux-navigator" })

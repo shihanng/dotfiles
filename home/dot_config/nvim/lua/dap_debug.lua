@@ -21,6 +21,7 @@ vim.api.nvim_set_keymap("n", "<F7>", ":lua require'dap'.continue()<CR>", { norem
 vim.api.nvim_set_keymap("n", "<F8>", ":lua require'dap'.step_over()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<F9>", ":lua require'dap'.step_into()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<F10>", ":lua require'dap'.step_out()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F11>", ":lua require'dap'.terminate()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>b",

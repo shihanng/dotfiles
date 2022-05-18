@@ -1,4 +1,4 @@
-require("dapui").setup()
+require("nvim-dap-virtual-text").setup()
 
 local dap = require("dap")
 local dap_go = require("dap-go")

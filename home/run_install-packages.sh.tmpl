@@ -37,21 +37,6 @@ if ! [ -x "$(command -v ghq)" ]; then
   asdf install ghq 1.2.1
 fi
 
-if ! [ -x "$(command -v lua-language-server)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  brew install ninja
-  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt install ninja-build
-  {{- end }}
-  ghq get sumneko/lua-language-server
-  cd "$(ghq root)/github.com/sumneko/lua-language-server"
-  git submodule update --init --recursive
-  cd 3rd/luamake
-  ./compile/install.sh
-  cd ../..
-  ./3rd/luamake/luamake rebuild
-fi
-
 if [ "$(node --version)" != "v16.13.0" ]; then
   asdf plugin add nodejs || true
   asdf install nodejs lts

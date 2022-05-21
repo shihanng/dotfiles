@@ -4,6 +4,7 @@ source $HOME/.asdf/asdf.sh
 path=(/usr/local/go/bin $path[@])
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])
+path=($HOME/bin/lua/bin $path[@])
 path=($HOME/.poetry/bin $path[@])
 path=($HOME/.local/bin $path[@])
 path=(/opt/homebrew/bin $path[@])
@@ -11,7 +12,6 @@ path=(/opt/homebrew/bin $path[@])
 path=($(ghq root)/github.com/sumneko/lua-language-server/bin/macOS $path[@])
 path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
 {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-path=($(ghq root)/github.com/sumneko/lua-language-server/bin/Linux $path[@])
 {{- end }}
 
 fpath=(${ASDF_DIR}/completions $fpath)

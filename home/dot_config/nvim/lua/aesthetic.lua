@@ -52,7 +52,7 @@ require("lualine").setup({
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 	},
-	extensions = { dap_line },
+	extensions = { dap_line, "fugitive", "quickfix", "nvim-tree" },
 })
 
 require("gitsigns").setup()

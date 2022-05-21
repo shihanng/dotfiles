@@ -40,5 +40,5 @@ vim.api.nvim_set_keymap(
 	":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
 	{ noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>de", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true })

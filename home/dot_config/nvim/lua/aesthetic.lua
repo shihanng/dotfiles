@@ -40,12 +40,19 @@ if vim.fn.has("termguicolors") == 1 then
 	vim.opt.termguicolors = true
 end
 
+-- This make sure that the statusline for dap-ui is not changing when the window is active.
+-- https://github.com/rcarriga/nvim-dap-ui/issues/50#issuecomment-905804897
+local dap_line = {
+	sections = { lualine_c = { "filename" } },
+	filetypes = { "dapui_watches", "dapui_stacks", "dapui_scopes", "dapui_breakpoints", "dap-repl" },
+}
 require("lualine").setup({
 	options = {
 		theme = "nord",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 	},
+	extensions = { dap_line },
 })
 
 require("lspkind").init({})

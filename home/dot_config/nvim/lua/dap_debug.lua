@@ -42,3 +42,31 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap("n", "<Leader>de", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true })
+
+-- Customizing color scheme in dap-ui
+-- https://github.com/rcarriga/nvim-dap-ui/blob/e5c32746aa72e39267803fdf6934d79541d39f42/lua/dapui/config/highlights.lua#L1
+-- https://github.com/rcarriga/nvim-dap-ui/issues/46#issuecomment-899025715
+vim.cmd([[hi! link DapUILineNumber LineNr]])
+vim.cmd([[hi! link DapUIBreakpointsLine LineNr]])
+vim.cmd([[hi! link DapUIBreakpointsCurrentLine LineNr]])
+
+vim.fn.sign_define(
+	"DapBreakpoint",
+	{ text = "", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }
+)
+vim.fn.sign_define(
+	"DapBreakpointCondition",
+	{ text = "ﳁ", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }
+)
+vim.fn.sign_define(
+	"DapBreakpointRejected",
+	{ text = "", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }
+)
+vim.fn.sign_define(
+	"DapLogPoint",
+	{ text = "", texthl = "healthWarning", linehl = "healthWarning", numhl = "healthWarning" }
+)
+vim.fn.sign_define(
+	"DapStopped",
+	{ text = "", texthl = "healthError", linehl = "healthError", numhl = "healthError" }
+)

@@ -20,6 +20,12 @@ return require("packer").startup(function(use)
 	use({ "onsails/lspkind-nvim" })
 	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "tversteeg/registers.nvim" })
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	})
 
 	-- Coding
 	use({ "neovim/nvim-lspconfig" })

@@ -3,6 +3,36 @@ local lsp = require("lspconfig")
 local default_setup = require("lsp_setups/default_setup")
 local null_ls = require("null-ls")
 
+-- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#change-diagnostic-symbols-in-the-sign-column-gutter
+local signs = { Error = "ﮖ ", Warn = " ", Hint = "ﯦ ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+-- Use color that does have same background color
+local hi_normal = vim.api.nvim_get_hl_by_name("Normal", true)
+vim.api.nvim_set_hl(0, "NormalFloat", hi_normal)
+
+-- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#borders
+local border = {
+	{ "╭", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "╮", "FloatBorder" },
+	{ "│", "FloatBorder" },
+	{ "╯", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "╰", "FloatBorder" },
+	{ "│", "FloatBorder" },
+}
+-- To instead override globally
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or border
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 lsp.bashls.setup(default_setup)
 lsp.cssls.setup(require("lsp_setups/cssls"))
 lsp.efm.setup(require("lsp_setups/efm"))

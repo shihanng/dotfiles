@@ -43,7 +43,7 @@ end
 -- This make sure that the statusline for dap-ui is not changing when the window is active.
 -- https://github.com/rcarriga/nvim-dap-ui/issues/50#issuecomment-905804897
 local dap_line = {
-	sections = { lualine_c = { "filename" } },
+	sections = { lualine_a = { { "filename", separator = { left = "", right = "" } } } },
 	filetypes = { "dapui_watches", "dapui_stacks", "dapui_scopes", "dapui_breakpoints", "dap-repl" },
 }
 require("lualine").setup({

@@ -55,7 +55,6 @@ require("lualine").setup({
 	extensions = { dap_line },
 })
 
-require("lspkind").init({})
 require("gitsigns").setup()
 
 vim.api.nvim_set_keymap(

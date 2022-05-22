@@ -79,6 +79,16 @@ require("nvim-tree").setup({
 			},
 		},
 	},
+	view = {
+		mappings = {
+			custom_only = false,
+			list = {
+				{ key = "[", action = "first_sibling" },
+				{ key = "]", action = "last_sibling" },
+				{ key = "K", action = "toggle_file_info" },
+			},
+		},
+	},
 })
 
 -- Fallback to find_files if not in git directory.

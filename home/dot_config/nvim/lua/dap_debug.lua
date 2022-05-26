@@ -1,4 +1,5 @@
 require("nvim-dap-virtual-text").setup()
+require("telescope").load_extension("dap")
 
 local dap = require("dap")
 local dap_go = require("dap-go")
@@ -7,21 +8,28 @@ local dap_ui = require("dapui")
 dap_go.setup()
 dap_ui.setup()
 
-dap.listeners.after.event_initialized["dapui_config"] = function()
-	dap_ui.open()
-end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-	dap_ui.close()
-end
-dap.listeners.before.event_exited["dapui_config"] = function()
-	dap_ui.close()
-end
-
-vim.api.nvim_set_keymap("n", "<F7>", ":lua require'dap'.continue()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<F8>", ":lua require'dap'.step_over()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<F9>", ":lua require'dap'.step_into()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<F10>", ":lua require'dap'.step_out()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<F11>", ":lua require'dap'.terminate()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>dc", ":Telescope dap configurations<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-j>", ":lua require'dap'.step_over()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-l>", ":lua require'dap'.step_into()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-h>", ":lua require'dap'.step_out()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>dk", ":lua require'dap'.up()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>dj", ":lua require'dap'.down()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>dt", ":lua require'dap'.terminate()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<M-k>", ":lua require'dapui'.eval()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>df", ":Telescope dap frames<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>db", ":Telescope dap list_breakpoints<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>d?",
+	":lua require'dapui'.float_element('scopes', {enter=true})<CR>",
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>ds",
+	":lua require'dapui'.float_element('stacks', {enter=true})<CR>",
+	{ noremap = true, silent = true }
+)
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>b",
@@ -40,7 +48,12 @@ vim.api.nvim_set_keymap(
 	":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
 	{ noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap("n", "<Leader>de", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>de",
+	":lua require'dapui'.float_element('repl', {enter=true})<CR>",
+	{ noremap = true, silent = true }
+)
 vim.api.nvim_set_keymap("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true })
 
 -- Customizing color scheme in dap-ui
@@ -70,3 +83,5 @@ vim.fn.sign_define(
 	"DapStopped",
 	{ text = "", texthl = "healthError", linehl = "healthError", numhl = "healthError" }
 )
+
+vim.cmd("au FileType dap-repl lua require('dap.ext.autocompl').attach()")

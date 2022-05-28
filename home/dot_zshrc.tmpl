@@ -71,6 +71,10 @@ function zvm_after_init() {
   bindkey "^b" select_git_checkout
   bindkey '^s' pet-select
   bindkey '^]' fzf-src
+
+  # Install navi shell widget. <C-g> will launch navi.
+  # We have to place this inside zvm_after_init to make <C-g> works.
+  eval "$(navi widget zsh)" 
 }
 
 # Setting for zsh-hist formatting
@@ -89,9 +93,6 @@ if ! zplug check --verbose; then
 fi
 
 gpgconf --launch gpg-agent
-
-# Install navi shell widget. <C-g> will launch navi.
-eval "$(navi widget zsh)"
 
 # Then, source plugins and add commands to $PATH
 zplug load

@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
 	use({ "p00f/nvim-ts-rainbow", commit = "c6c26c4def0e9cd82f371ba677d6fc9baa0038af" })
 
 	-- Aesthetic
-	use({ "christianchiarulli/nvcode-color-schemes.vim", opt = true, requires = "nvim-treesitter" })
+	use({ "EdenEast/nightfox.nvim" })
 	use({ "hoob3rt/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
 	use({ "onsails/lspkind-nvim" })
 	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })

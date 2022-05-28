@@ -90,5 +90,8 @@ fi
 
 gpgconf --launch gpg-agent
 
+# Install navi shell widget. <C-g> will launch navi.
+eval "$(navi widget zsh)"
+
 # Then, source plugins and add commands to $PATH
 zplug load

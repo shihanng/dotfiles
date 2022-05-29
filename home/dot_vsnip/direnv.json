@@ -13,7 +13,7 @@
   },
   "pipenv": {
     "prefix": ["python", "env", "pipenv"],
-    "body": "layout pipenv"
+    "body": ["layout pipenv", "export PIPENV_VENV_IN_PROJECT=1"]
   },
   "poetry": {
     "prefix": ["python", "poetry"],

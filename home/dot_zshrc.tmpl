@@ -37,6 +37,7 @@ export AWS_OKTA_USER={{ (bitwarden "item" "7a870925-f61d-4567-955c-adc700706e62"
 {{- end }}
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export NAVI_CONFIG="${HOME}/.config/navi/config.yaml"
 
 alias ls='ls --color=auto'
 alias open='open_command'

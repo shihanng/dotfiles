@@ -26,5 +26,9 @@
   "gotests": {
     "prefix": ["gotests", "testify"],
     "body": ["export GOTESTS_TEMPLATE=testify"]
+  },
+  "envrc.local": {
+    "prefix": ["envrc"],
+    "body": "[[ -f .envrc.local ]] && source_env .envrc.local"
   }
 }

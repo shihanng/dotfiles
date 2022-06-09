@@ -62,6 +62,7 @@ return require("packer").startup(function(use)
 	use({ "theHamsta/nvim-dap-virtual-text" })
 	-- use({ "leoluz/nvim-dap-go" })
 	use({ "shihanng/nvim-dap-go", branch = "attach-remote" })
+	use({ "mfussenegger/nvim-dap-python" })
 
 	-- Motion
 	use("tpope/vim-surround")

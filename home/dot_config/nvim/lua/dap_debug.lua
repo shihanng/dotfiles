@@ -1,6 +1,8 @@
 require("nvim-dap-virtual-text").setup()
 require("telescope").load_extension("dap")
 
+require("dap-python").setup()
+
 local dap_go = require("dap-go")
 local dap_ui = require("dapui")
 

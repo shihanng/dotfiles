@@ -42,3 +42,6 @@ cmp.setup({
 		return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
 	end,
 })
+
+-- Do not run Copilot in DAP's REPL
+vim.api.nvim_set_var("copilot_filetypes", { ["dap-repl"] = false })

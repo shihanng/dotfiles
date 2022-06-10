@@ -10,6 +10,7 @@ dap_go.setup()
 dap_ui.setup()
 
 vim.api.nvim_set_keymap("n", "<Leader>dc", ":Telescope dap configurations<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>dn", ":lua require'dap'.continue()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>dv", ":lua require'dap'.step_over()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>di", ":lua require'dap'.step_into()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>do", ":lua require'dap'.step_out()<CR>", { noremap = true, silent = true })

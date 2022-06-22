@@ -54,7 +54,6 @@ return require("packer").startup(function(use)
 	use({ "mbbill/undotree" })
 	use({ "pierreglaser/folding-nvim" })
 	use({ "vim-test/vim-test" })
-	use({ "github/copilot.vim" })
 
 	-- Debugger
 	use({ "mfussenegger/nvim-dap" })

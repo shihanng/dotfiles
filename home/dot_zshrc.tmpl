@@ -16,8 +16,6 @@ path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
 
 fpath=(${ASDF_DIR}/completions $fpath)
 
-eval "$(asdf exec direnv hook zsh)"
-direnv() { asdf exec direnv "$@"; }
 eval "$(starship init zsh)"
 eval "$(luarocks path --bin)"  
 
@@ -76,6 +74,12 @@ function zvm_after_init() {
   # Install navi shell widget. <C-g> will launch navi.
   # We have to place this inside zvm_after_init to make <C-g> works.
   eval "$(navi widget zsh)" 
+
+  source <(kubectl completion zsh)
+  source <(kustomize completion zsh)
+  source <(helm completion zsh)
+
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 }
 
 # Setting for zsh-hist formatting

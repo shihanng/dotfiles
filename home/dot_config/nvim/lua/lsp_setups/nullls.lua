@@ -44,6 +44,9 @@ local M = {
 		}),
 		null_ls.builtins.formatting.goimports,
 		null_ls.builtins.formatting.prettier_d_slim,
+		null_ls.builtins.formatting.prettierd.with({
+			filetypes = { "yaml" },
+		}),
 
 		-- https://github.com/JohnnyMorganz/StyLua
 		-- Manually install the binary from release into ~/bin

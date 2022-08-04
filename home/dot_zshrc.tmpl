@@ -62,6 +62,8 @@ zplug "marlonrichert/zsh-hist"
 
 zplug "~/.zsh", from:local
 
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
 # https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
 function zvm_after_init() {
   source $HOME/.fzf.zsh
@@ -78,8 +80,6 @@ function zvm_after_init() {
   source <(kubectl completion zsh)
   source <(kustomize completion zsh)
   source <(helm completion zsh)
-
-  source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 }
 
 # Setting for zsh-hist formatting

@@ -1,11 +1,6 @@
 [pull]
 	rebase = false
 
-[user]
-	name = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").name.value }}
-	email = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").email.value }}
-	signingkey = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").signingkey.value }}
-
 [gpg]
 	program = gpg
 
@@ -73,3 +68,6 @@
 
 [credential]
     helper = store
+
+[include]
+    path = ~/.gitconfig.secret

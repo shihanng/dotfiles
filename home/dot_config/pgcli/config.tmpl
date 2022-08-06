@@ -200,4 +200,4 @@ decimal = ""
 float = ""
 
 # Named queries are queries you can execute by name.
-{{ (bitwardenAttachment "pgcli_named_queries.toml" "bbfc0ddb-c85f-4f10-8357-add101846497") }}
+{{ joinPath .chezmoi.sourceDir "dot_config" "pgcli" ".named_queries.age" | include | decrypt }}

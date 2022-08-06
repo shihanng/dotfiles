@@ -40,9 +40,6 @@
 [http]
 	cookiefile = $HOME/.gitcookies
 
-[ghq]
-	root = ~/dev/
-
 [delta]
 	plus-color = "#012800"
 	minus-color = "#340001"
@@ -55,19 +52,19 @@
 [init]
 	defaultBranch = main
 
-[includeIf "gitdir:dev/{{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").work_github_host.value }}/**"]
-    path = ~/.gitconfig.work
-
 [credential "https://github.com"]
-    helper =
-    helper = !gh auth git-credential
-
-[credential "https://{{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").work_github_host.value }}"]
     helper =
     helper = !gh auth git-credential
 
 [credential]
     helper = store
 
+[ghq]
+    root = ~/dev/wp
+    root = ~/dev/me
+
 [include]
     path = ~/.gitconfig.secret
+
+[includeIf "gitdir:dev/wp/**"]
+    path = ~/.gitconfig.wp

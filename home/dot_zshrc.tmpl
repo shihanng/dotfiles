@@ -23,7 +23,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export CLICOLOR=1
 export TERM="xterm-256color"
-export PAGER="most"
+export PAGER="less"
 export DELTA_PAGER='less -S'
 export LESS='-XRMsIg'
 export LANG=C
@@ -50,6 +50,7 @@ zplug "lib/functions", from:oh-my-zsh
 zplug "lib/history", from:oh-my-zsh
 zplug "mollifier/cd-gitroot"
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "wfxr/forgit", defer:2 # Using defer:2 so that glo works for forgit instead of plugins/git
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"

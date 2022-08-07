@@ -10,7 +10,7 @@ sudo usermod --shell /usr/bin/zsh <username>
 ```
 
 ```console
-sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply shihanng
+sh -c "$(curl -fsLS git.io/chezmoi)" -- init -S ~/dotfiles --apply shihanng
 ```
 
 ### macOS

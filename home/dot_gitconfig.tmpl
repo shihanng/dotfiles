@@ -1,11 +1,6 @@
 [pull]
 	rebase = false
 
-[user]
-	name = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").name.value }}
-	email = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").email.value }}
-	signingkey = {{ (bitwardenFields "item" "8d04c43b-fca3-45c7-b257-a8c30056f0ae").signingkey.value }}
-
 [gpg]
 	program = gpg
 
@@ -45,9 +40,6 @@
 [http]
 	cookiefile = $HOME/.gitcookies
 
-[ghq]
-	root = ~/dev/
-
 [delta]
 	plus-color = "#012800"
 	minus-color = "#340001"
@@ -60,16 +52,19 @@
 [init]
 	defaultBranch = main
 
-[includeIf "gitdir:dev/{{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").work_github_host.value }}/**"]
-    path = ~/.gitconfig.work
-
 [credential "https://github.com"]
-    helper =
-    helper = !gh auth git-credential
-
-[credential "https://{{ (bitwardenFields "item" "bbfc0ddb-c85f-4f10-8357-add101846497").work_github_host.value }}"]
     helper =
     helper = !gh auth git-credential
 
 [credential]
     helper = store
+
+[ghq]
+    root = ~/dev/wp
+    root = ~/dev/me
+
+[include]
+    path = ~/.gitconfig.secret
+
+[includeIf "gitdir:dev/wp/**"]
+    path = ~/.gitconfig.wp

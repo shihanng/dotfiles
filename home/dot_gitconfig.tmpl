@@ -56,11 +56,16 @@
     helper =
     helper = !gh auth git-credential
 
+[credential "https://gitlab.com"]
+    helper =
+    helper = !glab auth git-credential
+
 [credential]
     helper = store
 
 [ghq]
     root = ~/dev/wp
+    root = ~/dev/as
     root = ~/dev/me
 
 [include]
@@ -68,3 +73,6 @@
 
 [includeIf "gitdir:dev/wp/**"]
     path = ~/.gitconfig.wp
+
+[includeIf "gitdir:dev/as/**"]
+    path = ~/.gitconfig.as

@@ -88,6 +88,10 @@ unsetopt HIST_REDUCE_BLANKS
 export ENHANCD_DOT_ARG="..."
 export ENHANCD_COMPLETION_BEHAVIOR="list" # When cd <tab>, it shows list of directory for auto-complete.
 
+# forgit
+# See: https://github.com/wfxr/forgit/issues/71#issuecomment-627997261
+export FORGIT_LOG_FZF_OPTS="--reverse"
+
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "

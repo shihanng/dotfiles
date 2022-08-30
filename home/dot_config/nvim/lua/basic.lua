@@ -24,8 +24,4 @@ vim.opt.backup = false
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.local/share/vim/undo//")
 
-vim.opt.foldlevel = 99
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = [[nvim_treesitter#foldexpr()]]
-
 vim.opt.clipboard = "unnamedplus"

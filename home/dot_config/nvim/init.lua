@@ -1,6 +1,7 @@
 vim.opt.shell = "/bin/bash"
 
 require("basic")
+require("folding")
 require("packer_plugins")
 require("motion")
 require("aesthetic")

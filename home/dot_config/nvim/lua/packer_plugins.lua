@@ -52,7 +52,7 @@ return require("packer").startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 	})
 	use({ "mbbill/undotree" })
-	use({ "pierreglaser/folding-nvim" })
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 	use({ "vim-test/vim-test" })
 
 	-- Debugger

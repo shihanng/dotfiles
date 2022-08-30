@@ -110,6 +110,7 @@ vim.keymap.set("n", "K", function()
 end)
 
 lsp.bashls.setup(default_setup)
+lsp.ccls.setup(default_setup)
 lsp.cssls.setup(require("lsp_setups/cssls"))
 lsp.efm.setup(require("lsp_setups/efm"))
 lsp.elixirls.setup(require("lsp_setups/elixirls"))

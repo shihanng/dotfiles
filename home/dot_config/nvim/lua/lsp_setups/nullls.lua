@@ -3,6 +3,14 @@ local helpers = require("null-ls.helpers")
 
 local on_attach = require("lsp_setups/default_on_attach")
 
+-- Copy from default_setup.
+-- What about other LSPs?
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.foldingRange = {
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
+}
+
 local checkmake = {
 	method = null_ls.methods.DIAGNOSTICS,
 	filetypes = { "make" },
@@ -29,6 +37,7 @@ local checkmake = {
 
 local M = {
 	on_attach = on_attach,
+	capabilities = capabilities,
 	sources = {
 		checkmake,
 		null_ls.builtins.diagnostics.eslint_d,

@@ -25,3 +25,4 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.local/share/vim/undo//")
 
 vim.opt.clipboard = "unnamedplus"
+vim.g.do_filetype_lua = 1

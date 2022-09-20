@@ -109,6 +109,7 @@ vim.keymap.set("n", "K", function()
 	end
 end)
 
+lsp.astro.setup(default_setup)
 lsp.bashls.setup(default_setup)
 lsp.ccls.setup(default_setup)
 lsp.cssls.setup(require("lsp_setups/cssls"))

@@ -17,6 +17,26 @@
 --
 -- vim.lsp.handlers["textDocument/formatting"] = format_async
 
+-- Setup to only use one LSP for formatting.
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
+local lsp_formatting = function(bufnr)
+	vim.lsp.buf.format({
+		filter = function(client)
+			-- Get client name from :LspInfo
+			no_format_list = {
+				terraformls = true,
+				gopls = true,
+			}
+
+			return not no_format_list[client.name]
+		end,
+		bufnr = bufnr,
+		timeout_ms = 2000,
+	})
+end
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 local function default_on_attach(client, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -32,15 +52,23 @@ local function default_on_attach(client, bufnr)
 	buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
-	if client.resolved_capabilities.document_formatting then
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = augroup,
+			buffer = bufnr,
+			callback = function()
+				lsp_formatting(bufnr)
+			end,
+		})
 		buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>", opts)
-		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
 	end
-	if client.resolved_capabilities.document_range_formatting then
+
+	if client.supports_method("textDocument/rangeFormatting") then
 		buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
 	end
 
-	if client.resolved_capabilities.document_highlight then
+	if client.supports_method("textDocument/documentHighlight") then
 		vim.api.nvim_exec(
 			[[
 hi link LspReferenceRead Visual

@@ -10,9 +10,7 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
-	-- Pinning on this commit because this PR https://github.com/p00f/nvim-ts-rainbow/pull/93
-	-- breaks the plugin on Neovim v0.6.1
-	use({ "p00f/nvim-ts-rainbow", commit = "c6c26c4def0e9cd82f371ba677d6fc9baa0038af" })
+	use({ "p00f/nvim-ts-rainbow" })
 
 	-- Aesthetic
 	use({ "EdenEast/nightfox.nvim" })

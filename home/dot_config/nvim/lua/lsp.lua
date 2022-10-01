@@ -98,6 +98,9 @@ require("ufo").setup({
 		return ftMap[filetype]
 	end,
 })
+
+local opts = { noremap = true, silent = true }
+
 vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
 vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds)
@@ -108,6 +111,9 @@ vim.keymap.set("n", "K", function()
 		vim.lsp.buf.hover()
 	end
 end)
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 
 lsp.astro.setup(default_setup)
 lsp.bashls.setup(default_setup)

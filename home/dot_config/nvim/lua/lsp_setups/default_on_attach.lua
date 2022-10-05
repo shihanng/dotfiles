@@ -23,9 +23,10 @@ local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
 		filter = function(client)
 			-- Get client name from :LspInfo
-			no_format_list = {
+			local no_format_list = {
 				terraformls = true,
 				gopls = true,
+				pyright = true,
 			}
 
 			return not no_format_list[client.name]

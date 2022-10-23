@@ -1,6 +1,6 @@
 lua 5.3.5
 ghq 1.2.1
-neovim 0.7.0
+neovim 0.8.0
 nodejs lts
 ruby 3.0.2
 python 3.10.2

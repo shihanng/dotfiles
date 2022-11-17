@@ -7,16 +7,20 @@
     "prefix": "asdf",
     "body": "use asdf"
   },
+  "python": {
+    "prefix": ["python"],
+    "body": ["layout python"]
+  },
   "venv": {
-    "prefix": ["python", "venv"],
+    "prefix": ["venv"],
     "body": ["export VIRTUAL_ENV=${1:.venv}", "layout python-venv"]
   },
   "pipenv": {
-    "prefix": ["python", "env", "pipenv"],
+    "prefix": ["pipenv"],
     "body": ["layout pipenv", "export PIPENV_VENV_IN_PROJECT=1"]
   },
   "poetry": {
-    "prefix": ["python", "poetry"],
+    "prefix": ["poetry"],
     "body": ["layout poetry"]
   },
   "node": {

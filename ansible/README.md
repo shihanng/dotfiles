@@ -1,1 +1,1 @@
-ansible-playbook site.yml
+ansible-playbook -K site.yml

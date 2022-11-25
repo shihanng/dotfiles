@@ -2,7 +2,7 @@
 - name: Talk to all hosts just so we can learn about them
   hosts: all
   vars:
-    distro: "{{ ansible_facts['distribution'] | replace(' ', '_')}}"
+    distro: "{{ ansible_facts['distribution'] | replace(' ', '_') | lower }}"
   # Handling OS and distro differences, see: https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#handling-os-and-distro-differences
   tasks:
     - name: Classify hosts depending on their OS distribution

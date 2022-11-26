@@ -1,4 +1,29 @@
 ---
+- name: Check if plugin is installed
+  vars:
+    plugin: tflint
+  ansible.builtin.shell: |
+    source {{ ansible_env.HOME }}/.asdf/asdf.sh
+
+    asdf plugin-list | grep {{ plugin }}
+  args:
+    executable: zsh
+  register: plugin_check_result
+  changed_when: false
+  ignore_errors: true
+
+- name: Install plugin
+  vars:
+    plugin: tflint
+    repo: https://github.com/skyzyx/asdf-tflint
+  ansible.builtin.shell: |
+    source {{ ansible_env.HOME }}/.asdf/asdf.sh
+
+    asdf plugin-add {{ plugin }} {{ repo }}
+  args:
+    executable: zsh
+  when: plugin_check_result.rc == 1
+
 - name: Check installed
   vars:
     app: tflint

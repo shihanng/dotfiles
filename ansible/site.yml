@@ -8,6 +8,7 @@
     - name: Classify hosts depending on their OS distribution
       group_by:
         key: "os_{{ distro }}"
+      changed_when: false
 
   roles:
     - git

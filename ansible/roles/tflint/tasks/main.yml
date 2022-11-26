@@ -1,0 +1,24 @@
+---
+- name: Check installed
+  vars:
+    app: tflint
+    version: "0.43.0"
+  ansible.builtin.shell: |
+    source {{ ansible_env.HOME }}/.asdf/asdf.sh
+
+    asdf list {{ app }} {{ version }}
+  args:
+    executable: zsh
+  changed_when: false
+  ignore_errors: true
+  register: check_install
+
+- name: Install
+  vars:
+    app: tflint
+    version: "0.43.0"
+  ansible.builtin.shell: |
+    source {{ ansible_env.HOME }}/.asdf/asdf.sh
+
+    asdf install {{ app }} {{ version }}
+  when: check_install.rc == 1

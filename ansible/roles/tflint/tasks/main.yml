@@ -1,51 +1,8 @@
 ---
-- name: Check if plugin is installed
-  vars:
-    plugin: tflint
-  ansible.builtin.shell: |
-    source {{ ansible_env.HOME }}/.asdf/asdf.sh
-
-    asdf plugin-list | grep {{ plugin }}
-  args:
-    executable: zsh
-  register: plugin_check_result
-  changed_when: false
-  ignore_errors: true
-
-- name: Install plugin
+- name: Include task list in play
   vars:
     plugin: tflint
     repo: https://github.com/skyzyx/asdf-tflint
-  ansible.builtin.shell: |
-    source {{ ansible_env.HOME }}/.asdf/asdf.sh
-
-    asdf plugin-add {{ plugin }} {{ repo }}
-  args:
-    executable: zsh
-  when: plugin_check_result.rc == 1
-
-- name: Check installed
-  vars:
-    app: tflint
     version: "0.43.0"
-  ansible.builtin.shell: |
-    source {{ ansible_env.HOME }}/.asdf/asdf.sh
-
-    asdf list {{ app }} {{ version }}
-  args:
-    executable: zsh
-  changed_when: false
-  ignore_errors: true
-  register: check_install
-
-- name: Install
-  vars:
-    app: tflint
-    version: "0.43.0"
-  ansible.builtin.shell: |
-    source {{ ansible_env.HOME }}/.asdf/asdf.sh
-
-    asdf install {{ app }} {{ version }}
-  args:
-    executable: zsh
-  when: check_install.rc == 1
+  ansible.builtin.include_tasks:
+    file: ../../../tasks/asdf.yml

@@ -1,10 +1,10 @@
 ---
-- name: Include task list in play
+- name: Install tflint
   vars:
     plugin: tflint
     repo: https://github.com/skyzyx/asdf-tflint
     versions: 
       - "0.42.2"
       - "0.43.0"
-  ansible.builtin.include_tasks:
-    file: ../../../tasks/asdf.yml
+  include_role:
+    name: asdf_install

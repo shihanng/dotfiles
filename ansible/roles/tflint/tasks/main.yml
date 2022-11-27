@@ -3,6 +3,8 @@
   vars:
     plugin: tflint
     repo: https://github.com/skyzyx/asdf-tflint
-    version: "0.43.0"
+    versions: 
+      - "0.42.2"
+      - "0.43.0"
   ansible.builtin.include_tasks:
     file: ../../../tasks/asdf.yml

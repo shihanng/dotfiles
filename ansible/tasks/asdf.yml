@@ -23,9 +23,10 @@
   ansible.builtin.shell: |
     source {{ ansible_env.HOME }}/.asdf/asdf.sh
 
-    asdf list {{ plugin }} {{ version }}
+    asdf list {{ plugin }} {{ item }}
   args:
     executable: zsh
+  loop: "{{ versions }}"
   changed_when: false
   ignore_errors: true
   register: check_install
@@ -34,7 +35,8 @@
   ansible.builtin.shell: |
     source {{ ansible_env.HOME }}/.asdf/asdf.sh
 
-    asdf install {{ plugin }} {{ version }}
+    asdf install {{ plugin }} {{ item.item }}
   args:
     executable: zsh
-  when: check_install.rc == 1
+  when: item.rc == 1
+  loop: "{{ check_install.results }}"

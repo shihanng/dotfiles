@@ -1,0 +1,16 @@
+---
+argument_specs:
+  main:
+    options:
+      plugin:
+        type: str
+        required: true
+
+      repo:
+        type: str
+        required: false
+
+      versions:
+        type: list
+        required: true
+        elements: str

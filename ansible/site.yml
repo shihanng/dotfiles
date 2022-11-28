@@ -13,4 +13,14 @@
   roles:
     - git
     - asdf
-    - tflint
+    - role: asdf_install
+      plugin: tflint
+      repo: https://github.com/skyzyx/asdf-tflint
+      versions:
+        - "0.42.2"
+        - "0.43.0"
+    - role: asdf_install
+      plugin: terraform-ls
+      repo: https://github.com/shihanng/asdf-terraform-ls
+      versions: 
+        - "0.30.0"

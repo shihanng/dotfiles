@@ -9,10 +9,6 @@ if ! [ -x "$(command -v go)" ]; then
   {{- end }}
 fi
 
-if ! [ -x "$(command -v asdf)" ]; then
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
-fi
-
 if ! [ -x "$(command -v direnv)" ]; then
   asdf plugin add direnv || true
   asdf install direnv 2.28.0
@@ -73,20 +69,8 @@ if ! [ -x "$(command -v yarn)" ]; then
   npm install -g yarn
 fi
 
-if ! [ -x "$(command -v prettierd)" ]; then
-  npm install -g @fsouza/prettierd
-fi
-
 if ! [ -x "$(command -v prettier-eslint)" ]; then
   npm install -g prettier-eslint-cli
-fi
-
-if ! [ -x "$(command -v gh)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  brew install gh
-  {{- else }}
-  echo "python in ubuntu not supported"
-  {{- end }}
 fi
 
 if ! [ -x "$(command -v gpgconf)" ]; then

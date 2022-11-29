@@ -3,14 +3,17 @@
   ansible.builtin.apt_key:
     url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
     state: present
+  become: true
 
 - name: Add GH repository
   ansible.builtin.apt_repository:
     repo: deb https://cli.github.com/packages stable main
     state: present
+  become: true
 
 - name: Install GH
   ansible.builtin.apt:
     pkg:
       - gh
     update_cache: yes
+  become: true

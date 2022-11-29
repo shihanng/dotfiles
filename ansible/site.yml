@@ -22,10 +22,11 @@
     - role: asdf_install
       plugin: terraform-ls
       repo: https://github.com/shihanng/asdf-terraform-ls
-      versions: 
+      versions:
         - "0.30.0"
     - role: asdf_install
       plugin: nodejs
       repo: https://github.com/asdf-vm/asdf-nodejs.git
-      versions: 
+      versions:
         - "18.12.1"
+    - role: gh

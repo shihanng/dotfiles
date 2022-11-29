@@ -1,0 +1,4 @@
+---
+- homebrew:
+    name: gh
+    state: present

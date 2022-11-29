@@ -24,3 +24,8 @@
       repo: https://github.com/shihanng/asdf-terraform-ls
       versions: 
         - "0.30.0"
+    - role: asdf_install
+      plugin: nodejs
+      repo: https://github.com/asdf-vm/asdf-nodejs.git
+      versions: 
+        - "18.12.1"

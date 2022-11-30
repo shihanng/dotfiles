@@ -13,6 +13,7 @@
   roles:
     - git
     - asdf
+
     - role: asdf_install
       plugin: tflint
       repo: https://github.com/skyzyx/asdf-tflint
@@ -21,15 +22,22 @@
         - "0.43.0"
     - role: asdf_install
       plugin: terraform-ls
-      repo: https://github.com/shihanng/asdf-terraform-ls
+      repo: https://github.com/asdf-community/asdf-hashicorp.git
       versions:
         - "0.30.0"
+    - role: asdf_install
+      plugin: terraform
+      repo: https://github.com/asdf-community/asdf-hashicorp.git
+      versions:
+        - "1.0.0"
+
+    - role: gh
+
     - role: asdf_install
       plugin: nodejs
       repo: https://github.com/asdf-vm/asdf-nodejs.git
       versions:
         - "18.12.1"
-    - role: gh
     - role: npm_install
       pkgs:
         - "@bitwarden/cli"

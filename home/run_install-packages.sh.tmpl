@@ -65,14 +65,6 @@ if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-if ! [ -x "$(command -v yarn)" ]; then
-  npm install -g yarn
-fi
-
-if ! [ -x "$(command -v prettier-eslint)" ]; then
-  npm install -g prettier-eslint-cli
-fi
-
 if ! [ -x "$(command -v gpgconf)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   brew install gnupg

@@ -36,3 +36,4 @@
         - "@fsouza/prettierd"
         - "eslint_d"
         - "pyright"
+        - "yarn"

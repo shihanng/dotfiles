@@ -29,7 +29,7 @@
       plugin: terraform
       repo: https://github.com/asdf-community/asdf-hashicorp.git
       versions:
-        - "1.0.0"
+        - "1.3.5"
 
     - role: gh
 

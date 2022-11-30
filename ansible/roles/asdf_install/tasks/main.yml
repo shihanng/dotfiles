@@ -3,7 +3,7 @@
   ansible.builtin.shell: |
     source {{ ansible_env.HOME }}/.asdf/asdf.sh
 
-    asdf plugin-list | grep {{ plugin }}
+    asdf plugin-list | grep "{{ plugin }}$"
   args:
     executable: zsh
   register: plugin_check_result

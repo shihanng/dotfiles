@@ -1,0 +1,8 @@
+---
+- name: Install NPM packages
+  environment:
+    NPM_CONFIG_PREFIX: "{{ ansible_env.HOME }}/.npm-global"
+  community.general.npm:
+    name: "{{ item }}"
+    global: yes
+  loop: "{{ pkgs }}"

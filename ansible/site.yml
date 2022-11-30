@@ -30,3 +30,9 @@
       versions:
         - "18.12.1"
     - role: gh
+    - role: npm_install
+      pkgs:
+        - "@bitwarden/cli"
+        - "@fsouza/prettierd"
+        - "eslint_d"
+        - "pyright"

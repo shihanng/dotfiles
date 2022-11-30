@@ -1,0 +1,11 @@
+---
+- name: Install pyapp
+  ansible.builtin.include_role:
+    name: asdf_install
+  vars:
+    plugin: "{{ this_plugin.name }}"
+    repo: https://github.com/amrox/asdf-pyapp.git
+    versions: "{{ this_plugin.versions }}"
+  loop: "{{ plugins }}"
+  loop_control:
+    loop_var: this_plugin

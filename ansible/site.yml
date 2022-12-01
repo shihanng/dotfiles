@@ -81,3 +81,15 @@
       repo: https://github.com/asdf-community/asdf-poetry.git
       versions:
         - "1.2.2"
+
+    - role: asdf_install
+      plugin: awscli
+      repo: https://github.com/MetricMike/asdf-awscli.git
+      versions:
+        - "2.9.3"
+
+    - role: asdf_install
+      plugin: ghq
+      repo: https://github.com/kajisha/asdf-ghq
+      versions:
+        - "1.3.0"

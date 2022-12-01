@@ -22,11 +22,6 @@ if ! [ -x "$(command -v lua)" ]; then
   asdf install lua 5.3.5
 fi
 
-if ! [ -x "$(command -v ghq)" ]; then
-  asdf plugin add ghq || true
-  asdf install ghq 1.2.1
-fi
-
 if ! [ -x "$(command -v keybase)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   echo "Visit https://keybase.io/docs/the_app/install_macos to install Keybase"
@@ -61,15 +56,6 @@ fi
 if ! [ -x "$(command -v pet)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   brew install knqyf263/pet/pet
-  {{- else }}
-  echo "python in ubuntu not supported"
-  {{- end }}
-fi
-
-if ! [ -x "$(command -v aws)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  asdf plugin add awscli || true
-  asdf install awscli 2.1.29
   {{- else }}
   echo "python in ubuntu not supported"
   {{- end }}

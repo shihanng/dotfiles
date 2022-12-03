@@ -2,7 +2,7 @@
 - name: Talk to all hosts just so we can learn about them
   hosts: all
   vars:
-    distro: "{{ ansible_facts['distribution'] | replace(' ', '_') | lower }}"
+    distro: "{{ ansible_distribution | replace(' ', '_') | lower }}"
     archs:
       x86_64: "amd64"
     oses:

@@ -1,0 +1,37 @@
+---
+- name: Get current Go version
+  ansible.builtin.shell: |
+    go version
+  register: go_current_version
+  changed_when: false
+  ignore_errors: true
+
+- name: Set arch
+  vars:
+    go_architectures:
+      x86_64: "amd64"
+  set_fact:
+    go_arch: "{{ go_architectures[ansible_architecture] }}"
+
+- name: Set OS
+  vars:
+    go_oses:
+      "elementary OS": "linux"
+  set_fact:
+    go_os: "{{ go_oses[ansible_os_family] }}"
+
+- name: Set expected version prefix
+  set_fact:
+    go_expected_version_prefix: "go version go{{ go_version }} {{ go_os }}/{{ go_arch }}"
+
+- name: Install Go {{go_version}}
+  ansible.builtin.shell: |
+    sudo rm -rf /usr/local/go && \
+    curl -LSs https://golang.org/dl/go{{ go_version }}.{{ go_os }}-{{ go_arch }}.tar.gz | sudo tar -C /usr/local -xzf-
+  when: go_expected_version_prefix != go_current_version.stdout
+  become: true
+
+- name: Install binaries
+  ansible.builtin.command: go install {{ item|quote }}
+  loop: "{{ go_installs }}"
+  changed_when: false

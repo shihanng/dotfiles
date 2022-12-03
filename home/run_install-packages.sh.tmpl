@@ -1,14 +1,6 @@
 #!/bin/bash
 set -eux
 
-if ! [ -x "$(command -v go)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  sudo rm -rf /usr/local/go && curl -LSs https://golang.org/dl/go1.17.2.darwin-amd64.tar.gz | sudo tar -C /usr/local -xzf-
-  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo rm -rf /usr/local/go && curl -LSs https://golang.org/dl/go1.17.2.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf-
-  {{- end }}
-fi
-
 if ! [ -x "$(command -v lua)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   xcode-select --install
@@ -35,10 +27,6 @@ fi
 if ! [ -x "$(command -v fzf)" ]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf
   ${HOME}/.fzf/install
-fi
-
-if ! [ -x "$(command -v efm-langserver)" ]; then
-  go install github.com/mattn/efm-langserver@latest
 fi
 
 if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then
@@ -75,10 +63,6 @@ if ! [ -x "$(command -v delta)" ]; then
   {{- else }}
   echo "python in ubuntu not supported"
   {{- end }}
-fi
-
-if ! [ -x "$(command -v gopls)" ]; then
-  go install golang.org/x/tools/gopls@latest
 fi
 
 if ! [ -x "$(command -v golangci-lint)" ]; then

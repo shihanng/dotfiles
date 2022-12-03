@@ -108,6 +108,7 @@
       go_installs:
         - "github.com/mattn/efm-langserver@latest"
         - "golang.org/x/tools/gopls@latest"
+        - "github.com/mrtazz/checkmake/cmd/checkmake@latest"
 
     - role: fzf
 
@@ -131,3 +132,5 @@
     - role: tmuxp
 
     - role: ccls
+
+    - role: pandoc # We need this for checkmake

@@ -1,0 +1,11 @@
+---
+- include_tasks: os_{{ distro }}.yml
+
+- name: Install Lua
+  ansible.builtin.include_role:
+    name: asdf_install
+  vars:
+    plugin: "lua"
+    repo: https://github.com/Stratus3D/asdf-lua.git
+    versions:
+      - "5.3.5"

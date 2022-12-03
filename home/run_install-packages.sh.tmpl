@@ -1,19 +1,6 @@
 #!/bin/bash
 set -eux
 
-if ! [ -x "$(command -v lua)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  xcode-select --install
-  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  sudo apt-get install \
-    linux-headers-$(uname -r) \
-    build-essential \
-    libreadline-dev 
-  {{- end }}
-  asdf plugin add lua || true
-  asdf install lua 5.3.5
-fi
-
 if ! [ -x "$(command -v keybase)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   echo "Visit https://keybase.io/docs/the_app/install_macos to install Keybase"

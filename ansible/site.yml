@@ -101,5 +101,5 @@
         - "golang.org/x/tools/gopls@latest"
 
     - role: fzf
-      tags:
-        - runme
+
+    - role: lua

@@ -112,6 +112,7 @@
     - role: fzf
 
     - role: lua
+    - role: luacheck
 
     - role: keybase
 

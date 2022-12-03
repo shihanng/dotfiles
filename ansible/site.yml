@@ -129,3 +129,5 @@
     - role: golangci-lint
 
     - role: tmuxp
+
+    - role: ccls

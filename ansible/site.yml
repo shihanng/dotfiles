@@ -126,3 +126,5 @@
     - role: delta
 
     - role: golangci-lint
+
+    - role: tmuxp

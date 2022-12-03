@@ -1,0 +1,6 @@
+---
+- name: Install completion
+  ansible.builtin.shell: |
+    shtab --shell=zsh -u tmuxp.cli.create_parser \
+      | sudo tee /usr/local/share/zsh/site-functions/_TMUXP
+  become: true

@@ -1,0 +1,19 @@
+---
+- name: Install shtab
+  ansible.builtin.include_role:
+    name: asdf_install
+  vars:
+    plugin: "shtab"
+    repo: https://github.com/amrox/asdf-pyapp.git
+    versions:
+      - "1.5.8"
+
+- name: Install tmuxp
+  ansible.builtin.import_role:
+    name: asdf_install
+  vars:
+    plugin: "tmuxp"
+    repo: https://github.com/amrox/asdf-pyapp.git
+    versions:
+      - "1.18.2"
+  notify: Install completion

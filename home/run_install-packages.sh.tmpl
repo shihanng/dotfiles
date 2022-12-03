@@ -1,16 +1,6 @@
 #!/bin/bash
 set -eux
 
-if ! [ -x "$(command -v keybase)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  echo "Visit https://keybase.io/docs/the_app/install_macos to install Keybase"
-  {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-  curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
-  sudo apt install ./keybase_amd64.deb
-  run_keybase
-  {{- end }}
-fi
-
 if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi

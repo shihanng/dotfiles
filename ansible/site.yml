@@ -103,3 +103,5 @@
     - role: fzf
 
     - role: lua
+
+    - role: keybase

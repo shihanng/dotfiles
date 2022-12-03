@@ -1,0 +1,3 @@
+- name: Install Keybase
+  ansible.builtin.apt:
+    deb: https://prerelease.keybase.io/keybase_amd64.deb

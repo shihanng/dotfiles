@@ -24,11 +24,6 @@ if ! [ -x "$(command -v keybase)" ]; then
   {{- end }}
 fi
 
-if ! [ -x "$(command -v fzf)" ]; then
-  git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf
-  ${HOME}/.fzf/install
-fi
-
 if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi

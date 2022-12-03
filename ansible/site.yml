@@ -99,3 +99,7 @@
       go_installs:
         - "github.com/mattn/efm-langserver@latest"
         - "golang.org/x/tools/gopls@latest"
+
+    - role: fzf
+      tags:
+        - runme

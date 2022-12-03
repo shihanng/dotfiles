@@ -1,0 +1,8 @@
+---
+- name: Download fzf
+  ansible.builtin.git:
+    repo: "https://github.com/junegunn/fzf.git"
+    dest: "{{ ansible_env.HOME }}/.fzf"
+    depth: 1
+    version: 0.35.1
+  notify: Install fzf

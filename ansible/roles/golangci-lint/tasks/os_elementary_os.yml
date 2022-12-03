@@ -1,0 +1,7 @@
+---
+- name: Install golangci-lint
+  vars:
+    gcl_version: 1.50.1
+  ansible.builtin.apt:
+    deb: "https://github.com/golangci/golangci-lint/releases/download/v{{ gcl_version }}/golangci-lint-{{ gcl_version }}-linux-{{ archs[ansible_architecture] }}.deb"
+  become: true

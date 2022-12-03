@@ -121,3 +121,5 @@
     - role: fd
 
     - role: delta
+
+    - role: golangci-lint

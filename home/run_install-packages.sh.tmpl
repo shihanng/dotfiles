@@ -1,14 +1,6 @@
 #!/bin/bash
 set -eux
 
-if ! [ -x "$(command -v golangci-lint)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  brew install golangci-lint
-  {{- else }}
-  echo "non-darwin not supported"
-  {{- end }}
-fi
-
 if ! [ -x "$(command -v pgcli)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   brew install pgcli

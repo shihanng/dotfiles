@@ -81,6 +81,9 @@
         - name: mypy
           versions:
             - "0.991"
+        - name: pgcli
+          versions:
+            - "3.5.0"
 
     - role: asdf_install
       plugin: poetry

@@ -7,19 +7,12 @@
   ignore_errors: true
 
 - name: Set arch
-  vars:
-    go_architectures:
-      x86_64: "amd64"
   set_fact:
-    go_arch: "{{ go_architectures[ansible_architecture] }}"
+    go_arch: "{{ archs[ansible_architecture] }}"
 
 - name: Set OS
-  vars:
-    go_oses:
-      "elementary OS": "linux"
-      "Darwin": "darwin"
   set_fact:
-    go_os: "{{ go_oses[ansible_os_family] }}"
+    go_os: "{{ oses[ansible_os_family] }}"
 
 - name: Set expected version prefix
   set_fact:

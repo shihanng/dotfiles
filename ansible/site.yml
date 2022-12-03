@@ -3,6 +3,12 @@
   hosts: all
   vars:
     distro: "{{ ansible_facts['distribution'] | replace(' ', '_') | lower }}"
+    archs:
+      x86_64: "amd64"
+    oses:
+      "elementary OS": "linux"
+      "Darwin": "darwin"
+
   # Handling OS and distro differences, see: https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#handling-os-and-distro-differences
   tasks:
     - name: Classify hosts depending on their OS distribution
@@ -109,3 +115,5 @@
     - role: tpm
 
     - role: gnupg
+
+    - role: pet

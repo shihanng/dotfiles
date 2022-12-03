@@ -1,0 +1,7 @@
+---
+- name: Install gnupg
+  ansible.builtin.apt:
+    pkg:
+      - gnupg
+    update_cache: yes
+  become: true

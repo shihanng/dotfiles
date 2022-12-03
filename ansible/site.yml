@@ -107,3 +107,5 @@
     - role: keybase
 
     - role: tpm
+
+    - role: gnupg

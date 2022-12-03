@@ -1,14 +1,6 @@
 #!/bin/bash
 set -eux
 
-if ! [ -x "$(command -v fd)" ]; then
-  {{- if eq .chezmoi.os "darwin" }}
-  brew install fd
-  {{- else }}
-  echo "python in ubuntu not supported"
-  {{- end }}
-fi
-
 if ! [ -x "$(command -v delta)" ]; then
   {{- if eq .chezmoi.os "darwin" }}
   brew install git-delta

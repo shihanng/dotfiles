@@ -117,3 +117,5 @@
     - role: gnupg
 
     - role: pet
+
+    - role: fd

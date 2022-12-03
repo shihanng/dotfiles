@@ -1,0 +1,7 @@
+---
+- name: Install fd
+  vars:
+    fd_version: 8.5.3
+  ansible.builtin.apt:
+    deb: "https://github.com/sharkdp/fd/releases/download/v{{ fd_version }}/fd_{{ fd_version }}_{{ archs[ansible_architecture] }}.deb"
+  become: true

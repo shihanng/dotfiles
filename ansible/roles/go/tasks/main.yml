@@ -17,6 +17,7 @@
   vars:
     go_oses:
       "elementary OS": "linux"
+      "Darwin": "darwin"
   set_fact:
     go_os: "{{ go_oses[ansible_os_family] }}"
 

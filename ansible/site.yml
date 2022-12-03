@@ -136,4 +136,6 @@
 
     - role: pandoc # We need this for checkmake
 
+    - role: clang-format
+
     - role: gotty

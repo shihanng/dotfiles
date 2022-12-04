@@ -17,6 +17,7 @@
       changed_when: false
 
   roles:
+    - tar
     - git
     - asdf
 
@@ -152,5 +153,7 @@
     - role: clang-format
 
     - role: stylua
+
+    - role: lua-language-server
 
     - role: gotty

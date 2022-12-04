@@ -10,7 +10,7 @@ path=($HOME/.local/bin $path[@])
 path=($HOME/.npm-global/bin $path[@])
 path=(/opt/homebrew/bin $path[@])
 {{- if eq .chezmoi.os "darwin" }}
-path=($(ghq root)/github.com/sumneko/lua-language-server/bin/macOS $path[@])
+path=($(brew --prefix gnu-tar)/libexec/gnubin $path[@])
 path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
 {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
 {{- end }}

@@ -1,0 +1,23 @@
+---
+- name: Set OS
+  vars:
+    gl_oses:
+      "elementary OS": "linux"
+      "Darwin": "darwin"
+  set_fact:
+    gl_os: "{{ gl_oses[ansible_os_family] }}"
+
+- name: Set architecture
+  vars:
+    gl_archs:
+      x86_64: "x86_64"
+  set_fact:
+    gl_arch: "{{ gl_archs[ansible_architecture] }}"
+
+- name: Download from GitHub
+  vars:
+    gl_version: "0.2.1"
+  ansible.builtin.unarchive:
+    src: "https://github.com/b4b4r07/github-labeler/releases/download/v{{ gl_version }}/github-labeler_{{ gl_os }}_{{ gl_arch }}.tar.gz"
+    dest: "{{ ansible_env.HOME }}/bin"
+    remote_src: yes

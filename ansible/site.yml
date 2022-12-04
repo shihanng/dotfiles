@@ -156,4 +156,6 @@
 
     - role: lua-language-server
 
+    - role: github-labeler
+
     - role: gotty

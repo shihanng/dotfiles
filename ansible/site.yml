@@ -73,6 +73,12 @@
         - "3.9.15"
         - "3.8.15"
 
+    - role: asdf_install
+      plugin: ruby
+      repo: https://github.com/asdf-vm/asdf-ruby.git
+      versions:
+        - "3.0.2"
+
     - role: asdf_pyapp
       plugins:
         - name: black

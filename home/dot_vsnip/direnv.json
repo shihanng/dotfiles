@@ -21,7 +21,7 @@
   },
   "poetry": {
     "prefix": ["poetry"],
-    "body": ["layout poetry"]
+    "body": ["layout python", "layout poetry"]
   },
   "node": {
     "prefix": ["js", "node", "nodejs"],

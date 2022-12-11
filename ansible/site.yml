@@ -138,4 +138,6 @@
 
     - role: clang-format
 
+    - role: stylua
+
     - role: gotty

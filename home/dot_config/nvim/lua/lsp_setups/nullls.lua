@@ -52,7 +52,27 @@ local M = {
 			filetypes = { "c", "cpp", "cs", "java", "proto" },
 		}),
 		null_ls.builtins.formatting.goimports,
-		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.formatting.prettierd.with({
+			filetypes = {
+				"astro",
+				"css",
+				"graphql",
+				"handlebars",
+				"html",
+				"javascript",
+				"javascriptreact",
+				"json",
+				"jsonc",
+				"less",
+				"markdown",
+				"markdown.mdx",
+				"scss",
+				"typescript",
+				"typescriptreact",
+				"vue",
+				"yaml",
+			},
+		}),
 
 		-- https://github.com/JohnnyMorganz/StyLua
 		-- Manually install the binary from release into ~/bin

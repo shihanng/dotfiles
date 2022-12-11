@@ -1,4 +1,4 @@
 ---
 - homebrew:
     name: knqyf263/pet/pet
-    state: present
+    state: absent

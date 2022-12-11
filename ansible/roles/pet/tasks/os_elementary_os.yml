@@ -1,7 +1,6 @@
 ---
-- name: Install pet
-  vars:
-    pet_version: 0.3.6
+- name: Uninstall pet
   ansible.builtin.apt:
-    deb: "https://github.com/knqyf263/pet/releases/download/v{{ pet_version }}/pet_{{ pet_version }}_linux_{{ archs[ansible_architecture] }}.deb"
+    name: pet
+    state: absent
   become: true

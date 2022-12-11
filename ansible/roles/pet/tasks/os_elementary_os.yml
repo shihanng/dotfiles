@@ -1,7 +1,7 @@
 ---
 - name: Install pet
   vars:
-    pet_version: 0.4.0
+    pet_version: 0.3.6
   ansible.builtin.apt:
     deb: "https://github.com/knqyf263/pet/releases/download/v{{ pet_version }}/pet_{{ pet_version }}_linux_{{ archs[ansible_architecture] }}.deb"
   become: true

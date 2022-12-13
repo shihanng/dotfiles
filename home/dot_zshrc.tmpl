@@ -16,6 +16,7 @@ path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
 {{- end }}
 
 fpath=(${ASDF_DIR}/completions $fpath)
+fpath+=("$HOME/.local/share/zsh/site-functions")
 
 eval "$(starship init zsh)"
 eval "$(luarocks path --bin)"  

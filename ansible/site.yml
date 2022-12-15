@@ -134,3 +134,5 @@
     - role: ccls
 
     - role: pandoc # We need this for checkmake
+
+    - role: gotty

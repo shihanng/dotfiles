@@ -15,7 +15,7 @@
 
 - name: Install binary from GitHub
   vars:
-    gotty_version: "0.2.1"
+    gotty_version: "1.5.0"
   ansible.builtin.unarchive:
     src: "https://github.com/sorenisanerd/gotty/releases/download/v{{ gotty_version }}/gotty_v{{ gotty_version }}_{{ gotty_os }}_{{ gotty_arch }}.tar.gz"
     dest: "{{ ansible_env.HOME }}/bin"

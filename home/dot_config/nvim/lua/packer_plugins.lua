@@ -68,6 +68,7 @@ return require("packer").startup(function(use)
 	use({ "jeffkreeftmeijer/vim-numbertoggle" })
 	use({ "tpope/vim-repeat" })
 	use({ "mg979/vim-visual-multi" })
+	use({ "karb94/neoscroll.nvim" })
 
 	-- Explore
 	use({

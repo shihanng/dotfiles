@@ -1,7 +1,6 @@
 local lsp = require("lspconfig")
 
 local default_setup = require("lsp_setups/default_setup")
-local null_ls = require("null-ls")
 
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#change-diagnostic-symbols-in-the-sign-column-gutter
 local signs = { Error = "ﮖ ", Warn = " ", Hint = "ﯦ ", Info = " " }
@@ -95,8 +94,6 @@ require("ufo").setup({
 	end,
 })
 
-local opts = { noremap = true, silent = true }
-
 vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
 vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds)
@@ -107,9 +104,6 @@ vim.keymap.set("n", "K", function()
 		vim.lsp.buf.hover()
 	end
 end)
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 
 lsp.astro.setup(default_setup)
 lsp.bashls.setup(default_setup)
@@ -127,4 +121,3 @@ lsp.sumneko_lua.setup(require("lsp_setups/sumneko_lua"))
 lsp.terraformls.setup(require("lsp_setups/terraformls"))
 lsp.tflint.setup(default_setup)
 lsp.tsserver.setup(require("lsp_setups/tsserver"))
-null_ls.setup(require("lsp_setups/nullls"))

@@ -1,0 +1,1 @@
+- All Lua files are placed inside the `shihanng/` directory to prevent namespace collisions, e.g., the `treesitter.lua` in our Lua directory may cause issues as the `treesitter` namespace is already in use by the [tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter) plugin. 

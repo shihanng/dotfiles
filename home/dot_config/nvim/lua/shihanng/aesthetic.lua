@@ -1,13 +1,3 @@
-require("nightfox").setup({
-	options = {
-		styles = {
-			comments = "italic",
-			keywords = "bold",
-			types = "italic,bold",
-		},
-	},
-})
-
 require("nvim-treesitter.configs").setup({
 	ensure_installed = "all",
 	ignore_install = { "haskell" },
@@ -44,8 +34,6 @@ vim.g.nvcode_termcolors = 256
 
 vim.opt.syntax = "on"
 
-vim.cmd([[colorscheme nightfox]])
-
 if vim.fn.has("termguicolors") == 1 then
 	vim.opt.termguicolors = true
 end
@@ -69,7 +57,6 @@ local dap_line = {
 }
 require("lualine").setup({
 	options = {
-		theme = "nightfox",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 	},

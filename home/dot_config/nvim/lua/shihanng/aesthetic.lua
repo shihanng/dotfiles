@@ -87,7 +87,3 @@ vim.api.nvim_set_keymap(
 	[[:center 80<cr>hhv0r=A<space><esc>40A=<esc>:Commentary<cr><esc>81<bar>D]],
 	{ silent = true }
 )
-
--- https://github.com/tversteeg/registers.nvim
-vim.api.nvim_set_var("registers_window_border", "rounded")
-vim.api.nvim_set_var("registers_window_max_width", 40)

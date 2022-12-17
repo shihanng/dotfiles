@@ -1,7 +1,7 @@
 vim.opt.shell = "/bin/bash"
 
 require("shihanng.basic")
-require("shihanng.folding")
+require("shihanng.remap")
 require("shihanng.motion")
 require("shihanng.aesthetic")
 require("shihanng.comment")

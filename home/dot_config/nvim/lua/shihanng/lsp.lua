@@ -10,10 +10,6 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
--- Use color that does have same background color
-local hi_normal = vim.api.nvim_get_hl_by_name("Normal", true)
-vim.api.nvim_set_hl(0, "NormalFloat", hi_normal)
-
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#borders
 local border = {
 	{ "╭", "FloatBorder" },

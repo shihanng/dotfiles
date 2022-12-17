@@ -71,7 +71,7 @@ lsp.on_attach(function(client, bufnr)
 	bind("n", "[d", vim.diagnostic.goto_prev, opts)
 	bind("n", "]d", vim.diagnostic.goto_next, opts)
 
-	if client.supports_method("textDocument/formatting") then
+	if client.server_capabilities.documentFormattingProvider then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			group = augroup,
@@ -83,7 +83,7 @@ lsp.on_attach(function(client, bufnr)
 		vim.keymap.set("n", "<space>f", lsp_formatting, opts)
 	end
 
-	if client.supports_method("textDocument/rangeFormatting") then
+	if client.server_capabilities.documentRangeFormattingProvider then
 		vim.keymap.set("v", "<space>f", lsp_formatting, opts)
 	end
 end)

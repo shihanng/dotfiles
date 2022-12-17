@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	})
 	use({ "jose-elias-alvarez/nvim-lsp-ts-utils" })
-	use({ "RRethy/nvim-treesitter-textsubjects" })
+	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 	use({ "windwp/nvim-ts-autotag" })
 	use({ "b3nj5m1n/kommentary" })
 	use({ "cohama/lexima.vim" })

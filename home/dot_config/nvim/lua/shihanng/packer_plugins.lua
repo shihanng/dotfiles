@@ -92,6 +92,7 @@ return require("packer").startup(function(use)
 			require("stabilize").setup()
 		end,
 	})
+	use("ThePrimeagen/harpoon")
 
 	-- Git
 	use({ "tpope/vim-fugitive" })

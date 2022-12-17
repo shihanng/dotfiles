@@ -1,34 +1,3 @@
-local actions = require("telescope.actions")
-local trouble = require("trouble.providers.telescope")
-
-require("telescope").setup({
-	defaults = {
-		file_sorter = require("telescope.sorters").get_fzy_sorter,
-		mappings = {
-			i = {
-				["<esc>"] = actions.close,
-				["<c-t>"] = trouble.open_with_trouble,
-			},
-			n = { ["<c-t>"] = trouble.open_with_trouble },
-		},
-	},
-	extensions = {
-		fzy_native = {
-			override_generic_sorter = false,
-			override_file_sorter = true,
-		},
-	},
-})
-require("telescope").load_extension("fzy_native")
-
-vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('explore').project_files()<cr>", { noremap = true })
-vim.api.nvim_set_keymap(
-	"n",
-	"<C-b>",
-	":lua require('telescope.builtin').buffers({show_all_buffers=true})<cr>",
-	{ noremap = true }
-)
-vim.api.nvim_set_keymap("n", "<C-f>", ":lua require('telescope.builtin').live_grep()<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", { noremap = true })
 
@@ -90,17 +59,3 @@ require("nvim-tree").setup({
 		},
 	},
 })
-
--- Fallback to find_files if not in git directory.
--- This does not work as expected because pcall return true.
--- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#falling-back-to-find_files-if-git_files-cant-find-a-git-directory
-local M = {}
-
-M.project_files = function()
-	local ok = pcall(require("telescope.builtin").git_files, {show_untracked = true})
-	if not ok then
-		require("telescope.builtin").find_files({})
-	end
-end
-
-return M

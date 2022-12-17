@@ -73,7 +73,8 @@ return require("packer").startup(function(use)
 	-- Explore
 	use({
 		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+		tag = "0.1.0",
+		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use("nvim-telescope/telescope-dap.nvim")
 	use("nvim-telescope/telescope-fzy-native.nvim")

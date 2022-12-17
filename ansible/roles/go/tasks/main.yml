@@ -29,3 +29,10 @@
   ansible.builtin.command: go install {{ item|quote }}
   loop: "{{ go_installs }}"
   changed_when: false
+
+- name: Remove binaries
+  loop:
+    - gopls
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/go/bin/{{ item }}"
+    state: absent

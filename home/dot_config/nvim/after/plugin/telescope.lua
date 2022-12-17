@@ -21,6 +21,7 @@ require("telescope").setup({
 	},
 })
 require("telescope").load_extension("fzy_native")
+require("telescope").load_extension("harpoon")
 
 vim.keymap.set("n", "<C-f>", builtin.live_grep, { noremap = true })
 vim.keymap.set("n", "<C-b>", function()
@@ -36,3 +37,6 @@ vim.keymap.set("n", "<C-p>", function()
 		builtin.find_files()
 	end
 end, { noremap = true })
+
+-- :Telescope harpoon marks
+vim.keymap.set("n", "<leader>hh", require("telescope").extensions.harpoon.marks)

@@ -48,8 +48,6 @@ return require("packer").startup(function(use)
 		},
 	})
 	use({ "rcarriga/cmp-dap" })
-	use({ "hrsh7th/cmp-vsnip" })
-	use({ "hrsh7th/vim-vsnip" })
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },

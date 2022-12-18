@@ -52,6 +52,7 @@ local lsp_formatting = function(options)
 			terraformls = true,
 			gopls = true,
 			pyright = true,
+			sumneko_lua = true,
 		}
 
 		return not no_format_list[client.name]

@@ -174,3 +174,5 @@
     - role: lua-language-server
 
     - role: rose-pine
+
+    - role: wezterm

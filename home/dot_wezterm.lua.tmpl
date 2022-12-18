@@ -1,7 +1,10 @@
 local wezterm = require "wezterm"
+local colors = require('lua/rose-pine').colors()
+local window_frame = require('lua/rose-pine').window_frame()
 
 return {
-    color_scheme = "nightfox",
+    colors = colors,
+    window_frame = window_frame,
 {{- if eq .chezmoi.os "darwin" }}
     use_ime = false,
 {{- else }}

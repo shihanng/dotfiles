@@ -136,7 +136,6 @@
         # - "golang.org/x/tools/cmd/goimports@latest"
         # - "golang.org/x/tools/gopls@latest" -- Uninstalled
         - "github.com/mrtazz/checkmake/cmd/checkmake@latest"
-      tags: [runme]
 
     - role: fzf
 
@@ -173,3 +172,5 @@
 
     # Uninstalled (these are now managed in Neovim)
     - role: lua-language-server
+
+    - role: rose-pine

@@ -6,3 +6,13 @@
     name: "{{ item }}"
     global: yes
   loop: "{{ pkgs }}"
+
+- name: Uninstall
+  environment:
+    NPM_CONFIG_PREFIX: "{{ ansible_env.HOME }}/.npm-global"
+  community.general.npm:
+    name: "{{ item }}"
+    state: absent
+    global: yes
+  loop:
+    - "@astrojs/language-server"

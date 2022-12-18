@@ -12,6 +12,7 @@ lsp.preset("recommended")
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 lsp.ensure_installed({
+    "astro",
 	"gopls",
 	"ltex",
 	"sumneko_lua",
@@ -35,6 +36,7 @@ local lsp_opts = {
 }
 
 lsp.setup_servers({
+    "astro",
 	"ltex",
 	"sumneko_lua",
 	opts = lsp_opts,

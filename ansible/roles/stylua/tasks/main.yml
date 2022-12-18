@@ -9,7 +9,7 @@
 
 - name: Download from GitHub
   vars:
-    stylua_version: "0.15.2"
+    stylua_version: "0.15.3"
   ansible.builtin.unarchive:
     src: "https://github.com/JohnnyMorganz/StyLua/releases/download/v{{ stylua_version }}/stylua-{{ stylua_os }}-{{ ansible_architecture }}.zip"
     dest: "{{ ansible_env.HOME }}/bin"

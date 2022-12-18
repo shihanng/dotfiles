@@ -13,9 +13,20 @@ lsp.preset("recommended")
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 lsp.ensure_installed({
 	"astro",
+	"bashls",
+	"cssls",
+	"efm",
+	"elixirls",
 	"gopls",
+	"graphql",
+	"jsonls",
 	"ltex",
+	"pyright",
+	"solargraph",
 	"sumneko_lua",
+	"terraformls",
+	"tflint",
+	"tsserver",
 })
 
 lsp.configure("gopls", {
@@ -30,6 +41,41 @@ lsp.configure("gopls", {
 	},
 })
 
+lsp.configure("efm", {
+	capabilities = capabilities,
+	settings = {
+		filetypes = {
+			"elixir",
+			"eruby",
+			"ruby",
+			"sh",
+			"sql",
+		},
+		init_options = {
+			documentFormatting = true,
+			hover = true,
+			documentSymbol = true,
+			codeAction = true,
+			completion = true,
+		},
+	},
+})
+
+lsp.configure("ccls", {
+	force_setup = true,
+	capabilities = capabilities,
+})
+
+local tsserver_opts = lsp.build_options("tsserver", {
+	on_attach = function(_, _)
+		local opts = { noremap = true, silent = true }
+		local bind = vim.keymap.set
+
+		bind("n", "gs", require("typescript").actions.organizeImports, opts)
+		bind("n", "gI", require("typescript").actions.addMissingImports, opts)
+	end,
+})
+
 -- share options between serveral servers
 local lsp_opts = {
 	capabilities = capabilities,
@@ -37,8 +83,18 @@ local lsp_opts = {
 
 lsp.setup_servers({
 	"astro",
+	"bashls",
+	"cssls",
+	"elixir-ls",
+	"graphql",
+	"jsonls",
 	"ltex",
+	"pyright",
+	"solargraph",
 	"sumneko_lua",
+	"terraformls",
+	"tflint",
+	"tsserver",
 	opts = lsp_opts,
 })
 
@@ -49,10 +105,11 @@ local lsp_formatting = function(options)
 	opts.filter = function(client)
 		-- Get client name from :LspInfo
 		local no_format_list = {
-			terraformls = true,
 			gopls = true,
+			jsonls = true,
 			pyright = true,
 			sumneko_lua = true,
+			terraformls = true,
 		}
 
 		return not no_format_list[client.name]
@@ -125,6 +182,16 @@ lsp.nvim_workspace()
 
 lsp.setup()
 
+-- https://github.com/VonHeikemen/lsp-zero.nvim/discussions/39
+require("typescript").setup({
+	disable_commands = false, -- prevent the plugin from creating Vim commands
+	debug = false, -- enable debug logging for commands
+	go_to_source_definition = {
+		fallback = true, -- fall back to standard LSP definition on failure
+	},
+	server = tsserver_opts,
+})
+
 require("mason-null-ls").setup({
 	ensure_installed = { "stylua" },
 })
@@ -165,12 +232,12 @@ null_ls.setup({
 	capabilities = capabilities,
 	sources = {
 		checkmake,
-		null_ls.builtins.diagnostics.eslint_d,
 		null_ls.builtins.code_actions.eslint_d,
+		null_ls.builtins.diagnostics.eslint_d,
+		null_ls.builtins.diagnostics.flake8,
 		null_ls.builtins.diagnostics.golangci_lint,
 		null_ls.builtins.diagnostics.luacheck,
 		null_ls.builtins.diagnostics.mypy,
-		null_ls.builtins.diagnostics.flake8,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.isort,
 		null_ls.builtins.formatting.clang_format.with({
@@ -199,6 +266,7 @@ null_ls.setup({
 			},
 		}),
 		null_ls.builtins.formatting.stylua,
+		require("typescript.extensions.null-ls.code-actions"),
 	},
 })
 

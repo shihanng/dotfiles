@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	})
-	use({ "jose-elias-alvarez/nvim-lsp-ts-utils" })
+	use({ "jose-elias-alvarez/typescript.nvim" })
 	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 	use({ "windwp/nvim-ts-autotag" })
 	use({ "cohama/lexima.vim" })
@@ -137,9 +137,6 @@ return require("packer").startup(function(use)
 
 	-- Cue
 	use({ "jjo/vim-cue" })
-
-	-- SQL
-	use({ "nanotee/sqls.nvim" })
 
 	-- chezmoi
 	use({ "alker0/chezmoi.vim" })

@@ -152,10 +152,10 @@
 
     - role: clang-format
 
-    - role: stylua
-
-    - role: lua-language-server
-
     - role: github-labeler
 
     - role: gotty
+
+    # Uninstalled (these are now managed in Neovim)
+    - role: stylua
+    - role: lua-language-server

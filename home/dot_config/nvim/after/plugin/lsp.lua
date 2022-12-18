@@ -197,32 +197,7 @@ require("mason-null-ls").setup({
 })
 
 local null_ls = require("null-ls")
-local null_ls_helpers = require("null-ls.helpers")
 local null_opts = lsp.build_options("null-ls", {})
-
-local checkmake = {
-	method = null_ls.methods.DIAGNOSTICS,
-	filetypes = { "make" },
-	generator = null_ls.generator({
-		command = "checkmake",
-		args = {
-			[[--format]],
-			[[{{.LineNumber}}|{{.Rule}}: {{.Violation}}{{"\n"}}]],
-			"$FILENAME",
-		},
-		to_stdin = false,
-		from_stderr = true,
-		format = "raw",
-		to_temp_file = true,
-		on_output = null_ls_helpers.diagnostics.from_errorformat(
-			table.concat({
-				[[%l|%m]],
-				[[%-G\\s%#]],
-			}, ","),
-			"checkmake"
-		),
-	}),
-}
 
 null_ls.setup({
 	on_attach = function(client, bufnr)
@@ -231,8 +206,8 @@ null_ls.setup({
 	end,
 	capabilities = capabilities,
 	sources = {
-		checkmake,
 		null_ls.builtins.code_actions.eslint_d,
+		null_ls.builtins.diagnostics.checkmake,
 		null_ls.builtins.diagnostics.eslint_d,
 		null_ls.builtins.diagnostics.flake8,
 		null_ls.builtins.diagnostics.golangci_lint,

@@ -80,6 +80,18 @@
       versions:
         - "3.0.2"
 
+    - role: asdf_install
+      plugin: erlang
+      repo: https://github.com/asdf-vm/asdf-erlang.git
+      versions:
+        - "25.2"
+
+    - role: asdf_install
+      plugin: elixir
+      repo: https://github.com/asdf-vm/asdf-elixir.git
+      versions:
+        - "1.14.2"
+
     - role: asdf_pyapp
       plugins:
         - name: black

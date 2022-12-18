@@ -1,21 +1,16 @@
 ---
-# - name: Set OS
-#   vars:
-#     stylua_oses:
-#       "elementary OS": "linux"
-#       "Darwin": "macos"
-#   set_fact:
-#     stylua_os: "{{ stylua_oses[ansible_os_family] }}"
-#
-# - name: Download from GitHub
-#   vars:
-#     stylua_version: "0.15.2"
-#   ansible.builtin.unarchive:
-#     src: "https://github.com/JohnnyMorganz/StyLua/releases/download/v{{ stylua_version }}/stylua-{{ stylua_os }}-{{ ansible_architecture }}.zip"
-#     dest: "{{ ansible_env.HOME }}/bin"
-#     remote_src: yes
+- name: Set OS
+  vars:
+    stylua_oses:
+      "elementary OS": "linux"
+      "Darwin": "macos"
+  set_fact:
+    stylua_os: "{{ stylua_oses[ansible_os_family] }}"
 
-- name: Uninstall stylua
-  ansible.builtin.file:
-    path: "{{ ansible_env.HOME }}/bin/stylua"
-    state: absent
+- name: Download from GitHub
+  vars:
+    stylua_version: "0.15.2"
+  ansible.builtin.unarchive:
+    src: "https://github.com/JohnnyMorganz/StyLua/releases/download/v{{ stylua_version }}/stylua-{{ stylua_os }}-{{ ansible_architecture }}.zip"
+    dest: "{{ ansible_env.HOME }}/bin"
+    remote_src: yes

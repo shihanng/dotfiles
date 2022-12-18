@@ -156,6 +156,7 @@
 
     - role: gotty
 
-    # Uninstalled (these are now managed in Neovim)
     - role: stylua
+
+    # Uninstalled (these are now managed in Neovim)
     - role: lua-language-server

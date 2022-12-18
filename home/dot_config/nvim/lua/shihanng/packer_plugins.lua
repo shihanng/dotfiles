@@ -56,8 +56,8 @@ return require("packer").startup(function(use)
 	use({ "jose-elias-alvarez/nvim-lsp-ts-utils" })
 	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 	use({ "windwp/nvim-ts-autotag" })
-	use({ "b3nj5m1n/kommentary" })
 	use({ "cohama/lexima.vim" })
+	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({
 		"folke/lsp-trouble.nvim",

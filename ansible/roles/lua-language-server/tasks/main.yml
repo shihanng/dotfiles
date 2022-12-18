@@ -1,29 +1,35 @@
 ---
-- name: Set OS
-  vars:
-    luals_oses:
-      "elementary OS": "linux"
-      "Darwin": "darwin"
-  set_fact:
-    luals_os: "{{ luals_oses[ansible_os_family] }}"
+# - name: Set OS
+#   vars:
+#     luals_oses:
+#       "elementary OS": "linux"
+#       "Darwin": "darwin"
+#   set_fact:
+#     luals_os: "{{ luals_oses[ansible_os_family] }}"
+#
+# - name: Set architecture
+#   vars:
+#     luals_archs:
+#       x86_64: "x64"
+#   set_fact:
+#     luals_arch: "{{ luals_archs[ansible_architecture] }}"
+#
+# - name: Create lua directory in bin
+#   ansible.builtin.file:
+#     path: "{{ ansible_env.HOME }}/bin/lua"
+#     state: directory
+#     mode: "0755"
+#
+# - name: Download from GitHub
+#   vars:
+#     luals_version: "3.6.4"
+#   ansible.builtin.unarchive:
+#     src: "https://github.com/sumneko/lua-language-server/releases/download/{{ luals_version }}/lua-language-server-{{ luals_version }}-{{ luals_os }}-{{ luals_arch }}.tar.gz"
+#     dest: "{{ ansible_env.HOME }}/bin/lua"
+#     remote_src: yes
 
-- name: Set architecture
-  vars:
-    luals_archs:
-      x86_64: "x64"
-  set_fact:
-    luals_arch: "{{ luals_archs[ansible_architecture] }}"
-
-- name: Create lua directory in bin
+- name: Remove lua directory in bin
   ansible.builtin.file:
     path: "{{ ansible_env.HOME }}/bin/lua"
-    state: directory
+    state: absent
     mode: "0755"
-
-- name: Download from GitHub
-  vars:
-    luals_version: "3.6.4"
-  ansible.builtin.unarchive:
-    src: "https://github.com/sumneko/lua-language-server/releases/download/{{ luals_version }}/lua-language-server-{{ luals_version }}-{{ luals_os }}-{{ luals_arch }}.tar.gz"
-    dest: "{{ ansible_env.HOME }}/bin/lua"
-    remote_src: yes

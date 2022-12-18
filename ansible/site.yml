@@ -53,7 +53,6 @@
         - "18.12.1"
     - role: npm_install
       pkgs:
-        - "@astrojs/language-server"
         - "@bitwarden/cli"
         - "@fsouza/prettierd"
         - "bash-language-server"
@@ -64,6 +63,7 @@
         - "typescript-language-server"
         - "vscode-langservers-extracted"
         - "yarn"
+        # - "@astrojs/language-server"
 
     - role: asdf_install
       plugin: python

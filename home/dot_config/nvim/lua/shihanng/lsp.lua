@@ -28,7 +28,6 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-lsp.astro.setup(default_setup)
 lsp.bashls.setup(default_setup)
 lsp.ccls.setup(default_setup)
 lsp.cssls.setup(require("lsp_setups/cssls"))

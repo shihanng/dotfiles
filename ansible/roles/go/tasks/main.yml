@@ -33,7 +33,9 @@
 - name: Remove binaries
   loop:
     - efm-langserver
+    - goimports
     - gopls
+    - sqls
   ansible.builtin.file:
     path: "{{ ansible_env.HOME }}/go/bin/{{ item }}"
     state: absent

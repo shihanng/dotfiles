@@ -193,7 +193,19 @@ require("typescript").setup({
 })
 
 require("mason-null-ls").setup({
-	ensure_installed = { "stylua" },
+	ensure_installed = {
+		"black",
+		"clang_format",
+		"eslint_d",
+		"flake8",
+		"goimports",
+		"golangci_lint",
+		"isort",
+		"luacheck",
+		"mypy",
+		"prettierd",
+		"stylua",
+	},
 })
 
 local null_ls = require("null-ls")

@@ -16,7 +16,9 @@
     global: yes
   loop:
     - "@astrojs/language-server"
+    - "@fsouza/prettierd"
     - "bash-language-server"
+    - "eslint_d"
     - "graphql-language-service-cli"
     - "pyright"
     - "typescript"

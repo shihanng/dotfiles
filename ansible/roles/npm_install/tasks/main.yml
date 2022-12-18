@@ -16,3 +16,9 @@
     global: yes
   loop:
     - "@astrojs/language-server"
+    - "bash-language-server"
+    - "graphql-language-service-cli"
+    - "pyright"
+    - "typescript"
+    - "typescript-language-server"
+    - "vscode-langservers-extracted"

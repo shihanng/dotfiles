@@ -53,17 +53,17 @@
         - "18.12.1"
     - role: npm_install
       pkgs:
+        # - "@astrojs/language-server"
+        # - "bash-language-server"
+        # - "graphql-language-service-cli"
+        # - "pyright"
+        # - "typescript"
+        # - "typescript-language-server"
+        # - "vscode-langservers-extracted"
         - "@bitwarden/cli"
         - "@fsouza/prettierd"
-        - "bash-language-server"
         - "eslint_d"
-        - "graphql-language-service-cli"
-        - "pyright"
-        - "typescript"
-        - "typescript-language-server"
-        - "vscode-langservers-extracted"
         - "yarn"
-        # - "@astrojs/language-server"
 
     - role: asdf_install
       plugin: python
@@ -119,11 +119,11 @@
     - role: go
       go_version: "1.19.3"
       go_installs:
+        # - "github.com/mattn/efm-langserver@latest"
+        # - "golang.org/x/tools/gopls@latest" -- Uninstalled
         - "github.com/lighttiger2505/sqls@latest"
-        - "github.com/mattn/efm-langserver@latest"
         - "github.com/mrtazz/checkmake/cmd/checkmake@latest"
         - "golang.org/x/tools/cmd/goimports@latest"
-        # - "golang.org/x/tools/gopls@latest" -- Uninstalled
 
     - role: fzf
 

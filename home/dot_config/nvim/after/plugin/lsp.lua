@@ -122,6 +122,10 @@ lsp.nvim_workspace()
 
 lsp.setup()
 
+require("mason-null-ls").setup({
+	ensure_installed = { "stylua" },
+})
+
 local null_ls = require("null-ls")
 local null_ls_helpers = require("null-ls.helpers")
 local null_opts = lsp.build_options("null-ls", {})

@@ -24,7 +24,7 @@ vim.opt.backup = false
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.local/share/vim/undo//")
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.clipboard = "unnamedplus"

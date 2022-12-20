@@ -1,0 +1,22 @@
+---
+- name: Set OS
+  vars:
+    lazygit_oses:
+      "elementary OS": "Linux"
+  set_fact:
+    lazygit_os: "{{ lazygit_oses[ansible_os_family] }}"
+
+- name: Set architecture
+  vars:
+    lazygit_archs:
+      x86_64: "x86_64"
+  set_fact:
+    lazygit_arch: "{{ lazygit_archs[ansible_architecture] }}"
+
+- name: Install binary from GitHub
+  vars:
+    lazygit_version: "0.36.0"
+  ansible.builtin.unarchive:
+    src: "https://github.com/jesseduffield/lazygit/releases/download/v{{ lazygit_version }}/lazygit_{{ lazygit_version }}_{{ lazygit_os }}_{{ lazygit_arch }}.tar.gz"
+    dest: "{{ ansible_env.HOME }}/bin"
+    remote_src: yes

@@ -1,0 +1,4 @@
+---
+- homebrew:
+    name: jesseduffield/lazygit/lazygit
+    state: present

@@ -176,3 +176,5 @@
     - role: rose-pine
 
     - role: wezterm
+
+    - role: lazygit

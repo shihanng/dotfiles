@@ -109,6 +109,9 @@
         - name: pgcli
           versions:
             - "3.5.0"
+        - name: pipenv
+          versions:
+            - "2022.12.19"
 
     - role: asdf_install
       plugin: poetry

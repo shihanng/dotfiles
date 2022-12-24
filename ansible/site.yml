@@ -134,6 +134,12 @@
       versions:
         - "1.3.0"
 
+    - role: asdf_install
+      plugin: helm
+      repo: https://github.com/Antiarchitect/asdf-helm.git
+      versions:
+        - "3.10.3"
+
     - role: go
       go_version: "1.19.3"
       go_installs:

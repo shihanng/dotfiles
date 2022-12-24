@@ -8,6 +8,7 @@ elixir 1.14.2
 erlang 25.2
 flake8 6.0.0
 ghq 1.3.0
+helm 3.10.3
 isort 5.10.1
 kubectl 1.23.3
 kubectx 0.9.4

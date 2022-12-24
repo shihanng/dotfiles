@@ -1,7 +1,12 @@
 require("nvim-dap-virtual-text").setup()
 require("telescope").load_extension("dap")
 
-require("dap-python").setup()
+require("mason-nvim-dap").setup({
+	ensure_installed = { "delve", "python" },
+	automatic_setup = false,
+})
+
+require("dap-python").setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
 
 local dap_go = require("dap-go")
 local dap_ui = require("dapui")

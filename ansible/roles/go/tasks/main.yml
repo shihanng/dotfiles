@@ -32,6 +32,7 @@
 
 - name: Remove binaries
   loop:
+    - dlv
     - efm-langserver
     - goimports
     - gopls

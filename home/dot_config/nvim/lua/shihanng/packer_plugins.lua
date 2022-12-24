@@ -74,6 +74,7 @@ return require("packer").startup(function(use)
 	use({ "theHamsta/nvim-dap-virtual-text" })
 	use({ "leoluz/nvim-dap-go" })
 	use({ "mfussenegger/nvim-dap-python" })
+	use({ "jayp0521/mason-nvim-dap.nvim" })
 
 	-- Motion
 	use("tpope/vim-surround")

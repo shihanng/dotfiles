@@ -33,6 +33,7 @@ lsp.configure("gopls", {
 	capabilities = capabilities,
 	settings = {
 		gopls = {
+			gofumpt = true,
 			analyses = {
 				unusedparams = true,
 			},
@@ -198,7 +199,7 @@ require("mason-null-ls").setup({
 		"clang_format",
 		"eslint_d",
 		"flake8",
-		"goimports",
+		"gofumpt",
 		"golangci_lint",
 		"isort",
 		"luacheck",
@@ -230,7 +231,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.clang_format.with({
 			filetypes = { "c", "cpp", "cs", "java", "proto" },
 		}),
-		null_ls.builtins.formatting.goimports,
+		null_ls.builtins.formatting.gofumpt,
 		null_ls.builtins.formatting.prettierd.with({
 			filetypes = {
 				"astro",

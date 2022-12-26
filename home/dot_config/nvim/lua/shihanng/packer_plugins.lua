@@ -84,6 +84,7 @@ return require("packer").startup(function(use)
 	use({ "tpope/vim-repeat" })
 	use({ "mg979/vim-visual-multi" })
 	use({ "karb94/neoscroll.nvim" })
+	use({ "junegunn/vim-easy-align" })
 
 	-- Explore
 	use({

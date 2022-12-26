@@ -1,13 +1,21 @@
 ---
 - set_fact:
     rose_pine_tmp: /tmp/rose-pine-wezterm
+    rose_pine_dest: "{{ ansible_env.HOME }}/.config/wezterm/lua/"
+
+- name: Check if already installed
+  ansible.builtin.stat:
+    path: "{{ rose_pine_dest }}"
+  register: rose_pine_installed
 
 - name: Clone the GitHub repository
   ansible.builtin.git:
     repo: "https://github.com/neapsix/wezterm.git"
     dest: "{{ rose_pine_tmp }}"
+  when: not (rose_pine_installed.stat.isdir is defined and rose_pine_installed.stat.isdir)
 
 - name: Copy the lua/ directory
   ansible.builtin.copy:
     src: "{{ rose_pine_tmp }}/lua/"
     dest: "{{ ansible_env.HOME }}/.config/wezterm/lua/"
+  when: not (rose_pine_installed.stat.isdir is defined and rose_pine_installed.stat.isdir)

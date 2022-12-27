@@ -44,21 +44,19 @@ lsp.configure("gopls", {
 
 lsp.configure("efm", {
 	capabilities = capabilities,
-	settings = {
-		filetypes = {
-			"elixir",
-			"eruby",
-			"ruby",
-			"sh",
-			"sql",
-		},
-		init_options = {
-			documentFormatting = true,
-			hover = true,
-			documentSymbol = true,
-			codeAction = true,
-			completion = true,
-		},
+	filetypes = {
+		"elixir",
+		"eruby",
+		"ruby",
+		"sh",
+		"sql",
+	},
+	init_options = {
+		documentFormatting = true,
+		hover = true,
+		documentSymbol = true,
+		codeAction = true,
+		completion = true,
 	},
 })
 

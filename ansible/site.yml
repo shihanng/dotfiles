@@ -148,6 +148,7 @@
         # - "golang.org/x/tools/cmd/goimports@latest"
         # - "golang.org/x/tools/gopls@latest" -- Uninstalled
         - "github.com/mrtazz/checkmake/cmd/checkmake@latest"
+        - "sigs.k8s.io/kind@v0.17.0"
 
     - role: fzf
 

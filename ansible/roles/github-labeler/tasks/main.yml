@@ -21,3 +21,4 @@
     src: "https://github.com/b4b4r07/github-labeler/releases/download/v{{ gl_version }}/github-labeler_{{ gl_os }}_{{ gl_arch }}.tar.gz"
     dest: "{{ ansible_env.HOME }}/bin"
     remote_src: yes
+    creates: "{{ ansible_env.HOME }}/bin/github-labeler"

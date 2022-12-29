@@ -19,4 +19,5 @@
   ansible.builtin.unarchive:
     src: "https://github.com/jesseduffield/lazygit/releases/download/v{{ lazygit_version }}/lazygit_{{ lazygit_version }}_{{ lazygit_os }}_{{ lazygit_arch }}.tar.gz"
     dest: "{{ ansible_env.HOME }}/bin"
+    creates: "{{ ansible_env.HOME }}/bin/lazygit"
     remote_src: yes

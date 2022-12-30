@@ -21,6 +21,7 @@ lsp.ensure_installed({
 	"gopls",
 	"graphql",
 	"jsonls",
+	"ltex",
 	"pyright",
 	"solargraph",
 	"sumneko_lua",
@@ -57,6 +58,15 @@ lsp.configure("efm", {
 		documentSymbol = true,
 		codeAction = true,
 		completion = true,
+	},
+})
+
+lsp.configure("ltex", {
+	capabilities = capabilities,
+	ltex = {
+		additionalRules = {
+			languageModel = "~/ngrams/",
+		},
 	},
 })
 

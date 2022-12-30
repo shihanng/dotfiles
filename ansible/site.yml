@@ -191,3 +191,5 @@
     - role: wezterm
 
     - role: lazygit
+
+    - role: ngram-data

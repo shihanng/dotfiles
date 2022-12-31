@@ -233,6 +233,7 @@ require("mason-null-ls").setup({
 		"mypy",
 		"prettierd",
 		"stylua",
+		"vale",
 	},
 })
 
@@ -253,6 +254,7 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.golangci_lint,
 		null_ls.builtins.diagnostics.luacheck,
 		null_ls.builtins.diagnostics.mypy,
+		null_ls.builtins.diagnostics.vale,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.isort,
 		null_ls.builtins.formatting.clang_format.with({

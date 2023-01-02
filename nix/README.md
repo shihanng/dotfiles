@@ -9,3 +9,9 @@
   ```
   home-manager switch --flake './flake.nix#shihanng'
   ```
+
+- Darwin:
+  ```shell
+  nix build ./#darwinConfigurations.shihanng.system
+  ./result/sw/bin/darwin-rebuild switch --flake ./#shihanng
+  ```

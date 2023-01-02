@@ -12,6 +12,8 @@ path=(/opt/homebrew/bin $path[@])
 {{- if eq .chezmoi.os "darwin" }}
 path=($(brew --prefix gnu-tar)/libexec/gnubin $path[@])
 path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
+path=(/etc/profiles/per-user/${USER}/bin $path[@])
+path=(/run/current-system/sw/bin $path[@])
 {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
 {{- end }}
 path=($HOME/.local/share/nvim/mason/bin $path[@])

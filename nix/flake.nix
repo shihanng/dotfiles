@@ -21,6 +21,12 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
+          {
+            home = {
+              username = "shihanng";
+              homeDirectory = "/home/shihanng";
+            };
+          }
           ./home.nix
         ];
 

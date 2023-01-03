@@ -2,8 +2,8 @@
 - Linux
 
   ```shell
-  nix build --no-link ./flake.nix#homeConfigurations.shihanng.activationPackage
-  "$(nix path-info ./flake#homeConfigurations.shihanng.activationPackage)"/activate
+  nix build --no-link ./#homeConfigurations.shihanng.activationPackage
+  "$(nix path-info ./#homeConfigurations.shihanng.activationPackage)"/activate
   ```
 
   ```

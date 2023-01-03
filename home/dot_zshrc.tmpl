@@ -18,6 +18,11 @@ path=(/run/current-system/sw/bin $path[@])
 {{- end }}
 path=($HOME/.local/share/nvim/mason/bin $path[@])
 
+{{- if eq .chezmoi.os "darwin" }}
+# See https://rycee.gitlab.io/home-manager/index.html#sec-install-nix-darwin-module
+. "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
+{{- end }}
+
 fpath=(${ASDF_DIR}/completions $fpath)
 fpath+=("$HOME/.local/share/zsh/site-functions")
 

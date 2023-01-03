@@ -12,7 +12,6 @@
             mkShell {
               buildInputs = [
                 nixpkgs-fmt
-                rnix-lsp
               ];
 
               shellHook = ''

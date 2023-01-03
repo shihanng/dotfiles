@@ -150,6 +150,9 @@
         - "github.com/mrtazz/checkmake/cmd/checkmake@latest"
         - "sigs.k8s.io/kind@v0.17.0"
 
+    - role: asdf_remove
+      plugins:
+        - "direnv"
     - role: fzf
 
     - role: lua

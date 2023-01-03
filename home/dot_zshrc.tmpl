@@ -38,6 +38,7 @@ export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export NAVI_CONFIG="${HOME}/.config/navi/config.yaml"
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
 
 alias lz="lazygit"
 alias ls='ls --color=auto'
@@ -66,7 +67,7 @@ zplug "marlonrichert/zsh-hist"
 
 zplug "~/.zsh", from:local
 
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+eval "$(direnv hook zsh)"
 
 # https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
 function zvm_after_init() {

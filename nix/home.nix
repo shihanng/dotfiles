@@ -4,4 +4,7 @@
     home.packages = [
         pkgs.cowsay
     ];
+
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
 }

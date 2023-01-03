@@ -13,6 +13,7 @@
               buildInputs = [
                 nixpkgs-fmt
                 pkgs.lua53Packages.luacheck
+                pkgs.stylua
                 pkgs.sumneko-lua-language-server
               ];
 

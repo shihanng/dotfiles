@@ -241,7 +241,6 @@ require("mason-null-ls").setup({
 		"isort",
 		"mypy",
 		"prettierd",
-		"stylua",
 		"vale",
 	},
 })

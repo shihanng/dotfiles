@@ -7,7 +7,7 @@
   ```
 
   ```
-  home-manager switch --flake './flake.nix#shihanng'
+  home-manager switch --flake './#shihanng'
   ```
 
 - Darwin:

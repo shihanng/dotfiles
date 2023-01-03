@@ -147,11 +147,9 @@
     - role: asdf_remove
       plugins:
         - "direnv"
+        - "lua"
 
     - role: fzf
-
-    - role: lua
-    - role: luacheck
 
     - role: keybase
 
@@ -181,9 +179,6 @@
 
     - role: stylua
 
-    # Uninstalled (these are now managed in Neovim)
-    - role: lua-language-server
-
     - role: rose-pine
 
     - role: wezterm
@@ -191,3 +186,8 @@
     - role: lazygit
 
     - role: ngram-data
+
+    - role: lua # Mostly uninstalled
+
+    # Uninstalled (these are now managed in Neovim)
+    - role: lua-language-server

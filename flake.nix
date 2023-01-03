@@ -12,6 +12,7 @@
             mkShell {
               buildInputs = [
                 nixpkgs-fmt
+                pkgs.lua53Packages.luacheck
               ];
 
               shellHook = ''

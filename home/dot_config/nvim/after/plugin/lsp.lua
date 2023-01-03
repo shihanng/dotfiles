@@ -225,6 +225,8 @@ require("typescript").setup({
 	server = tsserver_opts,
 })
 
+local test = "lala"
+
 require("mason-null-ls").setup({
 	ensure_installed = {
 		"black",
@@ -234,7 +236,6 @@ require("mason-null-ls").setup({
 		"gofumpt",
 		"golangci_lint",
 		"isort",
-		"luacheck",
 		"mypy",
 		"prettierd",
 		"stylua",

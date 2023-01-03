@@ -1,9 +1,0 @@
----
-# https://github.com/lunarmodules/luacheck
-- name: Install luacheck
-  ansible.builtin.shell: |
-    luarocks install luacheck
-    luarocks install lanes
-  args:
-    executable: zsh
-  changed_when: false

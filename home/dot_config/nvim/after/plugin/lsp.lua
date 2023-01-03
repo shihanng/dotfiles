@@ -24,7 +24,6 @@ lsp.ensure_installed({
 	"ltex",
 	"pyright",
 	"solargraph",
-	"sumneko_lua",
 	"terraformls",
 	"tflint",
 	"tsserver",
@@ -80,6 +79,11 @@ lsp.configure("rnix", {
 	capabilities = capabilities,
 })
 
+lsp.configure("sumneko_lua", {
+	force_setup = true,
+	capabilities = capabilities,
+})
+
 local tsserver_opts = lsp.build_options("tsserver", {
 	on_attach = function(_, _)
 		local opts = { noremap = true, silent = true }
@@ -105,7 +109,6 @@ lsp.setup_servers({
 	"jsonls",
 	"pyright",
 	"solargraph",
-	"sumneko_lua",
 	"terraformls",
 	"tflint",
 	"tsserver",

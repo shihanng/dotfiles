@@ -36,6 +36,7 @@
     - efm-langserver
     - goimports
     - gopls
+    - kind
     - sqls
   ansible.builtin.file:
     path: "{{ ansible_env.HOME }}/go/bin/{{ item }}"

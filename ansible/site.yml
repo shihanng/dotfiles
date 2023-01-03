@@ -38,12 +38,6 @@
       versions:
         - "1.3.5"
 
-    - role: asdf_install
-      plugin: direnv
-      repo: https://github.com/asdf-community/asdf-direnv
-      versions:
-        - "2.32.2"
-
     - role: gh
 
     - role: asdf_install
@@ -147,12 +141,13 @@
         # - "github.com/mattn/efm-langserver@latest"
         # - "golang.org/x/tools/cmd/goimports@latest"
         # - "golang.org/x/tools/gopls@latest" -- Uninstalled
+        # - "sigs.k8s.io/kind@v0.17.0"
         - "github.com/mrtazz/checkmake/cmd/checkmake@latest"
-        - "sigs.k8s.io/kind@v0.17.0"
 
     - role: asdf_remove
       plugins:
         - "direnv"
+
     - role: fzf
 
     - role: lua

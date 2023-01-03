@@ -5,7 +5,8 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  home.packages = [
-    pkgs.rnix-lsp
+  home.packages = with pkgs; [
+    kind
+    rnix-lsp
   ];
 }

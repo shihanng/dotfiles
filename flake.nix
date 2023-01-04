@@ -12,7 +12,6 @@
             mkShell {
               buildInputs = [
                 nixpkgs-fmt
-                pkgs.kustomize
                 pkgs.lua53Packages.luacheck
                 pkgs.stylua
                 pkgs.sumneko-lua-language-server

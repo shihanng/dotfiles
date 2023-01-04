@@ -45,19 +45,6 @@
       repo: https://github.com/asdf-vm/asdf-nodejs.git
       versions:
         - "18.12.1"
-    - role: npm_install
-      pkgs:
-        # - "@astrojs/language-server"
-        # - "@fsouza/prettierd"
-        # - "bash-language-server"
-        # - "eslint_d"
-        # - "graphql-language-service-cli"
-        # - "pyright"
-        # - "typescript"
-        # - "typescript-language-server"
-        # - "vscode-langservers-extracted"
-        - "@bitwarden/cli"
-        - "yarn"
 
     - role: asdf_install
       plugin: python
@@ -187,6 +174,8 @@
     - role: lazygit
 
     - role: ngram-data
+
+    - role: npm_install # This is actually uninstall
 
     - role: lua # Mostly uninstalled
 

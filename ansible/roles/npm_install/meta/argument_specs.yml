@@ -1,8 +1,0 @@
----
-argument_specs:
-  main:
-    options:
-      pkgs:
-        type: list
-        required: true
-        elements: str

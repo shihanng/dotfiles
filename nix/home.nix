@@ -6,6 +6,7 @@
   programs.direnv.nix-direnv.enable = true;
 
   home.packages = with pkgs; [
+    bitwarden-cli
     kind
     nil
     rnix-lsp

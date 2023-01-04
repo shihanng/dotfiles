@@ -127,6 +127,7 @@ local lsp_formatting = function(options)
 	opts.filter = function(client)
 		-- Get client name from :LspInfo
 		local no_format_list = {
+			astro = true,
 			jsonls = true,
 			pyright = true,
 			sumneko_lua = true,

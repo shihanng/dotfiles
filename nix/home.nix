@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     kind
+    nil
     rnix-lsp
   ];
 }

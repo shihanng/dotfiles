@@ -74,6 +74,11 @@ lsp.configure("ccls", {
 	capabilities = capabilities,
 })
 
+lsp.configure("nil_ls", {
+	force_setup = true,
+	capabilities = capabilities,
+})
+
 lsp.configure("rnix", {
 	force_setup = true,
 	capabilities = capabilities,

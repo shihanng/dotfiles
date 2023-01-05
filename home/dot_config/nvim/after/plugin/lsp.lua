@@ -89,6 +89,11 @@ lsp.configure("sumneko_lua", {
 	capabilities = capabilities,
 })
 
+lsp.configure("ansiblels", {
+	force_setup = true,
+	capabilities = capabilities,
+})
+
 local tsserver_opts = lsp.build_options("tsserver", {
 	on_attach = function(_, _)
 		local opts = { noremap = true, silent = true }
@@ -238,6 +243,7 @@ local test = "lala"
 
 require("mason-null-ls").setup({
 	ensure_installed = {
+		"ansiblelint",
 		"black",
 		"clang_format",
 		"eslint_d",

@@ -12,6 +12,8 @@
             mkShell {
               buildInputs = [
                 nixpkgs-fmt
+                pkgs.ansible-language-server
+                pkgs.ansible-lint
                 pkgs.lua53Packages.luacheck
                 pkgs.stylua
                 pkgs.sumneko-lua-language-server

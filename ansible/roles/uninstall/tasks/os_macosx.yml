@@ -5,3 +5,4 @@
     state: absent
   loop:
     - ansible
+    - knqyf263/pet/pet

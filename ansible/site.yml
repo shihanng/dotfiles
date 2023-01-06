@@ -145,8 +145,6 @@
 
     - role: gnupg
 
-    - role: pet
-
     - role: fd
 
     - role: delta

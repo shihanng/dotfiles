@@ -6,3 +6,4 @@
   become: true
   loop:
     - ansible
+    - pet

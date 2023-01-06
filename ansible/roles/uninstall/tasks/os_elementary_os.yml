@@ -1,0 +1,8 @@
+---
+- name: "Ensure package not installed via apt"
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: absent
+  become: true
+  loop:
+    - ansible

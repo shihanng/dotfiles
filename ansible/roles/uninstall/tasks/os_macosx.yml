@@ -1,0 +1,7 @@
+---
+- name: "Ensure package not installed via homebrew"
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: absent
+  loop:
+    - ansible

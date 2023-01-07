@@ -14,4 +14,14 @@
   ];
 
   programs.lazygit.enable = true;
+  programs.lazygit.settings = {
+    gui.theme = {
+      selectedRangeBgColor = [ "reverse" ];
+    };
+    keybinding.universal = {
+      quit = "q";
+      return = "q";
+    };
+  };
 }
+

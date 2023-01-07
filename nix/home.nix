@@ -12,4 +12,6 @@
     nil
     rnix-lsp
   ];
+
+  programs.lazygit.enable = true;
 }

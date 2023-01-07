@@ -169,8 +169,6 @@
 
     - role: wezterm
 
-    - role: lazygit
-
     - role: ngram-data
 
     - role: npm_install # This is actually uninstall

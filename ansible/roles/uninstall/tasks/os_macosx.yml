@@ -5,4 +5,5 @@
     state: absent
   loop:
     - ansible
+    - jesseduffield/lazygit/lazygit
     - knqyf263/pet/pet

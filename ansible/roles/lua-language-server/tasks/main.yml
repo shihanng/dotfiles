@@ -1,5 +1,0 @@
-- name: Remove lua directory in bin
-  ansible.builtin.file:
-    path: "{{ ansible_env.HOME }}/bin/lua"
-    state: absent
-    mode: "0755"

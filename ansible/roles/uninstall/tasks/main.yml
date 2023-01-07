@@ -8,3 +8,4 @@
     state: absent
   loop:
     - lazygit
+    - lua

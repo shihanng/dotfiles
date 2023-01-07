@@ -175,7 +175,4 @@
 
     - role: lua # Mostly uninstalled
 
-    # Uninstalled (these are now managed in Neovim)
-    - role: lua-language-server
-
     - role: uninstall

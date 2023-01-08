@@ -268,6 +268,7 @@ null_ls.setup({
 	capabilities = capabilities,
 	sources = {
 		null_ls.builtins.code_actions.eslint_d,
+		null_ls.builtins.diagnostics.buildifier,
 		null_ls.builtins.diagnostics.checkmake,
 		null_ls.builtins.diagnostics.eslint_d,
 		null_ls.builtins.diagnostics.flake8,
@@ -276,6 +277,7 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.mypy,
 		null_ls.builtins.diagnostics.vale,
 		null_ls.builtins.formatting.black,
+		null_ls.builtins.formatting.buildifier,
 		null_ls.builtins.formatting.isort,
 		null_ls.builtins.formatting.clang_format.with({
 			filetypes = { "c", "cpp", "cs", "java", "proto" },

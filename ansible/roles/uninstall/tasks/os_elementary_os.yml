@@ -7,3 +7,4 @@
   loop:
     - ansible
     - pet
+    - vopono

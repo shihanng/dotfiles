@@ -163,8 +163,6 @@
 
     - role: gotty
 
-    - role: stylua
-
     - role: rose-pine
 
     - role: wezterm

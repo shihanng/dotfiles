@@ -11,6 +11,7 @@
     kustomize
     nil
     rnix-lsp
+    vault
   ];
 
   programs.lazygit.enable = true;

@@ -1,6 +1,0 @@
----
-- name: Uninstall pet
-  ansible.builtin.apt:
-    name: pet
-    state: absent
-  become: true

@@ -28,6 +28,7 @@
             };
           }
           ./home.nix
+          ./home_linux.nix
         ];
 
         # Optionally use extraSpecialArgs

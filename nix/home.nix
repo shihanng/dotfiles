@@ -7,12 +7,10 @@
 
   home.packages = with pkgs; [
     bitwarden-cli
-    brave
     kind
     kustomize
     nil
     rnix-lsp
-    vopono
   ];
 
   programs.lazygit.enable = true;

@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
 
 	-- Aesthetic
 	use({ "rose-pine/neovim", as = "rose-pine" })
-	use({ "hoob3rt/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+	use({ "hoob3rt/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 	use({ "onsails/lspkind-nvim" })
 	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "tversteeg/registers.nvim" })
@@ -62,7 +62,10 @@ return require("packer").startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({
 		"folke/lsp-trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
+		requires = { "kyazdani42/nvim-web-devicons" },
+		config = function()
+			require("trouble").setup({})
+		end,
 	})
 	use({ "mbbill/undotree" })
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })

@@ -6,6 +6,7 @@
   programs.direnv.nix-direnv.enable = true;
 
   home.packages = with pkgs; [
+    awscli2
     bitwarden-cli
     kind
     kustomize

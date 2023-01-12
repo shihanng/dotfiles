@@ -87,9 +87,6 @@
         - name: mypy
           versions:
             - "0.991"
-        - name: pgcli
-          versions:
-            - "3.5.0"
         - name: pipenv
           versions:
             - "2022.12.19"

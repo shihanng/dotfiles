@@ -10,6 +10,7 @@
     kind
     kustomize
     nil
+    pgcli
     rnix-lsp
     vault
   ];

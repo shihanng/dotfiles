@@ -136,6 +136,7 @@
         - "direnv"
         - "kustomize"
         - "lua"
+        - "pgcli"
 
     - role: fzf
 

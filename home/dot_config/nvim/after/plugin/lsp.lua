@@ -94,6 +94,26 @@ lsp.configure("ansiblels", {
 	capabilities = capabilities,
 })
 
+lsp.configure("rust_analyzer", {
+	force_setup = true,
+	capabilities = capabilities,
+	settings = {
+		["rust-analyzer"] = {
+			checkOnSave = {
+				allFeatures = true,
+				overrideCommand = {
+					"cargo",
+					"clippy",
+					"--workspace",
+					"--message-format=json",
+					"--all-targets",
+					"--all-features",
+				},
+			},
+		},
+	},
+})
+
 local tsserver_opts = lsp.build_options("tsserver", {
 	on_attach = function(_, _)
 		local opts = { noremap = true, silent = true }
@@ -304,6 +324,7 @@ null_ls.setup({
 				"yaml",
 			},
 		}),
+		null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.formatting.stylua,
 		require("typescript.extensions.null-ls.code-actions"),
 	},

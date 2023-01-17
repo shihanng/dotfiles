@@ -43,8 +43,8 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export NAVI_CONFIG="${HOME}/.config/navi/config.yaml"
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
 
+alias ls="exa"
 alias lz="lazygit"
-alias ls='ls --color=auto'
 alias open='open_command'
 alias tmux='direnv exec / env TERM=xterm-256color tmux' # https://github.com/direnv/direnv/wiki/Tmux
 alias vi="nvim"

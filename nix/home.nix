@@ -26,5 +26,7 @@
       return = "q";
     };
   };
+
+  programs.exa.enable = true;
 }
 

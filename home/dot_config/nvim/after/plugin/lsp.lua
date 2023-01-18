@@ -87,6 +87,13 @@ lsp.configure("rnix", {
 lsp.configure("sumneko_lua", {
 	force_setup = true,
 	capabilities = capabilities,
+	settings = {
+		Lua = {
+			hint = {
+				enable = true,
+			},
+		},
+	},
 })
 
 lsp.configure("ansiblels", {
@@ -166,6 +173,8 @@ local lsp_formatting = function(options)
 	vim.lsp.buf.format(opts)
 end
 
+local ih = require("inlay-hints")
+
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 lsp.on_attach(function(client, bufnr)
@@ -193,6 +202,8 @@ lsp.on_attach(function(client, bufnr)
 	if client.server_capabilities.documentRangeFormattingProvider then
 		vim.keymap.set("v", "<space>f", lsp_formatting, opts)
 	end
+
+	ih.on_attach(client, bufnr)
 end)
 
 -- Auto goimports with gopls

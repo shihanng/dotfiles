@@ -25,6 +25,18 @@ return require("packer").startup(function(use)
 			require("colorizer").setup()
 		end,
 	})
+	use({
+		"simrat39/inlay-hints.nvim",
+		config = function()
+			require("inlay-hints").setup({
+				only_current_line = false,
+
+				eol = {
+					right_align = true,
+				},
+			})
+		end,
+	})
 
 	-- Coding
 	use({

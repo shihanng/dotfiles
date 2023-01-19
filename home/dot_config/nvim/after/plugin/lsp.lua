@@ -181,6 +181,9 @@ lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 	local bind = vim.keymap.set
 
+	bind("n", "gD", vim.lsp.buf.declaration, opts)
+	bind("n", "gd", vim.lsp.buf.definition, opts)
+	bind("n", "gi", vim.lsp.buf.implementation, opts)
 	bind("n", "<leader>rn", vim.lsp.buf.rename, opts)
 	bind("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 	bind("n", "<space>e", vim.diagnostic.open_float, opts)

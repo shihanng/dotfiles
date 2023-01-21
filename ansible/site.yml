@@ -162,6 +162,7 @@
 
     - role: ngram-data
 
+    - role: rustup
     - role: npm_install # This is actually uninstall
 
     - role: lua # Mostly uninstalled

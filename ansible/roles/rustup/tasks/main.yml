@@ -1,0 +1,18 @@
+# A config to install Rustup based on https://www.rust-lang.org/learn/get-started
+# Use the following to uninstall:
+#
+#     rustup self uninstall
+#
+- name: Fetch Rustup
+  ansible.builtin.uri:
+    url: https://sh.rustup.rs
+    return_content: true
+    creates: "{{ ansible_env.HOME }}/.cargo/bin/rustup"
+  register: fetch_rustup
+
+- name: Run Rustup installer
+  ansible.builtin.command:
+    cmd: sh -s -- -y
+    stdin: "{{ fetch_rustup.content }}"
+    creates: "{{ ansible_env.HOME }}/.cargo/bin/rustup"
+  when: fetch_rustup.content is defined

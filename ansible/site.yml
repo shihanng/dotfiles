@@ -162,6 +162,8 @@
 
     - role: ngram-data
 
+    - role: afx
+
     - role: rustup
     - role: npm_install # This is actually uninstall
 

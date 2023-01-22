@@ -1,0 +1,11 @@
+github:
+  - name: rust-analyzer
+    owner: rust-lang
+    repo: rust-analyzer
+    release:
+      name: rust-analyzer
+      tag: 2023-01-16
+    command:
+      link:
+        - from: "*rust-analyzer*"
+          to: rust-analyzer

@@ -141,7 +141,7 @@ lsp.setup_servers({
 	"bashls",
 	"cssls",
 	"dockerls",
-	"elixir-ls",
+	"elixirls",
 	"graphql",
 	"jsonls",
 	"pyright",

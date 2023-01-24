@@ -9,3 +9,27 @@ github:
       link:
         - from: "*rust-analyzer*"
           to: rust-analyzer
+
+  - name: age
+    owner: FiloSottile
+    repo: age
+    release:
+      name: age
+      tag: v1.1.1
+    command:
+      link:
+        - from: "age/age"
+          to: age
+        - from: "age/age-keygen"
+          to: age-keygen
+
+  - name: sops
+    owner: mozilla
+    repo: sops
+    release:
+      name: sops
+      tag: v3.7.3
+    command:
+      link:
+        - from: "sops*"
+          to: sops

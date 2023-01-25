@@ -33,3 +33,14 @@ github:
       link:
         - from: "sops*"
           to: sops
+
+  - name: kind
+    owner: kubernetes-sigs
+    repo: kind
+    release:
+      name: kind
+      tag: v0.17.0
+    command:
+      link:
+        - from: "kind*"
+          to: kind

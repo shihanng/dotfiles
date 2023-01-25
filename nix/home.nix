@@ -7,7 +7,6 @@
 
   home.packages = with pkgs; [
     bitwarden-cli
-    kind
     kustomize
     nil
     pgcli

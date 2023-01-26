@@ -7,11 +7,8 @@
 
   home.packages = with pkgs; [
     bitwarden-cli
-    kustomize
     nil
-    pgcli
     rnix-lsp
-    vault
   ];
 
   programs.lazygit.enable = true;

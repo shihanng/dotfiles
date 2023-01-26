@@ -44,3 +44,14 @@ github:
       link:
         - from: "kind*"
           to: kind
+
+  - name: kustomize
+    owner: kubernetes-sigs
+    repo: kustomize
+    release:
+      name: kustomize
+      tag: kustomize/v4.5.7
+    command:
+      link:
+        - from: "kustomize*"
+          to: kustomize

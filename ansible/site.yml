@@ -124,11 +124,9 @@
 
     - role: asdf_remove
       plugins:
-        - "awscli"
         - "direnv"
         - "kustomize"
         - "lua"
-        - "pgcli"
 
     - role: fzf
 
@@ -165,6 +163,7 @@
     - role: afx
 
     - role: rustup
+
     - role: npm_install # This is actually uninstall
 
     - role: lua # Mostly uninstalled

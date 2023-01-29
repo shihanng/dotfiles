@@ -21,23 +21,6 @@
     - git
     - asdf
 
-    - role: asdf_install
-      plugin: tflint
-      repo: https://github.com/skyzyx/asdf-tflint
-      versions:
-        - "0.42.2"
-        - "0.43.0"
-    - role: asdf_install
-      plugin: terraform-ls
-      repo: https://github.com/asdf-community/asdf-hashicorp.git
-      versions:
-        - "0.30.0"
-    - role: asdf_install
-      plugin: terraform
-      repo: https://github.com/asdf-community/asdf-hashicorp.git
-      versions:
-        - "1.3.5"
-
     - role: gh
 
     - role: asdf_install

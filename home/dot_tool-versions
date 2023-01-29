@@ -25,6 +25,6 @@ python 3.11.0
 ruby 3.0.2
 stern 1.21.0
 terraform 1.3.5
-terraform-ls 0.30.0
-tflint 0.43.0
+terraform-ls 0.30.1
+tflint 0.44.1
 vault 1.12.2

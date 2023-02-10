@@ -5,7 +5,19 @@ require("mason-nvim-dap").setup({
 	automatic_setup = false,
 })
 require("dap-python").setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
-require("dap-go").setup()
+require("dap-go").setup({
+	dap_configurations = {
+		{
+			type = "go",
+			name = "Attach remote",
+			mode = "remote",
+			request = "attach",
+		},
+	},
+	delve = {
+		port = "38697",
+	},
+})
 
 local dap = require("dap")
 local dap_ui = require("dapui")

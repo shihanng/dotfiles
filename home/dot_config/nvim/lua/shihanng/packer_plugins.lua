@@ -82,6 +82,7 @@ return require("packer").startup(function(use)
 	use({ "mbbill/undotree" })
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 	use({ "vim-test/vim-test" })
+	use({ "johmsalas/text-case.nvim" })
 
 	-- Debugger
 	use({ "mfussenegger/nvim-dap" })

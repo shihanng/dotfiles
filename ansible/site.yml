@@ -96,7 +96,7 @@
         - "3.10.3"
 
     - role: go
-      go_version: "1.19.3"
+      go_version: "1.20.1"
       go_installs:
         # - "github.com/lighttiger2505/sqls@latest"
         # - "github.com/mattn/efm-langserver@latest"

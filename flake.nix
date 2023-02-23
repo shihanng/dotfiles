@@ -12,7 +12,6 @@
             mkShell {
               buildInputs = [
                 pkgs.ansible
-                pkgs.ansible-lint
                 pkgs.sumneko-lua-language-server
               ];
 

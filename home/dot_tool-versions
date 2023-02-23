@@ -1,4 +1,5 @@
 ansible-base 2.10.17
+ansible-lint 6.13.1
 aws-okta-processor 1.8.2
 aws-sso-util 4.30.0
 awscli 2.9.17

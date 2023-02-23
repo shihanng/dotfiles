@@ -32,5 +32,9 @@ module "installer" {
       git_url  = "https://github.com/asdf-community/asdf-hashicorp.git"
       versions = ["0.30.1"]
     }
+    ansible-lint = {
+      git_url  = "https://github.com/amrox/asdf-pyapp.git"
+      versions = ["6.13.1"]
+    }
   }
 }

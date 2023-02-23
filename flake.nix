@@ -11,7 +11,6 @@
           devShells.default = with pkgs;
             mkShell {
               buildInputs = [
-                nixpkgs-fmt
                 pkgs.ansible
                 pkgs.ansible-lint
                 pkgs.sumneko-lua-language-server

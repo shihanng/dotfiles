@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     nil
     rnix-lsp
+    nixpkgs-fmt
   ];
 
   programs.lazygit.enable = true;

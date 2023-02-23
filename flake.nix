@@ -13,10 +13,7 @@
               buildInputs = [
                 nixpkgs-fmt
                 pkgs.ansible
-                pkgs.ansible-language-server
                 pkgs.ansible-lint
-                pkgs.lua53Packages.luacheck
-                pkgs.stylua
                 pkgs.sumneko-lua-language-server
               ];
 

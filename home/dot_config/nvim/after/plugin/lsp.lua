@@ -12,6 +12,7 @@ lsp.preset("recommended")
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 lsp.ensure_installed({
+	"ansiblels",
 	"astro",
 	"bashls",
 	"cssls",
@@ -96,11 +97,6 @@ lsp.configure("sumneko_lua", {
 	},
 })
 
-lsp.configure("ansiblels", {
-	force_setup = true,
-	capabilities = capabilities,
-})
-
 lsp.configure("rust_analyzer", {
 	force_setup = true,
 	capabilities = capabilities,
@@ -137,6 +133,7 @@ local lsp_opts = {
 }
 
 lsp.setup_servers({
+	"ansiblels",
 	"astro",
 	"bashls",
 	"cssls",
@@ -285,8 +282,10 @@ require("mason-null-ls").setup({
 		"gofumpt",
 		"golangci_lint",
 		"isort",
+		"luacheck",
 		"mypy",
 		"prettierd",
+		"stylua",
 		"vale",
 	},
 })

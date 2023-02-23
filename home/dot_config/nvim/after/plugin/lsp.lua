@@ -28,6 +28,7 @@ lsp.ensure_installed({
 	"terraformls",
 	"tflint",
 	"tsserver",
+	"lua_ls",
 })
 
 lsp.configure("gopls", {
@@ -85,8 +86,7 @@ lsp.configure("rnix", {
 	capabilities = capabilities,
 })
 
-lsp.configure("sumneko_lua", {
-	force_setup = true,
+lsp.configure("lua_ls", {
 	capabilities = capabilities,
 	settings = {
 		Lua = {

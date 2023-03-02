@@ -1,6 +1,7 @@
 source $HOME/.zplug/init.zsh
 source $HOME/.asdf/asdf.sh
 source <($HOME/bin/afx init)
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
 path=(/usr/local/go/bin $path[@])
 path=($HOME/go/bin $path[@])

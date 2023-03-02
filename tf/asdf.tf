@@ -36,5 +36,9 @@ module "installer" {
       git_url  = "https://github.com/amrox/asdf-pyapp.git"
       versions = ["6.13.1"]
     }
+    direnv = {
+      git_url  = "https://github.com/asdf-community/asdf-direnv.git"
+      versions = ["2.32.2"]
+    }
   }
 }

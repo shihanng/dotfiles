@@ -5,6 +5,7 @@
     distro: "{{ ansible_distribution | replace(' ', '_') | lower }}"
     archs:
       x86_64: "amd64"
+      arm64: "arm64"
     oses:
       "elementary OS": "linux"
       "Darwin": "darwin"

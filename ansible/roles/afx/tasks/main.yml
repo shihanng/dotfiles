@@ -7,6 +7,7 @@
   vars:
     archs:
       x86_64: "x86_64"
+      arm64: "arm64"
   ansible.builtin.set_fact:
     afx_arch: "{{ archs[ansible_architecture] }}"
 

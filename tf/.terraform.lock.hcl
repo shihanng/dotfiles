@@ -5,6 +5,7 @@ provider "registry.terraform.io/shihanng/installer" {
   version = "0.3.0"
   hashes = [
     "h1:3M8Iq0N1/tFTWke/ojuHdKtNgbpBfq6NxFvKQXu5pSE=",
+    "h1:ToxnFkc2+fXWVcRjGcDrPI6sd50Om5c4UeJDE4F18Pw=",
     "h1:pOPWLU5jFPKp89yy8MTxoeneqtE08VHftKUe+E4REsY=",
     "zh:0c544f5cdc1b463da8db47d25c1eb0cda5654457ebe3f021f13cc0044ec1eb2f",
     "zh:1c28e271243afde4f2eecd30885357fd953756dc4c2ded18bc84f9a3c4cd5616",

@@ -148,6 +148,8 @@
 
     - role: rustup
 
+    - role: navi
+
     - role: npm_install # This is actually uninstall
 
     - role: lua # Mostly uninstalled

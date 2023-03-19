@@ -40,5 +40,13 @@ module "installer" {
       git_url  = "https://github.com/asdf-community/asdf-direnv.git"
       versions = ["2.32.2"]
     }
+    kubectl = {
+      git_url  = "https://github.com/asdf-community/asdf-kubectl.git"
+      versions = ["1.23.3"]
+    }
+    neovim = {
+      git_url  = "https://github.com/richin13/asdf-neovim"
+      versions = ["0.8.3"]
+    }
   }
 }

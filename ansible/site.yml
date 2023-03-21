@@ -126,6 +126,8 @@
 
     - role: golangci-lint
 
+    - role: tmux
+
     - role: tmuxp
 
     - role: ccls
@@ -146,9 +148,15 @@
 
     - role: afx
 
+    - role: ripgrep
+
     - role: rustup
 
+    - role: starship
+
     - role: navi
+
+    - role: nerdfont
 
     - role: npm_install # This is actually uninstall
 

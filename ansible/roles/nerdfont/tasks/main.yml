@@ -1,0 +1,15 @@
+---
+- name: Clone repository
+  vars:
+    nf_repo: "github.com/ryanoasis/nerd-fonts"
+  ansible.builtin.git:
+    repo: "https://{{ nf_repo }}"
+    dest: "{{ ansible_env.HOME }}/nerd-fonts"
+    depth: 1
+  register: nf_clone_repo
+
+- name: Install font
+  ansible.builtin.command:
+    cmd: sh ./install.sh VictorMono
+    chdir: "{{ ansible_env.HOME }}/nerd-fonts"
+  when: nf_clone_repo.changed

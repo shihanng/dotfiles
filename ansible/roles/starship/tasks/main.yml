@@ -1,0 +1,13 @@
+- name: Fetch Starship
+  ansible.builtin.uri:
+    url: https://starship.rs/install.sh
+    return_content: true
+    creates: "{{ ansible_env.HOME }}/bin/starship"
+  register: fetch_starship
+
+- name: Run Starship installer
+  ansible.builtin.command:
+    cmd: sh -s -- -y -b {{ ansible_env.HOME }}/bin
+    stdin: "{{ fetch_starship.content }}"
+    creates: "{{ ansible_env.HOME }}/bin/starship"
+  when: fetch_starship.content is defined

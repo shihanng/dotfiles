@@ -3,6 +3,8 @@ source $HOME/.asdf/asdf.sh
 source <($HOME/bin/afx init)
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
+path=(/usr/sbin $path[@])
+path=(/usr/local/bin $path[@])
 path=(/usr/local/go/bin $path[@])
 path=($HOME/go/bin $path[@])
 path=($HOME/bin $path[@])

@@ -4,5 +4,5 @@
     repo: "https://github.com/junegunn/fzf.git"
     dest: "{{ ansible_env.HOME }}/.fzf"
     depth: 1
-    version: 0.35.1
+    version: 0.38.0
   notify: Install fzf

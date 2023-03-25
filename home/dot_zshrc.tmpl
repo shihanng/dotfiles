@@ -22,6 +22,11 @@ path=(/run/current-system/sw/bin $path[@])
 path=($HOME/.local/share/nvim/mason/bin $path[@])
 path=($HOME/dotfiles/node/node_modules/.bin $path[@])
 
+{{ if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") }}
+# To make sure that we can run pgcli.
+path=(/opt/homebrew/opt/libpq/bin $path[@])
+{{ end }}
+
 {{- if eq .chezmoi.os "darwin" }}
 # See https://rycee.gitlab.io/home-manager/index.html#sec-install-nix-darwin-module
 . "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"

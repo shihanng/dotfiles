@@ -1,4 +1,10 @@
 ---
-- homebrew:
+- name: Install gnupg
+  community.general.homebrew:
     name: gnupg
+    state: present
+
+- name: Install pinentry-mac
+  community.general.homebrew:
+    name: pinentry-mac
     state: present

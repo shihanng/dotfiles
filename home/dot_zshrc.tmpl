@@ -3,6 +3,13 @@ source $HOME/.asdf/asdf.sh
 source <($HOME/bin/afx init)
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
+{{ if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") }}
+path=(/opt/homebrew/bin $path[@])
+
+# To make sure that we can run pgcli.
+path=(/opt/homebrew/opt/libpq/bin $path[@])
+{{ end }}
+
 path=(/usr/sbin $path[@])
 path=(/usr/local/bin $path[@])
 path=(/usr/local/go/bin $path[@])
@@ -11,7 +18,6 @@ path=($HOME/bin $path[@])
 path=($HOME/bin/lua/bin $path[@])
 path=($HOME/.poetry/bin $path[@])
 path=($HOME/.local/bin $path[@])
-path=(/opt/homebrew/bin $path[@])
 {{- if eq .chezmoi.os "darwin" }}
 path=($(brew --prefix gnu-tar)/libexec/gnubin $path[@])
 path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
@@ -21,11 +27,6 @@ path=(/run/current-system/sw/bin $path[@])
 {{- end }}
 path=($HOME/.local/share/nvim/mason/bin $path[@])
 path=($HOME/dotfiles/node/node_modules/.bin $path[@])
-
-{{ if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") }}
-# To make sure that we can run pgcli.
-path=(/opt/homebrew/opt/libpq/bin $path[@])
-{{ end }}
 
 {{- if eq .chezmoi.os "darwin" }}
 # See https://rycee.gitlab.io/home-manager/index.html#sec-install-nix-darwin-module

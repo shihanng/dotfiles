@@ -27,7 +27,9 @@ path=(/run/current-system/sw/bin $path[@])
 {{- end }}
 path=($HOME/.local/share/nvim/mason/bin $path[@])
 path=($HOME/dotfiles/node/node_modules/.bin $path[@])
-{{- if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+{{- if eq .chezmoi.os "darwin" }}
+path=(/Library/TeX/texbin $path[@])
+{{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
 path=(/usr/local/texlive/2022/bin/x86_64-linux $path[@])
 {{- end }}
 

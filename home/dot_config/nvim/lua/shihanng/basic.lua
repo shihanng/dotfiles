@@ -1,4 +1,3 @@
-vim.g.mapleader = ","
 vim.opt.exrc = true
 vim.opt.hidden = true
 

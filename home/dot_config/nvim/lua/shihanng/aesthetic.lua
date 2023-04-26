@@ -2,10 +2,6 @@ vim.g.nvcode_termcolors = 256
 
 vim.opt.syntax = "on"
 
-if vim.fn.has("termguicolors") == 1 then
-	vim.opt.termguicolors = true
-end
-
 -- Shows vim-visual-multi status in lualine
 local vim_visual_multi = function()
 	local vm_status_ok, VMInfos = pcall(vim.fn.VMInfos)

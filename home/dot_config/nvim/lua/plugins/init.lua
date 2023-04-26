@@ -100,10 +100,6 @@ return {
 	},
 	"nvim-telescope/telescope-dap.nvim",
 	"nvim-telescope/telescope-fzy-native.nvim",
-	{
-		"kyazdani42/nvim-tree.lua",
-		dependencies = "kyazdani42/nvim-web-devicons",
-	},
 	"haya14busa/is.vim",
 	"haya14busa/vim-asterisk",
 	"romainl/vim-qf",

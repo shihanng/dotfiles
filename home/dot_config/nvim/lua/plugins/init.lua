@@ -89,7 +89,6 @@ return {
 	"jeffkreeftmeijer/vim-numbertoggle",
 	"tpope/vim-repeat",
 	"mg979/vim-visual-multi",
-	"karb94/neoscroll.nvim",
 	"junegunn/vim-easy-align",
 
 	-- Explore

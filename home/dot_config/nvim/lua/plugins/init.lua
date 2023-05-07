@@ -88,7 +88,6 @@ return {
 	"christoomey/vim-tmux-runner",
 	"jeffkreeftmeijer/vim-numbertoggle",
 	"tpope/vim-repeat",
-	"mg979/vim-visual-multi",
 	"junegunn/vim-easy-align",
 
 	-- Explore

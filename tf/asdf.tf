@@ -46,7 +46,7 @@ module "installer" {
     }
     neovim = {
       git_url  = "https://github.com/richin13/asdf-neovim"
-      versions = ["0.8.3"]
+      versions = ["0.9.0"]
     }
   }
 }

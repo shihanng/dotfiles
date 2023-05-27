@@ -1,7 +1,8 @@
 terraform {
   required_providers {
     installer = {
-      source = "shihanng/installer"
+      source  = "shihanng/installer"
+      version = "0.6.0"
     }
   }
 }
@@ -42,5 +43,23 @@ resource "installer_asdf" "this" {
 
   depends_on = [
     installer_asdf_plugin.this,
+  ]
+}
+
+resource "installer_asdf_plugin" "lua" {
+  name    = "lua"
+  git_url = "https://github.com/Stratus3D/asdf-lua.git"
+
+}
+
+resource "installer_asdf" "lua" {
+  name    = "lua"
+  version = "5.4.4"
+  environment = {
+    "ASDF_LUA_LINUX_READLINE" : "1"
+  }
+
+  depends_on = [
+    installer_asdf_plugin.lua,
   ]
 }

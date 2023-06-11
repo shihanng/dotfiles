@@ -1,6 +1,7 @@
 source $HOME/.zplug/init.zsh
 source $HOME/.asdf/asdf.sh
 source <($HOME/bin/afx init)
+export XDG_CONFIG_HOME="$HOME/.config"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
 {{ if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") }}

@@ -1,0 +1,8 @@
+gui:
+  theme:
+    selectedRangeBgColor:
+      - reverse
+keybinding:
+  universal:
+    quit: "q"
+    return: "q"

@@ -22,8 +22,6 @@ path=($HOME/.local/bin $path[@])
 {{- if eq .chezmoi.os "darwin" }}
 path=($(brew --prefix gnu-tar)/libexec/gnubin $path[@])
 path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
-path=(/etc/profiles/per-user/${USER}/bin $path[@])
-path=(/run/current-system/sw/bin $path[@])
 {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
 {{- end }}
 path=($HOME/.local/share/nvim/mason/bin $path[@])
@@ -36,11 +34,6 @@ path=(/usr/local/texlive/2022/bin/x86_64-linux $path[@])
 
 manpath=(/usr/local/texlive/2022/texmf-dist/doc/man $manpath[@])
 infopath=(/usr/local/texlive/2022/texmf-dist/doc/info $infopath[@])
-
-{{- if eq .chezmoi.os "darwin" }}
-# See https://rycee.gitlab.io/home-manager/index.html#sec-install-nix-darwin-module
-. "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
-{{- end }}
 
 fpath=(${ASDF_DIR}/completions $fpath)
 fpath+=("$HOME/.local/share/zsh/site-functions")
@@ -108,6 +101,9 @@ function zvm_after_init() {
   source <(kustomize completion zsh)
   source <(helm completion zsh)
 }
+
+# devbox
+eval "$(devbox global shellenv --init-hook)"
 
 # Setting for zsh-hist formatting
 # See https://github.com/marlonrichert/zsh-hist#uniform-code-formatting

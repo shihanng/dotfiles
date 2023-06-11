@@ -67,7 +67,6 @@ alias vimdiff="nvim -d"
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 zplug "Aloxaf/fzf-tab", defer:2
-zplug "b4b4r07/enhancd"
 zplug "jeffreytse/zsh-vi-mode"
 zplug "lib/functions", from:oh-my-zsh
 zplug "lib/history", from:oh-my-zsh
@@ -105,13 +104,11 @@ function zvm_after_init() {
 # devbox
 eval "$(devbox global shellenv --init-hook)"
 
+eval "$(zoxide init --cmd cd zsh)"
+
 # Setting for zsh-hist formatting
 # See https://github.com/marlonrichert/zsh-hist#uniform-code-formatting
 unsetopt HIST_REDUCE_BLANKS
-
-# enhancd
-export ENHANCD_DOT_ARG="..."
-export ENHANCD_COMPLETION_BEHAVIOR="list" # When cd <tab>, it shows list of directory for auto-complete.
 
 # forgit
 # See: https://github.com/wfxr/forgit/issues/71#issuecomment-627997261

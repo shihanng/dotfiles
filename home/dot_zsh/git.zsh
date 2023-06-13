@@ -28,3 +28,5 @@ function select_git_checkout() {
     zle accept-line
 }
 zle -N select_git_checkout
+
+bindkey "^b" select_git_checkout

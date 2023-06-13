@@ -9,3 +9,5 @@ fzf-src () {
     zle clear-screen
 }
 zle -N fzf-src
+
+bindkey '^]' fzf-src

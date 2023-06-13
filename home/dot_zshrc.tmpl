@@ -1,60 +1,34 @@
-source $HOME/.zplug/init.zsh
-source $HOME/.asdf/asdf.sh
-source <($HOME/bin/afx init)
-export XDG_CONFIG_HOME="$HOME/.config"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
-
+path=(/usr/local/go/bin $path[@])
+path=($HOME/bin $path[@])
 {{ if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") }}
+# Homebrew path for Apple Silicon
 path=(/opt/homebrew/bin $path[@])
 
 # To make sure that we can run pgcli.
 path=(/opt/homebrew/opt/libpq/bin $path[@])
 {{ end }}
 
-path=(/usr/sbin $path[@])
-path=(/usr/local/bin $path[@])
-path=(/usr/local/go/bin $path[@])
-path=($HOME/go/bin $path[@])
-path=($HOME/bin $path[@])
-path=($HOME/bin/lua/bin $path[@])
-path=($HOME/.poetry/bin $path[@])
-path=($HOME/.local/bin $path[@])
-{{- if eq .chezmoi.os "darwin" }}
-path=($(brew --prefix gnu-tar)/libexec/gnubin $path[@])
-path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
-{{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-{{- end }}
-path=($HOME/.local/share/nvim/mason/bin $path[@])
-path=($HOME/dotfiles/node/node_modules/.bin $path[@])
-{{- if eq .chezmoi.os "darwin" }}
-path=(/Library/TeX/texbin $path[@])
-{{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
-path=(/usr/local/texlive/2022/bin/x86_64-linux $path[@])
-{{- end }}
-
-manpath=(/usr/local/texlive/2022/texmf-dist/doc/man $manpath[@])
-infopath=(/usr/local/texlive/2022/texmf-dist/doc/info $infopath[@])
-
-fpath=(${ASDF_DIR}/completions $fpath)
-fpath+=("$HOME/.local/share/zsh/site-functions")
-
-eval "$(starship init zsh)"
-
-export EDITOR="nvim"
-export VISUAL="nvim"
 export CLICOLOR=1
-export TERM="xterm-256color"
-export PAGER="less"
 export DELTA_PAGER='less -S'
-export LESS='-XRMsIg'
-export LANG=C
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+export EDITOR="nvim"
+export FORGIT_LOG_FZF_OPTS="--reverse"
+export FORGIT_REBASE_FZF_OPTS="--reverse"
 export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LESS='-XRMsIg'
 export NAVI_CONFIG="${HOME}/.config/navi/config.yaml"
-export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive # https://nixos.wiki/wiki/Locales
+export PAGER="less"
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export TERM="xterm-256color"
+export VISUAL="nvim"
+export XDG_CONFIG_HOME="$HOME/.config"
+
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc" # TODO: Use devbox
+source $HOME/.asdf/asdf.sh
+
+eval "$(devbox global shellenv --init-hook)"
 
 alias ls="exa"
 alias lz="lazygit"
@@ -64,56 +38,66 @@ alias vi="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
-zplug "Aloxaf/fzf-tab", defer:2
-zplug "jeffreytse/zsh-vi-mode"
-zplug "lib/functions", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "wfxr/forgit", defer:2 # Using defer:2 so that glo works for forgit instead of plugins/git
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:3
-zplug "trapd00r/LS_COLORS", use:lscolors.sh
-
-zplug "~/.zsh", from:local
-
-eval "$(direnv hook zsh)"
-
-# https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
-function zvm_after_init() {
-  bindkey "^b" select_git_checkout
-  bindkey '^]' fzf-src
-
-  # Install navi shell widget. <C-g> will launch navi.
-  # We have to place this inside zvm_after_init to make <C-g> works.
-  eval "$(navi widget zsh)" 
-
-  source <(kubectl completion zsh)
-  source <(kustomize completion zsh)
-  source <(helm completion zsh)
-  eval "$(atuin init zsh)"
-}
-
-# devbox
-eval "$(devbox global shellenv --init-hook)"
-
-eval "$(zoxide init --cmd cd zsh)"
-
-# forgit
-# See: https://github.com/wfxr/forgit/issues/71#issuecomment-627997261
-export FORGIT_LOG_FZF_OPTS="--reverse"
-export FORGIT_REBASE_FZF_OPTS="--reverse"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
 gpgconf --launch gpg-agent
 
-# Then, source plugins and add commands to $PATH
-zplug load
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+
+zinit add-fpath "${ASDF_DIR}/completions"
+
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Has to come before zsh-completions
+zinit light Aloxaf/fzf-tab
+
+# See https://github.com/zdharma-continuum/fast-syntax-highlighting#zinit
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
+
+zinit pack for dircolors-material
+
+zinit atclone'starship init zsh > zhook.zsh' \
+    atpull'%atclone' src"zhook.zsh" nocompile'!' for \
+        starship/starship
+
+zinit as"null" wait"1" lucid \
+    atpull'%atclone' src"zhook.zsh" nocompile'!' for \
+        atclone'zoxide init --cmd cd zsh > zhook.zsh' ajeetdsouza/zoxide \
+        atclone'atuin init zsh > zhook.zsh' ellie/atuin \
+        atclone'navi widget zsh > zhook.zsh' denisidoro/navi \
+        atclone'direnv hook zsh > zhook.zsh' direnv/direnv
+
+zinit as"null" wait"1" lucid \
+    atpull'%atclone' nocompile'!' for \
+        atclone'./install > zhook.zsh' junegunn/fzf
+
+zinit silent wait"1" is-snippet for \
+    .zsh/ghq.zsh \
+    .zsh/git.zsh \
+    .zsh/fzf.zsh \
+    .fzf.zsh
+
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+
+zinit wait lucid for \
+    OMZ::lib/functions.zsh \
+    OMZP::git \
+    OMZP::colored-man-pages
+
+zinit ice wait"2" lucid
+zinit load wfxr/forgit

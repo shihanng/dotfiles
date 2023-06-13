@@ -3,10 +3,32 @@ path=($HOME/bin $path[@])
 {{ if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") }}
 # Homebrew path for Apple Silicon
 path=(/opt/homebrew/bin $path[@])
-
 # To make sure that we can run pgcli.
 path=(/opt/homebrew/opt/libpq/bin $path[@])
 {{ end }}
+path=(/usr/sbin $path[@])
+path=(/usr/local/bin $path[@])
+path=(/usr/local/go/bin $path[@])
+path=($HOME/go/bin $path[@])
+path=($HOME/bin $path[@])
+path=($HOME/bin/lua/bin $path[@])
+path=($HOME/.poetry/bin $path[@])
+path=($HOME/.local/bin $path[@])
+{{- if eq .chezmoi.os "darwin" }}
+path=($(brew --prefix gnu-tar)/libexec/gnubin $path[@])
+path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
+{{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+{{- end }}
+path=($HOME/.local/share/nvim/mason/bin $path[@])
+path=($HOME/dotfiles/node/node_modules/.bin $path[@])
+{{- if eq .chezmoi.os "darwin" }}
+path=(/Library/TeX/texbin $path[@])
+{{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
+path=(/usr/local/texlive/2022/bin/x86_64-linux $path[@])
+{{- end }}
+
+manpath=(/usr/local/texlive/2022/texmf-dist/doc/man $manpath[@])
+infopath=(/usr/local/texlive/2022/texmf-dist/doc/info $infopath[@])
 
 export CLICOLOR=1
 export DELTA_PAGER='less -S'
@@ -52,6 +74,7 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
 zinit add-fpath "${ASDF_DIR}/completions"
+zinit add-fpath $HOME/.local/share/zsh/site-functions
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -74,7 +97,7 @@ zinit atclone'starship init zsh > zhook.zsh' \
     atpull'%atclone' src"zhook.zsh" nocompile'!' for \
         starship/starship
 
-zinit as"null" wait"1" lucid \
+zinit as"null" wait"2" lucid \
     atpull'%atclone' src"zhook.zsh" nocompile'!' for \
         atclone'zoxide init --cmd cd zsh > zhook.zsh' ajeetdsouza/zoxide \
         atclone'atuin init zsh > zhook.zsh' ellie/atuin \
@@ -84,6 +107,10 @@ zinit as"null" wait"1" lucid \
 zinit as"null" wait"1" lucid \
     atpull'%atclone' nocompile'!' for \
         atclone'./install > zhook.zsh' junegunn/fzf
+
+zinit as"null" wait"0" lucid \
+    atpull'%atclone' nocompile'!' for \
+        atclone'kind completion zsh > $HOME/.local/share/zsh/site-functions/_kind' kubernetes-sigs/kind
 
 zinit silent wait"1" is-snippet for \
     .zsh/ghq.zsh \

@@ -104,13 +104,19 @@ zinit as"null" wait"2" lucid \
         atclone'navi widget zsh > zhook.zsh' denisidoro/navi \
         atclone'direnv hook zsh > zhook.zsh' direnv/direnv
 
+zinit as"null" wait"2" lucid \
+    atinit'fpath+=( $PWD )' \
+    atload"zicompinit; zicdreplay" \
+    atpull'%atclone' nocompile'!' for \
+        atclone'devbox completion zsh > _devbox' jetpack-io/devbox \
+        atclone'kind completion zsh > _kind' kubernetes-sigs/kind \
+        atclone'helm completion zsh > _helm' helm/helm \
+        atclone'kubectl completion zsh > _kubectl' kubernetes/kubectl \
+        atclone'kustomize completion zsh > _kustomize' kubernetes-sigs/kustomize
+
 zinit as"null" wait"1" lucid \
     atpull'%atclone' nocompile'!' for \
-        atclone'./install > zhook.zsh' junegunn/fzf
-
-zinit as"null" wait"0" lucid \
-    atpull'%atclone' nocompile'!' for \
-        atclone'kind completion zsh > $HOME/.local/share/zsh/site-functions/_kind' kubernetes-sigs/kind
+        atclone'./install' junegunn/fzf
 
 zinit silent wait"1" is-snippet for \
     .zsh/ghq.zsh \

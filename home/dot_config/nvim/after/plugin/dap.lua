@@ -20,6 +20,21 @@ require("dap-go").setup({
 })
 
 local dap = require("dap")
+
+dap.adapters.codelldb = {
+	type = "server",
+	port = "${port}",
+	executable = {
+		command = vim.fn.stdpath("data") .. "/" .. "mason" .. "/" .. "bin" .. "/" .. "codelldb",
+		args = { "--port", "${port}" },
+
+		-- On windows you may have to uncomment this:
+		-- detached = false,
+	},
+}
+
+require("dap.ext.vscode").load_launchjs(nil, { codelldb = { "rust" } })
+
 local dap_ui = require("dapui")
 
 dap_ui.setup()

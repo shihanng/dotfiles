@@ -112,7 +112,8 @@ zinit as"null" wait"2" lucid \
         atclone'kind completion zsh > _kind' kubernetes-sigs/kind \
         atclone'helm completion zsh > _helm' helm/helm \
         atclone'kubectl completion zsh > _kubectl' kubernetes/kubectl \
-        atclone'kustomize completion zsh > _kustomize' kubernetes-sigs/kustomize
+        atclone'kustomize completion zsh > _kustomize' kubernetes-sigs/kustomize \
+        atclone'chezmoi completion zsh > _chezmoi' twpayne/chezmoi
 
 zinit as"null" wait"1" lucid \
     atpull'%atclone' nocompile'!' for \

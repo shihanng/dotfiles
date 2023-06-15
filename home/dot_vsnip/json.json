@@ -1,0 +1,18 @@
+{
+  "Rust Debug Configuration": {
+    "prefix": "rust-debug",
+    "body": [
+      "{",
+      "\t\"version\": \"0.2.0\",",
+      "\t\"configurations\": [",
+      "\t\t{",
+      "\t\t\t\"type\": \"codelldb\",",
+      "\t\t\t\"request\": \"launch\",",
+      "\t\t\t\"name\": \"Launch\",",
+      "\t\t\t\"program\": \"${workspaceFolder}/target/debug/${1}\"",
+      "\t\t}",
+      "\t]",
+      "}"
+    ]
+  }
+}

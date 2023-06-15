@@ -1,19 +1,25 @@
 {
-	"name": "Custom snippets",
-	"contributes": {
-		"snippets": [
-			{
-				"language": [
-					"direnv"
-				],
-				"path": "./direnv.json"
-			},
-			{
-				"language": [
-					"ruby"
-				],
-				"path": "./ruby.json"
-			}
-		]
-	}
+  "name": "Custom snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "direnv"
+        ],
+        "path": "./direnv.json"
+      },
+      {
+        "language": [
+          "ruby"
+        ],
+        "path": "./ruby.json"
+      },
+      {
+        "language": [
+          "json"
+        ],
+        "path": "./json.json"
+      }
+    ]
+  }
 }

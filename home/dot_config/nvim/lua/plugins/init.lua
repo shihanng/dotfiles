@@ -134,9 +134,6 @@ return {
 	-- Terraform
 	"hashivim/vim-terraform",
 
-	-- Go
-	"buoto/gotests-vim",
-
 	-- Cue
 	"jjo/vim-cue",
 

@@ -108,9 +108,7 @@
 
     - role: asdf_remove
       plugins:
-        - "direnv"
         - "kustomize"
-        - "lua"
 
     - role: fzf
 

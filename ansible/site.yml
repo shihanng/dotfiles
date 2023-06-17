@@ -136,8 +136,6 @@
 
     - role: clang-format
 
-    - role: github-labeler
-
     - role: gotty
 
     - role: rose-pine

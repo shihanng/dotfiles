@@ -6,7 +6,8 @@
     "atuin@latest",
     "jq@latest",
     "tree@latest",
-    "age@latest"
+    "age@latest",
+    "pgcli@3.5.0"
   ],
   "shell": {
     "init_hook": [

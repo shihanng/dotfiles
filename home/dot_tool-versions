@@ -18,7 +18,6 @@ minikube 1.25.1
 mypy 0.991
 neovim 0.9.0
 nodejs 18.12.1
-pgcli 3.5.0
 pipenv 2022.12.19
 poetry 1.2.2
 pre-commit 2.20.0

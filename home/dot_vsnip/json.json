@@ -14,5 +14,40 @@
       "\t]",
       "}"
     ]
+  },
+  "Go Debug Configuration: go build -gcflags='all=-N -l'": {
+    "prefix": "go-debug",
+    "body": [
+      "{",
+      "\t\"version\": \"0.2.0\",",
+      "\t\"configurations\": [",
+      "\t\t{",
+      "\t\t\t\"type\": \"go\",",
+      "\t\t\t\"request\": \"launch\",",
+      "\t\t\t\"name\": \"Launch\",",
+      "\t\t\t\"program\": \"${1}\"",
+      "\t\t\t\"mode\": \"exec\",",
+      "\t\t\t\"args\": \"[]\",",
+      "\t\t}",
+      "\t]",
+      "}"
+    ]
+  },
+  "Go Debug Configuration: go run": {
+    "prefix": "go-debug",
+    "body": [
+      "{",
+      "\t\"version\": \"0.2.0\",",
+      "\t\"configurations\": [",
+      "\t\t{",
+      "\t\t\t\"type\": \"go\",",
+      "\t\t\t\"request\": \"launch\",",
+      "\t\t\t\"name\": \"Launch\",",
+      "\t\t\t\"program\": \"main.go\"",
+      "\t\t\t\"args\": \"[]\",",
+      "\t\t}",
+      "\t]",
+      "}"
+    ]
   }
 }

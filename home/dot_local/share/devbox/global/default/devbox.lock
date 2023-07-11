@@ -21,6 +21,11 @@
       "resolved": "github:NixOS/nixpkgs/8670e496ffd093b60e74e7fa53526aa5920d09eb#jq",
       "version": "1.6"
     },
+    "kubie@latest": {
+      "last_modified": "2023-06-29T16:20:38Z",
+      "resolved": "github:NixOS/nixpkgs/3c614fbc76fc152f3e1bc4b2263da6d90adf80fb#kubie",
+      "version": "0.19.3"
+    },
     "lazygit@latest": {
       "last_modified": "2023-05-01T16:53:22Z",
       "resolved": "github:NixOS/nixpkgs/8670e496ffd093b60e74e7fa53526aa5920d09eb#lazygit",

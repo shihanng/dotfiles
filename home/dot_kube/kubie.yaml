@@ -1,0 +1,10 @@
+shell: zsh
+configs:
+  include:
+    - ~/.kube/config
+    - ~/.kube/mtfuji-prod
+behavior:
+  validate_namespaces: false
+prompt:
+  disable: false
+  zsh_use_rps1: false

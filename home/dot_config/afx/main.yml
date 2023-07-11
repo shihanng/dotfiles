@@ -31,10 +31,3 @@ github:
       link:
         - from: "kustomize*"
           to: kustomize
-
-http:
-- name: terraform
-  url: "https://releases.hashicorp.com/terraform/1.3.7/terraform_1.3.7_{{ .OS }}_{{ .Arch }}.zip"
-  command:
-    link:
-    - from: terraform

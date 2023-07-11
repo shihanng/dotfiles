@@ -10,7 +10,10 @@
     "pgcli@3.5.0",
     "kubie@latest",
     "goreleaser@1.18.2",
-    "terraform@1.4.6"
+    "terraform@1.4.6",
+    "bitwarden-cli@2023.5.0",
+    "gcc@13.1.0",
+    "nodejs@18.16.1"
   ],
   "shell": {
     "init_hook": [

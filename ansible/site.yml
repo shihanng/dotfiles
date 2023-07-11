@@ -25,12 +25,6 @@
     - role: gh
 
     - role: asdf_install
-      plugin: nodejs
-      repo: https://github.com/asdf-vm/asdf-nodejs.git
-      versions:
-        - "18.12.1"
-
-    - role: asdf_install
       plugin: python
       repo: https://github.com/asdf-community/asdf-python
       versions:

@@ -20,7 +20,6 @@ path=($(brew --prefix coreutils)/libexec/gnubin $path[@])
 {{- else if or (eq .chezmoi.osRelease.name "Ubuntu") (eq .chezmoi.osRelease.name "elementary OS") }}
 {{- end }}
 path=($HOME/.local/share/nvim/mason/bin $path[@])
-path=($HOME/dotfiles/node/node_modules/.bin $path[@])
 path=($HOME/dotfiles/go/bin $path[@])
 {{- if eq .chezmoi.os "darwin" }}
 path=(/Library/TeX/texbin $path[@])

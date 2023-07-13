@@ -11,6 +11,26 @@
       "resolved": "github:NixOS/nixpkgs/8670e496ffd093b60e74e7fa53526aa5920d09eb#atuin",
       "version": "14.0.1"
     },
+    "bat-extras.batdiff@2023.03.21": {
+      "last_modified": "2023-06-29T16:20:38Z",
+      "resolved": "github:NixOS/nixpkgs/3c614fbc76fc152f3e1bc4b2263da6d90adf80fb#bat-extras.batdiff",
+      "version": "2023.03.21"
+    },
+    "bat-extras.batgrep@2023.03.21": {
+      "last_modified": "2023-06-29T16:20:38Z",
+      "resolved": "github:NixOS/nixpkgs/3c614fbc76fc152f3e1bc4b2263da6d90adf80fb#bat-extras.batgrep",
+      "version": "2023.03.21"
+    },
+    "bat-extras.batman@2023.03.21": {
+      "last_modified": "2023-06-29T16:20:38Z",
+      "resolved": "github:NixOS/nixpkgs/3c614fbc76fc152f3e1bc4b2263da6d90adf80fb#bat-extras.batman",
+      "version": "2023.03.21"
+    },
+    "bat@0.23.0": {
+      "last_modified": "2023-06-29T16:20:38Z",
+      "resolved": "github:NixOS/nixpkgs/3c614fbc76fc152f3e1bc4b2263da6d90adf80fb#bat",
+      "version": "0.23.0"
+    },
     "bitwarden-cli@2023.5.0": {
       "last_modified": "2023-06-29T16:20:38Z",
       "resolved": "github:NixOS/nixpkgs/3c614fbc76fc152f3e1bc4b2263da6d90adf80fb#bitwarden-cli",

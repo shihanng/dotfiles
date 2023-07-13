@@ -46,6 +46,7 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export TERM="xterm-256color"
 export VISUAL="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
+export BATDIFF_USE_DELTA=true
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc" # TODO: Use devbox
 source $HOME/.asdf/asdf.sh
@@ -60,6 +61,7 @@ alias tmux='direnv exec / env TERM=xterm-256color tmux' # https://github.com/dir
 alias vi="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
+alias man="batman"
 
 gpgconf --launch gpg-agent
 

@@ -1,7 +1,0 @@
----
-- name: Install delta
-  vars:
-    delta_version: 0.14.0
-  ansible.builtin.apt:
-    deb: "https://github.com/dandavison/delta/releases/download/{{ delta_version }}/git-delta_{{ delta_version }}_{{ archs[ansible_architecture] }}.deb"
-  become: true

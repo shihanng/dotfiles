@@ -114,8 +114,6 @@
 
     - role: fd
 
-    - role: delta
-
     - role: golangci-lint
 
     - role: tmux

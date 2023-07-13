@@ -1,4 +1,0 @@
----
-- homebrew:
-    name: git-delta
-    state: present

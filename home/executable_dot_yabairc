@@ -1,0 +1,17 @@
+yabai -m config \
+  layout                     bsp        \
+  top_padding                4          \
+  bottom_padding             4          \
+  left_padding               4          \
+  right_padding              4          \
+  window_gap                 4          \
+  active_window_border_color 0xFF88C0D0 \
+  normal_window_border_color 0x00434C5E \
+  window_opacity_duration    0.0        \
+  window_animation_duration  0.0        \
+  window_animation_framerate 60         \
+  window_border_width        2          \
+  window_border_radius       12         \
+  window_border_blur         off        \
+  window_border              on
+yabai -m rule --add app="^(Spotify)$" manage=off border=off

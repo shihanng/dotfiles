@@ -151,3 +151,5 @@
     - role: lua # Mostly uninstalled
 
     - role: uninstall
+
+    - role: yabai

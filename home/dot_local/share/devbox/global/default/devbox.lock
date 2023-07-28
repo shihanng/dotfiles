@@ -81,6 +81,12 @@
       "resolved": "github:NixOS/nixpkgs/8670e496ffd093b60e74e7fa53526aa5920d09eb#pgcli",
       "version": "3.5.0"
     },
+    "stern@1.25.0": {
+      "last_modified": "2023-05-07T06:59:10Z",
+      "resolved": "github:NixOS/nixpkgs/eb751d65225ec53de9cf3d88acbf08d275882389#stern",
+      "source": "devbox-search",
+      "version": "1.25.0"
+    },
     "terraform@1.4.6": {
       "last_modified": "2023-05-25T03:54:59Z",
       "resolved": "github:NixOS/nixpkgs/8d4d822bc0efa9de6eddc79cb0d82897a9baa750#terraform",

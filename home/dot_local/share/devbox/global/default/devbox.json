@@ -18,7 +18,8 @@
     "bat-extras.batman@2023.03.21",
     "bat-extras.batdiff@2023.03.21",
     "bat-extras.batgrep@2023.03.21",
-    "delta@0.16.5"
+    "delta@0.16.5",
+    "stern@1.25.0"
   ],
   "shell": {
     "init_hook": [

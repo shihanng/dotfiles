@@ -143,6 +143,4 @@ return {
 	-- vim-autosource
 	-- Need this plugin to setup local settings per project.
 	"jenterkin/vim-autosource",
-
-	"github/copilot.vim",
 }

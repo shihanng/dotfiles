@@ -49,5 +49,13 @@
       "\t]",
       "}"
     ]
+  },
+  "Pyright extraPaths": {
+    "prefix": "path",
+    "body": [
+      "{",
+      "\t\"extraPaths\": [\".direnv/python-3.9.17/lib/python3.9/site-packages\"]",
+      "}"
+    ]
   }
 }

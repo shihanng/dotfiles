@@ -71,6 +71,26 @@
       "resolved": "github:NixOS/nixpkgs/8670e496ffd093b60e74e7fa53526aa5920d09eb#lazygit",
       "version": "0.37.0"
     },
+    "neovim@0.9.4": {
+      "last_modified": "2023-10-25T20:49:13Z",
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#neovim",
+      "source": "devbox-search",
+      "version": "0.9.4",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/cdgkcmg3s3wyvwswzz8nnfl88a2gy6aq-neovim-0.9.4"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/bdrvg07bz5pc30ld68iljf3pn4d8621q-neovim-0.9.4"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/bai0m13zl8zwfdpzwxc5dqhxm0dj3agz-neovim-0.9.4"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/4zy5qzxgdwk1k9ffibj7cg5rj64p5zwf-neovim-0.9.4"
+        }
+      }
+    },
     "nodejs@18.16.1": {
       "last_modified": "2023-06-29T16:20:38Z",
       "resolved": "github:NixOS/nixpkgs/3c614fbc76fc152f3e1bc4b2263da6d90adf80fb#nodejs_18",

@@ -20,7 +20,8 @@
     "bat-extras.batgrep@2023.03.21",
     "delta@0.16.5",
     "stern@1.25.0",
-    "neovim@0.9.4"
+    "neovim@0.9.4",
+    "darwin.apple_sdk.frameworks.Security"
   ],
   "shell": {
     "init_hook": [

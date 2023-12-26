@@ -30,6 +30,10 @@ path=(/usr/local/texlive/2022/bin/x86_64-linux $path[@])
 manpath=(/usr/local/texlive/2022/texmf-dist/doc/man $manpath[@])
 infopath=(/usr/local/texlive/2022/texmf-dist/doc/info $infopath[@])
 
+# https://github.com/jetpack-io/devbox/issues/1564#issuecomment-1767043341
+export CC=/usr/bin/cc
+export LD=/usr/bin/ld
+
 export CLICOLOR=1
 export DELTA_PAGER='less -S'
 export EDITOR="nvim"
@@ -52,6 +56,9 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc" # TODO: Use devbox
 source $HOME/.asdf/asdf.sh
 
 eval "$(devbox global shellenv --init-hook)"
+
+# https://ryantm.github.io/nixpkgs/using/configuration/
+export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1
 
 alias assume="source assume"
 alias ls="exa"

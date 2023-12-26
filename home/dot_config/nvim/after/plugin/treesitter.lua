@@ -18,10 +18,6 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = false,
 		disable = { "gitcommit" },
 	},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
 	autotag = {
 		enable = true,
 	},

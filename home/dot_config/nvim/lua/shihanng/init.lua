@@ -3,13 +3,11 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
 -- Basic Neovim setup.
 vim.opt.termguicolors = true
 vim.g.mapleader = ","
 vim.opt.shell = "/bin/bash"
 vim.opt.syntax = "on"
-
 
 -- Find and replace (by Nick Janetakis)
 vim.api.nvim_set_keymap("n", "<Leader>rr", [[:%s///g<Left><Left>]], { noremap = true })
@@ -17,29 +15,27 @@ vim.api.nvim_set_keymap("n", "<Leader>rc", [[:%s///gc<Left><Left><Left>]], { nor
 vim.api.nvim_set_keymap("x", "<Leader>rr", [[:s///g<Left><Left>]], { noremap = true })
 vim.api.nvim_set_keymap("x", "<Leader>rc", [[:s///gc<Left><Left><Left>]], { noremap = true })
 
-
 -- Setup lazy.nvim.
 -- Auto-install lazy.nvim if not present.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local uv = vim.uv or vim.loop
 
 if not uv.fs_stat(lazypath) then
-    print('Installing lazy.nvim....')
+    print("Installing lazy.nvim....")
     vim.fn.system({
-        'git',
-        'clone',
-        '--filter=blob:none',
-        'https://github.com/folke/lazy.nvim.git',
-        '--branch=stable', -- latest stable release
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
         lazypath,
     })
-    print('Done.')
+    print("Done.")
 end
 
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-
 
 -- More basic Neovim setup
 vim.opt.exrc = true
@@ -74,7 +70,6 @@ vim.opt.clipboard = "unnamedplus"
 vim.g.do_filetype_lua = 1
 vim.o.splitkeep = "screen" -- https://github.com/luukvbaal/stabilize.nvim
 
-
 -- Other key bindings
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -90,11 +85,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.api.nvim_set_keymap("", "<Leader>pg", [[:%!pg_format -L - <cr>]], { noremap = true })
 vim.api.nvim_set_keymap("", "<Leader>jq", [[:%!jq '.'<cr>]], { noremap = true })
 
-
 -- Spellcheck
 vim.opt.spelllang = { "en", "cjk" }
 vim.api.nvim_set_keymap("n", "<Leader>s", [[:set spell!<CR>]], { silent = true }) -- Toggle spell checking on and off.
-
 
 -- Git
 vim.api.nvim_set_keymap("n", "<leader>gs", [[:G<CR>]], {})

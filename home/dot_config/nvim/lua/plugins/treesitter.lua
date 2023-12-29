@@ -11,7 +11,7 @@ return {
         config = function()
             require("nvim-treesitter.install").compilers = { "gcc" }
 
-            require('nvim-dap-repl-highlights').setup()
+            require("nvim-dap-repl-highlights").setup()
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
@@ -46,7 +46,7 @@ return {
                     disable = { "gitcommit" },
                     highlight = {
                         disable = function()
-                            return string.find(vim.bo.filetype, 'chezmoitmpl') or vim.bo.filetype == "gitcommit"
+                            return string.find(vim.bo.filetype, "chezmoitmpl") or vim.bo.filetype == "gitcommit"
                         end,
                     },
                 },
@@ -99,6 +99,6 @@ return {
                     },
                 },
             })
-        end
-    }
+        end,
+    },
 }

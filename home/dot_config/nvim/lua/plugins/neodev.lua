@@ -8,7 +8,7 @@ return {
                     "neotest",
                     "nvim-dap-ui",
                 },
-                types = true
+                types = true,
             },
         })
     end,

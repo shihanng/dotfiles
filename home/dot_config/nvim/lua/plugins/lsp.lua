@@ -1,8 +1,8 @@
 return {
     -- LSP Support
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v3.x",
         lazy = true,
         config = false,
         init = function()
@@ -12,19 +12,19 @@ return {
         end,
     },
     {
-        'neovim/nvim-lspconfig',
-        cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
-        event = { 'BufReadPre', 'BufNewFile' },
+        "neovim/nvim-lspconfig",
+        cmd = { "LspInfo", "LspInstall", "LspStart" },
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            'hrsh7th/cmp-nvim-lsp',
+            "hrsh7th/cmp-nvim-lsp",
             "williamboman/mason.nvim",
-            'williamboman/mason-lspconfig.nvim',
+            "williamboman/mason-lspconfig.nvim",
             "mfussenegger/nvim-dap",
             "jay-babu/mason-nvim-dap.nvim",
         },
         config = function()
             -- This is where all the LSP shenanigans will live
-            local lsp_zero = require('lsp-zero')
+            local lsp_zero = require("lsp-zero")
             lsp_zero.extend_lspconfig()
 
             lsp_zero.on_attach(function(_, bufnr)
@@ -37,26 +37,27 @@ return {
 
                 local builtin = require("telescope.builtin")
 
-                vim.keymap.set('n', 'gd', builtin.lsp_definitions, { buffer = bufnr })
-                vim.keymap.set('n', 'go', builtin.lsp_type_definitions, { buffer = bufnr })
-                vim.keymap.set('n', 'gr', builtin.lsp_references, { buffer = bufnr })
-                vim.keymap.set('n', 'gi', builtin.lsp_implementations, { buffer = bufnr })
-                vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
-                vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, { buffer = bufnr })
-                vim.keymap.set('n', '<space>el', builtin.diagnostics, { buffer = bufnr })
+                vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = bufnr })
+                vim.keymap.set("n", "go", builtin.lsp_type_definitions, { buffer = bufnr })
+                vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = bufnr })
+                vim.keymap.set("n", "gi", builtin.lsp_implementations, { buffer = bufnr })
+                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr })
+                vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { buffer = bufnr })
+                vim.keymap.set("n", "<space>el", builtin.diagnostics, { buffer = bufnr })
             end)
 
             lsp_zero.set_server_config({
                 capabilities = {
                     textDocument = {
                         foldingRange = {
+                            -- luacheck: ignore 631
                             -- Setting to integrate with nvim-ufo
                             -- See: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/quick-recipes.md#enable-folds-with-nvim-ufo
                             dynamicRegistration = false,
-                            lineFoldingOnly = true
-                        }
-                    }
-                }
+                            lineFoldingOnly = true,
+                        },
+                    },
+                },
             })
 
             -- Explicitly setup the formatter so that it does not clash with null-ls.
@@ -67,9 +68,9 @@ return {
                     timeout_ms = 10000,
                 },
                 servers = {
-                    ['gopls'] = { 'go' },
-                    ['null-ls'] = { 'lua' },
-                }
+                    ["gopls"] = { "go" },
+                    ["null-ls"] = { "lua" },
+                },
             })
 
             -- Auto goimports with gopls
@@ -96,14 +97,14 @@ return {
             if not mason.has_setup then
                 mason.setup()
             end
-            require('mason-lspconfig').setup({
+            require("mason-lspconfig").setup({
                 ensure_installed = { "lua_ls", "gopls" },
 
                 handlers = {
                     lsp_zero.default_setup,
                     ["gopls"] = function()
                         -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md#settings
-                        require('lspconfig').gopls.setup({
+                        require("lspconfig").gopls.setup({
                             settings = {
                                 gopls = {
                                     gofumpt = true,
@@ -118,9 +119,9 @@ return {
                                         functionTypeParameters = true,
                                         parameterNames = true,
                                         rangeVariableTypes = true,
-                                    }
+                                    },
                                 },
-                            }
+                            },
                         })
                     end,
                     ["lua_ls"] = function()
@@ -130,19 +131,19 @@ return {
                                 Lua = {
                                     hint = {
                                         enable = true,
-                                    }
-                                }
-                            }
+                                    },
+                                },
+                            },
                         })
-                        require('lspconfig').lua_ls.setup(lua_opts)
+                        require("lspconfig").lua_ls.setup(lua_opts)
                     end,
-                }
+                },
             })
 
             vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
             vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
             vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
             vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
-        end
-    }
+        end,
+    },
 }

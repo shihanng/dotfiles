@@ -1,6 +1,6 @@
 return {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         -- Shows vim-visual-multi status in lualine
         local vim_visual_multi = function()
@@ -23,5 +23,5 @@ return {
                 lualine_a = { "mode", vim_visual_multi },
             },
         })
-    end
+    end,
 }

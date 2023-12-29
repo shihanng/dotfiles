@@ -9,9 +9,9 @@ return {
         -- Using null-ls as source of truth.
         -- https://github.com/jay-babu/mason-null-ls.nvim?tab=readme-ov-file#primary-source-of-truth-is-null-ls
 
-        local lsp = require('lsp-zero')
-        local null_ls = require('null-ls')
-        local null_opts = lsp.build_options('null-ls', {})
+        local lsp = require("lsp-zero")
+        local null_ls = require("null-ls")
+        local null_opts = lsp.build_options("null-ls", {})
 
         null_ls.setup({
             on_attach = function(client, bufnr)

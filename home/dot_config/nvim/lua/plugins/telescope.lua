@@ -1,11 +1,11 @@
 return {
     "nvim-telescope/telescope-fzy-native.nvim",
     {
-        'nvim-telescope/telescope.nvim',
-        branch = '0.1.x',
+        "nvim-telescope/telescope.nvim",
+        branch = "0.1.x",
         dependencies = {
-            'nvim-telescope/telescope-dap.nvim',
-            'nvim-lua/plenary.nvim',
+            "nvim-telescope/telescope-dap.nvim",
+            "nvim-lua/plenary.nvim",
         },
         config = function()
             local actions = require("telescope.actions")
@@ -30,13 +30,15 @@ return {
                 },
             })
             require("telescope").load_extension("fzy_native")
-            require('telescope').load_extension('dap')
+            require("telescope").load_extension("dap")
 
             local builtin = require("telescope.builtin")
 
             -- Setup some Telescope key bindings.
             vim.keymap.set("n", "<C-f>", builtin.live_grep, { noremap = true })
-            vim.keymap.set("n", "<C-b>", function() builtin.buffers({ show_all_buffers = true }) end, { noremap = true })
+            vim.keymap.set("n", "<C-b>", function()
+                builtin.buffers({ show_all_buffers = true })
+            end, { noremap = true })
             vim.keymap.set("n", "<Leader>db", require("telescope").extensions.dap.list_breakpoints, { noremap = true })
 
             -- We cache the results of "git rev-parse"
@@ -44,6 +46,7 @@ return {
             local is_inside_work_tree = {}
 
             vim.keymap.set("n", "<C-p>", function()
+                -- luacheck: ignore 631
                 -- Fallback to find_files if not in git directory.
                 -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#falling-back-to-find_files-if-git_files-cant-find-a-git-directory
 
@@ -62,6 +65,6 @@ return {
 
             -- Spellcheck
             vim.keymap.set("n", "z=", builtin.spell_suggest, { noremap = true })
-        end
-    }
+        end,
+    },
 }

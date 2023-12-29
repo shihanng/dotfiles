@@ -17,14 +17,14 @@ return {
             dap.listeners.before.event_exited["dapui_config"] = function()
                 dap_ui.close()
             end
-        end
+        end,
     },
     {
         "mfussenegger/nvim-dap",
         dependencies = {
             "leoluz/nvim-dap-go",
             "rcarriga/nvim-dap-ui",
-            'williamboman/mason.nvim',
+            "williamboman/mason.nvim",
         },
         config = function()
             require("dap-go").setup({
@@ -53,8 +53,11 @@ return {
             vim.keymap.set("n", "<F10>", dap.down, opts)
             vim.keymap.set("n", "<Leader>dt", dap.terminate, opts)
             vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, opts)
-            vim.keymap.set("n", "<Leader>B", function() dap.set_breakpoint(vim.fn.input("Cond: ")) end, opts)
+            vim.keymap.set("n", "<Leader>B", function()
+                dap.set_breakpoint(vim.fn.input("Cond: "))
+            end, opts)
 
+            -- luacheck: ignore 631
             -- Customizing color scheme in dap-ui
             -- https://github.com/rcarriga/nvim-dap-ui/blob/e5c32746aa72e39267803fdf6934d79541d39f42/lua/dapui/config/highlights.lua#L1
             -- https://github.com/rcarriga/nvim-dap-ui/issues/46#issuecomment-899025715
@@ -88,8 +91,8 @@ return {
                 mason.setup()
             end
             require("mason-nvim-dap").setup({
-                ensure_installed = { "delve" }
+                ensure_installed = { "delve" },
             })
-        end
-    }
+        end,
+    },
 }

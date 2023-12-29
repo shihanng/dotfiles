@@ -1,5 +1,5 @@
 return {
-    { 'rose-pine/neovim', name = 'rose-pine' },
+    { "rose-pine/neovim", name = "rose-pine" },
     "cohama/lexima.vim",
     {
         "norcalli/nvim-colorizer.lua",
@@ -12,7 +12,7 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             require("gitsigns").setup()
-        end
+        end,
     },
     "nvim-treesitter/nvim-treesitter-context",
     "tpope/vim-surround",
@@ -23,7 +23,7 @@ return {
         config = function()
             vim.keymap.set("x", "ga", "<Plug>(EasyAlign)")
             vim.keymap.set("n", "ga", "<Plug>(EasyAlign)")
-        end
+        end,
     },
     "tpope/vim-fugitive",
     "tpope/vim-rhubarb",

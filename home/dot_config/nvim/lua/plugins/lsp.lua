@@ -69,7 +69,7 @@ return {
                 },
                 servers = {
                     ["gopls"] = { "go" },
-                    ["null-ls"] = { "lua" },
+                    ["null-ls"] = { "yaml", "lua" },
                 },
             })
 
@@ -98,7 +98,11 @@ return {
                 mason.setup()
             end
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "gopls" },
+                ensure_installed = {
+                    "lua_ls",
+                    "gopls",
+                    "yamlls",
+                },
 
                 handlers = {
                     lsp_zero.default_setup,
@@ -136,6 +140,17 @@ return {
                             },
                         })
                         require("lspconfig").lua_ls.setup(lua_opts)
+                    end,
+                    ["yamlls"] = function()
+                        require("lspconfig").yamlls.setup({
+                            settings = {
+                                yaml = {
+                                    schemas = {
+                                        ["https://json.schemastore.org/pre-commit-config.json"] = ".pre-commit-config.yaml",
+                                    },
+                                },
+                            },
+                        })
                     end,
                 },
             })

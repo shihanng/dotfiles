@@ -22,6 +22,7 @@ return {
                 -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
                 null_ls.builtins.diagnostics.golangci_lint,
                 null_ls.builtins.diagnostics.luacheck,
+                null_ls.builtins.formatting.prettierd,
                 null_ls.builtins.formatting.stylua,
             },
         })

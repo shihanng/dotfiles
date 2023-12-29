@@ -1,9 +1,9 @@
 require("rose-pine").setup({
-	dark_variant = "main",
-	highlight_groups = {
-		["@text.diff.add"] = { fg = "foam" },
-		["@text.diff.delete"] = { fg = "rose" },
-	},
+    dark_variant = "main",
+    highlight_groups = {
+        ["@text.diff.add"] = { fg = "foam" },
+        ["@text.diff.delete"] = { fg = "rose" },
+    },
 })
 vim.cmd.colorscheme("rose-pine")
 

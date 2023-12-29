@@ -13,6 +13,21 @@ return {
         local null_ls = require("null-ls")
         local null_opts = lsp.build_options("null-ls", {})
 
+        local prettierd_filetypes = {
+            "css",
+            "html",
+            "javascript",
+            "javascriptreact",
+            "json",
+            "markdown",
+            "markdown.mdx",
+            "scss",
+            "typescript",
+            "typescriptreact",
+            "vue",
+            "yaml",
+        }
+
         null_ls.setup({
             on_attach = function(client, bufnr)
                 null_opts.on_attach(client, bufnr)
@@ -20,9 +35,11 @@ return {
             sources = {
                 -- List can be found here:
                 -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
+                null_ls.builtins.code_actions.eslint_d,
+                null_ls.builtins.diagnostics.eslint_d,
                 null_ls.builtins.diagnostics.golangci_lint,
                 null_ls.builtins.diagnostics.luacheck,
-                null_ls.builtins.formatting.prettierd,
+                null_ls.builtins.formatting.prettierd.with({ filetypes = prettierd_filetypes }),
                 null_ls.builtins.formatting.stylua,
             },
         })

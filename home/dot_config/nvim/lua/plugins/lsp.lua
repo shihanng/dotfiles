@@ -36,6 +36,7 @@ return {
                 })
 
                 local builtin = require("telescope.builtin")
+                local tstools = require("typescript-tools.api")
 
                 vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = bufnr })
                 vim.keymap.set("n", "go", builtin.lsp_type_definitions, { buffer = bufnr })
@@ -44,6 +45,8 @@ return {
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr })
                 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { buffer = bufnr })
                 vim.keymap.set("n", "<space>el", builtin.diagnostics, { buffer = bufnr })
+                vim.keymap.set("n", "gs", tstools.organize_imports, { buffer = bufnr })
+                vim.keymap.set("n", "gI", tstools.add_missing_imports, { buffer = bufnr })
             end)
 
             lsp_zero.set_server_config({
@@ -69,7 +72,7 @@ return {
                 },
                 servers = {
                     ["gopls"] = { "go" },
-                    ["null-ls"] = { "yaml", "lua" },
+                    ["null-ls"] = { "yaml", "lua", "javascript", "typescriptreact" },
                 },
             })
 
@@ -99,8 +102,9 @@ return {
             end
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "lua_ls",
                     "gopls",
+                    "lua_ls",
+                    "tsserver",
                     "yamlls",
                 },
 

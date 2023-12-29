@@ -68,7 +68,7 @@ return {
                 },
                 servers = {
                     ['gopls'] = { 'go' },
-                    ['lua_ls'] = { 'lua' },
+                    ['null-ls'] = { 'lua' },
                 }
             })
 

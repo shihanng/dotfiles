@@ -20,8 +20,9 @@ return {
             sources = {
                 -- List can be found here:
                 -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
-                null_ls.builtins.diagnostics.golangci_lint
-            }
+                null_ls.builtins.diagnostics.golangci_lint,
+                null_ls.builtins.formatting.stylua,
+            },
         })
 
         local mason = require("mason")

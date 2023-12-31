@@ -28,6 +28,8 @@ return {
                     "lua",
                     "luadoc",
                     "luap",
+                    "python",
+                    "requirements",
                     "tsx",
                     "typescript",
                     "vimdoc",

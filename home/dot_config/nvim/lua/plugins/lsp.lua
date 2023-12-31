@@ -72,7 +72,13 @@ return {
                 },
                 servers = {
                     ["gopls"] = { "go" },
-                    ["null-ls"] = { "yaml", "lua", "javascript", "typescriptreact" },
+                    ["null-ls"] = {
+                        "javascript",
+                        "lua",
+                        "typescriptreact",
+                        "yaml",
+                    },
+                    ["ruff_lsp"] = { "python" },
                 },
             })
 
@@ -104,6 +110,8 @@ return {
                 ensure_installed = {
                     "gopls",
                     "lua_ls",
+                    "pyright",
+                    "ruff_lsp",
                     "tsserver",
                     "yamlls",
                 },

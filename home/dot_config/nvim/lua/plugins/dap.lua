@@ -23,6 +23,7 @@ return {
         "mfussenegger/nvim-dap",
         dependencies = {
             "leoluz/nvim-dap-go",
+            "mfussenegger/nvim-dap-python",
             "rcarriga/nvim-dap-ui",
             "williamboman/mason.nvim",
         },
@@ -40,6 +41,14 @@ return {
                     port = "38697",
                 },
             })
+
+            -- See: https://github.com/mfussenegger/nvim-dap-python?tab=readme-ov-file#debugpy
+            --   cd ~/dotfiles
+            --   mkdir .virtualenvs
+            --   cd .virtualenvs
+            --   python -m venv debugpy
+            --   debugpy/bin/python -m pip install debugpy
+            require("dap-python").setup("~/dotfiles/.virtualenvs/debugpy/bin/python")
 
             local dap = require("dap")
             local opts = { noremap = true, silent = true }

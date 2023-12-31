@@ -79,6 +79,7 @@ return {
                         "yaml",
                     },
                     ["ruff_lsp"] = { "python" },
+                    ["terraformls"] = { "terraform" },
                 },
             })
 
@@ -112,6 +113,8 @@ return {
                     "lua_ls",
                     "pyright",
                     "ruff_lsp",
+                    "terraformls",
+                    "tflint",
                     "tsserver",
                     "yamlls",
                 },
@@ -162,6 +165,11 @@ return {
                                     },
                                 },
                             },
+                        })
+                    end,
+                    ["tflint"] = function()
+                        require("lspconfig").tflint.setup({
+                            root_dir = require("lspconfig").util.root_pattern(".git", ".tflint.hcl"),
                         })
                     end,
                 },

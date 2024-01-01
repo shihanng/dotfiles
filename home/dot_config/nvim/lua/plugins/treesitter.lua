@@ -31,6 +31,7 @@ return {
                     "luap",
                     "python",
                     "requirements",
+                    "rust",
                     "terraform",
                     "tsx",
                     "typescript",

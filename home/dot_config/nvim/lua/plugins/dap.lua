@@ -51,6 +51,34 @@ return {
             require("dap-python").setup("~/dotfiles/.virtualenvs/debugpy/bin/python")
 
             local dap = require("dap")
+
+            -- In dap.lua dap.adapters.rt_lldb will be set to
+            -- whatever rt.config.options.dap.adapter is set to.
+            -- See: https://github.com/simrat39/rust-tools.nvim/issues/268#issuecomment-1544511682
+            dap.configurations.rust = {
+                {
+                    name = "Launch exec",
+                    type = "rt_lldb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+                    end,
+                    cwd = "${workspaceFolder}",
+                    stopOnEntry = false,
+                },
+                {
+                    name = "Attach",
+                    type = "rt_lldb",
+                    request = "attach",
+                    processId = "${command:pickProcess}",
+                },
+            }
+
+            -- Default: <project_root>/.vscode/launch.json
+            require("dap.ext.vscode").load_launchjs(nil, {
+                rt_lldb = { "rust" },
+            })
+
             local opts = { noremap = true, silent = true }
 
             vim.keymap.set("n", "<F1>", dap.step_over, opts)
@@ -100,7 +128,10 @@ return {
                 mason.setup()
             end
             require("mason-nvim-dap").setup({
-                ensure_installed = { "delve" },
+                ensure_installed = {
+                    "codelldb",
+                    "delve",
+                },
             })
         end,
     },

@@ -16,18 +16,6 @@ module "installer" {
       git_url  = "https://github.com/asdf-community/asdf-hashicorp.git"
       versions = ["1.12.2"]
     }
-    tflint = {
-      git_url  = "https://github.com/skyzyx/asdf-tflint"
-      versions = ["0.44.1"]
-    }
-    terraform-ls = {
-      git_url  = "https://github.com/asdf-community/asdf-hashicorp.git"
-      versions = ["0.30.1"]
-    }
-    ansible-lint = {
-      git_url  = "https://github.com/amrox/asdf-pyapp.git"
-      versions = ["6.13.1"]
-    }
     direnv = {
       git_url  = "https://github.com/asdf-community/asdf-direnv.git"
       versions = ["2.32.2"]

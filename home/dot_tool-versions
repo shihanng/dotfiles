@@ -1,4 +1,4 @@
-ansible 7.2.0
+ansible 9.0.1
 ansible-lint 6.13.1
 aws-okta-processor 1.8.2
 aws-sso-util 4.30.0

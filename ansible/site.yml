@@ -43,7 +43,7 @@
       plugin: erlang
       repo: https://github.com/asdf-vm/asdf-erlang.git
       versions:
-        - "25.2"
+        - "26.1.2"
 
     - role: asdf_install
       plugin: elixir

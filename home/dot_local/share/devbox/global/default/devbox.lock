@@ -325,6 +325,43 @@
         }
       }
     },
+    "lua5_4@5.4.4": {
+      "last_modified": "2022-12-17T09:19:40Z",
+      "resolved": "github:NixOS/nixpkgs/80c24eeb9ff46aa99617844d0c4168659e35175f#lua5_4",
+      "source": "devbox-search",
+      "version": "5.4.4",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/y4p226w0pra8r0spqk7adl6qlwdpzw7m-lua-5.4.4"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/z1g237qvm96gls8lh234ca3nyjqj9s3b-lua-5.4.4"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/4c694bi3k0b1z1sygl4j1z3brgcj9v9n-lua-5.4.4"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/22ch9ic3qncf8sw4jilhyl9kq6qqnsq8-lua-5.4.4"
+        }
+      }
+    },
+    "luarocks@3.9.1": {
+      "last_modified": "2023-02-24T09:01:09Z",
+      "resolved": "github:NixOS/nixpkgs/7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11#luarocks",
+      "source": "devbox-search",
+      "version": "3.9.1",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/2rp9d9ic2qvljghya81na5snjrzcrh10-luarocks-3.9.1"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/9pp62ang216pwjhfrb2g8xynpjplwjhs-luarocks-3.9.1"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/p9ma631145gniixlym6x09zr97q3m5h1-luarocks-3.9.1"
+        }
+      }
+    },
     "neovim@0.9.4": {
       "last_modified": "2023-12-13T22:54:10Z",
       "resolved": "github:NixOS/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff#neovim",

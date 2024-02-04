@@ -23,7 +23,9 @@
     "neovim@0.9.4",
     "darwin.apple_sdk.frameworks.Security",
     "fzy@latest",
-    "deno@latest"
+    "deno@latest",
+    "lua5_4@5.4.4",
+    "luarocks@3.9.1"
   ],
   "shell": {
     "init_hook": [

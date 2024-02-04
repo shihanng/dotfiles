@@ -6,11 +6,11 @@
     repo: "https://{{ nf_repo }}"
     dest: "{{ ansible_env.HOME }}/nerd-fonts"
     depth: 1
-    version: v3.0.2
+    version: v3.1.1
   register: nf_clone_repo
 
 - name: Install font
   ansible.builtin.command:
-    cmd: sh ./install.sh VictorMono
+    cmd: bash ./install.sh VictorMono
     chdir: "{{ ansible_env.HOME }}/nerd-fonts"
   when: nf_clone_repo.changed

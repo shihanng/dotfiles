@@ -10,7 +10,7 @@ require (
 	github.com/google/go-github v17.0.0+incompatible // indirect
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/jessevdk/go-flags v1.4.0 // indirect
-	golang.org/x/net v0.11.0 // indirect
+	golang.org/x/net v0.17.0 // indirect
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d // indirect
 	golang.org/x/sync v0.3.0 // indirect
 	google.golang.org/appengine v1.4.0 // indirect

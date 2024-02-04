@@ -70,7 +70,7 @@
             - "2022.12.19"
         - name: aws-sso-util
           versions:
-            - "4.30.0"
+            - "4.32.0"
 
     - role: asdf_install
       plugin: poetry

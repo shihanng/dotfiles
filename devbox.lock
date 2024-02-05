@@ -1,0 +1,22 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "ansible@2.16.2": {
+      "last_modified": "2024-01-28T16:40:23Z",
+      "resolved": "github:NixOS/nixpkgs/902d74314fae5eb824bc7b597bd4d39640345557#ansible",
+      "source": "devbox-search",
+      "version": "2.16.2",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/q0vc50hr7nkkia7aczmb8qg7i3mhi0s7-python3.11-ansible-core-2.16.2"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/a9v96dy5rz14k44xzs95vb8navg2schf-python3.11-ansible-core-2.16.2"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/8lpgljjw1igaxlqkzgfh897vlxdz8zbc-python3.11-ansible-core-2.16.2"
+        }
+      }
+    }
+  }
+}

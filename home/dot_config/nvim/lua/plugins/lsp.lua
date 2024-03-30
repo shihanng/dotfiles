@@ -19,7 +19,6 @@ return {
             "hrsh7th/cmp-nvim-lsp",
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-            "simrat39/rust-tools.nvim",
             "mfussenegger/nvim-dap",
             "jay-babu/mason-nvim-dap.nvim",
         },
@@ -103,27 +102,6 @@ return {
                     end
                 end,
             })
-
-            -- https://github.com/simrat39/rust-tools.nvim/wiki/Debugging#codelldb-a-better-debugging-experience
-            -- Assuming Linux
-            local home_path = os.getenv("HOME") .. "/"
-            local mason_path = home_path .. ".local/share/nvim/mason/packages/"
-            local codelldb_path = mason_path .. "codelldb/extension/adapter/codelldb"
-            local liblldb_path = mason_path .. "codelldb/extension/lldb/lib/liblldb.dylib"
-            local rust_tools = require("rust-tools")
-
-            local opts = {
-                dap = {
-                    adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-                },
-                server = {
-                    on_attach = function(_, bufnr)
-                        vim.keymap.set("n", "<leader>ca", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
-                    end,
-                },
-            }
-            -- Normal setup
-            require("rust-tools").setup(opts)
 
             local mason = require("mason")
             if not mason.has_setup then

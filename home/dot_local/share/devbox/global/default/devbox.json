@@ -26,7 +26,8 @@
     "deno@latest",
     "lua5_4@5.4.4",
     "luarocks@3.9.1",
-    "sesh@latest"
+    "sesh@latest",
+    "zellij@latest"
   ],
   "shell": {
     "init_hook": [

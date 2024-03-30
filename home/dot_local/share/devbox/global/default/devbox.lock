@@ -502,6 +502,26 @@
         }
       }
     },
+    "zellij@latest": {
+      "last_modified": "2024-03-22T11:26:23Z",
+      "resolved": "github:NixOS/nixpkgs/a3ed7406349a9335cb4c2a71369b697cecd9d351#zellij",
+      "source": "devbox-search",
+      "version": "0.39.2",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/p8fkh2gdvvgvr3vppg42pgfpcb3srr32-zellij-0.39.2"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/fdcqf5nix1gxq0gg5q6212028ws0wwwz-zellij-0.39.2"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/4vc63cbb3pgqx4r0kkrxld9p3rhz64dh-zellij-0.39.2"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/n4vhgwbm50d18xwiimryc66vygr26a0p-zellij-0.39.2"
+        }
+      }
+    },
     "zoxide@latest": {
       "last_modified": "2023-12-13T22:54:10Z",
       "resolved": "github:NixOS/nixpkgs/fd04bea4cbf76f86f244b9e2549fca066db8ddff#zoxide",

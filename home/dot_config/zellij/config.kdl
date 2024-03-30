@@ -4,9 +4,12 @@ keybinds {
         "Ctrl p" \
         "Ctrl n" \
         "Ctrl m" \
+        "Ctrl g" \
+        "Ctrl f" \
+        "Ctrl b" \
         "Ctrl o"
     locked {
-        bind "Ctrl g" { SwitchToMode "Normal"; }
+        bind "Ctrl l" { SwitchToMode "Normal"; }
     }
     resize {
         bind "Ctrl n" { SwitchToMode "Normal"; }
@@ -76,8 +79,6 @@ keybinds {
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
-        bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
-        bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
         // uncomment this and adjust key if using copy_on_select=false
@@ -146,7 +147,7 @@ keybinds {
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     shared_except "locked" {
-        bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Ctrl l" { SwitchToMode "Locked"; }
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }

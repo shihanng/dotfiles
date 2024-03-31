@@ -49,7 +49,7 @@
   "promise-async": { "branch": "main", "commit": "94f6f03c6c1e2aab551aacdf0c1e597a7269abb6" },
   "registers": { "branch": "main", "commit": "a0201ec803b2666edd589f16ab88e36a533d382b" },
   "rose-pine": { "branch": "main", "commit": "92762f4fa2144c05db760ea254f4c399a56a7ef5" },
-  "rust-tools.nvim": { "branch": "master", "commit": "0cc8adab23117783a0292a0c8a2fbed1005dc645" },
+  "rustaceanvim": { "branch": "master", "commit": "b1433cb70569b888d26a26232da93fdbc76cb4a8" },
   "telescope-dap.nvim": { "branch": "master", "commit": "4e2d5efb92062f0b865fe59b200b5ed7793833bf" },
   "telescope-fzy-native.nvim": { "branch": "master", "commit": "282f069504515eec762ab6d6c89903377252bf5b" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },

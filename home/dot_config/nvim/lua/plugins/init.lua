@@ -38,4 +38,9 @@ return {
             vim.keymap.set("n", "<A-l>", "<cmd>ZellijNavigateRight<cr>")
         end,
     },
+    {
+        "mrcjkb/rustaceanvim",
+        version = "^4", -- Recommended
+        ft = { "rust" },
+    },
 }

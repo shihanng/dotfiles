@@ -80,8 +80,17 @@ return {
                     },
                     ["ruff_lsp"] = { "python" },
                     ["terraformls"] = { "terraform" },
+                    ["rust-analyzer"] = { "rust" },
                 },
             })
+
+            -- Setup rustaceanvim with lsp-zero.
+            -- See: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/quick-recipes.md
+            vim.g.rustaceanvim = {
+                server = {
+                    capabilities = lsp_zero.get_capabilities(),
+                },
+            }
 
             -- Auto goimports with gopls
             -- https://github.com/neovim/nvim-lspconfig/issues/115#issuecomment-1128115341
@@ -122,6 +131,7 @@ return {
 
                 handlers = {
                     lsp_zero.default_setup,
+                    rust_analyzer = lsp_zero.noop, -- See: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/quick-recipes.md
                     ["gopls"] = function()
                         -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md#settings
                         require("lspconfig").gopls.setup({

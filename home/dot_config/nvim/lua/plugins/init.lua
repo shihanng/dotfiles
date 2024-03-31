@@ -30,13 +30,16 @@ return {
     "direnv/direnv.vim",
     "mattn/emmet-vim",
     {
-        "Lilja/zellij.nvim",
-        config = function()
-            vim.keymap.set("n", "<A-h>", "<cmd>ZellijNavigateLeft<cr>")
-            vim.keymap.set("n", "<A-j>", "<cmd>ZellijNavigateDown<cr>")
-            vim.keymap.set("n", "<A-k>", "<cmd>ZellijNavigateUp<cr>")
-            vim.keymap.set("n", "<A-l>", "<cmd>ZellijNavigateRight<cr>")
-        end,
+        "https://git.sr.ht/~swaits/zellij-nav.nvim",
+        lazy = true,
+        event = "VeryLazy",
+        keys = {
+            { "<c-h>", "<cmd>ZellijNavigateLeft<cr>", { silent = true, desc = "navigate left" } },
+            { "<c-j>", "<cmd>ZellijNavigateDown<cr>", { silent = true, desc = "navigate down" } },
+            { "<c-k>", "<cmd>ZellijNavigateUp<cr>", { silent = true, desc = "navigate up" } },
+            { "<c-l>", "<cmd>ZellijNavigateRight<cr>", { silent = true, desc = "navigate right" } },
+        },
+        opts = {},
     },
     {
         "mrcjkb/rustaceanvim",

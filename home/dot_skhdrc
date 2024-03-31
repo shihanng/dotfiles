@@ -1,18 +1,18 @@
 alt - f         : yabai -m window --toggle float --grid 4:4:1:1:2:2
 shift + alt - f : yabai -m window --toggle zoom-fullscreen
 shift + alt - d : yabai -m space --toggle show-desktop
-ctrl - z         : yabai -m window --toggle zoom-parent
+alt - z         : yabai -m window --toggle zoom-parent
 alt - space     : yabai -m window --toggle split
 alt - 0         : yabai -m space --balance
-ctrl - h         : yabai -m window --focus west
-ctrl - l         : yabai -m window --focus east
-ctrl - k         : yabai -m window --focus north
-ctrl - j         : yabai -m window --focus south
-shift + ctrl - h : yabai -m window --warp west
-shift + ctrl - l : yabai -m window --warp east
-shift + ctrl - k : yabai -m window --warp north
-shift + ctrl - j : yabai -m window --warp south
-shift + ctrl - 1 : yabai -m window --space 1
-shift + ctrl - 2 : yabai -m window --space 2
-shift + ctrl - 3 : yabai -m window --space 3
-shift + ctrl - 4 : yabai -m window --space 4
+alt + ctrl - h         : yabai -m window --focus west
+alt + ctrl - l         : yabai -m window --focus east
+alt + ctrl - k         : yabai -m window --focus north
+alt + ctrl - j         : yabai -m window --focus south
+shift + alt - h : yabai -m window --warp west
+shift + alt - l : yabai -m window --warp east
+shift + alt - k : yabai -m window --warp north
+shift + alt - j : yabai -m window --warp south
+shift + alt - 1 : yabai -m window --space 1
+shift + alt - 2 : yabai -m window --space 2
+shift + alt - 3 : yabai -m window --space 3
+shift + alt - 4 : yabai -m window --space 4

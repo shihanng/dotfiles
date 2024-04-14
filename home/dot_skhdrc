@@ -1,5 +1,5 @@
-alt - f         : yabai -m window --toggle float --grid 4:4:1:1:2:2
-shift + alt - f : yabai -m window --toggle zoom-fullscreen
+shift + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+alt - f         : yabai -m window --toggle zoom-fullscreen
 shift + alt - d : yabai -m space --toggle show-desktop
 alt - z         : yabai -m window --toggle zoom-parent
 alt - space     : yabai -m window --toggle split

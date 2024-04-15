@@ -384,6 +384,7 @@
     },
     "nodejs@18.16.1": {
       "last_modified": "2023-07-24T21:56:31Z",
+      "plugin_version": "0.0.2",
       "resolved": "github:NixOS/nixpkgs/dfcffbd74fd6f0419370d8240e445252a39f4d10#nodejs_18",
       "source": "devbox-search",
       "version": "18.16.1",

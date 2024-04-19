@@ -1,9 +1,0 @@
-session_name: "Dotfiles' Ansible"
-windows:
-  - layout: even-vertical
-    panes:
-      - focus: "true"
-        shell_command: vi
-      - pane
-    start_directory: $HOME/dotfiles/ansible
-    window_name: ansible

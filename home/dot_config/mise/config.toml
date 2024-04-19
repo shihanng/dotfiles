@@ -1,0 +1,12 @@
+[settings]
+experimental = true
+
+[tools]
+"cargo:atuin" = "latest"
+direnv = "latest"
+"cargo:exa" = "latest"
+zellij = "latest"
+ghq = "latest"
+lazygit = "latest"
+pre-commit = "latest"
+neovim = "latest"

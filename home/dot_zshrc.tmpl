@@ -48,14 +48,7 @@ export VISUAL="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export BATDIFF_USE_DELTA=true
 
-eval "$(devbox global shellenv --init-hook)"
-
-# https://github.com/jetpack-io/devbox/issues/1564#issuecomment-1767043341
-export CC=/usr/bin/cc
-export LD=/usr/bin/ld
-
-# https://ryantm.github.io/nixpkgs/using/configuration/
-export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1
+eval "$(~/.local/bin/mise activate zsh)"
 
 alias assume="source assume"
 alias ls="exa"
@@ -114,7 +107,6 @@ zinit as"null" wait"2" lucid \
     atinit'fpath+=( $PWD )' \
     atload"zicompinit; zicdreplay" \
     atpull'%atclone' nocompile'!' for \
-        atclone'devbox completion zsh > _devbox' jetpack-io/devbox \
         atclone'kind completion zsh > _kind' kubernetes-sigs/kind \
         atclone'helm completion zsh > _helm' helm/helm \
         atclone'kubectl completion zsh > _kubectl' kubernetes/kubectl \

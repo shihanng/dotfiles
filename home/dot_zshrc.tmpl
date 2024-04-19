@@ -100,7 +100,7 @@ zinit as"null" wait"2" lucid \
         atclone'zoxide init --cmd cd zsh > zhook.zsh' ajeetdsouza/zoxide \
         atclone'atuin init zsh > zhook.zsh' ellie/atuin \
         atclone'navi widget zsh > zhook.zsh' denisidoro/navi \
-        atclone'direnv hook zsh > zhook.zsh' direnv/direnv
+        atclone'mise exec -- direnv hook zsh > zhook.zsh' direnv/direnv
 
 zinit as"null" wait"2" lucid \
     atinit'fpath+=( $PWD )' \

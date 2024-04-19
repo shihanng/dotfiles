@@ -48,9 +48,6 @@ export VISUAL="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export BATDIFF_USE_DELTA=true
 
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc" # TODO: Use devbox
-source $HOME/.asdf/asdf.sh
-
 eval "$(devbox global shellenv --init-hook)"
 
 # https://github.com/jetpack-io/devbox/issues/1564#issuecomment-1767043341
@@ -83,7 +80,6 @@ fi
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
-zinit add-fpath "${ASDF_DIR}/completions"
 zinit add-fpath $HOME/.local/share/zsh/site-functions
 
 autoload -Uz _zinit

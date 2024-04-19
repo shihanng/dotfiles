@@ -110,7 +110,9 @@ zinit as"null" wait"2" lucid \
         atclone'helm completion zsh > _helm' helm/helm \
         atclone'kubectl completion zsh > _kubectl' kubernetes/kubectl \
         atclone'kustomize completion zsh > _kustomize' kubernetes-sigs/kustomize \
-        atclone'chezmoi completion zsh > _chezmoi' twpayne/chezmoi
+        atclone'chezmoi completion zsh > _chezmoi' twpayne/chezmoi \
+        atclone'mise exec -- zellij setup --generate-completion zsh > _zellij' zellij-org/zellij \
+        atclone'mise completion zsh > _mise' jdx/mise
 
 zinit as"null" wait"1" lucid \
     atpull'%atclone' nocompile'!' for \

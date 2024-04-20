@@ -45,10 +45,6 @@
 
     - role: golangci-lint
 
-    - role: tmux
-
-    - role: tmuxp
-
     - role: ccls
 
     - role: pandoc # We need this for checkmake

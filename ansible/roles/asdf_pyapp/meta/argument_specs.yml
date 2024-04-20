@@ -1,8 +1,0 @@
----
-argument_specs:
-  main:
-    options:
-      plugins:
-        type: list
-        required: true
-        elements: dict

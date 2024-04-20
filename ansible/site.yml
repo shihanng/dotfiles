@@ -20,75 +20,8 @@
   roles:
     - tar
     - git
-    - asdf
 
     - role: gh
-
-    - role: asdf_install
-      plugin: python
-      repo: https://github.com/asdf-community/asdf-python
-      versions:
-        - "3.11.0"
-        - "3.10.8"
-        - "3.9.15"
-        - "3.8.15"
-
-    - role: asdf_install
-      plugin: ruby
-      repo: https://github.com/asdf-vm/asdf-ruby.git
-      versions:
-        - "3.0.2"
-
-    - role: asdf_install
-      plugin: erlang
-      repo: https://github.com/asdf-vm/asdf-erlang.git
-      versions:
-        - "26.1.2"
-
-    - role: asdf_install
-      plugin: elixir
-      repo: https://github.com/asdf-vm/asdf-elixir.git
-      versions:
-        - "1.14.2"
-
-    - role: asdf_pyapp
-      plugins:
-        - name: black
-          versions:
-            - "22.10.0"
-        - name: isort
-          versions:
-            - "5.10.1"
-        - name: flake8
-          versions:
-            - "6.0.0"
-        - name: mypy
-          versions:
-            - "0.991"
-        - name: pipenv
-          versions:
-            - "2022.12.19"
-        - name: aws-sso-util
-          versions:
-            - "4.32.0"
-
-    - role: asdf_install
-      plugin: poetry
-      repo: https://github.com/asdf-community/asdf-poetry.git
-      versions:
-        - "1.2.2"
-
-    - role: asdf_install
-      plugin: ghq
-      repo: https://github.com/kajisha/asdf-ghq
-      versions:
-        - "1.3.0"
-
-    - role: asdf_install
-      plugin: helm
-      repo: https://github.com/Antiarchitect/asdf-helm.git
-      versions:
-        - "3.10.3"
 
     - role: go
       go_version: "1.20.1"
@@ -99,10 +32,6 @@
         # - "golang.org/x/tools/gopls@latest" -- Uninstalled
         # - "sigs.k8s.io/kind@v0.17.0"
         - "github.com/mrtazz/checkmake/cmd/checkmake@latest"
-
-    - role: asdf_remove
-      plugins:
-        - "kustomize"
 
     - role: fzf
 

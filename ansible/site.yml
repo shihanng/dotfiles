@@ -80,3 +80,5 @@
     - role: yabai
 
     - role: tree
+
+    - role: fzy

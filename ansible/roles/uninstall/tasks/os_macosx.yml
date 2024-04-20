@@ -8,3 +8,4 @@
     - jesseduffield/lazygit/lazygit
     - knqyf263/pet/pet
     - kustomize
+  ignore_errors: yes

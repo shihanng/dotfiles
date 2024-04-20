@@ -1,0 +1,4 @@
+---
+- homebrew:
+    name: tree
+    state: present

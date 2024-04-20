@@ -78,3 +78,5 @@
     - role: uninstall
 
     - role: yabai
+
+    - role: tree

@@ -1,34 +1,9 @@
 ---
-- name: Get current Go version
-  ansible.builtin.shell: |
-    go version
-  register: go_current_version
-  changed_when: false
-  ignore_errors: true
-
-- name: Set arch
-  set_fact:
-    go_arch: "{{ archs[ansible_architecture] }}"
-
-- name: Set OS
-  set_fact:
-    go_os: "{{ oses[ansible_os_family] }}"
-
-- name: Set expected version prefix
-  set_fact:
-    go_expected_version_prefix: "go version go{{ go_version }} {{ go_os }}/{{ go_arch }}"
-
-- name: Install Go {{go_version}}
-  ansible.builtin.shell: |
-    sudo rm -rf /usr/local/go && \
-    curl -LSs https://golang.org/dl/go{{ go_version }}.{{ go_os }}-{{ go_arch }}.tar.gz | sudo tar -C /usr/local -xzf-
-  when: go_expected_version_prefix != go_current_version.stdout
+- name: Remove go
+  ansible.builtin.file:
+    path: /usr/local/go
+    state: absent
   become: true
-
-- name: Install binaries
-  ansible.builtin.command: go install {{ item|quote }}
-  loop: "{{ go_installs }}"
-  changed_when: false
 
 - name: Remove binaries
   loop:
@@ -38,6 +13,7 @@
     - gopls
     - kind
     - sqls
+    - checkmake
   ansible.builtin.file:
     path: "{{ ansible_env.HOME }}/go/bin/{{ item }}"
     state: absent

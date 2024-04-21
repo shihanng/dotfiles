@@ -20,6 +20,7 @@ pgcli = "latest"
 "cargo:bat" = "latest"
 bat-extras = "latest"
 delta = "latest"
+go = "1.22.2"
 
 [plugins]
 pgcli = "https://github.com/amrox/asdf-pyapp.git"

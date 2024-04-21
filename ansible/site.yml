@@ -24,14 +24,6 @@
     - role: gh
 
     - role: go
-      go_version: "1.20.1"
-      go_installs:
-        # - "github.com/lighttiger2505/sqls@latest"
-        # - "github.com/mattn/efm-langserver@latest"
-        # - "golang.org/x/tools/cmd/goimports@latest"
-        # - "golang.org/x/tools/gopls@latest" -- Uninstalled
-        # - "sigs.k8s.io/kind@v0.17.0"
-        - "github.com/mrtazz/checkmake/cmd/checkmake@latest"
 
     - role: fzf
 

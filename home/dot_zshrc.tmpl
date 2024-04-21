@@ -97,8 +97,8 @@ zinit atclone'starship init zsh > zhook.zsh' \
 
 zinit as"null" wait"2" lucid \
     atpull'%atclone' src"zhook.zsh" nocompile'!' for \
-        atclone'zoxide init --cmd cd zsh > zhook.zsh' ajeetdsouza/zoxide \
-        atclone'atuin init zsh > zhook.zsh' ellie/atuin \
+        atclone'mise exec -- zoxide init --cmd cd zsh > zhook.zsh' ajeetdsouza/zoxide \
+        atclone'mise exec -- atuin init zsh > zhook.zsh' ellie/atuin \
         atclone'navi widget zsh > zhook.zsh' denisidoro/navi \
         atclone'mise exec -- direnv hook zsh > zhook.zsh' direnv/direnv
 

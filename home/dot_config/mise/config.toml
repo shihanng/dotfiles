@@ -22,6 +22,8 @@ bat-extras = "latest"
 delta = "latest"
 go = "1.22.2"
 "go:github.com/xo/usql" = "latest"
+kubie = "latest"
+stern = "latest"
 
 [plugins]
 pgcli = "https://github.com/amrox/asdf-pyapp.git"

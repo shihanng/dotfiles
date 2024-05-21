@@ -90,6 +90,9 @@ return {
                 server = {
                     capabilities = lsp_zero.get_capabilities(),
                 },
+                dap = {
+                    autoload_configurations = true,
+                },
             }
 
             -- Auto goimports with gopls

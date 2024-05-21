@@ -52,8 +52,42 @@ return {
 
             local dap = require("dap")
 
+            -- We need adapters for rustaceanvim.
+            -- https://github.com/mrcjkb/rustaceanvim?tab=readme-ov-file#optional
+            -- https://github.com/mrcjkb/rustaceanvim/issues/129#issuecomment-1879784810
+            dap.adapters.codelldb = {
+                type = "server",
+                host = "127.0.0.1",
+                port = 13000,
+                executable = {
+                    command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb",
+                    args = { "--port", "13000" },
+                },
+            }
+
+            dap.configurations.rust = {
+                {
+                    name = "Launch exec",
+                    type = "codelldb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+                    end,
+                    cwd = "${workspaceFolder}",
+                    stopOnEntry = false,
+                },
+                {
+                    name = "Attach",
+                    type = "codelldb",
+                    request = "attach",
+                    processId = "${command:pickProcess}",
+                },
+            }
+
             -- Default: <project_root>/.vscode/launch.json
-            require("dap.ext.vscode").load_launchjs(nil, {})
+            require("dap.ext.vscode").load_launchjs(nil, {
+                codelldb = { "rust" },
+            })
 
             local opts = { noremap = true, silent = true }
 

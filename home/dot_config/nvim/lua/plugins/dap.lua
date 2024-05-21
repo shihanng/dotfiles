@@ -1,6 +1,7 @@
 return {
     {
         "rcarriga/nvim-dap-ui",
+        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
         config = function()
             local dap_ui = require("dapui")
             dap_ui.setup()
@@ -24,7 +25,6 @@ return {
         dependencies = {
             "leoluz/nvim-dap-go",
             "mfussenegger/nvim-dap-python",
-            "rcarriga/nvim-dap-ui",
             "williamboman/mason.nvim",
         },
         config = function()

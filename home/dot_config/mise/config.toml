@@ -4,7 +4,7 @@ experimental = true
 [tools]
 "cargo:atuin" = "latest"
 direnv = "latest"
-zellij = "latest"
+zellij = "0.40.1"
 ghq = "latest"
 lazygit = "latest"
 pre-commit = "latest"
@@ -25,6 +25,8 @@ go = "1.22.2"
 kubie = "latest"
 stern = "latest"
 awscli = "2"
+terraform = "1.8.3"
+lua = "5.4.6"
 
 [plugins]
 pgcli = "https://github.com/amrox/asdf-pyapp.git"

@@ -4,6 +4,8 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "nvimtools/none-ls.nvim",
+        "nvimtools/none-ls-extras.nvim",
+        "gbprod/none-ls-luacheck.nvim",
     },
     config = function()
         -- Using null-ls as source of truth.
@@ -35,10 +37,10 @@ return {
             sources = {
                 -- List can be found here:
                 -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
-                null_ls.builtins.code_actions.eslint_d,
-                null_ls.builtins.diagnostics.eslint_d,
+                require("none-ls.code_actions.eslint_d"),
+                require("none-ls.diagnostics.eslint_d"),
                 null_ls.builtins.diagnostics.golangci_lint,
-                null_ls.builtins.diagnostics.luacheck,
+                require("none-ls-luacheck.diagnostics.luacheck"),
                 null_ls.builtins.formatting.prettierd.with({ filetypes = prettierd_filetypes }),
                 null_ls.builtins.formatting.stylua,
             },

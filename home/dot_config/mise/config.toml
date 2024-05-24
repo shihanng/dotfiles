@@ -27,6 +27,7 @@ stern = "latest"
 awscli = "2"
 terraform = "1.8.3"
 lua = "5.4.6"
+"pipx:litecli" = "latest"
 
 [plugins]
 pgcli = "https://github.com/amrox/asdf-pyapp.git"

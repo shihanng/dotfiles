@@ -84,6 +84,7 @@ return {
                     ["ruff_lsp"] = { "python" },
                     ["terraformls"] = { "terraform" },
                     ["rust-analyzer"] = { "rust" },
+                    ["taplo"] = { "toml" },
                 },
             })
 
@@ -133,6 +134,7 @@ return {
                     "tflint",
                     "tsserver",
                     "yamlls",
+                    "taplo",
                 },
 
                 handlers = {
@@ -188,6 +190,9 @@ return {
                         require("lspconfig").tflint.setup({
                             root_dir = require("lspconfig").util.root_pattern(".git", ".tflint.hcl"),
                         })
+                    end,
+                    ["taplo"] = function()
+                        require("lspconfig").taplo.setup({})
                     end,
                 },
             })

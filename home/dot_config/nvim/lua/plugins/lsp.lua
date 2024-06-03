@@ -80,6 +80,7 @@ return {
                         "lua",
                         "typescriptreact",
                         "yaml",
+                        "json",
                     },
                     ["ruff_lsp"] = { "python" },
                     ["terraformls"] = { "terraform" },

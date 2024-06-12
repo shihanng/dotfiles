@@ -21,8 +21,6 @@
     - tar
     - git
 
-    - role: gh
-
     - role: go
 
     - role: fzf

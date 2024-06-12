@@ -74,6 +74,8 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
 zinit add-fpath $HOME/.local/share/zsh/site-functions
+zinit add-fpath $HOME/.granted/zsh_autocomplete/assume/
+zinit add-fpath $HOME/.granted/zsh_autocomplete/granted/
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -113,6 +115,7 @@ zinit as"null" wait"2" lucid \
         atclone'kustomize completion zsh > _kustomize' kubernetes-sigs/kustomize \
         atclone'chezmoi completion zsh > _chezmoi' twpayne/chezmoi \
         atclone'mise exec -- zellij setup --generate-completion zsh > _zellij' zellij-org/zellij \
+        atclone'mise exec -- granted completion -s zsh' common-fate/granted \
         atclone'mise completion zsh > _mise' jdx/mise
 
 zinit as"null" wait"1" lucid \

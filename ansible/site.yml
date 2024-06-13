@@ -27,17 +27,9 @@
 
     - role: gnupg
 
-    - role: fd
-
     - role: wezterm
 
     - role: ngram-data
-
-    - role: ripgrep
-
-    - role: rustup
-
-    - role: starship
 
     - role: nerdfont
 

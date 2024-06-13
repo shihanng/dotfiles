@@ -31,6 +31,10 @@ lua = "5.4.6"
 deno = "1"
 "cargo:navi" = "2.23.0"
 granted = "0.27.5"
+ripgrep = "14.1.0"
+fd = "10.1.0"
+starship = "1.19.0"
+github-cli = "2.50.0"
 
 [plugins]
 pgcli = "https://github.com/amrox/asdf-pyapp.git"

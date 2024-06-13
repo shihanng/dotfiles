@@ -1,10 +1,9 @@
 local wezterm = require "wezterm"
-local colors = require('lua/rose-pine').colors()
-local window_frame = require('lua/rose-pine').window_frame()
+local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
 
 return {
-    colors = colors,
-    window_frame = window_frame,
+    colors = theme.colors(),
+    window_frame = theme.window_frame(), -- needed only if using fancy tab bar
 {{- if eq .chezmoi.os "darwin" }}
     use_ime = false,
 {{- else }}

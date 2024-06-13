@@ -55,8 +55,6 @@
 
     - role: starship
 
-    - role: navi
-
     - role: nerdfont
 
     - role: npm_install # This is actually uninstall

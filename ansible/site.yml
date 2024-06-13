@@ -25,27 +25,13 @@
 
     - role: keybase
 
-    - role: tpm
-
     - role: gnupg
 
     - role: fd
 
-    - role: golangci-lint
-
-    - role: ccls
-
-    - role: pandoc # We need this for checkmake
-
-    - role: clang-format
-
-    - role: gotty
-
     - role: wezterm
 
     - role: ngram-data
-
-    - role: afx
 
     - role: ripgrep
 
@@ -54,12 +40,6 @@
     - role: starship
 
     - role: nerdfont
-
-    - role: npm_install # This is actually uninstall
-
-    - role: lua # Mostly uninstalled
-
-    - role: uninstall
 
     - role: yabai
 

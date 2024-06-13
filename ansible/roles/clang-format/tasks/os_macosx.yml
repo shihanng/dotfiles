@@ -1,4 +1,0 @@
----
-- homebrew:
-    name: clang-format
-    state: present

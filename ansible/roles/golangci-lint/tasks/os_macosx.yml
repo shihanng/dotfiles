@@ -1,4 +1,0 @@
----
-- homebrew:
-    name: golangci-lint
-    state: present

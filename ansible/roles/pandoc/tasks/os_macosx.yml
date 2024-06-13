@@ -1,4 +1,0 @@
----
-- homebrew:
-    name: pandoc
-    state: present

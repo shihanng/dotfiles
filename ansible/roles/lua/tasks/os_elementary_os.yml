@@ -1,8 +1,0 @@
----
-# https://github.com/Stratus3D/asdf-lua#dependencies
-- name: Install dependencies
-  ansible.builtin.apt:
-    pkg:
-      - "linux-headers-{{ ansible_kernel }}"
-      - build-essential
-      - libreadline-dev

@@ -1,5 +1,0 @@
----
-- homebrew:
-    name: ccls
-    state: present
-# https://github.com/MaskRay/ccls/wiki/Build#macos

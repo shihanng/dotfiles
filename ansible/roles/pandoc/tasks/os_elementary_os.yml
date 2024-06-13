@@ -1,7 +1,0 @@
----
-- name: Install from GitHub
-  vars:
-    pandoc_version: 2.19.2
-  ansible.builtin.apt:
-    deb: "https://github.com/jgm/pandoc/releases/download/{{ pandoc_version }}/pandoc-{{ pandoc_version }}-1-{{ archs[ansible_architecture] }}.deb"
-  become: true

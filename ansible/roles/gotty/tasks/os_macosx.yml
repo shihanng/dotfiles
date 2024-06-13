@@ -1,4 +1,0 @@
----
-- homebrew:
-    name: sorenisanerd/gotty/gotty
-    state: present

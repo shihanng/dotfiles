@@ -23,8 +23,6 @@
 
     - role: go
 
-    - role: fzf
-
     - role: keybase
 
     - role: tpm

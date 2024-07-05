@@ -16,5 +16,13 @@ return {
     font_size = 17,
 {{- end }}
     hide_tab_bar_if_only_one_tab = true,
-    window_decorations = "RESIZE" 
+    window_decorations = "RESIZE",
+	set_environment_variables = {
+		-- prepend the path to your utility
+		PATH = wezterm.home_dir
+			.. "/.local/share/mise/shims:"
+			-- and include the rest of the PATH
+			.. os.getenv("PATH"),
+	},
+	default_prog = { "zellij", "-l", "welcome" },
 }

@@ -26,7 +26,7 @@ keybinds clear-defaults=true {
         bind "-" { Resize "Decrease"; }
     }
     pane {
-        bind "Alt /" { SwitchToMode "Normal"; }
+        bind "Alt p" { SwitchToMode "Normal"; }
         bind "h" "Left" { MoveFocus "Left"; }
         bind "l" "Right" { MoveFocus "Right"; }
         bind "j" "Down" { MoveFocus "Down"; }
@@ -116,7 +116,7 @@ keybinds clear-defaults=true {
         bind "Alt '" { SwitchToMode "Normal"; }
         bind "Alt s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
-        bind "w" {
+        bind "'" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
@@ -199,7 +199,7 @@ keybinds clear-defaults=true {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-        bind "Alt /" { SwitchToMode "Pane"; }
+        bind "Alt p" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
         bind "Alt ," { SwitchToMode "Resize"; }

@@ -6,6 +6,9 @@ path=(/opt/homebrew/bin $path[@])
 path=($HOME/.local/share/mise/shims $path[@])
 # To make sure that we can run pgcli.
 path=(/opt/homebrew/opt/libpq/bin $path[@])
+
+# https://github.com/zellij-org/zellij/issues/3036#issuecomment-2024214955
+path=(/opt/homebrew/opt/curl/bin $path[@])
 {{ end }}
 path=(/usr/sbin $path[@])
 path=(/usr/local/bin $path[@])

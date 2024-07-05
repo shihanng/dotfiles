@@ -4,7 +4,6 @@ experimental = true
 [tools]
 "cargo:atuin" = "latest"
 direnv = "latest"
-zellij = "0.40.1"
 ghq = "latest"
 lazygit = "latest"
 pre-commit = "latest"
@@ -36,6 +35,7 @@ fd = "10.1.0"
 starship = "1.19.0"
 github-cli = "2.50.0"
 "cargo:csvlens" = "0.9.1"
+"cargo:zellij" = "0.40.1"
 
 [plugins]
 pgcli = "https://github.com/amrox/asdf-pyapp.git"

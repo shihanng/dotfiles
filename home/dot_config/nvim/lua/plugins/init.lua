@@ -14,7 +14,6 @@ return {
             require("gitsigns").setup()
         end,
     },
-    "nvim-treesitter/nvim-treesitter-context",
     "tpope/vim-surround",
     "jeffkreeftmeijer/vim-numbertoggle",
     "tpope/vim-repeat",

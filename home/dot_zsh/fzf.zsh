@@ -20,4 +20,4 @@ _fzf_compgen_dir() {
 # fzf-tab
 # https://github.com/Aloxaf/fzf-tab
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'

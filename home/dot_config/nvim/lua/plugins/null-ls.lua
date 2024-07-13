@@ -31,9 +31,7 @@ return {
         }
 
         null_ls.setup({
-            on_attach = function(client, bufnr)
-                null_opts.on_attach(client, bufnr)
-            end,
+            on_attach = function(client, bufnr) null_opts.on_attach(client, bufnr) end,
             sources = {
                 -- List can be found here:
                 -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
@@ -47,9 +45,7 @@ return {
         })
 
         local mason = require("mason")
-        if not mason.has_setup then
-            mason.setup()
-        end
+        if not mason.has_setup then mason.setup() end
         require("mason-null-ls").setup({
             ensure_installed = nil,
             automatic_installation = true,

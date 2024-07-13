@@ -6,9 +6,7 @@ return {
         local vim_visual_multi = function()
             local vm_status_ok, VMInfos = pcall(vim.fn.VMInfos)
             -- Check if VMInfos exists, check if the return of VMInfos is {}
-            if (not vm_status_ok) or (not next(VMInfos)) then
-                return ""
-            end
+            if (not vm_status_ok) or (not next(VMInfos)) then return "" end
 
             return "V-M " .. VMInfos["status"] .. " " .. VMInfos["ratio"]
         end

@@ -9,15 +9,9 @@ return {
             vim.keymap.set("n", "<Leader>dd", dap_ui.toggle)
 
             local dap = require("dap")
-            dap.listeners.after.event_initialized["dapui_config"] = function()
-                dap_ui.open()
-            end
-            dap.listeners.before.event_terminated["dapui_config"] = function()
-                dap_ui.close()
-            end
-            dap.listeners.before.event_exited["dapui_config"] = function()
-                dap_ui.close()
-            end
+            dap.listeners.after.event_initialized["dapui_config"] = function() dap_ui.open() end
+            dap.listeners.before.event_terminated["dapui_config"] = function() dap_ui.close() end
+            dap.listeners.before.event_exited["dapui_config"] = function() dap_ui.close() end
         end,
     },
     {
@@ -70,9 +64,7 @@ return {
                     name = "Launch exec",
                     type = "codelldb",
                     request = "launch",
-                    program = function()
-                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-                    end,
+                    program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") end, -- luacheck: ignore 631
                     cwd = "${workspaceFolder}",
                     stopOnEntry = false,
                 },
@@ -100,9 +92,7 @@ return {
             vim.keymap.set("n", "<F10>", dap.down, opts)
             vim.keymap.set("n", "<Leader>dt", dap.terminate, opts)
             vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, opts)
-            vim.keymap.set("n", "<Leader>B", function()
-                dap.set_breakpoint(vim.fn.input("Cond: "))
-            end, opts)
+            vim.keymap.set("n", "<Leader>B", function() dap.set_breakpoint(vim.fn.input("Cond: ")) end, opts)
 
             -- luacheck: ignore 631
             -- Customizing color scheme in dap-ui
@@ -134,9 +124,7 @@ return {
             )
 
             local mason = require("mason")
-            if not mason.has_setup then
-                mason.setup()
-            end
+            if not mason.has_setup then mason.setup() end
             require("mason-nvim-dap").setup({
                 ensure_installed = {
                     "codelldb",

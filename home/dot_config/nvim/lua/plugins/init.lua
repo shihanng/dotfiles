@@ -3,16 +3,12 @@ return {
     "cohama/lexima.vim",
     {
         "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup()
-        end,
+        config = function() require("colorizer").setup() end,
     },
     {
         "lewis6991/gitsigns.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("gitsigns").setup()
-        end,
+        config = function() require("gitsigns").setup() end,
     },
     "tpope/vim-surround",
     "jeffkreeftmeijer/vim-numbertoggle",
@@ -35,8 +31,6 @@ return {
     },
     {
         "hiasr/vim-zellij-navigator.nvim",
-        config = function()
-            require("vim-zellij-navigator").setup()
-        end,
+        config = function() require("vim-zellij-navigator").setup() end,
     },
 }

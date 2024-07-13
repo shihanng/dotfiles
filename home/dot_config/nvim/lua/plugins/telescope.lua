@@ -36,9 +36,12 @@ return {
 
             -- Setup some Telescope key bindings.
             vim.keymap.set("n", "<C-f>", builtin.live_grep, { noremap = true })
-            vim.keymap.set("n", "<C-b>", function()
-                builtin.buffers({ show_all_buffers = true })
-            end, { noremap = true })
+            vim.keymap.set(
+                "n",
+                "<C-b>",
+                function() builtin.buffers({ show_all_buffers = true }) end,
+                { noremap = true }
+            )
             vim.keymap.set("n", "<Leader>db", require("telescope").extensions.dap.list_breakpoints, { noremap = true })
 
             -- We cache the results of "git rev-parse"

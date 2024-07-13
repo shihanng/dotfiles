@@ -47,9 +47,12 @@ return {
                 vim.keymap.set("n", "<space>el", builtin.diagnostics, { buffer = bufnr })
                 vim.keymap.set("n", "gs", tstools.organize_imports, { buffer = bufnr })
                 vim.keymap.set("n", "gI", tstools.add_missing_imports, { buffer = bufnr })
-                vim.keymap.set("n", "<space>h", function()
-                    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ buffer = bufnr }))
-                end, { buffer = bufnr })
+                vim.keymap.set(
+                    "n",
+                    "<space>h",
+                    function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ buffer = bufnr })) end,
+                    { buffer = bufnr }
+                )
             end)
 
             lsp_zero.set_server_config({
@@ -78,6 +81,7 @@ return {
                     ["null-ls"] = {
                         "javascript",
                         "lua",
+                        "typescript",
                         "typescriptreact",
                         "yaml",
                         "json",
@@ -121,9 +125,7 @@ return {
             })
 
             local mason = require("mason")
-            if not mason.has_setup then
-                mason.setup()
-            end
+            if not mason.has_setup then mason.setup() end
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "gopls",
@@ -192,9 +194,7 @@ return {
                             root_dir = require("lspconfig").util.root_pattern(".git", ".tflint.hcl"),
                         })
                     end,
-                    ["taplo"] = function()
-                        require("lspconfig").taplo.setup({})
-                    end,
+                    ["taplo"] = function() require("lspconfig").taplo.setup({}) end,
                 },
             })
 

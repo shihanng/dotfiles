@@ -3,6 +3,7 @@ path=($HOME/bin $path[@])
 {{ if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") }}
 # Homebrew path for Apple Silicon
 path=(/opt/homebrew/bin $path[@])
+path=(/opt/homebrew/opt/unzip/bin $path[@])
 path=($HOME/.local/share/mise/shims $path[@])
 # To make sure that we can run pgcli.
 path=(/opt/homebrew/opt/libpq/bin $path[@])

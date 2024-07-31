@@ -85,6 +85,8 @@ return {
                         "typescriptreact",
                         "yaml",
                         "json",
+                        "markdown",
+                        "markdown.mdx",
                     },
                     ["ruff_lsp"] = { "python" },
                     ["terraformls"] = { "terraform" },

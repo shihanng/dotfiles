@@ -1,9 +1,7 @@
 local wezterm = require "wezterm"
-local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
 
 return {
-    colors = theme.colors(),
-    window_frame = theme.window_frame(), -- needed only if using fancy tab bar
+    color_scheme = "Catppuccin Macchiato", -- or Macchiato, Frappe, Latte
 {{- if eq .chezmoi.os "darwin" }}
     use_ime = false,
 {{- else }}

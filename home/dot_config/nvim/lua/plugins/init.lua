@@ -1,5 +1,5 @@
 return {
-    { "rose-pine/neovim", name = "rose-pine" },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     "cohama/lexima.vim",
     {
         "norcalli/nvim-colorizer.lua",

@@ -104,15 +104,15 @@ return {
 
             vim.fn.sign_define(
                 "DapBreakpoint",
-                { text = "", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }
+                { text = "", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }
             )
             vim.fn.sign_define(
                 "DapBreakpointCondition",
-                { text = "ﳁ", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }
+                { text = "", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }
             )
             vim.fn.sign_define(
                 "DapBreakpointRejected",
-                { text = "", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }
+                { text = "", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }
             )
             vim.fn.sign_define(
                 "DapLogPoint",
@@ -120,7 +120,7 @@ return {
             )
             vim.fn.sign_define(
                 "DapStopped",
-                { text = "", texthl = "healthError", linehl = "healthError", numhl = "healthError" }
+                { text = "", texthl = "healthError", linehl = "healthError", numhl = "healthError" }
             )
 
             local mason = require("mason")

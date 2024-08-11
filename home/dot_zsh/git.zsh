@@ -29,4 +29,4 @@ function select_git_checkout() {
 }
 zle -N select_git_checkout
 
-bindkey "^b" select_git_checkout
+bindkey "^x^b" select_git_checkout

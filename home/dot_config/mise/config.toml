@@ -2,6 +2,7 @@
 experimental = true
 
 [tools]
+fzf = "0.54.3"
 "cargo:atuin" = "latest"
 direnv = "latest"
 ghq = "latest"
@@ -39,3 +40,4 @@ github-cli = "2.50.0"
 
 [plugins]
 pgcli = "https://github.com/amrox/asdf-pyapp.git"
+fzf = "https://github.com/christasich/asdf-fzf.git"

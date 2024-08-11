@@ -55,8 +55,6 @@ export VISUAL="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export BATDIFF_USE_DELTA=true
 
-eval "$(~/.local/bin/mise activate zsh)"
-
 alias assume="source assume"
 alias ls="eza"
 alias lz="lazygit"
@@ -66,87 +64,144 @@ alias vim="nvim"
 alias vimdiff="nvim -d"
 alias man="batman"
 
+# Start configuration added by Zim install
+#
+# User configuration sourced by interactive shells
+#
+
+# -----------------
+# Zsh configuration
+# -----------------
+
+#
+# History
+#
+
+# Remove older command from the history if a duplicate is to be added.
+setopt HIST_IGNORE_ALL_DUPS
+
+#
+# Input/output
+#
+
+# Set editor default keymap to emacs (`-e`) or vi (`-v`)
+bindkey -v
+
+# Prompt for spelling correction of commands.
+#setopt CORRECT
+
+# Customize spelling correction prompt.
+#SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+
+# Remove path separator from WORDCHARS.
+WORDCHARS=${WORDCHARS//[\/]}
+
+# -----------------
+# Zim configuration
+# -----------------
+
+# Use degit instead of git as the default tool to install and update modules.
+#zstyle ':zim:zmodule' use 'degit'
+
+# --------------------
+# Module configuration
+# --------------------
+
+#
+# git
+#
+
+# Set a custom prefix for the generated aliases. The default prefix is 'G'.
+#zstyle ':zim:git' aliases-prefix 'g'
+
+#
+# input
+#
+
+# Append `../` to your input for each `.` you type after an initial `..`
+#zstyle ':zim:input' double-dot-expand yes
+
+#
+# termtitle
+#
+
+# Set a custom terminal title format using prompt expansion escape sequences.
+# See http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
+# If none is provided, the default '%n@%m: %~' is used.
+#zstyle ':zim:termtitle' format '%1~'
+
+#
+# zsh-autosuggestions
+#
+
+# Disable automatic widget re-binding on each precmd. This can be set when
+# zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
+# Customize the style that the suggestions are shown with.
+# See https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#suggestion-highlight-style
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
+
+#
+# zsh-syntax-highlighting
+#
+
+# Set what highlighters will be used.
+# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# Customize the main highlighter styles.
+# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md#how-to-tweak-it
+#typeset -A ZSH_HIGHLIGHT_STYLES
+#ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
+
+# ------------------
+# Initialize modules
+# ------------------
+
+ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  if (( ${+commands[curl]} )); then
+    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+  else
+    mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+  fi
+fi
+# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+# Initialize modules.
+source ${ZIM_HOME}/init.zsh
+
+# ------------------------------
+# Post-init module configuration
+# ------------------------------
+
+#
+# zsh-history-substring-search
+#
+
+zmodload -F zsh/terminfo +p:terminfo
+# Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
+for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
+for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
+for key ('k') bindkey -M vicmd ${key} history-substring-search-up
+for key ('j') bindkey -M vicmd ${key} history-substring-search-down
+unset key
+# End configuration added by Zim install
+
 gpgconf --launch gpg-agent
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
-fi
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(navi widget zsh)"
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-
-zinit add-fpath $HOME/.local/share/zsh/site-functions
-zinit add-fpath $HOME/.granted/zsh_autocomplete/assume/
-zinit add-fpath $HOME/.granted/zsh_autocomplete/granted/
-
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Has to come before zsh-completions
-zinit light Aloxaf/fzf-tab
-
-# See https://github.com/zdharma-continuum/fast-syntax-highlighting#zinit
-zinit wait lucid for \
- atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
- blockf \
-    zsh-users/zsh-completions \
- atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions
-
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-
-zinit pack for dircolors-material
-
-zinit atclone'starship init zsh > zhook.zsh' \
-    atpull'%atclone' src"zhook.zsh" nocompile'!' for \
-        starship/starship
-
-zinit as"null" wait"2" lucid \
-    atpull'%atclone' src"zhook.zsh" nocompile'!' for \
-        atclone'mise exec -- zoxide init --cmd cd zsh > zhook.zsh' ajeetdsouza/zoxide \
-        atclone'mise exec -- atuin init zsh > zhook.zsh' ellie/atuin \
-        atclone'mise exec -- navi widget zsh > zhook.zsh' denisidoro/navi \
-        atclone'mise exec -- direnv hook zsh > zhook.zsh' direnv/direnv
-
-zinit as"null" wait"2" lucid \
-    atinit'fpath+=( $PWD )' \
-    atload"zicompinit; zicdreplay" \
-    atpull'%atclone' nocompile'!' for \
-        atclone'kind completion zsh > _kind' kubernetes-sigs/kind \
-        atclone'helm completion zsh > _helm' helm/helm \
-        atclone'kubectl completion zsh > _kubectl' kubernetes/kubectl \
-        atclone'kustomize completion zsh > _kustomize' kubernetes-sigs/kustomize \
-        atclone'chezmoi completion zsh > _chezmoi' twpayne/chezmoi \
-        atclone'mise exec -- zellij setup --generate-completion zsh > _zellij' zellij-org/zellij \
-        atclone'mise exec -- granted completion -s zsh' common-fate/granted \
-        atclone'mise completion zsh > _mise' jdx/mise
-
-zinit as"null" wait"1" lucid \
-    atpull'%atclone' nocompile'!' for \
-        atclone'./install' junegunn/fzf
-
-zinit silent wait"1" is-snippet for \
-    .zsh/ghq.zsh \
-    .zsh/git.zsh \
-    .zsh/fzf.zsh \
-    .fzf.zsh
-
-zinit ice depth=1
-zinit light jeffreytse/zsh-vi-mode
-
-zinit wait lucid for \
-    OMZ::lib/functions.zsh \
-    OMZP::git \
-    OMZP::colored-man-pages
-
-zinit ice wait"2" lucid
-zinit load wfxr/forgit
+# We must put atuin inside this function because jeffreytse/zsh-vi-mode
+# overrite the ctrl-r binding.
+# See: https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#execute-extra-commands
+function zvm_after_init() {
+  eval "$(atuin init zsh)"
+}

@@ -39,8 +39,7 @@ zmodule $HOME/.zsh/ -s ghq.zsh
 # Prompt
 #
 
-zmodule prompt-pwd
-zmodule minimal
+zmodule romkatv/powerlevel10k --use degit
 
 #
 # Completion

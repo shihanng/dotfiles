@@ -20,7 +20,7 @@ return {
         -- See: https://github.com/kevinhwang91/nvim-ufo?tab=readme-ov-file#customize-fold-text
         local handler = function(virtText, lnum, endLnum, width, truncate)
             local newVirtText = {}
-            local suffix = ("  %d "):format(endLnum - lnum)
+            local suffix = ("  %d "):format(endLnum - lnum)
             local sufWidth = vim.fn.strdisplaywidth(suffix)
             local targetWidth = width - sufWidth
             local curWidth = 0

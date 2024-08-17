@@ -7,7 +7,7 @@ return {
 {{- else }}
     use_ime = true,
 {{- end }}
-    font = wezterm.font("VictorMono Nerd Font"),
+    font = wezterm.font("IosevkaTerm Nerd Font", { weight = 'Regular', italic = false }),
 {{- if eq .chezmoi.hostname "desktop.shihan.home" }}
     font_size = 12,
 {{- else }}

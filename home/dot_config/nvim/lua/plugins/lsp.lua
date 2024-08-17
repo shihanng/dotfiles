@@ -137,6 +137,7 @@ return {
                     "pyright",
                     "ruff_lsp",
                     "rust_analyzer",
+                    "tailwindcss",
                     "terraformls",
                     "tflint",
                     "tsserver",
@@ -200,6 +201,7 @@ return {
                         })
                     end,
                     ["taplo"] = function() require("lspconfig").taplo.setup({}) end,
+                    ["tailwindcss"] = function() require("lspconfig").tailwindcss.setup({}) end,
                 },
             })
 

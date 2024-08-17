@@ -16,6 +16,7 @@ return {
 
             configs.setup({
                 ensure_installed = {
+                    "astro",
                     "cue",
                     "dap_repl",
                     "go",

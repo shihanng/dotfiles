@@ -77,6 +77,7 @@ return {
                     timeout_ms = 10000,
                 },
                 servers = {
+                    ["astro"] = { "astro" },
                     ["gopls"] = { "go" },
                     ["null-ls"] = {
                         "javascript",
@@ -130,6 +131,7 @@ return {
             if not mason.has_setup then mason.setup() end
             require("mason-lspconfig").setup({
                 ensure_installed = {
+                    "astro",
                     "gopls",
                     "lua_ls",
                     "pyright",
@@ -144,6 +146,7 @@ return {
 
                 handlers = {
                     lsp_zero.default_setup,
+                    ["astro"] = function() require("lspconfig").astro.setup({}) end,
                     rust_analyzer = lsp_zero.noop, -- See: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/quick-recipes.md
                     ["gopls"] = function()
                         -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md#settings

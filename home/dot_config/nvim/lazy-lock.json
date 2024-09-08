@@ -69,5 +69,5 @@
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-visual-multi": { "branch": "master", "commit": "b84a6d42c1c10678928b0bf8327f378c8bc8af5a" },
   "vim-zellij-navigator.nvim": { "branch": "main", "commit": "380d6d55d13fe60f91ac0c8303749c2c12fdc85a" },
-  "zellij-nav.nvim": { "branch": "main", "commit": "e11d413ed2b4d150fb544ec4e38a077448b8a2d2" }
+  "zellij-nav.nvim": { "branch": "main", "commit": "4fa02253317398f9bd8cc90387a8245dfdf89fc2" }
 }

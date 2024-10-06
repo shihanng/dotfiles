@@ -80,6 +80,7 @@ return {
                     ["astro"] = { "astro" },
                     ["gopls"] = { "go" },
                     ["null-ls"] = {
+                        "html",
                         "javascript",
                         "json",
                         "lua",

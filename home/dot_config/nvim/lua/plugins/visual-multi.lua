@@ -61,9 +61,6 @@ return {
         -- Align cursor columns.
         set("v", "<leader>a", mc.alignCursors)
 
-        -- Split visual selections by regex.
-        set("v", "S", mc.splitCursors)
-
         -- Append/insert for each line of visual selections.
         set("v", "I", mc.insertVisual)
         set("v", "A", mc.appendVisual)

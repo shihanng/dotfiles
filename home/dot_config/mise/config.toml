@@ -39,6 +39,7 @@ github-cli = "2.54.0"
 "pipx:pgcli" = "latest"
 "ubi:cloudflare/cloudflared" = "latest"
 "cargo:ubi-cli" = "latest"
+"cargo:tokei" = "latest"
 
 [plugins]
 pgcli = "https://github.com/amrox/asdf-pyapp.git"

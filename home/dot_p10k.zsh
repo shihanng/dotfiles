@@ -61,6 +61,11 @@
     command_execution_time    # previous command duration
     virtualenv                # python virtual environment
     context                   # user@host
+    rust_version
+    go_version
+    terraform_version
+    terraform
+    aws
     # time                    # current time
   )
 

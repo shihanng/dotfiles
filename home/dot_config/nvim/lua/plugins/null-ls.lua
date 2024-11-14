@@ -41,6 +41,8 @@ return {
                 require("none-ls-luacheck.diagnostics.luacheck"),
                 null_ls.builtins.formatting.prettierd.with({ filetypes = prettierd_filetypes }),
                 null_ls.builtins.formatting.stylua,
+                null_ls.builtins.diagnostics.sqlfluff.with({}),
+                null_ls.builtins.formatting.sqlfluff.with({}),
             },
         })
 

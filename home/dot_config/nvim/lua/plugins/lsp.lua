@@ -86,6 +86,7 @@ return {
                         "lua",
                         "markdown",
                         "markdown.mdx",
+                        "sql",
                         "typescript",
                         "typescriptreact",
                         "yaml",

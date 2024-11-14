@@ -44,6 +44,26 @@ key-mapping.preset = 'qwerty'
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-id = 'com.google.Chrome'
+if.window-title-regex-substring = '^about:blank\s-*'
+run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-id = 'com.microsoft.teams2'
+run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-id = 'com.yubico.yubioath'
+run = 'layout floating'
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
@@ -100,6 +120,7 @@ alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
 alt-f = 'fullscreen'
+alt-0 = 'balance-sizes'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'

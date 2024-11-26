@@ -64,6 +64,27 @@ run = 'layout floating'
 check-further-callbacks = true
 if.app-id = 'com.yubico.yubioath'
 run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-id = 'com.openai.chat'
+run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-id = 'com.stengo.DeskPad'
+run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.workspace = '2'
+run = 'layout floating'
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = ['^DeskPad Display$','secondary']
+3 = 'built-in'                   # Case insensitive regex substring
+
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
@@ -72,12 +93,12 @@ run = 'layout floating'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 8
-inner.vertical =   8
-outer.left =       8
-outer.bottom =     8
-outer.top =        8
-outer.right =      8
+inner.horizontal = 4
+inner.vertical =   4
+outer.left =       4
+outer.bottom =     4
+outer.top =        4
+outer.right =      4
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

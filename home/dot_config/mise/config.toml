@@ -31,7 +31,7 @@ deno = "1"
 granted = "0.27.5"
 ripgrep = "14.1.0"
 fd = "10.1.0"
-github-cli = "2.54.0"
+"ubi:cli/cli" = { exe = "gh", version = "2.63.0" }
 "cargo:csvlens" = "0.9.1"
 "cargo:zellij" = "0.40.1"
 "ubi:xo/usql" = "v0.19.3"

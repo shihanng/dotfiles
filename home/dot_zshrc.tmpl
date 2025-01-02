@@ -34,6 +34,16 @@ path=(/Library/TeX/texbin $path[@])
 path=(/usr/local/texlive/2022/bin/x86_64-linux $path[@])
 {{- end }}
 
+# Added by pnpm.
+export PNPM_HOME="/Users/shihanng/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Added by Google Cloud SDK.
+if [ -f '$HOME/bin/gcp/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/bin/gcp/google-cloud-sdk/path.zsh.inc'; fi
+
 manpath=(/usr/local/texlive/2022/texmf-dist/doc/man $manpath[@])
 infopath=(/usr/local/texlive/2022/texmf-dist/doc/info $infopath[@])
 

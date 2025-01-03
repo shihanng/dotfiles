@@ -1,0 +1,4 @@
+[flavor]
+# https://github.com/yazi-rs/flavors/tree/main/catppuccin-macchiato.yazi
+use = "catppuccin-macchiato"
+dark = "catppuccin-macchiato"

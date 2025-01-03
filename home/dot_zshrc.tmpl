@@ -210,6 +210,16 @@ source "${HOME}/.p10k.zsh"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(navi widget zsh)"
 
+# Yazi's shell wrapper, see: https://yazi-rs.github.io/docs/quick-start
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # We must put atuin inside this function because jeffreytse/zsh-vi-mode
 # overrite the ctrl-r binding.
 # See: https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#execute-extra-commands

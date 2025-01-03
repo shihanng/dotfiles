@@ -1,6 +1,6 @@
 # https://github.com/ghostty-org/ghostty/discussions/3207
 macos-option-as-alt = true
 macos-titlebar-style = hidden
-theme = catppuccin-mocha
+theme = catppuccin-macchiato
 font-family = "IosevkaTerm Nerd Font"
 font-size = 16

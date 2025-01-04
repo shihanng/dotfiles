@@ -33,7 +33,7 @@ ripgrep = "14.1.0"
 fd = "10.1.0"
 "ubi:cli/cli" = { exe = "gh", version = "v2.63.0" }
 "cargo:csvlens" = "0.9.1"
-"cargo:zellij" = "0.40.1"
+"cargo:zellij" = "0.41.2"
 "ubi:xo/usql" = "v0.19.3"
 "ubi:duckdb/duckdb" = "v1.0.0"
 "pipx:pgcli" = "latest"

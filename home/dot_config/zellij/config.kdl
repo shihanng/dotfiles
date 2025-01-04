@@ -190,6 +190,15 @@ keybinds clear-defaults=true {
                 resize_mod "alt";
             };
         }
+
+        bind "Ctrl y" {
+            LaunchOrFocusPlugin "https://github.com/rvcas/room/releases/download/v1.2.0/room.wasm" {
+                floating true
+                ignore_case true
+                quick_jump true
+            }
+        }
+
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }

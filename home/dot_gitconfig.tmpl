@@ -8,7 +8,10 @@
 	autoSetupRemote = true
 
 [gpg]
-	program = gpg
+    format = ssh
+
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [core]
 	excludesfile = ~/.gitignore
@@ -73,6 +76,11 @@
     root = ~/dev/wp
     root = ~/dev/as
     root = ~/dev/me
+
+[user]
+    name = Shi Han NG
+    email = shihanng@gmail.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN0tszglGwnR8Jpfza8h9YiqNFW7m/sYbiDqGqOyGoMt
 
 [include]
     path = ~/.gitconfig.secret

@@ -2,4 +2,7 @@ host i-* mi-*
   ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
 
 Host *
+  IdentityAgent ~/.1password/agent.sock
+
+Host *
   AddKeysToAgent yes

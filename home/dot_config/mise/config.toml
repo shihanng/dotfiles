@@ -4,7 +4,7 @@ experimental = true
 [tools]
 fzf = "0.54.3"
 "cargo:atuin" = "latest"
-direnv = "latest"
+"aqua:direnv/direnv" = "latest"
 ghq = "latest"
 lazygit = "latest"
 pre-commit = "latest"

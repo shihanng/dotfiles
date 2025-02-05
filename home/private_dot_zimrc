@@ -33,6 +33,7 @@ zmodule $HOME/.completions/ --fpath .
 zmodule $HOME/.granted/zsh_autocomplete/assume/ --fpath .
 zmodule $HOME/.granted/zsh_autocomplete/granted/ --fpath .
 zmodule $HOME/.zsh/ -s fzf.zsh -s git.zsh -s ghq.zsh
+zmodule sharkdp/fd --fpath ./contrib/completion
 
 #
 # Prompt

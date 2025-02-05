@@ -1,4 +1,0 @@
----
-- homebrew:
-    name: fd
-    state: present

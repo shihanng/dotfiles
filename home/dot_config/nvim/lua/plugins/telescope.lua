@@ -31,6 +31,7 @@ return {
             })
             require("telescope").load_extension("fzy_native")
             require("telescope").load_extension("dap")
+            require("telescope").load_extension("chezmoi")
 
             local builtin = require("telescope.builtin")
 
@@ -68,6 +69,9 @@ return {
 
             -- Spellcheck
             vim.keymap.set("n", "z=", builtin.spell_suggest, { noremap = true })
+
+            -- https://github.com/xvzc/chezmoi.nvim?tab=readme-ov-file#telescope-integration
+            vim.keymap.set("n", "<leader>cz", require("telescope").extensions.chezmoi.find_files, {})
         end,
     },
 }

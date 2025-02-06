@@ -27,7 +27,7 @@ terraform = "1.8.3"
 lua = "5.4.6"
 "pipx:litecli" = "latest"
 deno = "1"
-"cargo:navi" = "2.23.0"
+"aqua:denisidoro/navi" = "2.23.0"
 granted = "0.27.5"
 ripgrep = "14.1.0"
 "ubi:cli/cli" = { exe = "gh", version = "v2.63.0" }

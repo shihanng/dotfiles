@@ -2,7 +2,7 @@
 experimental = true
 
 [tools]
-fzf = "0.54.3"
+"aqua:junegunn/fzf" = "latest"
 "cargo:atuin" = "latest"
 "aqua:direnv/direnv" = "latest"
 ghq = "latest"

@@ -1,5 +1,0 @@
-- name: Install Keybase
-  community.general.homebrew_cask:
-    name: keybase
-    state: present
-    install_options: "appdir={{ ansible_env.HOME }}/Applications"

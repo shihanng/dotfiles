@@ -21,8 +21,6 @@
     - tar
     - git
 
-    - role: keybase
-
     - role: gnupg
 
     - role: wezterm
@@ -30,7 +28,5 @@
     - role: ngram-data
 
     - role: nerdfont
-
-    - role: yabai
 
     - role: tree

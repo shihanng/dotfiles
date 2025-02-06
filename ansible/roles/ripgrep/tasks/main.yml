@@ -1,2 +1,0 @@
----
-- ansible.builtin.include_tasks: os_{{ distro }}.yml

@@ -1,4 +1,0 @@
----
-- homebrew:
-    name: ripgrep
-    state: present

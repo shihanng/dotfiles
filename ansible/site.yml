@@ -25,8 +25,6 @@
 
     - role: wezterm
 
-    - role: ngram-data
-
     - role: nerdfont
 
     - role: tree

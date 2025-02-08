@@ -1,6 +1,0 @@
----
-- name: Install wezterm
-  community.general.homebrew_cask:
-    name: wez/wezterm/wezterm
-    state: present
-    install_options: "appdir={{ ansible_env.HOME }}/Applications"

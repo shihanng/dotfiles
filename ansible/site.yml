@@ -23,8 +23,6 @@
 
     - role: gnupg
 
-    - role: wezterm
-
     - role: nerdfont
 
     - role: tree

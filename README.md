@@ -1,22 +1,49 @@
 ## Prerequisites
 
-### Common
+1. Make sure user is using Zsh.
 
-Make sure user is using Zsh.
-And install [zplug](https://github.com/zplug/zplug)
+2. Install [Homebrew](https://brew.sh/) if on macOS.
 
-```console
-sudo usermod --shell /usr/bin/zsh <username>
-```
+3. Clone this repository onto home.
 
-```console
-sh -c "$(curl -fsLS git.io/chezmoi)" -- init -S ~/dotfiles --apply shihanng
-```
+   ```console
+   git clone https://github.com/shihanng/dotfiles
+   ```
 
-### macOS
+4. Install [Rust](https://www.rust-lang.org/tools/install).
 
-Install [Homebrew](https://brew.sh/).
+5. Install [chezmoi](https://www.chezmoi.io/install/).
 
-### Linux (Ubuntu, Elementary OS)
+6. Install [mise](https://mise.jdx.dev/getting-started.html).
 
-Nothing to do.
+   ```console
+   eval "$(~/.local/bin/mise activate zsh)"
+   mise use -g python
+   pip install --user pipx
+   mise use -g cargo-binstall
+   ```
+
+7. Execute [Ansible](./ansible/).
+
+   ```console
+   cd ansible
+   ~/.local/bin/mise x ansible -- ansible-playbook -K site.yml
+   ```
+
+8. Run chezmoi apply.
+
+   ```console
+   ~/bin/chezmoi init -S ~/dotfiles --exclude=encrypted --apply
+   ```
+
+9. Run mise install.
+
+   ```console
+   mise install
+   ```
+
+10. Setup age key.
+
+    ```console
+    op document get "Chezmoi Age" -o $HOME/key.txt
+    ```

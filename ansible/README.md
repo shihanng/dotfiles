@@ -1,3 +1,3 @@
-```
-ansible-playbook -K site.yml
+```console
+mise x ansible -- ansible-playbook -K site.yml
 ```

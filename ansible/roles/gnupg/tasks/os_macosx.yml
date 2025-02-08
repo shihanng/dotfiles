@@ -8,3 +8,8 @@
   community.general.homebrew:
     name: pinentry-mac
     state: present
+
+- name: Install coreutils
+  community.general.homebrew:
+    name: coreutils
+    state: present

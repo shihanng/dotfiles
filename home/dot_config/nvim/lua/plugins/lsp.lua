@@ -79,6 +79,7 @@ return {
                 servers = {
                     ["astro"] = { "astro" },
                     ["gopls"] = { "go" },
+                    ["bashls"] = { "zsh", "sh", "bash" },
                     ["null-ls"] = {
                         "html",
                         "javascript",
@@ -149,11 +150,25 @@ return {
                 end,
             })
 
+            -- Support zsh as sh:
+            -- https://nanotipsforvim.prose.sh/treesitter-and-lsp-support-for-zsh
+            vim.filetype.add({
+                extension = {
+                    zsh = "sh",
+                    sh = "sh", -- force sh-files with zsh-shebang to still get sh as filetype
+                },
+                filename = {
+                    [".zshrc"] = "sh",
+                    [".zshenv"] = "sh",
+                },
+            })
+
             local mason = require("mason")
             if not mason.has_setup then mason.setup() end
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "astro",
+                    "bashls",
                     "gopls",
                     "lua_ls",
                     "pyright",
@@ -224,6 +239,16 @@ return {
                     end,
                     ["taplo"] = function() require("lspconfig").taplo.setup({}) end,
                     ["tailwindcss"] = function() require("lspconfig").tailwindcss.setup({}) end,
+                    ["bashls"] = function()
+                        require("lspconfig").bashls.setup({
+                            filetypes = { "bash", "sh", "zsh" },
+                            settings = {
+                                bashIde = {
+                                    globPattern = "*@(.sh|.inc|.bash|.command|.zsh|zshrc|zsh_*)",
+                                },
+                            },
+                        })
+                    end,
                 },
             })
 

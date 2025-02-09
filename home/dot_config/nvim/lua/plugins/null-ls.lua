@@ -6,6 +6,7 @@ return {
         "nvimtools/none-ls.nvim",
         "nvimtools/none-ls-extras.nvim",
         "gbprod/none-ls-luacheck.nvim",
+        "gbprod/none-ls-shellcheck.nvim",
     },
     config = function()
         -- Using null-ls as source of truth.
@@ -43,13 +44,16 @@ return {
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.diagnostics.sqlfluff.with({}),
                 null_ls.builtins.formatting.sqlfluff.with({}),
+                require("none-ls-shellcheck.diagnostics"),
+                require("none-ls-shellcheck.code_actions"),
             },
         })
 
         local mason = require("mason")
         if not mason.has_setup then mason.setup() end
         require("mason-null-ls").setup({
-            ensure_installed = nil,
+            -- bashls needs shfmt to format.
+            ensure_installed = { "shellcheck", "shfmt" },
             automatic_installation = true,
         })
     end,

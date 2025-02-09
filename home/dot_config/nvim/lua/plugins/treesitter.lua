@@ -17,6 +17,7 @@ return {
             configs.setup({
                 ensure_installed = {
                     "astro",
+                    "bash",
                     "css",
                     "cue",
                     "dap_repl",

@@ -210,6 +210,9 @@ source "${HOME}/.p10k.zsh"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(navi widget zsh)"
 
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+
 # Yazi's shell wrapper, see: https://yazi-rs.github.io/docs/quick-start
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -223,6 +226,8 @@ function y() {
 # We must put atuin inside this function because jeffreytse/zsh-vi-mode
 # overrite the ctrl-r binding.
 # See: https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#execute-extra-commands
+# See also: https://docs.atuin.sh/configuration/key-binding/#zsh
 function zvm_after_init() {
-  eval "$(atuin init zsh)"
+  zvm_bindkey vicmd '^R' atuin-search
+  zvm_bindkey viins '^R' atuin-search
 }

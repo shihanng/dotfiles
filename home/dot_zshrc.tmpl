@@ -64,6 +64,7 @@ export TERM="xterm-256color"
 export VISUAL="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export BATDIFF_USE_DELTA=true
+export ATUIN_NOBIND="true"
 
 alias assume="source assume"
 alias ls="eza"
@@ -209,9 +210,6 @@ gpgconf --launch gpg-agent
 source "${HOME}/.p10k.zsh"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(navi widget zsh)"
-
-export ATUIN_NOBIND="true"
-eval "$(atuin init zsh)"
 
 # Yazi's shell wrapper, see: https://yazi-rs.github.io/docs/quick-start
 function y() {

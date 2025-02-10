@@ -35,6 +35,7 @@ zmodule sharkdp/fd --fpath ./contrib/completion
 zmodule shihanng/zim-zellij
 zmodule shihanng/zim-granted
 zmodule shihanng/zim-kind
+zmodule shihanng/zim-kustomize
 
 #
 # Prompt

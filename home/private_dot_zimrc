@@ -34,6 +34,7 @@ zmodule $HOME/.zsh/ -s fzf.zsh -s git.zsh -s ghq.zsh
 zmodule sharkdp/fd --fpath ./contrib/completion
 zmodule shihanng/zim-zellij
 zmodule shihanng/zim-granted
+zmodule shihanng/zim-kind
 
 #
 # Prompt

@@ -1,1 +1,5 @@
 . "$HOME/.cargo/env"
+
+# Added by granted
+fpath=(/Users/shihanng/.granted/zsh_autocomplete/assume/ $fpath)
+fpath=(/Users/shihanng/.granted/zsh_autocomplete/granted/ $fpath)

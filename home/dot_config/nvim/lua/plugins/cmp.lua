@@ -15,13 +15,7 @@ return {
             },
         },
         config = function()
-            -- Here is where you configure the autocompletion settings.
-            local lsp_zero = require("lsp-zero")
-            lsp_zero.extend_cmp()
-
-            -- And you can configure cmp even more, if you want to.
             local cmp = require("cmp")
-            local cmp_action = lsp_zero.cmp_action()
 
             require("luasnip.loaders.from_vscode").lazy_load({
                 paths = { "~/.vsnip" },
@@ -37,7 +31,6 @@ return {
                     { name = "buffer" },
                     { name = "path" },
                 },
-                -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/autocomplete.md#lsp-kind
                 formatting = {
                     fields = { "abbr", "kind", "menu" },
                     format = require("lspkind").cmp_format({
@@ -48,24 +41,34 @@ return {
                         ellipsis_char = "...",
                     }),
                 },
+                snippet = {
+                    expand = function(args) require("luasnip").lsp_expand(args.body) end,
+                },
                 mapping = cmp.mapping.preset.insert({
                     -- `Enter` key to confirm completion
-                    ["<CR>"] = cmp.mapping.confirm({
-                        select = true,
-
-                        -- luacheck: ignore 631
-                        -- documentation says this is important.
-                        -- I don't know why.
-                        -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/setup-copilot-lua-plus-nvim-cmp.md#setup-copilotlua--nvim-cmp
-                        behavior = cmp.ConfirmBehavior.Replace,
-                    }),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
                     -- Ctrl+Space to trigger completion menu
                     ["<C-e>"] = cmp.mapping.complete(),
 
-                    -- Navigate between snippet placeholder
-                    ["<C-f>"] = cmp_action.luasnip_jump_forward(),
-                    ["<C-b>"] = cmp_action.luasnip_jump_backward(),
+                    -- Jump to the next snippet placeholder
+                    ["<C-f>"] = cmp.mapping(function(fallback)
+                        local luasnip = require("luasnip")
+                        if luasnip.locally_jumpable(1) then
+                            luasnip.jump(1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+                    -- Jump to the previous snippet placeholder
+                    ["<C-b>"] = cmp.mapping(function(fallback)
+                        local luasnip = require("luasnip")
+                        if luasnip.locally_jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
 
                     -- Scroll up and down in the completion documentation
                     ["<C-u>"] = cmp.mapping.scroll_docs(-4),

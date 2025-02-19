@@ -19,7 +19,6 @@ return {
         dependencies = {
             "leoluz/nvim-dap-go",
             "mfussenegger/nvim-dap-python",
-            "williamboman/mason.nvim",
         },
         config = function()
             require("dap-go").setup({
@@ -122,15 +121,6 @@ return {
                 "DapStopped",
                 { text = "", texthl = "healthError", linehl = "healthError", numhl = "healthError" }
             )
-
-            local mason = require("mason")
-            if not mason.has_setup then mason.setup() end
-            require("mason-nvim-dap").setup({
-                ensure_installed = {
-                    "codelldb",
-                    "delve",
-                },
-            })
         end,
     },
 }

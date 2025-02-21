@@ -258,13 +258,17 @@ return {
                             on_attach = function(client, bufnr) require("sqls").on_attach(client, bufnr) end,
                         })
                     end,
-                    ["pyright"] = function()
-                        -- https://docs.astral.sh/ruff/editors/setup/#neovim
-                        require("lspconfig").pyright.setup({
+                    ["basedpyright"] = function()
+                        require("lspconfig").basedpyright.setup({
                             settings = {
-                                pyright = {
-                                    -- Using Ruff's import organizer
+                                basedpyright = {
                                     disableOrganizeImports = true,
+                                    analysis = {
+                                        diagnosticMode = "openFilesOnly",
+                                        inlayHints = {
+                                            callArgumentNames = true,
+                                        },
+                                    },
                                 },
                             },
                         })
@@ -394,7 +398,7 @@ return {
                     "luacheck", -- Not using this in nvim but only for dotfiles repo's pre-commit.
                     "mypy",
                     "prettierd",
-                    "pyright",
+                    "basedpyright",
                     "ruff",
                     "rust_analyzer",
                     "selene",

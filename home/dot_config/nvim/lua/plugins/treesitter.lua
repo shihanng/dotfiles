@@ -71,7 +71,7 @@ return {
                 },
                 textobjects = {
                     select = {
-                        enable = true,
+                        enable = false, -- Using mini.ai instead
                         lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
                         keymaps = {
                             -- You can use the capture groups defined in textobjects.scm

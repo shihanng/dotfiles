@@ -1,6 +1,5 @@
 return {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    "cohama/lexima.vim",
     {
         "norcalli/nvim-colorizer.lua",
         config = function() require("colorizer").setup() end,

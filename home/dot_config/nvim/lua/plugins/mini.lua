@@ -1,23 +1,11 @@
 return {
     {
-        "echasnovski/mini.ai",
-        version = "*",
-        config = function() require("mini.ai").setup() end,
-    },
-    {
-        "echasnovski/mini.surround",
-        version = "*",
-        config = function() require("mini.surround").setup() end,
-    },
-    {
-        "echasnovski/mini.icons",
-        version = "*",
-        config = function() require("mini.icons").setup() end,
-    },
-    {
-        "echasnovski/mini.files",
+        "echasnovski/mini.nvim",
         version = "*",
         config = function()
+            require("mini.ai").setup()
+            require("mini.surround").setup()
+            require("mini.icons").setup()
             require("mini.files").setup()
 
             vim.keymap.set("n", "-", require("mini.files").open, { desc = "Open parent ectory" })

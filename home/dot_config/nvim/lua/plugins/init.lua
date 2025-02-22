@@ -10,7 +10,6 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function() require("gitsigns").setup() end,
     },
-    "tpope/vim-surround",
     "jeffkreeftmeijer/vim-numbertoggle",
     "tpope/vim-repeat",
     {

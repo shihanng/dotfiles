@@ -52,7 +52,7 @@ vim.opt.scrolloff = 10
 
 vim.opt.relativenumber = true
 vim.opt.number = true
-vim.opt.signcolumn = "yes" -- Reserve space for diagnostic icons
+vim.opt.signcolumn = "yes:2" -- Reserve space for diagnostic icons
 vim.opt.colorcolumn = "80"
 
 vim.opt.ignorecase = true

@@ -21,7 +21,12 @@ return {
             require("mini.jump").setup()
             require("mini.jump2d").setup()
 
-            vim.keymap.set("n", "-", require("mini.files").open, { desc = "Open parent ectory" })
+            vim.keymap.set(
+                "n",
+                "-",
+                "<CMD>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>",
+                { desc = "Open parent directory" }
+            )
         end,
     },
 }

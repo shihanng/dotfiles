@@ -18,6 +18,8 @@ return {
                     end,
                 },
             })
+            require("mini.jump").setup()
+            require("mini.jump2d").setup()
 
             vim.keymap.set("n", "-", require("mini.files").open, { desc = "Open parent ectory" })
         end,

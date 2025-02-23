@@ -56,6 +56,7 @@
   "promise-async": { "branch": "main", "commit": "119e8961014c9bfaf1487bf3c2a393d254f337e2" },
   "registers": { "branch": "main", "commit": "c217f8f369e0886776cda6c94eab839b30a8940d" },
   "rustaceanvim": { "branch": "master", "commit": "f03035fa03ccb36cd26d0792c946fbacba1d1a39" },
+  "snacks.nvim": { "branch": "main", "commit": "b100c937177536cf2aa634ddd2aa5b8a1dd23ace" },
   "sqls.nvim": { "branch": "main", "commit": "a514379f5f89bf72955ed3bf5c1c31a40b8a1472" },
   "tailwind-tools": { "branch": "master", "commit": "abe7368392345c53174979c2cf033e832de80ef8" },
   "telescope-dap.nvim": { "branch": "master", "commit": "783366bd6c1e7fa0a5c59c07db37f49c805a28df" },

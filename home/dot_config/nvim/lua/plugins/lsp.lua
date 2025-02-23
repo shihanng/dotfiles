@@ -49,10 +49,6 @@ return {
                     local opts = { buffer = event.buf }
 
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-                    vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
-                    vim.keymap.set("n", "go", builtin.lsp_type_definitions, opts)
-                    vim.keymap.set("n", "gr", builtin.lsp_references, opts)
-                    vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
                     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
                     vim.keymap.set("n", "gS", vim.lsp.buf.signature_help, opts)
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)

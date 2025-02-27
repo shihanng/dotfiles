@@ -1,11 +1,14 @@
 [init]
-  defaultBranch = trunk
+    defaultBranch = main
 
 [pull]
-	rebase = false
+    rebase = true
 
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
+    default = simple
+    autoSetupRemote = true
+    followTags = true
 
 [gpg]
     format = ssh
@@ -14,52 +17,59 @@
     program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [core]
-	excludesfile = ~/.gitignore
-	pager = delta
-	editor = nvim
+    excludesfile = ~/.gitignore
+    pager = delta
+    editor = nvim
 
 [color]
-	ui = auto
+    ui = auto
 
 [commit]
-	gpgsign = true
+    verbose = true
+    gpgsign = true
 
 [tag]
-	forceSignAnnotated = true
+    sort = version:refname
+    forceSignAnnotated = true
 
 [diff]
-	tool = vimdiff
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+    tool = vimdiff
 
 [merge]
-	tool = vimdiff
+    tool = vimdif
+    conflictstyle = zdiff3 
 
 [difftool]
-	prompt = false
+    prompt = false
 
 # https://stackoverflow.com/a/50042202/6549460
 [difftool "vimdiff"]
-	cmd = vim -f -d -c 'wincmd l' -c 'cd "$GIT_PREFIX"' "$LOCAL" "$REMOTE"
+    cmd = vim -f -d -c 'wincmd l' -c 'cd "$GIT_PREFIX"' "$LOCAL" "$REMOTE"
 
 [url "https://github.com"]
-	insteadOf = git://github.com
+    insteadOf = git://github.com
 
 [url "https://gitlab.com/"]
-	insteadOf = git@gitlab.com:
+    insteadOf = git@gitlab.com:
 
 [http]
-	cookiefile = $HOME/.gitcookies
+    cookiefile = $HOME/.gitcookies
 
 [delta]
-	plus-color = "#012800"
-	minus-color = "#340001"
-	line-numbers = true
-	whitespace-error-style = 22 reverse
+    plus-color = "#012800"
+    minus-color = "#340001"
+    line-numbers = true
+    whitespace-error-style = 22 reverse
 
 [interactive]
-	diffFilter = delta --color-only
+    diffFilter = delta --color-only
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [credential "https://github.com"]
     helper =
@@ -86,3 +96,21 @@
 
 [includeIf "gitdir:dev/wp/**"]
     path = ~/.gitconfig.wp
+
+[column]
+    ui = auto
+
+[branch]
+    sort = -committerdate
+
+[help]
+    autocorrect = prompt
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true

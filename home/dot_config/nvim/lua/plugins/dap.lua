@@ -75,11 +75,6 @@ return {
                 },
             }
 
-            -- Default: <project_root>/.vscode/launch.json
-            require("dap.ext.vscode").load_launchjs(nil, {
-                codelldb = { "rust" },
-            })
-
             local opts = { noremap = true, silent = true }
 
             vim.keymap.set("n", "<F1>", dap.step_over, opts)

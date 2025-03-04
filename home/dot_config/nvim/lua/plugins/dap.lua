@@ -19,6 +19,8 @@ return {
         dependencies = {
             "leoluz/nvim-dap-go",
             "mfussenegger/nvim-dap-python",
+            "jbyuki/one-small-step-for-vimkind",
+            "theHamsta/nvim-dap-virtual-text",
         },
         config = function()
             require("dap-go").setup({
@@ -58,6 +60,10 @@ return {
                 },
             }
 
+            dap.adapters.nlua = function(callback, config)
+                callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 })
+            end
+
             dap.configurations.rust = {
                 {
                     name = "Launch exec",
@@ -75,6 +81,14 @@ return {
                 },
             }
 
+            dap.configurations.lua = {
+                {
+                    type = "nlua",
+                    request = "attach",
+                    name = "Attach to running Neovim instance",
+                },
+            }
+
             local opts = { noremap = true, silent = true }
 
             vim.keymap.set("n", "<F1>", dap.step_over, opts)
@@ -87,6 +101,7 @@ return {
             vim.keymap.set("n", "<Leader>dt", dap.terminate, opts)
             vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, opts)
             vim.keymap.set("n", "<Leader>B", function() dap.set_breakpoint(vim.fn.input("Cond: ")) end, opts)
+            vim.keymap.set("n", "<leader>dl", function() require("osv").launch({ port = 8086 }) end, opts)
 
             -- luacheck: ignore 631
             -- Customizing color scheme in dap-ui
@@ -116,6 +131,8 @@ return {
                 "DapStopped",
                 { text = "", texthl = "healthError", linehl = "healthError", numhl = "healthError" }
             )
+
+            require("nvim-dap-virtual-text").setup()
         end,
     },
 }

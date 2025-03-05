@@ -25,7 +25,7 @@ return {
             words = { enabled = true },
             styles = {
                 notification = {
-                    -- wo = { wrap = true } -- Wrap notifications
+                    wo = { wrap = true }, -- Wrap notifications
                 },
             },
         },
@@ -35,7 +35,7 @@ return {
             { "<C-b>", function() Snacks.picker.buffers() end, desc = "Buffers" },
             { "<C-f>", function() Snacks.picker.grep() end, desc = "Grep" },
             { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-            { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+            { "<leader>;", function() Snacks.picker.notifications() end, desc = "Notification History" },
             -- Grep
             { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
             { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },

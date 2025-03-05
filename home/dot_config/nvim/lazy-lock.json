@@ -18,6 +18,7 @@
   "direnv.vim": { "branch": "master", "commit": "ab2a7e08dd630060cd81d7946739ac7442a4f269" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "emmet-vim": { "branch": "master", "commit": "6c511a8d7d2863066f32e25543e2bb99d505172c" },
+  "firenvim": { "branch": "master", "commit": "f8a5fa6f1ed42536490acf0840497c40331c184f" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "gitsigns.nvim": { "branch": "main", "commit": "4c40357994f386e72be92a46f41fc1664c84c87d" },
   "is.vim": { "branch": "master", "commit": "d393cb346dcdf733fecd7bbfc45b70b8c05e9eb4" },

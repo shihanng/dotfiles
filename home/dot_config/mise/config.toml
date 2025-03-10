@@ -27,6 +27,7 @@ experimental = true
 "asdf:mise-plugins/mise-1password-cli" = "latest"
 "asdf:mise-plugins/mise-bat-extras" = "latest"
 "asdf:mise-plugins/mise-lua" = "latest"
+"asdf:mise-plugins/mise-yarn" = "latest"
 "cargo:eza" = "latest"
 "cargo:atuin" = "latest"
 "cargo:csvlens" = "latest"

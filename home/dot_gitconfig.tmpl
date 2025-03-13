@@ -84,17 +84,15 @@
     helper = store
 
 [ghq]
-    root = ~/dev/wp
     root = ~/dev/me
-    root = ~/dev/kt
+
+[include]
+    path = ~/.gitconfig.secret
 
 [user]
     name = Shi Han NG
     email = shihanng@gmail.com
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN0tszglGwnR8Jpfza8h9YiqNFW7m/sYbiDqGqOyGoMt
-
-[include]
-    path = ~/.gitconfig.secret
 
 [includeIf "gitdir:dev/wp/**"]
     path = ~/.gitconfig.wp

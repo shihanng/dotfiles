@@ -24,6 +24,9 @@ gui:
   authorColors:
     "*": "#b7bdf8"
 
+git:
+  overrideGpg: true
+
 keybinding:
   universal:
     quit: "q"

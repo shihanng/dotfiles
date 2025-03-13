@@ -60,11 +60,17 @@
 [http]
     cookiefile = $HOME/.gitcookies
 
+[include]
+    path = ~/dev/me/github.com/dandavison/delta/themes.gitconfig
+
 [delta]
-    plus-color = "#012800"
-    minus-color = "#340001"
+    features = arctic-fox zebra-dark
+    file-style = none
+    file-decoration-style = none
     line-numbers = true
     whitespace-error-style = 22 reverse
+    hunk-header-decoration-style = none
+    hunk-header-file-style = blue bold
 
 [interactive]
     diffFilter = delta --color-only

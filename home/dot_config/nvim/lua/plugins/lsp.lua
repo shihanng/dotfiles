@@ -350,7 +350,6 @@ return {
             lint.linters_by_ft = {
                 ["go"] = { "golangcilint" },
                 ["lua"] = { "selene" },
-                ["python"] = { "mypy" },
                 ["sql"] = { "sqlfluff" },
                 ["yaml.github"] = { "actionlint" },
 
@@ -392,7 +391,6 @@ return {
                     "gopls",
                     "lua_ls",
                     "luacheck", -- Not using this in nvim but only for dotfiles repo's pre-commit.
-                    "mypy",
                     "prettierd",
                     "basedpyright",
                     "ruff",

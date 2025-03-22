@@ -19,7 +19,6 @@ return {
         end,
     },
     "tpope/vim-fugitive",
-    "tpope/vim-rhubarb",
     "direnv/direnv.vim",
     "mattn/emmet-vim",
     {

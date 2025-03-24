@@ -25,6 +25,10 @@ require("catppuccin").setup({
                 background = false,
             },
         },
+        snacks = {
+            enabled = true,
+            indent_scope_color = "lavender", -- catppuccin color (eg. `lavender`) Default: text
+        },
     },
 })
 

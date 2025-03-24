@@ -21,11 +21,11 @@ require("catppuccin").setup({
                 information = { "underline" },
                 ok = { "underline" },
             },
+            inlay_hints = {
+                background = false,
+            },
         },
     },
 })
 
 vim.cmd.colorscheme("catppuccin")
-local current = vim.api.nvim_get_hl_by_name("LspInlayHint", true)
-current.bg = "none"
-vim.api.nvim_set_hl(0, "LspInlayHint", current)

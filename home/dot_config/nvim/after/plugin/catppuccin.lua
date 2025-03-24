@@ -4,6 +4,25 @@ require("catppuccin").setup({
     -- 	light = "macchiato",
     -- 	dark = "macchiato",
     -- },
+    integrations = {
+        native_lsp = {
+            enabled = true,
+            virtual_text = {
+                errors = { "italic" },
+                hints = { "italic" },
+                warnings = { "italic" },
+                information = { "italic" },
+                ok = { "italic" },
+            },
+            underlines = {
+                errors = {},
+                hints = { "underline" },
+                warnings = {},
+                information = { "underline" },
+                ok = { "underline" },
+            },
+        },
+    },
 })
 
 vim.cmd.colorscheme("catppuccin")

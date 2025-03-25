@@ -16,7 +16,14 @@ return {
                 enabled = true,
                 timeout = 3000,
             },
-            picker = { enabled = true },
+            picker = {
+                formatters = {
+                    file = {
+                        filename_first = true,
+                        truncate = 5000,
+                    },
+                },
+            },
             quickfile = { enabled = true },
             rename = { enabled = true },
             scope = { enabled = true },

@@ -389,45 +389,6 @@ return {
         end,
     },
     {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        config = function()
-            require("mason-tool-installer").setup({
-                integrations = {
-                    ["mason-lspconfig"] = true,
-                    ["mason-null-ls"] = false,
-                    ["mason-nvim-dap"] = false,
-                },
-
-                ensure_installed = {
-                    "actionlint",
-                    "astro",
-                    "bashls",
-                    "eslint_d",
-                    "golangci-lint",
-                    "gopls",
-                    "lua_ls",
-                    "prettierd",
-                    "basedpyright",
-                    "ruff",
-                    "rust_analyzer",
-                    "selene",
-                    "shellcheck",
-                    "shfmt",
-                    "sqlfluff",
-                    "sqls",
-                    "stylua",
-                    "tailwindcss",
-                    "taplo",
-                    "terraformls",
-                    "tflint",
-                    "ts_ls",
-                    "yamlfmt",
-                    "yamlls",
-                },
-            })
-        end,
-    },
-    {
         "rachartier/tiny-code-action.nvim",
         dependencies = {
             { "nvim-lua/plenary.nvim" },

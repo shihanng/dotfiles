@@ -20,6 +20,7 @@ experimental = true
 "aqua:junegunn/fzf" = "latest"
 "aqua:neovim/neovim" = "0.10.4"
 "aqua:pre-commit/pre-commit" = "latest"
+"aqua:rhysd/actionlint" = "latest"
 "aqua:sbstp/kubie" = "latest"
 "aqua:sharkdp/fd" = "latest"
 "aqua:stern/stern" = "latest"

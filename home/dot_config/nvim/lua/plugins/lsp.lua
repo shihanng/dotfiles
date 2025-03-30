@@ -399,7 +399,6 @@ return {
                 },
 
                 ensure_installed = {
-                    "actionlint",
                     "astro",
                     "bashls",
                     "eslint_d",

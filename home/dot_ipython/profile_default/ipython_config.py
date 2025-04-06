@@ -677,7 +677,7 @@ c.InteractiveShellApp.extra_extensions = ["autoreload"]
 ## The name or class of a Pygments style to use for syntax
 #          highlighting. To see available styles, run `pygmentize -L styles`.
 #  Default: traitlets.Undefined
-# c.TerminalInteractiveShell.highlighting_style = traitlets.Undefined
+c.TerminalInteractiveShell.highlighting_style = "catppuccin-macchiato"
 
 ## Override highlighting format for specific tokens
 #  Default: {}
@@ -899,7 +899,7 @@ c.InteractiveShellApp.extra_extensions = ["autoreload"]
 #
 #              printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
 #  Default: False
-# c.TerminalInteractiveShell.true_color = False
+c.TerminalInteractiveShell.true_color = True
 
 ## The time in milliseconds that is waited for a key code
 #         to complete.

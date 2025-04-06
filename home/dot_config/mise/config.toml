@@ -5,6 +5,7 @@ experimental = true
 "cargo-binstall" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
 "aqua:FiloSottile/age" = "latest"
+"aqua:ast-grep/ast-grep" = "latest"
 "aqua:astral-sh/uv" = "latest"
 "aqua:aws/aws-cli" = "2"
 "aqua:cli/cli" = "latest"

@@ -46,6 +46,7 @@ experimental = true
 "ubi:dandavison/delta" = "latest"
 "ubi:denisidoro/navi" = "2.23.0"
 "ubi:getsops/sops" = "latest"
+"ubi:hmarr/codeowners" = "latest"
 "ubi:houseabsolute/ubi" = "latest"
 "ubi:jdx/usage" = "latest"
 "ubi:sharkdp/bat" = "latest"

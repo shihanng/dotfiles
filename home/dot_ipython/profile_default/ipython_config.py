@@ -641,11 +641,11 @@ c.InteractiveShellApp.extra_extensions = ["autoreload"]
 
 ## Shortcut style to use at the prompt. 'vi' or 'emacs'.
 #  Default: 'emacs'
-# c.TerminalInteractiveShell.editing_mode = 'emacs'
+c.TerminalInteractiveShell.editing_mode = "vi"
 
 ## Set the editor used by IPython (default to $EDITOR/vi/notepad).
 #  Default: 'nvim'
-# c.TerminalInteractiveShell.editor = 'nvim'
+c.TerminalInteractiveShell.editor = "vi"
 
 ## Add shortcuts from 'emacs' insert mode to 'vi' insert mode.
 #  Default: True
@@ -662,7 +662,7 @@ c.InteractiveShellApp.extra_extensions = ["autoreload"]
 ## Enable vi (v) or Emacs (C-X C-E) shortcuts to open an external editor. This is
 #  in addition to the F2 binding, which is always enabled.
 #  Default: False
-# c.TerminalInteractiveShell.extra_open_editor_shortcuts = False
+c.TerminalInteractiveShell.extra_open_editor_shortcuts = True
 
 ## Provide an alternative handler to be called when the user presses Return. This
 #  is an advanced option intended for debugging, which may be changed or removed

@@ -63,7 +63,6 @@ return {
                 callback = function(event)
                     local opts = { buffer = event.buf }
 
-                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
                     vim.keymap.set(
                         "n",
                         "K",

@@ -76,12 +76,6 @@ return {
                     vim.keymap.set("n", "<space>e", builtin.diagnostics, opts)
                     vim.keymap.set("n", "gs", tstools.organize_imports, opts)
                     vim.keymap.set("n", "gI", tstools.add_missing_imports, opts)
-                    vim.keymap.set(
-                        "n",
-                        "<space>h",
-                        function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(opts)) end,
-                        opts
-                    )
                 end,
             })
 

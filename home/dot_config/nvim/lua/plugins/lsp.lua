@@ -406,7 +406,6 @@ return {
                     "golangci-lint",
                     "gopls",
                     "lua_ls",
-                    "luacheck", -- Not using this in nvim but only for dotfiles repo's pre-commit.
                     "prettierd",
                     "basedpyright",
                     "ruff",

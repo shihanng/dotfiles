@@ -63,6 +63,7 @@ experimental = true
 "pipx:sqlfluff" = "latest"
 "python" = "latest"
 "ubi:ajeetdsouza/zoxide" = "latest"
+"ubi:casey/just" = "latest"
 "ubi:dandavison/delta" = "latest"
 "ubi:denisidoro/navi" = "2.23.0"
 "ubi:getsops/sops" = "latest"

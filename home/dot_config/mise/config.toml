@@ -41,6 +41,7 @@ experimental = true
 "cargo:atuin" = "latest"
 "cargo:csvlens" = "latest"
 "cargo:eza" = "latest"
+"cargo:just-lsp" = "latest"
 "cargo:selene" = "latest"
 "cargo:tokei" = "latest"
 "deno" = "latest"

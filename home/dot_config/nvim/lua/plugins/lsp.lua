@@ -147,6 +147,7 @@ return {
                 "basedpyright",
                 "bashls",
                 "gopls",
+                "just",
                 "lua_ls",
                 "ruff",
                 "sqls",
@@ -298,6 +299,7 @@ return {
         opts = {
             formatters_by_ft = {
                 go = { lsp_format = "first" },
+                just = { lsp_format = "first" },
                 lua = { "stylua" },
                 python = { lsp_format = "first" },
                 rust = { lsp_format = "first" },

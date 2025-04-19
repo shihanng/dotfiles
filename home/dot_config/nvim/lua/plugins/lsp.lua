@@ -12,7 +12,6 @@ return {
                     background = "None",
                 },
             })
-            vim.diagnostic.config({ virtual_text = false })
         end,
     },
     {
@@ -287,6 +286,7 @@ return {
 
             -- https://lsp-zero.netlify.app/docs/language-server-configuration.html#diagnostics
             vim.diagnostic.config({
+                virtual_text = false,
                 signs = {
                     text = {
                         [vim.diagnostic.severity.ERROR] = "󰀩",

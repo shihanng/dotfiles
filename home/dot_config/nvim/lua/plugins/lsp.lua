@@ -15,18 +15,11 @@ return {
         end,
     },
     {
-        "williamboman/mason.nvim",
-        lazy = false,
-        opts = {},
-    },
-    {
         "neovim/nvim-lspconfig",
         cmd = { "LspInfo", "LspInstall", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
             "mfussenegger/nvim-dap",
             "nanotee/sqls.nvim",
         },
@@ -81,6 +74,9 @@ return {
             -- See: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/quick-recipes.md
             vim.g.rustaceanvim = function()
                 -- Update this path
+                -- luacheck: ignore 631
+                -- See: https://github.com/mason-org/mason-registry/blob/47a2bb1856f326071d30e85b8315381a7f9165a3/packages/codelldb/package.yaml#L1
+                --   on how to install codelldb without mason.
                 local extension_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/"
                 local codelldb_path = extension_path .. "adapter/codelldb"
                 local liblldb_path = extension_path .. "lldb/lib/liblldb"
@@ -266,21 +262,6 @@ return {
                             },
                         },
                     },
-                },
-            })
-
-            -- Ref: https://lsp-zero.netlify.app/docs/guide/integrate-with-mason-nvim
-            local mason = require("mason")
-            if not mason.has_setup then mason.setup() end
-            require("mason-lspconfig").setup({
-                automatic_installation = false,
-                ensure_installed = {},
-
-                handlers = {
-                    -- this first function is the "default handler"
-                    -- it applies to every language server without a "custom handler"
-                    function(server_name) require("lspconfig")[server_name].setup({}) end,
-                    -- https://lsp-zero.netlify.app/docs/guide/neovim-lua-ls
                 },
             })
 

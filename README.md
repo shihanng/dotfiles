@@ -47,3 +47,7 @@
     ```console
     op document get "Chezmoi Age" -o $HOME/key.txt
     ```
+
+## Development
+
+We use [mise to install luacheck](./mise.toml).

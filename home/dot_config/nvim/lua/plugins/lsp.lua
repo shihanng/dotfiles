@@ -12,13 +12,7 @@ return {
                     background = "None",
                 },
             })
-            vim.diagnostic.config({ virtual_text = false })
         end,
-    },
-    {
-        "williamboman/mason.nvim",
-        lazy = false,
-        opts = {},
     },
     {
         "neovim/nvim-lspconfig",
@@ -26,14 +20,11 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
             "mfussenegger/nvim-dap",
             "nanotee/sqls.nvim",
         },
         config = function()
             -- Add borders to floating windows
-            vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
             vim.lsp.handlers["textDocument/signatureHelp"] =
                 vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
@@ -64,20 +55,18 @@ return {
                 callback = function(event)
                     local opts = { buffer = event.buf }
 
-                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+                    vim.keymap.set(
+                        "n",
+                        "K",
+                        function() vim.lsp.buf.hover({ border = "rounded" }) end,
+                        { buffer = event.buf }
+                    )
                     vim.keymap.set("n", "gS", vim.lsp.buf.signature_help, opts)
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
                     vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
                     vim.keymap.set("n", "<space>e", builtin.diagnostics, opts)
                     vim.keymap.set("n", "gs", tstools.organize_imports, opts)
                     vim.keymap.set("n", "gI", tstools.add_missing_imports, opts)
-                    vim.keymap.set(
-                        "n",
-                        "<space>h",
-                        function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(opts)) end,
-                        opts
-                    )
                 end,
             })
 
@@ -85,6 +74,9 @@ return {
             -- See: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/quick-recipes.md
             vim.g.rustaceanvim = function()
                 -- Update this path
+                -- luacheck: ignore 631
+                -- See: https://github.com/mason-org/mason-registry/blob/47a2bb1856f326071d30e85b8315381a7f9165a3/packages/codelldb/package.yaml#L1
+                --   on how to install codelldb without mason.
                 local extension_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/"
                 local codelldb_path = extension_path .. "adapter/codelldb"
                 local liblldb_path = extension_path .. "lldb/lib/liblldb"
@@ -150,152 +142,132 @@ return {
                 desc = "LSP: Disable hover capability from Ruff",
             })
 
-            -- Ref: https://lsp-zero.netlify.app/docs/guide/integrate-with-mason-nvim
-            local noop = function() end
-            local mason = require("mason")
-            if not mason.has_setup then mason.setup() end
-            require("mason-lspconfig").setup({
-                automatic_installation = false,
-                ensure_installed = {},
+            vim.lsp.enable({
+                "astro",
+                "basedpyright",
+                "bashls",
+                "gopls",
+                "lua_ls",
+                "ruff",
+                "sqls",
+                "terraformls",
+                "tflint",
+                "yamlls",
+            })
 
-                handlers = {
-                    -- this first function is the "default handler"
-                    -- it applies to every language server without a "custom handler"
-                    function(server_name) require("lspconfig")[server_name].setup({}) end,
-                    -- https://lsp-zero.netlify.app/docs/guide/neovim-lua-ls
-                    ["rust_analyzer"] = noop,
-                    ["ts_ls"] = noop,
-                    ["lua_ls"] = function()
-                        require("lspconfig").lua_ls.setup({
-                            settings = {
-                                Lua = {
-                                    telemetry = {
-                                        enable = false,
-                                    },
-                                },
-                            },
-                            on_init = function(client)
-                                local join = vim.fs.joinpath
-                                local path = client.workspace_folders[1].name
+            vim.lsp.config("gopls", {
+                -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md#settings
+                settings = {
+                    gopls = {
+                        gofumpt = true,
+                        analyses = {
+                            unusedparams = true,
+                        },
+                        staticcheck = true,
+                        hints = {
+                            assignVariableTypes = true,
+                            compositeLiteralFields = true,
+                            constantValues = true,
+                            functionTypeParameters = true,
+                            parameterNames = true,
+                            rangeVariableTypes = true,
+                        },
+                    },
+                },
+            })
 
-                                -- Don't do anything if there is project local config
-                                if
-                                    vim.uv.fs_stat(join(path, ".luarc.json"))
-                                    or vim.uv.fs_stat(join(path, ".luarc.jsonc"))
-                                then
-                                    return
-                                end
+            -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
+            vim.lsp.config("lua_ls", {
+                on_init = function(client)
+                    if client.workspace_folders then
+                        local path = client.workspace_folders[1].name
+                        if
+                            path ~= vim.fn.stdpath("config")
+                            and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+                        then
+                            return
+                        end
+                    end
 
-                                -- Apply neovim specific settings
-                                local runtime_path = vim.split(package.path, ";")
-                                table.insert(runtime_path, join("lua", "?.lua"))
-                                table.insert(runtime_path, join("lua", "?", "init.lua"))
+                    client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+                        runtime = {
+                            -- Tell the language server which version of Lua you're using
+                            -- (most likely LuaJIT in the case of Neovim)
+                            version = "LuaJIT",
+                        },
 
-                                local nvim_settings = {
-                                    runtime = {
-                                        -- Tell the language server which version of Lua you're using
-                                        version = "LuaJIT",
-                                        path = runtime_path,
-                                    },
-                                    diagnostics = {
-                                        -- Get the language server to recognize the `vim` global
-                                        globals = { "vim" },
-                                    },
-                                    workspace = {
-                                        checkThirdParty = false,
-                                        library = {
-                                            -- Make the server aware of Neovim runtime files
-                                            vim.env.VIMRUNTIME,
-                                            vim.fn.stdpath("config"),
-                                        },
-                                    },
-                                }
+                        diagnostics = {
+                            -- Get the language server to recognize the `vim` global
+                            globals = { "vim" },
+                        },
 
-                                client.config.settings.Lua =
-                                    vim.tbl_deep_extend("force", client.config.settings.Lua, nvim_settings)
-                            end,
-                        })
-                    end,
-                    ["gopls"] = function()
-                        -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md#settings
-                        require("lspconfig").gopls.setup({
-                            settings = {
-                                gopls = {
-                                    gofumpt = true,
-                                    analyses = {
-                                        unusedparams = true,
-                                    },
-                                    staticcheck = true,
-                                    hints = {
-                                        assignVariableTypes = true,
-                                        compositeLiteralFields = true,
-                                        constantValues = true,
-                                        functionTypeParameters = true,
-                                        parameterNames = true,
-                                        rangeVariableTypes = true,
-                                    },
-                                },
+                        -- Make the server aware of Neovim runtime files
+                        workspace = {
+                            checkThirdParty = false,
+                            library = {
+                                vim.env.VIMRUNTIME,
+                                -- Depending on the usage, you might want to add additional paths here.
+                                -- "${3rd}/luv/library"
+                                -- "${3rd}/busted/library",
                             },
-                        })
-                    end,
-                    ["yamlls"] = function()
-                        require("lspconfig").yamlls.setup({
-                            settings = {
-                                yaml = {
-                                    format = {
-                                        enable = true,
-                                    },
-                                    schemas = {
-                                        -- luacheck: no max line length
-                                        ["https://json.schemastore.org/pre-commit-config.json"] = ".pre-commit-config.yaml",
-                                        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-                                    },
-                                },
+                            -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+                            -- and will cause issues when working on your own configuration
+                            -- (see https://github.com/neovim/nvim-lspconfig/issues/3189)
+                            -- library = vim.api.nvim_get_runtime_file("", true)
+                        },
+                    })
+                end,
+                settings = {
+                    Lua = {
+                        telemetry = {
+                            enable = false,
+                        },
+                    },
+                },
+            })
+
+            vim.lsp.config("bashls", {
+                filetypes = { "bash", "sh" },
+                settings = {
+                    bashIde = {
+                        globPattern = "*@(.sh|.inc|.bash|.command)",
+                    },
+                },
+            })
+
+            vim.lsp.config("yamlls", {
+                settings = {
+                    yaml = {
+                        format = {
+                            enable = true,
+                        },
+                        schemas = {
+                            -- luacheck: no max line length
+                            ["https://json.schemastore.org/pre-commit-config.json"] = ".pre-commit-config.yaml",
+                            ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+                        },
+                    },
+                },
+                filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.github" },
+            })
+
+            vim.lsp.config("basedpyright", {
+                settings = {
+                    basedpyright = {
+                        disableOrganizeImports = true,
+                        analysis = {
+                            diagnosticMode = "openFilesOnly",
+                            inlayHints = {
+                                callArgumentNames = true,
                             },
-                            filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.github" },
-                        })
-                    end,
-                    ["bashls"] = function()
-                        require("lspconfig").bashls.setup({
-                            filetypes = { "bash", "sh" },
-                            settings = {
-                                bashIde = {
-                                    globPattern = "*@(.sh|.inc|.bash|.command)",
-                                },
-                            },
-                        })
-                    end,
-                    ["sqls"] = function()
-                        require("lspconfig").sqls.setup({
-                            on_attach = function(client, bufnr) require("sqls").on_attach(client, bufnr) end,
-                        })
-                    end,
-                    ["basedpyright"] = function()
-                        require("lspconfig").basedpyright.setup({
-                            settings = {
-                                basedpyright = {
-                                    disableOrganizeImports = true,
-                                    analysis = {
-                                        diagnosticMode = "openFilesOnly",
-                                        inlayHints = {
-                                            callArgumentNames = true,
-                                        },
-                                    },
-                                },
-                            },
-                        })
-                    end,
-                    ["tflint"] = function()
-                        require("lspconfig").tflint.setup({
-                            root_dir = require("lspconfig").util.root_pattern(".git", ".tflint.hcl"),
-                        })
-                    end,
-                    ["astro"] = function() require("lspconfig").astro.setup({}) end,
+                        },
+                    },
                 },
             })
 
             -- https://lsp-zero.netlify.app/docs/language-server-configuration.html#diagnostics
             vim.diagnostic.config({
+                virtual_text = false,
                 signs = {
                     text = {
                         [vim.diagnostic.severity.ERROR] = "󰀩",
@@ -385,46 +357,6 @@ return {
             vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
                 group = lint_augroup,
                 callback = function() lint.try_lint() end,
-            })
-        end,
-    },
-    {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        config = function()
-            require("mason-tool-installer").setup({
-                integrations = {
-                    ["mason-lspconfig"] = true,
-                    ["mason-null-ls"] = false,
-                    ["mason-nvim-dap"] = false,
-                },
-
-                ensure_installed = {
-                    "actionlint",
-                    "astro",
-                    "bashls",
-                    "eslint_d",
-                    "golangci-lint",
-                    "gopls",
-                    "lua_ls",
-                    "luacheck", -- Not using this in nvim but only for dotfiles repo's pre-commit.
-                    "prettierd",
-                    "basedpyright",
-                    "ruff",
-                    "rust_analyzer",
-                    "selene",
-                    "shellcheck",
-                    "shfmt",
-                    "sqlfluff",
-                    "sqls",
-                    "stylua",
-                    "tailwindcss",
-                    "taplo",
-                    "terraformls",
-                    "tflint",
-                    "ts_ls",
-                    "yamlfmt",
-                    "yamlls",
-                },
             })
         end,
     },

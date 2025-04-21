@@ -1,0 +1,15 @@
+[env]
+LUA_MODULES = "{{ config_root }}/.lua_modules"
+
+[tools]
+"asdf:mise-plugins/mise-lua" = "5.1"
+
+[hooks]
+postinstall = [
+    "mkdir -p ${LUA_MODULES}",
+    "luarocks install --tree=${LUA_MODULES} luacheck",
+]
+
+[hooks.enter]
+shell = "zsh"
+script = "eval $(luarocks path --tree=${LUA_MODULES})"

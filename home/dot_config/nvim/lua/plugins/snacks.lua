@@ -72,10 +72,10 @@ return {
             { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
             -- git
             { "<leader>gL", function() Snacks.picker.git_log_line() end, desc = "Git Log Line" },
+            { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
             -- Other
             { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
             { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-            { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
             { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
             { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
             {

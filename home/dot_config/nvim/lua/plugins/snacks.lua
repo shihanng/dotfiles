@@ -70,6 +70,8 @@ return {
             { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
             { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
             { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+            -- git
+            { "<leader>gL", function() Snacks.picker.git_log_line() end, desc = "Git Log Line" },
             -- Other
             { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
             { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },

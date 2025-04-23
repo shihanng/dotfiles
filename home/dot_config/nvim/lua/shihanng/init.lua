@@ -89,12 +89,6 @@ vim.api.nvim_set_keymap("", "<Leader>jq", [[:%!jq '.'<cr>]], { noremap = true })
 vim.opt.spelllang = { "en", "cjk" }
 vim.api.nvim_set_keymap("n", "<Leader>s", [[:set spell!<CR>]], { silent = true }) -- Toggle spell checking on and off.
 
--- Git
-vim.api.nvim_set_keymap("n", "<leader>gs", [[:G<CR>]], {})
-vim.api.nvim_set_keymap("n", "<leader>g]", [[:diffget //3<CR>]], {})
-vim.api.nvim_set_keymap("n", "<leader>g[", [[:diffget //2<CR>]], {})
-vim.api.nvim_set_keymap("n", "<leader>gd", [[:Gvdiff!<CR>]], {})
-
 vim.cmd([[ command! -nargs=1 Browse silent exec '!open "<args>"' ]])
 
 vim.api.nvim_set_keymap("n", "<leader>cp", [[:let @+ = expand('%:p')<CR>]], {})

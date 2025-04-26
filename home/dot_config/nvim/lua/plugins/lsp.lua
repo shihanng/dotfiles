@@ -322,6 +322,7 @@ return {
                 javascript = { "prettierd" },
                 javascriptreact = { "prettierd" },
                 markdown = { "prettierd" },
+                mdx = { "prettier" },
                 typescript = { "prettierd" },
                 typescriptreact = { "prettierd" },
             },
@@ -334,6 +335,13 @@ return {
         init = function()
             -- If you want the formatexpr, here is the place to set it
             vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+            require("conform").formatters.prettier = {
+                options = {
+                    ft_parsers = {
+                        mdx = "mdx",
+                    },
+                },
+            }
         end,
     },
     {

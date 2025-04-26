@@ -318,6 +318,7 @@ return {
                 yaml = { lsp_format = "first" },
 
                 json = { "prettierd" },
+                jsonc = { "prettierd" },
                 html = { "prettierd" },
                 javascript = { "prettierd" },
                 javascriptreact = { "prettierd" },

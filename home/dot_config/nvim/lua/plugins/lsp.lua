@@ -154,6 +154,7 @@ return {
                 "terraformls",
                 "tflint",
                 "yamlls",
+                "mdx_analyzer",
             })
 
             vim.lsp.config("gopls", {
@@ -266,6 +267,13 @@ return {
                 },
             })
 
+            vim.lsp.config("mdx_analyzer", {
+                filetypes = { "mdx" },
+                init_options = {
+                    typescript = { enabled = true },
+                },
+            })
+
             -- https://lsp-zero.netlify.app/docs/language-server-configuration.html#diagnostics
             vim.diagnostic.config({
                 virtual_text = false,
@@ -310,10 +318,12 @@ return {
                 yaml = { lsp_format = "first" },
 
                 json = { "prettierd" },
+                jsonc = { "prettierd" },
                 html = { "prettierd" },
                 javascript = { "prettierd" },
                 javascriptreact = { "prettierd" },
                 markdown = { "prettierd" },
+                mdx = { "prettier" },
                 typescript = { "prettierd" },
                 typescriptreact = { "prettierd" },
             },
@@ -326,6 +336,13 @@ return {
         init = function()
             -- If you want the formatexpr, here is the place to set it
             vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+            require("conform").formatters.prettier = {
+                options = {
+                    ft_parsers = {
+                        mdx = "mdx",
+                    },
+                },
+            }
         end,
     },
     {

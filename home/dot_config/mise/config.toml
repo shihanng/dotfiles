@@ -51,6 +51,7 @@ experimental = true
 "npm:@astrojs/language-server" = "latest"
 "npm:@fsouza/prettierd" = "latest"
 "npm:@google/clasp" = "latest"
+"npm:@mdx-js/language-server" = "latest"
 "npm:@tailwindcss/language-server" = "latest"
 "npm:bash-language-server" = "latest"
 "npm:eslint_d" = "latest"

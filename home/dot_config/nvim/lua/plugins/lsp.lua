@@ -154,6 +154,7 @@ return {
                 "terraformls",
                 "tflint",
                 "yamlls",
+                "mdx_analyzer",
             })
 
             vim.lsp.config("gopls", {
@@ -263,6 +264,13 @@ return {
                             },
                         },
                     },
+                },
+            })
+
+            vim.lsp.config("mdx_analyzer", {
+                filetypes = { "mdx" },
+                init_options = {
+                    typescript = { enabled = true },
                 },
             })
 

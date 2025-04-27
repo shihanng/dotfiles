@@ -5,6 +5,7 @@ return {
         event = "InsertEnter",
         config = function()
             require("copilot").setup({
+                -- Disable suggestion and panel for blink-cmp-copilot
                 suggestion = { enabled = false },
                 panel = { enabled = false },
                 filetypes = {

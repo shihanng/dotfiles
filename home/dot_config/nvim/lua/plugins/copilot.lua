@@ -8,9 +8,6 @@ return {
                 -- Disable suggestion and panel for blink-cmp-copilot
                 suggestion = { enabled = false },
                 panel = { enabled = false },
-                filetypes = {
-                    ["*"] = false, -- disable for all other filetypes and ignore default `filetypes`
-                },
             })
         end,
     },

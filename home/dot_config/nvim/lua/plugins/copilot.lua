@@ -1,5 +1,4 @@
 return {
-    "zbirenbaum/copilot-cmp",
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
@@ -12,7 +11,6 @@ return {
                     ["*"] = false, -- disable for all other filetypes and ignore default `filetypes`
                 },
             })
-            require("copilot_cmp").setup()
         end,
     },
 }

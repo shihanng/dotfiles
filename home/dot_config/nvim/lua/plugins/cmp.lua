@@ -1,93 +1,63 @@
 return {
     {
-        "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
+        "saghen/blink.cmp",
+        -- optional: provides snippets for the snippet source
         dependencies = {
-            {
-                "hrsh7th/cmp-buffer",
-                "hrsh7th/cmp-path",
-                "hrsh7th/cmp-nvim-lua",
-                "rcarriga/cmp-dap",
-                "L3MON4D3/LuaSnip",
-                "saadparwaiz1/cmp_luasnip",
-                "rafamadriz/friendly-snippets",
-                "onsails/lspkind-nvim",
-            },
+            "rafamadriz/friendly-snippets",
+            "fang2hou/blink-copilot",
         },
-        config = function()
-            local cmp = require("cmp")
 
-            require("luasnip.loaders.from_vscode").lazy_load({
-                paths = { "~/.vsnip" },
-            })
+        version = "1.*",
 
-            cmp.setup({
-                sources = {
-                    { name = "copilot" },
-                    { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                    { name = "nvim_lua" },
-                    { name = "lazydev", group_index = 0 },
-                    { name = "buffer" },
-                    { name = "path" },
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+            -- 'super-tab' for mappings similar to vscode (tab to accept)
+            -- 'enter' for enter to accept
+            -- 'none' for no mappings
+            --
+            -- All presets have the following mappings:
+            -- C-space: Open menu or open docs if already open
+            -- C-n/C-p or Up/Down: Select next/previous item
+            -- C-e: Hide menu
+            -- C-k: Toggle signature help (if signature.enabled = true)
+            --
+            -- See :h blink-cmp-config-keymap for defining your own keymap
+            keymap = { preset = "enter" },
+
+            appearance = {
+                -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+                -- Adjusts spacing to ensure icons are aligned
+                nerd_font_variant = "mono",
+            },
+
+            -- (Default) Only show the documentation popup when manually triggered
+            completion = { documentation = { auto_show = false } },
+
+            -- Default list of enabled providers defined so that you can extend it
+            -- elsewhere in your config, without redefining it, due to `opts_extend`
+            sources = {
+                default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
+                providers = {
+                    lazydev = {
+                        name = "LazyDev",
+                        module = "lazydev.integrations.blink",
+                        -- make lazydev completions top priority (see `:h blink.cmp`)
+                        score_offset = 100,
+                    },
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-copilot",
+                        score_offset = 100,
+                        async = true,
+                    },
                 },
-                formatting = {
-                    fields = { "abbr", "kind", "menu" },
-                    format = require("lspkind").cmp_format({
-                        mode = "symbol", -- show only symbol annotations
-                        maxwidth = 50, -- prevent the popup from showing more than provided characters
+            },
 
-                        -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
-                        ellipsis_char = "...",
-                    }),
-                },
-                snippet = {
-                    expand = function(args) require("luasnip").lsp_expand(args.body) end,
-                },
-                mapping = cmp.mapping.preset.insert({
-                    -- `Enter` key to confirm completion
-                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-                    -- Ctrl+Space to trigger completion menu
-                    ["<C-e>"] = cmp.mapping.complete(),
-
-                    -- Jump to the next snippet placeholder
-                    ["<C-f>"] = cmp.mapping(function(fallback)
-                        local luasnip = require("luasnip")
-                        if luasnip.locally_jumpable(1) then
-                            luasnip.jump(1)
-                        else
-                            fallback()
-                        end
-                    end, { "i", "s" }),
-                    -- Jump to the previous snippet placeholder
-                    ["<C-b>"] = cmp.mapping(function(fallback)
-                        local luasnip = require("luasnip")
-                        if luasnip.locally_jumpable(-1) then
-                            luasnip.jump(-1)
-                        else
-                            fallback()
-                        end
-                    end, { "i", "s" }),
-
-                    -- Scroll up and down in the completion documentation
-                    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-                    ["<C-d>"] = cmp.mapping.scroll_docs(4),
-                }),
-                window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
-                },
-                enabled = function()
-                    return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
-                end,
-            })
-
-            cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
-                sources = {
-                    { name = "dap" },
-                },
-            })
-        end,
+            -- See the fuzzy documentation for more information
+            fuzzy = { implementation = "prefer_rust_with_warning" },
+        },
+        opts_extend = { "sources.default" },
     },
 }

@@ -19,7 +19,6 @@ return {
         cmd = { "LspInfo", "LspInstall", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
             "mfussenegger/nvim-dap",
             "nanotee/sqls.nvim",
         },
@@ -28,18 +27,14 @@ return {
             vim.lsp.handlers["textDocument/signatureHelp"] =
                 vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
-            -- Add cmp_nvim_lsp capabilities settings to lspconfig
             -- This should be executed before you configure any language server
             --
             -- Also support UFO: lsp-zero.netlify.app/docs/guide/quick-recipes.html#enable-folds-with-nvim-ufo
-            local lsp_capabilities = vim.tbl_deep_extend("force", require("cmp_nvim_lsp").default_capabilities(), {
-                textDocument = {
-                    foldingRange = {
-                        dynamicRegistration = false,
-                        lineFoldingOnly = true,
-                    },
-                },
-            })
+            local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
+            lsp_capabilities.textDocument.foldingRange = {
+                dynamicRegistration = false,
+                lineFoldingOnly = true,
+            }
 
             local lspconfig_defaults = require("lspconfig").util.default_config
             lspconfig_defaults.capabilities =

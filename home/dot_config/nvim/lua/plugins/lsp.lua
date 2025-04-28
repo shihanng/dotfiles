@@ -141,15 +141,16 @@ return {
                 "astro",
                 "basedpyright",
                 "bashls",
+                "copilot_ls",
                 "gopls",
                 "just",
                 "lua_ls",
+                "mdx_analyzer",
                 "ruff",
                 "sqls",
                 "terraformls",
                 "tflint",
                 "yamlls",
-                "mdx_analyzer",
             })
 
             vim.lsp.config("gopls", {

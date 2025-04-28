@@ -6,6 +6,7 @@
   "chezmoi.nvim": { "branch": "main", "commit": "74f94b0fcc7cb1243979497c16df3bcaf8fbb473" },
   "chezmoi.vim": { "branch": "main", "commit": "abf37336437867cbd99ce2f8849b717415391cc3" },
   "conform.nvim": { "branch": "master", "commit": "372fc521f8421b7830ea6db4d6ea3bae1c77548c" },
+  "copilot-lsp": { "branch": "main", "commit": "194acc0a975f20d88e62a382e83bdec71715d3c0" },
   "copilot.lua": { "branch": "master", "commit": "a5c390f8d8e85b501b22dcb2f30e0cbbd69d5ff0" },
   "csvview.nvim": { "branch": "main", "commit": "6eb9c7293d35c40a71ec1eb9c653d80e8de5a2e9" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },

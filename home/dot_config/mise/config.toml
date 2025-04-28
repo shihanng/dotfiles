@@ -50,6 +50,7 @@ experimental = true
 "node" = "latest"
 "npm:@astrojs/language-server" = "latest"
 "npm:@fsouza/prettierd" = "latest"
+"npm:@github/copilot-language-server" = "latest"
 "npm:@google/clasp" = "latest"
 "npm:@mdx-js/language-server" = "latest"
 "npm:@tailwindcss/language-server" = "latest"

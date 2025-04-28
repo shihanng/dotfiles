@@ -141,6 +141,7 @@ return {
                 "astro",
                 "basedpyright",
                 "bashls",
+                "copilot_ls",
                 "gopls",
                 "just",
                 "lua_ls",

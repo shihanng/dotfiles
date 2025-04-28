@@ -76,7 +76,7 @@ experimental = true
 "ubi:jdx/usage" = "latest"
 "ubi:koalaman/shellcheck" = "latest"
 "ubi:sharkdp/bat" = "latest"
-"ubi:sqls-server/sqls" = "latest"
+"ubi:supabase-community/postgres-language-server" = { version = "latest", exe = "postgrestools" }
 "ubi:tamasfe/taplo" = "latest"
 "ubi:xo/usql" = "latest"
 "ubi:zellij-org/zellij" = "latest"

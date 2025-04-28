@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": ["postgrestools.jsonc"],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

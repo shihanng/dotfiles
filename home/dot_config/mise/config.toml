@@ -3,6 +3,8 @@ experimental = true
 
 [tools]
 "cargo-binstall" = "latest"
+
+# pragma: alphabetize
 "aqua:BurntSushi/ripgrep" = "latest"
 "aqua:FiloSottile/age" = "latest"
 "aqua:JohnnyMorganz/StyLua" = "latest"

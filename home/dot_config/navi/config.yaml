@@ -20,6 +20,7 @@ finder:
 
 cheats:
   paths:
+    - ~/dotfiles/cheats
     - ~/dev/me/github.com/shihanng/navi-cheats
 # - /path/to/another/dir
 # path: /path/to/some/dir # (DEPRECATED) equivalent to the --path option

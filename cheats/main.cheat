@@ -1,0 +1,9 @@
+% main
+# Go to dadbob directory
+cd $HOME/.local/share/db_ui
+
+# Stay awake
+caffeinate -d -i -m -s
+
+# GitHub token
+export GITHUB_TOKEN=$(gh auth token)

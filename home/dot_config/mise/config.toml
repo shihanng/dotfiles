@@ -69,6 +69,7 @@ experimental = true
 "pipx:pgcli" = "latest"
 "pipx:sqlfluff" = "latest"
 "python" = "latest"
+"ubi:TomWright/dasel" = "latest"
 "ubi:ajeetdsouza/zoxide" = "latest"
 "ubi:casey/just" = "latest"
 "ubi:dandavison/delta" = "latest"

@@ -9,6 +9,10 @@ return {
                 custom_textobjects = {
                     F = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
                     C = gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }),
+                    o = gen_spec.treesitter({
+                        a = { "@conditional.outer", "@loop.outer" },
+                        i = { "@conditional.inner", "@loop.inner" },
+                    }),
                 },
             })
             require("mini.surround").setup()

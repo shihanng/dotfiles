@@ -3,7 +3,14 @@ return {
         "echasnovski/mini.nvim",
         version = "*",
         config = function()
-            require("mini.ai").setup()
+            local gen_spec = require("mini.ai").gen_spec
+
+            require("mini.ai").setup({
+                custom_textobjects = {
+                    F = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
+                    C = gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }),
+                },
+            })
             require("mini.surround").setup()
             require("mini.icons").setup()
             require("mini.files").setup()

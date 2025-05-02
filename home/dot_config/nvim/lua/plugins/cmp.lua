@@ -60,7 +60,7 @@ return {
             sources = {
                 default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
                 per_filetype = {
-                    sql = { "lsp", "dadbod", "buffer" },
+                    sql = { "lsp", "copilot", "dadbod", "buffer", "copilot" },
                 },
                 providers = {
                     lazydev = {

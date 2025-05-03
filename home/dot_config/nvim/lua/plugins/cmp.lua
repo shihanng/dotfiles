@@ -44,6 +44,7 @@ return {
                     "snippet_forward",
                     "fallback",
                 },
+                ["<C-b>"] = { "show" },
             },
 
             appearance = {

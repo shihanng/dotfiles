@@ -48,5 +48,35 @@ cat <<EOF > .vscode/launch.json
 }
 EOF
 
+# Create .vscode/launch.json for Python
+mkdir -p .vscode/
+cat <<EOF > .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "pytest",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": []
+    },
+    {
+      "name": "Django Shell",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["shell"],
+      "python": "${workspaceFolder}/.venv/bin/python"
+    }
+  ]
+}
+EOF
+
 # Start dlv in headless mode
 dlv debug -l 127.0.0.1:38697 --headless ./main.go -- subcommand --myflag=xyz
+
+# Start debugpy and wait for client
+uv n debugpy --listen 5678 --wait-for-client manage.py shell

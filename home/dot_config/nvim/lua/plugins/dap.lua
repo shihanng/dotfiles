@@ -37,13 +37,7 @@ return {
                 },
             })
 
-            -- See: https://github.com/mfussenegger/nvim-dap-python?tab=readme-ov-file#debugpy
-            --   cd ~/dotfiles
-            --   mkdir .virtualenvs
-            --   cd .virtualenvs
-            --   python -m venv debugpy
-            --   debugpy/bin/python -m pip install debugpy
-            require("dap-python").setup("~/dotfiles/.virtualenvs/debugpy/bin/python")
+            require("dap-python").setup("uv")
 
             local dap = require("dap")
 

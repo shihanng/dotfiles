@@ -66,6 +66,7 @@ experimental = true
 "npm:typescript-language-server" = "latest"
 "npm:yaml-language-server" = "latest"
 "pipx:basedpyright" = "latest"
+"pipx:debugpy" = "latest"
 "pipx:harlequin" = { version = "latest", extras = "postgres,s3" }
 "pipx:litecli" = "latest"
 "pipx:pgcli" = "latest"

@@ -70,14 +70,10 @@ return {
                 end,
             })
 
-            -- Setup rustaceanvim with lsp-zero.
-            -- See: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/quick-recipes.md
+            -- https://github.com/mrcjkb/rustaceanvim?tab=readme-ov-file#using-codelldb-for-debugging
             vim.g.rustaceanvim = function()
                 -- Update this path
-                -- luacheck: ignore 631
-                -- See: https://github.com/mason-org/mason-registry/blob/47a2bb1856f326071d30e85b8315381a7f9165a3/packages/codelldb/package.yaml#L1
-                --   on how to install codelldb without mason.
-                local extension_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/"
+                local extension_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.11.4/"
                 local codelldb_path = extension_path .. "adapter/codelldb"
                 local liblldb_path = extension_path .. "lldb/lib/liblldb"
                 local this_os = vim.uv.os_uname().sysname
@@ -93,11 +89,7 @@ return {
 
                 local cfg = require("rustaceanvim.config")
                 return {
-                    server = {
-                        capabilities = lspconfig_defaults.capabilities,
-                    },
                     dap = {
-                        -- autoload_configurations = true,
                         adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
                     },
                 }

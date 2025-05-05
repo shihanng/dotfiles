@@ -51,13 +51,8 @@ return {
             -- https://github.com/mrcjkb/rustaceanvim?tab=readme-ov-file#optional
             -- https://github.com/mrcjkb/rustaceanvim/issues/129#issuecomment-1879784810
             dap.adapters.codelldb = {
-                type = "server",
-                host = "127.0.0.1",
-                port = 13000,
-                executable = {
-                    command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb",
-                    args = { "--port", "13000" },
-                },
+                type = "executable",
+                command = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.11.4/adapter/codelldb",
             }
 
             dap.adapters.nlua = function(callback, config)
@@ -66,18 +61,10 @@ return {
 
             dap.configurations.rust = {
                 {
-                    name = "Launch exec",
-                    type = "codelldb",
-                    request = "launch",
-                    program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") end, -- luacheck: ignore 631
-                    cwd = "${workspaceFolder}",
-                    stopOnEntry = false,
-                },
-                {
-                    name = "Attach",
+                    name = "Attach to process",
                     type = "codelldb",
                     request = "attach",
-                    processId = "${command:pickProcess}",
+                    pid = "${command:pickProcess}",
                 },
             }
 

@@ -29,3 +29,21 @@ cat <<EOF > .vscode/launch.json
   ]
 }
 EOF
+
+# Create .vscode/launch.json for Go
+mkdir -p .vscode/
+cat <<EOF > .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "go",
+      "request": "launch",
+      "name": "Custom Launch",
+      "mode": "exec", # Can remove this if program is main.go
+      "program": "",
+      "args": []
+    }
+  ]
+}
+EOF

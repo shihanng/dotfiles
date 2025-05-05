@@ -42,6 +42,7 @@ experimental = true
 "asdf:mise-plugins/mise-lua" = "latest"
 "asdf:mise-plugins/mise-yarn" = "latest"
 "cargo:atuin" = "latest"
+"cargo:broot" = "latest"
 "cargo:csvlens" = "latest"
 "cargo:eza" = "latest"
 "cargo:just-lsp" = "latest"

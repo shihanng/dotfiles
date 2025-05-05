@@ -12,3 +12,20 @@ export GITHUB_TOKEN=$(gh auth token)
 mise install -f <mise_plugins>
 
 $mise_plugins: dasel -r toml -f $HOME/.config/mise/config.toml 'tools.keys().all()'
+
+# Create .vscode/launch.json for Rust
+mkdir -p .vscode/
+cat <<EOF > .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "codelldb",
+      "request": "launch",
+      "name": "Custom Launch",
+      "program": "target/debug/...",
+      "args": []
+    }
+  ]
+}
+EOF

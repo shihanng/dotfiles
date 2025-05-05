@@ -384,10 +384,14 @@ return {
         "rachartier/tiny-code-action.nvim",
         dependencies = {
             { "nvim-lua/plenary.nvim" },
-            { "nvim-telescope/telescope.nvim" },
             { "kosayoda/nvim-lightbulb" },
         },
         event = "LspAttach",
+        opt = {
+            picker = {
+                "snacks",
+            },
+        },
         config = function()
             require("tiny-code-action").setup()
             require("nvim-lightbulb").setup({

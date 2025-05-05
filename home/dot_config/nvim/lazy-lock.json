@@ -59,7 +59,7 @@
   "telescope-fzy-native.nvim": { "branch": "master", "commit": "282f069504515eec762ab6d6c89903377252bf5b" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "text-case.nvim": { "branch": "main", "commit": "e898cfd46fa6cde0e83abb624a16e67d2ffc6457" },
-  "tiny-code-action.nvim": { "branch": "main", "commit": "54acc599ab456d58d97b7b4bd971ee97faa3ec81" },
+  "tiny-code-action.nvim": { "branch": "main", "commit": "3204f45e4102788486f440259e09d50046081675" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "cd401038de4cbae37651cfe02510294ccf5cdc98" },
   "treesj": { "branch": "main", "commit": "3b4a2bc42738a63de17e7485d4cc5e49970ddbcc" },
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },

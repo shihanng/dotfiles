@@ -49,13 +49,18 @@ return {
                 desc = "LSP actions",
                 callback = function(event)
                     local opts = { buffer = event.buf }
+                    local hover_action
 
-                    vim.keymap.set(
-                        "n",
-                        "K",
-                        function() vim.lsp.buf.hover({ border = "rounded" }) end,
-                        { buffer = event.buf }
-                    )
+                    if vim.bo[event.buf].filetype == "rust" then
+                        hover_action = function() vim.cmd.RustLsp({ "hover", "actions" }) end
+                    else
+                        hover_action = function()
+                            local winid = require("ufo").peekFoldedLinesUnderCursor()
+                            if not winid then vim.lsp.buf.hover({ border = "rounded" }) end
+                        end
+                    end
+
+                    vim.keymap.set("n", "K", hover_action, opts)
                     vim.keymap.set("n", "gS", vim.lsp.buf.signature_help, opts)
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
                     vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)

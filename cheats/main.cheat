@@ -47,3 +47,6 @@ cat <<EOF > .vscode/launch.json
   ]
 }
 EOF
+
+# Start dlv in headless mode
+dlv debug -l 127.0.0.1:38697 --headless ./main.go -- subcommand --myflag=xyz

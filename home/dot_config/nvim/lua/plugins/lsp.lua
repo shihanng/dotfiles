@@ -315,7 +315,7 @@ return {
                 html = { "prettierd" },
                 javascript = { "prettierd" },
                 javascriptreact = { "prettierd" },
-                markdown = { "prettierd" },
+                markdown = { "markdownlint-cli2", "prettierd" },
                 mdx = { "prettier" },
                 typescript = { "prettierd" },
                 typescriptreact = { "prettierd" },
@@ -349,6 +349,7 @@ return {
 
             lint.linters_by_ft = {
                 ["go"] = { "golangcilint" },
+                ["markdown"] = { "markdownlint-cli2" },
                 ["lua"] = { "selene" },
                 ["sql"] = { "sqlfluff" },
                 ["yaml.github"] = { "actionlint" },

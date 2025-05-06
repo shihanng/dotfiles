@@ -1,28 +1,34 @@
 return {
     {
-        "rcarriga/nvim-dap-ui",
-        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-        config = function()
-            local dap_ui = require("dapui")
-            dap_ui.setup()
-
-            vim.keymap.set("n", "<Leader>dd", dap_ui.toggle)
-
-            local dap = require("dap")
-            dap.listeners.after.event_initialized["dapui_config"] = function() dap_ui.open() end
-            dap.listeners.before.event_terminated["dapui_config"] = function() dap_ui.close() end
-            dap.listeners.before.event_exited["dapui_config"] = function() dap_ui.close() end
-        end,
-    },
-    {
         "mfussenegger/nvim-dap",
         dependencies = {
             "leoluz/nvim-dap-go",
             "mfussenegger/nvim-dap-python",
             "jbyuki/one-small-step-for-vimkind",
             "theHamsta/nvim-dap-virtual-text",
+            {
+                "igorlfs/nvim-dap-view",
+                opts = {
+                    winbar = {
+                        controls = {
+                            enabled = true,
+                        },
+                    },
+                    windows = {
+                        terminal = {
+                            hide = { "go" },
+                        },
+                    },
+                },
+            },
         },
         config = function()
+            local dap, dv = require("dap"), require("dap-view")
+            dap.listeners.before.attach["dap-view-config"] = function() dv.open() end
+            dap.listeners.before.launch["dap-view-config"] = function() dv.open() end
+            dap.listeners.before.event_terminated["dap-view-config"] = function() dv.close() end
+            dap.listeners.before.event_exited["dap-view-config"] = function() dv.close() end
+
             require("dap-go").setup({
                 dap_configurations = {
                     {
@@ -38,8 +44,6 @@ return {
             })
 
             require("dap-python").setup("uv")
-
-            local dap = require("dap")
 
             -- We need adapters for rustaceanvim.
             -- https://github.com/mrcjkb/rustaceanvim?tab=readme-ov-file#optional
@@ -83,14 +87,7 @@ return {
             vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, opts)
             vim.keymap.set("n", "<Leader>B", function() dap.set_breakpoint(vim.fn.input("Cond: ")) end, opts)
             vim.keymap.set("n", "<leader>dl", function() require("osv").launch({ port = 8086 }) end, opts)
-
-            -- luacheck: ignore 631
-            -- Customizing color scheme in dap-ui
-            -- https://github.com/rcarriga/nvim-dap-ui/blob/e5c32746aa72e39267803fdf6934d79541d39f42/lua/dapui/config/highlights.lua#L1
-            -- https://github.com/rcarriga/nvim-dap-ui/issues/46#issuecomment-899025715
-            vim.cmd([[hi! link DapUILineNumber LineNr]])
-            vim.cmd([[hi! link DapUIBreakpointsLine LineNr]])
-            vim.cmd([[hi! link DapUIBreakpointsCurrentLine LineNr]])
+            vim.keymap.set("n", "<Leader>dd", dv.toggle, opts)
 
             vim.fn.sign_define(
                 "DapBreakpoint",

@@ -1,6 +1,5 @@
 [settings]
 experimental = true
-idiomatic_version_file_disable_tools = ['terraform']
 
 [tools]
 "cargo-binstall" = "latest"

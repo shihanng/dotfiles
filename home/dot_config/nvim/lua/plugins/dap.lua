@@ -43,7 +43,7 @@ return {
                 },
             })
 
-            require("dap-python").setup("uv")
+            require("dap-python").setup("python")
 
             -- We need adapters for rustaceanvim.
             -- https://github.com/mrcjkb/rustaceanvim?tab=readme-ov-file#optional

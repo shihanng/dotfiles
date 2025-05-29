@@ -95,3 +95,7 @@ vim.api.nvim_set_keymap("n", "<leader>cp", [[:let @+ = expand('%:p')<CR>]], {})
 
 -- pip install pynvim in global mise python
 vim.g.python3_host_prog = "$HOME/.local/share/mise/installs/python/latest/bin/python"
+
+-- Allow to use Ctrl-i instead of Tab for jumplist.
+-- See: https://vi.stackexchange.com/a/45408
+vim.keymap.set("n", "<C-i>", "<C-i>")

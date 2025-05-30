@@ -71,6 +71,7 @@ experimental = true
 "pipx:harlequin" = { version = "latest", extras = "postgres,s3" }
 "pipx:litecli" = "latest"
 "pipx:pgcli" = "latest"
+"pipx:pyrefly" = "latest"
 "pipx:sqlfluff" = "latest"
 "python" = "latest"
 "ubi:TomWright/dasel" = "latest"

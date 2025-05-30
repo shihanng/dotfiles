@@ -2,7 +2,6 @@ path=(/usr/local/go/bin $path[@])
 path=($HOME/bin $path[@])
 {{ if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") }}
 path=(/opt/homebrew/opt/unzip/bin $path[@])
-path=($HOME/.local/share/mise/shims $path[@])
 # To make sure that we can run pgcli.
 path=(/opt/homebrew/opt/libpq/bin $path[@])
 

@@ -61,7 +61,7 @@ return {
             sources = {
                 default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
                 per_filetype = {
-                    sql = { "lsp", "copilot", "dadbod", "buffer", "copilot" },
+                    sql = { "lsp", "copilot", "dadbod", "buffer" },
                 },
                 providers = {
                     lazydev = {
@@ -70,10 +70,14 @@ return {
                         -- make lazydev completions top priority (see `:h blink.cmp`)
                         score_offset = 100,
                     },
+                    lsp = {
+                        min_keyword_length = 2, -- Number of characters to trigger provider
+                        score_offset = 10, -- Boost/penalize the score of the items
+                    },
                     copilot = {
                         name = "copilot",
                         module = "blink-copilot",
-                        score_offset = 100,
+                        score_offset = 11,
                         async = true,
                     },
                     dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },

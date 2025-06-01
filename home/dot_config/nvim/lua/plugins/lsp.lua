@@ -154,6 +154,7 @@ return {
                 "postgres_lsp",
                 "pyrefly",
                 "ruff",
+                "taplo",
                 "terraformls",
                 "tflint",
                 "yamlls",

@@ -191,11 +191,9 @@ keybinds clear-defaults=true {
             };
         }
 
-        bind "Ctrl y" {
-            LaunchOrFocusPlugin "https://github.com/rvcas/room/releases/download/v1.2.0/room.wasm" {
-                floating true
-                ignore_case true
-                quick_jump true
+        bind "Alt y" {
+            LaunchOrFocusPlugin "yapp" {
+                floating true; move_to_focused_tab true;
             }
         }
 
@@ -230,7 +228,12 @@ keybinds clear-defaults=true {
     }
 }
 
+load_plugins {
+    yapp
+}
+
 plugins {
+    yapp location="https://github.com/shihanng/yapp/releases/download/v0.1.0/yapp.wasm"
     tab-bar { path "tab-bar"; }
     status-bar { path "status-bar"; }
     strider { path "strider"; }

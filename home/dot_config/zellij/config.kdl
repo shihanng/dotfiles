@@ -395,3 +395,5 @@ scrollback_editor "nvim"
 // Default: true
 //
 // styled_underlines false
+
+show_startup_tips false

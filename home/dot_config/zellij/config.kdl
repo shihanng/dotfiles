@@ -191,12 +191,6 @@ keybinds clear-defaults=true {
             };
         }
 
-        bind "Alt y" {
-            LaunchOrFocusPlugin "yapp" {
-                floating true; move_to_focused_tab true;
-            }
-        }
-
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
@@ -229,11 +223,13 @@ keybinds clear-defaults=true {
 }
 
 load_plugins {
-    yapp
+    "https://github.com/shihanng/zellij-pane-picker/releases/download/v0.5.0/zellij-pane-picker.wasm" {
+        plugin_select_down "Ctrl n"
+        plugin_select_up "Ctrl p"
+    }
 }
 
 plugins {
-    yapp location="https://github.com/shihanng/yapp/releases/download/v0.1.0/yapp.wasm"
     tab-bar { path "tab-bar"; }
     status-bar { path "status-bar"; }
     strider { path "strider"; }

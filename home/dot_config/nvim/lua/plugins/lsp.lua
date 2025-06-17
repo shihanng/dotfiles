@@ -145,6 +145,7 @@ return {
 
             vim.lsp.enable({
                 "astro",
+                "basedpyright",
                 "bashls",
                 "copilot_ls",
                 "gopls",
@@ -152,12 +153,25 @@ return {
                 "lua_ls",
                 "mdx_analyzer",
                 "postgres_lsp",
-                "pyrefly",
                 "ruff",
                 "taplo",
                 "terraformls",
                 "tflint",
                 "yamlls",
+            })
+
+            vim.lsp.config("basedpyright", {
+                settings = {
+                    basedpyright = {
+                        disableOrganizeImports = true,
+                        analysis = {
+                            diagnosticMode = "openFilesOnly",
+                            inlayHints = {
+                                callArgumentNames = true,
+                            },
+                        },
+                    },
+                },
             })
 
             vim.lsp.config("gopls", {

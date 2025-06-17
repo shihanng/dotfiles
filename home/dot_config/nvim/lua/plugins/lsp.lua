@@ -158,6 +158,7 @@ return {
                 "terraformls",
                 "tflint",
                 "yamlls",
+                "harper_ls",
             })
 
             vim.lsp.config("basedpyright", {

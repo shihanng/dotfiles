@@ -6,6 +6,7 @@ vim.g.loaded_netrwPlugin = 1
 -- Basic Neovim setup.
 vim.opt.termguicolors = true
 vim.g.mapleader = ","
+vim.g.maplocalleader = ";"
 vim.opt.shell = "/bin/bash"
 vim.opt.syntax = "on"
 

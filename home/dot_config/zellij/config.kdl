@@ -148,6 +148,11 @@ keybinds clear-defaults=true {
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     shared_except "locked" {
+        bind "Alt y" {
+            LaunchOrFocusPlugin "zellij-pane-picker" {
+                floating true; move_to_focused_tab true;
+            }
+        }
         bind "Alt q" { SwitchToMode "Locked"; }
         bind "Alt n" { NewPane; }
         bind "Ctrl h" {
@@ -223,13 +228,15 @@ keybinds clear-defaults=true {
 }
 
 load_plugins {
-    "https://github.com/shihanng/zellij-pane-picker/releases/download/v0.5.0/zellij-pane-picker.wasm" {
-        plugin_select_down "Ctrl n"
-        plugin_select_up "Ctrl p"
-    }
+    zellij-pane-picker
 }
 
 plugins {
+    zellij-pane-picker location="https://github.com/shihanng/zellij-pane-picker/releases/download/v0.6.0/zellij-pane-picker.wasm" {
+        list_panes ""
+        plugin_select_down "Ctrl n"
+        plugin_select_up "Ctrl p"
+    }
     tab-bar { path "tab-bar"; }
     status-bar { path "status-bar"; }
     strider { path "strider"; }

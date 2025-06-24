@@ -97,6 +97,11 @@ run = 'layout floating'
 
 [[on-window-detected]]
 check-further-callbacks = true
+if.app-id = 'io.zsa.keymapp'
+run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
 if.workspace = '2'
 run = 'layout floating'
 

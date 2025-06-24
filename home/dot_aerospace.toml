@@ -174,7 +174,13 @@ ctrl-alt-m = 'mode mover'
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.mover.binding]
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
+r = [
+    "layout tiling",
+    "flatten-workspace-tree",
+    "layout tiles horizontal vertical",
+    "balance-sizes",
+    'mode main',
+] # reset layout
 esc = 'mode main'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#periodove

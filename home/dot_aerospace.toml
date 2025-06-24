@@ -77,6 +77,21 @@ run = 'layout floating'
 
 [[on-window-detected]]
 check-further-callbacks = true
+if.app-id = 'com.anthropic.claudefordesktop'
+run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-id = 'cc.ffitch.shottr'
+run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
+if.app-id = 'md.obsidian'
+run = 'layout floating'
+
+[[on-window-detected]]
+check-further-callbacks = true
 if.workspace = '2'
 run = 'layout floating'
 

@@ -44,7 +44,21 @@ return {
                     },
                 },
             },
-            -- See Commands section for default commands if you want to lazy load on them
+            keys = {
+                { "<leader>zc", ":CopilotChat<CR>", mode = { "n" }, desc = "Chat with Copilot" },
+                { "<leader>ze", ":CopilotChatExplain<CR>", mode = { "v" }, desc = "Explain code" },
+                { "<leader>zr", ":CopilotChatReview<CR>", mode = { "v" }, desc = "Review code" },
+                { "<leader>zf", ":CopilotChatFix<CR>", mode = { "v" }, desc = "Fix code" },
+                { "<leader>zo", ":CopilotChatOptimize<CR>", mode = { "v" }, desc = "Optimize code" },
+                { "<leader>zd", ":CopilotChatDocs<CR>", mode = { "v" }, desc = "Document code" },
+                { "<leader>zt", ":CopilotChatTests<CR>", mode = { "v" }, desc = "Generate test for code" },
+                {
+                    "<leader>zm",
+                    ":CopilotChatCommit<CR>",
+                    mode = { "n", "v" },
+                    desc = "Generate commit message for code",
+                },
+            },
         },
     },
 }

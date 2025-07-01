@@ -45,7 +45,7 @@ return {
                 },
             },
             keys = {
-                { "<leader>zc", ":CopilotChat<CR>", mode = { "n" }, desc = "Chat with Copilot" },
+                { "<leader>zc", ":CopilotChat<CR>", mode = { "n", "v" }, desc = "Chat with Copilot" },
                 { "<leader>ze", ":CopilotChatExplain<CR>", mode = { "v" }, desc = "Explain code" },
                 { "<leader>zr", ":CopilotChatReview<CR>", mode = { "v" }, desc = "Review code" },
                 { "<leader>zf", ":CopilotChatFix<CR>", mode = { "v" }, desc = "Fix code" },

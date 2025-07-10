@@ -347,6 +347,9 @@ return {
                     },
                 },
             }
+            require("conform").formatters.sqlfluff = {
+                exit_codes = { 0, 1 },
+            }
         end,
     },
     {

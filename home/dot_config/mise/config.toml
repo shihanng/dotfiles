@@ -54,6 +54,7 @@ experimental = true
 "go:github.com/go-delve/delve/cmd/dlv" = "latest"
 "go:golang.org/x/tools/gopls" = "latest"
 "node" = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
 "npm:@astrojs/language-server" = "latest"
 "npm:@fsouza/prettierd" = "latest"
 "npm:@github/copilot-language-server" = "latest"

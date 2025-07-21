@@ -6,8 +6,8 @@ LUA_MODULES = "{{ config_root }}/.lua_modules"
 
 [hooks]
 postinstall = [
-    "mkdir -p ${LUA_MODULES}",
-    "luarocks install --tree=${LUA_MODULES} luacheck",
+  "mkdir -p ${LUA_MODULES}",
+  "luarocks install --tree=${LUA_MODULES} luacheck",
 ]
 
 [hooks.enter]

@@ -34,4 +34,3 @@ vault = "Private"
 [[ssh-keys]]
 item = "Git Commit"
 vault = "Personal"
-

@@ -52,7 +52,7 @@ verbs: [
     #  the current directory or below
     {
         invocation: create {subpath}
-        execution: "$EDITOR {directory}/{subpath}"
+        execution: "touch {directory}/{subpath}"
         leave_broot: false
     }
 

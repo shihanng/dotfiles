@@ -50,6 +50,7 @@ experimental = true
 "cargo:selene" = "latest"
 "cargo:tokei" = "latest"
 "deno" = "latest"
+"erlang" = "latest"
 "go" = "latest"
 "go:github.com/go-delve/delve/cmd/dlv" = "latest"
 "go:golang.org/x/tools/gopls" = "latest"

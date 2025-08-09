@@ -13,6 +13,7 @@ experimental = true
 "aqua:astral-sh/ruff" = "latest"
 "aqua:astral-sh/uv" = "latest"
 "aqua:aws/aws-cli" = "2"
+"aqua:carapace-sh/carapace-bin" = "latest"
 "aqua:cli/cli" = "latest"
 "aqua:cloudflare/cloudflared" = "latest"
 "aqua:common-fate/granted" = "latest"

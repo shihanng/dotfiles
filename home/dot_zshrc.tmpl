@@ -66,7 +66,10 @@ export ATUIN_NOBIND="true"
 export LS_COLORS="$(vivid generate molokai)"
 
 alias assume="source assume"
-alias ls="eza"
+alias ls='eza --group-directories-first --icons'
+alias ll='ls -l --git' # Long format, git status
+alias l='ll -a'        # Long format, all files
+alias lr='ll -T'       # Long format, recursive as a tree
 alias lz="lazygit"
 alias open='open_command'
 alias vi="nvim"
@@ -210,6 +213,7 @@ source "${HOME}/.p10k.zsh"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(navi widget zsh)"
 source "${HOME}/.config/broot/launcher/bash/br"
+source <(carapace _carapace)
 
 # Invoke tab-completion script to be sourced with the Z shell.
 # Known to work on zsh 5.0.x, probably works on later 4.x releases as well (as

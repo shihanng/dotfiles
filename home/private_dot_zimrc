@@ -19,12 +19,9 @@ zmodule utility
 
 zmodule ohmyzsh/ohmyzsh --root lib --source functions.zsh
 zmodule jeffreytse/zsh-vi-mode
-zmodule joke/zim-kubectl
 zmodule wfxr/forgit
 zmodule direnv
-zmodule exa
 zmodule fzf
-zmodule joke/zim-github-cli
 zmodule joke/zim-chezmoi
 zmodule sharkdp/fd --fpath ./contrib/completion
 zmodule shihanng/zim-zellij

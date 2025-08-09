@@ -24,6 +24,7 @@ experimental = true
 "aqua:hashicorp/terraform" = "latest"
 "aqua:hashicorp/terraform-ls" = "latest"
 "aqua:jesseduffield/lazygit" = "latest"
+"aqua:jj-vcs/jj" = "latest"
 "aqua:jqlang/jq" = "latest"
 "aqua:junegunn/fzf" = "latest"
 "aqua:mikefarah/yq" = "latest"

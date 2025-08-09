@@ -33,6 +33,7 @@ experimental = true
 "aqua:rust-lang/rust-analyzer" = "latest"
 "aqua:sbstp/kubie" = "latest"
 "aqua:sharkdp/fd" = "latest"
+"aqua:sharkdp/vivid" = "latest"
 "aqua:stern/stern" = "latest"
 "aqua:sxyazi/yazi" = "latest"
 "aqua:terraform-linters/tflint" = "latest"

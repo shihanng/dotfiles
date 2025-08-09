@@ -18,7 +18,6 @@ zmodule termtitle
 zmodule utility
 
 zmodule ohmyzsh/ohmyzsh --root lib --source functions.zsh
-zmodule zpm-zsh/dircolors-neutral
 zmodule jeffreytse/zsh-vi-mode
 zmodule joke/zim-kubectl
 zmodule wfxr/forgit

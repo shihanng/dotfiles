@@ -43,6 +43,8 @@ if [ -f '$HOME/bin/gcp/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/bin/gcp/g
 manpath=(/usr/local/texlive/2022/texmf-dist/doc/man $manpath[@])
 infopath=(/usr/local/texlive/2022/texmf-dist/doc/info $infopath[@])
 
+eval "$(mise activate zsh)"
+
 export CLICOLOR=1
 export DELTA_PAGER='less -S'
 export EDITOR="nvim"
@@ -61,6 +63,7 @@ export VISUAL="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export BATDIFF_USE_DELTA=true
 export ATUIN_NOBIND="true"
+export LS_COLORS="$(vivid generate molokai)"
 
 alias assume="source assume"
 alias ls="eza"
@@ -70,8 +73,6 @@ alias vi="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias man="batman"
-
-eval "$(mise activate zsh)"
 
 # Start configuration added by Zim install
 #

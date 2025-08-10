@@ -1,5 +1,11 @@
 return {
     {
+        "j-hui/fidget.nvim",
+        opts = {
+            -- options
+        },
+    },
+    {
         "folke/snacks.nvim",
         priority = 1000,
         lazy = false,
@@ -13,7 +19,7 @@ return {
             indent = { enabled = true },
             input = { enabled = true },
             notifier = {
-                enabled = true,
+                enabled = false,
                 timeout = 3000,
             },
             picker = {

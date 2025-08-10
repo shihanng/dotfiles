@@ -95,6 +95,8 @@ return {
                 },
             })
 
+            require("shihanng.fidget-spinner"):init()
+
             vim.keymap.set(
                 { "n", "v" },
                 "<leader>zc",

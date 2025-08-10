@@ -28,37 +28,77 @@ return {
         end,
     },
     {
-        {
-            "CopilotC-Nvim/CopilotChat.nvim",
-            dependencies = {
-                "zbirenbaum/copilot.lua",
-                { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-            },
-            build = "make tiktoken", -- Only on MacOS or Linux
-            opts = {
-                model = "claude-sonnet-4",
-                mappings = {
-                    reset = {
-                        normal = "<Leader>l",
-                        insert = "",
+        "olimorris/codecompanion.nvim",
+        opts = {},
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        init = function()
+            require("codecompanion").setup({
+                chat = {
+                    opts = {
+                        completion_provider = "blink",
                     },
                 },
-            },
-            keys = {
-                { "<leader>zc", ":CopilotChat<CR>", mode = { "n", "v" }, desc = "Chat with Copilot" },
-                { "<leader>ze", ":CopilotChatExplain<CR>", mode = { "v" }, desc = "Explain code" },
-                { "<leader>zr", ":CopilotChatReview<CR>", mode = { "v" }, desc = "Review code" },
-                { "<leader>zf", ":CopilotChatFix<CR>", mode = { "v" }, desc = "Fix code" },
-                { "<leader>zo", ":CopilotChatOptimize<CR>", mode = { "v" }, desc = "Optimize code" },
-                { "<leader>zd", ":CopilotChatDocs<CR>", mode = { "v" }, desc = "Document code" },
-                { "<leader>zt", ":CopilotChatTests<CR>", mode = { "v" }, desc = "Generate test for code" },
-                {
-                    "<leader>zm",
-                    ":CopilotChatCommit<CR>",
-                    mode = { "n", "v" },
-                    desc = "Generate commit message for code",
+                adapters = {
+                    copilot = function()
+                        return require("codecompanion.adapters").extend("copilot", {
+                            schema = {
+                                model = {
+                                    default = "claude-sonnet-4",
+                                },
+                            },
+                        })
+                    end,
                 },
+                display = {
+                    action_palette = {
+                        width = 95,
+                        height = 10,
+                        prompt = "Prompt ",
+                        provider = "snacks",
+                        opts = {
+                            show_default_actions = true,
+                            show_default_prompt_library = true,
+                        },
+                    },
+                },
+            })
+
+            vim.keymap.set(
+                { "n", "v" },
+                "<leader>zc",
+                "<cmd>CodeCompanionChat Toggle<cr>",
+                { noremap = true, silent = true }
+            )
+            vim.keymap.set(
+                { "n", "v" },
+                "<leader>za",
+                "<cmd>CodeCompanionActions<cr>",
+                { noremap = true, silent = true }
+            )
+        end,
+    },
+    {
+        "OXY2DEV/markview.nvim",
+        lazy = false,
+        opts = {
+            preview = {
+                filetypes = { "codecompanion" },
+                ignore_buftypes = {},
+                icon_provider = "mini",
             },
         },
+    },
+    {
+        "echasnovski/mini.diff",
+        config = function()
+            local diff = require("mini.diff")
+            diff.setup({
+                -- Disabled by default
+                source = diff.gen_source.none(),
+            })
+        end,
     },
 }

@@ -62,6 +62,7 @@ return {
                 default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
                 per_filetype = {
                     sql = { "lsp", "copilot", "dadbod", "buffer" },
+                    codecompanion = { "codecompanion" },
                 },
                 providers = {
                     lazydev = {

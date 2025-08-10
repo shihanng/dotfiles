@@ -74,12 +74,14 @@ experimental = true
 "npm:yaml-language-server" = "latest"
 "pipx:asciinema" = "latest"
 "pipx:basedpyright" = "latest"
+"pipx:chromadb" = "0.6.3"
 "pipx:debugpy" = "latest"
 "pipx:harlequin" = { version = "latest", extras = "postgres,s3" }
 "pipx:litecli" = "latest"
 "pipx:pgcli" = "latest"
 "pipx:pyrefly" = "latest"
 "pipx:sqlfluff" = "latest"
+"pipx:vectorcode" = { version = "latest", extras = "lsp" }
 "python" = "latest"
 "ubi:TomWright/dasel" = "latest"
 "ubi:ajeetdsouza/zoxide" = "latest"

@@ -92,7 +92,7 @@ vim.api.nvim_set_keymap("n", "<Leader>SP", [[:set spell!<CR>]], { silent = true 
 
 vim.cmd([[ command! -nargs=1 Browse silent exec '!open "<args>"' ]])
 
-vim.api.nvim_set_keymap("n", "<leader>cp", [[:let @+ = expand('%:p')<CR>]], {})
+vim.api.nvim_set_keymap("n", "<leader>cp", [[:let @+ = fnamemodify(expand('%'), ':~:.')<CR>]], {})
 
 -- pip install pynvim in global mise python
 vim.g.python3_host_prog = "$HOME/.local/share/mise/installs/python/latest/bin/python"

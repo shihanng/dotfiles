@@ -64,6 +64,7 @@ experimental = true
 "npm:@github/copilot-language-server" = "latest"
 "npm:@google/clasp" = "latest"
 "npm:@mdx-js/language-server" = "latest"
+"npm:@modelcontextprotocol/server-memory" = "latest"
 "npm:@tailwindcss/language-server" = "latest"
 "npm:bash-language-server" = "latest"
 "npm:eslint_d" = "latest"
@@ -83,7 +84,7 @@ experimental = true
 "pipx:pgcli" = "latest"
 "pipx:pyrefly" = "latest"
 "pipx:sqlfluff" = "latest"
-"pipx:vectorcode" = { version = "latest", extras = "lsp" }
+"pipx:vectorcode" = { version = "latest", extras = "lsp,mcp" }
 "python" = "latest"
 "ubi:TomWright/dasel" = "latest"
 "ubi:ajeetdsouza/zoxide" = "latest"

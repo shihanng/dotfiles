@@ -68,6 +68,7 @@ experimental = true
 "npm:bash-language-server" = "latest"
 "npm:eslint_d" = "latest"
 "npm:markdownlint-cli2" = "latest"
+"npm:mcp-hub" = "latest"
 "npm:opencode-ai" = "latest"
 "npm:prettier" = "latest"
 "npm:typescript" = "latest"

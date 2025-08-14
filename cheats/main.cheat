@@ -80,6 +80,3 @@ dlv debug -l 127.0.0.1:38697 --headless ./main.go -- subcommand --myflag=xyz
 
 # Start debugpy and wait for client
 uv n debugpy --listen 5678 --wait-for-client manage.py shell
-
-# Start chroma
-export IS_PERSISTENT=TRUE && export ANONYMIZED_TELEMETRY=FALSE && chroma run --host localhost --port 9009 --path $HOME/chroma_data 

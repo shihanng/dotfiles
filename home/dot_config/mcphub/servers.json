@@ -3,7 +3,7 @@
     "vectorcode-mcp-server": {
       "args": [],
       "command": "${userHome}/.local/share/mise/shims/vectorcode-mcp-server",
-      "disabled": true
+      "disabled": false
     },
     "memory": {
       "args": [],

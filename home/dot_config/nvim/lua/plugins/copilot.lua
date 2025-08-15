@@ -80,6 +80,21 @@ return {
                             show_default_prompt_library = true,
                         },
                     },
+                    diff = {
+                        enabled = true,
+                        -- Close an open chat buffer if the total columns of your display are less than...
+                        close_chat_at = 240,
+                        layout = "vertical",
+                        opts = {
+                            "internal",
+                            "filler",
+                            "closeoff",
+                            "algorithm:patience",
+                            "followwrap",
+                            "linematch:120",
+                        },
+                        provider = "default", -- default|mini_diff
+                    },
                 },
                 extensions = {
                     vectorcode = {

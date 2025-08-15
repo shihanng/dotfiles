@@ -66,6 +66,7 @@ experimental = true
 "npm:@mdx-js/language-server" = "latest"
 "npm:@modelcontextprotocol/server-memory" = "latest"
 "npm:@tailwindcss/language-server" = "latest"
+"npm:@upstash/context7-mcp" = "latest"
 "npm:bash-language-server" = "latest"
 "npm:eslint_d" = "latest"
 "npm:markdownlint-cli2" = "latest"
@@ -79,6 +80,7 @@ experimental = true
 "pipx:basedpyright" = "latest"
 "pipx:chromadb" = "0.6.3"
 "pipx:debugpy" = "latest"
+"pipx:git+https://github.com/oraios/serena.git" = "9cf5ee2"
 "pipx:harlequin" = { version = "latest", extras = "postgres,s3" }
 "pipx:litecli" = "latest"
 "pipx:pgcli" = "latest"

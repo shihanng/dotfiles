@@ -12,6 +12,16 @@
       "env": {
         "MEMORY_FILE_PATH": "${userHome}/memory.json"
       }
+    },
+    "context7": {
+      "args": [],
+      "command": "${userHome}/.local/share/mise/shims/context7-mcp",
+      "disabled": false
+    },
+    "serena": {
+      "args": ["start-mcp-server"],
+      "command": "${userHome}/.local/share/mise/shims/serena",
+      "disabled": false
     }
   }
 }

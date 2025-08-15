@@ -13,6 +13,16 @@
       "type": "local",
       "command": ["vectorcode-mcp-server"],
       "enabled": true
+    },
+    "context7": {
+      "type": "local",
+      "command": ["context7-mcp"],
+      "enabled": true
+    },
+    "serena": {
+      "type": "local",
+      "command": ["serena", "start-mcp-server"],
+      "enabled": true
     }
   }
 }

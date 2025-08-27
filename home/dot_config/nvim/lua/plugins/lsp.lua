@@ -321,6 +321,7 @@ return {
                 toml = { lsp_format = "first" },
                 yaml = { lsp_format = "first" },
 
+                astro = { "prettierd" },
                 json = { "prettierd" },
                 jsonc = { "prettierd" },
                 html = { "prettierd" },

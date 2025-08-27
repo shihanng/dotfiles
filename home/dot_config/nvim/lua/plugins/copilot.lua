@@ -96,18 +96,7 @@ return {
                         provider = "default", -- default|mini_diff
                     },
                 },
-                extensions = {
-                    vectorcode = {
-                        ---@type VectorCode.CodeCompanion.ExtensionOpts
-                        opts = {
-                            tool_group = {
-                                enabled = true,
-                                extras = { "file_search" },
-                                collapse = false,
-                            },
-                        },
-                    },
-                },
+                extensions = {},
             })
 
             require("shihanng.fidget-spinner"):init()
@@ -144,17 +133,6 @@ return {
             diff.setup({
                 -- Disabled by default
                 source = diff.gen_source.none(),
-            })
-        end,
-    },
-    {
-        "Davidyz/VectorCode",
-        version = "*", -- optional, depending on whether you're on nightly or release
-        dependencies = { "nvim-lua/plenary.nvim" },
-        cmd = "VectorCode", -- if you're lazy-loading VectorCode
-        init = function()
-            require("vectorcode").setup({
-                async_backend = "lsp",
             })
         end,
     },

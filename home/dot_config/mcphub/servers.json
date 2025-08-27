@@ -22,6 +22,10 @@
       "args": ["start-mcp-server"],
       "command": "${userHome}/.local/share/mise/shims/serena",
       "disabled": false
+    },
+    "astro_doc": {
+      "url": "https://mcp.docs.astro.build/mcp",
+      "disabled": false
     }
   }
 }

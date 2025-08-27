@@ -23,6 +23,11 @@
       "type": "local",
       "command": ["serena", "start-mcp-server"],
       "enabled": true
+    },
+    "astro_doc": {
+      "type": "remote",
+      "url": "https://mcp.docs.astro.build/mcp",
+      "enabled": true
     }
   }
 }

@@ -1,0 +1,47 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Shi Han NG"
+email = "shihanng@gmail.com"
+
+[signing]
+behavior = "drop"
+backend = "ssh"
+key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN0tszglGwnR8Jpfza8h9YiqNFW7m/sYbiDqGqOyGoMt"
+backends.ssh.program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[git]
+sign-on-push = true
+
+[ui]
+diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
+merge-editor = "diffconflicts"
+
+[merge-tools.diffconflicts]
+program = "nvim"
+merge-args = ["-c", "JJDiffConflicts", "$output"]
+merge-tool-edits-conflict-markers = true
+
+[aliases]
+push = ["util", "exec", "--", "jj-pre-push", "push"]
+x = ["util", "exec", "--", "jj-run"]
+
+[fix.tools.yamlfmt]
+command = ["yamlfmt", "-in"]
+patterns = ["glob:'**/*.yaml' ~ pnpm-lock.yaml", "glob:'**/*.yml'"]
+
+[fix.tools.taplo-fmt]
+command = ["taplo", "fmt", "--stdin-filepath", "$path", "-"]
+patterns = ["glob:'**/*.toml'"]
+
+[fix.tools.prettier]
+command = ["prettier", "--stdin-filepath", "$path"]
+patterns = [
+  "glob:'**/*.js'",
+  "glob:'**/*.ts'",
+  "glob:'**/*.astro'",
+  "glob:'**/*.jsx'",
+  "glob:'**/*.tsx'",
+  "glob:'**/*.json'",
+  "glob:'**/*.md'",
+]

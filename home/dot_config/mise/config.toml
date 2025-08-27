@@ -72,6 +72,7 @@ experimental = true
 "npm:markdownlint-cli2" = "latest"
 "npm:mcp-hub" = "latest"
 "npm:opencode-ai" = "latest"
+"npm:pnpm" = "latest-10"
 "npm:prettier" = "latest"
 "npm:typescript" = "latest"
 "npm:typescript-language-server" = "latest"

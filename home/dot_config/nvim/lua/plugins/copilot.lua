@@ -107,32 +107,6 @@ return {
                             },
                         },
                     },
-                    mcphub = {
-                        callback = "mcphub.extensions.codecompanion",
-                        opts = {
-                            -- MCP Tools
-                            -- Make individual tools (@server__tool) and server groups (@server) from MCP servers
-                            make_tools = true,
-
-                            -- Show individual tools in chat completion (when make_tools=true)
-                            show_server_tools_in_chat = true,
-
-                            -- Add mcp__ prefix (e.g `@mcp__github`, `@mcp__neovim__list_issues`)
-                            add_mcp_prefix_to_tool_names = false,
-
-                            -- Show tool results directly in chat buffer
-                            show_result_in_chat = true,
-
-                            -- Function to format tool names to show in the chat buffer
-                            -- function(tool_name:string, tool: CodeCompanion.Agent.Tool) : string
-                            format_tool = nil,
-
-                            -- MCP Resources
-                            make_vars = true, -- Convert MCP resources to #variables for prompts
-                            -- MCP Prompts
-                            make_slash_commands = true, -- Add MCP prompts as /slash commands
-                        },
-                    },
                 },
             })
 
@@ -184,14 +158,7 @@ return {
             })
         end,
     },
-    {
-        "ravitemer/mcphub.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        build = "",
-        config = function() require("mcphub").setup() end,
-    },
+
     {
         "NickvanDyke/opencode.nvim",
         dependencies = {

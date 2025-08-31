@@ -75,6 +75,7 @@ experimental = true
 "npm:opencode-ai" = "latest"
 "npm:pnpm" = "latest-10"
 "npm:prettier" = "latest"
+"npm:shadcn" = "latest"
 "npm:typescript" = "latest"
 "npm:typescript-language-server" = "latest"
 "npm:yaml-language-server" = "latest"

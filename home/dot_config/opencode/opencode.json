@@ -30,6 +30,11 @@
       "type": "remote",
       "url": "https://mcp.docs.astro.build/mcp",
       "enabled": true
+    },
+    "shadcn": {
+      "type": "local",
+      "command": ["shadcn", "mcp"],
+      "enabled": true
     }
   }
 }

@@ -14,6 +14,7 @@ repos:
         types_or:
           - yaml
           - json
+        exclude: 'home/dot_config/nvim/lazy-lock\.json$'
   - repo: https://github.com/samueljsb/sort-lines
     rev: v0.3.0
     hooks:

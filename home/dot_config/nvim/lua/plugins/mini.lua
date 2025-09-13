@@ -1,6 +1,6 @@
 return {
     {
-        "echasnovski/mini.nvim",
+        "nvim-mini/mini.nvim",
         version = "*",
         config = function()
             local gen_spec = require("mini.ai").gen_spec

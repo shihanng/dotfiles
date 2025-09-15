@@ -144,6 +144,7 @@ return {
             })
 
             vim.lsp.enable({
+                "ansiblels",
                 "astro",
                 "basedpyright",
                 "bashls",
@@ -319,6 +320,7 @@ return {
                 sql = { "sqlfluff" },
                 terraform = { lsp_format = "first" },
                 toml = { lsp_format = "first" },
+                ["yaml.ansible"] = { "ansible-lint" },
                 yaml = { lsp_format = "first" },
 
                 astro = { "prettierd" },
@@ -335,7 +337,7 @@ return {
             default_format_opts = {
                 lsp_format = "never",
             },
-            format_on_save = { timeout_ms = 500 },
+            format_on_save = { timeout_ms = 1500 },
             formatters = {},
         },
         init = function()
@@ -367,6 +369,7 @@ return {
                 ["markdown"] = { "markdownlint-cli2" },
                 ["lua"] = { "selene" },
                 ["sql"] = { "sqlfluff" },
+                ["yaml.ansible"] = { "ansible_lint" },
                 ["yaml.github"] = { "actionlint" },
 
                 ["javascript"] = { "eslint_d" },

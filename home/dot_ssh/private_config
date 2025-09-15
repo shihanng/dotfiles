@@ -8,3 +8,9 @@ Host *
 
 Host *
   AddKeysToAgent yes
+
+Host 192.168.1.4
+  HostName 192.168.1.4
+  IdentityAgent ~/.1password/agent.sock
+  IdentityFile ~/.ssh/pi-hole-2.pub
+  IdentitiesOnly yes

@@ -31,3 +31,7 @@
 [[ssh-keys]]
 item = "Git Commit"
 vault = "Personal"
+
+[[ssh-keys]]
+item = "pi-hole-2"
+vault = "homelab"

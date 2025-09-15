@@ -150,6 +150,7 @@ return {
                 "bashls",
                 "copilot_ls",
                 "gopls",
+                "harper_ls",
                 "just",
                 "lua_ls",
                 "mdx_analyzer",
@@ -159,7 +160,6 @@ return {
                 "terraformls",
                 "tflint",
                 "yamlls",
-                "harper_ls",
             })
 
             vim.lsp.config("basedpyright", {
@@ -324,11 +324,11 @@ return {
                 yaml = { lsp_format = "first" },
 
                 astro = { "prettierd" },
-                json = { "prettierd" },
-                jsonc = { "prettierd" },
                 html = { "prettierd" },
                 javascript = { "prettierd" },
                 javascriptreact = { "prettierd" },
+                json = { "prettierd" },
+                jsonc = { "prettierd" },
                 markdown = { "markdownlint-cli2", "prettierd" },
                 mdx = { "prettier" },
                 typescript = { "prettierd" },

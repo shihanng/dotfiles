@@ -92,6 +92,14 @@ return {
                     vim.keymap.set("n", "g.", toggle_dotfiles, { buffer = buf_id })
                 end,
             })
+
+            local set_mark = function(id, path, desc) MiniFiles.set_bookmark(id, path, { desc = desc }) end
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "MiniFilesExplorerOpen",
+                callback = function()
+                    set_mark("w", vim.fn.getcwd, "Working directory") -- callable
+                end,
+            })
         end,
     },
 }

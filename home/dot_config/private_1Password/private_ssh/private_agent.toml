@@ -35,3 +35,7 @@ vault = "Personal"
 [[ssh-keys]]
 item = "pi-hole-2"
 vault = "homelab"
+
+[[ssh-keys]]
+item = "node-101"
+vault = "homelab"

@@ -14,3 +14,9 @@ Host 192.168.1.4
   IdentityAgent ~/.1password/agent.sock
   IdentityFile ~/.ssh/pi-hole-2.pub
   IdentitiesOnly yes
+
+Host 192.168.1.101
+  HostName 192.168.1.101
+  IdentityAgent ~/.1password/agent.sock
+  IdentityFile ~/.ssh/node-101.pub
+  IdentitiesOnly yes

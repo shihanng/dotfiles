@@ -15,34 +15,67 @@ return {
         end,
     },
     {
-        "copilotlsp-nvim/copilot-lsp",
-        init = function()
-            require("copilot-lsp").setup({
-                nes = {
-                    move_count_threshold = 2, -- Clear after 2 movements
+        "folke/sidekick.nvim",
+        opts = {
+            -- add any options here
+            cli = {
+                mux = {
+                    backend = "zellij",
+                    enabled = true,
                 },
-            })
-
-            vim.g.copilot_nes_debounce = 500
-
-            vim.keymap.set("n", "<tab>", function()
-                local bufnr = vim.api.nvim_get_current_buf()
-                local state = vim.b[bufnr].nes_state
-                if state then
-                    -- Try to jump to the start of the suggestion edit.
-                    -- If already at the start, then apply the pending suggestion and jump to the end of the edit.
-                    local _ = require("copilot-lsp.nes").walk_cursor_start_edit()
-                        or (
-                            require("copilot-lsp.nes").apply_pending_nes()
-                            and require("copilot-lsp.nes").walk_cursor_end_edit()
-                        )
-                    return nil
-                else
-                    -- Resolving the terminal's inability to distinguish between `TAB` and `<C-i>` in normal mode
-                    return "<C-i>"
-                end
-            end, { desc = "Accept Copilot NES suggestion", expr = true })
-        end,
+            },
+        },
+        keys = {
+            {
+                "<tab>",
+                function()
+                    -- if there is a next edit, jump to it, otherwise apply it if any
+                    if not require("sidekick").nes_jump_or_apply() then
+                        return "<Tab>" -- fallback to normal tab
+                    end
+                end,
+                expr = true,
+                desc = "Goto/Apply Next Edit Suggestion",
+            },
+            {
+                "<leader>aa",
+                function() require("sidekick.cli").toggle() end,
+                mode = { "n", "v" },
+                desc = "Sidekick Toggle CLI",
+            },
+            {
+                "<leader>as",
+                function() require("sidekick.cli").select() end,
+                -- Or to select only installed tools:
+                -- require("sidekick.cli").select({ filter = { installed = true } })
+                desc = "Sidekick Select CLI",
+            },
+            {
+                "<leader>as",
+                function() require("sidekick.cli").send({ selection = true }) end,
+                mode = { "v" },
+                desc = "Sidekick Send Visual Selection",
+            },
+            {
+                "<leader>ap",
+                function() require("sidekick.cli").prompt() end,
+                mode = { "n", "v" },
+                desc = "Sidekick Select Prompt",
+            },
+            {
+                "<c-.>",
+                function() require("sidekick.cli").focus() end,
+                mode = { "n", "x", "i", "t" },
+                desc = "Sidekick Switch Focus",
+            },
+            -- Example of a keybinding to open Claude directly
+            {
+                "<leader>ac",
+                function() require("sidekick.cli").toggle({ name = "claude", focus = true }) end,
+                desc = "Sidekick Claude Toggle",
+                mode = { "n", "v" },
+            },
+        },
     },
     {
         "NickvanDyke/opencode.nvim",

@@ -36,19 +36,6 @@ return {
             vim.lsp.handlers["textDocument/signatureHelp"] =
                 vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
-            -- This should be executed before you configure any language server
-            --
-            -- Also support UFO: lsp-zero.netlify.app/docs/guide/quick-recipes.html#enable-folds-with-nvim-ufo
-            local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
-            lsp_capabilities.textDocument.foldingRange = {
-                dynamicRegistration = false,
-                lineFoldingOnly = true,
-            }
-
-            local lspconfig_defaults = require("lspconfig").util.default_config
-            lspconfig_defaults.capabilities =
-                vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, lsp_capabilities)
-
             local builtin = require("telescope.builtin")
             local tstools = require("typescript-tools.api")
 
@@ -159,6 +146,7 @@ return {
                 "taplo",
                 "terraformls",
                 "tflint",
+                "ty",
                 "yamlls",
             })
 

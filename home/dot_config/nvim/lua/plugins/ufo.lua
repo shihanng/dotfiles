@@ -10,13 +10,6 @@ return {
 
         local ufo = require("ufo")
 
-        -- See: https://github.com/kevinhwang91/nvim-ufo?tab=readme-ov-file#customize-configuration
-        local ftMap = {
-            -- vim = "indent",
-            -- python = { "indent" },
-            -- git = "",
-        }
-
         -- See: https://github.com/kevinhwang91/nvim-ufo?tab=readme-ov-file#customize-fold-text
         local handler = function(virtText, lnum, endLnum, width, truncate)
             local newVirtText = {}
@@ -61,7 +54,7 @@ return {
                 },
             },
             fold_virt_text_handler = handler,
-            provider_selector = function(_, filetype, _)
+            provider_selector = function(_, _, _)
                 -- return a string type use internal providers
                 -- return a string in a table like a string type
                 -- return empty string '' will disable any providers
@@ -69,7 +62,7 @@ return {
 
                 -- if you prefer treesitter provider rather than lsp,
                 -- return ftMap[filetype] or {'treesitter', 'indent'}
-                return ftMap[filetype]
+                return { "treesitter", "indent" }
             end,
         })
 

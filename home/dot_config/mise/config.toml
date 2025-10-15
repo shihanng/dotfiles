@@ -64,6 +64,7 @@ experimental = true
 "npm:@ansible/ansible-language-server" = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@astrojs/language-server" = "latest"
+"npm:@bytebase/dbhub" = "latest"
 "npm:@fsouza/prettierd" = "latest"
 "npm:@github/copilot-language-server" = "latest"
 "npm:@google/clasp" = "latest"

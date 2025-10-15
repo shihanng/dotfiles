@@ -35,6 +35,17 @@
       "type": "local",
       "command": ["shadcn", "mcp"],
       "enabled": true
+    },
+    "dbhub-postgres-npx": {
+      "type": "local",
+      "command": [
+        "dbhub",
+        "--transport",
+        "stdio",
+        "--dsn",
+        "postgres://postgres@localhost:5432/postgres?sslmode=disable"
+      ],
+      "enabled": true
     }
   }
 }

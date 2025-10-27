@@ -60,7 +60,6 @@
   "sidekick.nvim": { "branch": "main", "commit": "bd1f79a506b7447d44873f78ffc0de7ea232bc88" },
   "snacks.nvim": { "branch": "main", "commit": "ecde81fc0ce7c4834def0ce710dd5dc62b0822fc" },
   "sqls.nvim": { "branch": "main", "commit": "bfb7b4090268f6163c408577070da4cc9d7450fd" },
-  "tailwind-tools": { "branch": "master", "commit": "fbe982901d4508b0dcd80e07addf0fcb6dab6c49" },
   "telescope-dap.nvim": { "branch": "master", "commit": "783366bd6c1e7fa0a5c59c07db37f49c805a28df" },
   "telescope-fzy-native.nvim": { "branch": "master", "commit": "282f069504515eec762ab6d6c89903377252bf5b" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },

@@ -80,3 +80,9 @@ dlv debug -l 127.0.0.1:38697 --headless ./main.go -- subcommand --myflag=xyz
 
 # Start debugpy and wait for client
 uv n debugpy --listen 5678 --wait-for-client manage.py shell
+
+# Create worktree for PR without switching current branch
+git fetch upstream pull/<pr_number>/head:pr-<pr_number> && git worktree add <project_root>/../"$(basename <project_root>)"-<pr_number> <branch_name>
+
+$ project_root: git rev-parse --show-toplevel
+$ branch_name: echo pr-<pr_number>

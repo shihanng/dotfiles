@@ -14,7 +14,7 @@
     "vectorcode-mcp-server": {
       "type": "local",
       "command": ["vectorcode-mcp-server"],
-      "enabled": true
+      "enabled": false
     },
     "context7": {
       "type": "local",
@@ -29,12 +29,12 @@
     "astro_doc": {
       "type": "remote",
       "url": "https://mcp.docs.astro.build/mcp",
-      "enabled": true
+      "enabled": false
     },
     "shadcn": {
       "type": "local",
       "command": ["shadcn", "mcp"],
-      "enabled": true
+      "enabled": false
     },
     "dbhub-postgres-npx": {
       "type": "local",
@@ -45,7 +45,7 @@
         "--dsn",
         "postgres://postgres@localhost:5432/postgres?sslmode=disable"
       ],
-      "enabled": true
+      "enabled": false
     }
   }
 }

@@ -36,6 +36,16 @@
       "command": ["shadcn", "mcp"],
       "enabled": false
     },
+    "opentofu": {
+      "type": "local",
+      "command": ["opentofu-mcp-server"],
+      "enabled": false
+    },
+    "sequential-thinking": {
+      "type": "local",
+      "command": ["mcp-server-sequential-thinking"],
+      "enabled": true
+    },
     "dbhub-postgres-npx": {
       "type": "local",
       "command": [

@@ -98,7 +98,9 @@ experimental = true
 "pipx:pgcli" = "latest"
 "pipx:pyrefly" = "latest"
 "pipx:sqlfluff" = "latest"
+"pipx:ty" = "latest"
 "pipx:vectorcode" = { version = "latest", extras = "lsp,mcp" }
+"pipx:zuban" = "latest"
 "python" = "latest"
 "ubi:TomWright/dasel" = "latest"
 "ubi:ajeetdsouza/zoxide" = "latest"

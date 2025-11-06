@@ -133,7 +133,6 @@ return {
             vim.lsp.enable({
                 "ansiblels",
                 "astro",
-                "basedpyright",
                 "bashls",
                 "gopls",
                 "copilot",
@@ -148,20 +147,7 @@ return {
                 "tflint",
                 "ty",
                 "yamlls",
-            })
-
-            vim.lsp.config("basedpyright", {
-                settings = {
-                    basedpyright = {
-                        disableOrganizeImports = true,
-                        analysis = {
-                            diagnosticMode = "openFilesOnly",
-                            inlayHints = {
-                                callArgumentNames = true,
-                            },
-                        },
-                    },
-                },
+                "zuban",
             })
 
             vim.lsp.config("gopls", {

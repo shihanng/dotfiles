@@ -57,5 +57,14 @@
       ],
       "enabled": false
     }
+  },
+  "lsp": {
+    "pyright": {
+      "disabled": true
+    },
+    "zuban": {
+      "command": ["zuban", "server"],
+      "extensions": [".py", ".pyi"]
+    }
   }
 }

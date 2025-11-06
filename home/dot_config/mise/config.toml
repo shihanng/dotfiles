@@ -79,6 +79,7 @@ experimental = true
 "npm:eslint_d" = "latest"
 "npm:markdownlint-cli2" = "latest"
 "npm:mcp-hub" = "latest"
+"npm:mcp-remote" = "latest"
 "npm:opencode-ai" = "latest"
 "npm:prettier" = "latest"
 "npm:shadcn" = "latest"
@@ -93,6 +94,7 @@ experimental = true
 "pipx:git+https://github.com/neongreen/jj-run.git" = "latest"
 "pipx:git+https://github.com/oraios/serena.git" = "9cf5ee2"
 "pipx:harlequin" = { version = "latest", extras = "postgres,s3" }
+"pipx:invoke" = "latest"
 "pipx:jj-pre-push" = "latest"
 "pipx:litecli" = "latest"
 "pipx:pgcli" = "latest"

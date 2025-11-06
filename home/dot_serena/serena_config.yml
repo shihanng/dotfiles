@@ -20,7 +20,7 @@ web_dashboard: true
 # shows Serena's current session logs - as an alternative to the GUI log window which
 # is supported on all platforms.
 
-web_dashboard_open_on_launch: true
+web_dashboard_open_on_launch: false
 # whether to open a browser window with the web dashboard when Serena starts (provided that web_dashboard
 # is enabled). If set to False, you can still open the dashboard manually by navigating to
 # http://localhost:24282/dashboard/ in your web browser (24282 = 0x5EDA, SErena DAshboard).

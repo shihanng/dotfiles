@@ -23,7 +23,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 4
+accordion-padding = 10
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -118,12 +118,12 @@ run = 'layout floating'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 4
-inner.vertical = 4
-outer.left = 4
-outer.bottom = 4
-outer.top = 4
-outer.right = 4
+inner.horizontal = 6
+inner.vertical = 6
+outer.left = 6
+outer.bottom = 6
+outer.top = 6
+outer.right = 6
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -157,15 +157,15 @@ outer.right = 4
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 ctrl-alt-slash = 'layout tiles horizontal vertical'
-ctrl-alt-comma = 'layout accordion horizontal vertical'
+ctrl-alt-period = 'layout accordion horizontal vertical'
+ctrl-alt-comma = 'fullscreen'
 ctrl-alt-space = 'layout floating tiling'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-ctrl-alt-h = 'focus left'
-ctrl-alt-j = 'focus down'
-ctrl-alt-k = 'focus up'
-ctrl-alt-l = 'focus right'
-ctrl-alt-period = 'fullscreen'
+ctrl-alt-h = 'focus --ignore-floating --boundaries-action wrap-around-the-workspace left'
+ctrl-alt-j = 'focus --ignore-floating --boundaries-action wrap-around-the-workspace down'
+ctrl-alt-k = 'focus --ignore-floating --boundaries-action wrap-around-the-workspace up'
+ctrl-alt-l = 'focus --ignore-floating --boundaries-action wrap-around-the-workspace right'
 ctrl-alt-0 = 'balance-sizes'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
@@ -176,8 +176,6 @@ ctrl-4 = 'workspace 4'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
-
-alt-shift-semicolon = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-alt-m = 'mode mover'
@@ -199,10 +197,10 @@ ctrl-alt-j = 'move down'
 ctrl-alt-k = 'move up'
 ctrl-alt-l = 'move right'
 
-ctrl-shift-h = 'join-with left'
-ctrl-shift-j = 'join-with down'
-ctrl-shift-k = 'join-with up'
-ctrl-shift-l = 'join-with right'
+ctrl-alt-y = 'join-with left'
+ctrl-alt-u = 'join-with down'
+ctrl-alt-i = 'join-with up'
+ctrl-alt-o = 'join-with right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 ctrl-1 = 'move-node-to-workspace 1'

@@ -4,11 +4,6 @@ return {
         "norcalli/nvim-colorizer.lua",
         config = function() require("colorizer").setup() end,
     },
-    {
-        "lewis6991/gitsigns.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function() require("gitsigns").setup() end,
-    },
     "jeffkreeftmeijer/vim-numbertoggle",
     "tpope/vim-repeat",
     {

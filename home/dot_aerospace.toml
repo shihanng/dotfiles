@@ -112,8 +112,7 @@ run = 'layout floating'
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'
-2 = ['^DeskPad Display$', 'secondary']
-3 = 'built-in'                         # Case insensitive regex substring
+0 = ['^DeskPad Display$']
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -178,6 +177,7 @@ ctrl-1 = 'workspace 1'
 ctrl-2 = 'workspace 2'
 ctrl-3 = 'workspace 3'
 ctrl-4 = 'workspace 4'
+ctrl-0 = 'workspace 0'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'

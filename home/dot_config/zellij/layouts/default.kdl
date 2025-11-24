@@ -151,5 +151,12 @@ layout {
             }
         }
         children
+        pane size=1 borderless=false {
+            plugin location="zjstatus" {
+                format_right "{pipe_zjstatus_hints}"
+
+                pipe_zjstatus_hints_format "{output}"
+            }
+        }
     }
 }

@@ -123,6 +123,13 @@ keybinds clear-defaults=true {
             };
             SwitchToMode "Normal"
         }
+        bind "s" {
+            LaunchOrFocusPlugin "zellij:share" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Normal"
+        }
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }

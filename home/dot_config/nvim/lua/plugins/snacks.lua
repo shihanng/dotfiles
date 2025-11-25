@@ -44,7 +44,11 @@ return {
         },
         keys = {
             -- Top Pickers & Explorer
-            { "<C-p>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+            {
+                "<C-p>",
+                function() Snacks.picker.smart({ multi = { "buffers", "files" } }) end,
+                desc = "Smart Find Files",
+            },
             { "<C-b>", function() Snacks.picker.buffers() end, desc = "Buffers" },
             { "<C-f>", function() Snacks.picker.grep() end, desc = "Grep" },
             { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },

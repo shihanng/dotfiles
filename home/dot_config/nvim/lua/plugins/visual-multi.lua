@@ -22,6 +22,7 @@ return {
 
         -- Add all matches in the document
         set({ "n", "v" }, "<leader>A", mc.matchAllAddCursors)
+        set("n", "<leader>/A", mc.searchAllAddCursors)
 
         -- You can also add cursors with any motion you prefer:
         -- set("n", "<right>", function()

@@ -29,6 +29,14 @@ return {
                         truncate = 5000,
                     },
                 },
+                win = {
+                    input = {
+                        keys = {
+                            ["<a-j>"] = { "history_forward", mode = { "i", "n" } },
+                            ["<a-k>"] = { "history_back", mode = { "i", "n" } },
+                        },
+                    },
+                },
             },
             quickfile = { enabled = true },
             rename = { enabled = true },

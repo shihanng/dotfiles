@@ -34,6 +34,7 @@ return {
                     "javascript",
                     "json",
                     "jsonc",
+                    "jsonnet",
                     "just",
                     "lua",
                     "luadoc",

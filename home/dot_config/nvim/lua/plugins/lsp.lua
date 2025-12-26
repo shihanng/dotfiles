@@ -137,6 +137,7 @@ return {
                 "copilot",
                 "gopls",
                 "harper_ls",
+                "jsonnet_ls",
                 "just",
                 "lua_ls",
                 "mdx_analyzer",
@@ -303,6 +304,7 @@ return {
                 javascriptreact = { "prettierd" },
                 json = { "prettierd" },
                 jsonc = { "prettierd" },
+                jsonnet = { "jsonnetfmt" },
                 markdown = { "markdownlint-cli2", "prettierd" },
                 mdx = { "prettier" },
                 typescript = { "prettierd" },
@@ -345,6 +347,7 @@ return {
                 ["sql"] = { "sqlfluff" },
                 ["yaml.ansible"] = { "ansible_lint" },
                 ["yaml.github"] = { "actionlint" },
+                ["jsonnet"] = { "jsonnet_lint" },
 
                 ["javascript"] = { "eslint_d" },
                 ["javascriptreact"] = { "eslint_d" },
@@ -355,6 +358,20 @@ return {
             require("lint").linters.sqlfluff.args = {
                 "lint",
                 "--format=json",
+            }
+
+            require("lint").linters.jsonnet_lint = {
+                cmd = "jsonnet-lint",
+                stdin = false,
+                append_fname = true,
+                args = {},
+                stream = "stderr",
+                parser = require("lint.parser").from_pattern(
+                    "([^:]+):(%d+):(%d+)%-(%d+)%s+(.+)",
+                    { "file", "lnum", "col", "end_col", "message" },
+                    nil,
+                    { severity = vim.diagnostic.severity.ERROR, source = "jsonnet-lint" }
+                ),
             }
 
             local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

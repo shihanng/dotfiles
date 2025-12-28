@@ -25,6 +25,9 @@ return {
                     "css",
                     "cue",
                     "dap_repl",
+                    "diff",
+                    "git_rebase",
+                    "gitcommit",
                     "go",
                     "gomod",
                     "gosum",
@@ -65,7 +68,6 @@ return {
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
-                    disable = { "gitcommit" },
                     highlight = {
                         disable = function()
                             return string.find(vim.bo.filetype, "chezmoitmpl") or vim.bo.filetype == "gitcommit"

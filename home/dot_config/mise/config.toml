@@ -54,6 +54,7 @@ experimental = true
 "cargo:eza" = "latest"
 "cargo:harper-ls" = "latest"
 "cargo:just-lsp" = "latest"
+"cargo:lazyjj" = "latest"
 "cargo:selene" = "latest"
 "cargo:tokei" = "latest"
 "deno" = "latest"

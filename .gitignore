@@ -1,3 +1,6 @@
 .virtualenvs/
 .lua_modules/
 .vectorcode_chromadb_data/
+mise.local.toml
+AGENTS.md
+CLAUDE.md

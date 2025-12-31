@@ -45,3 +45,14 @@ patterns = [
   "glob:'**/*.json'",
   "glob:'**/*.md'",
 ]
+
+[fix.tools.luacheck]
+command = [
+  "jj_luacheck.sh",
+  "--formatter",
+  "plain",
+  "--no-color",
+  "--codes",
+  "--ranges",
+]
+patterns = ["glob:'**/*.lua'"]

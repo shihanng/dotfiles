@@ -89,8 +89,7 @@ zoxide add "${branch_path}"
 # Create worktree from PR
 PR_NUMBER=<pr_number>
 BRANCH=$(gh pr view $PR_NUMBER --json headRefName -q .headRefName)
-git fetch origin pull/$PR_NUMBER/head:$BRANCH
-git branch --set-upstream-to=origin/${BRANCH} ${BRANCH}
+git checkout -t fetch origin/pull/$PR_NUMBER/head:$BRANCH
 branch_path=<project_root>/../"$(basename <project_root>)__${PR_NUMBER}"
 git worktree add "${branch_path}" $BRANCH
 zoxide add "${branch_path}"

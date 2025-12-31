@@ -11,3 +11,4 @@ rm -f "${HOME}/.config/mise/mise.lock"
 rm -f "${HOME}/bin/kind"
 rm -f "${HOME}/bin/kustomize"
 rm -f "${HOME}/.config/zellij/layouts/default.kdl"
+rm -rf "${HOME}/.serena" && mise uninstall pipx:git+https://github.com/oraios/serena.git

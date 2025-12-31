@@ -123,7 +123,6 @@ deno = "2.7.9"
 "pipx:basedpyright" = "1.38.4"
 "pipx:chromadb" = "1.5.5"
 "pipx:debugpy" = "1.8.20"
-"pipx:git+https://github.com/oraios/serena.git" = "v0.1.4"
 "pipx:harlequin" = { version = "2.5.2", extras = "postgres,s3" }
 "pipx:invoke" = "2.2.1"
 "pipx:jj-pre-push" = "0.3.5"

@@ -143,8 +143,9 @@ return {
                 "taplo",
                 "terraformls",
                 "tflint",
-                "ty",
+                -- "ty",
                 "yamlls",
+                -- "pyrefly",
                 "zuban",
             })
 

@@ -647,6 +647,10 @@ backend = "pipx:pgcli"
 version = "0.53.0"
 backend = "pipx:pyrefly"
 
+[[tools."pipx:semgrep"]]
+version = "1.152.0"
+backend = "pipx:semgrep"
+
 [[tools."pipx:sort-lines"]]
 version = "0.3.0"
 backend = "pipx:sort-lines"

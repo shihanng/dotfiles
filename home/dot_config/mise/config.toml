@@ -130,3 +130,4 @@ experimental = true
 "pipx:zuban" = "latest"
 "prek" = "latest"
 "python" = "latest"
+"pipx:semgrep" = "latest"

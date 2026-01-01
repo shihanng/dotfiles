@@ -46,6 +46,10 @@ patterns = [
   "glob:'**/*.md'",
 ]
 
+[fix.tools.stylua]
+command = ["stylua", "--stdin-filepath", "$path", "-"]
+patterns = ["glob:'**/*.lua'"]
+
 [fix.tools.luacheck]
 command = [
   "jj_luacheck.sh",

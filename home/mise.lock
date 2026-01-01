@@ -611,6 +611,10 @@ backend = "pipx:pgcli"
 version = "0.46.1"
 backend = "pipx:pyrefly"
 
+[[tools."pipx:sort-lines"]]
+version = "0.3.0"
+backend = "pipx:sort-lines"
+
 [[tools."pipx:sqlfluff"]]
 version = "3.5.0"
 backend = "pipx:sqlfluff"

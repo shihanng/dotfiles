@@ -60,3 +60,7 @@ command = [
   "--ranges",
 ]
 patterns = ["glob:'**/*.lua'"]
+
+[fix.tools.sort-lines]
+command = ["jj_sort_lines.sh"]
+patterns = ["glob:'**/*'"]

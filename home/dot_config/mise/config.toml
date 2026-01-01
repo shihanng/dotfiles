@@ -104,6 +104,7 @@ experimental = true
 "pipx:litecli" = "latest"
 "pipx:pgcli" = "latest"
 "pipx:pyrefly" = "latest"
+"pipx:sort-lines" = "latest"
 "pipx:sqlfluff" = "latest"
 "pipx:ty" = "latest"
 "pipx:vectorcode" = { version = "latest", extras = "lsp,mcp" }

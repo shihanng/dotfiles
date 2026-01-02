@@ -72,3 +72,7 @@ patterns = ["glob:'**/*.md'"]
 [fix.tools.tflint]
 command = ["jj_tflint.sh", "--recursive"]
 patterns = ["glob:'**/*.tf'"]
+
+[fix.tools.tofu-fmt]
+command = ["tofu", "fmt", "-"]
+patterns = ["glob:'**/*.tf'"]

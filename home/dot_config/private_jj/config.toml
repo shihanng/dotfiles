@@ -68,3 +68,7 @@ patterns = ["glob:'**/*'"]
 [fix.tools.markdownlint-cli2]
 command = ["markdownlint-cli2", "--fix", "--format"]
 patterns = ["glob:'**/*.md'"]
+
+[fix.tools.tflint]
+command = ["jj_tflint.sh", "--recursive"]
+patterns = ["glob:'**/*.tf'"]

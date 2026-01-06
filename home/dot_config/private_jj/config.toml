@@ -42,7 +42,7 @@ patterns = [
   "glob:'**/*.astro'",
   "glob:'**/*.jsx'",
   "glob:'**/*.tsx'",
-  "glob:'**/*.json'",
+  "glob:'**/*.json' ~ lazy-lock.json",
   "glob:'**/*.md'",
 ]
 
@@ -52,25 +52,39 @@ patterns = ["glob:'**/*.lua'"]
 
 [fix.tools.luacheck]
 command = [
-  "jj_luacheck.sh",
-  "--formatter",
-  "plain",
-  "--no-color",
-  "--codes",
-  "--ranges",
+  "jjgi",
+  "--on-success-stdout=stdin",
+  "--on-success-stderr=stdout",
+  "--",
+  "luacheck",
+  "-",
 ]
 patterns = ["glob:'**/*.lua'"]
 
 [fix.tools.sort-lines]
-command = ["jj_sort_lines.sh"]
-patterns = ["glob:'**/*'"]
+command = [
+  "jjgi",
+  "--stdin-file",
+  "--on-success-stdout=stdin-file",
+  "--",
+  "sort-lines",
+  "{stdin_file}",
+]
+patterns = ["glob:'**/mise/config.toml'"]
 
 [fix.tools.markdownlint-cli2]
 command = ["markdownlint-cli2", "--fix", "--format"]
 patterns = ["glob:'**/*.md'"]
 
 [fix.tools.tflint]
-command = ["jj_tflint.sh", "--recursive"]
+command = [
+  "jjgi",
+  "--on-success-stdout=stdin",
+  "--on-success-stderr=stdout",
+  "--",
+  "tflint",
+  "--recursive",
+]
 patterns = ["glob:'**/*.tf'"]
 
 [fix.tools.tofu-fmt]

@@ -51,10 +51,6 @@
     "branch": "main",
     "commit": "64463022a1f2ff1318ab22a2ea4125ed9313a483"
   },
-  "firenvim": {
-    "branch": "master",
-    "commit": "a18ef908ac06b52ad9333b70e3e630b0a56ecb3d"
-  },
   "friendly-snippets": {
     "branch": "main",
     "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175"
@@ -150,6 +146,10 @@
   "nvim-dap-virtual-text": {
     "branch": "master",
     "commit": "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6"
+  },
+  "nvim-ghost.nvim": {
+    "branch": "main",
+    "commit": "bdba2a8ad0eec84379d65e7aa9b76a17b11b653a"
   },
   "nvim-lightbulb": {
     "branch": "master",

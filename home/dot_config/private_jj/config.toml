@@ -29,10 +29,12 @@ x = ["util", "exec", "--", "jj-run"]
 [fix.tools.yamlfmt]
 command = ["yamlfmt", "-in"]
 patterns = ["glob:'**/*.yaml' ~ pnpm-lock.yaml", "glob:'**/*.yml'"]
+enabled = false
 
 [fix.tools.taplo-fmt]
 command = ["taplo", "fmt", "--stdin-filepath", "$path", "-"]
 patterns = ["glob:'**/*.toml'"]
+enabled = false
 
 [fix.tools.prettier]
 command = ["prettier", "--stdin-filepath", "$path"]
@@ -45,10 +47,12 @@ patterns = [
   "glob:'**/*.json' ~ lazy-lock.json",
   "glob:'**/*.md'",
 ]
+enabled = false
 
 [fix.tools.stylua]
 command = ["stylua", "--stdin-filepath", "$path", "-"]
 patterns = ["glob:'**/*.lua'"]
+enabled = false
 
 [fix.tools.luacheck]
 command = [
@@ -60,6 +64,7 @@ command = [
   "-",
 ]
 patterns = ["glob:'**/*.lua'"]
+enabled = false
 
 [fix.tools.sort-lines]
 command = [
@@ -71,10 +76,12 @@ command = [
   "{stdin_file}",
 ]
 patterns = ["glob:'**/mise/config.toml'"]
+enabled = false
 
 [fix.tools.markdownlint-cli2]
 command = ["markdownlint-cli2", "--fix", "--format"]
 patterns = ["glob:'**/*.md'"]
+enabled = false
 
 [fix.tools.tflint]
 command = [
@@ -86,7 +93,9 @@ command = [
   "--recursive",
 ]
 patterns = ["glob:'**/*.tf'"]
+enabled = false
 
 [fix.tools.tofu-fmt]
 command = ["tofu", "fmt", "-"]
 patterns = ["glob:'**/*.tf'"]
+enabled = false

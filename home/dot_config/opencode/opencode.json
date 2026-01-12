@@ -24,7 +24,7 @@
     "serena": {
       "type": "local",
       "command": ["serena", "start-mcp-server"],
-      "enabled": true
+      "enabled": false
     },
     "astro_doc": {
       "type": "remote",

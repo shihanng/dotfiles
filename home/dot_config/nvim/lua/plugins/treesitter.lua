@@ -27,7 +27,6 @@ return {
                     "dap_repl",
                     "diff",
                     "git_rebase",
-                    "gitcommit",
                     "go",
                     "gomod",
                     "gosum",

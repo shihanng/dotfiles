@@ -370,6 +370,35 @@ version = "28.3.1"
 backend = "core:erlang"
 "platforms.macos-arm64" = { checksum = "blake3:2ee230687232a78a391613b37b99e1f9c9dc739f943132998dcabbb62d56d5b5"}
 
+[[tools."github:TomWright/dasel"]]
+version = "3.2.1"
+backend = "github:TomWright/dasel"
+"platforms.macos-arm64" = { checksum = "sha256:e2e0e5a119fc488de283a26c477c7c651ff37efe331d531d67c94c91b6c7e8ca", url = "https://github.com/TomWright/dasel/releases/download/v3.2.1/dasel_darwin_arm64", url_api = "https://api.github.com/repos/TomWright/dasel/releases/assets/336552897"}
+
+[[tools."github:ajeetdsouza/zoxide"]]
+version = "0.9.8"
+backend = "github:ajeetdsouza/zoxide"
+"platforms.macos-arm64" = { checksum = "blake3:225180129d7d87f7d55eaaf13b065e8ac95123347734e41c01da13ade4b4664f", url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.8/zoxide-0.9.8-aarch64-apple-darwin.tar.gz", url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/258335957"}
+
+[[tools."github:casey/just"]]
+version = "1.45.0"
+backend = "github:casey/just"
+
+[[tools."github:dandavison/delta"]]
+version = "0.18.2"
+backend = "github:dandavison/delta"
+"platforms.macos-arm64" = { checksum = "blake3:906240593a91488ed036652a41b7b6df4852484e5bcd69e3c0a15e63dea66f89", url = "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-aarch64-apple-darwin.tar.gz", url_api = "https://api.github.com/repos/dandavison/delta/releases/assets/191958441"}
+
+[[tools."github:denisidoro/navi"]]
+version = "2.23.0"
+backend = "github:denisidoro/navi"
+"platforms.macos-arm64" = { checksum = "blake3:2a6a65ddb56750f47b5c109b278cca65c3c6f84b408d5b3fb747bcd2acf37585", url = "https://github.com/denisidoro/navi/releases/download/v2.23.0/navi-v2.23.0-aarch64-apple-darwin.tar.gz", url_api = "https://api.github.com/repos/denisidoro/navi/releases/assets/139913839"}
+
+[[tools."github:getsops/sops"]]
+version = "3.11.0"
+backend = "github:getsops/sops"
+"platforms.macos-arm64" = { checksum = "sha256:45e7562b1f5d022c4d7a4e4c3d1b7b1a7ee6c328356629286cfd18a394b00e7c", url = "https://github.com/getsops/sops/releases/download/v3.11.0/sops-v3.11.0.darwin.arm64", url_api = "https://api.github.com/repos/getsops/sops/releases/assets/298210444"}
+
 [[tools."github:grafana/jsonnet-language-server"]]
 version = "0.16.0"
 backend = "github:grafana/jsonnet-language-server"
@@ -379,10 +408,60 @@ backend = "github:grafana/jsonnet-language-server"
 "platforms.macos-x64" = { checksum = "sha256:f37d57fcf851e18fecc3b3867a8e06305ee315e01a9430bf5448438eff86736c", url = "https://github.com/grafana/jsonnet-language-server/releases/download/v0.16.0/jsonnet-language-server_0.16.0_darwin_amd64", url_api = "https://api.github.com/repos/grafana/jsonnet-language-server/releases/assets/258676863"}
 "platforms.windows-x64" = { checksum = "sha256:53d233a1927afa52f39a2ae5396dc7ffeb13283b5f13edfa6dfdc1f41e71199b", url = "https://github.com/grafana/jsonnet-language-server/releases/download/v0.16.0/jsonnet-language-server_0.16.0_windows_amd64.exe", url_api = "https://api.github.com/repos/grafana/jsonnet-language-server/releases/assets/258676872"}
 
+[[tools."github:hmarr/codeowners"]]
+version = "1.2.1"
+backend = "github:hmarr/codeowners"
+"platforms.macos-arm64" = { checksum = "sha256:1a271d2a3960491d7fceffdca741e7a3830cb2ab5013723ed8f9efe04dd3d9c1", url = "https://github.com/hmarr/codeowners/releases/download/v1.2.1/codeowners_1.2.1_darwin_arm64.tar.gz", url_api = "https://api.github.com/repos/hmarr/codeowners/releases/assets/176113222"}
+
+[[tools."github:houseabsolute/ubi"]]
+version = "0.9.0"
+backend = "github:houseabsolute/ubi"
+"platforms.macos-arm64" = { checksum = "sha256:71778c8593a74889deab3224261b2abd662652fd0363ba8c89ec0f68bfb43e4c", url = "https://github.com/houseabsolute/ubi/releases/download/v0.9.0/ubi-macOS-arm64.tar.gz", url_api = "https://api.github.com/repos/houseabsolute/ubi/releases/assets/338967412"}
+
+[[tools."github:idursun/jjui"]]
+version = "0.9.9"
+backend = "github:idursun/jjui"
+"platforms.macos-arm64" = { checksum = "sha256:d4b6e697ab45b7acd0c4cf9c31b6e77e1f6162fc8d4940f2bd2a878989371bca", url = "https://github.com/idursun/jjui/releases/download/v0.9.9/jjui-0.9.9-darwin-arm64.zip", url_api = "https://api.github.com/repos/idursun/jjui/releases/assets/338114067"}
+
+[[tools."github:jdx/usage"]]
+version = "2.12.0"
+backend = "github:jdx/usage"
+"platforms.macos-arm64" = { checksum = "sha256:5a9ae96cd700fce9de129c91e4e816698dfee854189cc3a180b3986746bcd1d4", url = "https://github.com/jdx/usage/releases/download/v2.12.0/usage-universal-apple-darwin.tar.gz", url_api = "https://api.github.com/repos/jdx/usage/releases/assets/340537732"}
+
+[[tools."github:koalaman/shellcheck"]]
+version = "latest"
+backend = "github:koalaman/shellcheck"
+"platforms.macos-arm64" = { checksum = "sha256:68018f89f6e3c1d8b007be0cb208583183d6a6ea8521acb84f3790268d08ee09", url = "https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.darwin.aarch64.tar.gz", url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/336786134"}
+
+[[tools."github:sharkdp/bat"]]
+version = "0.26.1"
+backend = "github:sharkdp/bat"
+"platforms.macos-arm64" = { checksum = "sha256:e30beff26779c9bf60bb541e1d79046250cb74378f2757f8eb250afddb19e114", url = "https://github.com/sharkdp/bat/releases/download/v0.26.1/bat-v0.26.1-aarch64-apple-darwin.tar.gz", url_api = "https://api.github.com/repos/sharkdp/bat/releases/assets/323548442"}
+
 [[tools."github:shihanng/jjgi"]]
 version = "0.4.0"
 backend = "github:shihanng/jjgi"
 "platforms.macos-arm64" = { checksum = "sha256:7b67e51138edfc95618d461e816d5b106a80997ed6f82b8d09ba39484ff2f27d", url = "https://github.com/shihanng/jjgi/releases/download/v0.4.0/jjgi-aarch64-apple-darwin.tar.xz", url_api = "https://api.github.com/repos/shihanng/jjgi/releases/assets/339035227"}
+
+[[tools."github:supabase-community/postgres-language-server"]]
+version = "0.19.0"
+backend = "github:supabase-community/postgres-language-server[exe=postgrestools]"
+"platforms.macos-arm64" = { checksum = "sha256:6a103aef1370f28573b9eeb4c4f8ef2d5ceb51a7a6b6ef63d51a40f5c372306e", url = "https://github.com/supabase-community/postgres-language-server/releases/download/0.19.0/postgres-language-server_aarch64-apple-darwin", url_api = "https://api.github.com/repos/supabase-community/postgres-language-server/releases/assets/339903850"}
+
+[[tools."github:tamasfe/taplo"]]
+version = "0.10.0"
+backend = "github:tamasfe/taplo"
+"platforms.macos-arm64" = { checksum = "blake3:353ecb1ed7d279dec5e2fd388d292ef97db08a651405fa664ffec1b2896c05f0", url = "https://github.com/tamasfe/taplo/releases/download/0.10.0/taplo-darwin-aarch64.gz", url_api = "https://api.github.com/repos/tamasfe/taplo/releases/assets/257323110"}
+
+[[tools."github:xo/usql"]]
+version = "0.20.8"
+backend = "github:xo/usql"
+"platforms.macos-arm64" = { checksum = "sha256:f6cd8463c639835b7a7c6cd2e05232814f98e5a2e9081975bb48a7a2ae83dc94", url = "https://github.com/xo/usql/releases/download/v0.20.8/usql-0.20.8-darwin-arm64.tar.bz2", url_api = "https://api.github.com/repos/xo/usql/releases/assets/338928973"}
+
+[[tools."github:zellij-org/zellij"]]
+version = "0.43.1"
+backend = "github:zellij-org/zellij"
+"platforms.macos-arm64" = { checksum = "sha256:a09ea51f3d98427253de2b889bb04f1aa0850fbb034911c7a01b8f0194edba66", url = "https://github.com/zellij-org/zellij/releases/download/v0.43.1/zellij-aarch64-apple-darwin.tar.gz", url_api = "https://api.github.com/repos/zellij-org/zellij/releases/assets/280627268"}
 
 [[tools.go]]
 version = "1.25.6"

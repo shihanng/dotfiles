@@ -113,7 +113,6 @@ experimental = true
 "pipx:basedpyright" = "latest"
 "pipx:chromadb" = "0.6.3"
 "pipx:debugpy" = "latest"
-"pipx:git+https://github.com/neongreen/jj-run.git" = "latest"
 "pipx:git+https://github.com/oraios/serena.git" = "9cf5ee2"
 "pipx:harlequin" = { version = "latest", extras = "postgres,s3" }
 "pipx:invoke" = "latest"

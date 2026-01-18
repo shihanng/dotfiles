@@ -665,6 +665,10 @@ backend = "npm:@upstash/context7-mcp"
 version = "5.6.0"
 backend = "npm:bash-language-server"
 
+[[tools."npm:chrome-devtools-mcp"]]
+version = "0.13.0"
+backend = "npm:chrome-devtools-mcp"
+
 [[tools."npm:eslint_d"]]
 version = "14.3.0"
 backend = "npm:eslint_d"

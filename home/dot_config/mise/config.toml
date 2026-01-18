@@ -127,3 +127,4 @@ experimental = true
 "pipx:zuban" = "latest"
 "prek" = "latest"
 "python" = "latest"
+"npm:chrome-devtools-mcp" = "latest"

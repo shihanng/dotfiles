@@ -56,6 +56,11 @@
         "postgres://postgres@localhost:5432/postgres?sslmode=disable"
       ],
       "enabled": false
+    },
+    "chrome": {
+      "type": "local",
+      "command": ["chrome-devtools-mcp"],
+      "enabled": false
     }
   },
   "lsp": {

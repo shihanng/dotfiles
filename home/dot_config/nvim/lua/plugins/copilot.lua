@@ -98,61 +98,95 @@ return {
                         submit = true,
                     },
                 },
+                -- Custom Zellij provider
+                provider = {
+                    cmd = "opencode --port",
+                    pane_name = nil, -- Track the pane name
+
+                    -- Health check: verify zellij is available and we're in a session
+                    health = function()
+                        if vim.fn.executable("zellij") ~= 1 then
+                            return "`zellij` executable not found in `$PATH`.",
+                                {
+                                    "Install `zellij` and ensure it's in your `$PATH`.",
+                                }
+                        end
+                        if not vim.env.ZELLIJ then
+                            return "Not running inside a `zellij` session.",
+                                {
+                                    "Launch Neovim inside a `zellij` session.",
+                                }
+                        end
+                        return true
+                    end,
+
+                    -- Start OpenCode in a new Zellij pane
+                    start = function(self)
+                        if not self.pane_name then
+                            self.pane_name = "opencode_" .. vim.fn.getpid()
+
+                            vim.fn.system({
+                                "zellij",
+                                "action",
+                                "new-pane",
+                                "--name=" .. vim.fn.shellescape(self.pane_name),
+                                "--direction=right",
+                                "--close-on-exit",
+                                "--",
+                                "zsh",
+                                "-i",
+                                "-c",
+                                self.cmd,
+                            })
+                            vim.fn.system({
+                                "zellij",
+                                "action",
+                                "focus-previous-pane",
+                            })
+                        end
+                    end,
+
+                    -- Toggle does not do anything
+                    toggle = function(_self) end,
+
+                    -- Stop does not do anything
+                    stop = function(_self) end,
+                },
             }
 
             -- Required for `vim.g.opencode_opts.auto_reload`.
             vim.o.autoread = true
 
-            -- Recommended/example keymaps.
             vim.keymap.set(
                 { "n", "x" },
                 "<leader>oa",
                 function() require("opencode").ask("@this: ", { submit = true }) end,
-                { desc = "Ask about this" }
+                { desc = "Ask opencode…" }
             )
             vim.keymap.set(
                 { "n", "x" },
                 "<leader>os",
                 function() require("opencode").select() end,
-                { desc = "Select prompt" }
+                { desc = "Execute opencode action…" }
             )
+            vim.keymap.set(
+                { "n", "t" },
+                "<leader>ot",
+                function() require("opencode").toggle() end,
+                { desc = "Toggle opencode" }
+            )
+
             vim.keymap.set(
                 { "n", "x" },
-                "<leader>o+",
-                function() require("opencode").prompt("@this") end,
-                { desc = "Add this" }
-            )
-            vim.keymap.set("n", "<leader>ot", function() require("opencode").toggle() end, { desc = "Toggle embedded" })
-            vim.keymap.set("n", "<leader>oc", function() require("opencode").command() end, { desc = "Select command" })
-            vim.keymap.set(
-                "n",
-                "<leader>on",
-                function() require("opencode").command("session_new") end,
-                { desc = "New session" }
+                "go",
+                function() return require("opencode").operator("@this ") end,
+                { desc = "Add range to opencode", expr = true }
             )
             vim.keymap.set(
                 "n",
-                "<leader>oi",
-                function() require("opencode").command("session_interrupt") end,
-                { desc = "Interrupt session" }
-            )
-            vim.keymap.set(
-                "n",
-                "<leader>oA",
-                function() require("opencode").command("agent_cycle") end,
-                { desc = "Cycle selected agent" }
-            )
-            vim.keymap.set(
-                "n",
-                "<S-C-u>",
-                function() require("opencode").command("messages_half_page_up") end,
-                { desc = "Messages half page up" }
-            )
-            vim.keymap.set(
-                "n",
-                "<S-C-d>",
-                function() require("opencode").command("messages_half_page_down") end,
-                { desc = "Messages half page down" }
+                "goo",
+                function() return require("opencode").operator("@this ") .. "_" end,
+                { desc = "Add line to opencode", expr = true }
             )
 
             -- Listen for `opencode` events

@@ -349,6 +349,7 @@ return {
                 ["yaml.github"] = { "actionlint" },
                 ["jsonnet"] = { "jsonnet_lint" },
 
+                ["astro"] = { "eslint_d" },
                 ["javascript"] = { "eslint_d" },
                 ["javascriptreact"] = { "eslint_d" },
                 ["typescript"] = { "eslint_d" },

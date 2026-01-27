@@ -244,6 +244,8 @@ plugins {
         list_panes ""
         plugin_select_down "Ctrl n"
         plugin_select_up "Ctrl p"
+        next_star "Ctrl '"
+        previous_star "Ctrl ;"
     }
     zjstatus-hints location="https://github.com/b0o/zjstatus-hints/releases/latest/download/zjstatus-hints.wasm" {
         max_length 0

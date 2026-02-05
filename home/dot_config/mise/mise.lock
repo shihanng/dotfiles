@@ -651,7 +651,7 @@ version = "latest"
 backend = "pipx:git+https://github.com/neongreen/jj-run.git"
 
 [[tools."pipx:git+https://github.com/oraios/serena.git"]]
-version = "v0.1.4"
+version = "9cf5ee2"
 backend = "pipx:git+https://github.com/oraios/serena.git"
 
 [[tools."pipx:harlequin"]]

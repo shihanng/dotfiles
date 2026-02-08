@@ -33,11 +33,11 @@ item = "Git Commit"
 vault = "Personal"
 
 [[ssh-keys]]
-item = "pi-hole-1"
+item = "DietPi - pi-hole-1"
 vault = "homelab"
 
 [[ssh-keys]]
-item = "pi-hole-2"
+item = "DietPi - pi-hole-2"
 vault = "homelab"
 
 [[ssh-keys]]

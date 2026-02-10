@@ -374,6 +374,11 @@ backend = "github:denisidoro/navi"
 "platforms.macos-x64" = { url = "https://github.com/denisidoro/navi/releases/download/v2.23.0/navi-v2.23.0-x86_64-apple-darwin.tar.gz", url_api = "https://api.github.com/repos/denisidoro/navi/releases/assets/139913832"}
 "platforms.windows-x64" = { url = "https://github.com/denisidoro/navi/releases/download/v2.23.0/navi-v2.23.0-x86_64-pc-windows-gnu.zip", url_api = "https://api.github.com/repos/denisidoro/navi/releases/assets/139913797"}
 
+[[tools."github:derailed/k9s"]]
+version = "0.50.18"
+backend = "github:derailed/k9s"
+"platforms.macos-arm64" = { checksum = "sha256:68ff1541c60620466989019e86101805c1b6c70a746b1561261a403801f7fd48", url = "https://github.com/derailed/k9s/releases/download/v0.50.18/k9s_Darwin_arm64.tar.gz", url_api = "https://api.github.com/repos/derailed/k9s/releases/assets/339162567"}
+
 [[tools."github:getsops/sops"]]
 version = "3.11.0"
 backend = "github:getsops/sops"

@@ -64,6 +64,7 @@ experimental = true
 "github:casey/just" = "latest"
 "github:dandavison/delta" = "latest"
 "github:denisidoro/navi" = "2.23.0"
+"github:derailed/k9s" = "latest"
 "github:getsops/sops" = "latest"
 "github:grafana/jsonnet-language-server" = "latest"
 "github:hmarr/codeowners" = "latest"

@@ -1,8 +1,10 @@
 shell: zsh
 configs:
   include:
-    - ~/.kube/config
-    - ~/.kube/mtfuji-prod
+    - ~/.kube/*.yml
+    - ~/.kube/*.yaml
+  exclude:
+    - ~/.kube/kubie.yaml
 behavior:
   validate_namespaces: false
 prompt:

@@ -23,6 +23,7 @@ experimental = true
 "aqua:google/yamlfmt" = "latest"
 "aqua:hashicorp/terraform" = "latest"
 "aqua:hashicorp/terraform-ls" = "latest"
+"aqua:helm/helm" = "latest"
 "aqua:jesseduffield/lazygit" = "latest"
 "aqua:jj-vcs/jj" = "latest"
 "aqua:jqlang/jq" = "latest"

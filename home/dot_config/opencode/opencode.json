@@ -59,7 +59,12 @@
     },
     "chrome": {
       "type": "local",
-      "command": ["chrome-devtools-mcp"],
+      "command": [
+        "chrome-devtools-mcp",
+        "--no-usage-statistics",
+        "--isolated",
+        "--headless"
+      ],
       "enabled": false
     }
   },

@@ -309,6 +309,7 @@ return {
                 mdx = { "prettier" },
                 typescript = { "prettierd" },
                 typescriptreact = { "prettierd" },
+                ["_"] = { "trim_whitespace" },
             },
             default_format_opts = {
                 lsp_format = "never",

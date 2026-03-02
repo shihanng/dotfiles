@@ -81,8 +81,20 @@ dlv debug -l 127.0.0.1:38697 --headless ./main.go -- subcommand --myflag=xyz
 # Start debugpy and wait for client
 uv n debugpy --listen 5678 --wait-for-client manage.py shell
 
-# Create worktree for PR without switching current branch
-git fetch upstream pull/<pr_number>/head:pr-<pr_number> && git worktree add <project_root>/../"$(basename <project_root>)"-<pr_number> <branch_name>
+# Create worktree from branch
+branch_path=<project_root>/../"$(basename <project_root>)"__<branch_dir>
+git worktree add "${branch_path}" <branch>
+zoxide add "${branch_path}"
 
-$ project_root: git rev-parse --show-toplevel
-$ branch_name: echo pr-<pr_number>
+# Create worktree from PR
+PR_NUMBER=<pr_number>
+BRANCH=$(gh pr view $PR_NUMBER --json headRefName -q .headRefName)
+git fetch origin pull/$PR_NUMBER/head:$BRANCH
+git branch --set-upstream-to=origin/${BRANCH} ${BRANCH}
+branch_path=<project_root>/../"$(basename <project_root>)__${PR_NUMBER}"
+git worktree add "${branch_path}" $BRANCH
+zoxide add "${branch_path}"
+
+$ project_root: git worktree list | awk 'NR==1 {print $1}'
+$ branch: git branch | awk '{print $NF}'
+$ branch_dir: echo <branch> | tr '/' '-'

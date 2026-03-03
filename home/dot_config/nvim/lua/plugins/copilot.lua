@@ -1,3 +1,4 @@
+local lsp = require("vim.lsp")
 return {
     {
         "zbirenbaum/copilot.lua",
@@ -97,6 +98,9 @@ return {
                         prompt = "@grammarly, help me improve @this.",
                         submit = true,
                     },
+                },
+                lsp = {
+                    enabled = true,
                 },
             }
 

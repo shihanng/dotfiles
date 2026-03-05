@@ -212,6 +212,7 @@ ctrl-1 = 'move-node-to-workspace --focus-follows-window 1'
 ctrl-2 = 'move-node-to-workspace --focus-follows-window 2'
 ctrl-3 = 'move-node-to-workspace --focus-follows-window 3'
 ctrl-4 = 'move-node-to-workspace --focus-follows-window 4'
+ctrl-0 = 'move-node-to-workspace --focus-follows-window 0'
 ctrl-alt-n = 'move-node-to-monitor --wrap-around --focus-follows-window next'
 ctrl-alt-p = 'move-node-to-monitor --wrap-around --focus-follows-window prev'
 

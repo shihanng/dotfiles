@@ -61,6 +61,7 @@ experimental = true
 "deno" = "latest"
 "erlang" = "latest"
 "github:TomWright/dasel" = "latest"
+"github:Wilfred/difftastic" = "latest"
 "github:ajeetdsouza/zoxide" = "latest"
 "github:casey/just" = "latest"
 "github:dandavison/delta" = "latest"

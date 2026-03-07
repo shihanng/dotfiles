@@ -26,6 +26,9 @@ gui:
 
 git:
   overrideGpg: true
+  pagers:
+    - pager: delta --paging=never
+    - useExternalDiffGitConfig: true
 
 keybinding:
   universal:

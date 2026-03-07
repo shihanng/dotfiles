@@ -323,6 +323,15 @@ version = "3.3.1"
 backend = "github:TomWright/dasel"
 "platforms.macos-arm64" = { checksum = "sha256:b79ac80432013667e1a1323d4a511511a9df8cbc25545fe0493dde92fc43f024", url = "https://github.com/TomWright/dasel/releases/download/v3.3.1/dasel_darwin_arm64", url_api = "https://api.github.com/repos/TomWright/dasel/releases/assets/362941171"}
 
+[[tools."github:Wilfred/difftastic"]]
+version = "0.67.0"
+backend = "github:Wilfred/difftastic"
+"platforms.linux-arm64" = { checksum = "sha256:e36f746fbf5d37c68c1d760878fdb77778066c6a646253bb8d9ae7d3fe84c81b", url = "https://github.com/Wilfred/difftastic/releases/download/0.67.0/difft-aarch64-unknown-linux-gnu.tar.gz", url_api = "https://api.github.com/repos/Wilfred/difftastic/releases/assets/317092398"}
+"platforms.linux-x64" = { checksum = "sha256:61c17cfc6525236529f075821073cc0d8a65ae5abe1b81e9b24d9f36797b6b59", url = "https://github.com/Wilfred/difftastic/releases/download/0.67.0/difft-x86_64-unknown-linux-gnu.tar.gz", url_api = "https://api.github.com/repos/Wilfred/difftastic/releases/assets/317091842"}
+"platforms.macos-arm64" = { checksum = "sha256:cdb1d74f2b0f37df3bce7a9ac09d8ecd0d2d94530627516ff9b12f25d187a555", url = "https://github.com/Wilfred/difftastic/releases/download/0.67.0/difft-aarch64-apple-darwin.tar.gz", url_api = "https://api.github.com/repos/Wilfred/difftastic/releases/assets/317092065"}
+"platforms.macos-x64" = { checksum = "sha256:83cc28d781f11b7fc2723b73ded623cf97a70a0849dff1efa39d1864adfdac54", url = "https://github.com/Wilfred/difftastic/releases/download/0.67.0/difft-x86_64-apple-darwin.tar.gz", url_api = "https://api.github.com/repos/Wilfred/difftastic/releases/assets/317091488"}
+"platforms.windows-x64" = { checksum = "sha256:5fd7aa37ce90f838fb91f6e4b2765ac9cad0a7e9d1dccc5b19529fd6b4cbf8b4", url = "https://github.com/Wilfred/difftastic/releases/download/0.67.0/difft-x86_64-pc-windows-msvc.zip", url_api = "https://api.github.com/repos/Wilfred/difftastic/releases/assets/317092188"}
+
 [[tools."github:ajeetdsouza/zoxide"]]
 version = "0.9.9"
 backend = "github:ajeetdsouza/zoxide"

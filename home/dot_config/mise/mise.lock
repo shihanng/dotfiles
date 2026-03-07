@@ -120,6 +120,15 @@ version = "4.1.1"
 backend = "aqua:helm/helm"
 "platforms.macos-arm64" = { checksum = "sha256:b8f49e105b1d2fd8c8a90ba3fc9af48db91d2d1ca3b9e788352fc7c896bbb71a", url = "https://get.helm.sh/helm-v4.1.1-darwin-arm64.tar.gz"}
 
+[[tools."aqua:idursun/jjui"]]
+version = "0.9.12"
+backend = "aqua:idursun/jjui"
+"platforms.linux-arm64" = { checksum = "sha256:7652118d17fdb57f0240877c9a5343b0d114f64f6ba584f8142b786dac60d849", url = "https://github.com/idursun/jjui/releases/download/v0.9.12/jjui-0.9.12-linux-arm64.zip"}
+"platforms.linux-x64" = { checksum = "sha256:8a934e844be06109d764deae2696799cb371df2fc67c2ecaa0b8d8976e480fbf", url = "https://github.com/idursun/jjui/releases/download/v0.9.12/jjui-0.9.12-linux-amd64.zip"}
+"platforms.macos-arm64" = { checksum = "sha256:93864431ca20bc8323fa75ed59fb6489edd90f4de4c78f21bdd4f17c3d1679f2", url = "https://github.com/idursun/jjui/releases/download/v0.9.12/jjui-0.9.12-darwin-arm64.zip"}
+"platforms.macos-x64" = { checksum = "sha256:fa50c320fa943fd71c503bb451837abd937aed8d9ee9f241f8b657a7035fa9c8", url = "https://github.com/idursun/jjui/releases/download/v0.9.12/jjui-0.9.12-darwin-amd64.zip"}
+"platforms.windows-x64" = { checksum = "sha256:dc2d2ba9875b947871c4e05149020ad3099283532004e708232e81c8dbced998", url = "https://github.com/idursun/jjui/releases/download/v0.9.12/jjui-0.9.12-windows-amd64.zip"}
+
 [[tools."aqua:jesseduffield/lazygit"]]
 version = "0.59.0"
 backend = "aqua:jesseduffield/lazygit"
@@ -395,11 +404,6 @@ backend = "github:houseabsolute/ubi"
 "platforms.macos-arm64" = { checksum = "sha256:71778c8593a74889deab3224261b2abd662652fd0363ba8c89ec0f68bfb43e4c", url = "https://github.com/houseabsolute/ubi/releases/download/v0.9.0/ubi-macOS-arm64.tar.gz", url_api = "https://api.github.com/repos/houseabsolute/ubi/releases/assets/338967412"}
 "platforms.macos-x64" = { checksum = "sha256:ed0398b2ce51233e4fad73a2b0e77601578b2b3a2d3d2ec9b3834e0941a7e516", url = "https://github.com/houseabsolute/ubi/releases/download/v0.9.0/ubi-macOS-x86_64.tar.gz", url_api = "https://api.github.com/repos/houseabsolute/ubi/releases/assets/338967587"}
 "platforms.windows-x64" = { checksum = "sha256:071209bfd2beb0f6eeb85f46f26a24dc71cf5b239a20be4f8d6d921e65e41f00", url = "https://github.com/houseabsolute/ubi/releases/download/v0.9.0/ubi-Windows-msvc-x86_64.zip", url_api = "https://api.github.com/repos/houseabsolute/ubi/releases/assets/338967503"}
-
-[[tools."github:idursun/jjui"]]
-version = "0.9.12"
-backend = "github:idursun/jjui"
-"platforms.macos-arm64" = { checksum = "sha256:93864431ca20bc8323fa75ed59fb6489edd90f4de4c78f21bdd4f17c3d1679f2", url = "https://github.com/idursun/jjui/releases/download/v0.9.12/jjui-0.9.12-darwin-arm64.zip", url_api = "https://api.github.com/repos/idursun/jjui/releases/assets/357583338"}
 
 [[tools."github:jdx/usage"]]
 version = "2.18.2"

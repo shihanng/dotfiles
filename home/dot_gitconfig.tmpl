@@ -41,8 +41,11 @@
     tool = vimdiff
 
 [merge]
-    tool = vimdif
-    conflictstyle = zdiff3 
+    tool = nvim
+    conflictstyle = zdiff3
+
+[mergetool "nvim"]
+    cmd = nvim "$MERGED" -c "CodeDiff merge \"$MERGED\""
 
 [difftool]
     prompt = false
@@ -50,6 +53,10 @@
 # https://stackoverflow.com/a/50042202/6549460
 [difftool "vimdiff"]
     cmd = vim -f -d -c 'wincmd l' -c 'cd "$GIT_PREFIX"' "$LOCAL" "$REMOTE"
+
+[difftool "nvim"]
+    # Usage: git difftool trunk... -t nvim
+    cmd = nvim -d "$LOCAL" "$REMOTE" +"CodeDiff file $LOCAL $REMOTE"
 
 [url "https://github.com"]
     insteadOf = git://github.com

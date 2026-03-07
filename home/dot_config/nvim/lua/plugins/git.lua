@@ -9,6 +9,10 @@ return {
         end,
     },
     {
+        "esmuellert/codediff.nvim",
+        cmd = "CodeDiff",
+    },
+    {
         "julienvincent/hunk.nvim",
         dependencies = { "MunifTanjim/nui.nvim" },
         cmd = { "DiffEditor" },

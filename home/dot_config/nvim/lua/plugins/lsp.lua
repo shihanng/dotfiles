@@ -294,7 +294,7 @@ return {
                 sh = { lsp_format = "first" },
                 sql = { "sqlfluff" },
                 terraform = { lsp_format = "first" },
-                toml = { lsp_format = "first" },
+                toml = { "taplo" },
                 ["yaml.ansible"] = { "ansible-lint" },
                 yaml = { lsp_format = "first" },
 

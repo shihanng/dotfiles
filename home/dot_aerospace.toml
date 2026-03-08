@@ -10,7 +10,7 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    'exec-and-forget borders active_color=0x96ea76cb width=5.0 blur_radius=10 inactive_color=0x00440a02b',
+  'exec-and-forget borders active_color=0x96ea76cb width=5.0 blur_radius=10 inactive_color=0x00440a02b',
 ]
 
 # Start AeroSpace at login
@@ -188,11 +188,11 @@ ctrl-alt-m = 'mode mover'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.mover.binding]
 r = [
-    "layout tiling",
-    "flatten-workspace-tree",
-    "layout tiles horizontal vertical",
-    "balance-sizes",
-    'mode main',
+  "layout tiling",
+  "flatten-workspace-tree",
+  "layout tiles horizontal vertical",
+  "balance-sizes",
+  'mode main',
 ] # reset layout
 esc = 'mode main'
 

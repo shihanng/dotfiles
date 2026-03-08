@@ -16,7 +16,20 @@ return {
         "julienvincent/hunk.nvim",
         dependencies = { "MunifTanjim/nui.nvim" },
         cmd = { "DiffEditor" },
-        config = function() require("hunk").setup() end,
+        config = function()
+            require("hunk").setup({
+                keys = {
+                    global = {
+                        quit = { "<C-c>" },
+                    },
+                },
+                ui = {
+                    tree = {
+                        mode = "flat",
+                    },
+                },
+            })
+        end,
     },
     { "avm99963/vim-jjdescription" },
     { "rafikdraoui/jj-diffconflicts" },

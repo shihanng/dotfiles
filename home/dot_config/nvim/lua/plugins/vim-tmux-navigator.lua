@@ -1,6 +1,6 @@
 return {
     {
-        "https://github.com/shihanng/zellij-nav.nvim",
+        "swaits/zellij-nav.nvim",
         lazy = true,
         event = "VeryLazy",
         keys = {

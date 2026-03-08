@@ -1,4 +1,3 @@
-local lsp = require("vim.lsp")
 return {
     {
         "zbirenbaum/copilot.lua",

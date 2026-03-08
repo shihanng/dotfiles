@@ -28,6 +28,9 @@ merge-tool-edits-conflict-markers = true
 push = ["util", "exec", "--", "jj-pre-push", "push"]
 x = ["util", "exec", "--", "jj-run"]
 
+[templates]
+draft_commit_description = "builtin_draft_commit_description_with_diff"
+
 [fix.tools.yamlfmt]
 command = ["yamlfmt", "-in"]
 patterns = ["glob:'**/*.yaml' ~ pnpm-lock.yaml", "glob:'**/*.yml'"]

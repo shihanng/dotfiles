@@ -115,7 +115,7 @@ experimental = true
 "pipx:ansible-lint" = "latest"
 "pipx:asciinema" = "latest"
 "pipx:basedpyright" = "latest"
-"pipx:chromadb" = "1.5.2"
+"pipx:chromadb" = "1.5.4"
 "pipx:debugpy" = "latest"
 "pipx:git+https://github.com/oraios/serena.git" = "v0"
 "pipx:harlequin" = { version = "latest", extras = "postgres,s3" }

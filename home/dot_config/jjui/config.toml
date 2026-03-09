@@ -1,2 +1,4 @@
-[keys]
-quit = ["ctrl+c"]
+[[bindings]]
+action = "ui.quit"
+key = ["ctrl+c"]
+scope = "ui"

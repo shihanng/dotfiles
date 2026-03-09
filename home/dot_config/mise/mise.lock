@@ -179,7 +179,6 @@ url = "https://github.com/astral-sh/ruff/releases/download/0.15.5/ruff-x86_64-un
 [tools."aqua:astral-sh/ruff"."platforms.macos-arm64"]
 checksum = "sha256:f39400f9504c940fa4eb46b02e2d4889a9f86b81ce4c57bda02ea3568894d094"
 url = "https://github.com/astral-sh/ruff/releases/download/0.15.5/ruff-aarch64-apple-darwin.tar.gz"
-provenance = "github-attestations"
 
 [tools."aqua:astral-sh/ruff"."platforms.macos-x64"]
 checksum = "sha256:1e01b0d6354f14dac0f4de7a89488d18e00f8aa37ce3635b55bcaf1357b2a375"
@@ -212,7 +211,6 @@ url = "https://github.com/astral-sh/uv/releases/download/0.10.9/uv-x86_64-unknow
 [tools."aqua:astral-sh/uv"."platforms.macos-arm64"]
 checksum = "sha256:a92f61e9ac9b0f29668c15f56152e4a60143fca148ff5bfadb86718472c3f376"
 url = "https://github.com/astral-sh/uv/releases/download/0.10.9/uv-aarch64-apple-darwin.tar.gz"
-provenance = "github-attestations"
 
 [tools."aqua:astral-sh/uv"."platforms.macos-x64"]
 checksum = "sha256:9cc2de7d195fa157f98b306a8a1cb151ded93f488939b93363cebc8b9d598c28"
@@ -453,7 +451,6 @@ url = "https://github.com/golangci/golangci-lint/releases/download/v2.11.2/golan
 [tools."aqua:golangci/golangci-lint"."platforms.macos-arm64"]
 checksum = "sha256:11e9549b955bae4bfb71aa3b5c2762e446e2d3f975fe963d6d767b8f745d9344"
 url = "https://github.com/golangci/golangci-lint/releases/download/v2.11.2/golangci-lint-2.11.2-darwin-arm64.tar.gz"
-provenance = "github-attestations"
 
 [tools."aqua:golangci/golangci-lint"."platforms.macos-x64"]
 checksum = "sha256:1dbbbe745eadba9cf012d49bd0b8c9290cbcb50dbf2cf9611f75a715b46ae3af"
@@ -1889,6 +1886,40 @@ url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/3363
 checksum = "sha256:8a4e35ab0b331c85d73567b12f2a444df187f483e5079ceffa6bda1faa2e740e"
 url = "https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.zip"
 url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/279056944"
+
+[[tools."github:koalaman/shellcheck"]]
+version = "latest"
+backend = "github:koalaman/shellcheck"
+
+[tools."github:koalaman/shellcheck"."platforms.linux-arm64"]
+checksum = "sha256:685490d147ecf8b3a9b7c2a02c6c1ef2e32fbf1510b4f9aca6b921cebb140c34"
+url = "https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.linux.aarch64.tar.gz"
+url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/349226171"
+
+[tools."github:koalaman/shellcheck"."platforms.linux-arm64-musl"]
+checksum = "sha256:685490d147ecf8b3a9b7c2a02c6c1ef2e32fbf1510b4f9aca6b921cebb140c34"
+url = "https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.linux.aarch64.tar.gz"
+url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/349226171"
+
+[tools."github:koalaman/shellcheck"."platforms.linux-x64"]
+checksum = "sha256:c1ff2d56a01bbc1dcb25bf1b3e5f959a42664efebd27d0c30be6e58b32b0397a"
+url = "https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.linux.x86_64.tar.gz"
+url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/349226188"
+
+[tools."github:koalaman/shellcheck"."platforms.linux-x64-musl"]
+checksum = "sha256:c1ff2d56a01bbc1dcb25bf1b3e5f959a42664efebd27d0c30be6e58b32b0397a"
+url = "https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.linux.x86_64.tar.gz"
+url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/349226188"
+
+[tools."github:koalaman/shellcheck"."platforms.macos-arm64"]
+checksum = "sha256:4d094ac4292996c8bc782b86c7fc62be0286ee9af971f8b1c2add1bb37f30b2a"
+url = "https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.darwin.aarch64.tar.gz"
+url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/349226173"
+
+[tools."github:koalaman/shellcheck"."platforms.macos-x64"]
+checksum = "sha256:963b5fa52e4a79fd6466e67b5adb3059b17d05b21df97fd5c70e43b4650aa6cd"
+url = "https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.darwin.x86_64.tar.gz"
+url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/349226175"
 
 [[tools."github:sharkdp/bat"]]
 version = "0.26.1"

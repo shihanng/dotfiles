@@ -14,4 +14,10 @@ function setup(config)
             scope = scope,
         })
     end
+
+    config.action("copy-file-path", function()
+        local file = context.file()
+        copy_to_clipboard(file)
+        flash("Copied: " .. file)
+    end, { desc = "Copy file path", key = "ctrl+o", scope = "revisions.details" })
 end

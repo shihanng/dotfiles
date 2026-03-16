@@ -1,4 +1,0 @@
-[[bindings]]
-action = "ui.quit"
-key = ["ctrl+c"]
-scope = "ui"

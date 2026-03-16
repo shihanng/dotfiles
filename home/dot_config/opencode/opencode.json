@@ -1,6 +1,15 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "github-copilot/claude-sonnet-4.5",
+  "model": "github-copilot-enterprise/claude-sonnet-4.6",
+  "default_agent": "plan",
+  "agent": {
+    "plan": {
+      "model": "github-copilot-enterprise/claude-opus-4.6"
+    },
+    "build": {
+      "model": "github-copilot-enterprise/claude-sonnet-4.6"
+    }
+  },
   "mcp": {
     "memory": {
       "type": "local",

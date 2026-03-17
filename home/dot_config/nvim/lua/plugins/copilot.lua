@@ -94,7 +94,7 @@ return {
                         submit = true,
                     },
                     grammarly = {
-                        prompt = "@grammarly, help me improve @this.",
+                        prompt = "@content-proofreader, proofread @this.",
                         submit = true,
                     },
                 },

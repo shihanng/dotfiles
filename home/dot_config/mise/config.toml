@@ -132,3 +132,4 @@ experimental = true
 "pipx:zuban" = "latest"
 "prek" = "latest"
 "python" = "latest"
+"npm:skills" = "latest"

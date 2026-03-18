@@ -2282,6 +2282,10 @@ backend = "npm:prettier"
 version = "4.0.8"
 backend = "npm:shadcn"
 
+[[tools."npm:skills"]]
+version = "1.4.5"
+backend = "npm:skills"
+
 [[tools."npm:typescript"]]
 version = "5.9.3"
 backend = "npm:typescript"

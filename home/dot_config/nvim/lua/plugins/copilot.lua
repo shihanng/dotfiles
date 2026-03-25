@@ -99,7 +99,7 @@ return {
                     },
                 },
                 lsp = {
-                    enabled = true,
+                    enabled = false,
                 },
             }
 

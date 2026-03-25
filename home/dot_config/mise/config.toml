@@ -133,3 +133,4 @@ experimental = true
 "prek" = "latest"
 "python" = "latest"
 "npm:skills" = "latest"
+"pipx:litellm" = { version = "1.82.6", extras = "proxy" }

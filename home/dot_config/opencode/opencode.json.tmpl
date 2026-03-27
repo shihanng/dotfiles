@@ -9,8 +9,8 @@
               "baseURL": "{{- onepasswordRead "op://Personal/LiteLLM/hostname" -}}/v1"
           },
           "models": {
-              "jp.anthropic.claude-haiku-4-5-20251001-v1:0": {
-                  "name": "jp.anthropic.claude-haiku-4-5-20251001-v1:0"
+              "bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0": {
+                  "name": "bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0"
               },
               "bedrock/global.anthropic.claude-opus-4-6-v1": {
                   "name": "bedrock/global.anthropic.claude-opus-4-6-v1"
@@ -30,13 +30,13 @@
           "model": "litellm/bedrock/global.anthropic.claude-sonnet-4-6"
       },
       "code-reviewer": {
-          "model": "litellm/jp.anthropic.claude-haiku-4-5-20251001-v1:0"
+          "model": "litellm/bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0"
       },
       "committer": {
-          "model": "litellm/jp.anthropic.claude-haiku-4-5-20251001-v1:0"
+          "model": "litellm/bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0"
       },
       "content-proofreader": {
-          "model": "litellm/jp.anthropic.claude-haiku-4-5-20251001-v1:0"
+          "model": "litellm/bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0"
       }
   },
   {{ else }}

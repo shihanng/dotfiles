@@ -28,6 +28,64 @@ return {
                     end,
                 },
             })
+
+            -- <leader>ch: turn the current line into a centered comment header
+            -- wrapped with '#' markers, max 80 chars wide.
+            vim.keymap.set("n", "<leader>ch", function()
+                local line = vim.api.nvim_get_current_line()
+                local text = line:match("^%s*(.-)%s*$") -- trim whitespace
+
+                -- Resolve comment string (honour ts_context_commentstring).
+                local ok, result = pcall(
+                    function() return require("ts_context_commentstring").calculate_commentstring() end
+                )
+                local cs = (ok and result and result ~= "") and result or vim.bo.commentstring
+                if not cs or cs == "" then cs = "# %s" end
+
+                -- Split commentstring into prefix/suffix around "%s".
+                local cs_left, cs_right = cs:match("^(.-)%%s(.-)$")
+                if not cs_left then -- malformed commentstring with no %s
+                    cs_left, cs_right = "#", ""
+                end
+                cs_left = cs_left:gsub("%s+$", "") -- strip trailing space
+                cs_right = cs_right:gsub("^%s+", "") -- strip leading space
+
+                -- Use the last non-space character of the comment prefix as fill.
+                local fill_char = cs_left:match("(.)%s*$") or "-"
+
+                -- Build the header inside the comment markers.
+                -- Total width = 80; subtract comment prefix/suffix lengths.
+                -- Assembly: cs_left .. header [ .. " " .. cs_right ]
+                -- No space between cs_left and header: fill chars flow directly from prefix.
+                local total_width = 80
+
+                local suffix_overhead = cs_right ~= "" and (#cs_right + 1) or 0
+                local comment_overhead = #cs_left + suffix_overhead
+                local inner_width = total_width - comment_overhead
+
+                -- Pad text with one space on each side before centering.
+                local text_padded = " " .. text .. " "
+                local remaining = inner_width - #text_padded
+                if remaining < 2 then
+                    vim.notify("<leader>ch: text too long to fit in 80 chars", vim.log.levels.WARN)
+                    remaining = 2
+                end
+
+                local left_fill = math.floor(remaining / 2)
+                local right_fill = remaining - left_fill
+
+                local header = string.rep(fill_char, left_fill) .. text_padded .. string.rep(fill_char, right_fill)
+
+                -- Wrap in comment markers.
+                local commented
+                if cs_right ~= "" then
+                    commented = cs_left .. header .. " " .. cs_right
+                else
+                    commented = cs_left .. header
+                end
+
+                vim.api.nvim_set_current_line(commented)
+            end, { desc = "Comment header: center current line" })
             require("mini.jump").setup()
             require("mini.files").setup()
         end,

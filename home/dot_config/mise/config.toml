@@ -76,6 +76,7 @@ experimental = true
 "github:jdx/usage" = "3.2.0"
 "github:koalaman/shellcheck" = "0.11.0"
 "github:kubernetes-sigs/kind" = "0.31.0"
+"github:michel-kraemer/zsh-patina" = "1.2.0"
 "github:sharkdp/bat" = "0.26.1"
 "github:shihanng/jjgi" = "0.4.0"
 "github:supabase-community/postgres-language-server" = { version = "0.22.1", exe = "postgrestools" }

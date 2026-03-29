@@ -79,6 +79,8 @@ alias vim="nvim"
 alias vimdiff="nvim -d"
 alias man="batman"
 
+eval "$(mise activate zsh)"
+
 # Start configuration added by Zim install
 #
 # User configuration sourced by interactive shells
@@ -211,7 +213,6 @@ unset key
 
 gpgconf --launch gpg-agent
 
-eval "$(mise activate zsh)"
 eval "$(atuin init zsh)"
 source "${HOME}/.p10k.zsh"
 eval "$(zoxide init --cmd cd zsh)"

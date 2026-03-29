@@ -51,7 +51,7 @@ zmodule completion
 zmodule ohmyzsh/ohmyzsh --root plugins/git
 # Fish-like syntax highlighting for Zsh.
 # zsh-users/zsh-syntax-highlighting must be sourced after completion
-zmodule zsh-users/zsh-syntax-highlighting
+zmodule michel-kraemer/zsh-patina --use mkdir --cmd 'eval "$(zsh-patina activate)"'
 # Fish-like history search (up arrow) for Zsh.
 # zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search

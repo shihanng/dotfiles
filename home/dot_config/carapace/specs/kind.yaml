@@ -1,0 +1,5 @@
+name: kind
+description: kind creates and manages local Kubernetes clusters
+parsing: disabled
+completion:
+  positionalany: ["$carapace.bridge.Cobra([kind])"]

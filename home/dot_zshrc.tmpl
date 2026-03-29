@@ -44,7 +44,6 @@ if [ -f '$HOME/bin/gcp/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/bin/gcp/g
 manpath=(/usr/local/texlive/2022/texmf-dist/doc/man $manpath[@])
 infopath=(/usr/local/texlive/2022/texmf-dist/doc/info $infopath[@])
 
-eval "$(mise activate zsh)"
 
 export CLICOLOR=1
 export DELTA_PAGER='less -S'
@@ -64,8 +63,8 @@ export VISUAL="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export BATDIFF_USE_DELTA=true
 export ATUIN_NOBIND="true"
-export LS_COLORS="$(vivid generate molokai)"
 export OPENCODE_DISABLE_LSP_DOWNLOAD="true"
+export CARAPACE_BRIDGES="zsh,fish,bash,inshellisense"
 
 alias assume="source assume"
 alias ls='eza --group-directories-first --icons'
@@ -212,11 +211,15 @@ unset key
 
 gpgconf --launch gpg-agent
 
+eval "$(mise activate zsh)"
+eval "$(atuin init zsh)"
 source "${HOME}/.p10k.zsh"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(navi widget zsh)"
 source "${HOME}/.config/broot/launcher/bash/br"
 source <(carapace _carapace)
+
+export LS_COLORS="$(vivid generate molokai)"
 
 # Invoke tab-completion script to be sourced with the Z shell.
 # Known to work on zsh 5.0.x, probably works on later 4.x releases as well (as

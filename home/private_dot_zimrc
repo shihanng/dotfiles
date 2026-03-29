@@ -23,12 +23,8 @@ zmodule wfxr/forgit
 zmodule direnv
 zmodule fzf
 zmodule joke/zim-chezmoi
-zmodule sharkdp/fd --fpath ./contrib/completion
 zmodule shihanng/zim-zellij
 zmodule shihanng/zim-granted
-zmodule shihanng/zim-kind
-zmodule shihanng/zim-kustomize
-zmodule shihanng/zim-atuin
 zmodule Aloxaf/fzf-tab
 zmodule $HOME/.zsh/ -s fzf.zsh -s git.zsh -s ghq.zsh
 

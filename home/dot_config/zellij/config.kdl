@@ -236,7 +236,6 @@ keybinds clear-defaults=true {
 
 load_plugins {
     zellij-pane-picker
-    zjstatus-hints
 }
 
 plugins {
@@ -247,13 +246,6 @@ plugins {
         next_star "Ctrl '"
         previous_star "Ctrl ;"
     }
-    zjstatus-hints location="https://github.com/b0o/zjstatus-hints/releases/latest/download/zjstatus-hints.wasm" {
-        max_length 0
-        overflow_str "..."
-        pipe_name "zjstatus_hints"
-        hide_in_base_mode true
-    }
-    zjstatus location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {}
     tab-bar { path "tab-bar"; }
     status-bar { path "status-bar"; }
     strider { path "strider"; }

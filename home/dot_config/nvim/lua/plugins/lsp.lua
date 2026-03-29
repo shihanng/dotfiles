@@ -138,6 +138,7 @@ return {
                 "jsonnet_ls",
                 "just",
                 "lua_ls",
+                "marksman",
                 "mdx_analyzer",
                 "postgres_lsp",
                 "ruff",

@@ -66,6 +66,7 @@ experimental = true
 "github:Wilfred/difftastic" = "0.68.0"
 "github:ajeetdsouza/zoxide" = "0.9.9"
 "github:casey/just" = "1.48.0"
+"github:checkmake/checkmake" = { version = "0.3.2", bin = "checkmake", asset_pattern = "checkmake-*.darwin.arm64" }
 "github:dandavison/delta" = "0.19.1"
 "github:denisidoro/navi" = "2.23.0"
 "github:derailed/k9s" = "0.50.18"

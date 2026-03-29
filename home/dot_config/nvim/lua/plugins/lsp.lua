@@ -349,6 +349,7 @@ return {
                 ["yaml.ansible"] = { "ansible_lint" },
                 ["yaml.github"] = { "actionlint" },
                 ["jsonnet"] = { "jsonnet_lint" },
+                ["make"] = { "checkmake" },
 
                 ["astro"] = { "eslint_d" },
                 ["javascript"] = { "eslint_d" },

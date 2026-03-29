@@ -100,3 +100,14 @@ vim.g.python3_host_prog = "$HOME/.local/share/mise/installs/python/latest/bin/py
 -- Allow to use Ctrl-i instead of Tab for jumplist.
 -- See: https://vi.stackexchange.com/a/45408
 vim.keymap.set("n", "<C-i>", "<C-i>")
+
+-- Reload config: bust module cache for personal modules then re-run init.lua.
+vim.keymap.set("n", "<leader>sv", function()
+    for k in pairs(package.loaded) do
+        if k:match("^shihanng") or k:match("^plugins") then
+            package.loaded[k] = nil
+        end
+    end
+    dofile(vim.env.MYVIMRC)
+    vim.notify("Config reloaded!", vim.log.levels.INFO)
+end, { desc = "Reload config" })

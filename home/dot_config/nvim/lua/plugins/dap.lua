@@ -89,6 +89,33 @@ return {
             vim.keymap.set("n", "<leader>dl", function() require("osv").launch({ port = 8086 }) end, opts)
             vim.keymap.set("n", "<Leader>dd", dv.toggle, opts)
 
+            vim.keymap.set("n", "<Leader>db", function()
+                local breakpoints = require("dap.breakpoints").get()
+                local items = {}
+                for buf, bps in pairs(breakpoints) do
+                    local filename = vim.api.nvim_buf_get_name(buf)
+                    for _, bp in ipairs(bps) do
+                        table.insert(items, {
+                            text = filename .. ":" .. bp.line,
+                            file = filename,
+                            pos = { bp.line, 0 },
+                        })
+                    end
+                end
+                Snacks.picker.pick({
+                    items = items,
+                    format = "file",
+                    title = "DAP Breakpoints",
+                    confirm = function(picker, item)
+                        picker:close()
+                        if item then
+                            vim.cmd("edit " .. item.file)
+                            vim.api.nvim_win_set_cursor(0, { item.pos[1], item.pos[2] })
+                        end
+                    end,
+                })
+            end, { noremap = true })
+
             vim.fn.sign_define(
                 "DapBreakpoint",
                 { text = "", texthl = "healthSuccess", linehl = "healthSuccess", numhl = "healthSuccess" }

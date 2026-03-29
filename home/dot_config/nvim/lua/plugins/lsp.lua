@@ -36,7 +36,6 @@ return {
             vim.lsp.handlers["textDocument/signatureHelp"] =
                 vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
-            local builtin = require("telescope.builtin")
             local tstools = require("typescript-tools.api")
 
             -- LspAttach is where you enable features that only work
@@ -60,7 +59,6 @@ return {
                     vim.keymap.set("n", "gS", vim.lsp.buf.signature_help, opts)
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
                     vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
-                    vim.keymap.set("n", "<space>e", builtin.diagnostics, opts)
                     vim.keymap.set("n", "gs", tstools.organize_imports, opts)
                     vim.keymap.set("n", "gI", tstools.add_missing_imports, opts)
                 end,

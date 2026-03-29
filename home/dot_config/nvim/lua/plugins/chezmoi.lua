@@ -16,6 +16,8 @@ return {
                 -- your configurations
             })
 
+            vim.keymap.set("n", "<leader>cz", function() require("chezmoi.pick").snacks() end)
+
             vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
                 pattern = { os.getenv("HOME") .. "/dotfiles/home/*" },
                 callback = function(ev)

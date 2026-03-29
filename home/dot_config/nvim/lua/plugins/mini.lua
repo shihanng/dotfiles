@@ -19,15 +19,7 @@ return {
             require("mini.icons").setup()
             require("mini.align").setup()
             require("mini.pairs").setup()
-            require("mini.comment").setup({
-                options = {
-                    custom_commentstring = function()
-                        -- https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#minicomment
-                        -- See comment.lua
-                        return require("ts_context_commentstring").calculate_commentstring() or vim.bo.commentstring
-                    end,
-                },
-            })
+            require("mini.comment").setup()
 
             -- <leader>ch: turn the current line into a centered comment header
             -- wrapped with '#' markers, max 80 chars wide.
@@ -35,11 +27,8 @@ return {
                 local line = vim.api.nvim_get_current_line()
                 local text = line:match("^%s*(.-)%s*$") -- trim whitespace
 
-                -- Resolve comment string (honour ts_context_commentstring).
-                local ok, result = pcall(
-                    function() return require("ts_context_commentstring").calculate_commentstring() end
-                )
-                local cs = (ok and result and result ~= "") and result or vim.bo.commentstring
+                -- Resolve comment string.
+                local cs = vim.bo.commentstring
                 if not cs or cs == "" then cs = "# %s" end
 
                 -- Split commentstring into prefix/suffix around "%s".

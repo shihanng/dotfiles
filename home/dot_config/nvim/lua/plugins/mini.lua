@@ -21,6 +21,14 @@ return {
             require("mini.pairs").setup()
             require("mini.comment").setup()
 
+            local map_lsp_selection = function(lhs, desc)
+                local s = vim.startswith(desc, "Increase") and 1 or -1
+                local rhs = function() vim.lsp.buf.selection_range(s * vim.v.count1) end
+                vim.keymap.set("x", lhs, rhs, { desc = desc })
+            end
+            map_lsp_selection("<Leader>ls", "Increase selection")
+            map_lsp_selection("<Leader>lS", "Decrease selection")
+
             -- <leader>ch: turn the current line into a centered comment header
             -- wrapped with '#' markers, max 80 chars wide.
             vim.keymap.set("n", "<leader>ch", function()

@@ -16,6 +16,8 @@ vim.api.nvim_set_keymap("n", "<Leader>rc", [[:%s///gc<Left><Left><Left>]], { nor
 vim.api.nvim_set_keymap("x", "<Leader>rr", [[:s///g<Left><Left>]], { noremap = true })
 vim.api.nvim_set_keymap("x", "<Leader>rc", [[:s///gc<Left><Left><Left>]], { noremap = true })
 
+local pack_paths = vim.tbl_map(function(p) return p.path end, vim.pack.get())
+
 -- Setup lazy.nvim.
 -- Auto-install lazy.nvim if not present.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -36,7 +38,17 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+require("lazy").setup({
+    spec = {
+        { import = "plugins" },
+    },
+    performance = {
+        rtp = {
+            -- Preserve vim.pack plugin paths so lazy doesn't evict them
+            paths = pack_paths,
+        },
+    },
+})
 
 -- More basic Neovim setup
 vim.opt.exrc = true
@@ -104,10 +116,11 @@ vim.keymap.set("n", "<C-i>", "<C-i>")
 -- Reload config: bust module cache for personal modules then re-run init.lua.
 vim.keymap.set("n", "<leader>sv", function()
     for k in pairs(package.loaded) do
-        if k:match("^shihanng") or k:match("^plugins") then
-            package.loaded[k] = nil
-        end
+        if k:match("^shihanng") or k:match("^plugins") then package.loaded[k] = nil end
     end
     dofile(vim.env.MYVIMRC)
     vim.notify("Config reloaded!", vim.log.levels.INFO)
 end, { desc = "Reload config" })
+
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>u", require("undotree").open)

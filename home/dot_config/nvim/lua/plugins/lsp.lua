@@ -32,10 +32,6 @@ return {
             "nanotee/sqls.nvim",
         },
         config = function()
-            -- Add borders to floating windows
-            vim.lsp.handlers["textDocument/signatureHelp"] =
-                vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-
             local tstools = require("typescript-tools.api")
 
             -- LspAttach is where you enable features that only work

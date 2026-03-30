@@ -1,113 +1,70 @@
 return {
+    "davidmh/mdx.nvim",
+    "LiadOz/nvim-dap-repl-highlights",
     {
-        "davidmh/mdx.nvim",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        "windwp/nvim-ts-autotag",
+        config = function()
+            require("nvim-ts-autotag").setup({
+                opts = {
+                    -- Defaults
+                    enable_close = true, -- Auto close tags
+                    enable_rename = true, -- Auto rename pairs of tags
+                    enable_close_on_slash = false, -- Auto close on trailing </
+                },
+            })
+        end,
     },
-    "nvim-treesitter/playground",
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    "windwp/nvim-ts-autotag",
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
         build = ":TSUpdate",
-        dependencies = {
-            "LiadOz/nvim-dap-repl-highlights",
-        },
-        config = function()
-            require("nvim-treesitter.install").compilers = { "gcc" }
-
+        init = function()
             require("nvim-dap-repl-highlights").setup()
-            local configs = require("nvim-treesitter.configs")
 
-            configs.setup({
-                ensure_installed = {
-                    "astro",
-                    "bash",
-                    "css",
-                    "cue",
-                    "dap_repl",
-                    "diff",
-                    "git_rebase",
-                    "go",
-                    "gomod",
-                    "gosum",
-                    "gowork",
-                    "hcl",
-                    "html",
-                    "javascript",
-                    "json",
-                    "jsonc",
-                    "jsonnet",
-                    "just",
-                    "lua",
-                    "luadoc",
-                    "luap",
-                    "markdown",
-                    "markdown_inline",
-                    "python",
-                    "requirements",
-                    "rust",
-                    "terraform",
-                    "tsx",
-                    "typescript",
-                    "vimdoc",
-                    "yaml",
-                },
-                indent = {
-                    enable = true,
-                },
-                incremental_selection = {
-                    enable = true,
-                    keymaps = {
-                        init_selection = "<c-space>",
-                        node_incremental = "<c-space>",
-                        scope_incremental = "<c-s>",
-                        node_decremental = "<c-backspace>",
-                    },
-                },
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = false,
-                    highlight = {
-                        disable = function()
-                            return string.find(vim.bo.filetype, "chezmoitmpl") or vim.bo.filetype == "gitcommit"
-                        end,
-                    },
-                },
-                -- https://github.com/windwp/nvim-ts-autotag?tab=readme-ov-file#setup
-                autotag = {
-                    enable = true,
-                },
-                textobjects = {
-                    move = {
-                        enable = true,
-                        set_jumps = true, -- whether to set jumps in the jumplist
-                        goto_next_start = {
-                            ["]m"] = "@function.outer",
-                            ["]]"] = "@class.outer",
-                        },
-                        goto_next_end = {
-                            ["]M"] = "@function.outer",
-                            ["]["] = "@class.outer",
-                        },
-                        goto_previous_start = {
-                            ["[m"] = "@function.outer",
-                            ["[["] = "@class.outer",
-                        },
-                        goto_previous_end = {
-                            ["[M"] = "@function.outer",
-                            ["[]"] = "@class.outer",
-                        },
-                    },
-                    swap = {
-                        enable = true,
-                        swap_next = {
-                            ["<leader>a"] = "@parameter.inner",
-                        },
-                        swap_previous = {
-                            ["<leader>A"] = "@parameter.inner",
-                        },
-                    },
-                },
+            require("nvim-treesitter.install").compilers = { "gcc" }
+            require("nvim-treesitter").install({
+                "astro",
+                "bash",
+                "css",
+                "cue",
+                "dap_repl",
+                "diff",
+                "git_rebase",
+                "go",
+                "gomod",
+                "gosum",
+                "gowork",
+                "hcl",
+                "html",
+                "javascript",
+                "json",
+                "jsonnet",
+                "just",
+                "lua",
+                "luadoc",
+                "luap",
+                "markdown",
+                "markdown_inline",
+                "python",
+                "requirements",
+                "rust",
+                "terraform",
+                "tsx",
+                "typescript",
+                "vimdoc",
+                "yaml",
+            })
+
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function()
+                    if string.find(vim.bo.filetype, "chezmoitmpl") then return end
+
+                    -- Enable treesitter highlighting and disable regex syntax
+                    pcall(vim.treesitter.start)
+                    -- Enable treesitter-based indentation
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end,
             })
         end,
     },

@@ -6,29 +6,21 @@ return {
             "mfussenegger/nvim-dap-python",
             "jbyuki/one-small-step-for-vimkind",
             "theHamsta/nvim-dap-virtual-text",
-            {
-                "igorlfs/nvim-dap-view",
-                opts = {
-                    winbar = {
-                        controls = {
-                            enabled = true,
-                        },
-                    },
-                    windows = {
-                        terminal = {
-                            hide = { "go" },
-                        },
-                    },
-                },
-            },
+            "MironPascalCaseFan/debugmaster.nvim",
         },
         config = function()
-            local dap, dv = require("dap"), require("dap-view")
-            dap.listeners.before.attach["dap-view-config"] = function() dv.open() end
-            dap.listeners.before.launch["dap-view-config"] = function() dv.open() end
-            dap.listeners.before.event_terminated["dap-view-config"] = function() dv.close() end
-            dap.listeners.before.event_exited["dap-view-config"] = function() dv.close() end
+            local dm = require("debugmaster")
+            -- make sure you don't have any other keymaps that starts with "<leader>d" to avoid delay
+            -- Alternative keybindings to "<leader>d" could be: "<leader>m", "<leader>;"
+            vim.keymap.set({ "n", "v" }, "<leader>d", dm.mode.toggle, { nowait = true })
+            -- If you want to disable debug mode in addition to leader+d using the Escape key:
+            -- vim.keymap.set("n", "<Esc>", dm.mode.disable)
+            -- This might be unwanted if you already use Esc for ":noh"
+            vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+            dm.plugins.osv_integration.enabled = true -- needed if you want to debug neovim lua code
+
+            local dap = require("dap")
             require("dap-go").setup({
                 dap_configurations = {
                     {
@@ -87,7 +79,6 @@ return {
             vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, opts)
             vim.keymap.set("n", "<Leader>B", function() dap.set_breakpoint(vim.fn.input("Cond: ")) end, opts)
             vim.keymap.set("n", "<leader>dl", function() require("osv").launch({ port = 8086 }) end, opts)
-            vim.keymap.set("n", "<Leader>dd", dv.toggle, opts)
 
             vim.keymap.set("n", "<Leader>db", function()
                 local breakpoints = require("dap.breakpoints").get()

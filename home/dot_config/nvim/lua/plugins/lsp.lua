@@ -32,6 +32,8 @@ return {
             "nanotee/sqls.nvim",
         },
         config = function()
+            vim.lsp.log.set_level("error")
+
             local tstools = require("typescript-tools.api")
 
             -- LspAttach is where you enable features that only work

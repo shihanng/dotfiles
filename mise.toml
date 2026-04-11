@@ -1,5 +1,6 @@
 [env]
 LUA_MODULES = "{{ config_root }}/.lua_modules"
+_.python.venv = { path = ".venv", create = true, python = "3.13.13" }
 
 [tools]
 "asdf:mise-plugins/mise-lua" = "5.1"

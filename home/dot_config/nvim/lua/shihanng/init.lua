@@ -10,6 +10,13 @@ vim.g.maplocalleader = ";"
 vim.opt.shell = "/bin/bash"
 vim.opt.syntax = "on"
 
+-- pynvim is installed using uv sync.
+vim.g.python3_host_prog = "$HOME/dotfiles/.venv/bin/python"
+-- disable other providers.
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- Find and replace (by Nick Janetakis)
 vim.api.nvim_set_keymap("n", "<Leader>rr", [[:%s///g<Left><Left>]], { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>rc", [[:%s///gc<Left><Left><Left>]], { noremap = true })
@@ -105,9 +112,6 @@ vim.api.nvim_set_keymap("n", "<Leader>SP", [[:set spell!<CR>]], { silent = true 
 vim.cmd([[ command! -nargs=1 Browse silent exec '!open "<args>"' ]])
 
 vim.api.nvim_set_keymap("n", "<leader>cp", [[:let @+ = fnamemodify(expand('%'), ':~:.')<CR>]], {})
-
--- pip install pynvim in global mise python
-vim.g.python3_host_prog = "$HOME/.local/share/mise/installs/python/latest/bin/python"
 
 -- Allow to use Ctrl-i instead of Tab for jumplist.
 -- See: https://vi.stackexchange.com/a/45408

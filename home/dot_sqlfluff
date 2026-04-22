@@ -2,7 +2,7 @@
 dialect = postgres
 
 [sqlfluff:indentation]
-allow_implicit_indents = True
+implicit_indents = allow
 
 [sqlfluff:rules:capitalisation.keywords]
 capitalisation_policy = upper

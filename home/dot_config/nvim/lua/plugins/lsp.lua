@@ -355,11 +355,6 @@ return {
                 ["typescriptreact"] = { "eslint_d" },
             }
 
-            require("lint").linters.sqlfluff.args = {
-                "lint",
-                "--format=json",
-            }
-
             require("lint").linters.jsonnet_lint = {
                 cmd = "jsonnet-lint",
                 stdin = false,

@@ -29,7 +29,6 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "mfussenegger/nvim-dap",
-            "nanotee/sqls.nvim",
         },
         config = function()
             vim.lsp.log.set_level("error")

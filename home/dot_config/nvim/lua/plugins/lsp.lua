@@ -384,7 +384,7 @@ return {
             { "kosayoda/nvim-lightbulb" },
         },
         event = "LspAttach",
-        opt = {
+        opts = {
             picker = {
                 "snacks",
             },

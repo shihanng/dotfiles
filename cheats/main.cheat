@@ -11,6 +11,9 @@ export GITHUB_TOKEN=$(gh auth token)
 # Reinstall mise plugin
 mise install -f <mise_plugins>
 
+# Upgrade mise plugin
+mise upgrade --bump <mise_plugins>
+
 $mise_plugins: dasel -r toml -f $HOME/.config/mise/config.toml 'tools.keys().all()'
 
 # Create .vscode/launch.json for Rust

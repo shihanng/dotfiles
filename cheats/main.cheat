@@ -14,7 +14,7 @@ mise install -f <mise_plugins>
 # Upgrade mise plugin
 mise upgrade --bump <mise_plugins>
 
-$mise_plugins: dasel -r toml -f $HOME/.config/mise/config.toml 'tools.keys().all()'
+$mise_plugins: cat $HOME/.config/mise/config.toml  | dasel query -i toml -o json 'tools.keys()' | jq -r '.[]'
 
 # Create .vscode/launch.json for Rust
 mkdir -p .vscode/

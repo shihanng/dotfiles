@@ -1,5 +1,6 @@
 return {
     "tversteeg/registers.nvim",
+    url = "https://codeberg.org/fosk/registers.nvim",
     name = "registers",
     keys = {
         { '"', mode = { "n", "v" } },

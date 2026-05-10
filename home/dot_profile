@@ -1,1 +1,6 @@
 . "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/shi-han.ng/.lmstudio/bin"
+# End of LM Studio CLI section
+

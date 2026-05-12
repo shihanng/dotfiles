@@ -17,6 +17,7 @@ path=($HOME/bin/lua/bin $path[@])
 path=($HOME/.poetry/bin $path[@])
 path=($HOME/.local/bin $path[@])
 path=($HOME/.scripts $path[@])
+path=($HOME/.lmstudio/bin $path[@])
 {{- if eq .chezmoi.os "darwin" }}
 path=(/opt/homebrew/opt/gnu-sed/libexec/gnubin $path[@]) # brew --prefix gnu-sed
 path=(/opt/homebrew/opt/gnu-tar/libexec/gnubin $path[@]) # brew --prefix gnu-tar

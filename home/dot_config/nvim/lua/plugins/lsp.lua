@@ -130,6 +130,7 @@ return {
                 "astro",
                 "bashls",
                 "copilot",
+                "gleam",
                 "gopls",
                 "harper_ls",
                 "jsonnet_ls",
@@ -283,6 +284,7 @@ return {
         opts = {
             formatters_by_ft = {
                 go = { lsp_format = "first" },
+                gleam = { lsp_format = "first" },
                 just = { lsp_format = "first" },
                 lua = { "stylua" },
                 python = { lsp_format = "first" },

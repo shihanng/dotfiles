@@ -9,34 +9,106 @@
               "baseURL": "{{- onepasswordRead "op://Personal/LiteLLM/hostname" -}}/v1"
           },
           "models": {
-              "bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0": {
-                  "name": "bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0"
+              "bedrock-ap-southeast-2/global.anthropic.claude-haiku-4-5-20251001-v1:0": {
+                  "name": "bedrock-ap-southeast-2/global.anthropic.claude-haiku-4-5-20251001-v1:0",
+                  "attachment": true,
+                  "reasoning": true,
+                  "tool_call": true,
+                  "temperature": true,
+                  "interleaved": { "field": "reasoning_content" },
+                  "modalities": {
+                    "input": ["text", "image", "pdf"],
+                    "output": ["text"]
+                  },
+                  "limit": {
+                    "context": 200000,
+                    "output": 64000
+                  },
+                  "cost": {
+                    "input": 1,
+                    "output": 5,
+                    "cache_read": 0.1,
+                    "cache_write": 1.25
+                  }
               },
-              "bedrock/global.anthropic.claude-opus-4-7": {
-                  "name": "bedrock/global.anthropic.claude-opus-4-7"
+              "bedrock-ap-southeast-2/global.anthropic.claude-opus-4-7": {
+                  "name": "bedrock-ap-southeast-2/global.anthropic.claude-opus-4-7",
+                  "attachment": true,
+                  "reasoning": true,
+                  "tool_call": true,
+                  "temperature": false,
+                  "interleaved": { "field": "reasoning_content" },
+                  "modalities": {
+                    "input": ["text", "image", "pdf"],
+                    "output": ["text"]
+                  },
+                  "limit": {
+                    "context": 1000000,
+                    "output": 128000
+                  },
+                  "cost": {
+                    "input": 5,
+                    "output": 25,
+                    "cache_read": 0.5,
+                    "cache_write": 6.25
+                  },
+                  "options": {
+                    "thinking": { "type": "adaptive" },
+                    "output_config": { "effort": "high" }
+                  }
               },
-              "bedrock/global.anthropic.claude-sonnet-4-6": {
-                  "name": "bedrock/global.anthropic.claude-sonnet-4-6"
+              "bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6": {
+                  "name": "bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6",
+                  "attachment": true,
+                  "reasoning": true,
+                  "tool_call": true,
+                  "temperature": true,
+                  "interleaved": { "field": "reasoning_content" },
+                  "modalities": {
+                    "input": ["text", "image", "pdf"],
+                    "output": ["text"]
+                  },
+                  "limit": {
+                    "context": 1000000,
+                    "output": 64000
+                  },
+                  "cost": {
+                    "input": 3,
+                    "output": 15,
+                    "cache_read": 0.3,
+                    "cache_write": 3.75
+                  }
               }
           }
       }
   },
-  "model": "litellm/bedrock/global.anthropic.claude-sonnet-4-6",
+  "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6",
   "agent": {
       "plan": {
-          "model": "litellm/bedrock/global.anthropic.claude-sonnet-4-6"
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6",
+          "permission": {
+            "bash": { "*": "ask", "git *": "allow" }
+          }
       },
       "build": {
-          "model": "litellm/bedrock/global.anthropic.claude-sonnet-4-6"
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6"
       },
       "code-reviewer": {
-          "model": "litellm/bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0"
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-opus-4-7",
+          "permission": {
+            "bash": { "*": "ask", "git *": "allow" }
+          }
       },
       "committer": {
-          "model": "litellm/bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0"
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-haiku-4-5-20251001-v1:0",
+          "permission": {
+            "bash": { "*": "ask", "git *": "allow" }
+          },
+          "temperature": 0.1
       },
       "content-proofreader": {
-          "model": "litellm/bedrock/global.anthropic.claude-haiku-4-5-20251001-v1:0"
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-haiku-4-5-20251001-v1:0",
+          "temperature": 0.2
       }
   },
   {{ else }}

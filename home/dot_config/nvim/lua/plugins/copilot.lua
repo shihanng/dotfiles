@@ -88,14 +88,10 @@ return {
         config = function()
             vim.g.opencode_opts = {
                 -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition" on `opencode_opts`.
-                prompts = {
-                    committer = {
-                        prompt = "@committer, improve my commit messsage based on what I already have in @this.",
-                        submit = true,
-                    },
-                    grammarly = {
-                        prompt = "@content-proofreader, proofread @this.",
-                        submit = true,
+                select = {
+                    prompts = {
+                        committer = "@committer, improve my commit messsage based on what I already have in @this.",
+                        proofreader = "@content-proofreader, proofread @this.",
                     },
                 },
                 lsp = {

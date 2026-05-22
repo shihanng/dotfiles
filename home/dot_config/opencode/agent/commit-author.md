@@ -4,10 +4,12 @@ mode: subagent
 temperature: 0.2
 permission:
   edit:
-    "*.jjdescription": allow
+    "**/*.jjdescription": allow
+    "**/COMMIT_EDITMSG": allow
   bash:
     "*": ask
     "git *": allow
+    "jj *": allow
   external_directory:
     "/private/var/folders/**": allow
 ---

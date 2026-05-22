@@ -90,7 +90,7 @@ return {
                 -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition" on `opencode_opts`.
                 select = {
                     prompts = {
-                        committer = "@committer, improve my commit messsage based on what I already have in @this.",
+                        commit = "@commit-author, read and improve commit message in @buffer.",
                         proofreader = "@content-proofreader, proofread @this.",
                     },
                 },

@@ -89,7 +89,7 @@ deno = "2.7.12"
 "github:supabase-community/postgres-language-server" = { version = "0.25.0", bin = "postgres-language-server" }
 "github:tamasfe/taplo" = "0.10.0"
 "github:xo/usql" = "0.21.4"
-"github:zellij-org/zellij" = "0.44.1"
+"github:zellij-org/zellij" = "0.44.3"
 go = "1.26.2"
 "go:github.com/go-delve/delve/cmd/dlv" = "1.26.1"
 "go:github.com/google/go-jsonnet/cmd/jsonnet" = "0.22.0"

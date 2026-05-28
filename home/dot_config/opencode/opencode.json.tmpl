@@ -87,7 +87,8 @@
       "plan": {
           "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6",
           "permission": {
-            "bash": { "*": "ask", "git *": "allow" }
+            "bash": { "*": "ask", "git *": "allow" },
+            "nvim_*": "allow"
           }
       },
       "build": {
@@ -179,6 +180,15 @@
         "--headless"
       ],
       "enabled": false
+    },
+    "nvim": {
+      "type": "local",
+      "command": [
+        "nvim-mcp",
+        "--connect",
+        "auto"
+      ],
+      "enabled": true
     }
   },
   "lsp": {

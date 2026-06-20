@@ -98,6 +98,27 @@
                     "input": 30,
                     "output": 180
                   }
+              },
+              "vertex_ai/gemini-3.5-flash": {
+                  "name": "vertex_ai/gemini-3.5-flash",
+                  "attachment": true,
+                  "reasoning": true,
+                  "tool_call": true,
+                  "temperature": true,
+                  "interleaved": { "field": "reasoning_content" },
+                  "modalities": {
+                    "input": ["text", "image", "video", "audio", "pdf"],
+                    "output": ["text"]
+                  },
+                  "limit": {
+                    "context": 1048576,
+                    "output": 65536
+                  },
+                  "cost": {
+                    "input": 1.5,
+                    "output": 9,
+                    "cache_read": 0.15
+                  }
               }
           }
       }

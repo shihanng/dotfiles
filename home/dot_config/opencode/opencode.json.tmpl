@@ -119,6 +119,32 @@
                     "output": 9,
                     "cache_read": 0.15
                   }
+              },
+              "vertex_ai/gemini-3.1-pro-preview": {
+                  "name": "vertex_ai/gemini-3.1-pro-preview",
+                  "attachment": true,
+                  "reasoning": true,
+                  "tool_call": true,
+                  "temperature": true,
+                  "interleaved": { "field": "reasoning_content" },
+                  "modalities": {
+                    "input": ["text", "image", "video", "audio", "pdf"],
+                    "output": ["text"]
+                  },
+                  "limit": {
+                    "context": 1048576,
+                    "output": 65536
+                  },
+                  "cost": {
+                    "input": 2,
+                    "output": 12,
+                    "cache_read": 0.2,
+                    "context_over_200k": {
+                      "input": 4,
+                      "output": 18,
+                      "cache_read": 0.4
+                    }
+                  }
               }
           }
       }

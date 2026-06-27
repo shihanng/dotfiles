@@ -143,6 +143,7 @@ return {
                 "taplo",
                 "terraformls",
                 "tflint",
+                "tinymist",
                 -- "ty",
                 "yamlls",
                 -- "pyrefly",
@@ -252,6 +253,14 @@ return {
                 },
             })
 
+            -- https://myriad-dreamin.github.io/tinymist/frontend/neovim.html
+            vim.lsp.config("tinymist", {
+                settings = {
+                    formatterMode = "typstyle",
+                    semanticTokens = "disable",
+                },
+            })
+
             -- https://lsp-zero.netlify.app/docs/language-server-configuration.html#diagnostics
             vim.diagnostic.config({
                 virtual_text = false,
@@ -294,6 +303,7 @@ return {
                 sql = { "sqlfluff" },
                 terraform = { lsp_format = "first" },
                 toml = { "taplo" },
+                typst = { lsp_format = "first" },
                 ["yaml.ansible"] = { "ansible-lint" },
                 yaml = { lsp_format = "first" },
 

@@ -224,6 +224,7 @@ eval "$(navi widget zsh)"
 eval "$(command wt config shell init zsh)"
 source "${HOME}/.config/broot/launcher/bash/br"
 source <(carapace _carapace)
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 export LS_COLORS="$(vivid generate molokai)"
 

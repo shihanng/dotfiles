@@ -1,0 +1,22 @@
+{
+  "providers": {
+    "anthropic": {
+      "baseUrl": "https://litellm.kraken.tech",
+      "compat": {
+        "supportsEagerToolInputStreaming": false
+      }
+    },
+    "openai": {
+      "baseUrl": "https://litellm.kraken.tech",
+      "compat": {
+        "supportsEagerToolInputStreaming": false
+      }
+    },
+    "google": {
+      "baseUrl": "https://litellm.kraken.tech",
+      "compat": {
+        "supportsEagerToolInputStreaming": false
+      }
+    }
+  }
+}

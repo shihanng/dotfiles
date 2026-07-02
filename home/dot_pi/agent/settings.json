@@ -1,0 +1,19 @@
+{
+  "lastChangelogVersion": "0.80.3",
+  "theme": "dark",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-sonnet-4-6",
+  "defaultThinkingLevel": "medium",
+  "enableInstallTelemetry": false,
+  "enabledModels": [
+    "claude-sonnet-5",
+    "claude-sonnet-4-6",
+    "claude-fable-5",
+    "claude-haiku-4-5",
+    "claude-opus-4-8",
+    "gpt-5.5",
+    "gpt-5.5-pro",
+    "gemini-3.1-pro-preview",
+    "gemini-3.5-flash"
+  ]
+}

@@ -135,6 +135,7 @@ node = "25.9.0"
 "pipx:asciinema" = "2.4.0"
 "pipx:basedpyright" = "1.39.2"
 "pipx:chromadb" = "1.5.8"
+"pipx:ddgr" = "2.2"
 "pipx:debugpy" = "1.8.20"
 "pipx:harlequin" = { version = "2.5.2", extras = "postgres,s3" }
 "pipx:invoke" = "3.0.3"

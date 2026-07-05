@@ -2,6 +2,11 @@
 LUA_MODULES = "{{ config_root }}/.lua_modules"
 _.python.venv = { path = ".venv", create = true, python = "3.13.13" }
 
+# Cached version of eval $(luarocks path --tree=${LUA_MODULES})
+LUA_PATH = "{{ env.LUA_MODULES }}/share/lua/5.1/?.lua;{{ env.LUA_MODULES }}/share/lua/5.1/?/init.lua;;"
+LUA_CPATH = "{{ env.LUA_MODULES }}/lib/lua/5.1/?.so;;"
+_.path = ["{{ env.LUA_MODULES }}/bin"]
+
 [tools]
 "asdf:mise-plugins/mise-lua" = "5.1"
 
@@ -10,7 +15,3 @@ postinstall = [
   "mkdir -p ${LUA_MODULES}",
   "luarocks install --tree=${LUA_MODULES} luacheck",
 ]
-
-[hooks.enter]
-shell = "zsh"
-script = "eval $(luarocks path --tree=${LUA_MODULES})"

@@ -243,22 +243,18 @@
       }
   },
   "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6",
+  "permission": {
+    "nvim_*": "allow"
+  },
   "agent": {
       "plan": {
-          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6",
-          "permission": {
-            "bash": { "*": "ask", "git *": "allow" },
-            "nvim_*": "allow"
-          }
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6"
       },
       "build": {
           "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6"
       },
       "code-reviewer": {
-          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-opus-4-8",
-          "permission": {
-            "bash": { "*": "ask", "git *": "allow" }
-          }
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-opus-4-8"
       },
       "commit-author": {
           "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-haiku-4-5-20251001-v1:0"

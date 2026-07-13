@@ -275,6 +275,11 @@
     }
   },
   {{ end -}}
+  {{- if lookPath "hunk" }}
+  "skills": {
+    "paths": ["{{ output "hunk" "skill" "path" | trim | dir | dir }}"]
+  },
+  {{- end }}
   "default_agent": "plan",
   "plugin": ["@mohak34/opencode-notifier@latest"],
   "mcp": {

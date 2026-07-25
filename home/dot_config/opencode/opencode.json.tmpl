@@ -243,16 +243,22 @@
           }
       }
   },
-  "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6",
+  "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-5",
   "permission": {
     "nvim_*": "allow"
   },
   "agent": {
       "plan": {
-          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6"
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-5"
       },
       "build": {
-          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-4-6"
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-5"
+      },
+      "general": {
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-5"
+      },
+      "explore": {
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-haiku-4-5-20251001-v1:0"
       },
       "code-reviewer": {
           "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-opus-4-8"
@@ -263,6 +269,15 @@
       "content-proofreader": {
           "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-haiku-4-5-20251001-v1:0",
           "temperature": 0.2
+      },
+      "compaction": {
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-sonnet-5"
+      },
+      "title": {
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-haiku-4-5-20251001-v1:0"
+      },
+      "summary": {
+          "model": "litellm/bedrock-ap-southeast-2/global.anthropic.claude-haiku-4-5-20251001-v1:0"
       }
   },
   {{ else }}

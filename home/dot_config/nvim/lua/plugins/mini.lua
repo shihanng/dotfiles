@@ -83,7 +83,6 @@ return {
 
                 vim.api.nvim_set_current_line(commented)
             end, { desc = "Comment header: center current line" })
-            require("mini.jump").setup()
             require("mini.files").setup()
         end,
         init = function()

@@ -19,7 +19,7 @@ return {
             },
             extensions = { "nvim-dap-ui", "trouble", "lazy", "fugitive", "quickfix", "nvim-tree" },
             sections = {
-                lualine_a = { "mode", vim_visual_multi },
+                lualine_a = { "mode", vim_visual_multi, require("opencode").statusline },
             },
         })
     end,

@@ -51,7 +51,7 @@ return {
                 default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
                 per_filetype = {
                     sql = { "lsp", "copilot", "dadbod", "buffer" },
-                    codecompanion = { "codecompanion" },
+                    opencode_ask = { "lsp", "buffer" },
                 },
                 providers = {
                     lazydev = {
@@ -63,6 +63,7 @@ return {
                     lsp = {
                         min_keyword_length = 2, -- Number of characters to trigger provider
                         score_offset = 10, -- Boost/penalize the score of the items
+                        fallbacks = {},
                     },
                     copilot = {
                         name = "copilot",

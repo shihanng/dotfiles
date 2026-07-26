@@ -15,52 +15,62 @@ return {
         end,
     },
     {
-        "folke/sidekick.nvim",
-        opts = {
-            -- add any options here
-            nes = { enabled = false },
-            cli = {
-                mux = {
-                    backend = "zellij",
-                    enabled = true,
+        "nickjvandyke/opencode.nvim",
+        version = "*",
+        config = function()
+            ---@type opencode.Opts
+            vim.g.opencode_opts = {
+                select = {
+                    prompts = {
+                        commit = "@commit-author, read and improve commit message in @buffer.",
+                        proofreader = "@content-proofreader, proofread @this.",
+                        pair = "Pair with me in neovim. Connect to " .. require("shihanng.mcp_socket"),
+                    },
                 },
-                prompts = {
-                    commit = "@commit-author, read and improve commit message in {file}.",
-                    proofreader = "@content-proofreader, proofread {this}.",
-                    pair = "Pair with me in neovim. Connect to " .. require("shihanng.mcp_socket"),
-                },
-            },
-        },
-        keys = {
-            {
-                "<leader>as",
-                function() require("sidekick.cli").select({ filter = { installed = true } }) end,
-                desc = "Select CLI",
-            },
-            {
-                "<leader>at",
-                function() require("sidekick.cli").send({ msg = "{this}" }) end,
-                mode = { "x", "n" },
-                desc = "Send This",
-            },
-            {
-                "<leader>af",
-                function() require("sidekick.cli").send({ msg = "{file}" }) end,
-                desc = "Send File",
-            },
-            {
-                "<leader>av",
-                function() require("sidekick.cli").send({ msg = "{selection}" }) end,
-                mode = { "x" },
-                desc = "Send Visual Selection",
-            },
-            {
-                "<leader>ap",
-                function() require("sidekick.cli").prompt() end,
-                mode = { "n", "x" },
-                desc = "Sidekick Select Prompt",
-            },
-        },
+            }
+
+            vim.o.autoread = true -- Required for `vim.g.opencode_opts.events.reload`
+
+            -- Recommended/example keymaps
+            vim.keymap.set(
+                { "n", "x" },
+                "<leader>oa",
+                function() require("opencode").ask("@this: ") end,
+                { desc = "Ask OpenCode…" }
+            )
+            vim.keymap.set(
+                { "n", "x" },
+                "<leader>os",
+                function() require("opencode").select() end,
+                { desc = "Select OpenCode…" }
+            )
+
+            vim.keymap.set(
+                { "n", "x" },
+                "go",
+                function() return require("opencode").operator("@this ") end,
+                { desc = "Append range to OpenCode", expr = true }
+            )
+            vim.keymap.set(
+                "n",
+                "goo",
+                function() return require("opencode").operator("@this ") .. "_" end,
+                { desc = "Append line to OpenCode", expr = true }
+            )
+
+            vim.keymap.set(
+                "n",
+                "<S-C-u>",
+                function() require("opencode").command("session.half.page.up") end,
+                { desc = "Scroll OpenCode up" }
+            )
+            vim.keymap.set(
+                "n",
+                "<S-C-d>",
+                function() require("opencode").command("session.half.page.down") end,
+                { desc = "Scroll OpenCode down" }
+            )
+        end,
     },
     {
         "linw1995/nvim-mcp",

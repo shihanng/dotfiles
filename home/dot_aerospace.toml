@@ -53,6 +53,10 @@ key-mapping.preset = 'qwerty'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = ["layout floating"]
+
+[[on-window-detected]]
 check-further-callbacks = true
 if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap'
 run = 'layout floating'

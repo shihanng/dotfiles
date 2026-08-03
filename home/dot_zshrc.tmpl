@@ -71,6 +71,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export BATDIFF_USE_DELTA=true
 export ATUIN_NOBIND="true"
 export OPENCODE_DISABLE_LSP_DOWNLOAD="true"
+{{- if stat (joinPath .chezmoi.homeDir "tako-bell") }}
+export OPENCODE_CONFIG="$HOME/.config/opencode/opencode_tako-bell.json"
+{{- end }}
 export CARAPACE_BRIDGES="zsh,fish,bash,inshellisense"
 export GH_TELEMETRY=false
 export DO_NO_TRACK=true

@@ -127,6 +127,20 @@ return {
             -- git
             { "<leader>gL", function() Snacks.picker.git_log_line() end, desc = "Git Log Line" },
             { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+            {
+                "<leader>gY",
+                function()
+                    Snacks.gitbrowse({
+                        open = function(url)
+                            vim.fn.setreg("+", url)
+                            Snacks.notify("Copied permalink to clipboard", { title = "Git Browse" })
+                        end,
+                        notify = false,
+                    })
+                end,
+                desc = "Git Browse (Copy Permalink)",
+                mode = { "n", "v" },
+            },
             -- Other
             { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
             { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },

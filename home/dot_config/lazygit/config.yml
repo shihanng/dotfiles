@@ -20,16 +20,13 @@ gui:
       - "#cad3f5"
     searchingActiveBorderColor:
       - "#eed49f"
-
   authorColors:
     "*": "#b7bdf8"
-
 git:
   overrideGpg: true
-  pagers:
-    - pager: delta --paging=never
-    - useExternalDiffGitConfig: true
-
+  diffRenderers:
+    - command: delta --paging=never
+    - type: extDiff
 keybinding:
   universal:
     quit: "q"

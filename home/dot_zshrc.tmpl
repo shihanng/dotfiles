@@ -79,9 +79,6 @@ export GH_TELEMETRY=false
 export DO_NO_TRACK=true
 
 alias assume="source assume"
-alias ll='ls -l --git' # Long format, git status
-alias l='ll -a'        # Long format, all files
-alias lr='ll -T'       # Long format, recursive as a tree
 alias lz="lazygit"
 alias lj="lazyjj"
 alias open='open_command'
@@ -222,7 +219,7 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # End configuration added by Zim install
 
-alias ls='eza --group-directories-first --icons'
+alias ls='eza --group-directories-first --icons=auto'
 
 gpgconf --launch gpg-agent
 

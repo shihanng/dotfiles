@@ -108,6 +108,7 @@ node = "26.7.0"
 "npm:@astrojs/language-server" = "2.16.14"
 "npm:@bytebase/dbhub" = "1.2.1"
 "npm:@earendil-works/pi-coding-agent" = "0.84.3"
+"npm:@fission-ai/openspec" = "1.11.0"
 "npm:@fsouza/prettierd" = "0.29.0"
 "npm:@github/copilot-language-server" = "1.534.0"
 "npm:@google/clasp" = "3.4.0"
@@ -152,5 +153,5 @@ node = "26.7.0"
 "pipx:vectorcode" = { version = "0.7.20", extras = "lsp,mcp" }
 "pipx:zuban" = "0.9.1"
 prek = "0.4.14"
-python = "3.14.7"                                                                                                  # Need to pin this for litellm
+python = "3.14.7"                                                                                                   # Need to pin this for litellm
 "pipx:dotdrop" = "1.16.2"

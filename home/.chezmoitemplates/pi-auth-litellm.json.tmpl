@@ -1,0 +1,7 @@
+"litellm": {
+  "type": "api_key",
+  "key": "!op read 'op://Personal/LiteLLM/credential'",
+  "env": {
+    "LITELLM_BASE_URL": {{ onepasswordRead "op://Personal/LiteLLM/hostname" | toJson }}
+  }
+}

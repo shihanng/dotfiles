@@ -13,3 +13,4 @@ rm -f "${HOME}/bin/kustomize"
 rm -f "${HOME}/.config/zellij/layouts/default.kdl"
 rm -rf "${HOME}/.serena" && mise uninstall pipx:git+https://github.com/oraios/serena.git
 rm -rf "${HOME}/.config/opencode/agent/committer.md"
+rm -rf "${HOME}/.pi/agent/models.json"

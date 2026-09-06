@@ -1,8 +1,0 @@
-{
-  "name": "pi-extensions",
-  "private": true,
-  "dependencies": {
-    "pi-nvim": "^0.2.5",
-    "pi-provider-litellm": "^2.3.0"
-  }
-}

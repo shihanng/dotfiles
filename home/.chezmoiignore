@@ -1,3 +1,6 @@
 {{ if not (stat (joinPath .chezmoi.homeDir "tako-bell")) }}
 .config/opencode/opencode_tako-bell.json
 {{ end }}
+{{- if ne .chezmoi.username "shi-han.ng" }}
+.pi/agent/auth.json
+{{- end }}

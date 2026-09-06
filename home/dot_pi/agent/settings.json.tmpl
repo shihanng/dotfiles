@@ -1,8 +1,13 @@
 {
   "lastChangelogVersion": "0.84.3",
   "theme": "dark",
+{{- if eq .chezmoi.username "shi-han.ng" }}
   "defaultProvider": "anthropic",
-  "defaultModel": "claude-sonnet-4-6",
+  "defaultModel": "claude-sonnet-5",
+{{- else }}
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-terra",
+{{- end }}
   "defaultThinkingLevel": "medium",
   "enableInstallTelemetry": false,
   "packages": ["npm:pi-provider-litellm", "npm:pi-nvim"]

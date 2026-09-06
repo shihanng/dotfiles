@@ -5,5 +5,5 @@
   "defaultModel": "claude-sonnet-4-6",
   "defaultThinkingLevel": "medium",
   "enableInstallTelemetry": false,
-  "packages": ["npm:pi-provider-litellm"]
+  "packages": ["npm:pi-provider-litellm", "npm:pi-nvim"]
 }

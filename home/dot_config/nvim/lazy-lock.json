@@ -53,6 +53,7 @@
   "one-small-step-for-vimkind": { "branch": "main", "commit": "1af6ffb9b5229a856e8090fa2f690e0931a5aace" },
   "opencode.nvim": { "branch": "main", "commit": "4576b372034495b8868e6cbe878e85c717998867" },
   "peek.nvim": { "branch": "master", "commit": "5820d937d5414baea5f586dc2a3d912a74636e5b" },
+  "pi-nvim": { "branch": "main", "commit": "3efbe679fdcaac1d643d465eea56826ce335dc4a" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "promise-async": { "branch": "main", "commit": "119e8961014c9bfaf1487bf3c2a393d254f337e2" },
   "recall.nvim": { "branch": "snacks-picker", "commit": "9572804748bbf5a14c1a88061cd732551d66b36d" },

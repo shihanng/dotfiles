@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "context7-mcp"
+    },
+    "chrome": {
+      "command": "chrome-devtools-mcp",
+      "args": ["--no-usage-statistics", "--isolated", "--headless"]
+    },
+    "nvim": {
+      "command": "nvim-mcp",
+      "args": ["--connect", "auto"]
+    },
+    "deepwiki": {
+      "url": "https://mcp.deepwiki.com/mcp"
+    }
+  }
+}

@@ -2,11 +2,22 @@
   "lastChangelogVersion": "0.85.1",
   "theme": "dark",
 {{- if eq .chezmoi.username "shi-han.ng" }}
-  "defaultProvider": "anthropic",
+  "defaultProvider": "litellm",
   "defaultModel": "claude-sonnet-5",
+  "enabledModels": [
+    "litellm/claude-sonnet-5",
+    "litellm/claude-opus-5",
+    "litellm/gpt-5.6-terra",
+    "litellm/gemini-3.7-flash"
+  ],
 {{- else }}
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-terra",
+  "enabledModels": [
+    "openai/gpt-5.6-terra",
+    "openai/gpt-5.6-luna",
+    "openai/gpt-5.6-sol"
+  ],
 {{- end }}
   "defaultThinkingLevel": "medium",
   "enableInstallTelemetry": false,

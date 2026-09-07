@@ -10,6 +10,9 @@
 {{- end }}
   "defaultThinkingLevel": "medium",
   "enableInstallTelemetry": false,
+{{- if lookPath "hunk" }}
+  "skills": ["{{ output "hunk" "skill" "path" | trim | dir | dir }}"],
+{{- end }}
   "packages": [
     "npm:pi-provider-litellm",
     "npm:pi-nvim",

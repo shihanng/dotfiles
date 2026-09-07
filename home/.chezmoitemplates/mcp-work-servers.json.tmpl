@@ -1,0 +1,58 @@
+{{ $mcpUrl := onepasswordRead "op://Personal/LiteLLM/mcp" -}}
+"dbhub-postgres-npx": {
+  "command": "dbhub",
+  "args": [
+    "--transport",
+    "stdio",
+    "--dsn",
+    {{ onepasswordRead "op://Personal/LiteLLM/db_local" | toJson }}
+  ]
+},
+"coding-conventions": {
+  "url": {{ onepasswordRead "op://Personal/LiteLLM/conventions" | toJson }},
+  "auth": "bearer"
+},
+"asana": {
+  "url": {{ printf "%s/asana" $mcpUrl | toJson }},
+  "auth": "oauth"
+},
+"notion": {
+  "url": {{ printf "%s/notion" $mcpUrl | toJson }},
+  "auth": "oauth"
+},
+"tako-storybook": {
+  "command": "npx",
+  "args": ["-y", "storybook-mcp"],
+  "disabled": true,
+  "env": {
+    "STORYBOOK_URL": {{ onepasswordRead "op://Personal/LiteLLM/storybook" | toJson }}
+  }
+},
+"sentry": {
+  "url": {{ printf "%s/sentry" $mcpUrl | toJson }},
+  "auth": "oauth"
+},
+"miro": {
+  "url": {{ printf "%s/miro" $mcpUrl | toJson }},
+  "auth": "oauth"
+},
+"slack": {
+  "url": {{ printf "%s/slack" $mcpUrl | toJson }},
+  "auth": "oauth"
+},
+"google": {
+  "url": {{ printf "%s/google" $mcpUrl | toJson }},
+  "auth": "oauth"
+},
+"datadog": {
+  "url": {{ printf "%s/datadog" $mcpUrl | toJson }},
+  "auth": "oauth"
+},
+"circleci": {
+  "url": {{ printf "%s/circleci" $mcpUrl | toJson }},
+  "auth": "oauth"
+},
+"alfredo": {
+  "url": {{ printf "%s/alfredo" $mcpUrl | toJson }},
+  "auth": "oauth"
+}

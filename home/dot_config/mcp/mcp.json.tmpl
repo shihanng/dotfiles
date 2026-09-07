@@ -14,5 +14,9 @@
     "deepwiki": {
       "url": "https://mcp.deepwiki.com/mcp"
     }
+{{- if eq .chezmoi.username "shi-han.ng" }}
+    ,
+{{ includeTemplate "mcp-work-servers.json.tmpl" . | trim | indent 4 }}
+{{- end }}
   }
 }

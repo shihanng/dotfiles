@@ -23,9 +23,12 @@
 {{- end }}
   "defaultThinkingLevel": "medium",
   "enableInstallTelemetry": false,
+  "skills": [
 {{- if lookPath "hunk" }}
-  "skills": ["{{ output "hunk" "skill" "path" | trim | dir | dir }}"],
+    "{{ output "hunk" "skill" "path" | trim | dir | dir }}",
 {{- end }}
+    "~/dev/me/github.com/shihanng/secret-skills/skills"
+  ],
   "packages": [
     "npm:pi-provider-litellm",
     "npm:pi-nvim",

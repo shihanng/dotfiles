@@ -90,20 +90,19 @@ return {
             -- Top Pickers & Explorer
             {
                 "<C-p>",
-                function() Snacks.picker.smart({ multi = { "buffers", "files" } }) end,
-                desc = "Smart Find Files",
+                function() require("fff-snacks").find_files() end,
+                desc = "Find Files",
             },
             { "<C-b>", function() Snacks.picker.buffers() end, desc = "Buffers" },
-            { "<C-f>", function() Snacks.picker.grep() end, desc = "Grep" },
+            { "<C-f>", function() require("fff-snacks").live_grep() end, desc = "Grep" },
             { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
             { "<leader>;", function() Snacks.picker.notifications() end, desc = "Notification History" },
             -- Grep
             { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
             { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-            { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
             {
                 "<leader>sw",
-                function() Snacks.picker.grep_word() end,
+                function() require("fff-snacks").grep_word() end,
                 desc = "Visual selection or word",
                 mode = { "n", "x" },
             },

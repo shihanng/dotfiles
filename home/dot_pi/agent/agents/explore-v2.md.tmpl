@@ -1,7 +1,7 @@
 ---
 description: Proactively explores and answers questions about *any* content — codebase, documentation, tickets, wikis, or the web — whenever the task requires locating information you don't already have. Use this automatically, without being asked, in place of ad-hoc grep/read/search when the answer requires exploration rather than editing. Runs in the background; check its result instead of doing the exploration yourself.
 tools: read, bash, ffgrep, fffind, ls, web_search, source_check, fetch_content, mcp, mcp__context7, mcp__deepwiki
-model: {{ if eq .chezmoi.username "shi-han.ng" }}claude-haiku-4-5-20251001{{ else }}openai/gpt-5.6-sol{{ end }}
+model: {{ if eq .chezmoi.username "shi-han.ng" }}haiku{{ else }}sol{{ end }}
 run_in_background: true
 prompt_mode: replace
 thinking: medium

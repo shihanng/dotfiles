@@ -9,50 +9,40 @@
   ]
 },
 "coding-conventions": {
-  "url": {{ onepasswordRead "op://Personal/LiteLLM/conventions" | toJson }},
-  "auth": "bearer"
+  "url": {{ onepasswordRead "op://Personal/LiteLLM/conventions" | toJson }}
 },
 "asana": {
-  "url": {{ printf "%s/asana" $mcpUrl | toJson }},
-  "auth": "oauth"
+  "url": {{ printf "%s/asana" $mcpUrl | toJson }}
 },
 "notion": {
-  "url": {{ printf "%s/notion" $mcpUrl | toJson }},
-  "auth": "oauth"
+  "url": {{ printf "%s/notion" $mcpUrl | toJson }}
 },
 "tako-storybook": {
   "command": "npx",
   "args": ["-y", "storybook-mcp"],
-  "disabled": true,
+  "enabled": false,
   "env": {
     "STORYBOOK_URL": {{ onepasswordRead "op://Personal/LiteLLM/storybook" | toJson }}
   }
 },
 "sentry": {
-  "url": {{ printf "%s/sentry" $mcpUrl | toJson }},
-  "auth": "oauth"
+  "url": {{ printf "%s/sentry" $mcpUrl | toJson }}
 },
 "miro": {
-  "url": {{ printf "%s/miro" $mcpUrl | toJson }},
-  "auth": "oauth"
+  "url": {{ printf "%s/miro" $mcpUrl | toJson }}
 },
 "slack": {
-  "url": {{ printf "%s/slack" $mcpUrl | toJson }},
-  "auth": "oauth"
+  "url": {{ printf "%s/slack" $mcpUrl | toJson }}
 },
 "google": {
-  "url": {{ printf "%s/google" $mcpUrl | toJson }},
-  "auth": "oauth"
+  "url": {{ printf "%s/google" $mcpUrl | toJson }}
 },
 "datadog": {
-  "url": {{ printf "%s/datadog" $mcpUrl | toJson }},
-  "auth": "oauth"
+  "url": {{ printf "%s/datadog" $mcpUrl | toJson }}
 },
 "circleci": {
-  "url": {{ printf "%s/circleci" $mcpUrl | toJson }},
-  "auth": "oauth"
+  "url": {{ printf "%s/circleci" $mcpUrl | toJson }}
 },
 "alfredo": {
-  "url": {{ printf "%s/alfredo" $mcpUrl | toJson }},
-  "auth": "oauth"
+  "url": {{ printf "%s/alfredo" $mcpUrl | toJson }}
 }

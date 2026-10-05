@@ -3,8 +3,8 @@
     "litellm": {
       "models": [
         {
-          "id": "openai/gpt-6-astra",
-          "name": "openai/gpt-6-astra",
+          "id": "openai/gpt-6-astra-custom",
+          "name": "openai/gpt-6-astra-custom",
           "api": "openai-responses",
           "reasoning": true,
           "thinkingLevelMap": {

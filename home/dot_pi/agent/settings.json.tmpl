@@ -1,24 +1,25 @@
 {
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "1.0.2",
   "theme": "dark",
 {{- if eq .chezmoi.username "shi-han.ng" }}
   "defaultProvider": "litellm",
-  "defaultModel": "claude-sonnet-5",
+  "defaultModel": "claude-sonnet-5-5",
   "enabledModels": [
-    "litellm/claude-sonnet-5",
-    "litellm/claude-opus-5",
-    "litellm/gpt-5.6-terra",
+    "litellm/claude-sonnet-5-5",
+    "litellm/claude-opus-5-5",
     "litellm/gemini-3.7-flash",
-    "claude-haiku-4-5-20251001",
-    "openai/gpt-6-astra"
+    "claude-haiku-5-5",
+    "openai/gpt-6-astra",
+    "openai/gpt-6.1-sol",
+    "openai/gpt-6-luna"
   ],
 {{- else }}
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-terra",
+  "defaultModel": "openai/gpt-6.1-sol",
   "enabledModels": [
-    "openai/gpt-5.6-terra",
-    "openai/gpt-5.6-luna",
-    "openai/gpt-5.6-sol"
+    "openai/gpt-6-astra",
+    "openai/gpt-6-luna",
+    "openai/gpt-6.1-sol"
   ],
 {{- end }}
   "defaultThinkingLevel": "medium",

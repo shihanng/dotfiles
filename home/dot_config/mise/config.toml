@@ -104,7 +104,6 @@ go = "1.27.1"
 "go:golang.org/x/tools/gopls" = "0.23.0"
 node = "26.10.0"
 "npm:@ansible/ansible-language-server" = "26.6.0"
-"npm:@anthropic-ai/claude-code" = "2.1.285"
 "npm:@astrojs/language-server" = "2.17.1"
 "npm:@bytebase/dbhub" = "1.4.0"
 "npm:@earendil-works/pi-coding-agent" = "1.0.2"
@@ -155,3 +154,6 @@ node = "26.10.0"
 prek = "0.5.4"
 python = "3.14.7"                                                                                                   # Need to pin this for litellm
 "pipx:dotdrop" = "1.17.0"
+
+[bootstrap.packages]
+"brew-cask:claude-code" = "latest"
